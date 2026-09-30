@@ -10,8 +10,9 @@ export default function Footer() {
       paddingBottom: "calc(32px + env(safe-area-inset-bottom, 0px))",
       marginTop: "auto",
       backgroundColor: "var(--shu-darker)",
+      overflow: "hidden",
     }}>
-      {/* Fondo de olas (capa absoluta, no recorta el contenido) */}
+      {/* Capa 1: Imagen de olas */}
       <div
         aria-hidden="true"
         style={{
@@ -20,7 +21,6 @@ export default function Footer() {
           backgroundImage: `url('${wavesSidebarUrl}')`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
-          backgroundColor: "var(--shu-darker)",
           pointerEvents: "none",
         }}
       />

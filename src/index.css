@@ -47,36 +47,31 @@
   }
 }
 
+/* 2. Altura y jerarquía de apilamiento */
 html, body, #root {
   height: 100%;
 }
 
-html {
-  background-color: var(--paper);
-}
-
+/* #root debe estar por encima del fondo pero con fondo transparente */
 #root {
   position: relative;
   z-index: 1;
+  background: transparent;
 }
 
-/* ── Textura de olas sobre el fondo de la app ────────────────────────
-   Misma imagen que el panel lateral (waves-sidebar.webp) pero con
-   opacidad reducida y un leve blur para que sea más difuminada.
-   inset: -12px compensa el sangrado de bordes del filtro blur.
-   z-index: -1 garantiza que quede estrictamente por detrás de todo el
-   contenido y tarjetas de la app, sin importar el contexto de apilamiento. */
+/* 3. La textura de olas de fondo (Marca de agua sutil) */
 body::before {
   content: "";
   position: fixed;
-  inset: -12px;
+  inset: -12px; /* Compensa los bordes del filtro blur para que no queden halos */
+  /* Usar ruta relativa para que Vite empaquete la imagen con hash */
   background-image: url('./assets/waves-sidebar.webp');
   background-size: cover;
   background-position: center top;
-  opacity: 0.11;
-  filter: blur(2px);
+  opacity: 0.11;     /* ← El valor clave: sutil, ni invisible ni estridente */
+  filter: blur(2px); /* Difumina las líneas para que no compitan con el texto */
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;        /* Se queda en el nivel 0, justo detrás de #root (z-index: 1) */
 }
 
 /* Clases de apoyo con textura de olas japonesas procesadas por Vite */
@@ -100,7 +95,8 @@ body::before {
 
 body {
   position: relative;
-  background-color: transparent;
+  background-color: var(--paper); /* Color crema visible a través de la textura */
+  margin: 0;
   color: var(--ink);
   font-family: var(--font-body);
   overscroll-behavior-y: none;
