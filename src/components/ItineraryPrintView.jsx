@@ -542,7 +542,7 @@ function DaySection({ day, guides }) {
         <div style={{ marginTop: 8, padding: "8px 10px", background: "#f0fdf4", border: "1px solid #86efac", borderRadius: 6, fontSize: 9.5, lineHeight: 1.5 }}>
           <strong>🇯🇵 Visit Japan Web (Control de Inmigración y Aduanas)</strong>
           <br />
-          Web oficial: <strong>vjw.digital.go.jp</strong> · viajeros registrados (el guía, mi amigo, mi amigo, mi amigo, mi amigo)
+          Web oficial: <strong>vjw.digital.go.jp</strong> · Registro online de inmigración y aduanas antes del vuelo
           <br />
           <span style={{ color: "#166534" }}>
             Tener preparados en el móvil o impresos los códigos QR individuales generados antes de embarcar. Se escanean en los quioscos automáticos al llegar a Japón para agilizar el paso por aduanas y pasaportes sin rellenar papel físico.
