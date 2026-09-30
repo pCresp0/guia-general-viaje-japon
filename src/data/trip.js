@@ -378,7 +378,7 @@ export const days = [
     schedule: [
       { time: "07:00", text: "Despertar. 🍙 Desayuno para llevar comprado la noche anterior. Comer antes de llegar al santuario o durante el trayecto." },
       { time: "07:45–08:00", text: "🚆 JR Nara Line: Kyoto Station → Inari Station (~5 min).\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nSin reserva. Utilizar Suica o comprar billete sencillo en la estación. Inari Station está justo al lado del recinto." },
-      { time: "08:00–10:15", text: "Santuario Fushimi Inari. 💡 Consejo: llegar temprano es especialmente recomendable para evitar las mayores aglomeraciones. No es necesario subir hasta la cima del Monte Inari; si el tiempo o el cansancio aprietan, hacer una subida parcial y regresar. A el guía no le costará nada subir, para algo va al gym a ponerse fuerte." },
+      { time: "08:00–10:15", text: "Santuario Fushimi Inari. 💡 Consejo: llegar temprano es especialmente recomendable para evitar las mayores aglomeraciones. No es necesario subir hasta la cima del Monte Inari; si el tiempo o el cansancio aprietan, hacer una subida parcial por los torii bermellones y regresar." },
       { time: "10:20–11:40", text: "🚆 JR Nara Line: Inari → Nara.\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nTren directo hacia Nara, sin transbordo, aproximadamente 1h20. No requiere reserva. En Inari, comprobar que el servicio elegido para en Inari y continúa hacia Nara." },
       { time: "11:40–12:05", text: "**🚌 Desde JR Nara Station → Tōdai-ji:**\n🎫 **SUICA:** ✅ SÍ, pero ⚠️ en Nara el bus NO funciona igual que en Kioto — hay dos tipos y hay que fijarse en cuál llega:\n- Bus Circular (amarillo, \"Loop Line\"): se sube por la puerta DELANTERA y se paga/pasa la Suica AL SUBIR (tarifa plana, aprox. ¥XXX). Se baja por la puerta trasera.\n- Bus normal (verde, líneas numeradas 2/6/70/72/97/160): se sube por la puerta TRASERA sin pasar tarjeta, y se paga pasando la Suica SOLO AL BAJAR, por la puerta delantera (tarifa según distancia).\n\nAl llegar a JR Nara, salir por la East Exit y tomar el autobús hacia la zona de \"Tōdai-ji Daibutsuden / Kasuga Taisha-mae\". No hace falta fijar de antemano un número de línea concreto, puede variar según el servicio disponible — comprobar el siguiente autobús conveniente con Google Maps en el momento. Desde la parada hay aproximadamente 5 minutos andando hasta Tōdai-ji.\n\n**Alternativa:** ir andando desde JR Nara Station, pero requiere más tiempo. No reservar por adelantado." },
       { time: "12:05–13:00", text: "🏯 Tōdai-ji, Daibutsuden y Gran Buda. Esta es la visita principal de Nara: entrar al Daibutsuden y visitar el Gran Buda, y después un recorrido breve por el recinto. No hace falta reservar entrada anticipadamente ni añadir otras visitas largas aquí." },
@@ -474,7 +474,7 @@ export const days = [
     title: "Kioto Tradicional y Castillo de Osaka",
     cities: "Kioto, Osaka",
     summary:
-      "Última mañana en Kioto visitando el monumental Kiyomizu-dera y bajando por las cuestas de Higashiyama. Al mediodía, tren rápido a Osaka para su castillo histórico y la locura gastronómica de Dotonbori. Seguro que a mi amigo y mi amigo les entra la nostalgia y prefieren estar cenando pasta en Roma donde se conocieron. Cuidado que el guía se pone en modo profesor de secundaria a darnos la chapa. mi amigo, ¡este castillo tiene más historia que tú y mi amigo en Roma!",
+      "Última mañana en Kioto visitando el monumental Kiyomizu-dera y bajando por las pintorescas cuestas de Higashiyama. Al mediodía, tren rápido a Osaka para visitar su imponente castillo histórico y sumergirse en la vibrante escena gastronómica y los neones de Dotonbori.",
     history:
       "Kiyomizu-dera se fundó en el año 778; su terraza se construyó sin usar un solo clavo. El Castillo de Osaka fue el epicentro militar de Toyotomi Hideyoshi, figura clave en la unificación de Japón en el siglo XVI.",
     podcasts: [
@@ -921,7 +921,7 @@ export const budget = {
       perPerson: "~30€",
       total: "~150€",
       details: [
-        "Aparte de las comidas principales: cafés, snacks, bebidas y compras sueltas en Lawson/7-Eleven/FamilyMart entre horas -- suma más de lo que parece a base de tickets pequeños. Cifra representativa, calculada a partir del gasto real registrado por el guía (~144€ en konbini y cafés sueltos en todo el viaje).",
+        "Aparte de las comidas principales: cafés, snacks, bebidas y compras sueltas en Lawson/7-Eleven/FamilyMart entre horas -- suma más de lo que parece a base de tickets pequeños. Cifra representativa, calculada a partir del gasto real registrado durante el viaje (~144€ en konbini y cafés sueltos en total).",
       ],
     },
     {
