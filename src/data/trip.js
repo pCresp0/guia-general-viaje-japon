@@ -1,0 +1,948 @@
+// Datos del viaje — extraídos de la planificación y el resumen de reservas
+export const tripMeta = {
+  title: "Mi Viaje a Japón",
+  subtitle: "Guía General",
+  start: "2026-09-06",
+  end: "2026-09-21",
+  people: 1,
+  welcomeParagraphs: [
+    "¡Bienvenidos a la guía general de mi viaje a Japón que hice en Septiembre de 2026! Esta web está pensada para que cualquier persona que quiera organizar un viaje similar pueda ver exactamente qué ruta hice, qué trenes cogí, en qué sitios comí, en qué hoteles dormí y qué lugares visitamos.",
+    "El viaje duró en total <strong>16 días</strong> (del 6 al 21 de septiembre). Pasamos unos días en la zona de Kansai (Kioto y Osaka), exploramos los Alpes Japoneses (Kanazawa, Takayama, Magome) y terminamos en la inmensa capital, Tokio, haciendo una excursión al Monte Fuji.",
+    "Te recomiendo que antes de ir eches un vistazo a la sección de <strong>Preparativos</strong> y <strong>Vuelos</strong> para ver temas de seguros, internet (eSIM) y equipaje. También puedes explorar el <strong>Itinerario</strong> día por día o ver todos los puntos en el <strong>Mapa</strong>.",
+    "Todos los apartados son interactivos. Siéntete libre de navegar, usar el buscador y aprovechar esta guía para montar tu propia aventura en Japón.",
+    "Abajo del todo en el footer tienes mis <strong>redes sociales y de contacto</strong>. Ante cualquier duda o pregunta sobre la ruta, hoteles, trenes o preparativos, me puedes escribir y preguntar lo que necesites (¡y te tendré una sana envidia por poder ir a Japón, un viaje que te marca de por vida!).",
+    "Y si eres un poco <em>freak</em> de la tecnología: en el apartado de <strong>'Sobre la web'</strong> y en el <strong>README del <a href=\"https://github.com/pCresp0/guia-general-viaje-japon\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:var(--shu);text-decoration:underline;font-weight:700;\">repositorio de GitHub</a></strong> se indica paso a paso cómo podéis clonar esta web para tomarla como base y luego editarla a vuestro antojo si sabéis algo de programación o mediante <em>vibecoding</em> con herramientas de IA."
+  ],
+  about: {
+    title: "Sobre la web",
+    repoUrl: "https://github.com/pCresp0/guia-general-viaje-japon",
+    repoName: "pCresp0/guia-general-viaje-japon",
+    features: [
+      {
+        icon: "📡",
+        title: "100% Offline by Design",
+        text: "Esta aplicación web ha sido diseñada para <strong>no depender de internet durante el viaje</strong>. En trenes bala, zonas rurales o ante fallos de eSIM, la app sigue funcionando al 100%. Sigue una arquitectura de <strong>Single Source of Truth (SSOT)</strong> en el cliente, empaquetada como PWA con Service Worker (Workbox)."
+      },
+      {
+        icon: "🗓️",
+        title: "Itinerario Doble (Detallado & Vista Rápida)",
+        text: "Cada uno de los 15 días del viaje cuenta con dos modos: <strong>Detalle completo</strong> (con horarios, consejos, advertencias y lore) y <strong>Vista rápida</strong> (una línea de metro visual con las horas y paradas clave), además de acceso directo al mapa de cada jornada."
+      },
+      {
+        icon: "🎫",
+        title: "Billetes de Transporte & QR Interactivos",
+        text: "Fichas digitales fieles de los billetes de tren y autobús reservados (Shinkansen Hikari y Nozomi, Thunderbird, Shinano, Nohi Bus) con coches, asientos, códigos QR oficiales y el QR de llegada de Visit Japan Web integrado en el Día 1."
+      },
+      {
+        icon: "📜",
+        title: "Historia de Japón, Podcasts, Documentales y Libros",
+        text: "Sección multimedia organizada en 4 bloques temáticos colapsables: <strong>Historia cronológica</strong> con reproductor de voz Text-to-Speech nativo y referencias del viaje, <strong>Podcasts</strong> (Apple Podcasts), <strong>Documentales</strong> (YouTube) y <strong>Libros recomendados</strong> con enlaces directos para lectura online."
+      },
+      {
+        icon: "🔍",
+        title: "Buscador Global Inteligente",
+        text: "Motor de búsqueda reactivo que indexa instantáneamente todo el contenido (lugares, hoteles, billetes, historia, gastronomía, frikadas). Al hacer clic en un resultado, la app salta directamente al lugar exacto, abriendo las secciones necesarias y resaltándolo visualmente."
+      },
+      {
+        icon: "🌦️",
+        title: "Meteorología en Tiempo Real con Caché",
+        text: "Integración con la API de Open-Meteo para las ciudades del itinerario (Tokio, Kioto, Osaka, Kanazawa, Takayama, Magome), con guardado en caché local de 12 horas para consultar el tiempo sin conexión."
+      },
+      {
+        icon: "🗺️",
+        title: "Mapas Vectoriales Ligeros (Leaflet)",
+        text: "Mapa interactivo offline-friendly basado en OpenStreetMap y Leaflet, con filtrado dinámico por categoría y por día de viaje, sin consumir APIs de pago ni recargar scripts externos pesados."
+      },
+      {
+        icon: "👾",
+        title: "Cultura Pop & Frikadas",
+        text: "Guía temática que cruza localizaciones del viaje con universos de anime, videojuegos y cine (Pokémon, Studio Ghibli, Nintendo, Digimon, Persona, Tekken)."
+      },
+      {
+        icon: "💰",
+        title: "Presupuesto Real y Tareas Persistentes",
+        text: "Control de costes estimados y reales pagados (hoteles de Booking, hotel de Magome Chaya en efectivo, seguros, eSIMs) y lista de tareas 'Antes de viajar' y 'Durante el viaje' guardadas en <code>localStorage</code>."
+      },
+      {
+        icon: "🌐",
+        title: "Multi-idioma Nativo (4 idiomas)",
+        text: "Arquitectura i18n propia en React Context con soporte completo para <strong>Español, English, Français y Tagalog</strong>, fusionando dinámicamente las cadenas traducidas con los datos estructurales."
+      }
+    ],
+    github: "Ver repositorio en GitHub (pCresp0/guia-general-viaje-japon)"
+  }
+};
+
+export const flights = {
+  price: { perPerson: "890€", total: "4.450€", people: 5 },
+  out: {
+    dir: "out",
+    label: "Ida",
+    date: "2026-09-06",
+    text: "Salida Dom 6 sept desde Madrid (T4 / T4S) a las 09:05 (Qatar Airways Vuelo Ida). Escala en Doha de 3h 45m (16:50 → 20:35). Llegada a Narita (NRT), Terminal 2, el Lun 7 sept a las 12:55.",
+    flightNumber: "Vuelo Ida + Vuelo Ida 2",
+    leg1: {
+      number: "Vuelo Ida",
+      operator: "Qatar Airways",
+      aircraft: "Boeing 787-9 Dreamliner",
+      duration: "6h 45m",
+      route: "Madrid → Doha",
+      depTime: "09:05",
+      arrTime: "16:50",
+      trackUrl: "https://www.google.com/search?q=vuelo+Vuelo Ida",
+    },
+    leg2: {
+      number: "Vuelo Ida 2",
+      operator: "Qatar Airways",
+      aircraft: "Boeing 777-300ER",
+      duration: "10h 20m",
+      route: "Doha → Narita",
+      depTime: "20:35",
+      arrTime: "12:55",
+      trackUrl: "https://www.google.com/search?q=vuelo+Vuelo Ida 2",
+    },
+    trackUrl: "https://www.google.com/search?q=vuelo+Vuelo Ida",
+    depart: { city: "Madrid", time: "2026-09-06T09:05", terminal: "T4 / T4S (Satélite)" },
+    arrive: { city: "Narita (NRT)", time: "2026-09-07T12:55", terminal: "T2" },
+    totalDuration: "20h 50m",
+    layover: {
+      city: "Doha (DOH)",
+      airport: "Hamad International",
+      duration: "3h 45m",
+      terminal: "Terminal única — todos los vuelos Qatar Airways",
+      connection:
+        "Escala en Doha de 3 h 45 min (16:50 → 20:35). Aeropuerto de terminal única: no hay que cambiar de edificio ni volver a facturar. De concourse A a E se tarda unos 15 min andando; entre concourses cercanos, unos 9 min de media (90 seg en tren). La puerta de embarque cierra 20 min antes de la salida.",
+    },
+  },
+  back: {
+    dir: "back",
+    label: "Vuelta",
+    date: "2026-09-21",
+    text: "Salida Lun 21 sept desde Narita (Terminal 2) a las 17:25 (Qatar Airways Vuelo Vuelta). Escala en Doha de 2h 50m (22:20 → 01:10). Llegada a Madrid (T4S) el Mar 22 sept a las 07:35.",
+    flightNumber: "Vuelo Vuelta + Vuelo Vuelta 2",
+    leg1: {
+      number: "Vuelo Vuelta",
+      operator: "Qatar Airways",
+      duration: "10h 55m",
+      route: "Narita → Doha",
+      depTime: "17:25",
+      arrTime: "22:20",
+      trackUrl: "https://www.google.com/search?q=vuelo+Vuelo Vuelta",
+    },
+    leg2: {
+      number: "Vuelo Vuelta 2",
+      operator: "Qatar Airways / Iberia",
+      duration: "7h 25m",
+      route: "Doha → Madrid",
+      depTime: "01:10",
+      arrTime: "07:35",
+      trackUrl: "https://www.google.com/search?q=vuelo+Vuelo Vuelta 2",
+    },
+    trackUrl: "https://www.google.com/search?q=vuelo+Vuelo Vuelta",
+    depart: { city: "Narita (NRT)", time: "2026-09-21T17:25", terminal: "T2" },
+    arrive: { city: "Madrid", time: "2026-09-22T07:35", terminal: "T4S (Satélite)" },
+    totalDuration: "21h 10m",
+    layover: {
+      city: "Doha (DOH)",
+      airport: "Hamad International",
+      duration: "2h 50m",
+      terminal: "Terminal única — todos los vuelos Qatar Airways",
+      connection:
+        "Escala en Doha de 2 h 50 min (22:20 → 01:10). Mismo aeropuerto de terminal única que a la ida: sin cambio de edificio ni volver a facturar. Seguir los carteles morados de tránsito hasta la puerta de conexión; el trayecto más largo son unos 15 min andando.",
+    },
+  },
+};
+
+// Bloques del viaje (tramos con línea de "metro" temática)
+export const blocks = [
+  {
+    id: "kioto",
+    emoji: "⛩️",
+    title: "Kioto, Nara y Osaka",
+    color: "#BC4749", // shu-iro / rojo torii
+    days: [0, 1, 2, 3, 4, 5],
+    sleepSummary: "En Kioto (4 noches)",
+    bestArea:
+      "Cerca de la Estación de Kioto (máxima comodidad para trenes) o en Karasuma / Kawaramachi (más ambiente nocturno y restaurantes).",
+  },
+  {
+    id: "alpes",
+    emoji: "🏔️",
+    title: "Alpes Japoneses y Ruta Nakasendo",
+    color: "#2E7D5B", // verde bosque
+    days: [6, 7, 8],
+    sleepSummary: "Kanazawa → Takayama → Magome/Tsumago (1 noche cada uno)",
+    bestArea:
+      "Kanazawa: cerca de la estación o del mercado Omicho. Takayama: casco histórico o cerca de la estación. Magome/Tsumago: un Minshuku rural en plena ruta.",
+    logisticaTip:
+      "La mañana del día 6 enviáis las maletas grandes desde el hotel de Kioto directo al hotel de Tokio por unos 15€/maleta. Viajáis estos días solo con mochila.",
+  },
+  {
+    id: "tokio",
+    emoji: "🗻",
+    title: "Tokio y Excursión al Fuji",
+    color: "#1D3557", // azul índigo
+    days: [9, 10, 11, 12, 13, 14, 15],
+    sleepSummary: "En Tokio (6 noches)",
+    bestArea:
+      "Shinjuku o Shibuya (mucha vida nocturna y conexión directa al aeropuerto y Fuji) o Ueno/Akihabara (más barato, mejor para cultura pop).",
+    fujiStrategy:
+      "No pernoctaremos en el Fuji para no arriesgarnos a que amanezca nublado. Excursión de día completo con GetYourGuide (Japan Visionary Tour), confirmada para el 16 de septiembre: Parque Oishi, lago Kawaguchiko, Oshino Hakkai y la Pagoda Chureito, con guía en inglés. Ya no hace falta reservar días alternativos ni cancelar nada -- solo comprobar la visibilidad esa mañana. mi amigo, a ver si demuestras que ese CrossFit sirve de algo.",
+  },
+];
+
+// Alojamientos reservados (de la hoja "Resumen Planificación")
+export const stays = [
+  {
+    id: "kioto",
+    city: "Kioto",
+    nights: "Del 7 al 12 sept (5 noches)",
+    afterDay: 1,
+    options: [
+      {
+        name: "Hotel Keihan Kyoto Hachijoguchi",
+        total: "669,86€",
+        paid: true,
+        paidBy: "Pagado por adelantado",
+        url: "https://www.booking.com/hotel/jp/hotel-keihan-kyoto-hachijoguchi.es.html",
+        address: "Minami ward Higashi Kujo Minami Sannou cho 5-1, Kioto, Japón",
+        phone: "+81 75 662 0321",
+        checkIn: "7-sept-2026 · 15:00–00:00",
+        checkOut: "12-sept-2026 · hasta 11:00",
+        rooms: "2 habitaciones · Triple Moderate + Doble Estándar (2 camas)",
+        guests: "adultos",
+        cancel: "Cancelación gratis hasta 1 día antes",
+        onsen: { has: true, hours: "15:00–01:00 y 6:00–10:00 (separado por sexos)" },
+        note: "Alojamiento reservado vía Booking (669,86€ total · ~133,97€/persona las 5 noches). Ubicación inmejorable frente a Kyoto Station (salida Hachijo). No incluye comidas.",
+      },
+    ],
+  },
+  {
+    id: "kanazawa",
+    city: "Kanazawa",
+    nights: "Del 12 al 13 sept (1 noche)",
+    afterDay: 6,
+    options: [
+      {
+        name: "Hotel Resol Trinity Kanazawa",
+        total: "161,89€",
+        paid: true,
+        paidBy: "Pagado por adelantado",
+        url: "https://www.booking.com/hotel/jp/resol-trinity-kanazawa.es.html",
+        address: "Musashicho 1-18, Kanazawa, Ishikawa, Japón",
+        phone: "+81 76 221 9269",
+        checkIn: "12-sept-2026 · desde 15:00",
+        checkOut: "13-sept-2026 · hasta 11:00",
+        rooms: "2 habitaciones · Doble (2 camas + 1 supletoria) + Doble Estándar",
+        guests: "adultos",
+        cancel: "Cancelación gratis hasta 2 días antes",
+        onsen: { has: false },
+        note: "Alojamiento reservado vía Booking (161,89€ total · ~32,38€/persona). Excelente ubicación junto al mercado Omicho. No incluye comidas.",
+      },
+    ],
+  },
+  {
+    id: "takayama",
+    city: "Takayama",
+    nights: "Del 13 al 14 sept (1 noche)",
+    afterDay: 7,
+    options: [
+      {
+        name: "Hotel Wood Takayama",
+        total: "274,98€",
+        paid: true,
+        paidBy: "Pagado por adelantado",
+        url: "https://www.booking.com/hotel/jp/hotel-wood-takayama.es.html",
+        address: "Kamininomachi 80-2, Takayama, Gifu, Japón",
+        phone: "+81 577 32 0111",
+        checkIn: "13-sept-2026 · 15:00–22:00",
+        checkOut: "14-sept-2026 · hasta 10:00",
+        rooms: "2 habitaciones · Triple Superior + Doble Estándar (2 camas)",
+        guests: "adultos",
+        cancel: "Cancelación gratis hasta 3 días antes",
+        onsen: { has: true, hours: "15:00–00:00 y 6:00–9:00 (separado por sexos), con helado gratis al salir" },
+        note: "Alojamiento reservado vía Booking (274,98€ total · ~55,00€/persona). Incluye onsen con helado gratis de cortesía tras el baño. Check-out a las 10:00. No incluye comidas.",
+      },
+    ],
+  },
+  {
+    id: "magome",
+    city: "Magome",
+    nights: "Del 14 al 15 sept (1 noche)",
+    afterDay: 8,
+    options: [
+      {
+        name: "Magome Chaya",
+        total: "178,98€",
+        paid: false,
+        paymentMethod: "Efectivo en hotel",
+        url: "https://www.booking.com/hotel/jp/magome-chaya.es.html",
+        rooms: "Minshuku · con cena (sin desayuno)",
+        onsen: { has: true, hours: "sin horario oficial — pequeño, separado por sexos; preguntar al hacer check-in (mejor ir sobre las 18:00-19:00, cuando el resto cena)" },
+        note: "Alojamiento tradicional Minshuku en la ruta Nakasendo (~178,98€ total · ~35,80€/persona). Se abona en metálico en el hotel; conviene llevar yenes en efectivo. Incluye cena tradicional casera a hora fija (~18:00). No incluye desayuno.",
+      },
+    ],
+  },
+  {
+    id: "tokio",
+    city: "Tokio",
+    nights: "Del 15 al 21 sept (6 noches)",
+    afterDay: 9,
+    options: [
+      {
+        name: "KOKO HOTEL Residence Asakusa Kappabashi",
+        total: "1.927,13€",
+        paid: true,
+        paidBy: "Pagado por adelantado",
+        url: "https://www.booking.com/hotel/jp/koko-hotel-residence-asakusa-kappabashi.es.html",
+        rooms: "Residencia / apartamento · 6 noches",
+        guests: "adultos",
+        onsen: { has: false },
+        note: "Apartamento residencial reservado vía Booking (1.927,13€ total · ~385,43€/persona las 6 noches). Apartamento amplio con cocina en Asakusa / Kappabashi, ideal como base para recorrer Tokio.",
+      },
+    ],
+  },
+];
+
+// Detalle día a día (de la Planificación docx)
+export const days = [
+  {
+    num: 0,
+    date: "2026-09-06",
+    weekday: "Domingo",
+    block: "kioto",
+    title: "Día de viaje",
+    cities: "Madrid → Doha → Narita",
+    summary:
+      "Salida temprana desde Madrid en vuelo directo con Qatar Airways. Largo viaje transatlántico con escala en Doha. Llegaremos a Narita el lunes por la tarde, local.",
+    history:
+      "Qatar Airways es la aerolínea nacional de Catar y una de las más valoradas del mundo. Doha es el hub central de la compañía en Oriente Medio, punto de conexión entre Europa y Asia.",
+    schedule: [
+      { time: "09:05", text: "Salida desde el Aeropuerto Adolfo Suárez Madrid-Barajas (T4 / T4S) en vuelo Vuelo Ida (Qatar Airways). Seguimiento en vivo: https://www.google.com/search?q=vuelo+Vuelo Ida" },
+      { time: "16:50", text: "Llegada a Doha (Aeropuerto Internacional de Hamad, DOH). Escala en terminal única, cambio de avión. Tiempo en escala: 3 h 45 min (16:50 → 20:35)." },
+      { time: "20:35", text: "Salida desde Doha hacia Narita (NRT) en el vuelo Vuelo Ida 2 (Qatar Airways). Duración aprox. 10 h 20 min. Seguimiento en vivo: https://www.google.com/search?q=vuelo+Vuelo Ida 2" },
+      { time: "12:55 (+1 día)", text: "Llegada a Narita (Terminal 2, lunes 7 sept). Aduanas y recogida de equipajes con el código QR de Visit Japan Web. Luego: traslado en Narita Express + Shinkansen a Kioto." },
+    ],
+    money: "Vuelo incluido en el presupuesto de grupo",
+  },
+  {
+    num: 1,
+    date: "2026-09-07",
+    weekday: "Lunes",
+    block: "kioto",
+    title: "Llegada a Japón",
+    cities: "Narita, Tokio, Kioto",
+    summary:
+      "Aterrizaje en el aeropuerto de Narita, trámites de aduana con el código QR de Visit Japan Web y recogida de equipajes. Traslado en tren Narita Express hasta Shinagawa y conexión en tren bala Shinkansen Nozomi directo hasta Kioto para hacer el check-in en el hotel. Terminaremos la jornada con una primera toma de contacto con la ciudad, cenando algo rápido por los alrededores de la estación. Seguro que mi amigo ya está comparando la recepción con su hotel en Sol.",
+    history:
+      "Kioto fue la capital imperial de Japón durante más de mil años, desde 794 hasta 1868. Es el corazón cultural y espiritual del país. Al haber sobrevivido casi intacta a los bombardeos de la Segunda Guerra Mundial, conserva gran parte de su milenaria arquitectura tradicional de madera.",
+    podcasts: [
+      {
+        title: "Excursión a Narita (mucho más que un aeropuerto)",
+        show: "Japón a fondo · Japonismo",
+        url: "https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000744244376",
+        moment: "En el vuelo, a la llegada a Narita o en el trayecto en el Narita Express hacia Shinagawa.",
+      },
+      {
+        title: "Kioto: la capital cultural de Japón",
+        show: "Japón a fondo · Japonismo",
+        url: "https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000510578269",
+        moment: "En el tren bala Shinkansen Nozomi (17:19 → 19:23 · 2h) rumbo a Kioto.",
+      },
+    ],
+    schedule: [
+      { time: "🍜 COMER EN JAPÓN", text: "**Consejos prácticos:**\n\n**Desayuno habitual:** aproximadamente 07:00–09:00.\n**Comida:** aproximadamente 11:30–14:00.\n**Cena:** aproximadamente 17:30–21:00.\n\nMuchos restaurantes pequeños cierran entre comida y cena.\n\nEn días con salida muy temprana, comprar desayuno la noche anterior en un konbini. En excursiones con horarios ajustados, llevar un onigiri/sandwich de emergencia. Los konbini (7-Eleven, Lawson, FamilyMart) son una opción práctica y barata para onigiri, sandwiches, bentos, fruta, yogur, karaage y bebidas. Además, los konbini abren 24 horas los 7 días de la semana, así que nunca cierran y puedes ir a comprar el desayuno a la hora que quieras sin miedo.\n\nUna comida sencilla de ramen/udon/donburi puede costar aproximadamente **¥XXX–1.500 (~3–9€)**.\n\nNo reservar normalmente para ramen, udon, donburi, comida rápida japonesa, izakaya informal o puestos de comida. Reservar solo restaurantes especiales/populares cuando realmente queramos cenar allí.\n\nEn mercados y zonas de comida callejera, respetar las normas locales sobre dónde comer. En Japón no es habitual comer caminando por calles comerciales; en Nishiki Market está expresamente desaconsejado." },
+      { time: "12:55", text: "🛬 Aterrizaje en Narita (NRT).\n\nHay que realizar inmigración, recogida de equipaje facturado, aduanas, y salida a la zona pública del aeropuerto.\nRecuerda tener preparado el código QR de Visit Japan Web de el viajero para agilizar los trámites.\n\n💡 Consejo: El tiempo real de salida del aeropuerto puede variar bastante según inmigración, equipaje y aduanas. Por eso NO tenemos comprado de antemano el Narita Express." },
+      { time: "~14:45", text: "🚂 NARITA EXPRESS (N'EX) — ⏳ PENDIENTE / COMPRAR EN NARITA\n\n🎫 **SUICA:** ❌ NO para pagar (requiere billete exprés)\n📅 **RESERVA:** 🔴 NECESARIA\n🛒 **COMPRA:** COMPRAR ALLÍ. En máquinas o taquillas JR en el propio aeropuerto de Narita. NO comprar por adelantado.\n\nTrayecto: Narita Airport → Shinagawa\n(El horario de las ~14:45 es solo un objetivo orientativo).\n\nAl salir de aduanas, seguir las indicaciones de JR / Narita Express. Comprar el billete en las máquinas de JR o en una oficina/taquilla JR del aeropuerto.\n\n⚠️ **IMPORTANTE:**\n- NO es metro. Es un tren JR de larga distancia.\n- Se toma en la estación JR del aeropuerto.\n- El billete NO está comprado todavía.\n- NO queremos fijar obligatoriamente un tren concreto antes de volar porque el vuelo puede retrasarse.\n- Lo compraremos EN EL PROPIO AEROPUERTO DE NARITA cuando tengamos una estimación realista de tiempo.\n- Para este trayecto se necesita billete de N'EX. No utilizar Smart EX.\n- Somos 5 personas: comprar los 5 billetes juntos y pedir asientos juntos si es posible.\n\nNota: Si el vuelo se retrasa, NO perdemos ningún billete de N'EX porque todavía no lo hemos comprado. Simplemente compraremos el siguiente N'EX que nos permita llegar a tiempo a Shinagawa." },
+      { time: "17:19", text: "🚄 **SHINKANSEN NOZOMI 53 (SHINAGAWA → KYOTO)**\n\nTren bala directo hacia Kyoto Station (17:19 → 19:23 · 2h 04min). Billetes comprados y asientos asignados en Smart EX para el viajero. Despliega la tarjeta inferior para consultar asientos y billetes QR individuales." },
+      { time: "🧳 EQUIPAJE", text: "Viajamos con maletas grandes de facturación, pero no especialmente gigantes. La reserva de equipaje oversized solo es necesaria si una pieza supera los 160 cm sumando alto + ancho + fondo. (Ejemplo: 75 + 50 + 30 = 155 cm → no oversized). No hace falta reservar espacio oversized para una maleta normal que no supere los 160 cm." },
+      { time: "19:23", text: "🚅 Llegada a Kioto (JR Kyoto Station). Salimos por la salida Hachijo East Exit (八条東口). Desde ahí son solo 5 minutos andando hasta nuestro hotel." },
+      { time: "19:30–20:15", text: "🏨 **CHECK-IN: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\n✅ Hotel ya pagado (669,86€ vía Booking).\n\nLlegada al hotel, trámite de check-in para las habitaciones del grupo, dejar el equipaje, refrescarse y acomodarse tranquilamente tras el vuelo internacional y los trenes del día.\n\n♨️ El hotel tiene un gran onsen (baño público), separado por sexos, abierto de 15:00 a 01:00 y de 6:00 a 10:00 — perfecto para relajarse tras el viaje." },
+      { time: "20:15–21:30", text: "🍣 **CENA: KAITEN-SUSHI UOGASHI**\n\nRestaurante recomendado en **AEON MALL KYOTO** — Sakura Building, 4F (https://maps.app.goo.gl/ByDBQB6zaVZ3dj2E6). A unos 5–7 min andando desde el hotel y la estación.\n\n**Kaiten-zushi** (sushi en cinta transportadora). Precio orientativo: **¥XXX–3.000/persona (~12–19€)**.\n\nHorario: 11:00–22:00 (último pedido aprox 21:30). No es necesario reservar.\n\n**Qué probar:** sushi variado; piezas de pescado fresco; nigiri; platos especiales del día; algún acompañamiento caliente." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\nVuelta al hotel tras la cena para descansar (1ª noche en Kioto en Hotel Keihan Kyoto Hachijoguchi)." },
+      { time: "~22:00", text: "🍙 **COMPRA DE DESAYUNO EN KONBINI (CERCA DEL HOTEL)**\n\nAntes de dormir, comprar en un konbini cercano (7-Eleven / Lawson / FamilyMart) el desayuno del Día 2 (madrugón a Fushimi Inari). Abren 24 h: se puede ir a las 22:00 o más tarde sin problema." }
+    ],
+    money: "Aprox. 40€ (comidas) + transportes",
+  },
+  {
+    num: 2,
+    date: "2026-09-08",
+    weekday: "Martes",
+    block: "kioto",
+    title: "Fushimi Inari + Nara: Gran Buda, ciervos y Pontocho",
+    cities: "Kioto, Nara",
+    summary:
+      "Empezaremos muy temprano en el icónico Fushimi Inari para recorrer sus toriis rojos evitando multitudes. Después, tren hacia Nara para visitar el imponente Gran Buda de Tōdai-ji, comer gyumabushi cerca del parque, y pasear entre los famosos ciervos. La jornada acaba de vuelta en Kioto con un paseo y cena en los callejones tradicionales de Pontocho.",
+    history:
+      "Fushimi Inari está dedicado a Inari, la deidad sintoísta del arroz, elemento fundamental para la antigua economía japonesa. Nara fue la primera capital permanente de Japón en el siglo VIII y es la cuna del budismo en el país.",
+    schedule: [
+      { time: "07:00", text: "Despertar. 🍙 Desayuno para llevar comprado la noche anterior. Comer antes de llegar al santuario o durante el trayecto." },
+      { time: "07:45–08:00", text: "🚆 JR Nara Line: Kyoto Station → Inari Station (~5 min).\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nSin reserva. Utilizar Suica o comprar billete sencillo en la estación. Inari Station está justo al lado del recinto." },
+      { time: "08:00–10:15", text: "Santuario Fushimi Inari. 💡 Consejo: llegar temprano es especialmente recomendable para evitar las mayores aglomeraciones. No es necesario subir hasta la cima del Monte Inari; si el tiempo o el cansancio aprietan, hacer una subida parcial y regresar. A el guía no le costará nada subir, para algo va al gym a ponerse fuerte." },
+      { time: "10:20–11:40", text: "🚆 JR Nara Line: Inari → Nara.\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nTren directo hacia Nara, sin transbordo, aproximadamente 1h20. No requiere reserva. En Inari, comprobar que el servicio elegido para en Inari y continúa hacia Nara." },
+      { time: "11:40–12:05", text: "**🚌 Desde JR Nara Station → Tōdai-ji:**\n🎫 **SUICA:** ✅ SÍ, pero ⚠️ en Nara el bus NO funciona igual que en Kioto — hay dos tipos y hay que fijarse en cuál llega:\n- Bus Circular (amarillo, \"Loop Line\"): se sube por la puerta DELANTERA y se paga/pasa la Suica AL SUBIR (tarifa plana, aprox. ¥XXX). Se baja por la puerta trasera.\n- Bus normal (verde, líneas numeradas 2/6/70/72/97/160): se sube por la puerta TRASERA sin pasar tarjeta, y se paga pasando la Suica SOLO AL BAJAR, por la puerta delantera (tarifa según distancia).\n\nAl llegar a JR Nara, salir por la East Exit y tomar el autobús hacia la zona de \"Tōdai-ji Daibutsuden / Kasuga Taisha-mae\". No hace falta fijar de antemano un número de línea concreto, puede variar según el servicio disponible — comprobar el siguiente autobús conveniente con Google Maps en el momento. Desde la parada hay aproximadamente 5 minutos andando hasta Tōdai-ji.\n\n**Alternativa:** ir andando desde JR Nara Station, pero requiere más tiempo. No reservar por adelantado." },
+      { time: "12:05–13:00", text: "🏯 Tōdai-ji, Daibutsuden y Gran Buda. Esta es la visita principal de Nara: entrar al Daibutsuden y visitar el Gran Buda, y después un recorrido breve por el recinto. No hace falta reservar entrada anticipadamente ni añadir otras visitas largas aquí." },
+      { time: "13:00–13:15", text: "🚶 Caminar hacia el restaurante **Gyumabushi Miyama 牛まぶし三山** (11 Kasuganocho, Nara), muy cerca de Tōdai-ji — por eso tiene sentido comer justo después del Gran Buda." },
+      { time: "13:15–14:00", text: "🍚 **COMIDA: Gyumabushi Miyama 牛まぶし三山** (https://maps.app.goo.gl/NjR7MNt97GDZszJm6?g_st=iw)\n\nRestaurante previsto para hoy — su especialidad es el gyumabushi. No acepta reservas y puede tener cola o quedarse sin existencias, así que interesa llegar relativamente pronto." },
+      { time: "14:00–14:50", text: "🦌 Parque de Nara y ciervos. Si compramos shika senbei para los ciervos, darles las galletas y enseñar las manos vacías cuando se terminen: algunos ciervos pueden ponerse bastante insistentes si creen que todavía tenemos comida. Paseo tranquilo, no hace falta recorrer todo el parque." },
+      { time: "14:50–15:20", text: "⛩️ Nigatsu-dō — **OPCIONAL.** Sólo si vamos bien de tiempo y energía: visita breve, principalmente por el templo y las vistas. Si vamos justos o cansados, se omite y se empieza antes el regreso a JR Nara." },
+      { time: "15:20–16:00", text: "Regreso desde Nara hacia JR Nara. No hacer ninguna visita adicional en este tramo: el objetivo es estar en JR Nara aproximadamente entre las 15:40 y las 16:00. Según dónde estemos, en bus o andando — sin hora exacta fijada de antemano." },
+      { time: "~16:00–17:00", text: "🚆 JR Nara → Kyoto.\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nCoger el siguiente servicio conveniente hacia Kyoto, sin hora fija. No requiere reserva. Si aparece un Miyakoji Rapid conveniente, usarlo porque reduce el tiempo de viaje. Objetivo: llegar a Kyoto aproximadamente entre las 16:45 y las 17:00, según el servicio." },
+      { time: "17:00–18:15", text: "🏨 Regreso al Hotel Keihan Kyoto Hachijoguchi y descanso — ducha y relax antes de volver a salir. Bloque importante: no rellenar con nuevas visitas ni actividades turísticas." },
+      { time: "18:15–18:30", text: "Salida hacia Pontocho." },
+      { time: "18:30–21:30", text: "🍜 **PONTOCHO + CENA**\n\nPaseo por Pontocho. Cenamos en **Kyoto Engine Ramen 京都炎神** (https://maps.app.goo.gl/pMtT5gkMDACvSnNu8?g_st=ic) — el ramen estaba genial, riquísimo, recomendado por Japonismo. Después de cenar, paseo nocturno tranquilo si apetece." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\nRegreso desde Pontocho a nuestro hotel en Kioto para descansar (2ª noche aquí).\n\n**Cómo volver:**\n- 🚇 Metro/Bus: Bus urbano o metro desde Shijo hasta Kyoto Station (~10–15 min, 🎫 **SUICA:** ✅ SÍ).\n- 🚶 A pie: Aprox. 25–30 min andando cruzando el río Kamo." },
+      { time: "🎫 RESERVAS", text: "No es necesario reservar por adelantado ninguno de los trenes ni transportes de este día. Todos son servicios regionales/locales que se pagan sobre la marcha con Suica. El restaurante Gyumabushi Miyama tampoco acepta reservas." }
+    ],
+    money: "Aprox. 40€ (comidas)",
+  },
+  {
+    num: 3,
+    date: "2026-09-09",
+    weekday: "Miércoles",
+    block: "kioto",
+    title: "Ruta Norte de Higashiyama y Geishas",
+    cities: "Kioto",
+    summary:
+      "Recorreremos la parte este de la ciudad, desde el Pabellón de Plata bajando a pie por el Paseo de la Filosofía a lo largo del canal. Comeremos en el Mercado de Nishiki y pasaremos la tarde descubriendo a fondo los históricos barrios de geishas.",
+    history:
+      "El Pabellón de Plata (Ginkakuji) representa la refinada cultura Higashiyama del periodo Muromachi, centrada en la estética wabi-sabi. Los hanamachi (barrios de geishas) florecieron durante el periodo Edo como centros de artes escénicas de alto nivel.",
+    podcasts: [
+      {
+        title: "El mundo de las geishas: mitos, historia y realidad",
+        show: "Japón a fondo · Japonismo",
+        url: "https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000646351257",
+        moment: "Antes de visitar Gion, Pontocho y los distritos históricos de geishas por la tarde.",
+      },
+    ],
+    schedule: [
+      { time: "07:00", text: "Despertar." },
+      { time: "07:15", text: "🍙 Salida del hotel hacia el konbini más cercano (Lawson o 7-Eleven, el que quede más a mano)." },
+      { time: "07:15–07:45", text: "🍙 Desayuno de konbini. Entre elegir, comprar y comer con calma, esto lleva su rato — contad hasta las 07:45 aprox. antes de seguir hacia la parada de bus." },
+      { time: "07:45–08:30", text: "🚌 Hacia Ginkaku-ji. Desde el konbini caminar hasta Kyoto Station. Tomar el Kyoto City Bus nº 5 o nº 7 con destino hacia Ginkaku-ji y bajar en Ginkakuji-michi.\n\n🎫 **SUICA:** ✅ SÍ; tarifa plana de ¥XXX (dentro de la zona de tarifa única de Kioto). Se sube por la puerta TRASERA (sin pasar la tarjeta) y se paga pasando la Suica por el lector SOLO al bajar, por la puerta delantera.\n\nDuración aproximada: 35–45 min puerta a puerta, dependiendo del tráfico — llegando justo cuando abre Ginkaku-ji. Alternativa si el tráfico es malo: usar metro + bus según Google Maps/Navitime en ese momento. Pago: No reservar. Usar Suica. También se puede comprar billete sencillo." },
+      { time: "08:30–10:00", text: "🩶 Ginkaku-ji (Pabellón de Plata). Horario oficial en septiembre: 08:30–17:00. Visitar: Pabellón de Plata, Jardines, Estanque, Camino elevado del jardín. No requiere reserva." },
+      { time: "10:00–11:00", text: "🚶 Paseo de la Filosofía. Salir de Ginkaku-ji y recorrer andando hacia el sur siguiendo el canal. Es un tramo principalmente peatonal." },
+      { time: "11:00–13:15", text: "⛩️ Eikando + Nanzen-ji. Primero Eikando y después Nanzen-ji. Eikando: Entrada aproximadamente ¥XXX (~6€). En temporada normal abre 09:00–17:00. No requiere reserva. Llevar una bolsa para los zapatos. Nanzen-ji: En septiembre abre 08:40–17:00. No requiere reserva. Si se quiere entrar en el Hojo Garden o subir a la Sanmon, pagar entrada allí. \n\n⚠️ **IMPORTANTE:**\nNanzen-ji y Eikando están muy cerca y este orden mantiene el recorrido lógico hacia el sur." },
+      { time: "13:15–13:45", text: "🚇 Nanzen-ji → centro de Kyoto. Caminar aproximadamente 10 min hasta Keage Station. Tomar Kyoto Subway Tozai Line: Keage → Karasuma Oike.\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nDesde Karasuma Oike:\n\n caminar hacia Nishiki Market, aproximadamente 15 min; o continuar con la combinación de metro que resulte más conveniente. No reservar. Pagar con Suica." },
+      { time: "13:45–16:00", text: "🍣 Mercado de Nishiki. Comida y recorrido por el mercado. Consejo: No intentar recorrer absolutamente todos los puestos. Elegir algunos productos/comidas y comer delante del propio establecimiento. \n\n⚠️ **IMPORTANTE:**\nNo hacer 'tabearuki' (comer mientras se camina). El propio mercado pide evitarlo. Nishiki no tiene una hora única de cierre: cada tienda tiene su propio horario. Muchas tiendas funcionan aproximadamente entre 09:00/10:00 y 17:00/18:00. 🍣 Comer aquí principalmente picando diferentes especialidades, no necesariamente haciendo una comida formal. Qué buscar: dashimaki tamago; yuba; tofu; tsukemono; fu; matcha; pescado/marisco preparado. NO comer caminando. Comprar → apartarse → comer delante del puesto o dentro del establecimiento.\n⚠️ IMPORTANTE: Hoy es miércoles 9 de septiembre. Nishiki Market NO cierra como mercado completo, pero muchos comercios individuales descansan los miércoles. Por ello, no depender exclusivamente de Nishiki para comer. Si hay demasiados puestos cerrados, buscar comida en Shijo/Teramachi/Kawaramachi, manteniendo el mismo recorrido general." },
+      { time: "16:00–17:30", text: "🏮 Pontocho → Miyagawacho. Recorrido andando. No hace falta transporte." },
+      { time: "17:30–19:00", text: "🏮 Gion. Recorrido: Hanamikoji, zona de Ichiriki, Shirakawa, Tatsumi Jinja. Paseo y cena por Gion/Pontocho. Ojalá mi amigo nos hiciera hoy su famosa lasaña espectacular. mi amigo estará encantado con lo tranquilos y callados que son aquí." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\nRegreso tras la cena en Gion/Pontocho a nuestro hotel en Kioto para descansar (3ª noche en Hotel Keihan Kyoto Hachijoguchi)." },
+      { time: "🎫 RESERVAS", text: "No es necesario reservar ningún transporte. No reservar: Bus, Metro, Entradas de Ginkaku-ji, Eikando, Nanzen-ji, Nishiki Market. Todos los transportes pueden pagarse sobre la marcha con Suica." }
+    ],
+    money: "Aprox. 40€ (comidas)",
+  },
+  {
+    num: 4,
+    date: "2026-09-10",
+    weekday: "Jueves",
+    block: "kioto",
+    title: "Kioto Noroeste y Bambú",
+    cities: "Kioto (Arashiyama)",
+    summary:
+      "Exploraremos el noroeste empezando por el brillante Pabellón Dorado y el sendero Kinukake no Michi. Al mediodía, un tranvía nos lleva a Arashiyama, priorizando la zona histórica superior antes de bajar por el famoso bosque de bambú. mi amigo, no te lleves bambú para tus plantas en Aluche. Seguro que mi amigo ya está buscando fallos históricos en el panfleto.",
+    history:
+      "El Kinkakuji (Pabellón Dorado) fue la suntuosa villa de retiro del shogun Ashikaga Yoshimitsu a finales del siglo XIV. Arashiyama lleva siendo destino vacacional de la nobleza imperial desde el periodo Heian.",
+    schedule: [
+      { time: "07:00", text: "Despertar." },
+      { time: "07:20", text: "🍙 Salida del hotel hacia el konbini más cercano (Lawson o 7-Eleven, el que quede más a mano). Quedamos en la puerta del hotel a las 07:20." },
+      { time: "07:20–07:50", text: "🍙 Desayuno de konbini. Entre elegir, comprar y comer con calma, esto lleva su rato — contad hasta las 07:50 aprox. antes de seguir hacia Kinkaku-ji." },
+      { time: "07:50–09:00", text: "🚇 Hacia Kinkaku-ji. Desde el konbini caminar hasta Kyoto Station. Tomar Kyoto Subway Karasuma Line:\n\n Kyoto → Kitaoji. En Kitaoji: seguir las indicaciones hacia Kitaoji Bus Terminal; utilizar la zona azul; tomar bus nº 204 o 205 hacia Kinkaku-ji; bajar en Kinkakuji-michi. Desde Kinkakuji-michi:\n\n aprox. 5 min andando hasta la entrada. Esta combinación es preferible al bus 205 directo desde Kyoto Station porque evita parte del tráfico y las aglomeraciones. No reservar.\n\n🎫 **SUICA:** ✅ SÍ; tarifa plana de ¥XXX Se sube por la puerta trasera (sin pasar la tarjeta) y se paga pasando la Suica SOLO al bajar, por la puerta delantera.\n\nCon la salida más temprana y el desayuno ya hecho, hay margen de sobra para llegar justo cuando abre Kinkaku-ji a las 09:00, sin prisas." },
+      { time: "09:00–10:15", text: "🏯 Kinkaku-ji (Pabellón Dorado), con su famoso jardín y estanque reflectante. \n\nKinkaku-ji abre a las 09:00. Entrada: aprox. ¥XXX (~3€). No requiere reserva. Consejo: Intentar llegar justo a la apertura para disfrutar del recinto con menos gente." },
+      { time: "10:15–12:15", text: "🚶 Sendero Kinukake no Michi. Recorrer en este orden: 1. Kinkaku-ji 2. Ryoan-ji 3. Ninna-ji\n\n⛩️ **SOBRE EL SENDERO:**\n\"Kinukake\" significa literalmente \"cubierto de seda\": el nombre viene de una leyenda del siglo IX sobre el emperador Uda, que quiso poder contemplar un paisaje nevado en pleno verano, así que hizo cubrir con seda blanca las laderas del cercano monte Kinugasa para simular la nieve.\n\nEs, con diferencia, el tramo más famoso de Japón para encadenar Patrimonios de la Humanidad de la UNESCO a pie: Kinkaku-ji, Ryoan-ji y Ninna-ji, los tres seguidos, en apenas 2,5 km a través de las estribaciones del monte Kinugasa. De Kinkaku-ji a Ryoan-ji son unos 18 minutos andando, y de ahí a Ninna-ji unos 11 más.\n\n💡 A pesar del nombre poético, no es un sendero peatonal exclusivo, sino una carretera normal con acera — id por la acera, sin bajar a la calzada. Si el tramo se hace pesado, el bus nº 59 recorre la misma ruta." },
+      { time: "10:15–11:00", text: "🏯 Ryoan-ji. Desde Kinkaku-ji caminar por Kinukake no Michi. Distancia aproximada:\n\n 1,5 km / 20 min. Ryoan-ji abre en septiembre 08:00–17:00. Entrada: aprox. ¥XXX (~4€). No requiere reserva. Visitar especialmente: jardín de piedras; Hojo; jardín." },
+      { time: "11:00–12:15", text: "🏯 Ninna-ji. Continuar andando desde Ryoan-ji hacia Ninna-ji. Distancia aproximada: 10–15 min. Ninna-ji abre en septiembre 09:00–17:00. La entrada a las zonas especiales puede tener coste adicional. No requiere reserva." },
+      { time: "12:15–12:40", text: "🚋 Ninna-ji → Arashiyama. Caminar hasta Omuro-Ninnaji Station. Tomar Randen Kitano Line hacia Katabiranotsuji. En Katabiranotsuji hacer transbordo a la Randen Arashiyama Line hacia Arashiyama. Bajar en Arashiyama Station. Duración aproximada total: 20–25 min. \n\n⚠️ **IMPORTANTE:**\nRanden NO es un tren JR. No necesita Japan Rail Pass. Tarifa actual de Randen: ¥XXX (~1,5€) por adulto por trayecto. Se puede pagar con Suica. Al subir NO hay que tocar la Suica. Se paga al bajar/en la estación según corresponda. No reservar." },
+      { time: "12:40–13:20", text: "🍜 Comida rápida en Arashiyama. Mantener comida rápida para no comprometer la parte de Otagi.\n⚠️ No retrasar demasiado la comida. En Arashiyama muchos restaurantes tienen último pedido alrededor de las 14:00 y algunos cierran la cocina por la tarde. Qué comer: udon; soba; tempura; donburi; curry; onigiri/bento si vamos con prisa. Si vemos que vamos justos de tiempo, comprar onigiri/sandwich/bento en la zona de Arashiyama y continuar. Es preferible esto a perder tiempo esperando mesa." },
+      { time: "13:20–13:50", text: "🚌 Arashiyama → Otagi Nenbutsu-ji. \n\n⚠️ **IMPORTANTE:**\nNO hacer toda la subida andando desde Arashiyama. La propia web de Otagi recomienda llegar en taxi o bus y realizar después el recorrido cuesta abajo. Opción recomendada: Kyoto Bus nº 94 hacia Kiyotaki. Subir en una parada de la zona de Arashiyama y bajar en Otagidera-mae. Duración aproximada: 20–25 min. \n\n\n**Alternativa:** Taxi desde la zona de Arashiyama. El taxi es más caro pero puede ahorrar tiempo si vamos justos. No reservar el bus." },
+      { time: "13:50–14:45", text: "🏯 Otagi Nenbutsu-ji. \n\n⚠️ **IMPORTANTE:**\nAhora se visita el jueves 10 de septiembre. Horario: 09:00–16:00. Está cerrado los miércoles y sábados, por lo que el cambio de día soluciona el problema. Entrada: ¥XXX (~6€). No requiere reserva. Visitar especialmente las aproximadamente 1.200 estatuas de rakan." },
+      { time: "14:45–15:30", text: "🚶 Saga-Toriimoto. Desde Otagi comenzar el descenso andando. Recorrer la zona histórica de Saga-Toriimoto. \n\n⚠️ **IMPORTANTE:**\n\n\nEste sentido del recorrido es deliberado: Otagi → Saga-Toriimoto → bosque de bambú → centro de Arashiyama. Es el sentido recomendado por el propio templo." },
+      { time: "15:30–16:00", text: "🎋 Bosque de bambú de Arashiyama. Bajar andando hacia el centro atravesando el bosque de bambú. Consejo: No esperar encontrar el bosque completamente vacío. Es una zona muy concurrida. El tramo desde Saga-Toriimoto hacia el bosque permite disfrutar de una transición progresiva desde la zona rural/histórica hasta el Arashiyama más turístico. 🍵 Snack opcional después del bosque de bambú: matcha; dango; taiyaki; helado; melon pan." },
+      { time: "16:00–16:15", text: "🌉 Puente Togetsukyō. Caminar desde el bosque de bambú, muy cerca (~5 min). Uno de los símbolos de Arashiyama: un puente de madera sobre el río Katsura, con las montañas de fondo — parada obligada para fotos." },
+      { time: "16:15–17:00", text: "🚶 Paseo por el centro de Arashiyama. Tiempo libre para curiosear las tiendas de la zona (dulces, artesanía, abanicos) y tomar algo antes de volver." },
+      { time: "17:00–17:20", text: "🚆 Regreso a Kyoto. Tomar JR Sagano/San-in Line desde Saga-Arashiyama hasta Kyoto Station (~15–20 min, 🎫 **SUICA:** ✅ SÍ). Cena por Kyoto Station o Pontocho." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\nRegreso al hotel para descansar y dejar listas las mochilas para el envío de equipaje de la mañana siguiente (4ª noche en Hotel Keihan Kyoto Hachijoguchi).\n\n🧺 **COLADA:** El hotel tiene lavandería de autoservicio (monedas) y una lavadora-secadora automática que no necesita detergente. También hay servicio de lavandería del hotel, pero sólo si se deja la ropa en recepción antes de las 10:00 (lista a las 16:00 del mismo día) — no llega a tiempo si volvemos de noche, así que mejor usar las máquinas de autoservicio esta noche." },
+      { time: "🎫 RESERVAS", text: "NO reservar ningún transporte de este día. No reservar: Metro, Bus 204/205, Randen, Kyoto Bus nº 94, JR Saga-Arashiyama → Kyoto. Tampoco es necesario reservar: Kinkaku-ji, Ryoan-ji, Ninna-ji, Otagi Nenbutsu-ji. Comprar las entradas directamente en cada recinto. JAPAN RAIL PASS: No tenemos Japan Rail Pass. NO modificar el itinerario por este motivo. Los transportes de este día pueden utilizarse y pagarse individualmente. Suica: Kyoto Subway, Kyoto City Bus, Randen, Kyoto Bus, JR local." }
+    ],
+    money: "Aprox. 40€ (comidas)",
+  },
+  {
+    num: 5,
+    date: "2026-09-11",
+    weekday: "Viernes",
+    block: "kioto",
+    title: "Kioto Tradicional y Castillo de Osaka",
+    cities: "Kioto, Osaka",
+    summary:
+      "Última mañana en Kioto visitando el monumental Kiyomizu-dera y bajando por las cuestas de Higashiyama. Al mediodía, tren rápido a Osaka para su castillo histórico y la locura gastronómica de Dotonbori. Seguro que a mi amigo y mi amigo les entra la nostalgia y prefieren estar cenando pasta en Roma donde se conocieron. Cuidado que el guía se pone en modo profesor de secundaria a darnos la chapa. mi amigo, ¡este castillo tiene más historia que tú y mi amigo en Roma!",
+    history:
+      "Kiyomizu-dera se fundó en el año 778; su terraza se construyó sin usar un solo clavo. El Castillo de Osaka fue el epicentro militar de Toyotomi Hideyoshi, figura clave en la unificación de Japón en el siglo XVI.",
+    podcasts: [
+      {
+        title: "Osaka: gastronomía, ambiente y diversión",
+        show: "Japón a fondo · Japonismo",
+        url: "https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000516234185",
+        moment: "En el tren rápido entre Kioto y Osaka (~30 min).",
+      },
+    ],
+    schedule: [
+      { time: "07:30", text: "Despertar. 🍳 Desayuno en el hotel a las 07:00. Kiyomizu-dera abre muy temprano, por lo que no conviene retrasar la salida.\n\n⚠️ **RECORDATORIO IMPORTANTE DE HOY:** Durante el día de hoy (al pasar por Kyoto Station a mediodía o al volver de Osaka) se pueden **recoger los billetes físicos** del tren Thunderbird a Kanazawa del día siguiente en las máquinas verdes 5489 con la tarjeta física de compra." },
+      { time: "08:00–08:30", text: "🚍 HOTEL → KIYOMIZU-DERA. Desde el Hotel Keihan Kyoto Hachijoguchi caminar hasta Kyoto Station. **Opción principal:**\n Kyoto City Bus 100 o 206 desde Kyoto Station. Bajar en Gojozaka. Caminar aproximadamente 10 min hasta Kiyomizu-dera. \n\n\n**Alternativa:** Utilizar el nuevo Kiyomizu-dera Line de Okoshi Bus, disponible los días laborables desde julio de 2026, si el horario del momento resulta conveniente. No reservar. Pagar con Suica o billete correspondiente. Los buses de Higashiyama pueden sufrir congestión. Salir con margen." },
+      { time: "08:30–10:00", text: "🏯 KIYOMIZU-DERA. Abre a las 06:00 y el 11 de septiembre cierra a las 18:00. Visitar: Main Hall / escenario de Kiyomizu, Otowa-no-taki, Pagoda y alrededores, Calles de Kiyomizu-zaka al salir. No requiere reserva. 💡 Tip: Kiyomizu-dera a primera hora es una buena elección para evitar aglomeraciones." },
+      { time: "10:00–12:00", text: "🚶 HIGASHIYAMA → YASAKA → MARUYAMA → CHION-IN. Hacer todo el recorrido andando: Kiyomizu-dera → Ninenzaka/Sannenzaka → Yasaka Jinja → Maruyama Park → Chion-in.\n\n🗺️ Ruta completa en Maps: https://maps.app.goo.gl/FTYMDo7piFPbU8X66?g_st=iw\n\n💡 Tip: Esta zona se disfruta mejor caminando y conviene no intentar seguir una ruta demasiado rígida por las callejuelas. No intentar hacerlo todo en Higashiyama deprisa: el atractivo está precisamente en las calles y pequeñas tiendas entre templos." },
+      { time: "12:00", text: "⛩️ CHION-IN. Visitar el recinto y la Sanmon. El recinto abre desde las 06:00; las visitas/recepciones de las zonas interiores empiezan a las 09:00. Si se quiere visitar alguno de los jardines interiores, comprobar su apertura y comprar la entrada allí. No reservar." },
+      { time: "12:00–12:30", text: "🚶 CHION-IN → HEIAN JINGU. Continuar andando hacia Heian Jingu." },
+      { time: "12:30–13:00", text: "⛩️ HEIAN JINGU. Visitar el santuario y su gran torii. El recinto abre desde las 06:00. Si se quiere visitar el jardín (Shin-en), su horario el 11 de septiembre es aproximadamente 08:30–18:00, última entrada 17:30. No requiere reserva." },
+      { time: "13:00–14:15", text: "🥟 **COMIDA: CHAO CHAO GYOZA - SANJO KIYAMACHI** (https://maps.app.goo.gl/ScXREEXfRmmTKcj88?g_st=ic)\n\n浪花ひとくち餃子 餃々 三条木屋町店 — restaurante izakaya de gyozas muy bien valorado (4,6★, +2700 reseñas), junto a Kiyamachi, a un paseo de la estación de Sanjo. Aprox. ¥1.200–2.000/persona. No requiere reserva.\n\n💡 Recomendación de otros visitantes: las gyozas de chocolate con helado de postre." },
+      { time: "14:15–14:20", text: "🚶 Caminar hasta la estación de Sanjo (Keihan). Apenas 200 m, unos 3 min." },
+      { time: "~14:45", text: "🚆 SANJO → OSAKA (Temmabashi).\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nKeihan Electric Railway, línea principal (Keihan Main Line), Limited Express dirección Yodoyabashi. Trayecto de 8 paradas, aproximadamente 47 min. Tarifa aprox. ¥430. Sin reserva. Esta línea Keihan (no es JR) conecta directamente el centro de Kioto con el corazón de Osaka.\n\n🎧 **Podcast para el trayecto:** [Osaka: gastronomía, ambiente y diversión](https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000516234185) (*Japón a fondo* · Japonismo). Ideal para sumergirse en la cultura del 'kuidaore' (comer hasta arruinarse), Dotonbori y el ambiente callejero durante el viaje en tren." },
+      { time: "~16:00–16:20", text: "🎫 **RECOGIDA DE BILLETES FÍSICOS JR-WEST (EN OSAKA STATION)**\n\nAprovechando la parada en Osaka, se pueden recoger en las máquinas verdes 5489 los billetes físicos de trenes comprados online:\n- 🚆 Thunderbird 5 Kyoto → Tsuruga (12 de septiembre).\n- 🚆 Shinano 4 Nakatsugawa → Nagoya (15 de septiembre).\n\nPara canjearlos se introduce la tarjeta de crédito física utilizada en la compra online y el PIN o número de reserva. Con esto, ya no hace falta volver a pasar por ninguna máquina 5489 para estos trayectos." },
+      { time: "~16:20–17:00", text: "🚶 OSAKA STATION → OSAKA CASTLE. Caminar hasta el castillo." },
+      { time: "17:00–18:10", text: "🏯 OSAKA CASTLE. \n\n⚠️ **IMPORTANTE — visita:**\nEl Museo del Castillo de Osaka abre de 09:00 a 18:00 (última entrada 17:30). Si se quiere entrar al interior, priorizar el mirador superior; si se prefiere un paseo relajado, las murallas exteriores, el foso y el parque son espectaculares y gratuitos. Entrada interior: ¥600 (~4€) adulto. Se puede pagar con efectivo, tarjeta y Suica." },
+      { time: "18:10–18:40", text: "🚇 OSAKA CASTLE → DOTONBORI.\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nDesde la zona del castillo, tomar el metro (Tanimachi 4-chome o la estación que quede más cómoda según la salida del parque) hacia la zona de Namba/Dotonbori." },
+      { time: "18:40–20:15", text: "🌃 DOTONBORI.\n\nEl barrio de neones y carteles gigantes junto al canal, en el corazón de Namba. El canal se excavó en 1615 y la zona fue durante siglos el distrito de teatros de Osaka (kabuki y bunraku); hoy es la meca de la comida callejera y el paseo nocturno, con el letrero del corredor Glico como su icono más fotografiado.\n\nPaseo nocturno y comida callejera. Priorizar: Dotonbori, Glico, Ebisu Bridge, Hozenji Yokocho.\n\n💡 Tips: En Dotonbori no hace falta reservar para probar comida callejera; elegir puestos/restaurantes sobre la marcha. Dotonbori es especialmente interesante después de anochecer, así que llegar sobre las 18:40 es buen momento.\n\n🍜 Qué probar aquí: 1. Takoyaki 🐙 (Compartir una ración. Opción: Takoyaki Wanaka Dotonbori. Presupuesto aprox: ¥600–1.000 (~4–6€)). 2. Okonomiyaki (Compartir o pedir uno por persona según hambre. Opción: CHIBO Dotonbori. Presupuesto aprox: ¥1.500–2.500 por persona (~10–16€)). 3. Hozenji Yokocho (Buena alternativa para salir del tramo más turístico de Dotonbori. Buscar un izakaya pequeño o restaurante local).\n⚠️ Entre aproximadamente 18:00 y 22:00 Dotonbori se llena mucho. Mantenerse juntos y acordar un punto de encuentro claro." },
+      { time: "20:15–21:15", text: "🏮 SHINSEKAI.\n\nSi queda tiempo y energía tras Dotonbori: un barrio retro construido en 1912, inspirado en París por el norte y Coney Island por el sur, coronado por la torre Tsūtenkaku (que imitaba a la Torre Eiffel). Contrasta con el Dotonbori más pulido y turístico — aquí el ambiente es más old-school, con letreros descoloridos y la sensación de un Osaka más de barrio.\n\n🍢 Qué probar aquí: Kushikatsu — brochetas rebozadas y fritas, una de las especialidades históricas de la zona. Probar varias. Regla estricta: no se puede mojar dos veces la misma brocheta en la salsa comunitaria, está escrito en todos los locales.\n\n💴 Presupuesto gastronómico Osaka (conjunto Dotonbori + Shinsekai): para una noche de food crawl sencilla, calcular aproximadamente ¥2.500–4.000 por persona (~16–25€) si combinamos takoyaki + okonomiyaki/kushikatsu + bebida, según el apetito." },
+      { time: "~21:15–21:30", text: "🚆 OSAKA → KYOTO.\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nRegreso a Kyoto mediante JR (Kyoto Line Special Rapid recomendado)." },
+      { time: "~22:00", text: "🏨 **REGRESO AL HOTEL: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\nTras el tren desde Osaka, vuelta al hotel para descansar (5ª y última noche en Kioto). Mañana: envío de maletas a Tokio y Thunderbird hacia Kanazawa.\n\n**Cómo llegar desde Kyoto Station:** ~5 min andando por la salida Hachijo East Exit (八条東口)." },
+      { time: "🎟️ LOGÍSTICA", text: "⚠️ **RECOGIDA DE BILLETES JR-WEST:**\nAl regresar a Kyoto Station (o en cualquier momento libre del día), dirigirse a las máquinas expendedoras verdes (con el logo 5489) para **imprimir los billetes físicos** del tren del día siguiente hacia Kanazawa. Llevar:\n- La tarjeta de crédito **física** utilizada en el pago online.\n- El número localizador de la reserva.\n- El PIN de 4 dígitos generado al reservar." },
+      { time: "🎫 RESERVAS DEL DÍA", text: "NO reservar ningún transporte.\nNO utilizar SmartEX.\nNO utilizar JR-WEST Online.\nNo necesitamos Japan Rail Pass.\nTodos los trayectos pueden pagarse individualmente con Suica.\nRESUMEN DE TRANSPORTE: Hotel → Kiyomizu: Bus 100/206 o Kiyomizu-dera Line → Suica/billete.\nKiyomizu → Yasaka → Maruyama → Chion-in → Heian: A pie.\nHeian → Comida (Chao Chao Gyoza) → Sanjo Station: A pie.\nSanjo → Temmabashi: Keihan Electric Railway (Keihan Main Line) → Suica/billete.\nTemmabashi → Osaka Castle: A pie.\nOsaka Castle → Dotonbori: Osaka Metro → Suica.\nDotonbori → Kyoto: JR/metro según ubicación → Suica/billete." },
+      { time: "🍙 KIT DE COMIDA", text: "Antes de un día con salida muy temprana, comprar la noche anterior: 1–2 onigiri; sandwich de huevo; fruta/banana; bebida; café si queremos. Los konbini japoneses son una solución totalmente normal para desayunos y comidas rápidas." },
+      { time: "🍵 COSTUMBRES GASTRONÓMICAS", text: "No comer caminando en Nishiki Market. En puestos de comida, comer en la zona indicada por el propio vendedor. En restaurantes pequeños, comprobar si aceptan tarjeta; llevar algo de efectivo. No dejar propina. En muchos restaurantes se paga en caja, no necesariamente en la mesa. Los noodles pueden sorberse; no es necesario preocuparse por ello. Si un restaurante tiene una cola enorme, buscar una alternativa una o dos calles más lejos. No asumir que 'abierto de 17:00 a 23:00' significa que la cocina acepta pedidos hasta las 23:00; mirar siempre el último pedido." }
+    ],
+    money: "Aprox. 40€ (comidas)",
+  },
+  {
+    num: 6,
+    date: "2026-09-12",
+    weekday: "Sábado",
+    block: "alpes",
+    title: "Kanazawa",
+    cities: "Kanazawa",
+    summary:
+      "Despacharemos el equipaje grande a Tokio y viajaremos ligeros hacia la costa del Mar de Japón. Día en Kanazawa: Kenroku-en (uno de los mejores jardines del país), marisco y antiguos barrios samuráis. Seguro que los helados de aquí no están tan buenos como los caseros de fruta que hace mi amigo.",
+    history:
+      "Kanazawa fue el dominio del poderoso clan Maeda durante el periodo Edo, rivalizando con Kioto en riqueza y cultura. Al esquivar los bombardeos modernos, conserva su trazado urbano feudal.",
+    podcasts: [
+      {
+        title: "Kanazawa: samuráis, jardines y artesanía",
+        show: "Japón a fondo · Japonismo",
+        url: "https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000557567847",
+        moment: "En el tren Limited Express Thunderbird + Hokuriku Shinkansen (2h 15min).",
+      },
+    ],
+    schedule: [
+      { time: "07:30", text: "🧳 Despertar y gestión de envío de maletas (Takkyubin).\n\nEl Hotel Keihan Kyoto Hachijoguchi dispone de servicio de envío de equipaje (Yamato Transport / Sagawa). Enviaremos las 5 maletas grandes directamente desde Kioto hasta el KOKO HOTEL Residence Asakusa Kappabashi en Tokio.\n\n📦 **Estrategia logística de equipaje:**\n- Viajaremos por los Alpes (Kanazawa, Shirakawa-go, Takayama, Magome y la ruta a pie de Tsumago) únicamente con mochilas y equipaje de mano ligero, evitando acarrear maletas voluminosas por trenes de montaña, autobuses y senderos de piedra.\n- Tiempo sin maletas grandes: Estaremos sin el equipaje grande durante los días 12, 13, 14 y gran parte del 15 (hasta nuestra llegada por la tarde al hotel de Tokio).\n- El 12/09 por la mañana: Confirmar en recepción del hotel de Kioto el envío y verificar que el KOKO HOTEL Residence Asakusa Kappabashi acepta la recepción del equipaje. Solicitar que la fecha de entrega quede programada para antes o el mismo día 15/09.\n- Guardar cuidadosamente los resguardos y números de seguimiento (tracking).\n- El margen de 3–4 días entre el envío y nuestra llegada a Tokio es amplio y adecuado para la entrega.\n\n🍳 **Desayuno:** Desayuno no incluido. Opción de desayunar fuera o pillar algo en 7-Eleven / konbini para salir con margen hacia el tren de las 08:10." },
+      { time: "08:10", text: "🚆 KYOTO → TSURUGA → KANAZAWA. Hotel Keihan Kyoto Hachijoguchi → Kyoto Station: aproximadamente 5 minutos andando hasta Hachijo East Exit. Salir con margen suficiente para estar en el andén unos 10–15 minutos antes. 1. Limited Express THUNDERBIRD 5: Kyoto Station (08:10) → Tsuruga Station (09:03).\n\n🎫 **SUICA:** ❌ NO\n📅 **RESERVA:** ✅ YA COMPRADA y Billetes recogidos el día anterior.\n\nAsientos confirmados: Coche 5 (11-D, 12-C, 12-D, 13-C, 13-D).\n\n2. En Tsuruga (09:03 - 09:21): Hacer transbordo (18 min) al Hokuriku Shinkansen. Seguir las señales de conexión Thunderbird → Shinkansen. No salir de la estación innecesariamente.\n\n3. Hokuriku Shinkansen KAGAYAKI 508: Tsuruga (09:21) → Kanazawa (10:03).\n\n🎫 **SUICA:** ❌ NO\n📅 **RESERVA:** ✅ YA COMPRADA\n\nAsientos confirmados: Coche 5 (11-E, 12-D, 12-E, 13-D, 13-E).\n\nLlegada a Kanazawa a las 10:03.\n\n🧳 **Sobre el equipaje al llegar:** las 5 maletas grandes NO vienen con vosotros — se enviaron directas de Kioto a Tokio esta misma mañana (llegada estimada antes o el mismo 15/09). Aun así, antes de empezar el día se puede pasar por el Hotel Resol Trinity Kanazawa a dejar las mochilas y el equipaje de mano ligero en recepción — el check-in oficial es a las 15:00, pero el hotel ofrece guardar el equipaje desde primera hora sin coste. El hotel está a unos 12-15 min andando de la salida este de la estación (o 1 parada en el bus local hasta Musashigatsuji/Omicho Ichiba, ~5 min + 1 min andando), así que no es un desvío grande antes de ir hacia Kenroku-en.\n\n🎧 **Podcast para el trayecto:** [Kanazawa: samuráis, jardines y artesanía](https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000557567847) (*Japón a fondo* · Japonismo). Para disfrutar las 2h de tren conociendo la historia del clan Maeda, Kenroku-en y los artesanos de pan de oro." },
+      { time: "11:00–12:15", text: "🌳 JARDÍN KENROKU-EN. Abierto todos los días. Horario en septiembre: 07:00–18:00. Entrada aproximada: ¥XXX (~2€). No requiere reserva. Qué buscar: Kasumigaike Pond, Kotoji-toro, Karasaki Pine, Uchihashi-tei, vistas del jardín y sus distintos niveles. 💡 Tip: Kenroku-en es grande; no intentar verlo absolutamente todo. Hacer una ruta circular por los puntos principales." },
+      { time: "12:15–12:45", text: "🏯 CASTILLO DE KANAZAWA (Kanazawa-jō). Literalmente cruzando el puente desde la propia salida de Kenroku-en — apenas 2-3 minutos andando, sin necesidad de transporte. La entrada al recinto y los jardines es GRATUITA; solo se paga (¥XXX aprox.) si se quiere entrar a construcciones reconstruidas concretas como la Hishi Yagura o la Gojikken Nagaya. Con media horita alcanza para pasear por el patio principal, ver la puerta Ishikawa-mon (Bien Cultural Importante, una de las pocas partes que sí es original de la era Edo) y las murallas de piedra. 💡 Si sobra tiempo y energía: el Museo de Arte Contemporáneo del Siglo XXI (21st Century Museum) está a solo 5 min andando al sur de Kenroku-en, con el famoso estanque 'Piscina' de Leandro Erlich." },
+      { time: "12:45–13:00", text: "🚶 Caminar hacia el restaurante, junto a la entrada M'za de Omicho Market." },
+      { time: "13:00–14:15", text: "🍽️ **COMIDA: TEISHOKU SAKABA TOMOYA** (https://maps.app.goo.gl/SzGJUTSXByhtAskt6?g_st=ic)\n\nIzakaya de teishoku (menús tipo plato combinado) muy bien valorado, especializado en pescado fresco del Mar de Japón y carne de Noto. Justo pegado a Omicho Market, así que se puede aprovechar para asomarse un momento al mercado antes o después de comer. No requiere reserva." },
+      { time: "14:15–14:30", text: "🏨 Hacia el hotel — está muy cerca, prácticamente pegado a Omicho Market (~2 min andando)." },
+      { time: "14:30–16:00", text: "🏨 **CHECK-IN Y DESCANSO: HOTEL RESOL TRINITY KANAZAWA** (https://www.google.com/maps/search/?api=1&query=Hotel+Resol+Trinity+Kanazawa)\n\nCheck-in oficial (15:00) y un rato de descanso en la habitación antes de seguir con la tarde. Buen momento para ducharse o simplemente parar un poco." },
+      { time: "16:00–17:15", text: "🏯 NAGAMACHI SAMURAI DISTRICT. Barrio donde vivían los samuráis del clan Maeda, con calles y muros de tierra originales de la era Edo.\n\n📍 Qué ver aquí:\n• Los muros de tierra (dorobei), con sus tejadillos de paja de invierno\n• La casa samurái Nomura-ke: la sala Jyōdan-no-ma y sus puertas pintadas\n• El jardín de Nomura-ke, estilo Kobori Enshū\n• Los canales estrechos que recorren todo el barrio\n\nEl barrio es residencial y se puede recorrer gratuitamente caminando. Si queremos entrar en una residencia, priorizar Nomura-ke: Abierta 08:30–17:30 en septiembre. Entrada ¥XXX (~3,5€). No requiere reserva. Jardín interior especialmente interesante.\n\n💡 Se visita ahora, de día, porque es un barrio residencial y tranquilo sin ambiente nocturno particular, y Nomura-ke cierra a las 17:30." },
+      { time: "17:15–17:45", text: "🚶 Hacia Higashi Chaya (o bus Loop Bus si se prefiere no caminar)." },
+      { time: "17:45–19:00", text: "🏮 HIGASHI CHAYA DISTRICT. El mayor y mejor conservado de los tres barrios de casas de té de Kanazawa, establecido en 1820.\n\n📍 Qué ver aquí:\n• La calle principal, con ochaya de dos plantas y fachadas de celosía de madera\n• Shima: antigua casa de té convertida en museo\n• Kaikaro: ochaya en activo con un salón decorado en pan de oro\n• Tiendas de pan de oro y artesanía local\n\nPasear por las calles históricas y las casas de té. Opcional: SHIMA — antigua casa de té, abierta 09:30–17:30 en septiembre. Entrada: ¥XXX (~3€) + suplemento opcional por té/dulce. Si queréis entrar en SHIMA, hacerlo antes de las 17:15 (puede que ya no dé tiempo hoy — comprobarlo al llegar). Opción gastronómica: matcha + wagashi; helado de matcha; helado con hoja de oro.\n\n💡 Se visita ahora, al atardecer: muchas tiendas cierran sobre las 17:00-18:00 y el barrio se vacía de turistas, quedando un ambiente mucho más auténtico con las farolas de gas encendiéndose." },
+      { time: "19:15–21:00", text: "🍜 CENA EN KANAZAWA. Recomendar cenar por el centro de Kanazawa (Korinbo / Katamachi / Omicho). Probar oden de Kanazawa, sushi o pescado del Mar de Japón." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: HOTEL RESOL TRINITY KANAZAWA** (https://www.google.com/maps/search/?api=1&query=Hotel+Resol+Trinity+Kanazawa)\n\n✅ Hotel ya pagado (161,89€ vía Booking).\n\nRegreso al hotel tras la cena para descansar (1ª y única noche en Kanazawa en Hotel Resol Trinity Kanazawa)." },
+      { time: "🚌 TRANSPORTE", text: "Cómo moverse por Kanazawa: Los principales puntos turísticos están muy cerca entre sí, pero el Loop Bus resulta muy práctico. Kanazawa Loop Bus: ¥XXX (~1,4€) por trayecto. Acepta Suicas nacionales y pago contactless. También existe ONE DAY PASS por ¥XXX (~5€). ONE DAY PASS solo merece especialmente la pena si vamos a utilizar el bus 4 veces o más. Importante: El ONE DAY PASS no se compra a bordo del bus. Se puede comprar en el Centro de Información Turística de la estación, centros Hokutetsu, algunos hoteles o digitalmente." },
+      { time: "💡 TIPS", text: "Tips de Kanazawa: Kanazawa es mucho más compacta que Kyoto; caminar entre varias zonas es perfectamente viable. Llevar efectivo aunque muchos lugares acepten tarjeta/IC. En Omicho, mirar primero y decidir después; no comprar lo primero que parezca atractivo. Para seafood bowls, comparar tamaños/precios antes de sentarse. En Higashi Chaya, la mayoría de tiendas tradicionales cierran antes que los restaurantes. El barrio de Nagamachi es residencial: mantener un tono discreto y respetar las viviendas. Si llueve, Kanazawa sigue siendo bastante manejable porque muchas zonas comerciales están cubiertas, pero llevar paraguas. mi amigo seguro que ya ha comprado agua para todos porque siempre está súper atento." }
+    ],
+    money: "Aprox. 40€ (comidas) + 15€ envío maleta",
+  },
+  {
+    num: 7,
+    date: "2026-09-13",
+    weekday: "Domingo",
+    block: "alpes",
+    title: "Shirakawa-go y Takayama",
+    cities: "Shirakawa-go, Takayama",
+    summary:
+      "Autobús matutino hasta la aislada aldea tradicional de Shirakawa-go. Por la tarde, ruta hasta la pintoresca Takayama para pasear por su casco antiguo y disfrutar de una cena premium.",
+    history:
+      "Shirakawa-go es famosa por sus casas gassho-zukuri, con tejados de paja muy inclinados para soportar la nieve. Takayama prosperó como rica ciudad de mercaderes bajo el shogunato Tokugawa, gracias a sus carpinteros.",
+    podcasts: [
+      {
+        title: "Takayama y Shirakawa-go: el corazón de los Alpes Japoneses",
+        show: "Japón a fondo · Japonismo",
+        url: "https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000527462410",
+        moment: "En el trayecto en autobús alpino Nohi Bus atravesando los valles montañosos.",
+      },
+    ],
+    schedule: [
+      { time: "07:30", text: "🍙 Despertar + Desayuno rápido para llevar. El Hotel Resol Trinity Kanazawa NO incluye desayuno en nuestra reserva. Aunque el hotel ofrece desayuno desde las 07:00, para esta mañana es más práctico comprar la noche anterior en un konbini: onigiri, sandwich, fruta, café/bebida. No depender del desayuno del hotel porque tenemos que coger el bus de las 08:40. Preparar también agua para llevar." },
+      { time: "08:40", text: "🚌 Nohi Bus Kanazawa → Shirakawa-go.\n\n📍 **DÓNDE SUBIR:** Estación de Kanazawa, salida OESTE (West Exit / Kanazawa-ko guchi), Terminal de autobuses nº4 -- confirmado directamente en el billete oficial de 12GO/Nohi Bus (ver PDF abajo), así que no hay duda posible.\n\n🎫 **SUICA:** ❌ NO\n📅 **RESERVA:** ✅ YA COMPRADA\n🛒 **COMPRA:** Utilizar la reserva confirmada de 12GO / Hokutetsu.\n\nSalida: 08:40. Reserva: 12GO31991741. Booking ID M26125669. 5 asientos confirmados (1-2D, 3ABCD). Duración aproximada: 1h25. Llegada prevista: 10:05. Reserva obligatoria para este servicio. No es JR. No utiliza Japan Rail Pass. No utilizar Suica: llevamos la reserva/billete del autobús. ⚠️ **IMPRESCINDIBLE llevar el voucher IMPRESO en papel** -- el conductor debe quedarse con el papel físico, no vale enseñar el móvil ni una captura de pantalla. 💡 Tip: Llegar a la parada con margen. Posibles retrasos de 2h o más por tráfico, nieve o cierres de autopista en temporada.\n\n🎧 **Podcast para el trayecto:** [Takayama y Shirakawa-go: el corazón de los Alpes](https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000527462410) (*Japón a fondo* · Japonismo). Para ir escuchando la historia de las casas gassho-zukuri, la vida aislada en la nieve y la artesanía tradicional de Takayama." },
+      { time: "10:05", text: "Llegada a Shirakawa-go. Disponemos de aproximadamente 3 h 10 min (hasta la salida del bus a Takayama a las 13:15).\n\n🗺️ Ruta completa de Shirakawa-go: https://maps.app.goo.gl/mBcF6hHWpwwC5HxeA?g_st=iw\n\n🔒 **TAQUILLAS PARA LAS MOCHILAS:** La propia Terminal de Shirakawa-go tiene taquillas de monedas (18 en total) justo detrás/al lado del edificio principal — pequeñas/medianas ¥XXX grandes ¥XXX horario 08:00–17:00. Si están todas ocupadas, se puede pedir en el mostrador de información que guarden el equipaje manualmente." },
+      { time: "10:05–11:55", text: "🌉 Cruzar el **Puente Deai** (la entrada icónica al pueblo) y subir andando al **Mirador Shiroyama** (15-20 min, cuesta suave asfaltada; alternativa shuttle ¥XXX-300). Subirlo ahora, nada más llegar, porque hacia las 11:30 el pueblo se llena bastante.\n\nBajar y pasear por **Ogimachi**: canales, arrozales, calles tradicionales. Terminar con la visita a **Wada House** (única casa a visitar, la más grande y mejor conservada, ¥XXX sin reserva, 09:00–17:00, 3-4 min de la terminal)." },
+      { time: "12:00–13:15", text: "🍜 **COMIDA EN TANAKA-YA** (recomendado por el grupo, mesas bajas sentados en el suelo, comida riquísima).\n\nhttps://maps.app.goo.gl/GYV8d8g1gaTi3Emb7?g_st=ic\n\n💡 Sin alargar mucho la comida, y volver caminando a la terminal con margen -- el bus sale a las 13:15 y no espera." },
+      { time: "13:15", text: "🚌 Nohi Bus Shirakawa-go → Takayama.\n\n📍 **DÓNDE SUBIR:** Shirakawa-go Bus Terminal (Ogimachi) — el mismo sitio donde os dejó el bus al llegar, no hay más de una terminal en el pueblo, así que no hay pérdida.\n\n🎫 **SUICA:** ❌ NO\n📅 **RESERVA:** ✅ YA COMPRADA (asientos NO reservados individualmente, es billete de plaza garantizada sin número de asiento)\n🛒 **COMPRA:** Utilizar la reserva confirmada de 12GO / Nohi Bus.\n\nSalida: 13:15. Reserva: 12GO31992254. Booking ID M26125670. 5 plazas confirmadas. Duración aproximada: 50 min. Llegada prevista a Takayama Nohi Bus Center: 14:05. Reserva obligatoria. No es JR. No requiere Japan Rail Pass. No utilizar Suica: utilizar la reserva/billete del autobús. ⚠️ **IMPRESCINDIBLE llevar el voucher IMPRESO en papel** -- el conductor debe quedarse con el papel físico, no vale enseñar el móvil ni una captura de pantalla." },
+      { time: "14:05–15:00", text: "🏨 Llegada a Takayama. Desde Takayama Bus Terminal hasta Hotel Wood Takayama: aproximadamente 12 minutos andando. El hotel está prácticamente junto al casco histórico, por lo que NO necesitamos taxi ni transporte urbano.\n\n🗺️ Ruta completa de Takayama: https://maps.app.goo.gl/VsKEtfcaxV6jcSmS9?g_st=ic\n\nDejar maletas, check-in (oficial a las 15:00) y un momento de descanso antes de salir de nuevo.\n\n✅ Hotel ya pagado (274,98€ vía Booking)." },
+      { time: "15:00–15:30", text: "⛩️ **HIDA KOKUBUNJI.** Templo del s. VIII con pagoda de 3 pisos y un ginkgo de 1.200 años. No dejarlo para más tarde por el horario de cierre." },
+      { time: "15:40–16:20", text: "🏛️ **TAKAYAMA JINYA** (高山陣屋). Único edificio de gobierno del periodo Edo que se conserva íntegro en Japón. La visita interior suele durar unos 30 minutos; intentad entrar antes de las 16:00 (cierra a las 17:00, última entrada 16:30, entrada ¥XXX)." },
+      { time: "16:20–17:30", text: "🍶 **SANMACHI SUJI + PUENTE NAKABASHI.** Las tres calles históricas (Ichinomachi, Ninomachi, Sannomachi): tiendas de sake con catas (¥XXX/copa), artesanía de madera, sarubobo. Cruzar también el **Puente Nakabashi**, el icónico puente rojo." },
+      { time: "17:30–19:00", text: "🚶 Tiempo libre para seguir paseando por el casco antiguo camino del restaurante de la cena. 🍡 Snack opcional sin llenarse: Hida beef sushi, mitarashi dango, o helado de sarubobo." },
+      { time: "19:00", text: "🥩 **Cena premium de Hida beef en Takayama** (directos desde la calle, sin pasar antes por el hotel).\n\n**Qué pedir:** *rosu* (sirloin) para shabu-shabu o a la plancha, o *hire* (solomillo) si buscáis lo más tierno. El **hoba miso** (carne a la brasa sobre hoja de magnolia con miso local) es la especialidad de la zona -- pedirlo sí o sí. Una o dos piezas de **Hida beef nigiri-zushi** como entrante, y acompañar con un **sake local** de Hida." },
+      { time: "~21:00", text: "🌙 **PASEO NOCTURNO POR SANMACHI SUJI.** Tras la cena, antes de volver al hotel: las calles del casco antiguo de día están llenas de turistas, pero de noche se quedan casi vacías y muy tranquilas -- buen momento para pasear sin prisa y ver las fachadas de madera con una luz distinta, sin las tiendas ni las multitudes." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: HOTEL WOOD TAKAYAMA** (https://www.google.com/maps/search/?api=1&query=Hotel+Wood+Takayama)\n\nDescanso y **onsen** (separado por sexos, abierto de 15:00 a 00:00 y de 6:00 a 9:00, con helado gratis de cortesía al salir) -- 1ª y única noche en Takayama en Hotel Wood Takayama." },
+      { time: "🎫 RESERVAS", text: "YA RESERVADO: Kanazawa → Shirakawa-go (08:40, 5 plazas) y Shirakawa-go → Takayama (13:15, 5 plazas). NO necesitamos Japan Rail Pass, trenes, ni Suica para estos buses." },
+      { time: "🚍 RESUMEN DE TRANSPORTE", text: "Kanazawa → Shirakawa-go: Nohi Bus reservado, 08:40 → 10:05 (3 h 10 min de visita en Shirakawa-go).\nShirakawa-go: Todo a pie.\nShirakawa-go → Takayama: Nohi Bus reservado, 13:15 → 14:05.\nTakayama Bus Terminal → Hotel Wood: aprox. 12 min andando.\nHotel → Sanmachi: al lado.\nNo necesitamos Japan Rail Pass ni trenes hoy." },
+      { time: "🍽️ CONSEJOS DE COMIDA", text: "⚠️ En Shirakawa-go, comer sobre las 12:00 en Tanaka-ya para no arriesgar el bus de las 13:15.\n⚠️ En Takayama las tiendas cierran sobre las 17:00, pero los restaurantes de cena abren más tarde. La cena a las 19:00 es viable directamente desde la calle. 🥩 Takayama es ideal para probar Hida beef -- pedir hoba miso y nigiri-zushi de Hida beef." },
+    ],
+    money: "Aprox. 40€ + cena premium wagyu",
+  },
+  {
+    num: 8,
+    date: "2026-09-14",
+    weekday: "Lunes",
+    block: "alpes",
+    title: "La Ruta Nakasendo",
+    cities: "Takayama, Magome, Tsumago",
+    summary:
+      "Viajaremos en un precioso tren panorámico y luego en autobús hasta Magome para iniciar una suave ruta de senderismo por un bosque milenario. Caminaremos hasta Tsumago y volveremos en bus a Magome, donde pasaremos la noche en una posada rural.",
+    history:
+      "La Nakasendo era una de las cinco grandes rutas feudales del periodo Edo que conectaban Kioto con Edo (Tokio). Magome y Tsumago operaban como 'estaciones de posta' (juku) donde samuráis, daimyos y mercaderes descansaban en sus viajes a pie.",
+    podcasts: [
+      {
+        title: "Ruta Nakasendo: senderismo entre pueblos de postal (Magome y Tsumago)",
+        show: "Japón a fondo · Japonismo",
+        url: "https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000655007075",
+        moment: "En el autobús hacia Magome o antes de iniciar la caminata histórica de 8 km a Tsumago.",
+      },
+    ],
+    schedule: [
+      { time: "07:00", text: "🍙 Despertar y desayuno rápido. El Hotel Wood Takayama no debe ser nuestra fuente de desayuno esta mañana si no está incluido en la reserva. Comprar el desayuno la noche anterior: onigiri, sandwich, pan, fruta, café/bebida. Comer antes de salir o llevarlo para el autobús. 💡 Tip: Salir con todo preparado porque tenemos un autobús reservado a las 08:00." },
+      { time: "07:20 aprox.", text: "🚶 Salir del Hotel Wood Takayama hacia Takayama Nohi Bus Center (aprox. 10–15 minutos andando). Objetivo: llegar entre 07:30 y 07:35 para canjear con calma los billetes." },
+      { time: "07:35", text: "⚠️ **CANJE OBLIGATORIO DE E-TICKET:**\nEn el Takayama Nohi Bus Center presentar el E-ticket de Japan Bus Online (en el móvil o impreso) en el mostrador para **canjearlo por los billetes físicos**.\n\n⚠️ **IMPORTANTE:** El operador exige realizar el canje al menos 15 minutos antes de la salida de las 08:00 (llegar como tarde 07:45). Guardar los billetes físicos para presentarlos al subir al bus." },
+      { time: "08:00", text: "🚌 Nohi Bus directo: Takayama → Magome.\n\n🎫 **SUICA:** ❌ NO\n📅 **RESERVA:** ✅ COMPRADA Y CONFIRMADA\n📄 **E-TICKET:** Reserva 08302008262 · Titular: Viajero 1\n\nSalida: Takayama Nohi Bus Center (08:00) → Llegada: Magome (10:45).\nCar No. 01 · 5 Asientos: 2C, 2D, 3B, 3C, 3D.\nTotal: ¥XXX (~135,61€) (adultos · ¥XXX/pax · ~27€).\n\n⚠️ **IMPORTANTE:**\nNuestra reserva finaliza en **MAGOME a las 10:45**. Aunque el autobús continúe hasta Tsumago (11:10), nosotros nos bajamos en Magome para iniciar la ruta a pie por el camino histórico de Nakasendo.\n\n🎧 **Podcast imprescindible del día:** [Ruta Nakasendo: senderismo entre pueblos de postal](https://podcasts.apple.com/es/podcast/jap%C3%B3n-a-fondo/id1545542012?i=1000655007075) (*Japón a fondo* · Japonismo). Ideal para el trayecto en autobús adentrándote en la historia feudal de los samuráis y los pueblos de postal del Valle de Kiso." },
+            { time: "10:45", text: "📍 Llegada a MAGOME. Fin del trayecto en autobús. La parada está a solo 2 minutos andando de nuestro alojamiento (Magome Chaya), en la propia calle principal empedrada.\n\n🧳 **PLAN: dejar las maletas directamente en Magome Chaya.** Caminamos hasta el minshuku (2 min) y pedimos en recepción que guarden el equipaje antes del check-in oficial (15:00) -- es una práctica habitual y esperada en los alojamientos japoneses, aunque no se haya avisado con antelación. Así evitamos toda la logística y el coste incierto (¥XXX-1.000/maleta) del servicio de transporte Magome↔Tsumago, ya que de todas formas dormimos aquí en Magome esta noche.\n\n🗼 **DE CAMINO, LO MÁS DISTINTIVO DE MAGOME:** subiendo por la calle principal hacia el inicio del sendero, está la **rueda de molino de agua (suisha)** tradicional y un **mirador** con vistas al valle del Kiso -- apenas un desvío de 10-15 min, y va de camino hacia donde empieza la ruta. Como esta noche volveréis tarde y cansados, es el mejor momento para verlo con calma y luz de día.\n\n💡 **Alternativa de respaldo (equipaje):** si por lo que sea Magome Chaya no puede guardar el equipaje tan pronto, las oficinas de turismo de Magome y Tsumago ofrecen un servicio real de transporte de maletas entre ambas (no es un locker): se entregan en Magome de 08:30 a 11:30 y se recogen en Tsumago a partir de las 13:00, por ¥XXX-1.000/maleta según la fuente (servicio activo del 20 de marzo al 30 de noviembre)." },
+      { time: "11:15", text: "🥾 Ruta Nakasendo: Magome → Tsumago. Aproximadamente 8 km y unas 2h30-3h a ritmo tranquilo. El sentido Magome → Tsumago tiene menos subida: se sube el paso de Magome-tōge (~300 m) y luego se baja casi todo el resto. Info práctica: dificultad fácil–moderada; sendero bien señalizado; tramos de bosque y asfalto; llevar agua. Hay campanas para ahuyentar osos en varios puntos, utilizarlas al pasar.\n\n📍 **Hitos por el camino** (no hay que buscarlos activamente, van saliendo solos si seguís las señales):\n• **Tateba-chaya**: casa de té tradicional donde ofrecen té gratis a los caminantes -- buen sitio para un primer descanso.\n• **Cascadas Odaki y Medaki** (\"macho\" y \"hembra\"): un pequeño desvío señalizado, la Odaki cae unos 18 m, la Medaki es más pequeña y suave.\n• **Santuario Kurashina**: justo al lado de las cascadas.\n• **Otsumago**: aldea con casas tradicionales del periodo Edo, ~1 km antes de llegar a Tsumago -- incluye la casa Fujihara, de mediados del s. XVII.\n\nmi amigo, ya sabemos que como funcionario en el Reina Sofía no te mueves mucho, ¡pero hoy toca andar!" },
+      { time: "12:30–13:00", text: "🍙 COMIDA / SNACK DURANTE LA RUTA. Llevar comida desde Takayama/Magome. No depender de encontrar un restaurante durante la caminata. Comprar: onigiri, sandwich, fruta, bebida. Si encontramos una casa de té abierta (como la Tateba-chaya), podemos parar, pero no depender de ello." },
+      { time: "13:45 aprox.", text: "🏘️ Llegada a Tsumago (variable según el ritmo de la caminata -- una referencia real: un grupo que salió a las 11:11 llegó a las 13:46, 8,15 km con 223 m de desnivel). Con el bus de las 14:22 de vuelta, hay tiempo para un paseo con contenido real, aunque ajustado -- Tsumago conserva más edificios ORIGINALES que Magome (que se quemó dos veces y se reconstruyó):\n\n• **Calle principal**: coches prohibidos de 9:00 a 17:00, cables enterrados, sin ningún elemento moderno a la vista.\n• **Templo Kōtoku-ji**: reconocible por sus paredes blancas y base de piedra, del año 1500, domina el pueblo desde un pequeño altozano.\n• **Waki-Honjin Okuya**: la antigua posada secundaria, edificio original del s. XIX, Bien Cultural Importante.\n• **Museo de Historia de Nagiso** (Nagiso Rekishi Shiryokan): junto al Waki-Honjin, si el tiempo lo permite.\n\n💡 Con el tiempo justo, priorizar pasear la calle principal y ver el templo Kōtoku-ji por fuera -- el Waki-Honjin y el museo quedan como opcionales si sobra algún minuto.\n\n🏠 **Sobre los minshuku**: el pequeño alojamiento familiar japonés, gestionado por la propia familia propietaria, con cena y desayuno caseros incluidos casi siempre -- el equivalente a un B&B rural. Es el tipo de alojamiento que tenéis reservado esta noche en Magome Chaya." },
+      { time: "14:15–14:22", text: "🚍 BUS TSUMAGO → MAGOME (Ontake Kotsu, línea Nagiso-Tsumago-Magome). Salida Tsumago: 14:22. Llegada Magome: 14:50. Duración: 28 min.\n\n🎫 **SUICA:** ❌ NO\n📅 **RESERVA:** ❌ NO\n🛒 **COMPRA:** Pago en efectivo al conductor o billete en la oficina de Tsumago. Precio: ¥XXX/persona (~6€). No requiere JR Pass. No hace falta reservar.\n\n⚠️ Horario verificado con dos fuentes independientes (japan-guide.com y Rome2Rio): esta línea tiene 4 salidas diarias desde Tsumago hasta Magome, todos los días de la semana sin excepción." },
+      { time: "14:50", text: "📍 Regreso a Magome. Ya tenemos el equipaje con nosotros.\n\n🍜 **COMER EN MAGOME.** Con toda la tarde por delante hasta la cena de las 18:00, buen momento para comer algo con calma en el propio pueblo -- gohei-mochi y oyaki en los puestos de la calle principal, o alguno de los pequeños restaurantes locales." },
+      { time: "15:30–18:00", text: "🏨 Check-in en Magome Chaya (https://www.google.com/maps/search/?api=1&query=Magome+Chaya+Gifu) -- las maletas ya están ahí desde por la mañana, ducha y descanso antes de la cena.\n\n🚶 **Cómo llegar a Magome Chaya:** el minshuku está en la propia calle principal del pueblo (la cuesta empedrada del Nakasendo), muy cerca de donde para el bus local — apenas un par de minutos andando cuesta arriba. La calle histórica está cerrada al tráfico rodado, así que todo el trayecto final es a pie, sin necesidad de taxi ni ningún otro transporte.\n\n⚠️ **PAGO DEL ALOJAMIENTO:** El hotel Magome Chaya NO está pagado de antemano. **Se debe pagar allí en el hotel en EFECTIVO / metálico (~178,98€ / ~¥XXX grupo · ~35,80€/persona)**, por lo que hay que **sacar dinero en efectivo** previamente (en un cajero 7-Eleven / konbini) si no se ha hecho ya.\n\n♨️ Tiene un pequeño baño comunitario tipo onsen (separado por sexos), sin horario oficial fijo — mejor preguntar al hacer el check-in; suele estar más tranquilo sobre las 18:00–19:00, cuando el resto cena." },
+      { time: "18:00", text: "🍱 **CENA TRADICIONAL EN MAGOME CHAYA**\n\nCena tradicional confirmada en el alojamiento (se sirve con puntualidad a las 18:00). Precio: ¥XXX/persona (~23€).\n\nHay dos opciones de menú principal a elegir:\n\n• **Menú A:** Pescado de río asado a la sal y olla caliente (nabemono) de cerdo con setas.\n• **Menú B:** Tonkatsu (filete de cerdo empanado y frito).\n\nAmbos menús incluyen tempura de verduras, sashimi, arroz, guarniciones y postre." },
+      { time: "~20:00", text: "🏮 **PASEAR MAGOME DE NOCHE.**\n\nCalles empedradas iluminadas con faroles tradicionales, mucho más tranquilas que a mediodía. Las tiendas estarán cerradas, pero el ambiente y la arquitectura se disfrutan igual. No alejarse mucho de la posada, el pueblo cierra temprano.\n\n💧 No hay konbini ni tiendas abiertas a esta hora en Magome -- llevar agua ya comprada si hace falta, no contar con encontrar nada durante el paseo." },
+      { time: "🚍 RESUMEN DE TRANSPORTE", text: "🏨 Hotel Wood Takayama\n↓ 10–15 min andando (07:20)\n↓ 🚌 Takayama Nohi Bus Center (07:35 canje billetes)\n↓ 08:00–10:45 🚌 Nohi Bus directo (✅ Reservado)\n↓ 📍 Magome (bajada 10:45)\n↓ dejar equipaje en Magome Chaya (2 min andando)\n↓ 🥾 8 km / ~2h30-3h Ruta Nakasendo\n↓ 📍 Tsumago\n↓ 🚌 14:22–14:50 Bus (Ontake Kotsu)\n↓ 📍 Magome\n↓ 🍜 Comer en Magome\n↓ 🏨 Magome Chaya (check-in, maletas ya están ahí)\n↓ 🍱 Cena 18:00\n↓ 🏮 Paseo nocturno por Magome." },
+      { time: "💡 TIPS NAKASENDO", text: "🥤 Llevar agua suficiente y comida ligera antes de empezar. 🍵 Hay casas de té pero con horarios variables. 🌙 Magome cierra temprano, la cena a las 18:00 es la opción segura. 🥾 Calzado cómodo con buena suela. 🌧️ Ojo al barro si llueve. 🐻 Usar campanas para osos. 🎒 Caminar solo con mochila pequeña usando el servicio de equipaje. 📸 No correr, disfrutar de la ruta." }
+    ],
+    money: "Aprox. 40€ (comidas)",
+  },
+  {
+    num: 9,
+    date: "2026-09-15",
+    weekday: "Martes",
+    block: "tokio",
+    title: "Tránsito a Tokio",
+    cities: "Tokio (Asakusa)",
+    summary:
+      "Abandonaremos los Alpes para viajar en tren bala hacia Tokio, donde nos reencontraremos con el equipaje grande. Tarde tranquila para instalarnos en el hotel de Asakusa y descansar del día de trenes, con una cena sencilla cerca.",
+    history:
+      "Edo (la antigua Tokio) se transformó de pueblo pesquero al centro político de Japón en 1603. Asakusa, donde nos alojamos, fue el barrio del entretenimiento popular de la ciudad durante siglos, en torno al templo Sensō-ji.",
+    schedule: [
+      { time: "07:00", text: "🍙 07:00 — DESAYUNO\nMagome Chaya NO ofrece desayuno desde 2026.\n\n⚠️ **No hay konbini en Magome** (es un pueblo deliberadamente preservado sin cadenas modernas, ni siquiera máquinas expendedoras visibles en la calle principal) -- así que no hay dónde comprar nada aquí esta mañana temprano, ni tampoco anoche una vez cerraron las tiendas locales.\n\n✅ **DESAYUNAREMOS EN NAKATSUGAWA**, durante el transbordo del bus al tren. El bus de las 08:15 llega a Nakatsugawa sobre las 08:40, y el Shinano no sale hasta las 09:57 -- más de una hora en una ciudad de verdad, con estación de tren, donde sí es más que probable encontrar un konbini (7-Eleven/Lawson/FamilyMart) cerca de la estación para desayunar con calma, después de recoger los billetes JR-WEST." },
+      { time: "08:15", text: "🚌 08:15 — BUS LOCAL MAGOME → NAKATSUGAWA\n\n🎫 **SUICA:** ❌ NO (solo efectivo)\n📅 **RESERVA:** ❌ NO\n🛒 **COMPRA:** Coger ticket numerado al subir por puerta trasera, pagar en efectivo al conductor al bajar.\n\nSalida: Magome — 08:15\nLlegada: Nakatsugawa Station — 08:40\nDuración: aprox. 25 min.\nTipo: bus local.\nReserva: NO se puede reservar.\nJapan Rail Pass: NO incluido.\nPago: pagar en efectivo en el propio autobús.\nPrecio orientativo: ¥600/persona (~4€).\n\n⚠️ **IMPORTANTE:**\nEl 15 de septiembre de 2026 es martes, por lo que corresponde el horario laborable.\nLlegar a la parada unos minutos antes.\nEste bus es necesario para conectar Magome con la red ferroviaria de JR." },
+      { time: "08:40", text: "🎫 **08:40 — RECOGER BILLETES FÍSICOS JR-WEST EN NAKATSUGAWA**\n\nLlegada a Nakatsugawa Station (~08:40). El Shinano 4 sale a las **09:57** → hay **~77 minutos** de margen.\n\n🟢 Al comprar online con JR-WEST, es necesario **retirar los billetes físicos** antes de acceder a los andenes.\n\n⚠️ **Requisitos para la retirada:**\n- Máquina expendedora verde o taquilla habilitada **fuera de los tornos**.\n- La **tarjeta de crédito física** con la que se hizo la reserva.\n- Código de reserva y PIN de 4 dígitos.\n\n☕ Con el tiempo restante: café o desayuno en el konbini cercano y localizar el andén del Shinano 4." },
+      { time: "09:57", text: "🚆 **SHINANO 4 — NAKATSUGAWA → NAGOYA**\n\n🟢 **TREN RESERVADO** (JR-WEST Online Train Reservation)\n\nSalida: Nakatsugawa **09:57** → Llegada: Nagoya **10:53** (56 min).\nCar **4** · Ordinary / Reserved / Non-Smoking.\nTotal **¥14.350 (~77,84€)** (~15,57€/persona).\n\n🎫 Subir al tren con los billetes físicos en mano tras recogerlos en la estación." },
+      { time: "10:53", text: "10:53 — Llegada a Nagoya Station.\n\n⏱️ **Transbordo al Tokaido Shinkansen:** el Nozomi 358 sale a las **11:29** → **36 minutos** de margen (tiempo suficiente para cambiar de andén).\n\n⚠️ **IMPORTANTE:** Seguir las indicaciones hacia los andenes del Tokaido Shinkansen.\n\n🍱 En esta franja (aprox. 10:53–11:20) comprar ekiben/bento, sandwich, sushi o bebida para comer en el Shinkansen." },
+      { time: "10:53–11:20", text: "🍱 **COMPRAR COMIDA EN NAGOYA**\n\nComprar un ekiben/bento, sandwich, sushi o bebida para comer durante el trayecto en el Nozomi 358.\nEs la forma más práctica y tradicional de aprovechar el trayecto en tren bala." },
+      { time: "11:29", text: "🚄 **TOKAIDO SHINKANSEN NOZOMI 358 — NAGOYA → TOKYO**\n\n🟢 **TREN COMPRADO** (Smart EX)\n\nSalida: Nagoya **11:29** → Llegada: Tokyo **13:06** (1 h 37 min).\nOrdinary Car · Series N700 · Car **12**.\nTotal **¥54.500 (~295,62€)** (~59,12€/persona).\n\n📱 **Acceso:** QR-Ticket generado por la app Smart EX o vinculación directa a tarjeta IC (Suica).\n\n🧳 Equipaje estándar: las maletas estándar (suma de dimensiones ≤160 cm) caben perfectamente en el portaequipajes superior sin necesidad de reservar espacio sobredimensionado." },
+      { time: "13:06", text: "13:06 — Llegada a Tokyo Station. Desde Tokyo Station continuar en transporte público hasta KOKO HOTEL Residence Asakusa Kappabashi." },
+      { time: "~13:30", text: "🚇 TOKYO STATION → KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos.\n\nEl hotel está en: 3-24-2 Nishi-Asakusa, Taito-ku.\n\nOpciones:\nOpción sencilla: JR desde Tokyo → Ueno + Tokyo Metro Ginza Line Ueno → Tawaramachi + 10 min andando hasta el hotel.\nAlternativamente: metro directo o taxi para ir cómodos con las maletas de mano.\nEl hotel está a 4 min de la estación de Tsukuba Express Asakusa." },
+      { time: "14:00–14:45", text: "🍜 **COMIDA: NIKUJIRU GYOZA DANDADAN KAPPABASHI.** Gyoza jugosos hechos a mano, cocinados a la vista en plancha especial -- también tienen fideos, ensaladas y alitas de pollo. En pleno Kappabashi, a solo 6 min andando del hotel.\n\nhttps://maps.app.goo.gl/6u6EkzqoowquijNY8?g_st=ic" },
+      { time: "14:45–15:15", text: "🥢 **PASEO POR KAPPABASHI-DORI.** Ya que estáis justo ahí tras la comida: la calle dedicada por completo al mundo de la cocina, con las estatuas del kappa repartidas por todo el recorrido. Aquí nacieron los sampuru, las réplicas de comida hiperrealistas de los escaparates japoneses -- una pieza de sushi de imitación suele costar unos ¥800–1.500. También hay cuchillos japoneses forjados a mano con afilado y grabado al momento." },
+      { time: "15:15–16:15", text: "🚶 Caminar hasta el hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Apartamento residencial reservado (1.927,13€ vía Booking · 6 noches).\n\nCheck-in oficial desde las 15:00, tiempo para dejar el equipaje, instalarse y ducharse tras el trayecto en tren.\n\nDirección: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Recepción de equipaje (Takkyubin/Yamato):**\nAl haber enviado las maletas grandes desde Kioto, deberían encontrarse ya en recepción a vuestra llegada. Consultar en el mostrador del hotel al hacer el check-in." },
+      { time: "16:15–17:00", text: "🌉 **PASEO HASTA EL TOKYO SKYTREE, JUNTO AL RÍO SUMIDA.** Ruta a pie muy sencilla y bonita (~15-20 min) desde el hotel: cruzando el Puente Azumabashi (icónico, rojo) junto al edificio de la cervecera Asahi, y siguiendo el paseo del río Sumida hasta la base de la torre." },
+      { time: "17:00–19:00", text: "🗼 **SUBIDA AL MIRADOR CON ENTRADAS, PARA VER EL ATARDECER.** El sol se pone sobre las ~17:50 en septiembre -- con la entrada a las 17:00 hay tiempo de sobra para instalaros arriba antes de que empiece a caer.\n\n🎟️ Comprar las entradas allí mismo o con antelación por la web oficial (recomendable si hay buena previsión de tiempo, los turnos de atardecer se agotan). Tembo Deck (350 m) es el mirador estándar; Tembo Galleria (450 m) es un extra sobre el anterior si os apetece subir aún más.\n\n💡 Vuelta al hotel por el mismo camino junto al río, con tiempo de sobra antes de la cena de las 19:30." },
+      { time: "19:30–21:00", text: "🍜 **CENA: ASAKUSA MONJA MONRO** (recomendación de cocina local). Monjayaki y teppanyaki cocinados delante de vosotros por el propio personal -- especialidad de la casa con marisco de los mercados de Tsukiji/Toyosu. Muy bien valorado (top 5 de Asakusa en reseñas). A pocos minutos del hotel." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nRegreso a nuestra residencia en Tokio para descansar (1ª noche en Tokio)." },
+      { time: "🍜 COMIDA/CENA", text: "COMIDA\nComo el desayuno será temprano y la comida principal será en el Shinkansen, no es necesario reservar nada para la comida.\nSi tenemos hambre al llegar al hotel, comer algo rápido cerca de Asakusa. Opciones típicas: ramen, curry, gyudon, kaiten sushi, tonkatsu, comida rápida japonesa.\n\nCENA\nDejar la cena para algún sitio sencillo cerca de Asakusa.\nNo asumir que todos los restaurantes permanecen abiertos hasta muy tarde." },
+      { time: "🚆 TRANSPORTE DEL DÍA", text: "1. 🚌 Magome → Nakatsugawa: 08:15 → 08:40. Sin reserva. ¥600 aprox. (~4€). Pago local en efectivo.\n2. 🚆 Nakatsugawa → Nagoya: Limited Express **Shinano 4**. 09:57 → 10:53 (JR-WEST · ~15,57€/pax · Car 4).\n3. 🚅 Nagoya → Tokyo: **Nozomi 358**. 11:29 → 13:06 (Smart EX · ~59,12€/pax · Car 12 · QR-Ticket).\n4. 🚇 Tokyo → Asakusa/Kappabashi: Metro/JR con tarjeta Suica." },
+      { time: "🎫 RESERVAS", text: "🟢 **TRAYECTOS PRINCIPALES**\n• Shinano 4 Nakatsugawa → Nagoya (09:57 → 10:53) · ~77,84€ grupo.\n• Nozomi 358 Nagoya → Tokyo (11:29 → 13:06) · ~295,62€ grupo · Car 12.\n\n🎫 Billetes del Shinano 4: retirar en las máquinas verdes antes de subir.\n📱 Acceso al Nozomi: mediante QR-Ticket o tarjeta Suica vinculada.\n\n🟢 NO REQUIERE RESERVA PREVIA\nBus local Magome → Nakatsugawa (08:15) y metro urbano en Tokio." },
+      { time: "💡 PUNTOS IMPORTANTES", text: "⚠️ Transbordo Nagoya: 10:53 → 11:29 (**36 min**). Seguir a andenes del Tokaido Shinkansen.\n\n⚠️ Shinano: retirar previamente los billetes físicos en máquina verde JR-WEST.\n\n⚠️ Nozomi: acceso cómodo mediante **QR-Ticket** o tarjeta IC asignada.\n\n⚠️ Desayuno: en Magome no hay konbini; desayunar en Nakatsugawa Station (08:40–09:57)." },
+      { time: "✅ CHECKLIST DEL DÍA", text: "☑️ Bus Magome → Nakatsugawa (llevar efectivo suelto)\n☑️ Recoger billetes físicos JR-WEST del Shinano en la estación\n☑️ Guardar QR-Ticket / acceso Smart EX para el Nozomi 358\n☑️ Comprar ekiben en Nagoya para comer en el Shinkansen\n☑️ Check-in en KOKO HOTEL Residence Asakusa Kappabashi" },
+    ],
+    money: "Aprox. 40€ (comidas)",
+  },
+  {
+    num: 10,
+    date: "2026-09-16",
+    weekday: "Miércoles",
+    block: "tokio",
+    title: "Excursión al Monte Fuji",
+    cities: "Monte Fuji, Kawaguchiko",
+    summary:
+      "Excursión de día completo con GetYourGuide (Japan Visionary Tour): Parque Oishi, lago Kawaguchiko, Oshino Hakkai y la icónica Pagoda Chureito, con guía en inglés. Por la noche, paseo opcional por el Senso-ji iluminado, a un paso del hotel.",
+    history:
+      "El Monte Fuji (3.776 m), volcán activo y la montaña más alta de Japón, es venerado como sagrado desde tiempos antiguos y es Patrimonio de la Humanidad de la UNESCO desde 2013 -- inscrito como sitio cultural, no natural, por su papel como fuente de inspiración artística y religiosa.",
+    schedule: [
+      { time: "06:20", text: "⏰ Despertar." },
+      { time: "06:40", text: "🍙 Desayuno en la habitación con lo comprado la noche anterior en el konbini." },
+      { time: "07:00", text: "🚇 **Salida hacia el punto de encuentro.** Desde el KOKO HOTEL Residence Asakusa Kappabashi el trayecto en metro/JR ronda los 40-45 min -- con la estación de Shinjuku de por medio (una de las más grandes de Japón, con más de 200 salidas), salimos con margen de sobra." },
+      { time: "08:10", text: "📍 **PUNTO DE ENCUENTRO: TOKYO MODE GAKUEN.**\n\nhttps://maps.google.com/?q=35.691490,139.696457\n\nBuscar la bandera naranja con el número **19** (guía: Omar)." },
+      { time: "08:20", text: "🚌 **SALIDA DE LA EXCURSIÓN AL MONTE FUJI** (reserva confirmada). El primer tramo en autobús dura aprox. 2 horas sin parada -- ir al baño antes de subir.\n\n🗺️ **Qué vamos a ver hoy:**\n- Lago Kawaguchiko y Parque Oishi\n- Aldea tradicional Saiko Iyashi-no-Sato Nenba\n- Manantiales de Oshino Hakkai\n- Parque Arakurayama Sengen y Pagoda Chureito\n\nVer más abajo la tarjeta con el detalle completo de cada parada, aviso de lluvia para mañana y contacto del proveedor." },
+      { time: "~18:30", text: "Regreso previsto a Shinjuku, tras aprox. 10 horas de excursión." },
+      { time: "19:30–21:00", text: "🍜 Cena por Shinjuku o de camino de vuelta al hotel." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nRegreso a nuestra residencia en Asakusa Kappabashi para descansar (2ª noche en Tokio)." },
+      { time: "~22:00", text: "🏮 **OPCIONAL: SENSŌ-JI DE NOCHE**\n\nEl hotel está a ~10 min a pie de Sensō-ji / Kaminarimon. Si queda energía tras el día de excursión, paseo corto al templo iluminado (gratis; ambiente muy distinto al del día)." },
+    ],
+    money: "Aprox. 40€ (comidas) + 42€/persona ya pagado por la excursión",
+  },
+  {
+    num: 11,
+    date: "2026-09-17",
+    weekday: "Jueves",
+    block: "tokio",
+    title: "Shibuya, Harajuku y Shinjuku",
+    cities: "Shibuya, Harajuku, Shinjuku",
+    summary:
+      "Día intenso: cruce de Shibuya y cultura juvenil de Harajuku, con parada en el Pokémon Center Shibuya (con su famosa estatua de Mewtwo a tamaño real). Terminamos bajo los neones de Shinjuku con sus callejones gastronómicos. mi amigo, aprovecha para cortarte el pelo, que aunque no sea tan barato como en España, igual es mejor que en Francia.",
+    history:
+      "Estos distritos crecieron tras el Gran Terremoto de Kanto de 1923, impulsados por la expansión del tren urbano. Shinjuku alberga hoy la estación más transitada del planeta.",
+    schedule: [
+      { time: "07:30", text: "Despertar." },
+      { time: "08:15", text: "Punto de encuentro en la puerta del hotel." },
+      { time: "08:15–08:45", text: "🍙 Desayuno en el Lawson (konbini) cerca del hotel." },
+      { time: "~09:00", text: "🚇 **Hacia Shibuya en metro.** El trayecto real desde el hotel ronda los 55 min (con transbordo incluido) -- más de lo que parece en el mapa, así que no hay prisa por salir corriendo, pero tampoco conviene entretenerse de más." },
+      { time: "09:55–10:25", text: "🚏 **LLEGADA AL CRUCE DE SHIBUYA.** El cruce peatonal más transitado del mundo -- hasta 3.000 personas lo cruzan a la vez en hora punta, en todas direcciones al mismo tiempo, cuando el semáforo se pone en verde para los peatones por los 4 lados a la vez. Justo al lado, la estatua de Hachiko (el perro fiel que esperó a su dueño durante años en la estación) es el punto de quedada más famoso de Tokio -- normal que esté siempre rodeada de gente." },
+      { time: "10:25–10:55", text: "🌳 **MIYASHITA PARK.** A pie desde el cruce (~5 min). Parque elevado sobre un centro comercial, con zona de skate, pista deportiva y terrazas -- una forma curiosa de aprovechar el espacio en una ciudad tan densa. Buena parada corta para estirar las piernas antes de seguir." },
+      { time: "10:55–11:25", text: "🎮 **POKÉMON CENTER SHIBUYA Y NINTENDO TOKYO** (Shibuya Parco, 6ª planta, ~10 min a pie desde Miyashita Park) — famoso por su gran estatua de Mewtwo (dentro de un tubo de cristal, ideal para fotos) y su estilo neón futurista. En la misma planta también está Nintendo TOKYO. Ojo, que a mi amigo seguro que se le ocurre montar un huerto urbano aquí para sus plantas de Aluche." },
+      { time: "11:30–13:00", text: "🚶 **PASEO HACIA HARAJUKU.** Ruta tranquila a pie por Cat Street y Aoyama (en vez de coger el tren directo), con tiempo para ir mirando escaparates y tiendas de diseño por el camino -- una zona bastante distinta al ambiente más masificado de Takeshita Dori." },
+      { time: "13:00–14:00", text: "🍜 **COMIDA: ROAST BEEF OHNO HARAJUKU STORE.** Muy rico -- confirmado por el grupo.\n\nhttps://maps.app.goo.gl/JTsdy13vc7tvtTcP9?g_st=aw" },
+      { time: "14:00", text: "⛩️ **TEMPLOS Y PASEO POR HARAJUKU.** Calle Takeshita (moda juvenil, crepes, tiendas de kawaii), terminando en el santuario Meiji, dentro del bosque del parque Yoyogi -- un cambio de ritmo total respecto al bullicio de la calle." },
+      { time: "~16:00–17:00", text: "🏙️ **MIRADOR GRATUITO DEL GOBIERNO METROPOLITANO DE TOKIO (TOCHO), DE DÍA.** Subida a cualquiera de las dos torres (202 m), gratis y sin reserva. Al ir de día se ve Tokio todavía con luz natural, antes de que anochezca (~17:50 en septiembre) -- la alternativa gratuita al Shibuya Sky de pago.\n\n🍱 Detalle importante: en la planta del mirador hay una pequeña zona con mesas donde se puede uno sentar a comer algo traído de fuera -- buen sitio para una merienda con vistas antes de seguir con el plan de la tarde." },
+      { time: "17:30–18:30", text: "Noche en Shinjuku: paseo bajo los neones de Kabukicho.\n\n🛍️ **COMPRAS: UNIQLO Y DON QUIJOTE (RELOJ SEIKO).** Aprovechar la zona para dos paradas rápidas: hay un Uniqlo grande cerca de la Estación de Shinjuku (ropa básica de calidad a buen precio), y el Don Quijote de Kabukicho tiene una sección de relojes en la planta de arriba (4ª planta) con Seiko, Citizen y Casio a precios rebajados -- confirmado por varias fuentes como una de las mejores del centro de Tokio para esto. Ambos abiertos hasta tarde, encajan bien con el paseo nocturno." },
+      { time: "~18:30–19:00", text: "🚇 **VUELTA A SHIBUYA, PARA VERLO DE NOCHE.** Solo 2 paradas desde Shinjuku por la línea JR Yamanote (o Saikyo Line), sin transbordo." },
+      { time: "19:00–19:45", text: "🌃 **SHIBUYA DE NOCHE.** Volver al cruce para verlo iluminado -- es cuando de verdad se entiende por qué es tan icónico. Buen momento también para fotos desde el Starbucks del Tsutaya (2ª planta, vistas directas al cruce) o desde el mirador gratuito del Shibuya Scramble Square (planta baja, hay una zona con vistas sin pagar la entrada del Sky)." },
+      { time: "19:45–20:40", text: "🚇 Trayecto de vuelta hacia Asakusa (~55 min)." },
+      { time: "20:40–21:40", text: "🍜 **CENA: HIMURO HOKKAIDO RAMEN ASAKUSA.** Muy muy top y barato -- confirmado por el grupo.\n\nhttps://maps.google.com?q=Himuro%20Hokkaido%20Ramen%20Asakusa,%202%20Chome-1-11%20Nishiasakusa,%20Taito%20City,%20Tokyo%20111-0035,%20Jap%C3%B3n&ftid=0x60188f70d778df93:0xdcb74fed22702d18&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100835699,94286869,100820247,100822504&g_st=ic" },
+      { time: "~21:45", text: "🏨 **REGRESO AL HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nRegreso a nuestra residencia en Asakusa Kappabashi para descansar (3ª noche en Tokio)." },
+    ],
+    money: "Aprox. 40€ (comidas)",
+  },
+  {
+    num: 12,
+    date: "2026-09-18",
+    weekday: "Viernes",
+    block: "tokio",
+    title: "Toyosu, Ueno y Odaiba",
+    cities: "Toyosu, Ueno, Odaiba",
+    summary:
+      "Mañana con 3 opciones a elegir para la primera parada (Zoo de Ueno, Toyosu sin sushi, o mercado exterior de Tsukiji), seguido del parque de Ueno y el mercadillo de Ameyoko. Por la tarde, tren futurista sin conductor hacia Odaiba, y después la Torre de Tokio para ver el atardecer sobre la ciudad.",
+    history:
+      "El parque de Ueno, uno de los primeros parques públicos de Japón (1873), reúne templos, museos y el zoo más antiguo del país. Odaiba nació en el siglo XIX como islas-fortaleza para defender Tokio de los barcos occidentales, y hoy es un símbolo de la Tokio futurista.",
+    schedule: [
+      { time: "07:45", text: "Despertar." },
+      { time: "08:15", text: "Punto de encuentro en la puerta del hotel." },
+      { time: "08:15–08:45", text: "🍙 Desayuno en el Lawson (konbini) cerca del hotel." },
+      { time: "08:45", text: "🚇 **SALIDA -- ELEGIR UNA DE ESTAS 3 OPCIONES PARA LA PRIMERA PARADA** (sin sushi, ya que a mi hermano no le gusta):\n\n**Opción 1 — Zoo de Ueno 🐼** (llegada ~09:05, abre a las 09:30). El zoo más antiguo de Japón (1882), con pandas gigantes como gran atracción. Está justo en la misma zona donde ya tocaba estar a las 10:30 (Parque de Ueno/Ameyoko), así que esta opción simplemente adelanta la llegada a esa zona -- la más sencilla logísticamente. Sin reserva, entrada en la puerta (~¥XXX).\n\n**Opción 2 — Toyosu sin sushi** (llegada ~09:25). Mantener la parada en el mercado pero sin el desayuno de sushi: azotea con jardín y vistas, ventana gratuita desde la que se ve la subasta de atún (si coincide el horario), y puestos de tamagoyaki, ramen y otras cosas que no son pescado crudo. Requiere volver hacia Ueno después (~25-30 min), llegando allí sobre las 10:35.\n\n**Opción 3 — Mercado exterior de Tsukiji** (llegada ~09:15). El mercado antiguo, que sigue funcionando como calle gastronómica: mucha más variedad que Toyosu (mochi, tamagoyaki, fruta, té, brochetas a la parrilla, no solo crudo). Es el desvío que más tiempo añade de las tres -- vuelta hacia Ueno también necesaria (~25-30 min), llegando sobre las 10:30." },
+      { time: "~10:30", text: "Parque de Ueno y mercadillo de Ameyoko, ideal para compras baratas de té y dulces. Buena zona verde para pasear con calma tras el madrugón.\n\n🦪 **PICOTEO EN AMEYOKO** (recomendación de amiga de mi amigo): los puestos del mercado son también muy conocidos por el marisco a la brasa -- ostras y anguila asadas, entre otras cosas. Si no habéis probado la anguila (unagi), es una buena ocasión.\n\n🎮 **YAMASHIROYA** (recomendación de amiga de mi amigo): tienda de 6 plantas de figuras, juguetes y merchandising de anime/videojuegos, a solo 1 minuto andando de la Estación de Ueno. Confirmado que los precios suelen ser más baratos que en Akihabara, y está bastante menos masificada." },
+      { time: "11:45", text: "Tren Yurikamome hacia Odaiba cruzando el Rainbow Bridge (sentaos en el primer vagón).\n\n🎫 **SUICA:** ✅ SÍ; pasar la tarjeta directamente por los tornos." },
+      { time: "11:55–12:45", text: "🤖 **LO MÁS IMPORTANTE DE ODAIBA: DIVERCITY TOKYO PLAZA.** Centro comercial junto a la estación de Odaiba-Kaihinkoen. Aquí estaba la estatua del Unicorn Gundam a tamaño real -- pero ⚠️ **YA NO ESTÁ**: la web oficial anunció el final de su exhibición pública el 31 de agosto de 2026, justo antes de vuestro viaje, y a fecha de esta actualización no hay confirmación de una sustituta. Aun así merece la pena entrar a **Gundam Base Tokyo**, la tienda oficial de 3 plantas con todo el merchandising y kits Gunpla.\n\n🛍️ Si da tiempo, un vistazo rápido a **Aqua City Odaiba** (5 min andando): vistas del Rainbow Bridge y la réplica de la Estatua de la Libertad." },
+      { time: "13:00–14:00", text: "🍜🤖 **COMIDA Y TIENDAS: KATSUEMON Y DIVERCITY TOKYO PLAZA.**\n\nhttps://maps.app.goo.gl/LFswXe7ofaSSnbKY8?g_st=ic\n\nDespués de comer, tiempo para recorrer las tiendas del centro comercial -- entre ellas **Gundam Base Tokyo** (3 plantas de merchandising y kits Gunpla), ya que la estatua a tamaño real que había fuera ⚠️ **ya no está** (terminó su exhibición pública el 31 de agosto de 2026, sin sustituta confirmada a fecha de esta actualización)." },
+      { time: "14:00–14:45", text: "🚇 **TREN HACIA LA TORRE DE TOKIO.** Yurikamome hasta Shimbashi + transbordo a la línea Toei Oedo hasta Akabanebashi (o Mita hasta Onarimon) -- un solo cambio, unos 30-40 min en total." },
+      { time: "14:45–15:45", text: "🚶 **PASEO HASTA LA TORRE, PASANDO POR EL TEMPLO ZOJOJI.** Zojoji es el templo funerario de los Tokugawa en Tokio -- el equivalente en el este de lo que es el Kan'ei-ji en Ueno. Fundado en 1393 y trasladado a este emplazamiento en 1598, aquí están enterrados 6 de los 15 shogunes Tokugawa. Su puerta principal, la Sangedatsumon (1622), es una de las estructuras de madera más antiguas de Tokio y una de las pocas de la zona que sobrevivió tanto al terremoto de 1923 como a los bombardeos de la Segunda Guerra Mundial.\n\n📸 La estampa clásica: la pagoda o la puerta del templo con la Torre de Tokio asomando justo detrás -- uno de los contrastes más fotografiados de la ciudad entre lo tradicional y lo moderno." },
+      { time: "15:45–16:30", text: "🗼 **TORRE DE TOKIO.** Inaugurada en 1958, con 333 m es unos 20 m más alta que la Torre Eiffel en la que se inspiró -- pintada de blanco y naranja internacional por normativa de seguridad aérea, no por elección estética.\n\n🎟️ **Main Deck** (150 m, ~¥XXX entrada normal sin reserva): el mirador estándar. **Top Deck** (150-250 m, ~¥XXX con tramos de suelo de cristal): más caro y requiere reserva de franja horaria -- con solo 45 min por delante, mejor centrarse en el Main Deck." },
+      { time: "16:30", text: "🚇 **VUELTA HACIA ASAKUSA (UNIQLO).** Desde la Torre de Tokio, unos 25-30 min con un transbordo (Oedo/Mita + línea Ginza o Asakusa)." },
+      { time: "~17:00–20:00", text: "🛍️ **UNIQLO ASAKUSA STORE.** Compras hasta el cierre a las 20:00 -- con bastante margen esta vez.\n\nhttps://maps.app.goo.gl/uAJszQKRPMjwdudx5?g_st=ic" },
+      { time: "20:00–21:30", text: "🍜 Cena por la zona del hotel." },
+      { time: "~21:30", text: "🏨 **KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nYa en la zona del hotel tras la cena -- sin trayecto extra de vuelta (4ª noche en Tokio)." },
+    ],
+    money: "Aprox. 45€ (comidas)",
+  },
+  {
+    num: 13,
+    date: "2026-09-19",
+    weekday: "Sábado",
+    block: "tokio",
+    title: "Ruta Nintendo, Compras y Skytree",
+    cities: "Ikebukuro, Nakano, Akihabara",
+    summary:
+      "Día de coleccionismo y videojuegos: Mega Pokémon Center de Ikebukuro (con sus estatuas de Mewtwo, Charizard y Lucario a tamaño real) y Nintendo Store Tokyo. Después, Nakano Broadway y Akihabara, con tiempo de sobra en esta última. Cierre de la tarde con la entrada ya comprada al mirador del Tokyo Skytree.",
+    history:
+      "La industria del videojuego japonesa, liderada por Nintendo, revitalizó la economía cultural del país en los 80. Nakano Broadway nació en los 60 como complejo residencial de lujo, hoy meca del coleccionismo underground.",
+    schedule: [
+      { time: "08:35", text: "Despertar." },
+      { time: "09:20", text: "Salida del hotel hacia Ikebukuro (primer destino del día)." },
+      { time: "10:00–11:00", text: "Mega Pokémon Center Ikebukuro (Sunshine City, 2ª planta) y Nintendo Store Tokyo. El Mega Center es el más grande de Japón: estatuas a tamaño real de Charizard, Lucario y Mewtwo, la Pokémon Card Station, y merchandising exclusivo que no se encuentra en otras tiendas." },
+      { time: "11:00–11:40", text: "🚃 Tren a Nakano (~40 min)." },
+      { time: "11:40–12:40", text: "Primer vistazo a Nakano Broadway: el mejor sitio de Tokio para cartas Pokémon originales (tiendas especializadas de trading cards con vitrinas de piezas sueltas y sobres), figuras y merchandising de Dragon Ball, y artículos retro/manga en general a precio justo. Varias plantas de tiendas pequeñas independientes -- merece la pena recorrerlas todas.\n\n🛍️ **NAKANO SUN MALL** (recomendación de amiga de mi amigo): la galería comercial cubierta que lleva justo desde la estación hasta la entrada de Nakano Broadway (~5 min andando) -- confirmado geográficamente, es el camino natural. Mucho menos turística que Akihabara, con restaurantes e izakayas de ambiente más local." },
+      { time: "12:40–13:05", text: "🚃 Tren a Akihabara (~20-25 min)." },
+      { time: "13:05–13:45", text: "🍜 **COMIDA: GYUKATSU ICHINISAN** (recomendación de un amigo -- el mejor tonkatsu, según él).\n\nhttps://maps.app.goo.gl/VgfUPTrjPzz4dQpHA?g_st=ic" },
+      { time: "13:45–15:45", text: "🎮 **Akihabara (2 horas).** Ruta a seguir en este orden:\n\n• **Estación Akihabara:** punto de partida, salida hacia Electric Town.\n• **Radio Kaikan:** edificio histórico de 10 plantas justo a la salida de la estación, con decenas de tiendas de figuras, cartas y coleccionismo apiladas una encima de otra.\n• **Chuo-dori:** la calle principal de Akihabara, con los grandes carteles de neón (cerrada al tráfico los domingos por la tarde; hoy es sábado, así que puede que no aplique).\n• **Animate:** la cadena de tiendas de manga/anime más grande de Japón, con merchandising oficial de prácticamente cualquier serie.\n• **Super Potato:** templo del videojuego retro, con NES, SNES y Game Boy en un ambiente que parece sacado de los 90.\n• **Mandarake:** gran cadena de segunda mano de manga, figuras y coleccionismo de todas las épocas.\n• **Arcade Hey / Taito:** salones recreativos clásicos japoneses, para partidas de UFO catcher, ritmo o lucha.\n• **Kanda Myojin:** santuario sintoísta de más de 1.000 años, curiosamente popular entre los otakus por bendecir productos tecnológicos y personajes de anime." },
+      { time: "15:45–16:15", text: "🚃 Tren hacia el Skytree (~10-15 min desde Akihabara, con margen antes de la entrada)." },
+      { time: "🟢 16:30", text: "🗼 **ENTRADA CONFIRMADA: TOKYO SKYTREE -- TEMBO DECK & GALERÍA (ADULTO).** Entrada ya comprada para el 19/09/2026, franja de acceso 16:30-16:59. Llegar unos minutos antes de las 16:30 para no consumir margen de la franja." },
+      { time: "16:30–18:15", text: "🗼 Visita a los dos miradores del Skytree (Tembo Deck, 350 m, y Tembo Galleria, 450 m)." },
+      { time: "18:15–18:45", text: "🛍️ **SOUVENIRS SI SE VE ALGO INTERESANTE.** Tokyo Solamachi, el centro comercial de la base de la torre, por si apetece echar un vistazo antes de volver -- sin obligación, solo si algo llama la atención." },
+      { time: "~18:45", text: "🚶 Vuelta hacia la zona del hotel (Skytree está a solo ~15-20 min andando de Asakusa)." },
+      { time: "19:00–20:30", text: "🍜 Cena por la zona de Asakusa." },
+      { time: "~21:00", text: "🏨 **REGRESO AL HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nRegreso a la residencia para descansar y preparar el día de mañana: excursión a Nikko, si el tiempo acompaña (5ª noche en Tokio)." },
+    ],
+    money: "Aprox. 40€ (comidas) + compras + entrada al Skytree (ya pagada)",
+  },
+  {
+    num: 14,
+    date: "2026-09-20",
+    weekday: "Domingo",
+    block: "tokio",
+    title: "Palacio Imperial, Tokyo Station y Ginza",
+    cities: "Otemachi, Marunouchi, Ginza, Hibiya",
+    summary:
+      "⚠️ Cambio de planes: la excursión a Nikko no se hace por mal tiempo. En su lugar, día a pie por el centro histórico y comercial de Tokio: los jardines del Palacio Imperial, Tokyo Character Street, KITTE y el museo Intermediatheque, y una tarde larga en Ginza, terminando con un paseo por Hibiya/Yurakucho y la cena de despedida del grupo, en el último día completo antes de volver a España. Casi todo se hace andando -- una ruta muy lógica en línea recta, sin desplazamientos absurdos.",
+    history:
+      "El Palacio Imperial se levanta sobre el emplazamiento del antiguo Castillo de Edo, sede del shogunato Tokugawa durante más de 250 años y en su momento la fortaleza más grande del mundo. Ginza, por su parte, significa literalmente 'la casa de la plata' -- aquí estuvo la ceca de plata del shogunato durante el periodo Edo, antes de convertirse en el distrito comercial más elegante de Tokio tras la reconstrucción con arquitectura occidental de finales del s. XIX.",
+    schedule: [
+      { time: "08:15", text: "Despertar." },
+      { time: "09:00", text: "🚇 Salida del hotel hacia Otemachi en metro. Desde Asakusa/Kappabashi, cuenta unos 25-35 min puerta a puerta (caminar a la estación, esperar y salir)." },
+      { time: "~09:30–09:40", text: "Llegada a Otemachi." },
+      { time: "09:40–11:00", text: "🏯 **PALACIO IMPERIAL (EAST GARDENS).** De Otemachi a la puerta Ote-mon son unos 5-10 min andando. Los jardines ocupan parte del antiguo recinto del Castillo de Edo -- fosos, muros de piedra ciclópeos y restos de la base de la antigua torre del homenaje (tenshu), la más alta que tuvo Japón antes de arder en el gran incendio de Meireki (1657) y no reconstruirse nunca.\n\n🎫 Entrada gratuita, sin reserva. Cerrado los lunes y viernes -- hoy es domingo, así que abre con normalidad." },
+      { time: "11:00–11:20", text: "🚶 Paseo del Palacio a Tokyo Station, pasando por Marunouchi. Unos 15-20 min andando -- la propia ruta oficial de turismo de Tokio conecta East Gardens, Marunouchi y KITTE como un recorrido a pie natural, así que no hace falta metro para este tramo." },
+      { time: "11:20–12:30", text: "🐉 **TOKYO CHARACTER STREET.** En el sótano de Tokyo Station (Tokyo Station Ichibangai B1). Un pasillo entero de tiendas oficiales de Pokémon, Dragon Ball, Jump, One Piece, Sanrio y más -- de las mejores paradas de merchandising de todo el viaje. Abierto de 10:00 a 20:30." },
+      { time: "12:30–12:40", text: "🚶 Tokyo Station → KITTE. Apenas 1 minuto andando según la señalización oficial, pero contando orientarse dentro de la estación, calcula 10 min reales." },
+      { time: "12:40–13:25", text: "🦴 **INTERMEDIATHEQUE.** Museo dentro del propio edificio KITTE, gestionado por la Universidad de Tokio -- colecciones científicas e históricas (esqueletos, instrumentos antiguos, taxidermia) en un montaje muy cuidado, gratuito. Abierto domingos de 11:00 a 18:00." },
+      { time: "13:25–14:25", text: "🍛 Comida: curry japonés o ramen, a decidir sobre la marcha por la zona -- no hace falta desviarse mucho." },
+      { time: "14:25–14:50", text: "🚶 KITTE → Ginza, pasando por Kyobashi. Andando, aprox. 1,5-2 km (20-25 min reales) -- este tramo es parte del paseo, no tiempo perdido." },
+      { time: "14:50–18:00", text: "🛍️ **GINZA (3 h 10 min).**\n\n• **14:50–15:20 · Ginza-dori / Chuo-dori:** la calle principal, peatonal los domingos de 12:00 a 18:00 (salvo cancelación por mal tiempo) -- disfrutarla sin más.\n• **15:20–15:50 · Itoya:** los grandes almacenes de papelería más famosos de Japón, 9 plantas de todo tipo de material de escritura y diseño.\n• **15:50–16:30 · Ginza Six:** el centro comercial de lujo más grande de Ginza, con una instalación artística que cambia en el atrio central. Abierto hasta las 20:30.\n• **16:30–17:00 · Ginza Sony Park:** espacio urbano experimental en el solar del antiguo edificio Sony, con instalaciones que van cambiando por temporadas. Abierto de 11:00 a 19:00.\n• **17:00–18:00 · Tiempo libre en Ginza:** sin plan fijo a propósito -- para lo que salga: alguna tienda más, una frikada, café, dulce, fotos." },
+      { time: "18:00–18:30", text: "🚶 Ginza → Yurakucho/Hibiya andando, unos 10-15 min según por dónde se salga de Ginza." },
+      { time: "18:30–19:30", text: "🌆 **HIBIYA/YURAKUCHO, TIEMPO LIBRE.** Una hora completamente abierta: seguir paseando, tomar algo, comprar algún dulce, sentarse un rato, o simplemente decidir dónde cenar con calma." },
+      { time: "19:30–21:00", text: "🍜 Cena de despedida del grupo por la zona, en el último día completo antes de volver a España." },
+      { time: "~21:30", text: "🏨 **REGRESO AL HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nEn metro desde Hibiya/Yurakucho. Última noche en Tokio antes de volver a España." },
+    ],
+    money: "Aprox. 40€ (comidas) + compras en Ginza al gusto",
+  },
+  {
+    num: 15,
+    date: "2026-09-21",
+    weekday: "Lunes",
+    block: "tokio",
+    title: "Vuelta a casa",
+    cities: "Tokio, Narita",
+    summary:
+      "Últimas horas en Japón: compras de última hora en farmacias locales o paseo de despedida cerca del hotel. Traslado a Narita con tiempo de sobra para facturar el vuelo de vuelta.",
+    history:
+      "Tras dos intensas semanas recorriendo la historia de los shogunes, la filosofía zen y la tecnología del archipiélago, el viaje concluye. Narita es el principal puerto de entrada y salida internacional de la región de Kanto desde 1978.",
+    schedule: [
+      { time: "09:00", text: "🧳 **ÚLTIMAS COMPRAS Y MALETA.** Última mañana con margen antes del traslado al aeropuerto:\n\n• Últimas compras de última hora por la zona del hotel (farmacias, o cualquier cosa pendiente).\n• Preparar y cerrar las maletas con calma.\n\n💡 Como está todo a mano en el propio barrio, no hace falta transporte para esto." },
+      { time: "11:00", text: "🏨 **CHECK-OUT en la recepción del KOKO HOTEL Residence Asakusa Kappabashi.**\n\nMargen de sobra hasta el traslado a Narita." },
+      { time: "~11:30", text: "🚆 SALIDA DEL HOTEL HACIA EL AEROPUERTO DE NARITA — 2 OPCIONES (Recomendado: Keisei Skyliner)\n\n🟢 **OPCIÓN RECOMENDADA: KEISEI SKYLINER (desde Keisei-Ueno)**\n- Traslado al tren: KOKO HOTEL Residence Asakusa Kappabashi → Estación de Keisei-Ueno. Para 5 personas con maletas grandes, taxi directo desde la puerta del hotel hasta Keisei-Ueno (~10 min) -- coste real ~14,50€ (el taxi va con taxímetro, así que no fiarse del precio estimado que da la app de Uber, suele quedarse corto). Aun así merece la pena, simplifica notablemente la logística.\n- Tren: Keisei Skyliner desde Keisei-Ueno directo a Narita Airport (~41 min). Tren exprés con asiento reservado y amplio espacio para maletas.\n- Ventaja: Evita desplazarse hasta Tokyo Station arrastrando el equipaje grande por pasillos y transbordos.\n- Horario definitivo: Consultar y reservar cuando esté publicada la tabla definitiva de septiembre de 2026, asegurando llegar a Narita con margen para el vuelo de las 17:25.\n\n🟡 **ALTERNATIVA VÁLIDA: JR NARITA EXPRESS (N'EX)**\n- Traslado: Hotel → Tokyo Station (metro o taxi) → JR Narita Express (N'EX) directo a Narita (~1h de tren, asiento reservado obligatorio).\n- El N'EX sigue siendo una opción perfectamente válida si se prefiere salir desde Tokyo Station.\n\n💡 Mantener margen suficiente para estar en la terminal de Narita antes de las 14:30 para facturación y seguridad." },
+      { time: "14:30", text: "Facturación y controles de seguridad en Narita (Terminal 2)." },
+      { time: "17:25", text: "✈️ Vuelo Vuelo Vuelta Narita → Doha (Qatar Airways, 10h 55m). Llegada a Doha a las 22:20." },
+      { time: "01:10", text: "✈️ Escala en Doha de 2h 50m (22:20 → 01:10), luego vuelo Vuelo Vuelta 2 Doha → Madrid (Qatar Airways, 7h 25m). Llegada a Madrid (T4S) el mar 22 sept a las 07:35." },
+    ],
+    money: "Aprox. 40€ (comidas)",
+  },
+];
+
+// Transportes: `real` = €/persona · `jpy` = ¥/persona.
+// Datos 100% reales y cerrados post-viaje con extracto bancario Revolut y cuentas de grupo Splitwise.
+export const transports = [
+  { day: 1, date: "2026-09-07", name: "Narita Express (N'EX)", from: "Aeropuerto de Narita", to: "Estación de Shinagawa", type: "Línea JR", real: 18.45, jpy: 3330, coverage: "jr", jrPassCovered: true, suicaCategory: "partial", note: "✓ Comprado en Narita · 92,24€ total (18,45€/pax) Revolut · Asientos reservados N'EX", purchased: true, advance: false },
+  { day: 1, date: "2026-09-07", name: "Shinkansen Nozomi 53", from: "Estación de Shinagawa", to: "Kioto", type: "Línea JR (Tren Bala)", real: 74.65, jpy: 13770, coverage: "jr", jrPassCovered: false, suicaCategory: "no", note: "✓ Comprado Smart EX (Ref: 2000) · ¥XXX total · 373,27€ Revolut · 17:19→19:23 · Coche 13 · ⚠️ Nozomi NO incluido en JR Pass", purchased: true, advance: true },
+  { day: 2, date: "2026-09-08", name: "Trenes JR Línea Nara (Inari + Nara)", from: "Kioto", to: "Nara (ida y vuelta)", type: "Línea JR Local", real: 9.70, jpy: 1600, coverage: "jr", jrPassCovered: true, suicaCategory: "yes", note: "✓ Realizado · Pagado con Suica (~1.600 ¥/pax)", purchased: true, advance: false },
+  { day: 3, date: "2026-09-09", name: "Bus y Metro de Kioto (Nishiki / Gion)", from: "Kioto", to: "Centro / Gion", type: "Operador Privado / Local", real: 4.00, jpy: 600, coverage: "no-jr", jrPassCovered: false, suicaCategory: "yes", note: "✓ Realizado · Pagado con Suica · No cubierto por JR Pass", purchased: true, advance: false },
+  { day: 4, date: "2026-09-10", name: "Metro, Bus 205 y Tranvía Randen", from: "Kioto", to: "Kinkakuji / Arashiyama", type: "Operador Privado / Local", real: 4.50, jpy: 750, coverage: "no-jr", jrPassCovered: false, suicaCategory: "yes", note: "✓ Realizado · Pagado con Suica (Randen ¥XXX) · No cubierto por JR Pass", purchased: true, advance: false },
+  { day: 4, date: "2026-09-10", name: "Tren JR Línea San-In", from: "Arashiyama", to: "Kioto", type: "Línea JR Local", real: 1.50, jpy: 240, coverage: "jr", jrPassCovered: true, suicaCategory: "yes", note: "✓ Realizado · Pagado con Suica", purchased: true, advance: false },
+  { day: 5, date: "2026-09-11", name: "Tren rápido JR Kioto ↔ Osaka (ida y vuelta)", from: "Kioto", to: "Osaka", type: "Línea JR Local", real: 7.00, jpy: 1160, coverage: "jr", jrPassCovered: true, suicaCategory: "yes", note: "✓ Realizado · Special Rapid Service · Pagado con Suica", purchased: true, advance: false },
+  { day: 5, date: "2026-09-11", name: "Metro de Osaka", from: "Osaka", to: "Dotonbori / Umeda", type: "Operador Privado / Local", real: 3.00, jpy: 500, coverage: "no-jr", jrPassCovered: false, suicaCategory: "yes", note: "✓ Realizado · Osaka Metro · Pagado con Suica", purchased: true, advance: false },
+  { day: 6, date: "2026-09-12", name: "Thunderbird + Hokuriku Shinkansen", from: "Kioto", to: "Kanazawa", type: "Línea JR Exprés", real: 41.88, jpy: 7720, coverage: "jr", jrPassCovered: true, suicaCategory: "no", note: "✓ JR-WEST · ~7.720 ¥ / 41,88€ por persona (209,38€ total) · Kioto → Kanazawa", purchased: true, advance: true },
+  { day: 7, date: "2026-09-13", name: "Nohi Bus Kanazawa → Shirakawa-go", from: "Kanazawa Sta.", to: "Shirakawa-go Bus Terminal", type: "Operador Privado (Bus)", real: 19.12, jpy: 3100, coverage: "no-jr", jrPassCovered: false, suicaCategory: "no", note: "✓ Reservado 12GO · 95,59€ total (19,12€/pax) · Salida 08:40 · ⚠️ No cubierto por JR Pass", purchased: true, advance: true },
+  { day: 7, date: "2026-09-13", name: "Nohi Bus Shirakawa-go → Takayama", from: "Shirakawa-go Bus Terminal", to: "Takayama Nohi Bus Center", type: "Operador Privado (Bus)", real: 20.03, jpy: 3250, coverage: "no-jr", jrPassCovered: false, suicaCategory: "no", note: "✓ Reservado 12GO · 100,14€ total (20,03€/pax) · Salida 13:15 · ⚠️ No cubierto por JR Pass", purchased: true, advance: true },
+  { day: 8, date: "2026-09-14", name: "Nohi Bus directo Takayama → Magome", from: "Takayama Nohi Bus Center", to: "Magome", type: "Operador Privado (Bus)", real: 27.12, jpy: 5000, coverage: "no-jr", jrPassCovered: false, suicaCategory: "no", note: "✓ Nohi Bus · ~5.000 ¥ / 27,12€ por persona (135,61€ total) · 08:00→10:45 · ⚠️ No cubierto por JR Pass", purchased: true, advance: true },
+  { day: 9, date: "2026-09-15", name: "Bus local Magome → Nakatsugawa", from: "Magome", to: "Nakatsugawa", type: "Operador Privado (Bus)", real: 4.85, jpy: 800, coverage: "no-jr", jrPassCovered: false, suicaCategory: "no", note: "✓ Bus local · ~600 ¥ / 4,85€ por persona en efectivo al bajar · ⚠️ No cubierto por JR Pass", purchased: true, advance: false },
+  { day: 9, date: "2026-09-15", name: "JR Limited Express Shinano 4", from: "Nakatsugawa", to: "Nagoya", type: "Línea JR Exprés", real: 15.57, jpy: 2870, coverage: "jr", jrPassCovered: true, suicaCategory: "partial", note: "✓ JR-WEST (Shinano 4) · ~2.870 ¥ / 15,57€ por persona (77,84€ total) · Car 4 · Nakatsugawa → Nagoya", purchased: true, advance: false },
+  { day: 9, date: "2026-09-15", name: "Shinkansen Nozomi 358", from: "Nagoya", to: "Tokio", type: "Línea JR (Tren Bala)", real: 59.12, jpy: 10900, coverage: "jr", jrPassCovered: false, suicaCategory: "no", note: "✓ Smart EX (Nozomi 358) · ~10.900 ¥ / 59,12€ por persona (295,62€ total) · Car 12 · ⚠️ Nozomi NO incluido en JR Pass", purchased: true, advance: false },
+  { day: 10, date: "2026-09-16", name: "Excursión en autobús Monte Fuji (GetYourGuide)", from: "Tokio", to: "Kawaguchiko / Oishi Park / Chureito", type: "Operador Privado (Tour Bus)", real: 42.00, jpy: 7750, coverage: "no-jr", jrPassCovered: false, suicaCategory: "no", note: "✓ GetYourGuide · 210€ total (42€/pax) · Tour completo en autobús · ⚠️ No cubierto por JR Pass", purchased: true, advance: true },
+  { day: 10, date: "2026-09-16", name: "Tren elevado Yurikamome a Odaiba", from: "Tokio", to: "Isla de Odaiba", type: "Operador Privado", real: 2.00, jpy: 330, coverage: "no-jr", jrPassCovered: false, suicaCategory: "yes", note: "✓ Realizado · Pagado con Suica · No cubierto por JR Pass", purchased: true, advance: false },
+  { day: "10-14", date: "16-20 sept", name: "Metro de Tokio (Tokyo Metro y Toei Subway)", from: "Tokio", to: "Tokio (red urbana)", type: "Operador Privado / Local", real: 30.00, jpy: 5000, coverage: "no-jr", jrPassCovered: false, suicaCategory: "yes", note: "✓ Realizado · Pagado con Suica (líneas Ginza, Asakusa, Hibiya, etc.) · No cubierto por JR Pass", purchased: true, advance: false },
+  { day: "10-14", date: "16-20 sept", name: "Trenes locales JR Tokio (Yamanote / Chuo)", from: "Tokio", to: "Tokio (red JR)", type: "Línea JR Local", real: 8.00, jpy: 1300, coverage: "jr", jrPassCovered: true, suicaCategory: "yes", note: "✓ Realizado · Pagado con Suica · Única red urbana cubierta por JR Pass", purchased: true, advance: false },
+  { day: 15, date: "2026-09-21", name: "Keisei Skyliner (Tokio → Narita)", from: "Keisei-Ueno", to: "Aeropuerto de Narita", type: "Línea Keisei", real: 14.39, jpy: 2570, coverage: "no-jr", jrPassCovered: false, suicaCategory: "partial", note: "✓ Keisei Electric Railway · 43,17€ total (14,39€/pax) · Skyliner directo Ueno→Narita", purchased: true, advance: true },
+];
+
+// Presupuesto estimado para 5 personas
+export const budget = {
+  people: 5,
+  note: "Vuelos, 4 de 5 hoteles (vía Booking) y trenes principales ya confirmados y pagados. Excursiones Fuji + estimados urbanos incluidos.",
+  categories: [
+    {
+      title: "Vuelos internacionales",
+      perPerson: "890€",
+      total: "4.450€ ✓",
+      details: [
+        "Qatar Airways Madrid ↔ Tokio (vía Doha). 5 personas × 890€.",
+        "Ida: Vuelo Ida MAD→DOH + Vuelo Ida 2 DOH→NRT (6 sept, 09:05 → 7 sept, 12:55, 20h 50m).",
+        "Vuelta: Vuelo Vuelta NRT→DOH + Vuelo Vuelta 2 DOH→MAD (21 sept, 17:25 → 22 sept, 07:35, 21h 10m).",
+      ],
+    },
+    {
+      title: "Alojamiento (14 noches)",
+      perPerson: "642,57€",
+      total: "3.212,84€",
+      details: [
+        "<strong>✅ 4 de 5 alojamientos reservados previamente vía Booking (3.033,86€ total · 606,77€/persona)</strong>:",
+        "• Hotel Keihan Kyoto Hachijoguchi (7–12 sept, 5 noches): 669,86€ grupo · 133,97€/persona ✓",
+        "• Hotel Resol Trinity Kanazawa (12–13 sept, 1 noche): 161,89€ grupo · 32,38€/persona ✓",
+        "• Hotel Wood Takayama (13–14 sept, 1 noche): 274,98€ grupo · 55,00€/persona ✓",
+        "• KOKO HOTEL Residence Asakusa Kappabashi (15–21 sept, 6 noches): 1.927,13€ grupo · 385,43€/persona ✓",
+        "<strong>⚠️ Pago en el alojamiento en efectivo</strong>:",
+        "• Magome Chaya (14–15 sept, 1 noche, con cena): ~178,98€ grupo (~32.000 ¥) · 35,80€/persona. Se paga en metálico en el propio alojamiento (sacar dinero antes).",
+      ],
+    },
+    {
+      title: "Transporte nacional",
+      perPerson: "364,88€ (406,88€ con Fuji)",
+      total: "1.824,40€ (2.034,40€ con Fuji)",
+      details: [
+        "<strong>✅ 100% de los transportes realizados y cerrados (datos reales de viaje)</strong>:",
+        "• Trenes de media/larga distancia: 209,61€/persona (1.048,05€ grupo) — N'EX Narita 18,45€ · Shinkansen Nozomi 53 74,65€ · Thunderbird/Kagayaki 41,88€ · Shinano 4 15,57€ · Shinkansen Nozomi 358 59,12€.",
+        "• Autobuses de montaña en los Alpes: 71,12€/persona (355,60€ grupo) — Nohi Bus Kanazawa→Shirakawago 19,12€ · Shirakawago→Takayama 20,03€ · Takayama→Magome 27,12€ · Bus Magome 4,85€.",
+        "• Vuelta a Narita y movilidad urbana con Suica: 84,15€/persona — Keisei Skyliner 14,39€ + Recargas Suica totales 69,76€ (cubrió todo el metro Kioto/Osaka/Tokio, buses, tranvía Randen y trenes locales).",
+        "• Excursión Monte Fuji: 42,00€/persona (210€ grupo) con el tour en autobús directo de GetYourGuide.",
+        "<strong>📊 Balance final Japan Rail Pass:</strong> NO compensaba en absoluto. Un JR Pass de 14 días (455€) + los transportes no cubiertos obligatorios (buses Alpes 71€ + metros/buses 50€) habría costado <strong>~576€/persona</strong>. Al comprar billete a billete se han gastado <strong>~364€/persona</strong>, <strong>ahorrando 212,09€ por persona (1.060,45€ en el grupo de 5)</strong> y además viajando en los Shinkansen Nozomi (los más rápidos).",
+      ],
+    },
+    {
+      title: "Excursión Monte Fuji y Nikko",
+      perPerson: "~45€ – 55€",
+      total: "~225€ – 275€",
+      details: [
+        "<strong>GetYourGuide Monte Fuji (Día 10, 16 sept., confirmado):</strong> 42€/persona · 210€ grupo (Kawaguchiko, Parque Oishi, Oshino Hakkai, Pagoda Chureito). Tour completo organizado en autobús.",
+        "<strong>Excursión a Nikko (Día 14, 20 sept.):</strong> Tobu Limited Express ida y vuelta, aprox. ¥2.800 (~17€) por persona cada trayecto, más entradas a Toshogu (~¥1.600–2.100/persona). Total aprox. 45€/persona.",
+      ],
+    },
+    {
+      title: "Comidas y bebidas (14 días)",
+      perPerson: "~500€ – 550€",
+      total: "~2.600€",
+      details: [
+        "Desayuno ~5€, comida casual/ramen ~10€, cena buena/sushi ~20€. Aprox. 40€/día (sin contar las 2 cenas incluidas en alojamientos: Magome Chaya y cena wagyu en Takayama).",
+      ],
+    },
+    {
+      title: "Konbini y tentempiés",
+      perPerson: "~30€",
+      total: "~150€",
+      details: [
+        "Aparte de las comidas principales: cafés, snacks, bebidas y compras sueltas en Lawson/7-Eleven/FamilyMart entre horas -- suma más de lo que parece a base de tickets pequeños. Cifra representativa, calculada a partir del gasto real registrado por el guía (~144€ en konbini y cafés sueltos en todo el viaje).",
+      ],
+    },
+    {
+      title: "Seguro, eSIM y extras",
+      perPerson: "~200€",
+      total: "~1.000€",
+      details: [
+        "Seguro Heymondo Japón: 273,60€ (4 personas · Revolut).",
+        "E-SIM Holafly: 164,88€ (4 personas · Revolut).",
+        "Entradas (templos, TeamLab, miradores), Takkyubin Kioto→Tokio y extras varios ~150€/persona orientativo.",
+      ],
+    },
+    {
+      title: "Compras personales (ropa, souvenirs)",
+      perPerson: "~200€",
+      total: "~1.000€",
+      details: [
+        "Categoría añadida a posteriori con los gastos reales del viaje (ropa, souvenirs, coleccionismo...) -- no estaba contemplada en la estimación inicial. El gasto real varía mucho según la persona; esta cifra es una media representativa, no un gasto obligatorio ni un tope.",
+      ],
+    },
+  ],
+  totalPerPerson: "~2.965€ – 3.110€ (todo incluido)",
+  totalGroup: "~14.825€ – 15.550€ (5 personas)",
+};
