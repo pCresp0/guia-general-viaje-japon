@@ -1,3 +1,5 @@
+import wavesSidebarUrl from "../assets/waves-sidebar.webp";
+
 export default function Footer() {
   return (
     <footer style={{
@@ -7,6 +9,7 @@ export default function Footer() {
       padding: "32px 24px",
       paddingBottom: "calc(32px + env(safe-area-inset-bottom, 0px))",
       marginTop: "auto",
+      backgroundColor: "var(--shu-darker)",
     }}>
       {/* Fondo de olas (capa absoluta, no recorta el contenido) */}
       <div
@@ -14,9 +17,10 @@ export default function Footer() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('/waves-sidebar.webp')",
+          backgroundImage: `url('${wavesSidebarUrl}')`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
+          backgroundColor: "var(--shu-darker)",
           pointerEvents: "none",
         }}
       />
