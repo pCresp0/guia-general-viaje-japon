@@ -16,6 +16,14 @@ Esta plataforma sustituye por completo a los pesados documentos PDF, hojas de c�
 
 ---
 
+## 🌐 Demo en Vivo en GitHub Pages
+
+La versión oficial en producción está disponible públicamente en:
+
+👉 **[https://pcresp0.github.io/guia-general-viaje-japon/](https://pcresp0.github.io/guia-general-viaje-japon/)**
+
+---
+
 ## 🏛️ Arquitectura: Cero Backend y SSOT
 
 El proyecto sigue una filosofía extrema de **disponibilidad y resiliencia offline**: en un viaje internacional, en túneles del Shinkansen o en zonas montañosas de los Alpes Japoneses, depender de la nube para consultar un billete, una reserva o una dirección no es viable.
@@ -112,7 +120,16 @@ El código fuente está listo para ejecutarse localmente con **Node.js** (versi�
    ```bash
    npm run build
    ```
-   Generará la carpeta `dist/` optimizada y el Service Worker empaquetado para su despliegue en cualquier proveedor estático (**Vercel**, **Netlify**, **Cloudflare Pages** o **GitHub Pages**).
+   Generará la carpeta `dist/` optimizada y el Service Worker empaquetado para su despliegue en cualquier proveedor estático (**GitHub Pages**, **Vercel**, **Netlify** o **Cloudflare Pages**).
+
+### 🌐 Despliegue Automático en GitHub Pages
+
+El repositorio incluye un flujo de automatización listo para producción (`.github/workflows/deploy.yml`) que compila la web con Vite y la publica automáticamente en GitHub Pages en cada `git push origin main`:
+
+1. En GitHub, entra en el repositorio y dirígete a **Settings** ➔ **Pages** (en el menú lateral izquierdo).
+2. En la sección **Build and deployment ➔ Source**, selecciona **GitHub Actions** (en vez de *"Deploy from a branch"*).
+3. En la sección **Custom domain**, asegúrate de dejarlo **completamente vacío** (no pongas el nombre del repositorio, ese campo es solo para dominios externos propios).
+4. El workflow de Actions compilará los módulos React a estáticos y publicará la web automáticamente.
 
 ---
 
