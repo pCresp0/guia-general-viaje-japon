@@ -639,16 +639,12 @@ export const guides = {
         body: "Ito ang susi sa pagpaplano: ang Fuji ay malinaw nang mas madalas kaysa sa inaasahan ng mga tao. Sa tag-araw, ang malinaw na visibility ay tumatagal lamang ng ilang araw sa isang buwan dahil sa kahalumigmigan at mga ulap na nalilikha ng bundok mismo. Ang pinakamainam na mga buwan ay Nobyembre hanggang Pebrero. Sa Setyembre ang mga posibilidad ay intermediate, at halos palagi ay mas maganda sa umaga, bago lumikha ng mga ulap ang init. Kaya naman ang estratehiya ng pag-book ng ilang araw at pagpasok sa araw na maliwanag ang bukang-liwayway ay may kumpletong katuturan.",
       },
       {
-        title: "Eksklusibong Tour: Mga Lugar na Bibisitahin",
-        body: "Ang 8h na mini-van tour kasama si Ken Kaneshima ay kinabibilangan ng pinakamagandang lugar sa rehiyon:\n1. Chureito Pagoda (Arakurayama Sengen): ang klasikong postal na may 5 palapag na may Fuji sa background.\n2. Kitaguchi Hongu Fuji Sengen Jinja Shrine: makasaysayang panimulang punto para sa mga peregrino sa gitna ng malalaking cedar.\n3. Oshino Hakkai Village: 8 malinaw na pool ng volcanic snowmelt at mga bahay na may straw na bubong.\n4. Aokigahara Forest: ang 'Sea of Trees' sa hardened lava rock.\n5. Shiraito Falls: natural na talon na bumubukal mula sa bato tulad ng mga thread ng puting sutla.\n6. Lakes Route: panoramic views mula sa mga pampang ng Yamanakako, Saiko at Motosuko.",
-      },
-      {
-        title: "Lokal na Pagkain: Houtou Noodles",
-        body: "Sa tanghali, paghinto sa tradisyonal na restaurant para tikman ang Houtou (flat, malawak na noodle na dahan-dahang niluto sa mainit na miso broth na may kalabasa at mga panapanahong gulay ng bundok), ang pangunahing pagkain ng Yamanashi Prefecture.",
+        title: "Ang Excursion: Mga Lugar na Bibisitahin",
+        body: "Ang excursion na naka-book sa GetYourGuide (Japan Visionary Tour) ay may apat na hintuan sa hilagang bahagi ng Fuji, sa rehiyon ng Limang Lawa:\n1. Lawa ng Kawaguchiko at Oishi Park: lakaran sa tabi ng lawa na may klasikong tanawin ng Fuji, sikat sa mga pana-panahong bulaklak.\n2. Saiko Iyashi-no-Sato Nemba Village: replika ng tradisyonal na baryo na may mga bahay na gawa sa dayami, muling itinayo matapos ang bagyo noong 1966.\n3. Oshino Hakkai Springs: walong malilinaw na bukal ng tubig mula sa natunaw na niyebe ng Fuji, kinikilalang lugar ng likas na ganda.\n4. Chureito Pagoda (Arakurayama Sengen): ang pinakasikat na postcard view ng Japan, may 5-palapag na pagoda at ang Mount Fuji sa likod -- 400 baytang paakyat sa viewing deck.",
       },
       {
         title: "Logistika at Presyo",
-        body: "• Presyo: ¥XXX / tao (~€70) (kasama ang pribadong mini-van at lahat ng entry fee sa venue). Ang pagkain at inumin ay hindi kasama.\n• Simula: Mishima Station (South Exit) sa 08:20 AM (~50 min mula Tokyo sa Shinkansen).\n• Katapusan: Shin-Fuji bullet train station mga 17:30 (~60 min sa Tokyo sa Shinkansen).\n• Wika: Opisyal na gabay sa Espanyol (Ken Kaneshima · excursionesfujiyama.com · +81 90-5863-1635).",
+        body: "• Presyo: 42€ / tao (~210€ grupo), bayad na.\n• Tagpuan: Tokyo Mode Gakuen (1-7-3 Nishishinjuku, Shinjuku), sa harap ng istasyon. Tagpuan nang 08:10 (aalis ang bus nang eksaktong 08:20).\n• Tagal: humigit-kumulang 10 oras, babalik sa Shinjuku bandang 18:30.\n• Wika: Gabay sa Ingles.\n• Pagkain HINDI kasama: bawal kumain sa loob ng bus; kumain ng masustansyang almusal at magdala ng cash sa yen para sa mga lokal na tindahan sa bawat hintuan.",
       },
       {
         title: "Forecast ng Visibility at Webcam",
@@ -660,7 +656,7 @@ export const guides = {
       "May Japanese na kasabihan: 'Karunungan ang umakyat sa Fuji nang isang beses, at kamangmangan ang umakyat nang dalawang beses'.",
       "Ang unang panaginip ng taon na nagtatampok ng Fuji ay itinuturing na napakasuwerte, lalo na kapag pinagsama sa isang agila at isang talong.",
     ],
-    tip: "Tour na naka-book para Linggo, Setyembre 20 (Araw 14) kasama si Ken Kaneshima (Excursiones Fujiyama · +81 90-5863-1635 · excursionesfujiyama.com) + 4 flexible na booking sa GetYourGuide mula Setyembre 16–19. Suriin ang mga webcam sa 06:30 AM.",
+    tip: "Inirerekomendang buong araw na excursion kasama ang GetYourGuide mula Shinjuku (Araw 10). Suriin ang mga webcam sa 06:30 AM sa umaga ng tour para suriin ang visibility ng bulkan.",
   },
 
   "tokyo-tower": {

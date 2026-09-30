@@ -23,7 +23,7 @@ export const days = [
   {
     "title": "Pagdating sa Japan",
     "cities": "Narita, Tokyo, Kyoto",
-    "summary": "Paglapag sa airport ng Narita, mga proseso sa customs gamit ang Visit Japan Web QR code, at pagkuha ng bagahe. Paglipat gamit ang Narita Express papuntang Shinagawa at direktang koneksyon ng bullet train sa Shinkansen Nozomi papuntang Kyoto para sa hotel check-in. Tatapusin natin ang araw sa ating unang karanasan sa lungsod, sa pamamagitan ng mabilis na hapunan sa paligid ng istasyon. Siguradong kinukumpara na ni mi amigo ang reception sa kanyang hotel sa Sol.",
+    "summary": "Paglapag sa airport ng Narita, mga proseso sa customs gamit ang Visit Japan Web QR code, at pagkuha ng bagahe. Paglipat gamit ang Narita Express papuntang Shinagawa at direktang koneksyon ng bullet train sa Shinkansen Nozomi papuntang Kyoto para sa hotel check-in. Tatapusin natin ang araw sa ating unang karanasan sa lungsod, sa pamamagitan ng mabilis na hapunan sa paligid ng istasyon.",
     "history": "Ang Kyoto ang naging kabisera ng imperyo ng Japan sa loob ng mahigit isang libong taon, mula 794 hanggang 1868. Ito ang kultural at espirituwal na puso ng bansa. Matapos makaligtas nang buo sa mga pambobomba noong Ikalawang Digmaang Pandaigdig, napanatili nito ang halos lahat ng kanyang sinaunang tradisyunal na arkitektura ng kahoy.",
     "schedule": [
       {
@@ -72,7 +72,7 @@ export const days = [
         "text": "🚆 JR Nara Line: Kyoto Station → Inari Station (~5 min).\n\n🎫 **SUICA:** ✅ OO; i-tap ang card nang direkta sa mga gate.\n\nWalang kailangang reserbasyon. Gamitin ang Suica o bumili ng single ticket sa istasyon. Ang Inari Station ay katabi mismo ng dambana."
       },
       {
-        "text": "Fushimi Inari Shrine. 💡 Tip: mas mainam na dumating nang maaga para maiwasan ang pinakamaraming tao. Hindi kailangang umakyat hanggang sa tuktok ng Bundok Inari; kung kulang sa oras o pagod na, gumawa ng partial climb at bumalik na lang. Wala namang problema kay el guía umakyat, para saan pa ang gym."
+        "text": "Fushimi Inari Shrine. 💡 Tip: mas mainam na dumating nang maaga para maiwasan ang pinakamaraming tao. Hindi kailangang umakyat hanggang sa tuktok ng Bundok Inari; kung kulang sa oras o pagod na, gumawa ng partial climb sa pamamagitan ng mga pulang torii at bumalik na lang."
       },
       {
         "text": "🚆 JR Nara Line: Inari → Nara.\n\n🎫 **SUICA:** ✅ OO; i-tap ang card nang direkta sa mga gate.\n\nDirektang tren papuntang Nara, walang lipat, mga 1h20. Walang kailangang reserbasyon. Sa Inari, tiyakin na ang napiling serbisyo ay tumitigil sa Inari at magpapatuloy papuntang Nara."
@@ -167,7 +167,7 @@ export const days = [
       },
       {
         "time": "17:30–19:00",
-        "text": "🏮 Gion. Ruta: Hanamikoji, lugar ng Ichiriki, Shirakawa, Tatsumi Jinja. Lakad at hapunan sa paligid ng Gion/Pontocho. Sana gawin ni mi amigo ang kanyang sikat at kahanga-hangang lasagna ngayong araw. Magugustuhan ni mi amigo kung gaano katahimik at kalmado ang mga tao dito."
+        "text": "🏮 Gion. Ruta: Hanamikoji, lugar ng Ichiriki, Shirakawa, Tatsumi Jinja. Lakad at hapunan sa paligid ng Gion/Pontocho para tamasahin ang tradisyonal na ambiance, iluminadong eskinita at katahimikan."
       },
       {
         "time": "~21:30",
@@ -183,7 +183,7 @@ export const days = [
   {
     "title": "Hilagang-kanlurang Kyoto at Bamboo",
     "cities": "Kyoto (Arashiyama)",
-    "summary": "Susuriin natin ang hilagang-kanluran, magsisimula sa makintab na Golden Pavilion at ang daanan ng Kinukake no Michi. Sa tanghali, dadalhin tayo ng tram papuntang Arashiyama, unang bibisitahin ang mataas na makasaysayang bahagi bago bumaba sa sikat na bamboo forest. mi amigo, huwag kang magdala ng bamboo pauwi para sa mga halaman mo sa Aluche. Sigurado nang naghahanap si mi amigo ng mga historical error sa pamphlet.",
+    "summary": "Susuriin natin ang hilagang-kanluran, magsisimula sa makintab na Golden Pavilion at ang daanan ng Kinukake no Michi. Sa tanghali, dadalhin tayo ng tram papuntang Arashiyama, unang bibisitahin ang mataas na makasaysayang bahagi bago bumaba sa sikat na bamboo forest.",
     "history": "Ang Kinkakuji (Golden Pavilion) ay ang marangyang retirement villa ni shogun Ashikaga Yoshimitsu noong huling bahagi ng ika-14 na siglo. Ang Arashiyama ay destinasyon ng bakasyon ng imperial nobility mula pa noong Heian period.",
     "schedule": [
       {
@@ -259,7 +259,7 @@ export const days = [
   {
     "title": "Tradisyonal na Kyoto at Osaka Castle",
     "cities": "Kyoto, Osaka",
-    "summary": "Huling umaga sa Kyoto pagbisita sa napakalaking Kiyomizu-dera at pababa sa pamamagitan ng mga dalisdis ng Higashiyama. Sa tanghali, mabilis na tren patungo sa Osaka para sa makasaysayang kastilyo at ang kabaliwan sa gastronomic ng Dotonbori. Siguradong makakaramdam ng nostalgia sina mi amigo at mi amigo at mas gugustuhing kumain ng pasta sa Rome kung saan sila nagkakilala. Mag-ingat baka mag-high school teacher mode si el guía at ma-bored tayo. mi amigo, ang kastilyong ito ay may mas maraming kasaysayan kaysa sa inyo ni mi amigo sa Rome!",
+    "summary": "Huling umaga sa Kyoto pagbisita sa napakalaking Kiyomizu-dera at pababa sa pamamagitan ng mga dalisdis ng Higashiyama. Sa tanghali, mabilis na tren patungo sa Osaka para sa makasaysayang kastilyo at ang kabaliwan sa gastronomic ng Dotonbori.",
     "history": "Ang Kiyomizu-dera ay itinatag noong 778; ang terrace nito ay itinayo nang hindi gumagamit ng isang pako. Ang Osaka Castle ay ang sentro ng militar ni Toyotomi Hideyoshi, isang pangunahing tauhan sa pag-iisa ng Japan noong ika-16 na siglo.",
     "schedule": [
       {
@@ -334,7 +334,7 @@ export const days = [
   {
     "title": "Kanazawa",
     "cities": "Kanazawa",
-    "summary": "Ipadadala natin ang malalaking bagahe sa Tokyo at maglalakbay nang magaan patungo sa baybayin ng Sea of Japan. Araw sa Kanazawa: Kenroku-en (isa sa mga pinakamahusay na hardin sa bansa), seafood, at mga sinaunang distrito ng samurai. Siguradong hindi kasing sarap ng lutong-bahay na prutas na ice cream ni mi amigo ang mga ice cream dito.",
+    "summary": "Ipadadala natin ang malalaking bagahe sa Tokyo at maglalakbay nang magaan patungo sa baybayin ng Sea of Japan. Araw sa Kanazawa: Kenroku-en (isa sa mga pinakamahusay na hardin sa bansa), sariwang seafood, at mga sinaunang distrito ng samurai.",
     "history": "Ang Kanazawa ang nasasakupan ng makapangyarihang angkan ng Maeda sa panahon ng Edo, na karibal ng Kyoto sa kayamanan at kultura. Matapos makatakas sa mga makabagong pambobomba, pinananatili nito ang pagkakalatag ng feudal na lungsod.",
     "schedule": [
       {
@@ -490,7 +490,7 @@ export const days = [
       },
       {
         "time": "11:15",
-        "text": "🥾 Nakasendo Trail: Magome → Tsumago. Mga 8 km at mga 2h30-3h sa relaxed na bilis. Ang direksyon na Magome → Tsumago ay mas kaunti ang akyat: aakyat sa Magome-tōge pass (~300 m) at pagkatapos ay babababa halos lahat ng natitira. Praktikal na impormasyon: madali-katamtaman ang hirap; malinaw ang mga signage sa daanan; may bahaging kagubatan at asphalt; magdala ng tubig. May bear bells sa ilang punto, gamitin ito habang dumadaan.\n\n📍 **Mga landmark sa daan** (hindi na kailangang aktibong hanapin, lalabas lang ito nang mag-isa kung susundan ang mga signage):\n• **Tateba-chaya**: tradisyunal na teahouse kung saan nagbibigay ng libreng tsaa sa mga manlalakbay -- magandang lugar para sa unang pahinga.\n• **Odaki at Medaki Falls** (\"lalaki\" at \"babae\"): maliit na naka-signage na liko, ang Odaki ay bumabagsak nang mga 18 m, ang Medaki ay mas maliit at banayad.\n• **Kurashina Shrine**: katabi mismo ng mga talon.\n• **Otsumago**: liit na nayon na may tradisyunal na bahay mula sa Edo period, ~1 km bago makarating sa Tsumago -- kasama ang Fujihara house, mula kalagitnaan ng ika-17 siglo.\n\nmi amigo, alam na naming bilang government employee sa Reina Sofía ay hindi ka masyadong gumagalaw, pero ngayong araw kailangang maglakad!"
+        "text": "🥾 Nakasendo Trail: Magome → Tsumago. Mga 8 km at mga 2h30-3h sa relaxed na bilis. Ang direksyon na Magome → Tsumago ay mas kaunti ang akyat: aakyat sa Magome-tōge pass (~300 m) at pagkatapos ay babababa halos lahat ng natitira. Praktikal na impormasyon: madali-katamtaman ang hirap; malinaw ang mga signage sa daanan; may bahaging kagubatan at asphalt; magdala ng tubig. May bear bells sa ilang punto, gamitin ito habang dumadaan.\n\n📍 **Mga landmark sa daan** (hindi na kailangang aktibong hanapin, lalabas lang ito nang mag-isa kung susundan ang mga signage):\n• **Tateba-chaya**: tradisyunal na teahouse kung saan nagbibigay ng libreng tsaa sa mga manlalakbay -- magandang lugar para sa unang pahinga.\n• **Odaki at Medaki Falls** (\"lalaki\" at \"babae\"): maliit na naka-signage na liko, ang Odaki ay bumabagsak nang mga 18 m, ang Medaki ay mas maliit at banayad.\n• **Kurashina Shrine**: katabi mismo ng mga talon.\n• **Otsumago**: liit na nayon na may tradisyunal na bahay mula sa Edo period, ~1 km bago makarating sa Tsumago -- kasama ang Fujihara house, mula kalagitnaan ng ika-17 siglo."
       },
       {
         "time": "12:30–13:00",
@@ -571,7 +571,7 @@ export const days = [
         "text": "🥢 **PAGLALAKAD SA KAPPABASHI-DORI.** Dahil nandito na kayo pagkatapos ng tanghalian: ang kalyeng buong-buo na nakatuon sa mundo ng pagluluto, may mga estatwa ng kappa (ang malikot na espiritu ng tubig na pinagmulan ng pangalan ng kapitbahayan) nakakalat sa buong ruta. Dito isinilang ang sampuru, ang hyperrealistic na food replica na nakikita sa mga bintana ng restaurant sa Japan -- ang isang piraso ng imitasyong sushi ay puwedeng umabot sa ¥ May mga gawang-kamay na Japanese knife din na may agarang paghasa at engraving, at sa timog na pasukan, may higanteng ulo ng chef sa ibabaw ng gusaling Niimi Cooker, imposibleng hindi mapansin."
       },
       {
-        "text": "🚶 Maglakad papuntang hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Bayad na ang hotel (1,927.13€ sa pamamagitan ng Booking · 6 gabi).\n\nCheck-in (opisyal simula 15:00), oras para iwan ang bagahe, mag-unpack nang kaunti at maligo pagkatapos ng buong araw ng tren.\n\nAddress: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Ang 5 malaking maleta na ipinadala mula Kyoto (Takkyubin/Yamato):**\n- Numero ng tracking: **753-3690-9535**.\n- Naka-iskedyul na delivery: **09/15, umaga (AM)** -- ibig sabihin, dapat nakarating na ito sa hotel BAGO kayo dumating. Sa check-in, itanong sa reception kung nasa kanila na ito.\n- Resibo sa pangalan ni mi amigo R., nagpadala Hotel Keihan Kyoto Hachijoguchi.\n- 5 pirasong bagahe (品名: Clothes), kabuuang halaga ¥ (bayad na sa hotel sa Kyoto nang ipadala)."
+        "text": "🚶 Maglakad papuntang hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Naka-book na residential apartment (1,927.13€ sa pamamagitan ng Booking · 6 gabi).\n\nCheck-in (opisyal simula 15:00), oras para iwan ang bagahe, mag-unpack nang kaunti at maligo pagkatapos ng biyahe sa tren.\n\nAddress: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Pagtanggap ng bagahe (Takkyubin/Yamato):**\nDahil ipinadala ang malalaking maleta mula Kyoto, dapat ay nasa reception na ito pagdating ninyo. Magtanong sa front desk sa check-in."
       },
       {
         "text": "🌉 **PAGLALAKAD PAPUNTANG TOKYO SKYTREE, KASABAY NG ILOG SUMIDA.** Napakasimple at magandang ruta ng lakad (~15-20 min) mula sa hotel: tatawirin ang kilalang pulang Azumabashi Bridge katabi ng gusali ng Asahi Beer, pagkatapos ay susundin ang promenade ng Ilog Sumida hanggang sa paanan ng tore."
@@ -580,7 +580,7 @@ export const days = [
         "text": "🗼 **PAG-AKYAT SA OBSERVATION DECK NA MAY TICKET, PARA SA SUNSET.** Lumulubog ang araw mga ~17:50 sa Setyembre -- kung 17:00 ang entry, may sapat na oras para maka-settle sa itaas bago ito magsimulang lumubog.\n\n🎟️ Bumili ng ticket doon mismo o maaga sa opisyal na website (inirerekomenda kung maganda ang forecast, mabilis maubos ang sunset slots). Ang Tembo Deck (350m) ang standard na observation deck; ang Tembo Galleria (450m) ay dagdag na antas kung gusto pang umakyat nang mas mataas.\n\n💡 Balik sa hotel gamit ang parehong ruta sa tabing-ilog, may sapat na oras bago ang hapunan ng 19:30."
       },
       {
-        "text": "🍜 **HAPUNAN: ASAKUSA MONJA MONRO** (rekomendasyon ng kaibigan ni mi amigo). Monjayaki at teppanyaki na niluluto sa harap ninyo mismo ng staff -- specialty ng bahay na may seafood mula sa Tsukiji/Toyosu markets. Mataas ang rating (top 5 sa mga review sa Asakusa). Puwedeng may kaunting hintayan, pero sulit. Ilang minuto lang mula sa hotel."
+        "text": "🍜 **HAPUNAN: ASAKUSA MONJA MONRO** (rekomendasyon ng lokal na lutuin). Monjayaki at teppanyaki na niluluto sa harap ninyo mismo ng staff -- specialty ng bahay na may seafood mula sa Tsukiji/Toyosu markets. Mataas ang rating (top 5 sa mga review sa Asakusa). Puwedeng may kaunting hintayan, pero sulit. Ilang minuto lang mula sa hotel."
       },
       {
         "text": "🏨 **BALIK SA HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nBumalik sa residence sa Tokyo para magpahinga at makasama ulit ang malalaking maleta mula Kyoto (unang gabi sa Tokyo)."
@@ -642,7 +642,7 @@ export const days = [
   {
     "title": "Shibuya, Harajuku at Shinjuku",
     "cities": "Shibuya, Harajuku, Shinjuku",
-    "summary": "Matinding araw: Shibuya crossing at kultura ng kabataan sa Harajuku. Magtatapos tayo sa ilalim ng neon lights ng Shinjuku kasama ang mga food alley nito. mi amigo, samantalahin mo na magpagupit, kahit hindi kasing mura sa Spain, mas maganda pa rin kaysa sa France.",
+    "summary": "Matinding araw: Shibuya crossing at kultura ng kabataan sa Harajuku, na may hintuan sa Pokémon Center Shibuya (kilala sa life-size Mewtwo statue nito). Magtatapos tayo sa ilalim ng neon lights ng Shinjuku kasama ang mga food alley nito.",
     "history": "Lumago ang mga distritong ito pagkatapos ng Great Kanto Earthquake noong 1923, dahil sa paglawak ng urban train. Ang Shinjuku ngayon ang tahanan ng pinaka-abalang train station sa mundo.",
     "schedule": [
       {
@@ -664,7 +664,7 @@ export const days = [
         "text": "🌳 **MIYASHITA PARK.** Lakad mula sa crossing (~5 min). Isang parke na nakataas sa ibabaw ng isang shopping mall, may skate area, sports court, at mga terrace -- kakaibang paraan ng paggamit ng espasyo sa isang napakasiksik na lungsod. Magandang maikling hintuan para mag-inat bago magpatuloy."
       },
       {
-        "text": "🎮 **POKÉMON CENTER SHIBUYA AT NINTENDO TOKYO** (Shibuya Parco, 6th floor, ~10 min na lakad mula sa Miyashita Park) — kilala sa malaking Mewtwo statue nito (nasa loob ng glass tube, maganda para sa litrato) at futuristic neon style. Sa parehong palapag din ang Nintendo TOKYO. Mag-ingat, malamang gagawa si mi amigo ng urban garden dito para sa mga halaman niya sa Aluche."
+        "text": "🎮 **POKÉMON CENTER SHIBUYA AT NINTENDO TOKYO** (Shibuya Parco, 6th floor, ~10 min na lakad mula sa Miyashita Park) — kilala sa malaking Mewtwo statue nito (nasa loob ng glass tube, maganda para sa litrato) at futuristic neon style. Sa parehong palapag din ang Nintendo TOKYO."
       },
       {
         "text": "🚶 **PAGLALAKAD PATUNGONG HARAJUKU.** Mahinahong ruta ng lakad sa Cat Street at Aoyama (sa halip na direktang sumakay ng tren), may oras para tumingin sa mga shop window at design store sa daan -- ibang klaseng ambiance kaysa sa mas siksik na Takeshita Dori."
@@ -715,10 +715,10 @@ export const days = [
         "text": "🍙 Almusal sa Lawson (konbini) malapit sa hotel."
       },
       {
-        "text": "🚇 **ALIS -- PUMILI NG ISA SA 3 OPSYON NA ITO PARA SA UNANG HINTUAN** (walang sushi, dahil hindi gusto ng kapatid ko):\n\n**Opsyon 1 — Ueno Zoo 🐼** (pagdating ~09:05, bukas ng 09:30). Ang pinakamatandang zoo sa Japan (1882), na may giant panda bilang pangunahing atraksyon. Nasa parehong lugar kung saan naroon na naman kayo sa 10:30 (Ueno Park/Ameyoko), kaya't ang opsyong ito ay pina-mabilis lang ang pagdating sa lugar na iyon -- ang pinaka-simple logistically. Walang reserbasyon, babayaran sa gate (~¥).\n\n**Opsyon 2 — Toyosu na walang sushi** (pagdating ~09:25). Panatilihin ang hintuan sa market pero walang sushi breakfast: rooftop garden na may tanawin, libreng bintana kung saan makikita ang tuna auction (kung tutugma ang oras), at mga puwesto ng tamagoyaki, ramen at iba pang bagay na hindi hilaw na isda. Kailangang bumalik papuntang Ueno pagkatapos (~25-30 min), na dadating doon ng mga 10:35.\n\n**Opsyon 3 — Tsukiji outer market** (pagdating ~09:15). Ang lumang market, na patuloy pa ring tumatakbo bilang food street: mas maraming variety kaysa sa Toyosu (mochi, tamagoyaki, prutas, tsaa, inihaw na skewer, hindi lang hilaw). Ito ang opsyon na pinaka-nagdaragdag ng oras sa tatlo -- kailangan din bumalik papuntang Ueno (~25-30 min), na dadating ng mga 10:30."
+        "text": "🚇 **ALIS -- PUMILI NG ISA SA 3 OPSYON NA ITO PARA SA UNANG HINTUAN** (may mga opsyon na walang sushi):\n\n**Opsyon 1 — Ueno Zoo 🐼** (pagdating ~09:05, bukas ng 09:30). Ang pinakamatandang zoo sa Japan (1882), na may giant panda bilang pangunahing atraksyon. Nasa parehong lugar kung saan naroon na naman kayo sa 10:30 (Ueno Park/Ameyoko), kaya't ang opsyong ito ay pina-mabilis lang ang pagdating sa lugar na iyon -- ang pinaka-simple logistically. Walang reserbasyon, babayaran sa gate (~¥).\n\n**Opsyon 2 — Toyosu na walang sushi** (pagdating ~09:25). Panatilihin ang hintuan sa market pero walang sushi breakfast: rooftop garden na may tanawin, libreng bintana kung saan makikita ang tuna auction (kung tutugma ang oras), at mga puwesto ng tamagoyaki, ramen at iba pang bagay na hindi hilaw na isda. Kailangang bumalik papuntang Ueno pagkatapos (~25-30 min), na dadating doon ng mga 10:35.\n\n**Opsyon 3 — Tsukiji outer market** (pagdating ~09:15). Ang lumang market, na patuloy pa ring tumatakbo bilang food street: mas maraming variety kaysa sa Toyosu (mochi, tamagoyaki, prutas, tsaa, inihaw na skewer, hindi lang hilaw). Ito ang opsyon na pinaka-nagdaragdag ng oras sa tatlo -- kailangan din bumalik papuntang Ueno (~25-30 min), na dadating ng mga 10:30."
       },
       {
-        "text": "Ueno Park at Ameyoko street market, maganda para sa murang tsaa at matamis. Magandang berdeng lugar para maglakad-lakad nang tahimik pagkatapos ng maagang gising.\n\n🦪 **MERYENDA SA AMEYOKO** (rekomendasyon ng kaibigan ni mi amigo): kilala rin ang mga puwesto ng palengke sa inihaw na seafood -- inihaw na talaba at igat, bukod sa iba pa. Kung hindi pa ninyo natikman ang igat (unagi), ito ang magandang pagkakataon.\n\n🎮 **YAMASHIROYA** (rekomendasyon ng kaibigan ni mi amigo): 6-palapag na tindahan ng anime/video game figure, laruan at merchandise, 1 minuto lang na lakad mula sa Ueno Station. Nakumpirma na mas mura ang presyo kaysa sa Akihabara, at halatang hindi masyadong siksikan."
+        "text": "Ueno Park at Ameyoko street market, maganda para sa murang tsaa at matamis. Magandang berdeng lugar para maglakad-lakad nang tahimik pagkatapos ng maagang gising.\n\n🦪 **MERYENDA SA AMEYOKO** (lokal na rekomendasyon): kilala rin ang mga puwesto ng palengke sa inihaw na seafood -- inihaw na talaba at igat, bukod sa iba pa. Kung hindi pa ninyo natikman ang igat (unagi), ito ang magandang pagkakataon.\n\n🎮 **YAMASHIROYA** (lokal na rekomendasyon): 6-palapag na tindahan ng anime/video game figure, laruan at merchandise, 1 minuto lang na lakad mula sa Ueno Station. Nakumpirma na mas mura ang presyo kaysa sa Akihabara, at halatang hindi masyadong siksikan."
       },
       {
         "text": "🎫 **SUICA:** ✅ OO; i-tap ang card nang direkta sa mga gate.\n\nYurikamome train papuntang Odaiba na tatawid sa Rainbow Bridge (umupo sa unang kotse)."
@@ -777,7 +777,7 @@ export const days = [
       },
       {
         "time": "11:40–12:40",
-        "text": "Unang tingin sa Nakano Broadway: ang pinakamagandang lugar sa Tokyo para sa orihinal na Pokémon card (mga espesyalisadong trading card shop na may display case ng indibidwal na card at booster pack), mga figure at merchandise ng Dragon Ball, at retro/manga na bagay sa pangkalahatan sa tamang presyo. Maraming palapag ng maliliit na independent na tindahan — sulit puntahan lahat.\n\n🛍️ **NAKANO SUN MALL** (rekomendasyon ng kaibigan ni mi amigo): ang covered shopping arcade na diretsong dumadaan mula sa estasyon hanggang sa pasukan ng Nakano Broadway (~5 min na lakad) -- nakumpirma ang geography, ito ang natural na daan. Mas hindi turista kaysa Akihabara, may mga restaurant at izakaya na mas lokal ang vibe."
+        "text": "Unang tingin sa Nakano Broadway: ang pinakamagandang lugar sa Tokyo para sa orihinal na Pokémon card (mga espesyalisadong trading card shop na may display case ng indibidwal na card at booster pack), mga figure at merchandise ng Dragon Ball, at retro/manga na bagay sa pangkalahatan sa tamang presyo. Maraming palapag ng maliliit na independent na tindahan — sulit puntahan lahat.\n\n🛍️ **NAKANO SUN MALL** (lokal na rekomendasyon): ang covered shopping arcade na diretsong dumadaan mula sa estasyon hanggang sa pasukan ng Nakano Broadway (~5 min na lakad) -- nakumpirma ang geography, ito ang natural na daan. Mas hindi turista kaysa Akihabara, may mga restaurant at izakaya na mas lokal ang vibe."
       },
       {
         "time": "12:40–13:05",
@@ -785,7 +785,7 @@ export const days = [
       },
       {
         "time": "13:05–13:45",
-        "text": "🍜 **TANGHALIAN: GYUKATSU ICHINISAN** (rekomendasyon ng isang kaibigan -- ang pinakamahusay na tonkatsu, ayon sa kanya).\n\nhttps://maps.app.goo.gl/VgfUPTrjPzz4dQpHA?g_st=ic"
+        "text": "🍜 **TANGHALIAN: GYUKATSU ICHINISAN** (mataas na rated na rekomendasyong gastronomic).\n\nhttps://maps.app.goo.gl/VgfUPTrjPzz4dQpHA?g_st=ic"
       },
       {
         "time": "13:45–15:45",

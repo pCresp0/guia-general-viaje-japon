@@ -658,16 +658,12 @@ export const guides = {
         body: "C'est essentiel pour la planification : le Fuji est dégagé bien moins souvent que les gens ne l'imaginent. En été, la visibilité claire ne dure que quelques jours par mois en raison de l'humidité et des nuages que la montagne génère elle-même. Les meilleurs mois sont de novembre à février. En septembre les probabilités sont intermédiaires, et presque toujours meilleures tôt le matin, avant que la chaleur ne forme des nuages. D'où l'intérêt de réserver plusieurs jours et d'exécuter le plan le jour où l'aube est dégagée.",
       },
       {
-        title: "Tour exclusif : lieux à visiter",
-        body: "Le circuit de 8h en mini-van avec Ken Kaneshima inclut les sites les plus spectaculaires de la région :\n1. Pagode Chureito (Arakurayama Sengen) : la carte postale classique à 5 étages avec le Fuji en arrière-plan.\n2. Sanctuaire Kitaguchi Hongu Fuji Sengen Jinja : point de départ historique des pèlerins parmi de gigantesques cèdres.\n3. Village Oshino Hakkai : 8 bassins cristallins d'eau de fonte volcanique et maisons au toit de chaume.\n4. Forêt d'Aokigahara : la 'Mer des Arbres' sur de la roche de lave durcie.\n5. Chutes Shiraito : cascade naturelle qui jaillit de la roche comme des fils de soie blanche.\n6. Route des Lacs : vues panoramiques depuis les rives de Yamanakako, Saiko et Motosuko.",
-      },
-      {
-        title: "Gastronomie locale : Nouilles Houtou",
-        body: "À midi, arrêt dans un restaurant traditionnel pour déguster les Houtou (nouilles plates et larges cuites lentement dans un bouillon de miso chaud avec de la citrouille et des légumes de montagne de saison), le plat emblématique de la préfecture de Yamanashi.",
+        title: "L'excursion : lieux visités",
+        body: "L'excursion réservée avec GetYourGuide (Japan Visionary Tour) comprend quatre étapes dans la zone nord du Fuji, dans la région des Cinq Lacs :\n1. Lac Kawaguchiko et parc Oishi : promenade au bord du lac avec vue classique sur le mont Fuji, réputé pour ses champs de fleurs de saison.\n2. Village Saiko Iyashi-no-Sato Nemba : réplique d'un village traditionnel de maisons au toit de chaume, reconstruit après un typhon en 1966.\n3. Sources d'Oshino Hakkai : huit bassins d'eau cristalline alimentés par la fonte des neiges du Fuji, classés site de beauté naturelle.\n4. Pagode Chureito (Arakurayama Sengen) : l'image de carte postale la plus emblématique du Japon, avec la pagode à cinq étages et le mont Fuji en arrière-plan -- 400 marches pour monter au belvédère.",
       },
       {
         title: "Logistique et tarifs",
-        body: "• Prix : 13 000 ¥ / personne (~70€) (inclut le mini-van privé et toutes les entrées aux sites). Repas et boissons non inclus.\n• Point de départ : Gare de Mishima (Sortie Sud) à 08h20 (~50 min de Tokyo en Shinkansen).\n• Point d'arrivée : Gare du Shinkansen Shin-Fuji vers 17h30 (~60 min de Tokyo en Shinkansen).\n• Langue : Guide officiel en espagnol (Ken Kaneshima · excursionesfujiyama.com · +81 90-5863-1635).",
+        body: "• Prix : 42€ / personne (~210€ groupe), déjà payé.\n• Point de rencontre : Tokyo Mode Gakuen (1-7-3 Nishishinjuku, Shinjuku), en face de la gare. Rendez-vous à 08h10 (départ ponctuel du bus à 08h20).\n• Durée : environ 10 heures, avec retour prévu à Shinjuku vers 18h30.\n• Langue : guide en anglais.\n• Repas NON inclus : il est interdit de manger dans le bus ; il est conseillé de bien prendre son petit-déjeuner et de prévoir des espèces en yens pour les stands locaux lors des arrêts.",
       },
       {
         title: "Prévisions de visibilité et webcams",
@@ -679,7 +675,7 @@ export const guides = {
       "Il y a un proverbe japonais : 'Il est sage de gravir le Fuji une fois, et stupide de le gravir deux fois'.",
       "Le premier rêve de l'année avec le Fuji est considéré de très bon augure, surtout combiné avec un faucon et une aubergine.",
     ],
-    tip: "Tour réservé le dimanche 20 septembre (Jour 14) avec Ken Kaneshima (Excursiones Fujiyama · +81 90-5863-1635 · excursionesfujiyama.com) + 4 réservations flexibles sur GetYourGuide du 16 au 19 septembre. Vérifier les webcams à 06h30.",
+    tip: "Excursion recommandée d'une journée complète avec GetYourGuide au départ de Shinjuku (Jour 10). Il convient de vérifier les webcams à 06h30 le matin même pour évaluer la visibilité.",
   },
 
   "tokyo-tower": {

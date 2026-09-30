@@ -22,8 +22,8 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
   const memberSeats = {
     "viajero1": { seat: "13-E", qr: "/images/tickets/nozomi-day1/seat-13e.png" },
     "viajero2": { seat: "14-E", qr: "/images/tickets/nozomi-day1/seat-14e.png" },
-    "juancarlos": { seat: "13-C", qr: "/images/tickets/nozomi-day1/seat-13c.png" },
-    "gerundio": { seat: "13-D", qr: "/images/tickets/nozomi-day1/seat-13d.png" },
+    "viajero3": { seat: "13-C", qr: "/images/tickets/nozomi-day1/seat-13c.png" },
+    "viajero4": { seat: "13-D", qr: "/images/tickets/nozomi-day1/seat-13d.png" },
     "viajero5": { seat: "14-D", qr: "/images/tickets/nozomi-day1/seat-14d.png" },
   };
 
@@ -79,7 +79,7 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
           </div>
 
           <p style={{ fontSize: 13, color: "var(--ink)", lineHeight: 1.5, margin: 0 }}>
-            Billetes confirmados para el viajero. Selecciona tu nombre para abrir tu <strong>código QR individual</strong> de acceso a los tornos del Shinkansen.
+            Billetes confirmados para el grupo. Selecciona un viajero para abrir su <strong>código QR individual</strong> de acceso a los tornos del Shinkansen.
           </p>
 
         {/* Members List */}

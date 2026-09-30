@@ -16,8 +16,8 @@ const PRICE_LINE = "5 · ¥XXX (~295,62€)";
 const memberSeats = {
   viajero1: { seat: "11-E", qr: "/images/tickets/nozomi-day9/seat-11e.png" },
   viajero2: { seat: "12-E", qr: "/images/tickets/nozomi-day9/seat-12e.png" },
-  juancarlos: { seat: "12-C", qr: "/images/tickets/nozomi-day9/seat-12c.png" },
-  gerundio: { seat: "11-D", qr: "/images/tickets/nozomi-day9/seat-11d.png" },
+  viajero3: { seat: "12-C", qr: "/images/tickets/nozomi-day9/seat-12c.png" },
+  viajero4: { seat: "11-D", qr: "/images/tickets/nozomi-day9/seat-11d.png" },
   viajero5: { seat: "12-D", qr: "/images/tickets/nozomi-day9/seat-12d.png" },
 };
 
@@ -94,7 +94,7 @@ export default function NozomiNagoyaTicketCard({ onGoToDay, defaultExpanded = fa
           </div>
 
           <p style={{ fontSize: 13, color: "var(--ink)", lineHeight: 1.5, margin: 0 }}>
-            Billetes confirmados para el viajero. Selecciona tu nombre para abrir tu <strong>código QR individual</strong> de acceso a los tornos del Shinkansen.
+            Billetes confirmados para el grupo. Selecciona un viajero para abrir su <strong>código QR individual</strong> de acceso a los tornos del Shinkansen.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">

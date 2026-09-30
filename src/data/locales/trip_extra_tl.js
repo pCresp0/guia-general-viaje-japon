@@ -111,7 +111,7 @@ export const blocks = [
     title: "Tokyo at Mt. Fuji Excursion",
     sleepSummary: "Sa Tokyo (6 gabi)",
     bestArea: "Shinjuku o Shibuya (maraming nightlife at direktang koneksyon sa airport at Fuji) o Ueno/Akihabara (mas mura, mas maganda para sa pop culture).",
-    fujiStrategy: "Hindi tayo magpapalipas ng gabi sa Fuji para hindi tayo malasin na magising sa maulap na araw. Buong araw na tour kasama ang Spanish guide: Ken Kaneshima · Excursiones Fujiyama (excursionesfujiyama.com · +81 90-5863-1635). Nakabinbin ang booking. Ang ideyal: mag-book ng 3-4 na magkakasunod na araw, i-check ang panahon sa gabi bago ang tour at piliin ang unang malinaw na araw, i-cancel ang iba. Kumpirmahin muna ang cancellation policy.",
+    fujiStrategy: "Hindi tayo magpapalipas ng gabi sa Fuji para hindi tayo malasin na magising sa maulap na araw. Buong araw na excursion kasama ang GetYourGuide (Japan Visionary Tour), kumpirmado para sa Setyembre 16: Oishi Park, Lawa ng Kawaguchiko, Oshino Hakkai, at Chureito Pagoda, may guide sa Ingles. Hindi na kailangang mag-book ng mga alternatibong araw o mag-cancel ng anuman -- tingnan na lang ang lagay ng panahon sa umagang iyon.",
   },
 ];
 
@@ -213,7 +213,7 @@ export const budget = {
     {
       title: "Matutuluyan (14 gabi)",
       details: [
-        "<strong>✅ 4 sa 5 hotel bayad na ni mi amigo sa Booking (3,033.86€ grupo · 606.77€/tao)</strong>:",
+        "<strong>✅ 4 sa 5 matutuluyan naka-book na nang maaga sa Booking (3,033.86€ grupo · 606.77€/tao)</strong>:",
         "• Hotel Keihan Kyoto Hachijoguchi (Set 7–12, 5 gabi): 669.86€ grupo · 133.97€/tao ✓",
         "• Hotel Resol Trinity Kanazawa (Set 12–13, 1 gabi): 161.89€ grupo · 32.38€/tao ✓",
         "• Hotel Wood Takayama (Set 13–14, 1 gabi): 274.98€ grupo · 55.00€/tao ✓",
@@ -232,11 +232,10 @@ export const budget = {
       ],
     },
     {
-      title: "Mga Excursion sa Bundok Fuji",
+      title: "Mga Excursion sa Bundok Fuji at Nikko",
       details: [
-        "<strong>Tour Ken Kaneshima (araw 14, confirmed):</strong> ¥ (~70€)/tao · ~350€ grupo (mini-van + entrances).",
-        "<strong>GetYourGuide (araw 10–13, 4 petsa reserved):</strong> 210€ grupo / 42€/tao para sa araw na gagamitin. Free cancellation 24h before para sa iba (100% refund). Charge ~Set 13.",
-        "Kung malinaw ang langit sa araw 10–13, puwedeng GYG at i-cancel ang iba; si Ken sa araw 14 ay independent. Fuji Shinkansen nasa Transport.",
+        "<strong>GetYourGuide Bundok Fuji (Araw 10, Set 16, confirmed):</strong> 42€/tao · 210€ grupo (Kawaguchiko, Oishi Park, Oshino Hakkai, Chureito Pagoda). Kumpletong organisadong bus tour.",
+        "<strong>Excursion sa Nikko (Araw 14, Set 20):</strong> Tobu Limited Express balikan, tinatayang ¥2,800 (~17€) bawat tao bawat biyahe, dagdag ang bayad sa Toshogu (~¥1,600–2,100/tao). Kabuuang ~45€/tao.",
       ],
     },
     {
@@ -248,7 +247,7 @@ export const budget = {
     {
       title: "Konbini at meryenda",
       details: [
-        "Bukod sa pangunahing pagkain: kape, meryenda, inumin at maliliit na bilihan sa Lawson/7-Eleven/FamilyMart sa pagitan ng mga oras -- mas malaki pala kapag pinagsama-sama ang maliliit na resibo. Representative na figure, kinalkula mula sa aktwal na gastos ni el guía (~144€ sa konbini at maliliit na cafe sa buong biyahe).",
+        "Bukod sa pangunahing pagkain: kape, meryenda, inumin at maliliit na bilihan sa Lawson/7-Eleven/FamilyMart sa pagitan ng mga oras -- mas malaki pala kapag pinagsama-sama ang maliliit na resibo. Representative na figure, kinalkula mula sa aktwal na gastos (~144€ sa konbini at maliliit na cafe sa buong biyahe).",
       ],
     },
     {

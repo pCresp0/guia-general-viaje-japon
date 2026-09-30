@@ -111,7 +111,7 @@ export const blocks = [
     title: "Tokyo et Excursion au Mont Fuji",
     sleepSummary: "À Tokyo (6 nuits)",
     bestArea: "Shinjuku ou Shibuya (beaucoup de vie nocturne et liaison directe avec l'aéroport et le Fuji) ou Ueno/Akihabara (moins cher, meilleur pour la culture pop).",
-    fujiStrategy: "Nous ne passerons pas la nuit au Fuji pour ne pas risquer de nous réveiller avec un ciel couvert. Visite d'une journée complète avec guide hispanophone : Ken Kaneshima · Excursiones Fujiyama (excursionesfujiyama.com · +81 90-5863-1635). En attente de réservation. L'idéal : réserver 3–4 jours consécutifs, vérifier la météo la veille au soir et faire la visite le premier jour dégagé, en annulant le reste. Confirmez la politique d'annulation au préalable.",
+    fujiStrategy: "Nous ne passerons pas la nuit au Fuji pour ne pas risquer de nous réveiller avec un ciel couvert. Excursion d'une journée complète avec GetYourGuide (Japan Visionary Tour), confirmée pour le 16 septembre : parc Oishi, lac Kawaguchiko, Oshino Hakkai et pagode Chureito, avec guide anglophone. Plus besoin de réserver des jours alternatifs ni d'annuler quoi que ce soit -- il suffit de vérifier la visibilité ce matin-là.",
   },
 ];
 
@@ -213,7 +213,7 @@ export const budget = {
     {
       title: "Hébergement (14 nuits)",
       details: [
-        "<strong>✅ 4 hôtels sur 5 déjà payés par mi amigo sur Booking (3 033,86€ groupe · 606,77€/personne)</strong> :",
+        "<strong>✅ 4 hébergements sur 5 réservés à l'avance via Booking (3 033,86€ groupe · 606,77€/personne)</strong> :",
         "• Hotel Keihan Kyoto Hachijoguchi (7–12 sept, 5 nuits) : 669,86€ groupe · 133,97€/personne ✓",
         "• Hotel Resol Trinity Kanazawa (12–13 sept, 1 nuit) : 161,89€ groupe · 32,38€/personne ✓",
         "• Hotel Wood Takayama (13–14 sept, 1 nuit) : 274,98€ groupe · 55,00€/personne ✓",
@@ -232,11 +232,10 @@ export const budget = {
       ],
     },
     {
-      title: "Excursions Mont Fuji",
+      title: "Excursions Mont Fuji et Nikko",
       details: [
-        "<strong>Tour Ken Kaneshima (jour 14, confirmé) :</strong> 13 000 ¥ (~70€)/personne · ~350€ groupe (mini-van + entrées).",
-        "<strong>GetYourGuide (jours 10–13, 4 dates réservées) :</strong> 210€ groupe / 42€/personne pour le jour utilisé. Annulation gratuite 24h avant pour le reste (remboursement 100 %). Paiement prévu ~13 sept.",
-        "Si le ciel est dégagé un jour 10–13 on peut faire GYG et annuler le reste ; Ken le jour 14 est indépendant. Le Shinkansen Fuji est dans Transports.",
+        "<strong>GetYourGuide Mont Fuji (Jour 10, 16 sept., confirmé) :</strong> 42€/personne · 210€ groupe (Kawaguchiko, parc Oishi, Oshino Hakkai, pagode Chureito). Circuit complet organisé en bus.",
+        "<strong>Excursion à Nikko (Jour 14, 20 sept.) :</strong> Tobu Limited Express aller-retour, env. 2 800 ¥ (~17€) par personne par trajet, plus entrées à Toshogu (~1 600–2 100 ¥/personne). Total env. 45€/personne.",
       ],
     },
     {
@@ -248,7 +247,7 @@ export const budget = {
     {
       title: "Konbini et en-cas",
       details: [
-        "En plus des repas principaux : cafés, en-cas, boissons et petits achats chez Lawson/7-Eleven/FamilyMart entre les repas -- ça finit par peser plus qu'il n'y paraît à coup de petits tickets. Chiffre représentatif, calculé à partir des dépenses réelles enregistrées par el guía (~144€ en konbini et petits cafés sur tout le voyage).",
+        "En plus des repas principaux : cafés, en-cas, boissons et petits achats chez Lawson/7-Eleven/FamilyMart entre les repas -- ça finit par peser plus qu'il n'y paraît à coup de petits tickets. Chiffre représentatif, calculé à partir des dépenses réelles enregistrées (~144€ en konbini et petits cafés sur tout le voyage).",
       ],
     },
     {

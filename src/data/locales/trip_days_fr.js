@@ -72,7 +72,7 @@ export const days = [
         "text": "🚆 JR Nara Line : Kyoto Station → Inari Station (~5 min).\n\n🎫 **SUICA :** ✅ OUI ; passer la carte directement aux portillons.\n\nSans réservation. Utiliser Suica ou acheter un billet simple à la gare. Inari Station est juste à côté du site."
       },
       {
-        "text": "Sanctuaire Fushimi Inari. 💡 Conseil : arriver tôt est particulièrement recommandé pour éviter la plus grande affluence. Pas besoin de monter jusqu'au sommet du mont Inari ; si le temps ou la fatigue pressent, faire une montée partielle et redescendre. el guía n'aura aucun mal à monter, c'est fait pour ça la salle de sport."
+        "text": "Sanctuaire Fushimi Inari. 💡 Conseil : arriver tôt est particulièrement recommandé pour éviter la plus grande affluence. Pas besoin de monter jusqu'au sommet du mont Inari ; si le temps ou la fatigue pressent, faire une montée partielle à travers les torii vermillon et redescendre."
       },
       {
         "text": "🚆 JR Nara Line : Inari → Nara.\n\n🎫 **SUICA :** ✅ OUI ; passer la carte directement aux portillons.\n\nTrain direct vers Nara, sans correspondance, environ 1h20. Sans réservation. À Inari, vérifier que le service choisi s'arrête à Inari et continue vers Nara."
@@ -167,7 +167,7 @@ export const days = [
       },
       {
         "time": "17:30–19:00",
-        "text": "🏮 Gion. Parcours : Hanamikoji, le quartier d'Ichiriki, Shirakawa, Tatsumi Jinja. Balade et dîner autour de Gion/Pontocho. Espérons que mi amigo nous prépare aujourd'hui sa fameuse lasagne spectaculaire. mi amigo va adorer à quel point les gens sont calmes et discrets ici."
+        "text": "🏮 Gion. Parcours : Hanamikoji, le quartier d'Ichiriki, Shirakawa, Tatsumi Jinja. Balade et dîner autour de Gion/Pontocho pour profiter de son ambiance traditionnelle, de ses ruelles illuminées et de son calme."
       },
       {
         "time": "~21:30",
@@ -183,7 +183,7 @@ export const days = [
   {
     "title": "Kyoto Nord-Ouest et Bambou",
     "cities": "Kyoto (Arashiyama)",
-    "summary": "Nous explorerons le nord-ouest en commençant par le brillant Pavillon d'Or et le sentier Kinukake no Michi. À midi, un tramway nous emmène à Arashiyama, en donnant la priorité à la partie historique en hauteur avant de descendre par la célèbre forêt de bambous. mi amigo, ne ramène pas de bambou pour tes plantes à Aluche. mi amigo est sûrement déjà en train de chercher des erreurs historiques dans le dépliant.",
+    "summary": "Nous explorerons le nord-ouest en commençant par le brillant Pavillon d'Or et le sentier Kinukake no Michi. À midi, un tramway nous emmène à Arashiyama, en donnant la priorité à la partie historique en hauteur avant de descendre par la célèbre forêt de bambous.",
     "history": "Le Kinkakuji (Pavillon d'Or) fut la somptueuse villa de retraite du shogun Ashikaga Yoshimitsu à la fin du XIVe siècle. Arashiyama est une destination de villégiature de la noblesse impériale depuis la période Heian.",
     "schedule": [
       {
@@ -259,7 +259,7 @@ export const days = [
   {
     "title": "Kyoto Traditionnel et Château d'Osaka",
     "cities": "Kyoto, Osaka",
-    "summary": "Dernière matinée à Kyoto en visitant le monumental Kiyomizu-dera et en descendant les pentes d'Higashiyama. À midi, train rapide vers Osaka pour son château historique et la folie gastronomique de Dotonbori. mi amigo et mi amigo seront sûrement nostalgiques et préféreront manger des pâtes à Rome où ils se sont rencontrés. Attention, el guía pourrait se mettre en mode prof de lycée et nous saouler. mi amigo, ce château a plus d'histoire que toi et mi amigo à Rome !",
+    "summary": "Dernière matinée à Kyoto en visitant le monumental Kiyomizu-dera et en descendant les pentes d'Higashiyama. À midi, train rapide vers Osaka pour son château historique et la folie gastronomique de Dotonbori.",
     "history": "Le Kiyomizu-dera a été fondé en 778 ; sa terrasse a été construite sans utiliser un seul clou. Le château d'Osaka était l'épicentre militaire de Toyotomi Hideyoshi, figure clé de l'unification du Japon au XVIe siècle.",
     "schedule": [
       {
@@ -334,7 +334,7 @@ export const days = [
   {
     "title": "Kanazawa",
     "cities": "Kanazawa",
-    "summary": "Nous enverrons les gros bagages à Tokyo et voyagerons légers vers la côte de la mer du Japon. Journée à Kanazawa : Kenroku-en (l'un des meilleurs jardins du pays), fruits de mer et anciens quartiers de samouraïs. Les glaces d'ici ne sont sûrement pas aussi bonnes que celles aux fruits que mi amigo fait maison.",
+    "summary": "Nous enverrons les gros bagages à Tokyo et voyagerons légers vers la côte de la mer du Japon. Journée à Kanazawa : Kenroku-en (l'un des meilleurs jardins du pays), fruits de mer frais et anciens quartiers de samouraïs.",
     "history": "Kanazawa était le domaine du puissant clan Maeda à l'époque d'Edo, rivalisant avec Kyoto en richesse et culture. Ayant échappé aux bombardements modernes, elle conserve son tracé urbain féodal.",
     "schedule": [
       {
@@ -490,7 +490,7 @@ export const days = [
       },
       {
         "time": "11:15",
-        "text": "🥾 Sentier Nakasendo : Magome → Tsumago. Environ 8 km et 2h30-3h à un rythme tranquille. Le sens Magome → Tsumago a moins de montée : on monte le col de Magome-tōge (~300 m) puis on descend presque tout le reste. Infos pratiques : difficulté facile–modérée ; sentier bien balisé ; tronçons de forêt et d'asphalte ; prévoir de l'eau. Il y a des cloches anti-ours à plusieurs endroits, les utiliser en passant.\n\n📍 **Points de repère en chemin** (pas besoin de les chercher activement, ils apparaissent d'eux-mêmes en suivant les panneaux) :\n• **Tateba-chaya** : maison de thé traditionnelle où l'on offre du thé gratuit aux randonneurs -- bon endroit pour une première pause.\n• **Chutes Odaki et Medaki** (« mâle » et « femelle ») : un petit détour balisé, l'Odaki chute d'environ 18 m, la Medaki est plus petite et douce.\n• **Sanctuaire Kurashina** : juste à côté des chutes.\n• **Otsumago** : hameau avec des maisons traditionnelles de l'époque Edo, ~1 km avant d'arriver à Tsumago -- inclut la maison Fujihara, du milieu du XVIIe siècle.\n\nmi amigo, on sait bien qu'en tant que fonctionnaire au Reina Sofía tu ne bouges pas beaucoup, mais aujourd'hui il faut marcher !"
+        "text": "🥾 Sentier Nakasendo : Magome → Tsumago. Environ 8 km et 2h30-3h à un rythme tranquille. Le sens Magome → Tsumago a moins de montée : on monte le col de Magome-tōge (~300 m) puis on descend presque tout le reste. Infos pratiques : difficulté facile–modérée ; sentier bien balisé ; tronçons de forêt et d'asphalte ; prévoir de l'eau. Il y a des cloches anti-ours à plusieurs endroits, les utiliser en passant.\n\n📍 **Points de repère en chemin** (pas besoin de les chercher activement, ils apparaissent d'eux-mêmes en suivant les panneaux) :\n• **Tateba-chaya** : maison de thé traditionnelle où l'on offre du thé gratuit aux randonneurs -- bon endroit pour une première pause.\n• **Chutes Odaki et Medaki** (« mâle » et « femelle ») : un petit détour balisé, l'Odaki chute d'environ 18 m, la Medaki est plus petite et douce.\n• **Sanctuaire Kurashina** : juste à côté des chutes.\n• **Otsumago** : hameau avec des maisons traditionnelles de l'époque Edo, ~1 km avant d'arriver à Tsumago -- inclut la maison Fujihara, du milieu du XVIIe siècle."
       },
       {
         "time": "12:30–13:00",
@@ -571,7 +571,7 @@ export const days = [
         "text": "🥢 **PROMENADE DANS KAPPABASHI-DORI.** Puisque vous êtes juste là après le déjeuner : la rue entièrement dédiée à l'univers de la cuisine, avec des statues du kappa (l'esprit d'eau espiègle qui donne son nom au quartier) disséminées tout au long du parcours. C'est ici que sont nés les sampuru, les répliques de plats hyperréalistes vues dans les vitrines des restaurants japonais -- une seule pièce de sushi factice peut coûter environ ¥ 000. Il y a aussi des couteaux japonais forgés à la main avec aiguisage et gravure sur place, et à l'extrémité sud, une tête de cuisinier géante au sommet du bâtiment Niimi Cooker, impossible à manquer."
       },
       {
-        "text": "🚶 Marcher jusqu'à l'hôtel (6 min).\n\n🏨 **CHECK-IN : KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Hôtel déjà payé (1 927,13€ via Booking · 6 nuits).\n\nCheck-in (officiel à partir de 15h00), le temps de déposer les bagages, défaire un peu les affaires et se doucher après toute une journée de trains.\n\nAdresse : 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Les 5 grandes valises envoyées depuis Kyoto (Takkyubin/Yamato) :**\n- Numéro de suivi : **753-3690-9535**.\n- Livraison prévue : **15/09, créneau du matin (AM)** -- c'est-à-dire qu'elles devraient être arrivées à l'hôtel AVANT vous. Au check-in, demander à la réception s'ils les ont déjà mises de côté.\n- Reçu au nom de mi amigo R., expéditeur Hotel Keihan Kyoto Hachijoguchi.\n- 5 colis (品名 : Clothes), coût total ¥ 060 (déjà payé à l'hôtel de Kyoto lors de l'expédition)."
+        "text": "🚶 Marcher jusqu'à l'hôtel (6 min).\n\n🏨 **CHECK-IN : KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Appartement résidentiel réservé (1 927,13€ via Booking · 6 nuits).\n\nCheck-in (officiel à partir de 15h00), le temps de déposer les bagages, défaire un peu les affaires et se doucher après le trajet en train.\n\nAdresse : 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Réception des bagages (Takkyubin/Yamato) :**\nEn ayant envoyé les grandes valises depuis Kyoto, elles devraient déjà se trouver à la réception à votre arrivée. Se renseigner au comptoir de l'hôtel lors du check-in."
       },
       {
         "text": "🌉 **PROMENADE JUSQU'AU TOKYO SKYTREE, LE LONG DE LA RIVIÈRE SUMIDA.** Un itinéraire à pied très simple et agréable (~15-20 min) depuis l'hôtel : en traversant l'emblématique pont rouge Azumabashi près du bâtiment de la brasserie Asahi, puis en suivant la promenade de la rivière Sumida jusqu'au pied de la tour."
@@ -580,7 +580,7 @@ export const days = [
         "text": "🗼 **MONTÉE AU BELVÉDÈRE AVEC BILLETS, POUR LE COUCHER DE SOLEIL.** Le soleil se couche vers ~17h50 en septembre -- avec une entrée à 17h00, il y a largement le temps de s'installer en haut avant qu'il ne commence à descendre.\n\n🎟️ Acheter les billets sur place ou à l'avance sur le site officiel (recommandé si la météo s'annonce bonne, les créneaux du coucher de soleil partent vite). Le Tembo Deck (350 m) est le belvédère standard ; le Tembo Galleria (450 m) est un niveau supplémentaire si vous avez envie de monter encore plus haut.\n\n💡 Retour à l'hôtel par le même chemin le long de la rivière, avec largement le temps avant le dîner de 19h30."
       },
       {
-        "text": "🍜 **DÎNER : ASAKUSA MONJA MONRO** (recommandation d'une amie de mi amigo). Monjayaki et teppanyaki cuisinés devant vous par le personnel -- spécialité maison avec des fruits de mer des marchés de Tsukiji/Toyosu. Très bien noté (top 5 des avis à Asakusa). Il peut y avoir un peu d'attente, mais ça vaut le coup. À quelques minutes de l'hôtel."
+        "text": "🍜 **DÎNER : ASAKUSA MONJA MONRO** (recommandation de cuisine locale). Monjayaki et teppanyaki cuisinés devant vous par le personnel -- spécialité maison avec des fruits de mer des marchés de Tsukiji/Toyosu. Très bien noté (top 5 des avis à Asakusa). Il peut y avoir un peu d'attente, mais ça vaut le coup. À quelques minutes de l'hôtel."
       },
       {
         "text": "🏨 **RETOUR À L'HÔTEL : KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nRetour à notre résidence à Tokyo pour se reposer et retrouver les grandes valises envoyées depuis Kyoto (1re nuit à Tokyo)."
@@ -642,7 +642,7 @@ export const days = [
   {
     "title": "Shibuya, Harajuku et Shinjuku",
     "cities": "Shibuya, Harajuku, Shinjuku",
-    "summary": "Journée intense : carrefour de Shibuya et culture jeune d'Harajuku. Fin de journée sous les néons de Shinjuku et ses ruelles gourmandes. mi amigo, profite-en pour te faire couper les cheveux, même si ce n'est pas aussi bon marché qu'en Espagne, c'est toujours mieux qu'en France.",
+    "summary": "Journée intense : carrefour de Shibuya et culture jeune d'Harajuku, avec un arrêt au Pokémon Center Shibuya (célèbre pour sa statue grandeur nature de Mewtwo). Fin de journée sous les néons de Shinjuku et ses ruelles gourmandes.",
     "history": "Ces quartiers se sont développés après le grand tremblement de terre de Kanto de 1923.",
     "schedule": [
       {
@@ -664,7 +664,7 @@ export const days = [
         "text": "🌳 **MIYASHITA PARK.** À pied depuis le carrefour (~5 min). Un parc surélevé au-dessus d'un centre commercial, avec zone de skate, terrain de sport et terrasses -- une façon curieuse d'exploiter l'espace dans une ville aussi dense. Bon arrêt court pour se dégourdir les jambes avant de continuer."
       },
       {
-        "text": "🎮 **POKÉMON CENTER SHIBUYA ET NINTENDO TOKYO** (Shibuya Parco, 6e étage, ~10 min à pied depuis Miyashita Park) — célèbre pour sa grande statue de Mewtwo (dans un tube en verre, idéale pour les photos) et son style néon futuriste. Nintendo TOKYO se trouve au même étage. Attention, mi amigo va sûrement vouloir monter un jardin urbain ici pour ses plantes d'Aluche."
+        "text": "🎮 **POKÉMON CENTER SHIBUYA ET NINTENDO TOKYO** (Shibuya Parco, 6e étage, ~10 min à pied depuis Miyashita Park) — célèbre pour sa grande statue de Mewtwo (dans un tube en verre, idéale pour les photos) et son style néon futuriste. Nintendo TOKYO se trouve au même étage."
       },
       {
         "text": "🚶 **PROMENADE VERS HARAJUKU.** Itinéraire tranquille à pied par Cat Street et Aoyama (plutôt que de prendre le train directement), avec le temps de flâner devant les vitrines et les boutiques de design en chemin -- une ambiance bien différente de la rue Takeshita, plus fréquentée."
@@ -715,10 +715,10 @@ export const days = [
         "text": "🍙 Petit-déjeuner au Lawson (konbini) près de l'hôtel."
       },
       {
-        "text": "🚇 **DÉPART -- CHOISIR L'UNE DE CES 3 OPTIONS POUR LE PREMIER ARRÊT** (sans sushi, puisque mon frère n'aime pas ça) :\n\n**Option 1 — Zoo d'Ueno 🐼** (arrivée ~09h05, ouvre à 09h30). Le plus vieux zoo du Japon (1882), avec les pandas géants comme grande attraction. Il se trouve dans le même secteur où vous seriez de toute façon à 10h30 (parc d'Ueno/Ameyoko), donc cette option ne fait qu'avancer l'arrivée dans ce secteur -- la plus simple d'un point de vue logistique. Sans réservation, entrée sur place (~¥).\n\n**Option 2 — Toyosu sans sushi** (arrivée ~09h25). Garder l'arrêt au marché mais sans le petit-déjeuner sushi : un jardin sur le toit avec vue, une fenêtre gratuite donnant sur la criée au thon (si l'horaire coïncide), et des étals de tamagoyaki, ramen et autres choses qui ne sont pas du poisson cru. Nécessite de revenir vers Ueno ensuite (~25-30 min), en arrivant vers 10h35.\n\n**Option 3 — Marché extérieur de Tsukiji** (arrivée ~09h15). L'ancien marché, toujours en activité comme rue gastronomique : bien plus de variété qu'à Toyosu (mochi, tamagoyaki, fruits, thé, brochettes grillées, pas seulement du cru). C'est l'option qui ajoute le plus de temps des trois -- retour vers Ueno également nécessaire (~25-30 min), en arrivant vers 10h30."
+        "text": "🚇 **DÉPART -- CHOISIR L'UNE DE CES 3 OPTIONS POUR LE PREMIER ARRÊT** (avec options sans sushi) :\n\n**Option 1 — Zoo d'Ueno 🐼** (arrivée ~09h05, ouvre à 09h30). Le plus vieux zoo du Japon (1882), avec les pandas géants comme grande attraction. Il se trouve dans le même secteur où vous seriez de toute façon à 10h30 (parc d'Ueno/Ameyoko), donc cette option ne fait qu'avancer l'arrivée dans ce secteur -- la plus simple d'un point de vue logistique. Sans réservation, entrée sur place (~¥).\n\n**Option 2 — Toyosu sans sushi** (arrivée ~09h25). Garder l'arrêt au marché mais sans le petit-déjeuner sushi : un jardin sur le toit avec vue, une fenêtre gratuite donnant sur la criée au thon (si l'horaire coïncide), et des étals de tamagoyaki, ramen et autres choses qui ne sont pas du poisson cru. Nécessite de revenir vers Ueno ensuite (~25-30 min), en arrivant vers 10h35.\n\n**Option 3 — Marché extérieur de Tsukiji** (arrivée ~09h15). L'ancien marché, toujours en activité comme rue gastronomique : bien plus de variété qu'à Toyosu (mochi, tamagoyaki, fruits, thé, brochettes grillées, pas seulement du cru). C'est l'option qui ajoute le plus de temps des trois -- retour vers Ueno également nécessaire (~25-30 min), en arrivant vers 10h30."
       },
       {
-        "text": "Parc d'Ueno et marché de rue d'Ameyoko, parfait pour du thé et des douceurs pas chers. Bel espace vert pour se promener tranquillement après le réveil matinal.\n\n🦪 **GRIGNOTER À AMEYOKO** (recommandation d'une amie de mi amigo) : les étals du marché sont aussi très réputés pour les fruits de mer grillés -- huîtres et anguilles grillées, entre autres. Si vous n'avez pas encore goûté l'anguille (unagi), c'est une bonne occasion.\n\n🎮 **YAMASHIROYA** (recommandation d'une amie de mi amigo) : un magasin de 6 étages de figurines, jouets et produits dérivés d'anime/jeux vidéo, à seulement 1 minute à pied de la gare d'Ueno. Confirmé que les prix sont généralement moins chers qu'à Akihabara, et c'est nettement moins fréquenté."
+        "text": "Parc d'Ueno et marché de rue d'Ameyoko, parfait pour du thé et des douceurs pas chers. Bel espace vert pour se promener tranquillement après le réveil matinal.\n\n🦪 **GRIGNOTER À AMEYOKO** (recommandation locale) : les étals du marché sont aussi très réputés pour les fruits de mer grillés -- huîtres et anguilles grillées, entre autres. Si vous n'avez pas encore goûté l'anguille (unagi), c'est une bonne occasion.\n\n🎮 **YAMASHIROYA** (recommandation locale) : un magasin de 6 étages de figurines, jouets et produits dérivés d'anime/jeux vidéo, à seulement 1 minute à pied de la gare d'Ueno. Confirmé que les prix sont généralement moins chers qu'à Akihabara, et c'est nettement moins fréquenté."
       },
       {
         "text": "🎫 **SUICA :** ✅ OUI ; passer la carte directement aux portillons.\n\nTrain Yurikamome vers Odaiba en traversant le Rainbow Bridge (asseyez-vous dans le premier wagon)."
@@ -777,7 +777,7 @@ export const days = [
       },
       {
         "time": "11:40–12:40",
-        "text": "Premier coup d'œil à Nakano Broadway : le meilleur endroit de Tokyo pour les cartes Pokémon originales (boutiques spécialisées de trading cards avec vitrines de cartes à l'unité et boosters), les figurines et produits dérivés Dragon Ball, et les articles rétro/manga en général à prix juste. Plusieurs étages de petites boutiques indépendantes — ça vaut le coup de toutes les faire.\n\n🛍️ **NAKANO SUN MALL** (recommandation d'une amie de mi amigo) : la galerie marchande couverte qui mène directement de la gare à l'entrée de Nakano Broadway (~5 min à pied) -- confirmé géographiquement, c'est le chemin naturel. Bien moins touristique qu'Akihabara, avec des restaurants et izakayas à l'ambiance plus locale."
+        "text": "Premier coup d'œil à Nakano Broadway : le meilleur endroit de Tokyo pour les cartes Pokémon originales (boutiques spécialisées de trading cards avec vitrines de cartes à l'unité et boosters), les figurines et produits dérivés Dragon Ball, et les articles rétro/manga en general à prix juste. Plusieurs étages de petites boutiques indépendantes — ça vaut le coup de toutes les faire.\n\n🛍️ **NAKANO SUN MALL** (recommandation locale) : la galerie marchande couverte qui mène directement de la gare à l'entrée de Nakano Broadway (~5 min à pied) -- confirmé géographiquement, c'est le chemin naturel. Bien moins touristique qu'Akihabara, avec des restaurants et izakayas à l'ambiance plus locale."
       },
       {
         "time": "12:40–13:05",
@@ -785,7 +785,7 @@ export const days = [
       },
       {
         "time": "13:05–13:45",
-        "text": "🍜 **DÉJEUNER : GYUKATSU ICHINISAN** (recommandé par un ami -- le meilleur tonkatsu, d'après lui).\n\nhttps://maps.app.goo.gl/VgfUPTrjPzz4dQpHA?g_st=ic"
+        "text": "🍜 **DÉJEUNER : GYUKATSU ICHINISAN** (recommandation gastronomique très appréciée).\n\nhttps://maps.app.goo.gl/VgfUPTrjPzz4dQpHA?g_st=ic"
       },
       {
         "time": "13:45–15:45",
