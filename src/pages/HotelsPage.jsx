@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useContent, useT } from "../i18n/LanguageContext";
 import { mapsUrl } from "../utils/maps";
+import googleMapsIcon from "../assets/icons/google-maps.png";
+import bookingIcon from "../assets/icons/booking.png";
 import { MapPin, Phone, CalendarCheck, CalendarX, BedDouble, ChevronDown, ChevronUp } from "lucide-react";
 import { useHighlight } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
@@ -128,7 +130,7 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
               className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold rounded-full px-3 py-1.5 transition-colors"
               style={{ background: "rgba(255,255,255,0.2)", color: "white", textDecoration: "none" }}
             >
-              <img src="/icons/google-maps.png" alt="" width={13} height={13} /> Maps
+              <img src={googleMapsIcon} alt="" width={13} height={13} /> Maps
             </a>
             <div className="p-1 rounded-full" style={{ background: "rgba(255,255,255,0.15)" }}>
               {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -222,7 +224,7 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
                 className="inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-3 py-2"
                 style={{ background: headerBg, color: "white", textDecoration: "none" }}
               >
-                <img src="/icons/booking.png" alt="" width={16} height={16} style={{ borderRadius: 3 }} /> Ver reserva Booking
+                <img src={bookingIcon} alt="" width={16} height={16} style={{ borderRadius: 3 }} /> Ver reserva Booking
               </a>
             )}
             {hotel.total && (

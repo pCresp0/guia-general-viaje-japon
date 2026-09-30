@@ -1,10 +1,12 @@
 import { tokenizePlaces, placeMapsUrl } from "../utils/linkifyPlaces";
+import googleMapsIcon from "../assets/icons/google-maps.png";
+import bookingIcon from "../assets/icons/booking.png";
 
 function getUrlButtonInfo(href) {
   if (/maps\.app\.goo\.gl|google\.com\/maps|maps\.google\.com/i.test(href)) {
     return {
       label: "Maps ↗",
-      iconSrc: "/icons/google-maps.png",
+      iconSrc: googleMapsIcon,
       bg: "rgba(29, 53, 87, 0.09)",
       color: "var(--indigo)",
       border: "1px solid rgba(29, 53, 87, 0.18)",
@@ -29,7 +31,7 @@ function getUrlButtonInfo(href) {
   if (/booking\.com/i.test(href)) {
     return {
       label: "Ver en Booking ↗",
-      iconSrc: "/icons/booking.png",
+      iconSrc: bookingIcon,
       bg: "rgba(0, 53, 128, 0.09)",
       color: "#003580",
       border: "1px solid rgba(0, 53, 128, 0.2)",

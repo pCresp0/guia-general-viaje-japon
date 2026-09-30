@@ -10,6 +10,7 @@ import { slug } from "../utils/slug";
 import { parseDayNumbers } from "../utils/mapDay";
 import { getTripStatus } from "../utils/date";
 import PlaceText from "../components/PlaceText";
+import googleMapsIcon from "../assets/icons/google-maps.png";
 
 function createIcon(emoji, color, order) {
   return L.divIcon({
@@ -426,7 +427,7 @@ export default function MapPage({ onGoToDay, initialDay }) {
                         target="_blank" rel="noopener noreferrer"
                         style={{ fontSize: 12, color: stop.color, fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}
                       >
-                        <img src="/icons/google-maps.png" alt="" width={13} height={13} />
+                        <img src={googleMapsIcon} alt="" width={13} height={13} />
                         {mapLabels.abrirGoogleMaps}
                       </a>
                     </>
@@ -538,7 +539,7 @@ export default function MapPage({ onGoToDay, initialDay }) {
                     overflow: "hidden",
                   }}
                 >
-                  <img src="/icons/google-maps.png" alt="" width={13} height={13} style={{ flexShrink: 0 }} />
+                  <img src={googleMapsIcon} alt="" width={13} height={13} style={{ flexShrink: 0 }} />
                   <span className="truncate">{mapLabels.verEnGoogleMaps}</span>
                 </a>
               </div>

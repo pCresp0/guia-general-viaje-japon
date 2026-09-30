@@ -3,6 +3,7 @@ import { MapPin, Utensils, Coffee, Mountain, ChevronDown } from "lucide-react";
 import GuideCard from "../components/GuideCard";
 import { formatDateShort } from "../utils/date";
 import { useT, useContent } from "../i18n/LanguageContext";
+import googleMapsIcon from "../assets/icons/google-maps.png";
 
 // Lugares que tienen guía detallada disponible (id del lugar → id de la guía)
 const guideFor = {
@@ -178,7 +179,7 @@ export default function PlacesPage() {
               className="text-xs font-semibold px-3.5 py-2 rounded-xl border flex items-center gap-1.5 transition-opacity hover:opacity-85"
               style={{ background: "var(--paper)", borderColor: "var(--line)", color: "var(--forest)", textDecoration: "none" }}
             >
-              <img src="/icons/google-maps.png" alt="" width={14} height={14} style={{ display: "inline", verticalAlign: "-2px", marginRight: 2 }} />
+              <img src={googleMapsIcon} alt="" width={14} height={14} style={{ display: "inline", verticalAlign: "-2px", marginRight: 2 }} />
               Punto de Encuentro en Maps (Tokyo Mode Gakuen) ↗
             </a>
           </div>
