@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
         registerType: 'autoUpdate',
         includeAssets: [
           'favicon.ico',
+          'favicon.svg',
           'icon-16.png',
           'icon-32.png',
           'icon-180.png',
