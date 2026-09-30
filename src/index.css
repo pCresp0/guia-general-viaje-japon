@@ -51,6 +51,10 @@ html, body, #root {
   height: 100%;
 }
 
+html {
+  background-color: var(--paper);
+}
+
 #root {
   position: relative;
   z-index: 1;
@@ -59,7 +63,9 @@ html, body, #root {
 /* ── Textura de olas sobre el fondo de la app ────────────────────────
    Misma imagen que el panel lateral (waves-sidebar.webp) pero con
    opacidad reducida y un leve blur para que sea más difuminada.
-   inset: -12px compensa el sangrado de bordes del filtro blur. */
+   inset: -12px compensa el sangrado de bordes del filtro blur.
+   z-index: -1 garantiza que quede estrictamente por detrás de todo el
+   contenido y tarjetas de la app, sin importar el contexto de apilamiento. */
 body::before {
   content: "";
   position: fixed;
@@ -70,7 +76,7 @@ body::before {
   opacity: 0.11;
   filter: blur(2px);
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
 }
 
 /* Clases de apoyo con textura de olas japonesas procesadas por Vite */
@@ -94,7 +100,7 @@ body::before {
 
 body {
   position: relative;
-  background-color: var(--paper);
+  background-color: transparent;
   color: var(--ink);
   font-family: var(--font-body);
   overscroll-behavior-y: none;
