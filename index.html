@@ -94,25 +94,23 @@
 
         // Fallback dinámico para GitHub Pages si se sirve desde la rama main
         if (window.location.hostname.includes('github.io')) {
-          setTimeout(function() {
-            var loader = document.getElementById('initial-loader');
-            if (loader && !document.querySelector('script[src*="assets/app"]')) {
-              var base = '/guia-general-viaje-japon/';
-              var s = document.createElement('script');
-              s.type = 'module';
-              s.crossOrigin = '';
-              s.src = base + 'assets/app.js';
-              document.body.appendChild(s);
+          var loader = document.getElementById('initial-loader');
+          if (loader && !document.querySelector('script[src*="assets/app"]')) {
+            var base = '/guia-general-viaje-japon/';
+            var s = document.createElement('script');
+            s.type = 'module';
+            s.crossOrigin = '';
+            s.src = base + 'assets/app.js';
+            document.body.appendChild(s);
 
-              if (!document.querySelector('link[href*="assets/index"]')) {
-                var l = document.createElement('link');
-                l.rel = 'stylesheet';
-                l.crossOrigin = '';
-                l.href = base + 'assets/index.css';
-                document.head.appendChild(l);
-              }
+            if (!document.querySelector('link[href*="assets/index"]')) {
+              var l = document.createElement('link');
+              l.rel = 'stylesheet';
+              l.crossOrigin = '';
+              l.href = base + 'assets/index.css';
+              document.head.appendChild(l);
             }
-          }, 300);
+          }
         }
 
         window.addEventListener('error', function(e) {
