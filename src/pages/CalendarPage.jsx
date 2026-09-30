@@ -25,7 +25,7 @@ const dayHighlights = {
   11: { highlight: "🚦 Shibuya & Meiji", stay: "🏨 KOKO Tokio" },
   12: { highlight: "🏙️ Toyosu & Roppongi", stay: "🏨 KOKO Tokio" },
   13: { highlight: "🕹️ Ikebukuro & Nakano", stay: "🏨 KOKO Tokio" },
-  14: { highlight: "🗻 Tour Monte Fuji (Ken)", stay: "🏨 KOKO Tokio" },
+  14: { highlight: "🏯 Palacio Imperial & Ginza", stay: "🏨 KOKO Tokio" },
   15: { highlight: "✈️ Vuelta NRT Vuelo Vuelta", stay: "Regreso" },
 };
 

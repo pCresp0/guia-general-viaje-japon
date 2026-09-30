@@ -111,7 +111,7 @@ export const blocks = [
     title: "Tokyo and Mt. Fuji Excursion",
     sleepSummary: "In Tokyo (6 nights)",
     bestArea: "Shinjuku or Shibuya (lots of nightlife and direct connection to the airport and Fuji) or Ueno/Akihabara (cheaper, better for pop culture).",
-    fujiStrategy: "We will not stay overnight at Fuji so as not to risk waking up to a cloudy day. Full-day tour with Spanish-speaking guide: Ken Kaneshima · Excursiones Fujiyama (excursionesfujiyama.com · +81 90-5863-1635). Pending booking. Ideally: book 3–4 consecutive days, check the weather the night before and do the first one that wakes up clear, canceling the rest. Confirm the cancellation policy beforehand.",
+    fujiStrategy: "We will not stay overnight at Fuji so as not to risk waking up to a cloudy day. Full-day excursion with GetYourGuide (Japan Visionary Tour), confirmed for September 16: Oishi Park, Lake Kawaguchiko, Oshino Hakkai, and Chureito Pagoda, with an English-speaking guide. No need to book alternative days or cancel anything -- just check visibility that morning.",
   },
 ];
 
@@ -213,7 +213,7 @@ export const budget = {
     {
       title: "Accommodation (14 nights)",
       details: [
-        "<strong>✅ 4 out of 5 hotels already paid by mi amigo on Booking (3,033.86€ group · 606.77€/person)</strong>:",
+        "<strong>✅ 4 out of 5 accommodations booked in advance via Booking (3,033.86€ group · 606.77€/person)</strong>:",
         "• Hotel Keihan Kyoto Hachijoguchi (Sep 7–12, 5 nights): 669.86€ group · 133.97€/person ✓",
         "• Hotel Resol Trinity Kanazawa (Sep 12–13, 1 night): 161.89€ group · 32.38€/person ✓",
         "• Hotel Wood Takayama (Sep 13–14, 1 night): 274.98€ group · 55.00€/person ✓",
@@ -232,11 +232,10 @@ export const budget = {
       ],
     },
     {
-      title: "Mount Fuji Excursions",
+      title: "Mount Fuji and Nikko Excursions",
       details: [
-        "<strong>Ken Kaneshima tour (day 14, confirmed):</strong> ¥ (~70€)/person · ~350€ group (mini-van + admissions).",
-        "<strong>GetYourGuide (days 10–13, 4 dates reserved):</strong> 210€ group / 42€/person for the day used. Free cancellation 24h before for the rest (100% refund). Charge scheduled ~Sep 13.",
-        "If the sky is clear on a day 10–13 you can do GYG and cancel the rest; Ken on day 14 is independent. Fuji Shinkansen is under Transport.",
+        "<strong>GetYourGuide Mount Fuji (Day 10, Sep 16, confirmed):</strong> 42€/person · 210€ group (Kawaguchiko, Oishi Park, Oshino Hakkai, Chureito Pagoda). Full organized bus tour.",
+        "<strong>Nikko Excursion (Day 14, Sep 20):</strong> Tobu Limited Express round trip, approx. ¥2,800 (~17€) per person each way, plus admission to Toshogu (~¥1,600–2,100/person). Total approx. 45€/person.",
       ],
     },
     {
@@ -248,7 +247,7 @@ export const budget = {
     {
       title: "Konbini and snacks",
       details: [
-        "On top of main meals: coffee, snacks, drinks and small purchases at Lawson/7-Eleven/FamilyMart between meals -- adds up more than it seems through lots of small tickets. Representative figure, calculated from el guía's actual recorded spending (~144€ on konbini and small cafés over the whole trip).",
+        "On top of main meals: coffee, snacks, drinks and small purchases at Lawson/7-Eleven/FamilyMart between meals -- adds up more than it seems through lots of small tickets. Representative figure, calculated from actual recorded spending (~144€ on konbini and small cafés over the whole trip).",
       ],
     },
     {

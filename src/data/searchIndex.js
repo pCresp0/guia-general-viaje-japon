@@ -220,7 +220,7 @@ function buildSearchIndex(lang) {
   items.push(entry({
     id: "visit-japan-web",
     title: "Visit Japan Web · QR de Inmigración y Aduanas",
-    subtitle: "Códigos QR de entrada a Japón de el viajero",
+    subtitle: "Códigos QR de entrada a Japón de los viajeros",
     category: "Vuelos",
     tab: "vuelos",
     targetId: "visit-japan-qr-card",
@@ -336,7 +336,7 @@ function buildSearchIndex(lang) {
     { terms: ["kanazawa", "kenroku-en", "kenrokuен", "higashichaya"], day: 6, title: "Kanazawa", subtitle: "Día 6" },
     { terms: ["shirakawa", "shirakawa-go", "gassho", "minka"], day: 7, title: "Shirakawa-go", subtitle: "Día 7" },
     { terms: ["takayama", "hida", "hida beef", "wagyu", "sake", "sake brewery", "jinya", "sanmachi"], day: 7, title: "Takayama", subtitle: "Días 7–8" },
-    { terms: ["magome", "tsumago", "nakasendo", "magome chaya", "cena minshuku", "jeng", "viajero3"], day: 8, title: "Magome / Tsumago", subtitle: "Día 8 · Nakasendo" },
+    { terms: ["magome", "tsumago", "nakasendo", "magome chaya", "cena minshuku"], day: 8, title: "Magome / Tsumago", subtitle: "Día 8 · Nakasendo" },
     { terms: ["asakusa", "senso", "senso-ji", "narita airport", "narita", "n'ex", "nex", "narita express"], day: 1, title: "Llegada · Narita", subtitle: "Día 1 · Aterrizaje y traslado a Kioto" },
     { terms: ["odaiba", "gundam", "teamlab", "teamlab planets", "yurikamome"], day: 10, title: "Odaiba / teamLab", subtitle: "Día 10" },
     { terms: ["shibuya", "harajuku", "shinjuku", "meiji", "takeshita", "omoide", "shibuya sky", "shibuya crossing", "cat street", "tocho", "gobierno metropolitano", "mirador gratuito", "kabukicho"], day: 11, title: "Shibuya / Harajuku / Shinjuku", subtitle: "Día 11" },

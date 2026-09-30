@@ -658,16 +658,12 @@ export const guides = {
         body: "This is key for planning: Fuji is clear far less than people expect. In summer, clear visibility lasts only a few days a month due to the humidity and clouds the mountain itself generates. The best months are November to February. In September the odds are intermediate, and almost always better in the early morning, before the heat forms clouds. Hence why the strategy of booking several days and executing on the one that dawns clear makes complete sense.",
       },
       {
-        title: "Exclusive Tour: Places to Visit",
-        body: "The 8h mini-van tour with Ken Kaneshima includes the most spectacular enclaves in the region:\n1. Chureito Pagoda (Arakurayama Sengen): the classic postcard of 5 stories with Fuji in the background.\n2. Kitaguchi Hongu Fuji Sengen Jinja Shrine: historic starting point for pilgrims among giant cedars.\n3. Oshino Hakkai Village: 8 crystal-clear pools of volcanic snowmelt and thatched-roof farmhouses.\n4. Aokigahara Forest: the 'Sea of Trees' on hardened lava rock.\n5. Shiraito Falls: a natural waterfall that springs from the rock like threads of white silk.\n6. Lakes Route: panoramic views from the shores of Yamanakako, Saiko and Motosuko.",
-      },
-      {
-        title: "Local Gastronomy: Houtou Noodles",
-        body: "At midday, a stop at a traditional restaurant to taste Houtou (flat, wide noodles slow-cooked in warm miso broth with pumpkin and seasonal mountain vegetables), the signature dish of Yamanashi Prefecture.",
+        title: "The Excursion: Places to Visit",
+        body: "The excursion booked with GetYourGuide (Japan Visionary Tour) covers four stops in the northern Fuji area, in the Five Lakes region:\n1. Lake Kawaguchiko and Oishi Park: lakeside promenade with classic Fuji views, famous for seasonal flower fields.\n2. Saiko Iyashi-no-Sato Nemba Village: replica of a traditional thatched-roof village reconstructed after a 1966 typhoon.\n3. Oshino Hakkai Springs: eight crystal-clear spring pools fed by Fuji snowmelt, designated a place of scenic beauty.\n4. Chureito Pagoda (Arakurayama Sengen): Japan's most iconic postcard view, featuring the 5-story pagoda with Mount Fuji in the background -- 400 steps up to the viewpoint.",
       },
       {
         title: "Logistics and Prices",
-        body: "• Price: ¥XXX / person (~€70) (includes private mini-van and all venue entry fees). Meals and drinks not included.\n• Starting point: Mishima Station (South Exit) at 08:20 AM (~50 min from Tokyo by Shinkansen).\n• End point: Shin-Fuji bullet train station at around 17:30 (~60 min to Tokyo by Shinkansen).\n• Language: Official guide in Spanish (Ken Kaneshima · excursionesfujiyama.com · +81 90-5863-1635).",
+        body: "• Price: €42 / person (~€210 group), already paid.\n• Meeting point: Tokyo Mode Gakuen (1-7-3 Nishishinjuku, Shinjuku), in front of the station. Meet at 08:10 (prompt bus departure at 08:20).\n• Duration: approx. 10 hours, returning to Shinjuku around 18:30.\n• Language: English-speaking guide.\n• Meals NOT included: eating is not allowed on the bus; have a hearty breakfast and bring cash in yen for local stalls at the stops.",
       },
       {
         title: "Visibility Forecast and Webcams",
@@ -679,7 +675,7 @@ export const guides = {
       "There is a Japanese saying: 'It is wise to climb Fuji once, and foolish to climb it twice'.",
       "The first dream of the year featuring Fuji is considered very lucky, especially combined with a hawk and an eggplant.",
     ],
-    tip: "Tour booked for Sunday, September 20 (Day 14) with Ken Kaneshima (Excursiones Fujiyama · +81 90-5863-1635 · excursionesfujiyama.com) + 4 flexible bookings on GetYourGuide from September 16–19. Check webcams at 06:30 AM.",
+    tip: "Recommended full-day excursion with GetYourGuide from Shinjuku (Day 10). Check webcams at 06:30 AM on the morning of the tour to assess visibility.",
   },
 
   "tokyo-tower": {

@@ -7,8 +7,8 @@ import { useT } from "../i18n/LanguageContext";
 export const groupMembers = [
   { id: "viajero1", name: "Viajero 1", hasQR: true, qrPath: "/images/visit-japan-qr.png", role: "Titular", passHash: "72557059a60471cfbe6b2df3cf29c888b8be077195301fcd5f8463151abf1c74" },
   { id: "viajero2", name: "Viajero 2", hasQR: true, qrPath: "/images/visit-japan-qr-2.png", role: "Titular", passHash: "296fb098929ae462b109e0df2726da063f371ad993a0ebe6dadf18a36fa1583c" },
-  { id: "juancarlos", name: "mi amigo R.", hasQR: true, qrPath: "/images/visit-japan-qr-juancarlos.png", role: "Titular", passHash: "0604c4ef4f9f496aa0958497726bee1c99ac365ea5b376f9b7792d8de7fbff55" },
-  { id: "gerundio", name: "Viajero 4", hasQR: true, qrPath: "/images/visit-japan-qr-4.png", role: "Titular", passHash: "6aac1e2f1838b854ba9d1abf94f018fdf70cf4aedfb8e46f513f49854df3be4e" },
+  { id: "viajero3", name: "Viajero 3", hasQR: true, qrPath: "/images/visit-japan-qr-3.png", role: "Titular", passHash: "0604c4ef4f9f496aa0958497726bee1c99ac365ea5b376f9b7792d8de7fbff55" },
+  { id: "viajero4", name: "Viajero 4", hasQR: true, qrPath: "/images/visit-japan-qr-4.png", role: "Titular", passHash: "6aac1e2f1838b854ba9d1abf94f018fdf70cf4aedfb8e46f513f49854df3be4e" },
   { id: "viajero5", name: "Viajero 5", hasQR: true, qrPath: "/images/visit-japan-qr-5.png", role: "Titular", passHash: "97cf94ea5536d9ce870ce055760f81c6b355df478d4566ae3140a4dc1cdec3d5" },
 ];
 

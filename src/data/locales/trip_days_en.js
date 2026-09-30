@@ -23,7 +23,7 @@ export const days = [
   {
     "title": "Arrival in Japan",
     "cities": "Narita, Tokyo, Kyoto",
-    "summary": "Landing at Narita airport, customs procedures with Visit Japan Web QR code, and baggage claim. Transfer via Narita Express to Shinagawa and direct bullet train connection on the Shinkansen Nozomi to Kyoto for hotel check-in. We'll end the day with our first contact with the city, grabbing a quick dinner around the station. mi amigo is probably already comparing the reception to his hotel in Sol.",
+    "summary": "Landing at Narita airport, customs procedures with Visit Japan Web QR code, and baggage claim. Transfer via Narita Express to Shinagawa and direct bullet train connection on the Shinkansen Nozomi to Kyoto for hotel check-in. We'll end the day with our first contact with the city, grabbing a quick dinner around the station.",
     "history": "Kyoto was the imperial capital of Japan for over a thousand years, from 794 to 1868. It is the cultural and spiritual heart of the country. Having survived the bombings of World War II almost intact, it preserves much of its ancient traditional wooden architecture.",
     "schedule": [
       {
@@ -72,7 +72,7 @@ export const days = [
         "text": "🚆 JR Nara Line: Kyoto Station → Inari Station (~5 min).\n\n🎫 **SUICA:** ✅ YES; tap the card directly at the gates.\n\nNo reservation needed. Use Suica or buy a single ticket at the station. Inari Station is right next to the shrine grounds."
       },
       {
-        "text": "Fushimi Inari Shrine. 💡 Tip: arriving early is especially recommended to avoid the biggest crowds. You don't need to climb all the way to the top of Mount Inari; if time or tiredness is an issue, do a partial climb and turn back. el guía won't have any trouble climbing, that's what the gym is for."
+        "text": "Fushimi Inari Shrine. 💡 Tip: arriving early is especially recommended to avoid the biggest crowds. You don't need to climb all the way to the top of Mount Inari; if time or tiredness is an issue, do a partial climb through the vermilion torii and turn back."
       },
       {
         "text": "🚆 JR Nara Line: Inari → Nara.\n\n🎫 **SUICA:** ✅ YES; tap the card directly at the gates.\n\nDirect train to Nara, no transfer, approximately 1h20. No reservation needed. At Inari, check that the chosen service stops at Inari and continues to Nara."
@@ -167,7 +167,7 @@ export const days = [
       },
       {
         "time": "17:30–19:00",
-        "text": "🏮 Gion. Route: Hanamikoji, the Ichiriki area, Shirakawa, Tatsumi Jinja. Stroll and dinner around Gion/Pontocho. Hopefully mi amigo makes us his famous, spectacular lasagna today. mi amigo will love how quiet and calm people are here."
+        "text": "🏮 Gion. Route: Hanamikoji, the Ichiriki area, Shirakawa, Tatsumi Jinja. Stroll and dinner around Gion/Pontocho to enjoy its traditional atmosphere, illuminated alleys and tranquility."
       },
       {
         "time": "~21:30",
@@ -183,7 +183,7 @@ export const days = [
   {
     "title": "Northwest Kyoto and Bamboo",
     "cities": "Kyoto (Arashiyama)",
-    "summary": "We'll explore the northwest starting at the shining Golden Pavilion and the Kinukake no Michi path. At midday, a tram takes us to Arashiyama, prioritizing the upper historic area before heading down through the famous bamboo forest. mi amigo, don't take bamboo home for your plants in Aluche. mi amigo is surely already hunting for historical errors in the pamphlet.",
+    "summary": "We'll explore the northwest starting at the shining Golden Pavilion and the Kinukake no Michi path. At midday, a tram takes us to Arashiyama, prioritizing the upper historic area before heading down through the famous bamboo forest.",
     "history": "Kinkakuji (the Golden Pavilion) was the lavish retirement villa of shogun Ashikaga Yoshimitsu in the late 14th century. Arashiyama has been a holiday destination for imperial nobility since the Heian period.",
     "schedule": [
       {
@@ -259,7 +259,7 @@ export const days = [
   {
     "title": "Traditional Kyoto and Osaka Castle",
     "cities": "Kyoto, Osaka",
-    "summary": "Last morning in Kyoto visiting the monumental Kiyomizu-dera and descending through the slopes of Higashiyama. At noon, a fast train to Osaka for its historic castle and the gastronomic madness of Dotonbori. mi amigo and mi amigo will probably get nostalgic and prefer eating pasta in Rome where they met. Careful, el guía might go into high school teacher mode and bore us to death. mi amigo, this castle has more history than you and mi amigo in Rome!",
+    "summary": "Last morning in Kyoto visiting the monumental Kiyomizu-dera and descending through the slopes of Higashiyama. At noon, a fast train to Osaka for its historic castle and the gastronomic madness of Dotonbori.",
     "history": "Kiyomizu-dera was founded in 778; its terrace was built without using a single nail. Osaka Castle was the military epicenter of Toyotomi Hideyoshi, a key figure in the unification of Japan in the 16th century.",
     "schedule": [
       {
@@ -334,7 +334,7 @@ export const days = [
   {
     "title": "Kanazawa",
     "cities": "Kanazawa",
-    "summary": "We'll forward the large luggage to Tokyo and travel light towards the Sea of Japan coast. Day in Kanazawa: Kenroku-en (one of the country's best gardens), seafood, and ancient samurai districts. Surely the ice cream here isn't as good as the homemade fruit ones mi amigo makes.",
+    "summary": "We'll forward the large luggage to Tokyo and travel light towards the Sea of Japan coast. Day in Kanazawa: Kenroku-en (one of the country's best gardens), fresh seafood, and ancient samurai districts.",
     "history": "Kanazawa was the domain of the powerful Maeda clan during the Edo period, rivaling Kyoto in wealth and culture. Having escaped modern bombings, it preserves its feudal urban layout.",
     "schedule": [
       {
@@ -490,7 +490,7 @@ export const days = [
       },
       {
         "time": "11:15",
-        "text": "🥾 Nakasendo Trail: Magome → Tsumago. Approximately 8 km and about 2h30-3h at a relaxed pace. The Magome → Tsumago direction has less climbing: you go up the Magome-tōge pass (~300 m) and then descend almost the rest of the way. Practical info: easy–moderate difficulty; well-marked trail; forest and paved sections; bring water. There are bear bells at several points, use them as you pass.\n\n📍 **Landmarks along the way** (no need to actively look for them, they'll appear on their own if you follow the signs):\n• **Tateba-chaya**: traditional teahouse where they offer free tea to hikers -- a good spot for a first rest.\n• **Odaki and Medaki Falls** (\"male\" and \"female\"): a small signposted detour, the Odaki drops about 18 m, the Medaki is smaller and gentler.\n• **Kurashina Shrine**: right next to the falls.\n• **Otsumago**: hamlet with traditional Edo-period houses, ~1 km before reaching Tsumago -- includes the Fujihara house, from the mid-17th century.\n\nmi amigo, we know that as a civil servant at the Reina Sofía you don't move much, but today it's time to walk!"
+        "text": "🥾 Nakasendo Trail: Magome → Tsumago. Approximately 8 km and about 2h30-3h at a relaxed pace. The Magome → Tsumago direction has less climbing: you go up the Magome-tōge pass (~300 m) and then descend almost the rest of the way. Practical info: easy–moderate difficulty; well-marked trail; forest and paved sections; bring water. There are bear bells at several points, use them as you pass.\n\n📍 **Landmarks along the way** (no need to actively look for them, they'll appear on their own if you follow the signs):\n• **Tateba-chaya**: traditional teahouse where they offer free tea to hikers -- a good spot for a first rest.\n• **Odaki and Medaki Falls** (\"male\" and \"female\"): a small signposted detour, the Odaki drops about 18 m, the Medaki is smaller and gentler.\n• **Kurashina Shrine**: right next to the falls.\n• **Otsumago**: hamlet with traditional Edo-period houses, ~1 km before reaching Tsumago -- includes the Fujihara house, from the mid-17th century."
       },
       {
         "time": "12:30–13:00",
@@ -571,7 +571,7 @@ export const days = [
         "text": "🥢 **STROLL THROUGH KAPPABASHI-DORI.** Since you're right there after lunch: the street entirely dedicated to the world of cooking, with statues of the kappa (the mischievous water spirit the neighborhood is named after) scattered along the way. This is where sampuru were born, the hyperrealistic food replicas seen in Japanese restaurant windows -- a single piece of imitation sushi can cost around ¥ There are also handmade Japanese knives with on-the-spot sharpening and engraving, and at the south end, a giant chef's head on top of the Niimi Cooker building, impossible to miss."
       },
       {
-        "text": "🚶 Walk to the hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Hotel already paid (€1,927.13 via Booking · 6 nights).\n\nCheck-in (official from 15:00), time to drop off the luggage, unpack a little and shower after the whole day of trains.\n\nAddress: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **The 5 large suitcases sent from Kyoto (Takkyubin/Yamato):**\n- Tracking number: **753-3690-9535**.\n- Scheduled delivery: **09/15, morning slot (AM)** -- meaning they should have arrived at the hotel BEFORE you do. When checking in, ask at reception if they already have them stored.\n- Receipt under the name mi amigo R., sender Hotel Keihan Kyoto Hachijoguchi.\n- 5 pieces (品名: Clothes), total cost ¥ (already paid at the Kyoto hotel when shipping them)."
+        "text": "🚶 Walk to the hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Residential apartment booked (€1,927.13 via Booking · 6 nights).\n\nCheck-in (official from 15:00), time to drop off luggage, unpack and shower after the day of train travel.\n\nAddress: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Luggage receipt (Takkyubin/Yamato):**\nHaving sent large suitcases from Kyoto, they should already be at reception upon your arrival. Ask at the front desk when checking in."
       },
       {
         "text": "🌉 **WALK TO TOKYO SKYTREE, ALONG THE SUMIDA RIVER.** A very simple and pretty walking route (~15-20 min) from the hotel: crossing the iconic red Azumabashi Bridge next to the Asahi Beer building, then following the Sumida River promenade to the base of the tower."
@@ -580,7 +580,7 @@ export const days = [
         "text": "🗼 **GOING UP TO THE OBSERVATION DECK WITH TICKETS, FOR SUNSET.** The sun sets around ~17:50 in September -- with entry at 17:00 there's plenty of time to get settled up top before it starts going down.\n\n🎟️ Buy tickets there on the spot or in advance on the official website (recommended if the forecast looks good, as sunset slots sell out). Tembo Deck (350m) is the standard observation deck; Tembo Galleria (450m) is an extra step up if you feel like going even higher.\n\n💡 Walk back to the hotel along the same riverside route, with plenty of time before the 19:30 dinner."
       },
       {
-        "text": "🍜 **DINNER: ASAKUSA MONJA MONRO** (friend of mi amigo's). Monjayaki and teppanyaki cooked in front of you by the staff -- house specialty with seafood from the Tsukiji/Toyosu markets. Very well rated (top 5 in Asakusa reviews). There may be a bit of a wait, but it's worth it. A few minutes from the hotel."
+        "text": "🍜 **DINNER: ASAKUSA MONJA MONRO** (local cuisine recommendation). Monjayaki and teppanyaki cooked in front of you by the staff -- house specialty with seafood from the Tsukiji/Toyosu markets. Very well rated (top 5 in Asakusa reviews). There may be a bit of a wait, but it's worth it. A few minutes from the hotel."
       },
       {
         "text": "🏨 **RETURN TO HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nReturn to our Tokyo residence to rest and reunite with the large luggage forwarded from Kyoto (1st night in Tokyo)."
@@ -642,7 +642,7 @@ export const days = [
   {
     "title": "Shibuya, Harajuku and Shinjuku",
     "cities": "Shibuya, Harajuku, Shinjuku",
-    "summary": "Intense day: Shibuya crossing and youth culture of Harajuku. We end under the neon lights of Shinjuku with its gastronomic alleys. mi amigo, take the chance to get a haircut, even if it's not as cheap as in Spain, it's still better than in France.",
+    "summary": "Intense day: Shibuya crossing and youth culture of Harajuku, with a stop at Pokémon Center Shibuya (famous for its life-size Mewtwo statue). We end under the neon lights of Shinjuku with its gastronomic alleys.",
     "history": "These districts grew after the Great Kanto Earthquake of 1923, driven by urban train expansion. Shinjuku today hosts the busiest train station on the planet.",
     "schedule": [
       {
@@ -664,7 +664,7 @@ export const days = [
         "text": "🌳 **MIYASHITA PARK.** On foot from the crossing (~5 min). A park raised above a shopping mall, with a skate area, sports court and terraces -- a curious way to make use of space in such a dense city. A good short stop to stretch your legs before continuing."
       },
       {
-        "text": "🎮 **POKÉMON CENTER SHIBUYA AND NINTENDO TOKYO** (Shibuya Parco, 6th floor, ~10 min on foot from Miyashita Park) — famous for its large Mewtwo statue (inside a glass tube, great for photos) and its futuristic neon style. Nintendo TOKYO is on the same floor. Watch out, mi amigo will probably want to set up an urban garden here for his Aluche plants."
+        "text": "🎮 **POKÉMON CENTER SHIBUYA AND NINTENDO TOKYO** (Shibuya Parco, 6th floor, ~10 min on foot from Miyashita Park) — famous for its large Mewtwo statue (inside a glass tube, great for photos) and its futuristic neon style. Nintendo TOKYO is on the same floor."
       },
       {
         "text": "🚶 **WALK TOWARD HARAJUKU.** A relaxed route on foot through Cat Street and Aoyama (instead of taking the train directly), with time to browse shop windows and design stores along the way -- a very different vibe from the more crowded Takeshita Dori."
@@ -715,10 +715,10 @@ export const days = [
         "text": "🍙 Breakfast at the Lawson (konbini) near the hotel."
       },
       {
-        "text": "🚇 **DEPARTURE -- CHOOSE ONE OF THESE 3 OPTIONS FOR THE FIRST STOP** (no sushi, since my brother doesn't like it):\n\n**Option 1 — Ueno Zoo 🐼** (arrival ~09:05, opens at 09:30). Japan's oldest zoo (1882), with giant pandas as the main draw. It's in the same area where you'd already be at 10:30 (Ueno Park/Ameyoko), so this option simply moves the arrival to that area earlier -- the simplest logistically. No reservation, pay at the gate (~¥).\n\n**Option 2 — Toyosu without sushi** (arrival ~09:25). Keep the market stop but skip the sushi breakfast: a rooftop garden with views, a free window overlooking the tuna auction (if the timing lines up), and stalls selling tamagoyaki, ramen and other things that aren't raw fish. Requires heading back toward Ueno afterward (~25-30 min), arriving there around 10:35.\n\n**Option 3 — Tsukiji outer market** (arrival ~09:15). The old market, still running as a food street: much more variety than Toyosu (mochi, tamagoyaki, fruit, tea, grilled skewers, not just raw fish). This is the option that adds the most time of the three -- also needs a trip back to Ueno (~25-30 min), arriving around 10:30."
+        "text": "🚇 **DEPARTURE -- CHOOSE ONE OF THESE 3 OPTIONS FOR THE FIRST STOP** (with options without sushi):\n\n**Option 1 — Ueno Zoo 🐼** (arrival ~09:05, opens at 09:30). Japan's oldest zoo (1882), with giant pandas as the main draw. It's in the same area where you'd already be at 10:30 (Ueno Park/Ameyoko), so this option simply moves the arrival to that area earlier -- the simplest logistically. No reservation, pay at the gate (~¥).\n\n**Option 2 — Toyosu without sushi** (arrival ~09:25). Keep the market stop but skip the sushi breakfast: a rooftop garden with views, a free window overlooking the tuna auction (if the timing lines up), and stalls selling tamagoyaki, ramen and other things that aren't raw fish. Requires heading back toward Ueno afterward (~25-30 min), arriving there around 10:35.\n\n**Option 3 — Tsukiji outer market** (arrival ~09:15). The old market, still running as a food street: much more variety than Toyosu (mochi, tamagoyaki, fruit, tea, grilled skewers, not just raw fish). This is the option that adds the most time of the three -- also needs a trip back to Ueno (~25-30 min), arriving around 10:30."
       },
       {
-        "text": "Ueno Park and Ameyoko street market, great for cheap tea and sweets. Nice green area to stroll calmly after the early start.\n\n🦪 **SNACKING AT AMEYOKO** (friend of mi amigo's): the market stalls are also well known for grilled seafood -- grilled oysters and eel, among other things. If you haven't tried eel (unagi) yet, this is a good chance.\n\n🎮 **YAMASHIROYA** (friend of mi amigo's): a 6-floor store of anime/video game figures, toys and merchandise, just 1 minute on foot from Ueno Station. Confirmed that prices tend to be cheaper than in Akihabara, and it's noticeably less crowded."
+        "text": "Ueno Park and Ameyoko street market, great for cheap tea and sweets. Nice green area to stroll calmly after the early start.\n\n🦪 **SNACKING AT AMEYOKO** (local recommendation): the market stalls are also well known for grilled seafood -- grilled oysters and eel, among other things. If you haven't tried eel (unagi) yet, this is a good chance.\n\n🎮 **YAMASHIROYA** (local recommendation): a 6-floor store of anime/video game figures, toys and merchandise, just 1 minute on foot from Ueno Station. Confirmed that prices tend to be cheaper than in Akihabara, and it's noticeably less crowded."
       },
       {
         "text": "🎫 **SUICA:** ✅ YES; tap the card directly at the gates.\n\nYurikamome train to Odaiba crossing the Rainbow Bridge (sit in the first car)."
@@ -777,7 +777,7 @@ export const days = [
       },
       {
         "time": "11:40–12:40",
-        "text": "First look around Nakano Broadway: Tokyo's best spot for original Pokémon cards (specialized trading card shops with display cases of individual cards and booster packs), Dragon Ball figures and merchandise, and retro/manga items in general at fair prices. Several floors of small independent shops — worth exploring all of them.\n\n🛍️ **NAKANO SUN MALL** (friend of mi amigo's): the covered shopping arcade that runs straight from the station to the entrance of Nakano Broadway (~5 min on foot) -- confirmed geographically, it's the natural route. Much less touristy than Akihabara, with more locally-flavored restaurants and izakayas."
+        "text": "First look around Nakano Broadway: Tokyo's best spot for original Pokémon cards (specialized trading card shops with display cases of individual cards and booster packs), Dragon Ball figures and merchandise, and retro/manga items in general at fair prices. Several floors of small independent shops — worth exploring all of them.\n\n🛍️ **NAKANO SUN MALL** (local recommendation): the covered shopping arcade that runs straight from the station to the entrance of Nakano Broadway (~5 min on foot) -- confirmed geographically, it's the natural route. Much less touristy than Akihabara, with more locally-flavored restaurants and izakayas."
       },
       {
         "time": "12:40–13:05",
@@ -785,7 +785,7 @@ export const days = [
       },
       {
         "time": "13:05–13:45",
-        "text": "🍜 **LUNCH: GYUKATSU ICHINISAN** (recommended by a friend -- the best tonkatsu, according to him).\n\nhttps://maps.app.goo.gl/VgfUPTrjPzz4dQpHA?g_st=ic"
+        "text": "🍜 **LUNCH: GYUKATSU ICHINISAN** (highly rated gastronomic recommendation).\n\nhttps://maps.app.goo.gl/VgfUPTrjPzz4dQpHA?g_st=ic"
       },
       {
         "time": "13:45–15:45",
