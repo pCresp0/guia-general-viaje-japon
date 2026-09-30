@@ -333,7 +333,6 @@ export function TopBar({ active, onOpenDrawer, onNavigate }) {
       }}>
         {currentTab ? t(currentTab.labelKey) : ""}
       </span>
-      <BuildInfoButton />
       <div style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", gap: 6 }}>
         <GlobalSearch variant="bar" onNavigate={onNavigate} />
         <LanguageSwitcher variant="bar" />
