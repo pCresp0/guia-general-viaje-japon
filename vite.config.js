@@ -8,6 +8,15 @@ export default defineConfig(({ mode }) => {
   const basePath = isProd ? '/guia-general-viaje-japon/' : '/'
 
   return {
+    build: {
+      rollupOptions: {
+        output: {
+          entryFileNames: "assets/app.js",
+          chunkFileNames: "assets/[name].js",
+          assetFileNames: "assets/[name][extname]",
+        },
+      },
+    },
     base: basePath,
     define: {
       // Marca de tiempo real de cuándo se generó este build, para poder
