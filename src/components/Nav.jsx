@@ -48,10 +48,13 @@ export const tabs = navStructure.reduce((acc, curr) => {
   return acc;
 }, []);
 
+import wavesSidebarUrl from "../assets/waves-sidebar.webp";
+
 const sidebarBg = {
-  backgroundImage: "url('/waves-sidebar.webp')",
+  backgroundImage: `url('${wavesSidebarUrl}')`,
   backgroundSize: "cover",
   backgroundPosition: "center top",
+  backgroundColor: "var(--shu-darker)",
 };
 
 const overlay = {
@@ -63,6 +66,7 @@ const overlay = {
 const chromeBg = {
   ...sidebarBg,
   position: "relative",
+  backgroundColor: "var(--shu-darker)",
 };
 
 const chromeOverlay = {

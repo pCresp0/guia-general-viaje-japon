@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Lock, Eye, EyeOff } from "lucide-react";
 import { sha256Hex } from "../utils/hash";
+import wavesSidebarUrl from "../assets/waves-sidebar.webp";
 
 const STORAGE_KEY = "viaje-japon-auth-v1";
 // sha256 de la clave real — ver /memories/repo/secrets.md (fuera del repo) para el valor en claro.
@@ -77,7 +78,7 @@ export default function AccessGate({ onUnlock }) {
             position: "relative",
             padding: "28px 24px 22px",
             backgroundColor: "var(--shu-darker)",
-            backgroundImage: "url('/waves-sidebar.webp')",
+            backgroundImage: `url('${wavesSidebarUrl}')`,
             backgroundSize: "cover",
             backgroundPosition: "center top",
             color: "#fff",
