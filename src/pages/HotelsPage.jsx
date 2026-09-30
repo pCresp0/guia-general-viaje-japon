@@ -111,11 +111,7 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
               <span style={{ fontSize: 12.5, opacity: 0.9 }}>
                 {stay.nights}
               </span>
-              {hotel.paid ? (
-                <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(46,125,91,0.35)", color: "#d1fae5", border: "1px solid rgba(110,231,183,0.4)" }}>
-                  ✓ Ya pagado (mi amigo)
-                </span>
-              ) : (
+              {!hotel.paid && (
                 <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(245,158,11,0.35)", color: "#fef3c7", border: "1px solid rgba(252,211,77,0.4)" }}>
                   ⚠️ Pago en efectivo en hotel
                 </span>
@@ -233,9 +229,11 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
                 <p className="font-display" style={{ fontSize: 22, fontWeight: 700, margin: 0, color: "var(--ink)", lineHeight: 1 }}>
                   {hotel.total}
                 </p>
-                <p style={{ fontSize: 11, fontWeight: 700, margin: "3px 0 0", color: hotel.paid ? "#2e7d5b" : "#b45309" }}>
-                  {hotel.paid ? "✓ Pagado vía Booking" : "⚠️ En efectivo en hotel"}
-                </p>
+                {!hotel.paid && (
+                  <p style={{ fontSize: 11, fontWeight: 700, margin: "3px 0 0", color: "#b45309" }}>
+                    ⚠️ En efectivo en hotel
+                  </p>
+                )}
                 {hotel.guests && (
                   <p style={{ fontSize: 10, opacity: 0.65, margin: "2px 0 0" }}>{hotel.guests}</p>
                 )}
