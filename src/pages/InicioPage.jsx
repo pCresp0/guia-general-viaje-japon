@@ -50,7 +50,7 @@ export default function InicioPage({ onNavigate }) {
                 key={s.id}
                 type="button"
                 onClick={() => onNavigate?.(s.id)}
-                className="rounded-xl p-3.5 text-left flex gap-3 items-start transition-all hover:opacity-90 active:scale-[0.98]"
+                className="rounded-xl p-3.5 text-left flex gap-3 items-start transition-all hover:opacity-90 active:scale-[0.98] shadow-xs"
                 style={{
                   background: "var(--paper-raised)",
                   border: "1px solid var(--line)",
