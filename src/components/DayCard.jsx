@@ -202,59 +202,62 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
       className="rounded-2xl overflow-hidden border"
       style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}
     >
-      <header className="px-5 pt-5 pb-4 flex items-start justify-between gap-3" style={{ background: block.color }}>
-        <div>
-          <p className="eyebrow" style={{ color: "rgba(255,255,255,0.95)" }}>
-            {block.emoji} Día {day.num} · {formatDateLong(day.date)}
-          </p>
-          <PlaceText
-            as="h2"
-            text={day.title}
-            className="font-display text-2xl text-white mt-1 leading-tight"
-            linkStyle={{ color: "white", textDecorationColor: "rgba(255,255,255,0.7)" }}
-          />
-          <PlaceText
-            as="p"
-            text={day.cities}
-            className="text-white/85 text-sm mt-1"
-            linkStyle={{ color: "white", textDecorationColor: "rgba(255,255,255,0.7)" }}
-          />
+      <header className="px-5 pt-5 pb-4" style={{ background: block.color }}>
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.95)" }}>
+              {block.emoji} Día {day.num} · {formatDateLong(day.date)}
+            </p>
+            <PlaceText
+              as="h2"
+              text={day.title}
+              className="font-display text-xl sm:text-2xl text-white mt-1 leading-tight break-words"
+              linkStyle={{ color: "white", textDecorationColor: "rgba(255,255,255,0.7)" }}
+            />
+            <PlaceText
+              as="p"
+              text={day.cities}
+              className="text-white/85 text-sm mt-1"
+              linkStyle={{ color: "white", textDecorationColor: "rgba(255,255,255,0.7)" }}
+            />
+          </div>
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Cerrar"
+              className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 shrink-0 cursor-pointer"
+              style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none" }}
+            >
+              <X size={18} />
+            </button>
+          )}
         </div>
-        {((onViewMap && hasMapStops) || onClose || onShowQuickView) && (
-          <div className="shrink-0 mt-0.5 flex items-center gap-1.5 sm:gap-2">
+
+        {((onViewMap && hasMapStops) || onShowQuickView) && (
+          <div className="flex flex-wrap items-center gap-2 pt-3">
             {onShowQuickView && (
               <button
                 type="button"
                 onClick={onShowQuickView}
                 title="Ver en vista rápida"
                 aria-label="Ver en vista rápida"
-                className="flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0"
-                style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none", cursor: "pointer" }}
+                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none" }}
               >
                 <List size={14} />
-                <span className="hidden sm:inline">Vista rápida</span>
+                <span>Vista rápida</span>
               </button>
             )}
             {onViewMap && hasMapStops && (
               <button
                 type="button"
                 onClick={onViewMap}
-                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25"
-                style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none", cursor: "pointer" }}
+                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 shrink-0 cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none" }}
               >
                 <Map size={14} />
-                <span className="hidden sm:inline">Ver mapa</span>
-              </button>
-            )}
-            {onClose && (
-              <button
-                type="button"
-                onClick={onClose}
-                aria-label="Cerrar"
-                className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25"
-                style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none", cursor: "pointer" }}
-              >
-                <ChevronUp size={18} />
+                <span>Ver mapa</span>
               </button>
             )}
           </div>
@@ -556,7 +559,6 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
       {selectedGuide && createPortal(
         <div
           className="modal-overlay"
-          style={{ zIndex: 120 }}
           onClick={() => setSelectedGuide(null)}
           role="presentation"
         >
