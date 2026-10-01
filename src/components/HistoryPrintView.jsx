@@ -2,6 +2,7 @@ import React from "react";
 import { createPortal } from "react-dom";
 import { useContent, useT } from "../i18n/LanguageContext";
 import { BookOpen, Headphones, Film, MapPinned } from "lucide-react";
+import { assetUrl } from "../utils/assets";
 
 export default function HistoryPrintView() {
   const { historyPeriods, furtherReading, guides } = useContent();
@@ -179,7 +180,7 @@ export default function HistoryPrintView() {
               }}
             >
               <img
-                src={period.image}
+                src={assetUrl(period.image)}
                 alt={period.title}
                 style={{
                   maxHeight: "72mm",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { QrCode, X, Maximize2 } from "lucide-react";
+import { assetUrl } from "../utils/assets";
 
 /**
  * QR de Yamato Transport (Takkyubin) para el envío de las 5 maletas grandes
@@ -27,7 +28,7 @@ export default function TakkyubinQRCard() {
           className="w-full flex flex-col items-center gap-2 px-4 py-4"
         >
           <img
-            src="/images/takkyubin-qr.jpeg"
+            src={assetUrl("/images/takkyubin-qr.jpeg")}
             alt="Código QR de confirmación del envío Yamato Takkyubin"
             className="w-40 h-auto rounded-lg border"
             style={{ borderColor: "rgba(0,0,0,0.08)" }}
@@ -55,7 +56,7 @@ export default function TakkyubinQRCard() {
             <X size={22} color="#fff" />
           </button>
           <img
-            src="/images/takkyubin-qr.jpeg"
+            src={assetUrl("/images/takkyubin-qr.jpeg")}
             alt="Código QR de confirmación del envío Yamato Takkyubin, ampliado"
             className="max-w-full max-h-full rounded-lg"
             onClick={(e) => e.stopPropagation()}

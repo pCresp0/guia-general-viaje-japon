@@ -1,4 +1,5 @@
 import { FileDown } from "lucide-react";
+import { assetUrl } from "../utils/assets";
 
 /**
  * Botón compacto para abrir un billete/voucher en PDF ya subido a
@@ -10,7 +11,7 @@ import { FileDown } from "lucide-react";
 export default function TicketDownloadButton({ pdfPath, label = "Billete (PDF)" }) {
   return (
     <a
-      href={pdfPath}
+      href={assetUrl(pdfPath)}
       rel="noopener noreferrer"
       className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border border-amber-600 bg-amber-600 text-white hover:bg-amber-700 shadow-xs cursor-pointer transition-colors no-underline mt-2"
     >

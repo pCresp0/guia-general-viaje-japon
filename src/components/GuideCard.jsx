@@ -4,6 +4,7 @@ import { guideImages } from "../data/guideImages";
 import { useContent } from "../i18n/LanguageContext";
 import { useHighlight } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
+import { assetUrl } from "../utils/assets";
 import PlaceText from "./PlaceText";
 
 const franchiseStyle = {
@@ -13,15 +14,21 @@ const franchiseStyle = {
 };
 
 function GuideBody({ guide, refs, localImage, accent }) {
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [guide?.id, localImage]);
+
   return (
     <>
-      {localImage && (
+      {localImage && !imgError && (
         <figure style={{ margin: "0 0 14px" }}>
           <img
-            src={localImage}
+            src={assetUrl(localImage)}
             alt={guide.name}
             loading="lazy"
-            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            onError={() => setImgError(true)}
             style={{
               width: "100%", aspectRatio: "16 / 10", objectFit: "cover",
               borderRadius: 10, display: "block",

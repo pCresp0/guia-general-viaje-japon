@@ -227,7 +227,7 @@ function buildSearchIndex(lang) {
     terms: [
       "visit japan web", "visit japan", "qr", "qr aduana", "qr inmigracion",
       "inmigracion", "aduanas", "pasaporte", "entrada japon", "desembarco",
-      "viajero1", "viajero2", "viajero3", "viajero4", "viajero5",
+      "pablo crespo bellido", "pablo crespo", "pablo",
     ],
   }));
   items.push(entry({
@@ -776,7 +776,7 @@ function buildSearchIndex(lang) {
     category: "Preparativos",
     tab: "preparativos",
     targetId: "prep-esim",
-    terms: ["esim", "holafly", "internet", "datos", "movil", "conexion", "roaming", "qr esim", "viajero1", "viajero2", "viajero3", "viajero4", "viajero5"],
+    terms: ["esim", "holafly", "internet", "datos", "movil", "conexion", "roaming", "qr esim"],
   }));
   for (const emergency of emergencyNumbers) {
     items.push(entry({

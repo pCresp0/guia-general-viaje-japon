@@ -1,25 +1,25 @@
 import { useState } from "react";
 import { Zap, Ticket, CheckCircle2, Smartphone, CreditCard, Eye, X, CalendarDays, MapPin, Luggage } from "lucide-react";
-import { groupMembers } from "./VisitJapanQRCard";
 import { ticketAccentColor, ticketHeaderBackground, ticketSoftBackground } from "../utils/blockTheme";
 import TicketCardHeader from "./TicketCardHeader";
+import { assetUrl } from "../utils/assets";
 
-const CONFIRMATION_IMG = "/images/tickets/smart-ex_nagoya-tokyo_nozomi358_2026-09-15.png";
+const CONFIRMATION_IMG = assetUrl("/images/tickets/smart-ex_nagoya-tokyo_nozomi358_2026-09-15.png");
 
 const FROM_BLOCK = "tokio";
 const TO_BLOCK = "tokio";
 
-/** Precios reales Revolut (grupo): ¥XXX · 295,62€ */
-const PRICE_LINE = "5 · ¥XXX (~295,62€)";
+/** Precios reales Revolut (grupo): ¥54.500 · 295,62€ */
+const PRICE_LINE = "5 · ¥54.500 (~295,62€)";
 
 // Asientos Car 12 · Smart EX (Nozomi 358)
-const memberSeats = {
-  viajero1: { seat: "11-E", qr: "/images/tickets/nozomi-day9/seat-11e.png" },
-  viajero2: { seat: "12-E", qr: "/images/tickets/nozomi-day9/seat-12e.png" },
-  viajero3: { seat: "12-C", qr: "/images/tickets/nozomi-day9/seat-12c.png" },
-  viajero4: { seat: "11-D", qr: "/images/tickets/nozomi-day9/seat-11d.png" },
-  viajero5: { seat: "12-D", qr: "/images/tickets/nozomi-day9/seat-12d.png" },
-};
+const memberSeats = [
+  { id: "pablo", name: "Pablo Crespo Bellido", role: "Titular", seat: "11-E", qr: assetUrl("/images/tickets/nozomi-day9/seat-11e.png") },
+  { id: "plaza2", name: "Plaza 2", role: "Acompañante", seat: "12-E", qr: assetUrl("/images/tickets/nozomi-day9/seat-12e.png") },
+  { id: "plaza3", name: "Plaza 3", role: "Acompañante", seat: "12-C", qr: assetUrl("/images/tickets/nozomi-day9/seat-12c.png") },
+  { id: "plaza4", name: "Plaza 4", role: "Acompañante", seat: "11-D", qr: assetUrl("/images/tickets/nozomi-day9/seat-11d.png") },
+  { id: "plaza5", name: "Plaza 5", role: "Acompañante", seat: "12-D", qr: assetUrl("/images/tickets/nozomi-day9/seat-12d.png") },
+];
 
 export default function NozomiNagoyaTicketCard({ onGoToDay, defaultExpanded = false } = {}) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
@@ -98,8 +98,7 @@ export default function NozomiNagoyaTicketCard({ onGoToDay, defaultExpanded = fa
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {groupMembers.map((m) => {
-              const seatInfo = memberSeats[m.id];
+            {memberSeats.map((m) => {
               const isSelected = selectedMember?.id === m.id;
               return (
                 <button
@@ -122,7 +121,7 @@ export default function NozomiNagoyaTicketCard({ onGoToDay, defaultExpanded = fa
                   <div>
                     <p className="text-sm font-bold m-0" style={{ color: "var(--ink)" }}>{m.name}</p>
                     <p className="text-xs font-medium mt-0.5 m-0" style={{ color: "var(--indigo)" }}>
-                      Asiento {seatInfo?.seat}
+                      Asiento {m.seat} {m.role ? `· ${m.role}` : ""}
                     </p>
                   </div>
                   <Ticket size={18} style={{ color: isSelected ? "var(--indigo)" : "var(--ink-soft)" }} />
@@ -251,7 +250,7 @@ export default function NozomiNagoyaTicketCard({ onGoToDay, defaultExpanded = fa
             <div className="p-6 sm:p-8 flex-1 overflow-y-auto flex flex-col items-center">
               <div className="w-full bg-blue-50 text-blue-900 rounded-xl p-3 mb-6 text-center border border-blue-100">
                 <p className="text-lg font-black tracking-widest font-mono m-0">
-                  {memberSeats[selectedMember.id]?.seat}
+                  {selectedMember.seat}
                 </p>
                 <p className="text-xs font-medium opacity-80 mt-1 uppercase tracking-wider m-0">
                   Coche 12
@@ -260,7 +259,7 @@ export default function NozomiNagoyaTicketCard({ onGoToDay, defaultExpanded = fa
 
               <div className="bg-white p-4 rounded-xl border-2 border-dashed border-gray-200 mb-6 w-full max-w-[280px] aspect-square flex items-center justify-center relative shadow-sm">
                 <img
-                  src={memberSeats[selectedMember.id]?.qr}
+                  src={selectedMember.qr}
                   alt={`QR Shinkansen ${selectedMember.name}`}
                   className="w-full h-full object-contain"
                  onError={(e) => { e.currentTarget.style.display = 'none'; }} />

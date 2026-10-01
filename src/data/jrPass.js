@@ -1,7 +1,7 @@
 /**
  * Precios Japan Rail Pass (Ordinary / Standard adulto).
  * EUR: jrpass.com (ago 2026). JPY: oficiales japanrailpass.net (vigentes hasta sept 2026).
- * A partir del 1 oct 2026 las agencias en el extranjero suben a ¥XXX / ¥XXX / ¥XXX
+ * A partir del 1 oct 2026 las agencias en el extranjero suben a ¥53.000 / ¥84.000 / ¥105.000.
  */
 
 export const PEOPLE = 5;

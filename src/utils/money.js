@@ -23,9 +23,9 @@ export function formatEur(eur, { digits = 2 } = {}) {
 }
 
 /**
- * "¥XXX (~59,12€)".
+ * "¥10.900 (~59,12€)".
  * Si no pasas `eur`, se calcula con YEN_PER_EUR.
- * Rangos: formatJpyEurRange(3000, 5000) → "¥XXX–¥XXX (~16,27–27,11€)".
+ * Rangos: formatJpyEurRange(3000, 5000) → "¥3.000–¥5.000 (~16,27–27,11€)".
  */
 export function formatJpyEur(jpy, eur, { eurDigits = 2 } = {}) {
   const y = formatJpy(jpy);

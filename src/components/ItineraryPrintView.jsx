@@ -16,6 +16,7 @@ import { formatEur, formatJpyEur, YEN_PER_EUR } from "../utils/money";
 import { PASS_7_JPY, PASS_14_JPY, PASS_7_EUR, PASS_14_EUR } from "../data/jrPass";
 import googleMapsIcon from "../assets/icons/google-maps.png";
 import bookingIcon from "../assets/icons/booking.png";
+import { assetUrl } from "../utils/assets";
 
 const iconMap = {
   plane: Plane,
@@ -284,7 +285,7 @@ function GuideBlock({ id, accentColor, guides }) {
     }}>
       {img && (
         <img
-          src={img}
+          src={assetUrl(img)}
           alt={g.name}
           style={{
             display: "block", margin: "0 auto",
@@ -954,7 +955,7 @@ export default function ItineraryPrintView({ days }) {
               {period.image && (
                 <div style={{ margin: "8px 0 10px", textAlign: "center" }}>
                   <img
-                    src={period.image}
+                    src={assetUrl(period.image)}
                     alt={period.title}
                     style={{
                       maxHeight: "52mm", maxWidth: "100%", height: "auto",

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Zap, Ticket, X, CalendarDays } from "lucide-react";
-import { groupMembers } from "./VisitJapanQRCard";
+import { assetUrl } from "../utils/assets";
 import { ticketAccentColor, ticketHeaderBackground, ticketSoftBackground } from "../utils/blockTheme";
 import TicketCardHeader from "./TicketCardHeader";
 
 const FROM_BLOCK = "kioto";
 const TO_BLOCK = "kioto";
 
-/** Precios reales Revolut (grupo): ¥XXX · 373,27€ */
-const PRICE_LINE = "5 · ¥XXX (~373,27€)";
+/** Precios reales Revolut (grupo): ¥68.850 · 373,27€ */
+const PRICE_LINE = "5 · ¥68.850 (~373,27€)";
 
 export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = false } = {}) {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -18,14 +18,14 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
   const accent = ticketAccentColor(FROM_BLOCK, TO_BLOCK);
   const softBg = ticketSoftBackground(FROM_BLOCK, TO_BLOCK);
 
-  // Configuración de los 5 asientos para la reserva Smart EX 2000
-  const memberSeats = {
-    "viajero1": { seat: "13-E", qr: "/images/tickets/nozomi-day1/seat-13e.png" },
-    "viajero2": { seat: "14-E", qr: "/images/tickets/nozomi-day1/seat-14e.png" },
-    "viajero3": { seat: "13-C", qr: "/images/tickets/nozomi-day1/seat-13c.png" },
-    "viajero4": { seat: "13-D", qr: "/images/tickets/nozomi-day1/seat-13d.png" },
-    "viajero5": { seat: "14-D", qr: "/images/tickets/nozomi-day1/seat-14d.png" },
-  };
+// Configuración de los 5 asientos para la reserva Smart EX 2000
+const memberSeats = [
+  { id: "pablo", name: "Pablo Crespo Bellido", role: "Titular", seat: "13-E", qr: assetUrl("/images/tickets/nozomi-day1/seat-13e.png") },
+  { id: "plaza2", name: "Plaza 2", role: "Acompañante", seat: "14-E", qr: assetUrl("/images/tickets/nozomi-day1/seat-14e.png") },
+  { id: "plaza3", name: "Plaza 3", role: "Acompañante", seat: "13-C", qr: assetUrl("/images/tickets/nozomi-day1/seat-13c.png") },
+  { id: "plaza4", name: "Plaza 4", role: "Acompañante", seat: "13-D", qr: assetUrl("/images/tickets/nozomi-day1/seat-13d.png") },
+  { id: "plaza5", name: "Plaza 5", role: "Acompañante", seat: "14-D", qr: assetUrl("/images/tickets/nozomi-day1/seat-14d.png") },
+];
 
   return (
     <div
@@ -74,7 +74,7 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
               Coche 13 · Ordinary
             </span>
             <span className="px-2.5 py-1 rounded-full font-semibold bg-gray-100 text-gray-700">
-              Revolut: ¥XXX (~373,27€) · ¥XXX/pax (~74,65€)
+              Revolut: ¥68.850 (~373,27€) · ¥13.770/pax (~74,65€)
             </span>
           </div>
 
@@ -84,8 +84,7 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
 
         {/* Members List */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-3">
-          {groupMembers.map((m) => {
-            const seatInfo = memberSeats[m.id];
+          {memberSeats.map((m) => {
             const isSelected = selectedMember?.id === m.id;
             return (
               <button
@@ -108,7 +107,7 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
                 <div>
                   <p className="text-sm font-bold m-0" style={{ color: "var(--ink)" }}>{m.name}</p>
                   <p className="text-xs font-medium mt-0.5 m-0" style={{ color: "var(--indigo)" }}>
-                    Asiento {seatInfo?.seat}
+                    Asiento {m.seat} {m.role ? `· ${m.role}` : ""}
                   </p>
                 </div>
                 <Ticket size={18} style={{ color: isSelected ? "var(--indigo)" : "var(--ink-soft)" }} />
@@ -143,7 +142,7 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
             <div className="p-6 sm:p-8 flex-1 overflow-y-auto flex flex-col items-center">
               <div className="w-full bg-blue-50 text-blue-900 rounded-xl p-3 mb-6 text-center border border-blue-100">
                 <p className="text-lg font-black tracking-widest font-mono m-0">
-                  {memberSeats[selectedMember.id]?.seat}
+                  {selectedMember.seat}
                 </p>
                 <p className="text-xs font-medium opacity-80 mt-1 uppercase tracking-wider m-0">
                   Coche 13
@@ -152,7 +151,7 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
               
               <div className="bg-white p-4 rounded-xl border-2 border-dashed border-gray-200 mb-6 w-full max-w-[280px] aspect-square flex items-center justify-center relative shadow-sm">
                 <img
-                  src={memberSeats[selectedMember.id]?.qr}
+                  src={selectedMember.qr}
                   alt={`QR Shinkansen ${selectedMember.name}`}
                   className="w-full h-full object-contain"
                  onError={(e) => { e.currentTarget.style.display = 'none'; }} />

@@ -771,7 +771,7 @@ export const guides = {
       },
       {
         title: "Los sampuru: comida de plástico hiperrealista",
-        body: "Kappabashi es el lugar de nacimiento de los sampuru (del inglés \"sample\"), las réplicas de comida hiperrealistas que se exhiben en los escaparates de restaurantes por todo Japón. Fabricadas artesanalmente en cera o plástico, una sola pieza de sushi de imitación puede costar unos ¥XXX (~13€). Varias tiendas de la calle, como Gansho Shokuhin Sample-ya, ofrecen incluso talleres para hacer tu propia réplica.",
+        body: "Kappabashi es el lugar de nacimiento de los sampuru (del inglés \"sample\"), las réplicas de comida hiperrealistas que se exhiben en los escaparates de restaurantes por todo Japón. Fabricadas artesanalmente en cera o plástico, una sola pieza de sushi de imitación puede costar unos ¥2.000 (~13€). Varias tiendas de la calle, como Gansho Shokuhin Sample-ya, ofrecen incluso talleres para hacer tu propia réplica.",
       },
       {
         title: "Qué más hay en la calle",

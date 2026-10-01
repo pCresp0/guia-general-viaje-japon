@@ -24,7 +24,7 @@ export const konbiniRules = [
   {
     icon: "🏧",
     title: "ATM Cash Withdrawals (Revolut) at Palitan ng Pera",
-    desc: "Sa 7-Eleven at Lawson ay laging may mga ATM (Seven Bank / Lawson Bank) at money exchange machines (EUR → JPY). Pinakasulit ang mag-withdraw ng yen sa ATM gamit ang Revolut. Dahil may flat fee na ~¥XXX bawat withdrawal, pinakamainam na maglabas ng malaking halaga nang isahan upang hindi paulit-ulit ang bayad.",
+    desc: "Sa 7-Eleven at Lawson ay laging may mga ATM (Seven Bank / Lawson Bank) at money exchange machines (EUR → JPY). Pinakasulit ang mag-withdraw ng yen sa ATM gamit ang Revolut. Dahil may flat fee na ~¥660 bawat withdrawal, pinakamainam na maglabas ng malaking halaga nang isahan upang hindi paulit-ulit ang bayad.",
   },
 ];
 
@@ -201,7 +201,7 @@ export const konbiniChains = [
       {
         name: "Lawson Bank ATM & Palitan ng Pera (Euros sa Yenes)",
         highlight: "🏧 Mag-withdraw ng yenes gamit ang Revolut nang isahan para makatipid sa fee",
-        desc: "Tulad ng 7-Eleven, mayroong international ATM at currency exchange machine sa Lawson. Ang pag-withdraw sa ATM gamit ang Revolut ang pinakasulit na paraan. Dahil may singil na ~¥XXX kada transaksyon, magandang mag-withdraw ng malaking halaga nang minsanan para sa cash expenses.",
+        desc: "Tulad ng 7-Eleven, mayroong international ATM at currency exchange machine sa Lawson. Ang pag-withdraw sa ATM gamit ang Revolut ang pinakasulit na paraan. Dahil may singil na ~¥660 kada transaksyon, magandang mag-withdraw ng malaking halaga nang minsanan para sa cash expenses.",
         tag: "ATM / Cash",
         tip: "Tanggihan ang inaalok na conversion ng ATM («Without conversion») para interbank rate ng Revolut ang pumasok.",
       },
@@ -247,7 +247,7 @@ export const konbiniChains = [
         highlight: "🍫 Ang paboritong pasalubong pabalik ng bansa",
         desc: "Ang Donki ay may buong pasilyo ng mga lasang wala sa ibang bansa: Uji Strong Matcha, Japanese Sake (may 0.4% alkohol), Tokyo Cheesecake, Wasabi, at Inihaw na Kamote.",
         tag: "Nakakaing Souvenir",
-        tip: "Kung bibili ng higit sa ¥XXX sa Don Quijote, ipakita ang pasaporte sa kahera para sa 10% tax refund (Tax Free).",
+        tip: "Kung bibili ng higit sa ¥5,500 sa Don Quijote, ipakita ang pasaporte sa kahera para sa 10% tax refund (Tax Free).",
       },
       {
         name: "Diskwento sa gabi sa Supermarket (半額 Hangaku stickers)",
