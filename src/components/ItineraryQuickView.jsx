@@ -144,74 +144,143 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
       className={`itinerary-day-anchor ${standalone ? "flex flex-col h-full bg-paper" : "rounded-2xl overflow-hidden"}`}
       style={{ border: standalone ? "none" : "1px solid var(--line)", background: standalone ? "var(--paper-raised)" : "var(--paper-raised)", ...(standalone ? { height: "100%", borderRadius: 0 } : {}) }}
     >
-      <div
-        className="px-4 py-3 flex items-center gap-3 relative"
-        style={{ background: blockColor, cursor: onToggle ? "pointer" : "default" }}
-        onClick={onToggle}
-      >
-        <span
-          className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-display text-sm text-white font-bold"
-          style={{ background: "rgba(255,255,255,0.22)" }}
+      {standalone ? (
+        <div
+          className="px-4 py-3.5 flex flex-col gap-2.5"
+          style={{ background: blockColor }}
         >
-          {day.num}
-        </span>
-        <div className="flex-1 min-w-0 pr-16">
-          <p className="text-white font-semibold text-sm leading-snug truncate">{day.title}</p>
-          <p className="text-white/80 text-xs mt-0.5">{formatDateShort(day.date)} · {day.cities}</p>
+          {/* Fila superior: número de día, títulos y botón de cerrar */}
+          <div className="flex items-start justify-between gap-2.5">
+            <div className="flex items-start gap-2.5 min-w-0 flex-1">
+              <span
+                className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-display text-sm text-white font-bold mt-0.5"
+                style={{ background: "rgba(255,255,255,0.22)" }}
+              >
+                {day.num}
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-white font-semibold text-sm leading-snug break-words">{day.title}</p>
+                <p className="text-white/80 text-xs mt-0.5">{formatDateShort(day.date)} · {day.cities}</p>
+              </div>
+            </div>
+            {onClose && (
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
+                title="Cerrar"
+                aria-label="Cerrar"
+              >
+                <X size={16} />
+              </button>
+            )}
+          </div>
+
+          {/* Fila de acciones holgada: Detalle completo y Ver mapa sin solaparse */}
+          {(onShowFullDay || (onViewMap && hasMapStops)) && (
+            <div className="flex items-center gap-2 pt-0.5" onClick={e => e.stopPropagation()}>
+              {onShowFullDay && (
+                <button
+                  type="button"
+                  onClick={() => onShowFullDay(day.num)}
+                  className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 cursor-pointer"
+                  style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
+                  title="Ver detalle completo"
+                  aria-label="Ver detalle completo"
+                >
+                  <LayoutList size={14} />
+                  <span>Detalle completo</span>
+                </button>
+              )}
+              {onViewMap && hasMapStops && (
+                <button
+                  type="button"
+                  onClick={() => onViewMap(day.num)}
+                  className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 cursor-pointer"
+                  style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
+                  title="Ver mapa"
+                  aria-label="Ver mapa"
+                >
+                  <Map size={14} />
+                  <span>Ver mapa</span>
+                </button>
+              )}
+            </div>
+          )}
         </div>
-        
-        <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5" onClick={e => e.stopPropagation()}>
-          {onShowFullDay && (
-            <button
-              type="button"
-              onClick={() => onShowFullDay(day.num)}
-              className="flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0"
-              style={{ background: "rgba(255,255,255,0.18)", border: "none", cursor: "pointer", color: "white" }}
-              title="Ver detalle completo"
-              aria-label="Ver detalle completo"
+      ) : (
+        <div
+          className="px-4 py-3 flex items-center justify-between gap-3"
+          style={{ background: blockColor, cursor: onToggle ? "pointer" : "default" }}
+          onClick={onToggle}
+        >
+          <div className="flex items-center gap-3 min-w-0 flex-1">
+            <span
+              className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-display text-sm text-white font-bold"
+              style={{ background: "rgba(255,255,255,0.22)" }}
             >
-              <LayoutList size={14} />
-              <span className="hidden sm:inline">Detalle completo</span>
-            </button>
-          )}
-          {onViewMap && hasMapStops && (
-            <button
-              type="button"
-              onClick={() => onViewMap(day.num)}
-              className="flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0"
-              style={{ background: "rgba(255,255,255,0.18)", border: "none", cursor: "pointer", color: "white" }}
-              title="Ver mapa"
-              aria-label="Ver mapa"
-            >
-              <Map size={14} />
-              <span className="hidden sm:inline">Ver mapa</span>
-            </button>
-          )}
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 active:scale-95"
-              style={{ background: "rgba(255,255,255,0.18)", border: "none", cursor: "pointer", color: "white" }}
-              title="Cerrar"
-              aria-label="Cerrar"
-            >
-              <X size={16} />
-            </button>
-          )}
-          {onToggle && !onClose && !standalone && (
-            <button
-              type="button"
-              onClick={onToggle}
-              className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 active:scale-95"
-              style={{ background: "rgba(255,255,255,0.18)", border: "none", cursor: "pointer", color: "white" }}
-              aria-label={isOpen ? "Colapsar día" : "Expandir día"}
-            >
-              <ChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
-            </button>
-          )}
+              {day.num}
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="text-white font-semibold text-sm leading-snug truncate">{day.title}</p>
+              <p className="text-white/80 text-xs mt-0.5 truncate">{formatDateShort(day.date)} · {day.cities}</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-1.5 shrink-0" onClick={e => e.stopPropagation()}>
+            {onShowFullDay && (
+              <button
+                type="button"
+                onClick={() => onShowFullDay(day.num)}
+                className="flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
+                title="Ver detalle completo"
+                aria-label="Ver detalle completo"
+              >
+                <LayoutList size={14} />
+                <span className="hidden sm:inline">Detalle completo</span>
+              </button>
+            )}
+            {onViewMap && hasMapStops && (
+              <button
+                type="button"
+                onClick={() => onViewMap(day.num)}
+                className="flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
+                title="Ver mapa"
+                aria-label="Ver mapa"
+              >
+                <Map size={14} />
+                <span className="hidden sm:inline">Ver mapa</span>
+              </button>
+            )}
+            {onClose && (
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 active:scale-95 cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
+                title="Cerrar"
+                aria-label="Cerrar"
+              >
+                <X size={16} />
+              </button>
+            )}
+            {onToggle && !onClose && (
+              <button
+                type="button"
+                onClick={onToggle}
+                className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 active:scale-95 cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
+                aria-label={isOpen ? "Colapsar día" : "Expandir día"}
+              >
+                <ChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
+              </button>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       {isOpen && (
         <div className="px-3 sm:px-4 py-3">
