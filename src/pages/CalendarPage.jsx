@@ -135,7 +135,8 @@ export default function CalendarPage({ onGoToMapDay }) {
         </div>
 
         {/* Calendar grid */}
-        <div className="rounded-2xl overflow-hidden border mb-8" style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}>
+        <div className="overflow-x-auto pb-1" style={{ WebkitOverflowScrolling: "touch" }}>
+          <div className="rounded-2xl overflow-hidden border mb-8 min-w-[340px]" style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}>
           {/* weekday headers */}
           <div className="grid grid-cols-7 border-b" style={{ borderColor: "var(--line)" }}>
             {WEEKDAYS.map((w) => (
@@ -235,10 +236,9 @@ export default function CalendarPage({ onGoToMapDay }) {
               })}
             </div>
           ))}
+          </div>
         </div>
       </div>
-
-      
 
       {/* Day detail panel — right side (desktop only, fixed width) */}
       {selectedDay && (
@@ -267,15 +267,13 @@ export default function CalendarPage({ onGoToMapDay }) {
               standalone={true}
             />
           ) : (
-            <div style={{ padding: 20 }}>
-              <DayCard 
-                day={selectedDay} 
-                defaultOpenHistory={true} 
-                onClose={() => setSelectedDayNum(null)} 
-                onShowQuickView={() => setDetailMode(false)} 
-                onViewMap={() => onGoToMapDay?.(selectedDay.num)}
-              />
-            </div>
+            <DayCard 
+              day={selectedDay} 
+              defaultOpenHistory={true} 
+              onClose={() => setSelectedDayNum(null)} 
+              onShowQuickView={() => setDetailMode(false)} 
+              onViewMap={() => onGoToMapDay?.(selectedDay.num)}
+            />
           )}
         </div>
       )}

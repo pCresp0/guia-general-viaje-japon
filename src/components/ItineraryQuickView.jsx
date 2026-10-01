@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ChevronDown, ChevronUp, LayoutList, X, Map } from "lucide-react";
+import { ChevronDown, LayoutList, X, Map } from "lucide-react";
 import { formatDateShort } from "../utils/date";
 import PlaceText from "./PlaceText";
 import { useContent } from "../i18n/LanguageContext";

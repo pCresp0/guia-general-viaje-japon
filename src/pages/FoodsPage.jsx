@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { UtensilsCrossed, Store, Sparkles, ChevronRight, Info, Flame, Coffee, Tag, ShoppingBag, ExternalLink } from "lucide-react";
+import { UtensilsCrossed, Store, Sparkles, ExternalLink } from "lucide-react";
 import { useContent, useT } from "../i18n/LanguageContext";
 import { useHighlight } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
