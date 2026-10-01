@@ -13,12 +13,12 @@ const franchiseStyle = {
   pelicula: { label: "Película", emoji: "🎬", color: "#6b3fa0" },
 };
 
-function GuideBody({ guide, refs, localImage, accent }) {
+function GuideBody({ guideId, guide, refs, localImage, accent }) {
   const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     setImgError(false);
-  }, [guide?.id, localImage]);
+  }, [guideId, localImage]);
 
   return (
     <>
@@ -199,7 +199,7 @@ export default function GuideCard({
             </p>
           </div>
         </div>
-        <GuideBody guide={guide} refs={refs} localImage={localImage} accent={accent} />
+        <GuideBody guideId={id} guide={guide} refs={refs} localImage={localImage} accent={accent} />
       </div>
     );
   }
@@ -276,7 +276,7 @@ export default function GuideCard({
 
       {open && (
         <div className="px-4 pb-4" style={{ borderTop: "1px solid var(--line)", paddingTop: 14 }}>
-          <GuideBody guide={guide} refs={refs} localImage={localImage} accent={accent} />
+          <GuideBody guideId={id} guide={guide} refs={refs} localImage={localImage} accent={accent} />
         </div>
       )}
     </div>
