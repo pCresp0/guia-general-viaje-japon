@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Bus, Ticket, CheckCircle2, AlertTriangle, MapPin, Eye, X, FileDown, CalendarDays } from "lucide-react";
 import { ticketAccentColor, ticketHeaderBackground, ticketSoftBackground } from "../utils/blockTheme";
+import { assetUrl } from "../utils/assets";
 import TicketCardHeader from "./TicketCardHeader";
 
 const FROM_BLOCK = "alpes";
 const TO_BLOCK = "alpes";
 
-/** Precios reales Revolut (grupo): ¥XXX · 135,61€ */
-const PRICE_GROUP_JPY = "¥XXX";
+/** Precios reales Revolut (grupo): ¥25.000 · 135,61€ */
+const PRICE_GROUP_JPY = "¥25.000";
 const PRICE_GROUP_EUR = "135,61€";
-const PRICE_PAX = "¥XXX/pax (~27,12€)";
+const PRICE_PAX = "¥5.000/pax (~27,12€)";
 
 export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDay } = {}) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
@@ -112,7 +113,7 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
             </div>
 
             <div className="mt-3 pt-3 border-t text-xs text-gray-600 flex flex-wrap items-center justify-between gap-2" style={{ borderColor: "var(--line)" }}>
-              <span>👤 Titular: <strong>Viajero 1</strong></span>
+              <span>👤 Titular: <strong>Pablo Crespo Bellido</strong></span>
               <span>💰 Revolut: <strong>{PRICE_GROUP_JPY} (~{PRICE_GROUP_EUR}) · {PRICE_PAX}</strong></span>
               <span>⏳ Cancelación: <strong>Hasta 14/09 07:50 JST</strong></span>
             </div>
@@ -133,14 +134,14 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
               </div>
               <div className="flex items-center gap-2 flex-wrap">
                 <a
-                  href="/images/tickets/nohi_bus_takayama_magome_eticket.pdf"
+                  href={assetUrl("/images/tickets/nohi_bus_takayama_magome_eticket.pdf")}
                   download="E-Ticket_NohiBus_Takayama_Magome_08302008262.pdf"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border border-amber-600 bg-amber-600 text-white hover:bg-amber-700 shadow-xs cursor-pointer transition-colors no-underline"
                 >
                   <FileDown size={14} /> Descargar PDF
                 </a>
                 <a
-                  href="/images/tickets/nohi_bus_takayama_magome_eticket.pdf"
+                  href={assetUrl("/images/tickets/nohi_bus_takayama_magome_eticket.pdf")}
                   target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors no-underline"
                 >
@@ -161,7 +162,7 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
               className="rounded-lg overflow-hidden border border-gray-200 relative group cursor-pointer max-h-48 bg-white"
             >
               <img
-                src="/images/tickets/nohi_bus_takayama_magome.png"
+                src={assetUrl("/images/tickets/nohi_bus_takayama_magome.png")}
                 alt="Comprobante Nohi Bus Takayama Magome"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 className="w-full object-cover object-top h-48 transition-transform group-hover:scale-[1.02]"
@@ -176,7 +177,7 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
             <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 mt-2 border-b pb-2">Checklist Operativo del Día</p>
             <div className="space-y-2">
               <ChecklistItem id="booked" checked={checkedItems.booked} locked text="Reserva completada en Japan Bus Online (08302008262)" />
-              <ChecklistItem id="paid" checked={checkedItems.paid} locked text={`Pago Revolut confirmado: ${PRICE_GROUP_JPY} (~${PRICE_GROUP_EUR}) · adultos`} />
+              <ChecklistItem id="paid" checked={checkedItems.paid} locked text={`Pago Revolut confirmado: ${PRICE_GROUP_JPY} (~${PRICE_GROUP_EUR}) · 5 adultos`} />
               <ChecklistItem id="seats" checked={checkedItems.seats} locked text="Asientos asignados en Car 01: 2C, 2D, 3B, 3C, 3D" />
 
               <div className="my-2 border-t border-dashed" style={{ borderColor: "var(--line)" }} />
@@ -212,7 +213,7 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
             </div>
             <div className="overflow-auto p-2 bg-gray-100 flex items-center justify-center">
               <img
-                src="/images/tickets/nohi_bus_takayama_magome.png"
+                src={assetUrl("/images/tickets/nohi_bus_takayama_magome.png")}
                 alt="Comprobante Nohi Bus Takayama Magome Ampliado"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 className="w-full h-auto object-contain bg-white shadow-sm"

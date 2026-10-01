@@ -103,7 +103,7 @@ export default function AccessGate({ onUnlock }) {
                 letterSpacing: "0.16em",
               }}
             >
-              旅 · Japón 2026
+              旅 · Viaje Japón
             </p>
             <h1
               className="font-display"

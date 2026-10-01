@@ -7,8 +7,8 @@ import TicketCardHeader from "./TicketCardHeader";
 const FROM_BLOCK = "kioto";
 const TO_BLOCK = "alpes";
 
-/** Precios reales Revolut (grupo): ¥XXX · 209,38€ */
-const PRICE_LINE = "5 · ¥XXX (~209,38€)";
+/** Precios reales Revolut (grupo): ¥38.600 · 209,38€ */
+const PRICE_LINE = "5 · ¥38.600 (~209,38€)";
 
 export default function ThunderbirdTicketCard({ onGoToDay, defaultExpanded = false } = {}) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);

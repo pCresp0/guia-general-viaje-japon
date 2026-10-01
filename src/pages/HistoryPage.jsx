@@ -5,6 +5,7 @@ import HistoryPrintView from "../components/HistoryPrintView";
 import { useTextSpeech } from "../utils/useTextSpeech";
 import { useHighlight, Highlightable } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
+import { assetUrl } from "../utils/assets";
 
 // Concatena el contenido de un periodo en un único texto legible en voz
 // alta: título, resumen y cada bloque (encabezado + texto).
@@ -139,7 +140,7 @@ function PeriodCard({ period, isOpen, onToggle, speak, stop, speakingId, support
               >
                 {/* Fondo ambiente desenfocado con los tonos de la propia obra histórica */}
                 <img 
-                  src={period.image} 
+                  src={assetUrl(period.image)} 
                   alt="" 
                   aria-hidden="true" 
                   className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-35 dark:opacity-20 scale-125 pointer-events-none select-none" 
@@ -152,7 +153,7 @@ function PeriodCard({ period, isOpen, onToggle, speak, stop, speakingId, support
 
                 {/* Imagen de la obra nítida y destacada */}
                 <img 
-                  src={period.image} 
+                  src={assetUrl(period.image)} 
                   alt={period.title} 
                   className="relative z-10 w-auto h-auto max-w-full max-h-[270px] sm:max-h-[390px] md:max-h-[460px] object-contain rounded-lg shadow-md transition-transform duration-300 hover:scale-[1.015]" 
                   decoding="async"
@@ -293,7 +294,7 @@ export default function HistoryPage() {
     historyPeriods.forEach((p) => {
       if (p.image) {
         const img = new Image();
-        img.src = p.image;
+        img.src = assetUrl(p.image);
       }
     });
   }, [historyPeriods]);

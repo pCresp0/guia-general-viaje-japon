@@ -24,7 +24,7 @@ export const konbiniRules = [
   {
     icon: "🏧",
     title: "ATM Cash Withdrawals (Revolut) & Currency Exchange",
-    desc: "Both 7-Eleven and Lawson feature international ATMs (Seven Bank / Lawson Bank) and currency exchange machines (EUR → JPY). Withdrawing yen directly from the ATM using Revolut offers by far the best rate. ATMs usually charge a flat fee of ~¥XXX per withdrawal, so it is best to take out a substantial amount of yen at once to avoid repeated fees.",
+    desc: "Both 7-Eleven and Lawson feature international ATMs (Seven Bank / Lawson Bank) and currency exchange machines (EUR → JPY). Withdrawing yen directly from the ATM using Revolut offers by far the best rate. ATMs usually charge a flat fee of ~¥660 per withdrawal, so it is best to take out a substantial amount of yen at once to avoid repeated fees.",
   },
 ];
 
@@ -73,7 +73,7 @@ export const konbiniChains = [
       {
         name: "Seven Bank ATM & Currency Exchange (EUR to JPY)",
         highlight: "🏧 The most cost-effective way to get cash: withdraw with Revolut",
-        desc: "Nearly all 7-Eleven stores have Seven Bank ATMs (Japan's most reliable for foreign cards) and many feature currency exchange kiosks. Withdrawing yen using Revolut is hands-down the cheapest option. Since the ATM charges a flat fee of ~¥XXX per withdrawal, withdraw a larger amount of cash at once to minimize fees.",
+        desc: "Nearly all 7-Eleven stores have Seven Bank ATMs (Japan's most reliable for foreign cards) and many feature currency exchange kiosks. Withdrawing yen using Revolut is hands-down the cheapest option. Since the ATM charges a flat fee of ~¥660 per withdrawal, withdraw a larger amount of cash at once to minimize fees.",
         tag: "ATM / Cash",
         tip: "Always select JPY without ATM dynamic currency conversion so Revolut handles the exchange.",
       },
@@ -200,8 +200,8 @@ export const konbiniChains = [
       },
       {
         name: "Lawson Bank ATM & Currency Exchange (EUR to JPY)",
-        highlight: "🏧 Withdraw yen with Revolut in one go to minimize the ~¥XXX fee",
-        desc: "Like 7-Eleven, Lawson has international ATMs and currency exchange kiosks. Withdrawing with Revolut is by far the most advantageous option. Because the ATM charges a fixed fee of ~¥XXX per transaction, withdraw a solid amount of yen in one go for cash-only temples, street stalls, and rural stays.",
+        highlight: "🏧 Withdraw yen with Revolut in one go to minimize the ~¥660 fee",
+        desc: "Like 7-Eleven, Lawson has international ATMs and currency exchange kiosks. Withdrawing with Revolut is by far the most advantageous option. Because the ATM charges a fixed fee of ~¥660 per transaction, withdraw a solid amount of yen in one go for cash-only temples, street stalls, and rural stays.",
         tag: "ATM / Cash",
         tip: "Decline the ATM's offered conversion rate («Without conversion») so Revolut's interbank rate applies.",
       },
@@ -247,7 +247,7 @@ export const konbiniChains = [
         highlight: "🍫 The essential edible gift to bring back home",
         desc: "Donki features aisles of region-exclusive flavors: Uji Strong Matcha, Japanese Sake (0.4% alcohol), Tokyo Cheesecake, Wasabi, Tochigi Strawberry, and Roasted Sweet Potato.",
         tag: "Edible Souvenir",
-        tip: "Spend over ¥XXX at Don Quijote and show your passport at the register to get 10% tax refund (Tax Free).",
+        tip: "Spend over ¥5,500 at Don Quijote and show your passport at the register to get 10% tax refund (Tax Free).",
       },
       {
         name: "Supermarket late-night discount (半額 Hangaku stickers)",

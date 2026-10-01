@@ -3,6 +3,7 @@ import { UtensilsCrossed, Store, Sparkles, ChevronRight, Info, Flame, Coffee, Ta
 import { useContent, useT } from "../i18n/LanguageContext";
 import { useHighlight } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
+import { assetUrl } from "../utils/assets";
 import googleMapsIcon from "../assets/icons/google-maps.png";
 
 function FoodCard({ food, accent }) {
@@ -40,7 +41,7 @@ function FoodCard({ food, accent }) {
         >
           {imgOk ? (
             <img
-              src={food.image}
+              src={assetUrl(food.image)}
               alt={food.name}
               onError={() => setImgOk(false)}
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
@@ -220,7 +221,7 @@ function KonbiniView() {
               {c.logo && (
                 <span className="w-4 h-4 rounded-sm bg-white p-0.5 flex items-center justify-center shrink-0">
                   <img
-                    src={c.logo}
+                    src={assetUrl(c.logo)}
                     alt={c.name}
                     className="w-full h-full object-contain"
                     onError={(e) => { e.currentTarget.parentElement.style.display = 'none'; }}
@@ -258,7 +259,7 @@ function KonbiniView() {
                         style={{ borderColor: "rgba(0,0,0,0.08)" }}
                       >
                         <img
-                          src={chain.logo}
+                          src={assetUrl(chain.logo)}
                           alt={chain.name}
                           className="h-5 w-auto max-w-[75px] object-contain"
                           onError={(e) => { e.currentTarget.parentElement.style.display = 'none'; }}

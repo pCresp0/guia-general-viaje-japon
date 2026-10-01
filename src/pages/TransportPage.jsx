@@ -436,7 +436,7 @@ export default function TransportPage({ onNavigate }) {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-white/80 pt-3 border-t border-white/15">
                   <div>
                     <p className="font-semibold text-white mb-0.5">💰 Sin depósito</p>
-                    <p className="text-white/70">No requiere los ¥XXX (~3€) de fianza.</p>
+                    <p className="text-white/70">No requiere los ¥500 (~3€) de fianza.</p>
                   </div>
                   <div>
                     <p className="font-semibold text-white mb-0.5">⚠️ No reembolsable</p>
@@ -444,7 +444,7 @@ export default function TransportPage({ onNavigate }) {
                   </div>
                   <div>
                     <p className="font-semibold text-white mb-0.5">💳 Recarga recomendada</p>
-                    <p className="text-white/70">¥XXX–¥XXX (~16–27€)/persona.</p>
+                    <p className="text-white/70">¥3.000–¥5.000 (~16–27€)/persona.</p>
                   </div>
                 </div>
               </div>

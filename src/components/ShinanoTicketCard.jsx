@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Train, Ticket, CheckCircle2, CreditCard, Lock, AlertTriangle, Eye, X, CalendarDays, MapPin } from "lucide-react";
 import { ticketAccentColor, ticketHeaderBackground, ticketSoftBackground } from "../utils/blockTheme";
+import { assetUrl } from "../utils/assets";
 import TicketCardHeader from "./TicketCardHeader";
 
-const CONFIRMATION_IMG = "/images/tickets/jr-west-shinano-4-nakatsugawa-nagoya-2026-09-15.png";
+const CONFIRMATION_IMG = assetUrl("/images/tickets/jr-west-shinano-4-nakatsugawa-nagoya-2026-09-15.png");
 
 // Cruce Alpes → Tokio (salida Magome / llegada hacia Tokio)
 const FROM_BLOCK = "alpes";
 const TO_BLOCK = "tokio";
 
-/** Precios reales Revolut (grupo): ¥XXX · 77,84€ */
-const PRICE_LINE = "5 · ¥XXX (~77,84€)";
+/** Precios reales Revolut (grupo): ¥14.350 · 77,84€ */
+const PRICE_LINE = "5 · ¥14.350 (~77,84€)";
 
 export default function ShinanoTicketCard({ onGoToDay, defaultExpanded = false } = {}) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);

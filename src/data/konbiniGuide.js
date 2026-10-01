@@ -26,7 +26,7 @@ export const konbiniRules = [
   {
     icon: "🏧",
     title: "Cajeros ATM (Revolut) y cambio de divisas",
-    desc: "En 7-Eleven y Lawson siempre hay cajeros ATM (Seven Bank / Lawson Bank) y máquinas para cambiar euros a yenes. Lo más rentable con diferencia es sacar del ATM con Revolut. Como el cajero suele cobrar una comisión fija de ~¥XXX por retirada, lo mejor para tener efectivo es sacar bastante dinero en yenes de una sola vez.",
+    desc: "En 7-Eleven y Lawson siempre hay cajeros ATM (Seven Bank / Lawson Bank) y máquinas para cambiar euros a yenes. Lo más rentable con diferencia es sacar del ATM con Revolut. Como el cajero suele cobrar una comisión fija de ~¥660 por retirada, lo mejor para tener efectivo es sacar bastante dinero en yenes de una sola vez.",
   },
 ];
 
@@ -49,7 +49,7 @@ export const konbiniChains = [
       {
         name: "Tamago Sando (Sándwich de ensalada de huevo)",
         jp: "たまごサンド",
-        price: "¥XXX–¥XXX (~1,00€–1,30€)",
+        price: "¥160–¥210 (~1,00€–1,30€)",
         highlight: "⭐ El más famoso del mundo (el favorito de Anthony Bourdain)",
         desc: "Pan shokupan blanco ultrasuave y esponjoso, sin corteza, con una pasta de huevo cremosa y untuosa con el punto justo de mayonesa Kewpie. Una auténtica obsesión gastronómica.",
         tag: "Desayuno / Snack",
@@ -58,7 +58,7 @@ export const konbiniChains = [
       {
         name: "Onigiris Seven Premium (Salmón a la brasa y Atún-Mayo)",
         jp: "手巻おにぎり (紅鮭 / ツナマヨ)",
-        price: "¥XXX–¥XXX (~0,90€–1,20€)",
+        price: "¥140–¥190 (~0,90€–1,20€)",
         highlight: "🍙 Alga siempre súper crujiente",
         desc: "El envoltorio patentado de 7-Eleven mantiene el alga nori seca y crujiente separada del arroz hasta que tiras de las tiras 1-2-3. El de salmón asado (Benisake) tiene trozos enteros jugosos.",
         tag: "Clásico",
@@ -67,7 +67,7 @@ export const konbiniChains = [
       {
         name: "Café recién molido de máquina (Seven Café)",
         jp: "セブンカフェ (アイス・ホット)",
-        price: "¥XXX–¥XXX (~0,70€–1,15€)",
+        price: "¥110–¥180 (~0,70€–1,15€)",
         highlight: "☕ Calidad de cafetería de especialidad a precio de risa",
         desc: "Muele granos de café 100% arábica al instante. Para café con hielo (Iced Coffee), coges el vaso de plástico lleno de cubitos de hielo del congelador, pagas en caja y pulsas el botón en la máquina.",
         tag: "Bebida",
@@ -76,7 +76,7 @@ export const konbiniChains = [
       {
         name: "Seven Smoothies recién batidos en tienda",
         jp: "セブンスムージー",
-        price: "¥XXX–¥XXX (~1,90€–2,10€)",
+        price: "¥300–¥330 (~1,90€–2,10€)",
         highlight: "🍓 Furor viral en Tokio y Kioto",
         desc: "Vasos de fruta y verdura ultracongeladas en trozos. Tras pagar, escaneas el código de barras en la licuadora futurista de la tienda, metes el vaso y te lo tritura al momento en 60 segundos.",
         tag: "Fruta / Saludable",
@@ -85,7 +85,7 @@ export const konbiniChains = [
       {
         name: "Ramen instantáneo en colaboración con Nakiryu / Ippudo / Tomita",
         jp: "セブンプレミアム 銘店ラーメン",
-        price: "¥XXX–¥XXX (~1,50€–2,00€)",
+        price: "¥240–¥320 (~1,50€–2,00€)",
         highlight: "🍜 Fideos de nivel estrella Michelin",
         desc: "Cazoletas de ramen diseñadas mano a mano con templos del ramen japonés (Nakiryu con su caldo Dandan de sésamo y picante con estrella Michelin, o Tomita con su tsukemen denso).",
         tag: "Cena rápida",
@@ -94,7 +94,7 @@ export const konbiniChains = [
       {
         name: "Seven Bank ATM & Máquinas de cambio (Euros a Yenes)",
         jp: "セブン銀行ATM / 外貨両替機",
-        price: "Comisión ATM: ~¥XXX / extracción",
+        price: "Comisión ATM: ~¥660 / extracción",
         highlight: "🏧 La forma más rentable de tener efectivo: retirar con Revolut",
         desc: "Prácticamente todos los 7-Eleven cuentan con cajeros Seven Bank (los más compatibles con tarjetas extranjeras de todo Japón) y muchos disponen de máquinas de cambio de divisas (de euros a yenes). Sin duda, lo que mejor sale es sacar dinero del ATM con tarjeta Revolut. Como el cajero cobra una comisión fija de unos 660 yenes por retirada, lo mejor para no perder dinero es sacar bastante efectivo en yenes de una sola vez en lugar de hacer muchas retiradas pequeñas.",
         tag: "Cajero / Efectivo",
@@ -120,7 +120,7 @@ export const konbiniChains = [
       {
         name: "Famichiki (Pollo frito deshuesado)",
         jp: "ファミチキ",
-        price: "¥XXX (~1,45€)",
+        price: "¥230 (~1,45€)",
         highlight: "🍗 El rey supremo e indiscutible del pollo frito en Japón",
         desc: "Pechuga/muslo de pollo deshuesado, ultra crujiente por fuera y con una jugosidad explosiva por dentro que gotea jugo en cada bocado. Viene en un sobre térmico perforado por la mitad para no pringarte los dedos.",
         tag: "Snack caliente",
@@ -129,7 +129,7 @@ export const konbiniChains = [
       {
         name: "Famichiki Bun (El truco secreto del burger)",
         jp: "ファミチキバンズ (タルタルソース)",
-        price: "¥XXX (~0,60€)",
+        price: "¥98 (~0,60€)",
         highlight: "🍔 El combo secreto de los locales",
         desc: "En la sección de panadería venden bollitos de hamburguesa cortados que ya vienen untados con salsa tártara japonesa. Compras un Famichiki, lo metes dentro y tienes una de las mejores 'chicken burgers' del viaje por apenas 2€.",
         tag: "Truco / Comida",
@@ -138,7 +138,7 @@ export const konbiniChains = [
       {
         name: "Frappés de máquina FamilyMart",
         jp: "ファミマフラッペ (抹茶 / クッキーバニラ / 季節限定)",
-        price: "¥XXX–¥XXX (~2,10€–2,30€)",
+        price: "¥330–¥360 (~2,10€–2,30€)",
         highlight: "🍧 Bebida helada interactiva",
         desc: "Vasos de hielo triturado y helado duro en el congelador. Lo estrujas con las manos para romper el bloque, lo pagas, lo metes a la cafetera y pulsas el botón 'Frappé' para que le inyecte leche caliente espumada.",
         tag: "Bebida dulce",
@@ -147,7 +147,7 @@ export const konbiniChains = [
       {
         name: "Soufflé Pudding (Pudding con tarta soufflé)",
         jp: "スフレ・プリン",
-        price: "¥XXX (~1,90€)",
+        price: "¥298 (~1,90€)",
         highlight: "🍮 El postre estrella de repostería de Famima",
         desc: "Un flan de caramelo japonés sedoso (Purin) cubierto por una capa de nata montada ligera y rematado con un bizcocho soufflé de queso aireado y esponjoso que tiembla al mover la cuchara.",
         tag: "Dulce / Postre",
@@ -156,7 +156,7 @@ export const konbiniChains = [
       {
         name: "Línea Convenience Wear (Calcetines de rayas retro)",
         jp: "コンビニウェア (ラインソックス)",
-        price: "¥XXX (~2,70€)",
+        price: "¥429 (~2,70€)",
         highlight: "🧦 Fenómeno de moda urbana creado con Facetasm",
         desc: "FamilyMart revolucionó Japón lanzando ropa básica de altísimo diseño con el diseñador Hiromichi Ochiai. Sus calcetines con las franjas azul y verde de Famima son un souvenir de culto entre jóvenes y turistas.",
         tag: "Souvenir / Moda",
@@ -182,7 +182,7 @@ export const konbiniChains = [
       {
         name: "Café Machi Café (Azul sin azúcar / Rojo con azúcar)",
         jp: "マチカフェ (青: 無糖 / 赤: 加糖)",
-        price: "¥XXX–¥XXX (~0,85€–1,40€)",
+        price: "¥130–¥220 (~0,85€–1,40€)",
         highlight: "☕ Imprescindible cada mañana en dos tamaños (M y L)",
         desc: "El café de máquina de Lawson (Machi Café) está riquísimo. Tienen dos variedades clave diferenciadas por color: el azul (sin azúcar, café solo o latte suave sin endulzar) y el rojo (con azúcar / café dulce delicioso). Disponible en dos tamaños (M y L). Perfecto para acompañar el desayuno recién salido a la calle.",
         tag: "Bebida / Desayuno",
@@ -191,7 +191,7 @@ export const konbiniChains = [
       {
         name: "Melon Pan (Clásico y con Chocolate)",
         jp: "メロンパン / チョコチップメロンパン",
-        price: "¥XXX–¥XXX (~0,85€–1,05€)",
+        price: "¥130–¥165 (~0,85€–1,05€)",
         highlight: "🍈 ¿Qué es el Melon Pan? Masa brioche tierna con costra crujiente de galleta",
         desc: "¿Qué es el Melon Pan? Es uno de los bollos dulces más emblemáticos de Japón. Consiste en una masa esponjosa y tierna tipo brioche cubierta por una capa exterior de masa de galleta crujiente y azucarada, horneada con un dibujo enrejado en relieve que recuerda a la piel de un melón cantalupo (de ahí su nombre, no porque lleve melón dentro). En Lawson tienen el clásico dorado crujiente y la versión con masa y pepitas de chocolate, ambos espectaculares.",
         tag: "Bollería / Desayuno estrella",
@@ -200,7 +200,7 @@ export const konbiniChains = [
       {
         name: "Egg Steamed Cake (Bizcocho de huevo al vapor)",
         jp: "たまご蒸しパン (Egg Steamed Cake)",
-        price: "¥XXX–¥XXX (~0,80€–0,95€)",
+        price: "¥120–¥145 (~0,80€–0,95€)",
         highlight: "🥚 Esponjosidad insuperable: suave, húmedo y tierno como una nube",
         desc: "El famoso Tamago Mushi-pan (bizcocho de huevo al vapor) de Lawson es un vicio absoluto. Elaborado al vapor con abundante huevo y leche, tiene un color amarillo dorado precioso y una textura húmeda, ultraesponjosa y delicada que se deshace en el paladar sin empalagar. Un básico insuperable para el café del desayuno.",
         tag: "Bollería / Desayuno",
@@ -209,7 +209,7 @@ export const konbiniChains = [
       {
         name: "Barritas de proteínas de chocolate blanco",
         jp: "プロテインバー (ホワイトチョコ)",
-        price: "¥XXX–¥XXX (~1,05€–1,25€)",
+        price: "¥160–¥190 (~1,05€–1,25€)",
         highlight: "🍫 ¡Nivel TOP! Crujientes, con auténtico chocolate blanco y energía",
         desc: "Las barritas de proteína japonesas de Lawson (marcas como 1本満足バー de Asahi o inBar de Morinaga) están a años luz de las occidentales. La variedad de chocolate blanco es indiscutiblemente la más rica y adictiva: barquillos crujientes de soja bañados en auténtico chocolate blanco sin sabor a edulcorante químico ni textura correosa. Aportan 15g de proteína y salvan cualquier mañana.",
         tag: "Snack / Proteína top",
@@ -218,7 +218,7 @@ export const konbiniChains = [
       {
         name: "Mochi dulce relleno (Uchi Café)",
         jp: "もち食感ロール / 生もち大福",
-        price: "¥XXX–¥XXX (~0,90€–1,55€)",
+        price: "¥140–¥240 (~0,90€–1,55€)",
         highlight: "🍡 Textura elástica única, el postre perfecto tras comer o cenar",
         desc: "Pastelito tradicional japonés elaborado con masa de arroz glutinoso (mochigome) machacado, con su inconfundible tacto elástico, tierno y masticable. Lawson tiene en su línea Uchi Café versiones individuales y en rollo rellenas de nata fresca de Hokkaido, crema dulce o anko (judía roja dulce). Es el postre perfecto y ligero para tomar tras el almuerzo o al llegar al hotel por la noche.",
         tag: "Postre / Dulce",
@@ -227,7 +227,7 @@ export const konbiniChains = [
       {
         name: "Karaage-kun (Bocaditos de pollo frito en caja)",
         jp: "からあげクン (レギュラー / レッド / チーズ)",
-        price: "¥XXX (~1,50€)",
+        price: "¥238 (~1,50€)",
         highlight: "🐓 La cajita con dibujo de gallo más entrañable de Japón",
         desc: "Caja hexagonal con 5 nuggets redondos de pollo jugoso y tierno, con un palillo de madera para comerlos sin mancharte. Sabores míticos: Regular (sal/pimienta), Red (picante sabroso sin pasarse) y Cheese (queso fundido).",
         tag: "Snack caliente",
@@ -236,7 +236,7 @@ export const konbiniChains = [
       {
         name: "Premium Roll Cake (Uchi Café)",
         jp: "プレミアムロールケーキ",
-        price: "¥XXX–¥XXX (~1,15€–1,30€)",
+        price: "¥180–¥205 (~1,15€–1,30€)",
         highlight: "🍰 Se come con cuchara de lo ligera que es la nata",
         desc: "Un anillo de bizcocho esponjoso relleno de nata láctea fresca de Hokkaido tan pura, sedosa y poco empalagosa que parece sacada de una pastelería gourmet de Ginza.",
         tag: "Postre / Dulce",
@@ -245,7 +245,7 @@ export const konbiniChains = [
       {
         name: "Baschee (Tarta de queso vasca)",
         jp: "バスチー (バスク風チーズケーキ)",
-        price: "¥XXX (~1,50€)",
+        price: "¥240 (~1,50€)",
         highlight: "🧀 El fenómeno que batió récords históricos en Japón",
         desc: "Una tarta de queso de estilo vasco con exterior tostado caramelizado y un centro cremoso y denso que se funde en la boca. Fue el mayor bombazo de ventas de un postre en la historia de los konbinis.",
         tag: "Dulce / Postre",
@@ -254,7 +254,7 @@ export const konbiniChains = [
       {
         name: "Onigiris de arroz Niigata (Niitakara)",
         jp: "金しゃりおにぎり",
-        price: "¥XXX–¥XXX (~1,10€–1,50€)",
+        price: "¥170–¥240 (~1,10€–1,50€)",
         highlight: "🍙 Para los puristas del arroz",
         desc: "Lawson utiliza variedades premium de arroz Koshihikari sin prensar en exceso, consiguiendo una textura de grano suelto como hecho a mano en casa, con rellenos como panceta a la brasa o huevas de salmón (ikura).",
         tag: "Comida / Arroz",
@@ -263,7 +263,7 @@ export const konbiniChains = [
       {
         name: "Natural Lawson (Línea bio y saludable)",
         jp: "ナチュラルローソン",
-        price: "¥XXX–¥XXX (~1,00€–2,50€)",
+        price: "¥150–¥400 (~1,00€–2,50€)",
         highlight: "🥗 Si buscas frutas, frutos secos, matcha bio o vegano",
         desc: "En Tokio y Kioto verás sucursales granates 'Natural Lawson'. Tienen zumos prensados en frío, ensaladas ecológicas, pan de masa madre y snacks con menos calorías.",
         tag: "Saludable",
@@ -272,9 +272,9 @@ export const konbiniChains = [
       {
         name: "Lawson Bank ATM & Máquinas de cambio (Euros a Yenes)",
         jp: "ローソン銀行ATM / 外貨両替機",
-        price: "Comisión ATM: ~¥XXX / extracción",
+        price: "Comisión ATM: ~¥660 / extracción",
         highlight: "🏧 Saca yenes con Revolut de una vez para minimizar la comisión",
-        desc: "Al igual que 7-Eleven, Lawson dispone de cajeros automáticos internacionales y máquinas de cambio de euros a yenes. Sacar del ATM con tarjeta Revolut es la opción más económica y con mejor tipo de cambio. Dado que el cajero aplica una comisión de ~¥XXX por operación, compensa retirar una buena cantidad de yenes de golpe para cubrir los gastos en efectivo (minshukus, templos, puestos callejeros).",
+        desc: "Al igual que 7-Eleven, Lawson dispone de cajeros automáticos internacionales y máquinas de cambio de euros a yenes. Sacar del ATM con tarjeta Revolut es la opción más económica y con mejor tipo de cambio. Dado que el cajero aplica una comisión de ~¥660 por operación, compensa retirar una buena cantidad de yenes de golpe para cubrir los gastos en efectivo (minshukus, templos, puestos callejeros).",
         tag: "Cajero / Efectivo",
         tip: "Rechaza siempre la conversión de divisa dinámica del cajero («Without conversion») para que aplique el tipo interbancario de Revolut.",
       },
@@ -298,7 +298,7 @@ export const konbiniChains = [
       {
         name: "Hokkaido Vanilla Soft Cream",
         jp: "ソフトクリーム バニラ",
-        price: "¥XXX–¥XXX (~1,70€–1,90€)",
+        price: "¥270–¥300 (~1,70€–1,90€)",
         highlight: "🍦 Considerado por crítica el mejor helado de cono suave de Japón",
         desc: "Hecho con leche densa y nata fresca de vacas de Hokkaido en cono de barquillo de galleta crujiente. Densidad, sabor a leche real y textura que dejan en ridículo a cualquier helado de máquina rápida occidental.",
         tag: "Helado imprescindible",
@@ -307,7 +307,7 @@ export const konbiniChains = [
       {
         name: "Halohalo (Granizado + Helado)",
         jp: "ハロハロ (果実氷 / パフェ)",
-        price: "¥XXX–¥XXX (~2,40€–2,65€)",
+        price: "¥380–¥420 (~2,40€–2,65€)",
         highlight: "🍧 El refresco definitivo del verano y principios de otoño",
         desc: "Copa de frutas congeladas laminadas finitas (como fresa o melón) con jarabe, gelatinas y coronado con su legendario Soft Cream encima. Se come mezclando todo.",
         tag: "Postre helado",
@@ -316,7 +316,7 @@ export const konbiniChains = [
       {
         name: "X-Fried Potatoes (Patatas fritas en cruz)",
         jp: "Xフライドポテト",
-        price: "¥XXX (~1,45€)",
+        price: "¥230 (~1,45€)",
         highlight: "🍟 Corte patentado en forma de 'X'",
         desc: "Su corte en forma de aspa consigue 4 bordes exteriores super crujientes mientras el interior queda esponjoso como puré. Las fríen al momento en la cocina del local.",
         tag: "Snack caliente",
@@ -342,16 +342,16 @@ export const konbiniChains = [
       {
         name: "Kit Kats de sabores raros en Don Quijote",
         jp: "ご当地キットカット",
-        price: "¥XXX–¥XXX (~1,90€–5,70€) bolsa/caja",
+        price: "¥300–¥900 (~1,90€–5,70€) bolsa/caja",
         highlight: "🍫 El regalo imprescindible para la vuelta a España",
         desc: "Donki tiene pasillos enteros con sabores que no existen en Occidente: Matcha fuerte de Uji, Sake japonés (con 0.4% de alcohol), Tarta de queso de Tokio, Wasabi, Fresa de Tochigi o Boniato asado.",
         tag: "Souvenir comestible",
-        tip: "Comprando más de ¥XXX en Don Quijote enseñando el pasaporte te descuentan el 10% de impuestos (Tax Free).",
+        tip: "Comprando más de ¥5.500 en Don Quijote enseñando el pasaporte te descuentan el 10% de impuestos (Tax Free).",
       },
       {
         name: "Descuento nocturno de Supermercado (Pegatinas de 半額 Hangaku)",
         jp: "スーパーの半額シール (お刺身・お惣菜)",
-        price: "¥XXX–¥XXX (~1,90€–3,80€)",
+        price: "¥300–¥600 (~1,90€–3,80€)",
         highlight: "🏷️ El 'Life Hack' culinario definitivo en Japón",
         desc: "Entre las 19:30 y las 20:30, los supermercados de barrio (cadena LIFE cerca de hoteles en Kioto/Tokio) empiezan a liquidar todo el producto del día: bandejas de 12 piezas de nigiris, boles de sashimi de atún y salmón, tempuras y bentos con pegatinas de -20%, -30% y finalmente -50% (半額).",
         tag: "Supermercado / Ahorro",
@@ -360,7 +360,7 @@ export const konbiniChains = [
       {
         name: "Bebidas energéticas y digestivas (Ukon no Chikara)",
         jp: "ウコンの力 / C1000 武田",
-        price: "¥XXX–¥XXX (~0,95€–1,60€)",
+        price: "¥150–¥250 (~0,95€–1,60€)",
         highlight: "⚡ El elixir japonés anti-resaca y cansancio",
         desc: "Pequeñas botellas de cúrcuma (Ukon no Chikara) que los salarymen beben antes de ir de izakayas para no tener resaca al día siguiente, o 'Pocari Sweat / Aquarius' para reponer sales tras caminar 20.000 pasos al calor.",
         tag: "Salud y recuperación",

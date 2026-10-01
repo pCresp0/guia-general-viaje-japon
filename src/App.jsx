@@ -4,6 +4,7 @@ import Nav, { Sidebar, DesktopTopBar } from "./components/Nav";
 import Footer from "./components/Footer";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import { assetUrl } from "./utils/assets";
 
 import InicioPage from "./pages/InicioPage";
 import Home from "./pages/Home";
@@ -139,7 +140,7 @@ export default function App() {
       ];
       imgs.forEach((src) => {
         const img = new Image();
-        img.src = src;
+        img.src = assetUrl(src);
       });
     };
     if ("requestIdleCallback" in window) {

@@ -2,14 +2,11 @@ import { useState } from "react";
 import { QrCode, Lock, Unlock, Eye, EyeOff, X, CheckCircle2, ShieldCheck, Download, UserCheck, ChevronRight, ChevronDown } from "lucide-react";
 import { sha256Hex } from "../utils/hash";
 import { useT } from "../i18n/LanguageContext";
+import { assetUrl } from "../utils/assets";
 
 // passHash = sha256(contraseña en minúsculas) — valores en claro en /memories/repo/secrets.md (fuera del repo).
 export const groupMembers = [
-  { id: "viajero1", name: "Viajero 1", hasQR: true, qrPath: "/images/visit-japan-qr.png", role: "Titular", passHash: "72557059a60471cfbe6b2df3cf29c888b8be077195301fcd5f8463151abf1c74" },
-  { id: "viajero2", name: "Viajero 2", hasQR: true, qrPath: "/images/visit-japan-qr-2.png", role: "Titular", passHash: "296fb098929ae462b109e0df2726da063f371ad993a0ebe6dadf18a36fa1583c" },
-  { id: "viajero3", name: "Viajero 3", hasQR: true, qrPath: "/images/visit-japan-qr-3.png", role: "Titular", passHash: "0604c4ef4f9f496aa0958497726bee1c99ac365ea5b376f9b7792d8de7fbff55" },
-  { id: "viajero4", name: "Viajero 4", hasQR: true, qrPath: "/images/visit-japan-qr-4.png", role: "Titular", passHash: "6aac1e2f1838b854ba9d1abf94f018fdf70cf4aedfb8e46f513f49854df3be4e" },
-  { id: "viajero5", name: "Viajero 5", hasQR: true, qrPath: "/images/visit-japan-qr-5.png", role: "Titular", passHash: "97cf94ea5536d9ce870ce055760f81c6b355df478d4566ae3140a4dc1cdec3d5" },
+  { id: "pablo", name: "Pablo Crespo Bellido", hasQR: true, qrPath: "/images/visit-japan-qr.png", role: "Titular", passHash: "72557059a60471cfbe6b2df3cf29c888b8be077195301fcd5f8463151abf1c74" },
 ];
 
 export default function VisitJapanQRCard({ defaultExpanded = false, isPriorityToday = false } = {}) {
@@ -23,7 +20,12 @@ export default function VisitJapanQRCard({ defaultExpanded = false, isPriorityTo
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
   function startUnlockFlow() {
-    setStep("select_member");
+    if (groupMembers.length === 1) {
+      setSelectedMember(groupMembers[0]);
+      setStep("enter_password");
+    } else {
+      setStep("select_member");
+    }
     setError(false);
     setPassword("");
   }
@@ -423,7 +425,7 @@ export default function VisitJapanQRCard({ defaultExpanded = false, isPriorityTo
             {/* QR Image con fondo blanco puro y alto contraste para escáneres */}
             <div className="p-3 bg-white border-2 border-slate-900 rounded-2xl shadow-inner mb-4">
               <img
-                src={selectedMember.qrPath || "/images/visit-japan-qr.png"}
+                src={assetUrl(selectedMember.qrPath || "/images/visit-japan-qr.png")}
                 alt={`QR Code Visit Japan Web - ${selectedMember.name}`}
                 className="w-64 h-64 object-contain"
                onError={(e) => { e.currentTarget.style.display = 'none'; }} />
@@ -438,7 +440,7 @@ export default function VisitJapanQRCard({ defaultExpanded = false, isPriorityTo
 
             <div className="w-full flex flex-col sm:flex-row gap-2 mt-4">
               <a
-                href={selectedMember.qrPath || "/images/visit-japan-qr.png"}
+                href={assetUrl(selectedMember.qrPath || "/images/visit-japan-qr.png")}
                 download={`Visit_Japan_QR_${selectedMember.name.replace(/\s+/g, "_")}.png`}
                 className="flex-1 py-2.5 px-3 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-900 flex items-center justify-center gap-1.5"
               >

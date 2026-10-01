@@ -259,7 +259,7 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                 <a href={JR_PASS_SOURCE_EUR} target="_blank" rel="noopener noreferrer" className="underline">jrpass.com</a>
                 {" "}(€ de compra) ·{" "}
                 <a href={JR_PASS_SOURCE_OFFICIAL} target="_blank" rel="noopener noreferrer" className="underline">japanrailpass.net</a>
-                {" "}(¥ oficiales). Desde octubre 2026 las agencias en el extranjero suben a ¥XXX / ¥XXX / ¥XXX
+                {" "}(¥ oficiales). Desde octubre 2026 las agencias en el extranjero suben a ¥53.000 / ¥84.000 / ¥105.000.
                 Nuestro viaje es 7–21 sept (~15 días): un Pass de 7 días <strong>no puede cubrir</strong> a la vez N'EX (día 1), Alpes (día 6–9) y Fuji (día 14).
               </p>
             </div>

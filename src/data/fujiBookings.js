@@ -14,10 +14,10 @@ export const gygFujiActivity = {
   meetingTime: "Encuentro a las 08:10 AM (salida puntual en autobús a las 08:20 AM)",
   duration: "Aprox. 10 horas",
   language: "Guía oficial en inglés",
-  participants: "adultos",
+  participants: "5 adultos",
   totalPrice: "210,00 € (42 € / persona)",
   paymentDate: "Programado para el 13 de septiembre de 2026",
-  foodNotice: "⚠️ Comida NO incluida. No se permite comer en el autobús. Comprar snacks/bebidas antes o probar especialidades locales en las paradas (llevar dinero en efectivo ¥XXX muchas tiendas no aceptan tarjeta).",
+  foodNotice: "⚠️ Comida NO incluida. No se permite comer en el autobús. Comprar snacks/bebidas antes o probar especialidades locales en las paradas (llevar dinero en efectivo ya que muchas tiendas no aceptan tarjeta).",
   guideMessage: {
     receivedDate: "15 de septiembre de 2026, por WhatsApp",
     guideName: "Omar",
