@@ -36,15 +36,6 @@ button, a, input, select, textarea {
   touch-action: manipulation;
 }
 
-.whatsapp-share-btn:hover {
-  filter: brightness(1.06);
-  transform: translateY(-1px);
-}
-
-.whatsapp-share-btn:active {
-  transform: scale(0.97);
-}
-
 button {
   -webkit-touch-callout: none;
 }
