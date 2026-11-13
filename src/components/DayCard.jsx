@@ -574,7 +574,6 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
             style={{
               display: "flex",
               flexDirection: "column",
-              maxHeight: "min(88vh, 100%)",
               overflow: "hidden",
               padding: 0,
               width: "100%",
