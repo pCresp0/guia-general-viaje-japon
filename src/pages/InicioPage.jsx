@@ -54,7 +54,7 @@ export default function InicioPage({ onNavigate }) {
           style={{ background: "var(--paper-raised)", border: "1px solid var(--line)", display: "flex", flexDirection: "column", gap: "16px" }}
         >
           {tripMeta.welcomeParagraphs?.map((paragraph, idx) => (
-            <p key={idx} style={{ fontSize: 14.5, color: "var(--ink)", lineHeight: 1.6, margin: 0 }} dangerouslySetInnerHTML={{ __html: paragraph }} />
+            <div key={idx} style={{ fontSize: 14.5, color: "var(--ink)", lineHeight: 1.6 }} dangerouslySetInnerHTML={{ __html: paragraph }} />
           ))}
         </div>
       </section>
