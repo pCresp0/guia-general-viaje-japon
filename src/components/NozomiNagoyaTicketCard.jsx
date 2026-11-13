@@ -14,7 +14,7 @@ const PRICE_LINE = "5 · ¥54.500 (~295,62€)";
 
 // Asientos Car 12 · Smart EX (Nozomi 358)
 const memberSeats = [
-  { id: "pablo", name: "Pablo Crespo Bellido", role: "Titular", seat: "11-E", qr: assetUrl("/images/tickets/nozomi-day9/seat-11e.png") },
+  { id: "plaza1", name: "Plaza 1", role: "Titular", seat: "11-E", qr: assetUrl("/images/tickets/nozomi-day9/seat-11e.png") },
   { id: "plaza2", name: "Plaza 2", role: "Acompañante", seat: "12-E", qr: assetUrl("/images/tickets/nozomi-day9/seat-12e.png") },
   { id: "plaza3", name: "Plaza 3", role: "Acompañante", seat: "12-C", qr: assetUrl("/images/tickets/nozomi-day9/seat-12c.png") },
   { id: "plaza4", name: "Plaza 4", role: "Acompañante", seat: "11-D", qr: assetUrl("/images/tickets/nozomi-day9/seat-11d.png") },

@@ -20,7 +20,7 @@ export default function ShinkansenTicketCard({ onGoToDay, defaultExpanded = fals
 
 // Configuración de los 5 asientos para la reserva Smart EX 2000
 const memberSeats = [
-  { id: "pablo", name: "Pablo Crespo Bellido", role: "Titular", seat: "13-E", qr: assetUrl("/images/tickets/nozomi-day1/seat-13e.png") },
+  { id: "plaza1", name: "Plaza 1", role: "Titular", seat: "13-E", qr: assetUrl("/images/tickets/nozomi-day1/seat-13e.png") },
   { id: "plaza2", name: "Plaza 2", role: "Acompañante", seat: "14-E", qr: assetUrl("/images/tickets/nozomi-day1/seat-14e.png") },
   { id: "plaza3", name: "Plaza 3", role: "Acompañante", seat: "13-C", qr: assetUrl("/images/tickets/nozomi-day1/seat-13c.png") },
   { id: "plaza4", name: "Plaza 4", role: "Acompañante", seat: "13-D", qr: assetUrl("/images/tickets/nozomi-day1/seat-13d.png") },
