@@ -318,8 +318,12 @@ export function TopBar({ active, onOpenDrawer, onNavigate }) {
       }}
     >
       <div style={chromeOverlay} />
-      <button onClick={onOpenDrawer}
-        style={{ color: "rgba(255,255,255,0.8)", padding: 4, position: "relative", zIndex: 1 }}>
+      <button
+        onClick={onOpenDrawer}
+        data-menu-trigger="true"
+        aria-label="Abrir menú de navegación"
+        style={{ color: "rgba(255,255,255,0.8)", padding: 4, position: "relative", zIndex: 1 }}
+      >
         <Menu size={21} />
       </button>
       <span style={{

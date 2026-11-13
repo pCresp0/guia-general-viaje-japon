@@ -30,6 +30,12 @@ export default function InicioPage({ onNavigate }) {
               return;
             }
             const action = link.getAttribute("data-action");
+            if (action === "menu") {
+              e.preventDefault();
+              const menuBtn = document.querySelector('[data-menu-trigger="true"]');
+              menuBtn?.click();
+              return;
+            }
             if (action === "search") {
               e.preventDefault();
               const searchBtn = document.querySelector('[data-search-trigger="true"]') || document.querySelector('button[aria-label="Buscar en la guía"]');
