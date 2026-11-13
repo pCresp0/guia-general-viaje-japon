@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useContent } from "../i18n/LanguageContext";
 import { formatDateShort } from "../utils/date";
 import DayCard from "../components/DayCard";
-import PlaceText from "../components/PlaceText";
 import ItineraryPrintView from "../components/ItineraryPrintView";
 import ItineraryQuickView from "../components/ItineraryQuickView";
 import { ChevronRight, FileDown, Loader2, List, LayoutList } from "lucide-react";
@@ -160,16 +159,14 @@ export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView
                       {d.num}
                     </span>
                     <span className="flex-1 min-w-0">
-                      <PlaceText
-                        as="span"
-                        text={d.title}
+                      <span
                         className="block text-[15px] font-medium truncate"
                         style={{ color: "var(--ink)" }}
-                        linkStyle={{ color: "var(--shu)" }}
-                      />
+                      >
+                        {d.title}
+                      </span>
                       <span className="block text-xs" style={{ color: "var(--ink-soft)" }}>
-                        {formatDateShort(d.date)} ·{" "}
-                        <PlaceText text={d.cities} linkStyle={{ color: "var(--shu)" }} />
+                        {formatDateShort(d.date)} · {d.cities}
                       </span>
                     </span>
                     <ChevronRight size={18} style={{ color: "var(--ink-soft)" }} />

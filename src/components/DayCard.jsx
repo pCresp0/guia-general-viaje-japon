@@ -208,18 +208,12 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
             <p className="eyebrow" style={{ color: "rgba(255,255,255,0.95)" }}>
               {block.emoji} Día {day.num} · {formatDateLong(day.date)}
             </p>
-            <PlaceText
-              as="h2"
-              text={day.title}
-              className="font-display text-xl sm:text-2xl text-white mt-1 leading-tight break-words"
-              linkStyle={{ color: "white", textDecorationColor: "rgba(255,255,255,0.7)" }}
-            />
-            <PlaceText
-              as="p"
-              text={day.cities}
-              className="text-white/85 text-sm mt-1"
-              linkStyle={{ color: "white", textDecorationColor: "rgba(255,255,255,0.7)" }}
-            />
+            <h2 className="font-display text-xl sm:text-2xl text-white mt-1 leading-tight break-words">
+              {day.title}
+            </h2>
+            <p className="text-white/85 text-sm mt-1">
+              {day.cities}
+            </p>
           </div>
           {onClose && (
             <button
