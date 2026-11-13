@@ -347,8 +347,8 @@ function buildSearchIndex(lang) {
     { terms: ["check-in", "check in", "keihan", "hotel keihan"], day: 1, title: "Check-in Hotel Keihan Kyoto Hachijoguchi", subtitle: "Día 1 · 19:30" },
     { terms: ["cena", "kaiten", "uogashi", "sushi giratorio", "aeon mall", "aeon"], day: 1, title: "Cena Kaiten-Sushi Uogashi", subtitle: "Día 1 · AEON Mall Kyoto" },
     { terms: ["thunderbird", "hokuriku", "tsuruga", "kyoto kanazawa"], day: 6, title: "Thunderbird → Hokuriku Shinkansen", subtitle: "Día 6 · Kioto → Kanazawa" },
-    { terms: ["nohi bus", "kanazawa shirakawa", "12GO31991741", "12go", "08:40"], day: 7, title: "Nohi Bus Kanazawa → Shirakawa-go", subtitle: "Día 7 · 08:40" },
-    { terms: ["nohi bus", "shirakawa takayama", "12GO31992254", "12go", "13:15"], day: 7, title: "Nohi Bus Shirakawa-go → Takayama", subtitle: "Día 7 · 13:15" },
+    { terms: ["nohi bus", "kanazawa shirakawa", "shirakawa-go", "nohi", "08:40"], day: 7, title: "Nohi Bus Kanazawa → Shirakawa-go", subtitle: "Día 7 · 08:40" },
+    { terms: ["nohi bus", "shirakawa takayama", "shirakawa-go", "takayama", "13:15"], day: 7, title: "Nohi Bus Shirakawa-go → Takayama", subtitle: "Día 7 · 13:15" },
     { terms: ["hida express", "hida", "gifu", "takayama kanazawa"], day: 7, title: "JR Hida Express", subtitle: "Día 7 · Kanazawa → Takayama" },
     { terms: ["nohi bus", "nohi", "bus magome", "takayama magome", "08:00", "nakasendo"], day: 8, title: "Nohi Bus Takayama → Magome", subtitle: "Día 8 · 08:00" },
     { terms: ["shinano", "express shinano", "nakatsugawa", "nagoya", "09:57"], day: 9, title: "JR Shinano 4 → Nagoya", subtitle: "Día 9 · Nakatsugawa 09:57 → Nagoya 10:53" },
@@ -385,7 +385,6 @@ function buildSearchIndex(lang) {
 
   // ── Transportes ───────────────────────────────────────────────────
   for (const t of transports) {
-    const bookingMatch = t.note?.match(/12GO\d+/gi) || [];
     items.push(entry({
       id: `transport-${t.day}-${t.name}`,
       title: t.name,
@@ -396,7 +395,7 @@ function buildSearchIndex(lang) {
       targetId: slug("transport", t.day, t.name),
       terms: [
         t.name, t.from, t.to, t.type, t.note,
-        ...bookingMatch, "tren", "bus", "shinkansen", "transporte",
+        "tren", "bus", "shinkansen", "transporte",
       ],
     }));
   }
@@ -419,12 +418,12 @@ function buildSearchIndex(lang) {
   }));
   items.push(entry({
     id: "nohi-bookings",
-    title: "Reservas Nohi Bus",
-    subtitle: "12GO31991741 · 12GO31992254",
+    title: "Autobuses Nohi Bus",
+    subtitle: "Kanazawa → Shirakawa-go → Takayama",
     category: "Transportes",
     tab: "transportes",
     day: 7,
-    terms: ["nohi", "12go31991741", "12go31992254", "12go", "shirakawa bus"],
+    terms: ["nohi", "nohi bus", "shirakawa bus", "autobus alpino"],
   }));
 
   // ── Tarjetas Prácticas de Transporte ──────────────────────────────
