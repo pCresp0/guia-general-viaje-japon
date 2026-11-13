@@ -14,11 +14,13 @@ const LONG_PRESS_MS = 500;
  *   cambios subidos a main -- generado solo por la GitHub Action en
  *   cada push, sin importar el entorno usado para subirlo.
  */
-export default function BuildInfoButton() {
+export default function BuildInfoButton({ size = "md" }) {
   const [showInfo, setShowInfo] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const pressTimer = useRef(null);
   const longPressFired = useRef(false);
+
+  const isSmall = size === "sm";
 
   const buildDate = new Date(typeof __BUILD_TIME__ !== "undefined" ? __BUILD_TIME__ : Date.now());
   const formattedBuild = new Intl.DateTimeFormat("es-ES", {
@@ -42,17 +44,13 @@ export default function BuildInfoButton() {
     }, LONG_PRESS_MS);
   };
 
-  const endPress = () => {
+  const endPress = (e) => {
     if (pressTimer.current) window.clearTimeout(pressTimer.current);
     if (!longPressFired.current) {
-      // Toque rápido -> recarga "dura": desregistra el service worker de
-      // la PWA y borra toda la caché antes de recargar, para asegurar
-      // que se ve la última versión real y no una copia cacheada. Esto
-      // tarda un poco de verdad (borrar 50+ archivos cacheados no es
-      // instantáneo), así que mostramos un giro inmediato en la bandera
-      // para que quede claro que está trabajando y no colgado.
-      setRefreshing(true);
-      hardRefresh();
+      if (!refreshing) {
+        setRefreshing(true);
+        hardRefresh();
+      }
     }
   };
 
@@ -70,8 +68,9 @@ export default function BuildInfoButton() {
       // Si algo falla (navegador sin soporte, etc.), seguimos con la
       // recarga normal igualmente -- nunca debe quedarse sin hacer nada.
     } finally {
-      window.location.href = import.meta.env.BASE_URL || "/";
-      window.location.reload();
+      const base = import.meta.env.BASE_URL || "/";
+      const cleanUrl = window.location.origin + base + "?_r=" + Date.now();
+      window.location.replace(cleanUrl);
     }
   };
 
@@ -88,20 +87,32 @@ export default function BuildInfoButton() {
         onTouchStart={startPress}
         onTouchEnd={endPress}
         onTouchCancel={cancelPress}
+        onClick={(e) => {
+          if (!longPressFired.current && !refreshing) {
+            setRefreshing(true);
+            hardRefresh();
+          }
+        }}
         disabled={refreshing}
-        aria-label="Ir al inicio (toque) o ver registro de cambios (mantener pulsado)"
+        aria-label="Actualizar web con hard refresh (toque) o ver registro de cambios (mantener pulsado)"
+        title="Actualizar web (hard refresh)"
         style={{
           position: "relative",
           zIndex: 1,
-          fontSize: 28, lineHeight: 1, padding: 6,
+          fontSize: isSmall ? 22 : 28,
+          lineHeight: 1,
+          padding: isSmall ? "3px 4px" : 6,
           flexShrink: 0,
           background: "transparent", border: "none",
           cursor: "pointer",
           WebkitTapHighlightColor: "transparent",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         {refreshing ? (
-          <RefreshCw size={26} color="#fff" className="animate-spin" />
+          <RefreshCw size={isSmall ? 19 : 26} color="#fff" className="animate-spin" />
         ) : (
           "🇯🇵"
         )}
