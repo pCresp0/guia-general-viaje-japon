@@ -380,6 +380,38 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
                     );
                   })()}
 
+                  {day.num === 0 && s.time === "09:05" && (
+                    <div className="mt-3 relative z-10">
+                      <FlightTicketCard
+                        legNumber="1 de 2"
+                        route="Madrid (MAD) → Doha (DOH)"
+                        flightNumber="QR 150"
+                        aircraft="Boeing 787-9 Dreamliner"
+                        date="6 sept 2026"
+                        depTime="09:05"
+                        arrTime="16:50"
+                        duration="6h 45m"
+                        operator="Qatar Airways"
+                      />
+                    </div>
+                  )}
+
+                  {day.num === 0 && s.time === "20:35" && (
+                    <div className="mt-3 relative z-10">
+                      <FlightTicketCard
+                        legNumber="2 de 2"
+                        route="Doha (DOH) → Tokio Narita (NRT)"
+                        flightNumber="QR 806"
+                        aircraft="Boeing 777-300ER"
+                        date="6 sept 2026"
+                        depTime="20:35"
+                        arrTime="12:55 (+1)"
+                        duration="10h 20m"
+                        operator="Qatar Airways"
+                      />
+                    </div>
+                  )}
+
                   {day.num === 1 && s.time === "17:19" && (
                     <div className="mt-3 relative z-10">
                       <ShinkansenTicketCard />
@@ -438,13 +470,14 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
                     <div className="mt-3 relative z-10">
                       <FlightTicketCard
                         legNumber="1 de 2"
-                        route="Narita → Doha"
+                        route="Tokio Narita (NRT) → Doha (DOH)"
                         flightNumber="QR 809"
+                        aircraft="Boeing 777-300ER"
                         date="21 sept 2026"
                         depTime="17:25"
                         arrTime="22:20"
                         duration="10h 55m"
-                        bookingRef="Qatar Airways"
+                        operator="Qatar Airways"
                       />
                     </div>
                   )}
@@ -453,13 +486,14 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
                     <div className="mt-3 relative z-10">
                       <FlightTicketCard
                         legNumber="2 de 2"
-                        route="Doha → Madrid"
+                        route="Doha (DOH) → Madrid (MAD)"
                         flightNumber="QR 147"
+                        aircraft="Boeing 787-9 Dreamliner"
                         date="22 sept 2026"
                         depTime="01:10"
                         arrTime="07:35"
                         duration="7h 25m"
-                        bookingRef="Qatar Airways"
+                        operator="Qatar Airways"
                       />
                     </div>
                   )}

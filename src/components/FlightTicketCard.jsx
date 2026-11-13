@@ -1,26 +1,24 @@
 import { useState } from "react";
-import { Plane, Ticket, CheckCircle2, CalendarDays, ExternalLink } from "lucide-react";
+import { Plane, CheckCircle2, ExternalLink } from "lucide-react";
 import TicketCardHeader from "./TicketCardHeader";
 
 // Granate Qatar Airways -- tono propio para las tarjetas de vuelo,
 // distinto de los degradados por bloque (kioto/alpes/tokio) de los trenes.
 const HEADER_BG = "linear-gradient(135deg, #8B1538 0%, #4A0620 100%)";
 const ACCENT = "#8B1538";
-const SOFT_BG = "rgba(139, 21, 56, 0.06)";
 
 export default function FlightTicketCard({
   legNumber,
   route,
   flightNumber,
   operator = "Qatar Airways",
+  aircraft,
   date,
   depTime,
   arrTime,
   duration,
-  bookingRef,
-  eticket,
-  checkedIn = true,
-  trackUrl,
+  reservationLabel = "Tarifa orientativa",
+  reservationCode = "~890 € (I/V)",
   defaultExpanded = false,
 }) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
@@ -36,8 +34,8 @@ export default function FlightTicketCard({
         route={route}
         title={flightNumber}
         when={`${date} · ${depTime} → ${arrTime}`}
-        reservationLabel="Localizador"
-        reservationCode={bookingRef}
+        reservationLabel={reservationLabel}
+        reservationCode={reservationCode}
         priceLine={duration}
         isExpanded={isExpanded}
         onToggle={() => setIsExpanded(!isExpanded)}
@@ -47,9 +45,10 @@ export default function FlightTicketCard({
 
       {isExpanded && (
         <div className="p-4 sm:p-5 space-y-4 animate-in slide-in-from-top-2 fade-in duration-200">
+          {/* Badges descriptivos */}
           <div className="flex flex-wrap items-center gap-2 text-xs">
             <span className="px-2.5 py-1 rounded-full font-bold bg-green-100 text-green-800 border border-green-200 flex items-center gap-1">
-              <CheckCircle2 size={14} /> {checkedIn ? "CHECKED IN" : "CONFIRMADO"}
+              <CheckCircle2 size={13} /> Vuelo Internacional
             </span>
             <span className="px-2.5 py-1 rounded-full font-semibold bg-gray-100 text-gray-700">
               {operator}
@@ -59,36 +58,52 @@ export default function FlightTicketCard({
                 Tramo {legNumber}
               </span>
             )}
+            {aircraft && (
+              <span className="px-2.5 py-1 rounded-full font-semibold bg-slate-100 text-slate-700">
+                {aircraft}
+              </span>
+            )}
           </div>
 
-          {eticket ? (
-            <div className="border rounded-xl p-3" style={{ borderColor: "var(--line)" }}>
-              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider m-0 mb-1 flex items-center gap-1">
-                <Ticket size={12} /> E-ticket
-              </p>
-              <p className="text-sm font-bold font-mono m-0" style={{ color: ACCENT }}>{eticket}</p>
-            </div>
-          ) : (
-            <div className="border rounded-xl p-3 text-xs" style={{ borderColor: "var(--line)", color: "var(--ink-soft)" }}>
-              <p className="font-semibold text-gray-700 m-0 mb-1">✈️ Información de ruta internacional</p>
-              <p className="m-0 leading-relaxed">
-                Vuelo regular con Qatar Airways con maletas facturadas directas a destino final. Tarjeta de embarque obtenible online o en los mostradores del aeropuerto.
-              </p>
-            </div>
-          )}
+          {/* Ficha explicativa adaptada a web genérica */}
+          <div
+            className="rounded-xl p-4 border text-xs leading-relaxed space-y-2.5"
+            style={{
+              background: "rgba(139, 21, 56, 0.05)",
+              borderColor: "rgba(139, 21, 56, 0.2)",
+              color: "#3d101d",
+            }}
+          >
+            <h4 className="font-bold text-sm m-0 flex items-center gap-2" style={{ color: ACCENT }}>
+              ✈️ Vuelos de referencia tomados en este viaje
+            </h4>
+            <p className="m-0">
+              Nosotros realizamos la ruta <strong>Madrid ↔ Tokio Narita</strong> con <strong>Qatar Airways</strong>, haciendo escala en el Aeropuerto Internacional de Hamad (Doha).
+            </p>
+            <p className="m-0">
+              El billete completo de ida y vuelta nos salió por <strong>890 € por persona</strong>, con equipaje facturado incluido (23 kg) etiquetado directamente hasta el destino final.
+            </p>
+            <p className="m-0">
+              La escala en Doha se efectúa en <strong>terminal única</strong>, por lo que el tránsito es ágil y cómodo: no es necesario cambiar de edificio, tomar autobuses entre terminales ni volver a recoger o facturar las maletas.
+            </p>
+            <p className="m-0 pt-2 border-t text-[11.5px] opacity-90" style={{ borderColor: "rgba(139, 21, 56, 0.2)" }}>
+              💡 Si quieres conocer al detalle el coste de todos los transportes del viaje (vuelos, tren bala Shinkansen Nozomi, trenes exprés de los Alpes, autobuses y metro), puedes consultarlo en los apartados de <strong>Presupuesto</strong> y <strong>Transportes</strong> de la web.
+            </p>
+          </div>
 
-          {trackUrl && (
+          {/* Enlaces de consulta */}
+          <div className="flex flex-col sm:flex-row gap-2 pt-1">
             <a
-              href={trackUrl}
+              href="https://www.qatarairways.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 text-xs font-semibold rounded-full px-3 py-2 border-none transition-opacity hover:opacity-90"
-              style={{ background: SOFT_BG, color: ACCENT }}
+              className="flex-1 py-2.5 px-3 rounded-xl text-xs font-bold text-white flex items-center justify-center gap-1.5 transition-opacity hover:opacity-90 shadow-xs"
+              style={{ background: ACCENT, textDecoration: "none" }}
             >
+              <span>Web oficial Qatar Airways (qatarairways.com)</span>
               <ExternalLink size={13} />
-              Seguimiento de vuelo en vivo
             </a>
-          )}
+          </div>
         </div>
       )}
     </div>
