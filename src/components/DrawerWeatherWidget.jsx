@@ -45,6 +45,7 @@ export default function DrawerWeatherWidget({ onNavigate, onClose }) {
           padding: "10px 12px",
           cursor: "pointer",
           backdropFilter: "blur(6px)",
+          WebkitBackdropFilter: "blur(6px)",
           boxShadow: "0 4px 14px rgba(0, 0, 0, 0.18)",
         }}
       >

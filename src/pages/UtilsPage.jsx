@@ -124,9 +124,13 @@ export default function UtilsPage() {
   const getHourDiff = () => {
     try {
       const now = new Date();
-      const madridDate = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Madrid" }));
-      const tokyoDate = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
-      return Math.round((tokyoDate.getTime() - madridDate.getTime()) / (1000 * 60 * 60));
+      const getTzHour = (tz) => {
+        const parts = new Intl.DateTimeFormat("en-GB", { timeZone: tz, hour: "numeric", hour12: false }).formatToParts(now);
+        return parseInt(parts.find((p) => p.type === "hour")?.value ?? "0", 10);
+      };
+      const madridHour = getTzHour("Europe/Madrid");
+      const tokyoHour = getTzHour("Asia/Tokyo");
+      return (tokyoHour - madridHour + 24) % 24;
     } catch {
       return 7;
     }

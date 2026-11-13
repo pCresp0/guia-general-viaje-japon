@@ -335,6 +335,7 @@ export default function MapPage({ onGoToDay, initialDay }) {
               background: "rgba(255, 255, 255, 0.95)",
               border: "1px solid var(--line)",
               backdropFilter: "blur(6px)",
+              WebkitBackdropFilter: "blur(6px)",
             }}
           >
             {Object.values(TILE_PROVIDERS).map((p) => {

@@ -41,6 +41,7 @@ export default defineConfig(({ mode }) => {
           name: 'Viaje a Japón — Septiembre 2026',
           short_name: 'Japón 2026',
           description: 'Guía del viaje a Japón, septiembre 2026',
+          lang: 'es',
           start_url: basePath,
           scope: basePath,
           display: 'standalone',

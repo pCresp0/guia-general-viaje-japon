@@ -197,7 +197,7 @@ function Drawer({ active, onChange, open, onClose }) {
       {open && (
         <div
           className="fixed inset-0"
-          style={{ background: "rgba(0,0,0,0.5)", backdropFilter: "blur(2px)", zIndex: 200 }}
+          style={{ background: "rgba(0,0,0,0.5)", backdropFilter: "blur(2px)", WebkitBackdropFilter: "blur(2px)", zIndex: 200 }}
           onClick={onClose}
         />
       )}
@@ -250,6 +250,7 @@ function Drawer({ active, onChange, open, onClose }) {
                  background: "rgba(35, 27, 27, 0.96)",
                  borderTop: "1px solid rgba(255, 255, 255, 0.1)",
                  backdropFilter: "blur(12px)",
+                 WebkitBackdropFilter: "blur(12px)",
                  boxShadow: "0 -4px 16px rgba(0,0,0,0.35)",
                  zIndex: 10,
                  paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom, 0px))"

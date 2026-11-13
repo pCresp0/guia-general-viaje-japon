@@ -135,7 +135,8 @@ export default function TransportPage({ onNavigate }) {
           style={{ 
             background: "var(--paper-raised)", 
             border: "1px solid var(--line)",
-            backdropFilter: "blur(12px)"
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
           }}
         >
           <div

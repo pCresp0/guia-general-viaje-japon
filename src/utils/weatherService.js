@@ -159,12 +159,12 @@ export function useTodayWeatherForecast() {
  */
 export function useDayWeatherForecast(dayNum) {
   const [liveMap, setLiveMap] = useState(() => {
-    if (typeof window !== "undefined" && window.localStorage) {
-      try {
+    try {
+      if (typeof window !== "undefined" && window.localStorage) {
         const cached = localStorage.getItem(CACHE_KEY);
         if (cached) return JSON.parse(cached).data;
-      } catch (e) { /* ignore */ }
-    }
+      }
+    } catch { /* ignore */ }
     return null;
   });
   const [loading, setLoading] = useState(!liveMap);

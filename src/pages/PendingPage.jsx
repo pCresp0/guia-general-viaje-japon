@@ -111,7 +111,8 @@ export default function PendingPage() {
           border: "1px solid var(--line)",
           position: "sticky",
           top: "calc(var(--mobile-topbar) + 12px)",
-          backdropFilter: "blur(12px)"
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
         }}
       >
         <div
