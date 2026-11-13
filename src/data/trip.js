@@ -67,6 +67,21 @@ export const tripMeta = {
         text: "Control de costes estimados y reales pagados (hoteles de Booking, hotel de Magome Chaya en efectivo, seguros, eSIMs) y lista de tareas 'Antes de viajar' y 'Durante el viaje' guardadas en <code>localStorage</code>."
       },
       {
+        icon: "📊",
+        title: "Análisis Didáctico de JR Pass",
+        text: "Comparador matemático exhaustivo entre el coste oficial del Japan Rail Pass frente a la compra de billetes sueltos, con desglose de trayectos, fórmulas de cálculo y motivos económicos por los que no compensa tras la subida de tarifas de 2023."
+      },
+      {
+        icon: "🖨️",
+        title: "Modo Impresión & Exportación PDF",
+        text: "Vistas optimizadas para impresión en papel o exportación en PDF de la hoja de ruta completa y de la historia de Japón, pensadas para emergencias o viajes sin depender de la batería del dispositivo."
+      },
+      {
+        icon: "👆",
+        title: "Navegación Táctil por Gestos (Swipe)",
+        text: "Soporte nativo de gestos táctiles en dispositivos móviles con <code>react-swipeable</code>: desliza desde la pantalla hacia la derecha para abrir el menú lateral y hacia la izquierda para cerrarlo."
+      },
+      {
         icon: "🌐",
         title: "Multi-idioma Nativo (4 idiomas)",
         text: "Arquitectura i18n propia en React Context con soporte completo para <strong>Español, English, Français y Tagalog</strong>, fusionando dinámicamente las cadenas traducidas con los datos estructurales."

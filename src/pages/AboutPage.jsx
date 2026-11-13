@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useContent, useT } from "../i18n/LanguageContext";
-import { ExternalLink, Terminal, Copy, Check, Sparkles, Code2, WifiOff, Layers, Smartphone, Volume2, Search, Map, CloudSun, Globe } from "lucide-react";
+import { ExternalLink, Terminal, Copy, Check, Sparkles, Code2, WifiOff, Layers, Smartphone, Volume2, Search, Map, CloudSun, Globe, Printer, Hand, Calculator, Rocket } from "lucide-react";
 
 export default function AboutPage() {
   const { tripMeta } = useContent();
@@ -35,6 +35,11 @@ export default function AboutPage() {
       desc: "Diseñado milimétricamente para móviles, con soporte de Safe Area Insets de iOS y paleta tradicional nipona."
     },
     {
+      icon: <Hand size={18} style={{ color: "var(--shu)" }} />,
+      name: "Gestos Táctiles (Swipe)",
+      desc: "Navegación nativa por gestos con react-swipeable: desliza para abrir y cerrar el menú lateral en cualquier vista."
+    },
+    {
       icon: <Globe size={18} style={{ color: "#b08968" }} />,
       name: "Multi-idioma Propio (4 idiomas)",
       desc: "Sistema nativo ligero con React Context (Español, English, Français, Tagalog) sin librerías pesadas."
@@ -58,6 +63,11 @@ export default function AboutPage() {
       icon: <CloudSun size={18} style={{ color: "#e09f3e" }} />,
       name: "Clima con Caché (Open-Meteo)",
       desc: "Predicciones meteorológicas en vivo con caché local de 12 horas para preservar la batería del dispositivo."
+    },
+    {
+      icon: <Printer size={18} style={{ color: "var(--indigo)" }} />,
+      name: "Modo Impresión & Exportación PDF",
+      desc: "Vistas y estilos @media print dedicados para imprimir la hoja de ruta o guardarla en PDF como respaldo sin batería."
     }
   ];
 
@@ -167,6 +177,44 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* Funcionalidades destacadas de la plataforma */}
+      {tripMeta.about?.features?.length > 0 && (
+        <div
+          className="rounded-2xl border p-5 mb-6 shadow-xs"
+          style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-xl">✨</span>
+            <h2 style={{ fontSize: 16, fontWeight: 700, color: "var(--indigo)", margin: 0 }}>
+              {t("about.featuresTitle") || "Funcionalidades destacadas de la guía"}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            {tripMeta.about.features.map((feat, idx) => (
+              <div
+                key={idx}
+                className="p-3.5 rounded-xl border flex items-start gap-3"
+                style={{
+                  borderColor: "var(--line)",
+                  background: "var(--paper)",
+                }}
+              >
+                <span className="text-2xl flex-shrink-0 select-none">{feat.icon}</span>
+                <div>
+                  <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)", margin: "0 0 4px 0" }}>
+                    {feat.title}
+                  </h3>
+                  <div
+                    style={{ fontSize: 12.5, color: "var(--ink-soft)", lineHeight: 1.55 }}
+                    dangerouslySetInnerHTML={{ __html: feat.text }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Tecnologías Utilizadas (El Stack) */}
       <div
         className="rounded-2xl border p-5 mb-6"
@@ -179,7 +227,7 @@ export default function AboutPage() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {techStack.map((tech, idx) => (
             <div
               key={idx}
@@ -275,7 +323,7 @@ export default function AboutPage() {
               💻 Para programadores
             </h3>
             <p style={{ fontSize: 13, color: "var(--ink)", opacity: 0.85, lineHeight: 1.5, margin: 0 }}>
-              Edita directamente los ficheros de datos en <code>src/data/trip.js</code>, <code>hotels.js</code> y <code>flights.js</code>. Los componentes se actualizarán de forma reactiva sin tocar bases de datos.
+              Edita directamente los ficheros en <code>src/data/trip.js</code> (itinerario, hoteles, vuelos y fechas), <code>src/data/mapData.js</code> (coordenadas del mapa) y <code>src/data/pending.js</code> (checklist). La interfaz reactiva se actualizará en tiempo real.
             </p>
           </div>
 
@@ -287,7 +335,23 @@ export default function AboutPage() {
               🤖 Para Vibecoders (IA)
             </h3>
             <p style={{ fontSize: 13, color: "var(--ink)", opacity: 0.85, lineHeight: 1.5, margin: 0 }}>
-              Abre el proyecto con <strong>Cursor, Claude Code, Windsurf o Copilot</strong> y dile: <em>"Adapta los datos de trip.js para un viaje a Japón de 12 días saliendo desde mi ciudad..."</em>. La IA se encargará del resto.
+              Abre el proyecto con <strong>Cursor, Claude Code, Windsurf o Copilot</strong> y escribe en el chat: <em>"Adapta los datos de trip.js para un viaje a Japón de 12 días con estas ciudades y fechas: [...] manteniendo intacta la estructura de componentes."</em>
+            </p>
+          </div>
+        </div>
+
+        {/* Despliegue en GitHub Pages */}
+        <div
+          className="p-4 rounded-xl border mt-3 flex items-start gap-3"
+          style={{ background: "rgba(30, 58, 138, 0.04)", borderColor: "rgba(30, 58, 138, 0.15)" }}
+        >
+          <Rocket size={20} style={{ color: "var(--indigo)", flexShrink: 0, marginTop: 2 }} />
+          <div>
+            <h3 style={{ fontSize: 13.5, fontWeight: 700, color: "var(--indigo)", margin: "0 0 4px 0" }}>
+              🚀 Despliegue gratuito en GitHub Pages
+            </h3>
+            <p style={{ fontSize: 12.5, color: "var(--ink)", opacity: 0.85, lineHeight: 1.55, margin: 0 }}>
+              El repositorio ya cuenta con el flujo automatizado en <code>.github/workflows/deploy.yml</code>. Solo tienes que configurar <strong>Settings ➔ Pages ➔ Source: GitHub Actions</strong> en tu repositorio de GitHub. Si cambias el nombre del repositorio, actualiza la propiedad <code>base</code> en <code>vite.config.js</code> y tendrás tu guía online con HTTPS y PWA de forma 100% gratuita.
             </p>
           </div>
         </div>

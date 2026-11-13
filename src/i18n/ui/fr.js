@@ -359,6 +359,7 @@ export default {
   "geek.title": "Lieux geek sur l'itinéraire",
   "about.eyebrow": "Développement",
   "about.title": "À propos du site",
+  "about.featuresTitle": "Fonctionnalités clés du guide",
   "about.archTitle": "Architecture & Stack",
   "about.reactDesc": "Pour un chargement ultra-rapide et une expérience fluide (SPA).",
   "about.pwaDesc": "Mise en cache via Workbox pour un fonctionnement 100% hors ligne au Japon.",

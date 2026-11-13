@@ -362,6 +362,7 @@ export default {
   "geek.title": "Geek stops along the route",
   "about.eyebrow": "Development",
   "about.title": "About this website",
+  "about.featuresTitle": "Featured Guide Capabilities",
   "about.archTitle": "Architecture & Stack",
   "about.reactDesc": "For fast loading and smooth SPA user experience.",
   "about.pwaDesc": "Asset caching with Workbox for reliable offline functionality in Japan.",

@@ -56,6 +56,7 @@ export default function InicioPage({ onNavigate }) {
               return;
             }
           }}
+          data-welcome-card="true"
           className="rounded-2xl p-5 shadow-xs"
           style={{ background: "var(--paper-raised)", border: "1px solid var(--line)", display: "flex", flexDirection: "column", gap: "16px" }}
         >

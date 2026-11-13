@@ -364,6 +364,7 @@ export default {
   "geek.title": "Mga geek spot sa ruta",
   "about.eyebrow": "Pagbuo",
   "about.title": "Tungkol sa web",
+  "about.featuresTitle": "Mga Pangunahing Kakayahan ng Gabay",
   "about.archTitle": "Arkitektura at Stack",
   "about.reactDesc": "Para sa mabilis na pag-load at maayos na karanasan sa SPA.",
   "about.pwaDesc": "Pag-cache gamit ang Workbox para gumana nang offline sa Japan.",

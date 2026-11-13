@@ -361,6 +361,7 @@ export default {
   "frikadas.title": "Frikadas",
   "about.eyebrow": "Desarrollo",
   "about.title": "Sobre la web",
+  "about.featuresTitle": "Funcionalidades destacadas de la guía",
   "about.archTitle": "Arquitectura y Stack",
   "about.reactDesc": "Para una carga rápida y experiencia de usuario fluida (SPA).",
   "about.pwaDesc": "Cacheo de recursos usando Workbox para que funcione sin conexión en Japón.",
