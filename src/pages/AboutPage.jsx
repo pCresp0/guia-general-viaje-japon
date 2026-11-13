@@ -62,7 +62,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="px-4 pt-3 pb-16 max-w-3xl mx-auto">
+    <div className="px-4 pt-3 pb-16">
       {/* Encabezado */}
       <div className="mb-6">
         <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>
@@ -179,7 +179,7 @@ export default function AboutPage() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {techStack.map((tech, idx) => (
             <div
               key={idx}
