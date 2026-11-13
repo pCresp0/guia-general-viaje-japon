@@ -99,10 +99,10 @@ export default function AboutPage() {
 
       {/* Banner / Acceso Directo al Repositorio de GitHub */}
       <div
-        className="rounded-2xl border p-5 mb-6"
+        className="rounded-2xl border p-5 mb-6 shadow-xs"
         style={{
-          borderColor: "rgba(36,41,47,0.2)",
-          background: "linear-gradient(135deg, rgba(36,41,47,0.04) 0%, rgba(36,41,47,0.08) 100%)",
+          borderColor: "var(--line)",
+          background: "var(--paper-raised)",
         }}
       >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -207,10 +207,10 @@ export default function AboutPage() {
 
       {/* Clonación, Personalización y Vibecoding */}
       <div
-        className="rounded-2xl border p-5 mb-6"
+        className="rounded-2xl border p-5 mb-6 shadow-xs"
         style={{
           borderColor: "rgba(46,125,91,0.25)",
-          background: "rgba(46,125,91,0.04)",
+          background: "var(--paper-raised)",
         }}
       >
         <div className="flex items-center gap-2 mb-3">
@@ -269,7 +269,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
           <div
             className="p-3.5 rounded-xl border"
-            style={{ background: "var(--paper-raised)", borderColor: "var(--line)" }}
+            style={{ background: "var(--paper)", borderColor: "var(--line)" }}
           >
             <h3 style={{ fontSize: 13.5, fontWeight: 700, color: "var(--shu)", margin: "0 0 6px 0" }}>
               💻 Para programadores
@@ -281,7 +281,7 @@ export default function AboutPage() {
 
           <div
             className="p-3.5 rounded-xl border"
-            style={{ background: "var(--paper-raised)", borderColor: "var(--line)" }}
+            style={{ background: "var(--paper)", borderColor: "var(--line)" }}
           >
             <h3 style={{ fontSize: 13.5, fontWeight: 700, color: "#2e7d5b", margin: "0 0 6px 0" }}>
               🤖 Para Vibecoders (IA)

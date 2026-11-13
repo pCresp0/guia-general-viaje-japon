@@ -21,8 +21,8 @@ export default function Home({ onGoToDay }) {
       {status.phase === "before" && (
         <>
           <div
-            className="rounded-2xl p-4 mb-5 flex gap-3 items-start"
-            style={{ background: "rgba(29,53,87,0.08)", border: "1px solid rgba(29,53,87,0.18)" }}
+            className="rounded-2xl p-4 mb-5 flex gap-3 items-start shadow-xs"
+            style={{ background: "var(--paper-raised)", border: "1px solid var(--line)", borderLeft: "4px solid var(--indigo)" }}
           >
             <Info size={18} style={{ color: "var(--indigo)", flexShrink: 0, marginTop: 2 }} />
             <div>

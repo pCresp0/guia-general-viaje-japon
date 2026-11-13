@@ -452,7 +452,7 @@ export default function TransportPage({ onNavigate }) {
           </div>
 
           {/* Smart EX */}
-          <div className="rounded-2xl mb-5 border overflow-hidden" style={{ background: "rgba(29, 53, 87, 0.03)", borderColor: "var(--line)" }}>
+          <div className="rounded-2xl mb-5 border overflow-hidden shadow-xs" style={{ background: "var(--paper-raised)", borderColor: "var(--line)" }}>
             <button
               type="button"
               onClick={() => setSmartExOpen(!smartExOpen)}

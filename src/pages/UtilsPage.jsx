@@ -146,7 +146,7 @@ export default function UtilsPage() {
       <div className="mb-8">
         <p className="eyebrow mb-3" style={{ color: "var(--ink-soft)" }}>Hora actual</p>
         <div className="grid gap-3" style={{ gridTemplateColumns: "1fr 1fr" }}>
-          <div className="rounded-2xl p-5" style={{ background: "linear-gradient(135deg, rgba(29,53,87,0.1) 0%, rgba(188,71,73,0.1) 100%)", border: "1px solid var(--line)" }}>
+          <div className="rounded-2xl p-5 shadow-xs" style={{ background: "var(--paper-raised)", border: "1px solid var(--line)" }}>
             <div className="flex items-center gap-2 mb-3">
               <span style={{ fontSize: 20 }}>🇪🇸</span>
               <p style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>España (Madrid)</p>
@@ -160,7 +160,7 @@ export default function UtilsPage() {
             <p style={{ fontSize: 11, color: "var(--ink-soft)" }}>{spainDate}</p>
           </div>
 
-          <div className="rounded-2xl p-5" style={{ background: "linear-gradient(135deg, rgba(46,125,91,0.1) 0%, rgba(201,162,39,0.1) 100%)", border: "1px solid var(--line)" }}>
+          <div className="rounded-2xl p-5 shadow-xs" style={{ background: "var(--paper-raised)", border: "1px solid var(--line)" }}>
             <div className="flex items-center gap-2 mb-3">
               <span style={{ fontSize: 20 }}>🇯🇵</span>
               <p style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>Japón (Tokio)</p>
@@ -206,10 +206,11 @@ export default function UtilsPage() {
         </div>
 
         <div
-          className="rounded-xl p-3.5 mb-4 flex items-center justify-between"
+          className="rounded-xl p-3.5 mb-4 flex items-center justify-between shadow-xs"
           style={{
-            background: isLive ? "rgba(46,125,91,0.08)" : "rgba(201,162,39,0.1)",
-            border: isLive ? "1px solid rgba(46,125,91,0.2)" : "1px solid rgba(201,162,39,0.3)",
+            background: "var(--paper-raised)",
+            border: isLive ? "1px solid rgba(46,125,91,0.25)" : "1px solid rgba(201,162,39,0.3)",
+            borderLeft: isLive ? "4px solid var(--forest)" : "4px solid var(--gold)",
           }}
         >
           <div className="flex items-center gap-2">

@@ -440,8 +440,8 @@ export default function WeatherPage() {
       </div>
 
       {/* Tips */}
-      <div className="rounded-xl p-4 mt-6" style={{ background: "rgba(46,125,91,0.1)", border: "1px solid rgba(46,125,91,0.3)" }}>
-        <p style={{ fontSize: 12.5, color: "var(--forest)", lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+      <div className="rounded-xl p-4 mt-6 shadow-xs" style={{ background: "var(--paper-raised)", border: "1px solid rgba(46,125,91,0.25)", borderLeft: "4px solid var(--forest)" }}>
+        <p style={{ fontSize: 12.5, color: "var(--forest)", lineHeight: 1.6, margin: 0, fontWeight: 600 }}>
           {weatherLabels.tipTexto}
         </p>
       </div>
