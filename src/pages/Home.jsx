@@ -76,14 +76,36 @@ export default function Home({ onGoToDay }) {
       )}
 
       {status.phase === "after" && (
-        <div style={{
-          background: "linear-gradient(135deg, var(--indigo) 0%, rgba(29,53,87,0.85) 100%)",
-          borderRadius: 16, padding: 32, textAlign: "center", color: "white",
-        }}>
-          <p style={{ fontFamily: "var(--font-display)", fontSize: 28, marginBottom: 8 }}>{t("today.endThanks")}</p>
-          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.85)", lineHeight: 1.6, margin: 0 }}>
-            {t("today.endMessage")}
-          </p>
+        <div className="space-y-6">
+          <div style={{
+            background: "linear-gradient(135deg, var(--indigo) 0%, rgba(29,53,87,0.85) 100%)",
+            borderRadius: 16, padding: "32px 24px", textAlign: "center", color: "white",
+          }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 28, marginBottom: 8 }}>{t("today.endThanks")}</p>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.85)", lineHeight: 1.6, margin: "0 auto 16px", maxWidth: 520 }}>
+              {t("today.endMessage")}
+            </p>
+            {day1 && (
+              <button
+                type="button"
+                onClick={() => onGoToDay?.(1)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold cursor-pointer transition-all hover:bg-white/25 active:scale-95"
+                style={{ background: "rgba(255,255,255,0.18)", color: "#ffffff", border: "1px solid rgba(255,255,255,0.3)" }}
+              >
+                <span>{t("today.viewDay1") || "Ver Día 1"}</span>
+                <span>→</span>
+              </button>
+            )}
+          </div>
+
+          {day1 && (
+            <div>
+              <p className="eyebrow mb-3" style={{ color: "var(--ink-soft)" }}>
+                {t("today.exampleDay1")}
+              </p>
+              <DayCard day={day1} defaultOpenHistory={false} />
+            </div>
+          )}
         </div>
       )}
     </div>

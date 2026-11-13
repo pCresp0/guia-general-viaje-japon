@@ -321,8 +321,8 @@ export default {
   "nav.desc.herramientas": "EUR/JPY currency converter, size guides, and travel tools",
   "nav.desc.emergencias": "Emergency 110/119 numbers, medical insurance, and hospitals",
 
-  "today.previewTitle": "Preview · the trip hasn't started yet",
-  "today.previewDesc": "Once the trip starts (Sep 6–7 2026), this tab will open by default. Here you will automatically see the current day, with schedules, places and where we sleep. In the meantime, <strong>Day 1</strong> is shown as an example.",
+  "today.previewTitle": "Itinerary preview",
+  "today.previewDesc": "This tab tracked the trip live day by day during the travel dates (September 6–21, 2026). You can check the complete breakdown in the <a href=\"#itinerario\" class=\"inline-tab-link\">Itinerary</a> section or explore <strong>Day 1</strong> below as an example.",
   "today.exampleDay1": "Example · Day 1",
   "today.todayDay": "Today · Day",
   "today.endTitle": "End of trip",

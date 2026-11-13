@@ -1003,7 +1003,7 @@ export function searchGlobal(query, { limit = 15, minChars = 3, lang = "es" } = 
     else if (titleN.includes(q)) score += 25;
     if (normalize(item.subtitle).includes(q)) score += 8;
     // Boost booking codes / exact-ish ids
-    if (/^\d{4,}$/.test(q) || /^qr\d/i.test(q) || /^12go/i.test(q)) score += 30;
+    if (/^\d{4,}$/.test(q) || /^qr\d/i.test(q)) score += 30;
     scored.push({ item, score });
   }
 

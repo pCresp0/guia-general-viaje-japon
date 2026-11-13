@@ -318,8 +318,8 @@ export default {
   "nav.desc.about": "Arquitectura técnica, stack de tecnologías y guía de vibecoding",
   "nav.desc.frikadas": "Paradas de anime, videojuegos, Studio Ghibli, Nintendo y Akihabara",
 
-  "today.previewTitle": "Vista previa · aún no ha empezado el viaje",
-  "today.previewDesc": "Cuando empiece el viaje (desde el 6–7 sept 2026), esta pestaña será la que abra la web por defecto. Aquí veréis automáticamente el día en curso, con horarios, sitios y dónde dormimos. Mientras tanto, se muestra el <strong>Día 1</strong> como ejemplo.",
+  "today.previewTitle": "Vista previa del itinerario",
+  "today.previewDesc": "Esta pestaña funcionaba como seguimiento en vivo del día en curso durante las fechas del viaje (del 6 al 21 de septiembre de 2026). Puedes consultar el desglose completo de cada jornada en el apartado de <a href=\"#itinerario\" class=\"inline-tab-link\">Itinerario</a> o ver a continuación el <strong>Día 1</strong> como ejemplo.",
   "today.exampleDay1": "Ejemplo · Día 1",
   "today.todayDay": "Hoy · Día",
   "today.endTitle": "Fin del viaje",

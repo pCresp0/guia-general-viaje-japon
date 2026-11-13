@@ -323,8 +323,8 @@ export default {
   "nav.desc.herramientas": "Converter ng pera na EUR/JPY, sukat ng damit at gamit sa paglalakbay",
   "nav.desc.emergencias": "Emergency number 110/119, medical insurance at mga ospital",
 
-  "today.previewTitle": "Preview · hindi pa nagsisimula ang biyahe",
-  "today.previewDesc": "Sa sandaling magsimula ang biyahe (Sept 6–7 2026), bubuksan ng tab na ito nang default. Makikita mo rito nang awtomatiko ang kasalukuyang araw, na may mga iskedyul, lugar at kung saan tayo matutulog. Pansamantala, ang <strong>Araw 1</strong> ay ipinapakita bilang halimbawa.",
+  "today.previewTitle": "Preview ng itinerary",
+  "today.previewDesc": "Sinubaybayan ng tab na ito ang biyahe araw-araw noong mga petsa ng biyahe (Setyembre 6–21, 2026). Maaari mong tingnan ang buong talaan sa seksyon ng <a href=\"#itinerario\" class=\"inline-tab-link\">Itinerary</a> o tuklasin ang <strong>Araw 1</strong> sa ibaba bilang halimbawa.",
   "today.exampleDay1": "Halimbawa · Araw 1",
   "today.todayDay": "Ngayon · Araw",
   "today.endTitle": "Katapusan ng biyahe",

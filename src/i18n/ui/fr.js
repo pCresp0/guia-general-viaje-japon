@@ -318,8 +318,8 @@ export default {
   "nav.desc.herramientas": "Convertisseur EUR/JPY, équivalences de tailles et outils pratiques",
   "nav.desc.emergencias": "Numéros d'urgence 110/119, assurance médicale et hôpitaux",
 
-  "today.previewTitle": "Aperçu · le voyage n'a pas encore commencé",
-  "today.previewDesc": "Dès que le voyage commencera (6-7 sept 2026), cet onglet s'ouvrira par défaut. Vous y verrez automatiquement le jour en cours, avec les horaires, les lieux et notre hébergement. En attendant, le <strong>Jour 1</strong> est affiché à titre d'exemple.",
+  "today.previewTitle": "Aperçu de l'itinéraire",
+  "today.previewDesc": "Cet onglet permettait de suivre le voyage en direct pendant les dates du séjour (du 6 au 21 septembre 2026). Vous pouvez consulter le détail complet de chaque journée dans la section <a href=\"#itinerario\" class=\"inline-tab-link\">Itinéraire</a> ou voir le <strong>Jour 1</strong> ci-dessous à titre d'exemple.",
   "today.exampleDay1": "Exemple · Jour 1",
   "today.todayDay": "Aujourd'hui · Jour",
   "today.endTitle": "Fin du voyage",
