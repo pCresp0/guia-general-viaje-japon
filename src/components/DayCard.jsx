@@ -587,7 +587,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
           role="presentation"
         >
           <div
-            className="modal-sheet"
+            className="modal-sheet modal-guide-sheet"
             role="dialog"
             aria-modal="true"
             aria-label={guides[selectedGuide]?.name || "Info del lugar"}
@@ -599,7 +599,6 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
               overflow: "hidden",
               padding: 0,
               width: "100%",
-              maxWidth: 560,
             }}
           >
             <div

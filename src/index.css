@@ -279,6 +279,70 @@ main > div > * {
   margin: auto;
 }
 
+@media (min-width: 768px) {
+  .modal-sheet {
+    max-width: 780px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-sheet {
+    max-width: 880px;
+  }
+}
+
+/* Modals de guía detallada de lugares (Fushimi Inari, templos, santuarios, etc.) */
+.modal-guide-sheet {
+  width: 100%;
+  max-width: 580px;
+  border-radius: 20px;
+  transition: max-width 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .modal-guide-sheet {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-guide-sheet {
+    max-width: 780px;
+  }
+  .modal-guide-sheet .modal-sheet-header {
+    padding: 14px 20px 10px;
+  }
+  .modal-guide-sheet .modal-sheet-body {
+    padding: 20px 32px 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-guide-sheet {
+    max-width: 880px;
+  }
+}
+
+.modal-guide-figure {
+  margin: 0 0 16px;
+}
+
+.modal-guide-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  background: var(--paper);
+}
+
+@media (min-width: 768px) {
+  .modal-guide-image {
+    aspect-ratio: 16 / 9;
+    max-height: 380px;
+  }
+}
+
 .modal-sheet-header {
   position: sticky;
   top: 0;

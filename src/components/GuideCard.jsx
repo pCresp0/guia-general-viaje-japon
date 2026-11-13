@@ -39,21 +39,22 @@ function GuideBody({ guideId, guide, refs, localImage, accent }) {
   return (
     <>
       {localImage && !imgError && (
-        <figure style={{ margin: "0 0 14px" }}>
+        <figure className="modal-guide-figure" style={{ margin: "0 0 16px" }}>
           <img
             key={`${guideId}-${retryKey}`}
             src={imageSrc}
             alt={guide.name}
             loading="eager"
             onError={handleImgError}
+            className="modal-guide-image"
             style={{
-              width: "100%", aspectRatio: "16 / 10", objectFit: "cover",
-              borderRadius: 10, display: "block",
+              width: "100%", aspectRatio: "16 / 10", maxHeight: 380, objectFit: "cover",
+              borderRadius: 12, display: "block",
               background: "var(--paper)",
             }}
           />
           <figcaption style={{
-            fontSize: 10.5, color: "var(--ink-soft)", marginTop: 5,
+            fontSize: 11, color: "var(--ink-soft)", marginTop: 6,
             display: "flex", justifyContent: "flex-end",
           }}>
             Foto: Wikimedia Commons
@@ -62,24 +63,32 @@ function GuideBody({ guideId, guide, refs, localImage, accent }) {
       )}
 
       {guide.sections.map((s, i) => (
-        <div key={i} style={{ marginBottom: 14 }}>
+        <div key={i} style={{ marginBottom: 16 }}>
           <p style={{
-            fontSize: 15.5, fontWeight: 800, color: accent,
-            letterSpacing: "0.01em", marginBottom: 5,
+            fontSize: 16, fontWeight: 800, color: accent,
+            letterSpacing: "0.01em", marginBottom: 6,
           }}>
             {s.title}
           </p>
           <PlaceText
             as="p"
             text={s.body}
-            style={{ fontSize: 13.5, color: "var(--ink)", lineHeight: 1.65, whiteSpace: "pre-wrap" }}
+            style={{ fontSize: 14, color: "var(--ink)", lineHeight: 1.68, whiteSpace: "pre-wrap" }}
             linkStyle={{ color: accent }}
           />
         </div>
       ))}
 
       {refs?.length > 0 && (
-        <div style={{ marginTop: 4, marginBottom: 14, display: "flex", flexDirection: "column", gap: 8 }}>
+        <div
+          style={{
+            marginTop: 6,
+            marginBottom: 16,
+            display: "grid",
+            gap: 10,
+            gridTemplateColumns: refs.length > 1 ? "repeat(auto-fit, minmax(280px, 1fr))" : "1fr",
+          }}
+        >
           {refs.map((ref, i) => {
             const fs = franchiseStyle[ref.franchise];
             return (
@@ -185,33 +194,33 @@ export default function GuideCard({
   if (isModal) {
     return (
       <div ref={cardRef}>
-        <div className="flex items-start gap-3 mb-4">
+        <div className="flex items-start gap-3.5 mb-4">
           <div
             style={{
-              width: 36, height: 36, borderRadius: 10, flexShrink: 0,
+              width: 40, height: 40, borderRadius: 12, flexShrink: 0,
               background: accent + "18",
               display: "flex", alignItems: "center", justifyContent: "center",
             }}
           >
-            <BookOpen size={17} style={{ color: accent }} />
+            <BookOpen size={20} style={{ color: accent }} />
           </div>
-          <div className="flex-1 min-w-0 pr-8">
-            <div style={{ display: "flex", alignItems: "baseline", gap: 7, flexWrap: "wrap" }}>
-              <h3 style={{ fontSize: 18, fontWeight: 800, color: "var(--ink)", margin: 0, fontFamily: "var(--font-display, inherit)" }}>
+          <div className="flex-1 min-w-0 pr-4">
+            <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
+              <h3 style={{ fontSize: 20, fontWeight: 800, color: "var(--ink)", margin: 0, fontFamily: "var(--font-display, inherit)" }}>
                 {guide.name}
               </h3>
-              <span style={{ fontSize: 13, color: "var(--ink-soft)" }}>
+              <span style={{ fontSize: 14, color: "var(--ink-soft)" }}>
                 {guide.jp}
               </span>
               {refs?.length > 0 && (
-                <span title="Tiene referencias de Pokémon/Digimon/cine" style={{ fontSize: 13 }}>
+                <span title="Tiene referencias de Pokémon/Digimon/cine" style={{ fontSize: 14 }}>
                   {refs.some(r => r.franchise === "pokemon") && "⚡"}
                   {refs.some(r => r.franchise === "digimon") && "🔷"}
                   {refs.some(r => r.franchise === "pelicula") && "🎬"}
                 </span>
               )}
             </div>
-            <p style={{ fontSize: 13, color: "var(--ink-soft)", lineHeight: 1.45, margin: "4px 0 0" }}>
+            <p style={{ fontSize: 13.5, color: "var(--ink-soft)", lineHeight: 1.45, margin: "4px 0 0" }}>
               {guide.founded || guide.tagline}
             </p>
           </div>
