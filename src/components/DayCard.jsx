@@ -176,7 +176,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
     return () => { clearTimeout(timer); clearTimeout(clearTimer); };
   }, [day.num, day.schedule]);
   const [selectedGuide, setSelectedGuide] = useState(null);
-  const { blocks, stays, days, mapStops, guides } = useContent();
+  const { blocks, stays, days, mapStops, guides, popCulture } = useContent();
   const { triggerHighlight } = useHighlight();
   const blockById = Object.fromEntries(blocks.map((b) => [b.id, b]));
   const block = blockById[day.block];
@@ -190,8 +190,13 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
     if (!selectedGuide) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedGuide(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
       document.body.style.overflow = prev;
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [selectedGuide]);
 
@@ -573,26 +578,86 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
               overflow: "hidden",
               padding: 0,
               width: "100%",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
             }}
           >
             <div
               className="modal-sheet-header"
               style={{
-                justifyContent: "flex-end",
-                padding: "12px 12px 8px",
-                borderBottom: "1px solid var(--line)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 12,
+                padding: "14px 18px",
+                background: block?.color || "var(--indigo)",
+                color: "#ffffff",
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+                borderBottom: "none",
                 flexShrink: 0,
               }}
             >
+              <div className="flex items-center gap-3 min-w-0 flex-1">
+                <div
+                  style={{
+                    width: 38,
+                    height: 38,
+                    borderRadius: 10,
+                    background: "rgba(255, 255, 255, 0.2)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  <BookOpen size={20} style={{ color: "#ffffff" }} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline gap-2 flex-wrap">
+                    <h3
+                      className="font-display font-bold text-base sm:text-lg leading-tight text-white m-0"
+                    >
+                      {guides[selectedGuide]?.name}
+                    </h3>
+                    {guides[selectedGuide]?.jp && (
+                      <span className="text-xs sm:text-sm text-white/85 font-medium">
+                        {guides[selectedGuide]?.jp}
+                      </span>
+                    )}
+                    {popCulture?.[selectedGuide]?.length > 0 && (
+                      <span title="Referencias pop" className="text-xs">
+                        {popCulture[selectedGuide].some((r) => r.franchise === "pokemon") && "⚡"}
+                        {popCulture[selectedGuide].some((r) => r.franchise === "digimon") && "🔷"}
+                        {popCulture[selectedGuide].some((r) => r.franchise === "pelicula") && "🎬"}
+                      </span>
+                    )}
+                  </div>
+                  {(guides[selectedGuide]?.founded || guides[selectedGuide]?.tagline) && (
+                    <p
+                      className="text-xs text-white/80 m-0 mt-0.5 truncate"
+                    >
+                      {guides[selectedGuide]?.founded || guides[selectedGuide]?.tagline}
+                    </p>
+                  )}
+                </div>
+              </div>
+
               <button
                 type="button"
-                className="modal-close-btn"
                 onClick={() => setSelectedGuide(null)}
                 aria-label="Cerrar info"
+                title="Cerrar (Esc)"
+                className="rounded-full p-2 flex items-center justify-center transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
+                style={{
+                  background: "rgba(255, 255, 255, 0.18)",
+                  border: "none",
+                  color: "#ffffff",
+                }}
               >
-                <X size={16} />
+                <X size={18} />
               </button>
             </div>
+
             <div
               className="modal-sheet-body"
               style={{
@@ -600,7 +665,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
                 WebkitOverflowScrolling: "touch",
                 flex: 1,
                 minHeight: 0,
-                padding: "8px 20px calc(24px + env(safe-area-inset-bottom, 0px))",
+                padding: "16px 20px calc(24px + env(safe-area-inset-bottom, 0px))",
               }}
             >
               <GuideCard id={selectedGuide} accent={block.color} variant="modal" />

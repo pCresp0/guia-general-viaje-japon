@@ -194,37 +194,6 @@ export default function GuideCard({
   if (isModal) {
     return (
       <div ref={cardRef}>
-        <div className="flex items-start gap-3.5 mb-4">
-          <div
-            style={{
-              width: 40, height: 40, borderRadius: 12, flexShrink: 0,
-              background: accent + "18",
-              display: "flex", alignItems: "center", justifyContent: "center",
-            }}
-          >
-            <BookOpen size={20} style={{ color: accent }} />
-          </div>
-          <div className="flex-1 min-w-0 pr-4">
-            <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
-              <h3 style={{ fontSize: 20, fontWeight: 800, color: "var(--ink)", margin: 0, fontFamily: "var(--font-display, inherit)" }}>
-                {guide.name}
-              </h3>
-              <span style={{ fontSize: 14, color: "var(--ink-soft)" }}>
-                {guide.jp}
-              </span>
-              {refs?.length > 0 && (
-                <span title="Tiene referencias de Pokémon/Digimon/cine" style={{ fontSize: 14 }}>
-                  {refs.some(r => r.franchise === "pokemon") && "⚡"}
-                  {refs.some(r => r.franchise === "digimon") && "🔷"}
-                  {refs.some(r => r.franchise === "pelicula") && "🎬"}
-                </span>
-              )}
-            </div>
-            <p style={{ fontSize: 13.5, color: "var(--ink-soft)", lineHeight: 1.45, margin: "4px 0 0" }}>
-              {guide.founded || guide.tagline}
-            </p>
-          </div>
-        </div>
         <GuideBody guideId={id} guide={guide} refs={refs} localImage={localImage} accent={accent} />
       </div>
     );
