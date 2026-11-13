@@ -145,17 +145,31 @@ export default function App() {
       ];
 
       const allImages = [...placeImages, ...foodImages, ...historyImages];
-      allImages.forEach((src) => {
-        const img = new Image();
-        img.decoding = "async";
-        img.src = assetUrl(src);
-      });
+
+      // En móviles (sobre todo Safari iOS), lanzar decenas de peticiones de imagen de golpe
+      // agota el pool de sockets HTTP (~6 conexiones) y hace que Safari aborte o falle
+      // la decodificación de las imágenes activas. Precargamos en lotes pequeños escalonados.
+      let idx = 0;
+      const batchSize = 4;
+      const loadNextBatch = () => {
+        if (idx >= allImages.length) return;
+        const slice = allImages.slice(idx, idx + batchSize);
+        slice.forEach((src) => {
+          const img = new Image();
+          img.src = assetUrl(src);
+        });
+        idx += batchSize;
+        if (idx < allImages.length) {
+          setTimeout(loadNextBatch, 250);
+        }
+      };
+      loadNextBatch();
     };
 
     if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(preload, { timeout: 1500 });
+      window.requestIdleCallback(preload, { timeout: 2000 });
     } else {
-      window.setTimeout(preload, 600);
+      window.setTimeout(preload, 1000);
     }
   }, []);
 

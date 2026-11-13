@@ -70,7 +70,7 @@ export default function BuildInfoButton() {
       // Si algo falla (navegador sin soporte, etc.), seguimos con la
       // recarga normal igualmente -- nunca debe quedarse sin hacer nada.
     } finally {
-      window.location.href = "/";
+      window.location.href = import.meta.env.BASE_URL || "/";
       window.location.reload();
     }
   };

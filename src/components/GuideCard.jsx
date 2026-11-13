@@ -15,21 +15,37 @@ const franchiseStyle = {
 
 function GuideBody({ guideId, guide, refs, localImage, accent }) {
   const [imgError, setImgError] = useState(false);
+  const [retryKey, setRetryKey] = useState(0);
 
   useEffect(() => {
     setImgError(false);
+    setRetryKey(0);
   }, [guideId, localImage]);
+
+  const handleImgError = () => {
+    // Si falla la primera vez (común en Safari por decodificación transitoria),
+    // reintentamos una vez con un query param para forzar refetch limpio.
+    if (retryKey < 1) {
+      setRetryKey((k) => k + 1);
+    } else {
+      setImgError(true);
+    }
+  };
+
+  const imageSrc = localImage
+    ? (retryKey > 0 ? `${assetUrl(localImage)}?r=${retryKey}` : assetUrl(localImage))
+    : "";
 
   return (
     <>
       {localImage && !imgError && (
         <figure style={{ margin: "0 0 14px" }}>
           <img
-            src={assetUrl(localImage)}
+            key={`${guideId}-${retryKey}`}
+            src={imageSrc}
             alt={guide.name}
             loading="eager"
-            decoding="async"
-            onError={() => setImgError(true)}
+            onError={handleImgError}
             style={{
               width: "100%", aspectRatio: "16 / 10", objectFit: "cover",
               borderRadius: 10, display: "block",
