@@ -156,7 +156,7 @@ Si tienes conocimientos de desarrollo web (JavaScript / React):
 * Los componentes visuales de la aplicación se alimentan directamente de estos archivos y reflejarán tus cambios de inmediato sin tocar bases de datos.
 
 ### Opción B: Vibecoding con Asistentes de IA
-Si no programas o quieres montar tu guía en cuestión de minutos, abre esta carpeta con tu editor con IA preferido (**Cursor**, **Windsurf**, **Claude Code**, **GitHub Copilot** o pásale los archivos a **ChatGPT / Claude**) y utiliza prompts en lenguaje natural:
+Si prefieres no programar o quieres montar tu guía en cuestión de minutos, puedes utilizar IDEs y herramientas con IA como **Antigravity**, **Cursor** o **Visual Studio Code** (con extensiones o agentes como **GitHub Copilot** o **Claude Code**). Una vez clonado el repositorio, pídele al agente en lenguaje natural:
 > *"Quiero adaptar esta web para mi próximo viaje a Japón de 12 días en primavera. Estas son mis fechas, mis hoteles y las ciudades que visitaré: [pega aquí tus notas]. Actualiza los datos de `src/data/trip.js` y `src/data/mapData.js` manteniendo intacta la estructura y los componentes."*
 
 La IA actualizará los módulos de datos respetando las interfaces y tendrás tu propia Progressive Web App personalizada lista para compartir con amigos o compañeros de viaje.

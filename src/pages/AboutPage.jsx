@@ -335,7 +335,7 @@ export default function AboutPage() {
               🤖 Para Vibecoders (IA)
             </h3>
             <p style={{ fontSize: 13, color: "var(--ink)", opacity: 0.85, lineHeight: 1.5, margin: 0 }}>
-              Abre el proyecto con <strong>Cursor, Claude Code, Windsurf o Copilot</strong> y escribe en el chat: <em>"Adapta los datos de trip.js para un viaje a Japón de 12 días con estas ciudades y fechas: [...] manteniendo intacta la estructura de componentes."</em>
+              Puedes utilizar IDEs como <strong>Antigravity, Cursor o Visual Studio Code</strong> (con alguna extensión como <strong>GitHub Copilot o Claude Code</strong>). Una vez clonado el repositorio, pídele al agente en el chat: <em>"Adapta los datos de trip.js y mapData.js para mi viaje a Japón de 12 días con estas ciudades y fechas: [...] manteniendo intacta la estructura y el diseño de componentes."</em>
             </p>
           </div>
         </div>
