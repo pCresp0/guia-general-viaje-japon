@@ -40,6 +40,12 @@ export default function InicioPage({ onNavigate }) {
               searchBtn?.click();
               return;
             }
+            if (action === "language") {
+              e.preventDefault();
+              const langBtn = document.querySelector('button[aria-haspopup="listbox"]');
+              langBtn?.click();
+              return;
+            }
             const scrollTarget = link.getAttribute("data-scroll");
             if (scrollTarget) {
               e.preventDefault();
