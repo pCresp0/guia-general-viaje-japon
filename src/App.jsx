@@ -99,6 +99,34 @@ export default function App() {
     setTab(nextTab);
   }
 
+  // Soporte de navegación global desde cualquier enlace con data-tab o evento CustomEvent "app:navigate"
+  useEffect(() => {
+    const handleAppNavigate = (e) => {
+      const detail = e.detail;
+      if (typeof detail === "string") {
+        handleTabChange(detail);
+      } else if (detail && detail.tab) {
+        handleSearchNavigate(detail);
+      }
+    };
+    const handleGlobalClick = (e) => {
+      const link = e.target.closest("[data-tab]");
+      if (link) {
+        const tabId = link.getAttribute("data-tab");
+        if (tabId) {
+          e.preventDefault();
+          handleTabChange(tabId);
+        }
+      }
+    };
+    window.addEventListener("app:navigate", handleAppNavigate);
+    window.addEventListener("click", handleGlobalClick);
+    return () => {
+      window.removeEventListener("app:navigate", handleAppNavigate);
+      window.removeEventListener("click", handleGlobalClick);
+    };
+  }, []);
+
   // Scroll to top of the scrollable container when tab changes
   useEffect(() => {
     if (scrollContainerRef.current) {

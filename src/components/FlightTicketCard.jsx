@@ -86,8 +86,34 @@ export default function FlightTicketCard({
             <p className="m-0">
               La escala en Doha se efectúa en <strong>terminal única</strong>, por lo que el tránsito es ágil y cómodo: no es necesario cambiar de edificio, tomar autobuses entre terminales ni volver a recoger o facturar las maletas.
             </p>
-            <p className="m-0 pt-2 border-t text-[11.5px] opacity-90" style={{ borderColor: "rgba(139, 21, 56, 0.2)" }}>
-              💡 Si quieres conocer al detalle el coste de todos los transportes del viaje (vuelos, tren bala Shinkansen Nozomi, trenes exprés de los Alpes, autobuses y metro), puedes consultarlo en los apartados de <strong>Presupuesto</strong> y <strong>Transportes</strong> de la web.
+            <p className="m-0 pt-2 border-t text-[11.5px] opacity-90 leading-relaxed" style={{ borderColor: "rgba(139, 21, 56, 0.2)" }}>
+              💡 Si quieres conocer al detalle el coste de todos los transportes del viaje (vuelos, tren bala Shinkansen Nozomi, trenes exprés de los Alpes, autobuses y metro), puedes consultarlo en los apartados de{" "}
+              <a
+                href="#presupuesto"
+                data-tab="presupuesto"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.dispatchEvent(new CustomEvent("app:navigate", { detail: "presupuesto" }));
+                }}
+                className="font-bold underline decoration-dotted transition-opacity hover:opacity-75 cursor-pointer"
+                style={{ color: ACCENT }}
+              >
+                Presupuesto
+              </a>{" "}
+              y{" "}
+              <a
+                href="#transportes"
+                data-tab="transportes"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.dispatchEvent(new CustomEvent("app:navigate", { detail: "transportes" }));
+                }}
+                className="font-bold underline decoration-dotted transition-opacity hover:opacity-75 cursor-pointer"
+                style={{ color: ACCENT }}
+              >
+                Transportes
+              </a>{" "}
+              de la web.
             </p>
           </div>
 
