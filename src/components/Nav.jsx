@@ -22,7 +22,7 @@ export const navStructure = [
   { type: "group", id: "guia", labelKey: "nav.group.guia", items: [
       { id: "lugares", labelKey: "nav.lugares", descKey: "nav.desc.lugares", icon: Heart },
       { id: "comidas", labelKey: "nav.comidas", descKey: "nav.desc.comidas", icon: UtensilsCrossed },
-      { id: "clima", labelKey: "nav.clima", descKey: "nav.desc.hoy", icon: Cloud },
+      { id: "clima", labelKey: "nav.clima", descKey: "nav.desc.clima", icon: Cloud },
       { id: "historia", labelKey: "nav.historia", descKey: "nav.desc.historia", icon: Landmark },
       { id: "frases", labelKey: "nav.frases", descKey: "nav.desc.frases", icon: MessageCircle },
     ]
