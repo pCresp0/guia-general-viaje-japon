@@ -1,12 +1,8 @@
-import { useState, useEffect } from "react";
 import { useContent, useT } from "../i18n/LanguageContext";
-import { Plane, CheckCircle2 } from "lucide-react";
 import { tabs as navTabs } from "../components/Nav";
 
-
-
 export default function InicioPage({ onNavigate }) {
-  const { tripMeta, flights } = useContent();
+  const { tripMeta } = useContent();
   const t = useT();
 
   return (
@@ -111,36 +107,6 @@ export default function InicioPage({ onNavigate }) {
               </button>
             );
           })}
-        </div>
-      </section>
-
-      {/* Resumen de Vuelos */}
-      <section>
-        <p className="eyebrow mb-3" style={{ color: "var(--ink-soft)" }}>{t("home.completedFlights") || "Vuelos del viaje"}</p>
-        <div className="rounded-2xl p-5 shadow-xs" style={{ background: "var(--paper-raised)", border: "1px solid var(--line)" }}>
-          <div className="flex items-center justify-between gap-2 mb-3">
-            <div className="flex items-center gap-2" style={{ color: "var(--shu)" }}>
-              <Plane size={16} />
-              <p className="eyebrow" style={{ margin: 0 }}>{flights.out?.flightNumber || "QR 150 + QR 806"} / {flights.back?.flightNumber || "QR 809 + QR 147"}</p>
-            </div>
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{ background: "rgba(46,125,91,0.12)", color: "#2e7d5b" }}>
-              ✓ Ida y Vuelta
-            </span>
-          </div>
-          <p style={{ fontSize: 14, fontWeight: 600, color: "var(--ink)", margin: "0 0 6px" }}>
-            Madrid ⇄ Doha ⇄ Narita (Qatar Airways)
-          </p>
-          <p style={{ fontSize: 13, color: "var(--ink-soft)", lineHeight: 1.5, margin: 0 }}>
-            {t("home.flightsCompletedDesc") || "Vuelos de ida y vuelta completados con éxito. Consulta billetes, escalas y referencias en la pestaña Vuelos."}
-          </p>
-          <button
-            type="button"
-            onClick={() => onNavigate?.("vuelos")}
-            className="mt-3 text-sm font-semibold inline-flex items-center gap-1"
-            style={{ color: "var(--shu)", background: "none", border: "none", padding: 0, cursor: "pointer" }}
-          >
-            {t("home.viewFlights") || "Ver vuelos ↗"}
-          </button>
         </div>
       </section>
     </div>
