@@ -6,16 +6,16 @@ export const days = [
     "history": "Qatar Airways est la compagnie aérienne nationale du Qatar et l'une des mieux notées au monde. Doha est le hub central de la compagnie au Moyen-Orient, un point de connexion entre l'Europe et l'Asie.",
     "schedule": [
       {
-        "text": "Départ de l'aéroport Adolfo Suárez Madrid-Barajas sur le vol Vuelo Ida (Qatar Airways). Suivi de vol en direct : https://www.google.com/search?q=vol+Vuelo Ida"
+        "text": "🛫 **MADRID (MAD) → DOHA (DOH) · VOL QR 150 (Qatar Airways)**\n\nDépart de l'aéroport Adolfo Suárez Madrid-Barajas (Terminal T4 / T4S) sur vol régulier long-courrier.\n• **Appareil :** Boeing 787-9 Dreamliner · Durée : 6 h 45 min.\n• **Bagages :** Bagages enregistrés directement jusqu'à Tokyo Narita, pas besoin de les récupérer pendant l'escale."
       },
       {
-        "text": "Arrivée à Doha (Aéroport international Hamad, DOH). Escale dans le terminal unique, changement d'avion. Temps d'escale : 3 h 45 min (16:50 → 20:35)."
+        "text": "📍 **Arrivée à Doha (Aéroport international Hamad, DOH)**.\n\nEscale de correspondance de **3 h 45 min** (16:50 → 20:35). Dans cet aéroport à terminal unique, le transit est fluide : pas besoin de changer de bâtiment ni de repasser les douanes. Idéal pour admirer le jardin tropical intérieur (The Orchard), se dégourdir les jambes et manger."
       },
       {
-        "text": "Départ de Doha vers Narita (NRT) sur le vol Vuelo Ida 2 (Qatar Airways). Durée du vol : env. 10 h 20 min. Suivi de vol en direct : https://www.google.com/search?q=vol+Vuelo Ida 2"
+        "text": "🛫 **DOHA (DOH) → TOKYO NARITA (NRT) · VOL QR 806 (Qatar Airways)**\n\nDépart du second tronçon international à destination de l'aéroport de Tokyo Narita (NRT).\n• **Appareil :** Boeing 777-300ER · Durée : 10 h 20 min.\n• **Service à bord :** Vol de nuit avec dîner, petit-déjeuner avant l'arrivée et divertissement individuel."
       },
       {
-        "text": "Arrivée à Narita (lundi 7 sept). Douanes et récupération des bagages avec le QR code Visit Japan Web. Ensuite : transfert via Narita Express + Shinkansen vers Kyoto."
+        "text": "🛬 **Arrivée à Tokyo Narita (Terminal 2, lundi 7 sept)**.\n\nContrôle des passeports et douanes avec le code QR préparé sur **Visit Japan Web** aux bornes biométriques. Récupération des bagages et correspondance directe à la gare de l'aéroport pour le Narita Express + Shinkansen vers Kyoto."
       }
     ],
     "money": "Vol inclus dans le budget du groupe"
@@ -907,13 +907,13 @@ export const days = [
         "text": "🚆 DÉPART DE L'HÔTEL VERS L'AÉROPORT DE NARITA — 2 OPTIONS (Recommandé : Keisei Skyliner)\n\n🟢 **OPTION RECOMMANDÉE : KEISEI SKYLINER (depuis Keisei-Ueno)**\n- Trajet vers le train : KOKO HOTEL Residence Asakusa Kappabashi → Gare de Keisei-Ueno. Pour 5 personnes avec de grandes valises, un taxi direct depuis la porte de l'hôtel jusqu'à Keisei-Ueno (~10 min) -- coût réel ~14,50 € (le taxi fonctionne au compteur, donc ne pas se fier au prix estimé donné par l'appli Uber, souvent trop bas). Ça vaut quand même vraiment le coup, simplifiant nettement la logistique.\n- Train : Keisei Skyliner depuis Keisei-Ueno direct jusqu'à l'aéroport de Narita (~41 min). Train express avec place réservée et beaucoup d'espace pour les bagages.\n- Avantage : évite de devoir traîner les grandes valises dans les couloirs et les correspondances pour rejoindre la gare de Tokyo.\n- Horaire définitif : à vérifier et réserver une fois publié l'horaire définitif de septembre 2026, en s'assurant d'arriver à Narita avec assez de marge pour le vol de 17h25.\n\n🟡 **ALTERNATIVE VALABLE : JR NARITA EXPRESS (N'EX)**\n- Trajet : Hôtel → Gare de Tokyo (métro ou taxi) → JR Narita Express (N'EX) direct jusqu'à Narita (~1h de train, place réservée obligatoire).\n- Le N'EX reste une option parfaitement valable si l'on préfère partir de la gare de Tokyo.\n\n💡 Garder assez de marge pour être au terminal de Narita avant 14h30 pour l'enregistrement et la sécurité."
       },
       {
-        "text": "Enregistrement et contrôles de sécurité à Narita."
+        "text": "Enregistrement aux comptoirs de Qatar Airways et contrôles de sécurité à Narita (Terminal 2) avec au moins 3 heures d'avance."
       },
       {
-        "text": "✈️ Vol Vuelo Vuelta Narita → Doha (Qatar Airways, 10h 55m). Arrivée à Doha à 22h20."
+        "text": "🛫 **TOKYO NARITA (NRT) → DOHA (DOH) · VOL QR 809 (Qatar Airways)**\n\nDépart du premier tronçon de retour vers Doha.\n• **Appareil :** Boeing 777-300ER · Durée : 10 h 55 min.\n• **Arrivée à Doha :** 22h20 (heure locale).\n• Bagages enregistrés directement jusqu'à Madrid-Barajas."
       },
       {
-        "text": "✈️ Escale à Doha de 2h 50m (22:20 → 01:10), puis vol Vuelo Vuelta 2 Doha → Madrid (Qatar Airways, 7h 25m). Arrivée à Madrid (T4S) le Mar 22 sept à 07:35."
+        "text": "🛫 **DOHA (DOH) → MADRID (MAD) · VOL QR 147 (Qatar Airways)**\n\nAprès une escale de 2 h 50 min dans le terminal unique de Hamad International (22h20 → 01h10), départ du vol final vers l'Espagne.\n• **Appareil :** Boeing 787-9 Dreamliner · Durée : 7 h 25 min.\n• **Arrivée à Madrid-Barajas (T4S) :** Mardi 22 septembre à 07h35. Fin du voyage."
       }
     ],
     "money": "Env. 40 € (repas)"

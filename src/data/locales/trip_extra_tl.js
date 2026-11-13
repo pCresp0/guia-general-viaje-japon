@@ -72,7 +72,7 @@ export const tripMeta = {
 export const flights = {
   out: {
     label: "Pag-alis",
-    text: "Pag-alis Linggo Set 6 mula Madrid (T4S) nang 09:05 (Qatar Airways Vuelo Ida). Layover sa Doha nang 3h 45m (16:50 → 20:35). Pagdating sa Narita (NRT), Terminal 2, sa Lun Set 7 nang 12:55.",
+    text: "Pag-alis Linggo Set 6 mula Madrid (T4S) nang 09:05 (Qatar Airways). Layover sa Doha nang 3h 45m (16:50 → 20:35). Pagdating sa Narita (NRT), Terminal 2, sa Lun Set 7 nang 12:55.",
     leg1: { route: "Madrid → Doha" },
     leg2: { route: "Doha → Narita" },
     depart: { terminal: "T4S (Satellite)" },
@@ -83,7 +83,7 @@ export const flights = {
   },
   back: {
     label: "Pauwi",
-    text: "Pag-alis Lun Set 21 mula Narita (Terminal 2) nang 17:25 (Qatar Airways Vuelo Vuelta). Layover sa Doha nang 2h 50m (22:20 → 01:10). Pagdating sa Madrid (T4S) sa Mar Set 22 nang 07:35.",
+    text: "Pag-alis Lun Set 21 mula Narita (Terminal 2) nang 17:25 (Qatar Airways). Layover sa Doha nang 2h 50m (22:20 → 01:10). Pagdating sa Madrid (T4S) sa Mar Set 22 nang 07:35.",
     leg1: { route: "Narita → Doha" },
     leg2: { route: "Doha → Madrid" },
     depart: { terminal: "T2" },
@@ -205,9 +205,8 @@ export const budget = {
       title: "Mga International Flight",
       details: [
         "Qatar Airways Madrid ↔ Tokyo (via Doha). 5 tao × 890€.",
-        "Papunta: Vuelo Ida MAD→DOH + Vuelo Ida 2 DOH→NRT (Set 6, 09:05 → Set 7, 12:55, 20h 50m).",
-        "Pauwi: Vuelo Vuelta NRT→DOH + Vuelo Vuelta 2 DOH→MAD (Set 21, 17:25 → Set 22, 07:35, 21h 10m).",
-        "Booking: ref. OK · PIN 2534.",
+        "Papunta: QR 150 MAD→DOH + QR 806 DOH→NRT (Set 6, 09:05 → Set 7, 12:55, 20h 50m).",
+        "Pauwi: QR 809 NRT→DOH + QR 147 DOH→MAD (Set 21, 17:25 → Set 22, 07:35, 21h 10m).",
       ],
     },
     {

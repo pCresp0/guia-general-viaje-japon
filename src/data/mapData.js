@@ -490,7 +490,7 @@ export const filterData = {
     { id: "e-fuji", name: "Monte Fuji", day: "Día 10", lat: 35.4903, lng: 138.8006, emoji: "🗻", color: "#1d3557", detail: "Kawaguchiko, Parque Oishi, Oshino Hakkai y Pagoda Chureito" },
   ],
   transportes: [
-    { id: "t-narita", name: "Aeropuerto Narita", day: "Días 1 y 15", lat: 35.7719, lng: 140.3929, emoji: "✈️", color: "#c9a227", detail: "Vuelos internacionales Vuelo Ida 2 (llegada) / Vuelo Vuelta (salida)" },
+    { id: "t-narita", name: "Aeropuerto Narita", day: "Días 1 y 15", lat: 35.7719, lng: 140.3929, emoji: "✈️", color: "#c9a227", detail: "Vuelos internacionales Qatar Airways: QR 806 (llegada) / QR 809 (salida)" },
     { id: "t-kioto", name: "Estación de Kioto", day: "Días 1–5", lat: 34.9858, lng: 135.7587, emoji: "🚄", color: "#bc4749", detail: "Shinkansen Nozomi y trenes regionales" },
     { id: "t-kanazawa", name: "Estación de Kanazawa", day: "Días 5–7", lat: 36.5780, lng: 136.6480, emoji: "🚆", color: "#2e7d5b", detail: "Thunderbird / Hokuriku Shinkansen" },
     { id: "t-takayama", name: "Takayama Nohi Bus Center", day: "Días 7–8", lat: 36.1415, lng: 137.2513, emoji: "🚌", color: "#2e7d5b", detail: "Buses a Shirakawa-go y Magome" },

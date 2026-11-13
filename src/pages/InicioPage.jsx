@@ -108,7 +108,7 @@ export default function InicioPage({ onNavigate }) {
           <div className="flex items-center justify-between gap-2 mb-3">
             <div className="flex items-center gap-2" style={{ color: "var(--shu)" }}>
               <Plane size={16} />
-              <p className="eyebrow" style={{ margin: 0 }}>{flights.out?.flightNumber || "Vuelo Ida + Vuelo Ida 2"} / {flights.back?.flightNumber || "Vuelo Vuelta + Vuelo Vuelta 2"}</p>
+              <p className="eyebrow" style={{ margin: 0 }}>{flights.out?.flightNumber || "QR 150 + QR 806"} / {flights.back?.flightNumber || "QR 809 + QR 147"}</p>
             </div>
             <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{ background: "rgba(46,125,91,0.12)", color: "#2e7d5b" }}>
               ✓ Ida y Vuelta

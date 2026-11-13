@@ -51,7 +51,7 @@ export const sections = [
       { id: "wallet", text: "Cartera" },
       { id: "keys", text: "Llaves de casa" },
       { id: "insurance", text: "Seguro de viaje contratado — llevar número de póliza y teléfono de asistencia médica 24h a mano" },
-      { id: "confirmations", text: "Confirmaciones de vuelos (Qatar Airways Vuelo Ida / Vuelo Vuelta) y reservas de hotel (guardadas offline en móvil)" },
+      { id: "confirmations", text: "Billetes y confirmaciones de vuelos (Qatar Airways MAD ⇄ NRT) y reservas de hotel (guardadas offline en móvil)" },
     ],
   },
   {

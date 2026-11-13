@@ -261,32 +261,8 @@ function FlightRow({ flight, icon: Icon, defaultExpanded = false, isTodayFlight 
         </div>
       </div>
       
-      <div className="flex flex-wrap items-center gap-3 pt-1">
-        {flight.leg1?.trackUrl ? (
-          <a
-            href={flight.leg1.trackUrl}
-            target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded-lg border transition-all"
-            style={{ color: "var(--indigo)", background: "var(--paper)", borderColor: "var(--line)" }}
-          >
-            ✈️ Seguir {flight.leg1.number} en vivo ↗
-          </a>
-        ) : null}
-        {flight.leg2?.trackUrl ? (
-          <a
-            href={flight.leg2.trackUrl}
-            target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded-lg border transition-all"
-            style={{ color: "var(--indigo)", background: "var(--paper)", borderColor: "var(--line)" }}
-          >
-            ✈️ Seguir {flight.leg2.number} en vivo ↗
-          </a>
-        ) : null}
-        {!flight.leg1?.trackUrl && !flight.leg2?.trackUrl && flight.trackUrl && (
-          <a href={flight.trackUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-xs font-medium" style={{ color: "var(--shu)" }}>
-            Seguir vuelo en vivo ↗
-          </a>
-        )}
+      <div className="pt-2 text-xs" style={{ color: "var(--ink-soft)", lineHeight: 1.5 }}>
+        💡 <strong>Equipaje y facturación:</strong> Vuelo regular con equipaje facturado incluido directo a destino final (hasta 25–30 kg según tarifa). Equipaje de mano: 1 bulto de cabina (hasta 7 kg) + 1 accesorio personal.
       </div>
       </div>
       )}

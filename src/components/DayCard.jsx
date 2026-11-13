@@ -450,9 +450,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
                         depTime="17:25"
                         arrTime="22:20"
                         duration="10h 55m"
-                        bookingRef="YQXPVE"
-                        eticket="1579424794235"
-                        trackUrl="https://www.google.com/search?q=vuelo+Vuelo Vuelta"
+                        bookingRef="Qatar Airways"
                       />
                     </div>
                   )}
@@ -467,9 +465,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
                         depTime="01:10"
                         arrTime="07:35"
                         duration="7h 25m"
-                        bookingRef="YQXPVE"
-                        eticket="1579424794235"
-                        trackUrl="https://www.google.com/search?q=vuelo+Vuelo Vuelta 2"
+                        bookingRef="Qatar Airways"
                       />
                     </div>
                   )}

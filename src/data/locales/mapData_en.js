@@ -81,7 +81,7 @@ export const filterData = {
     { id: "e-fuji", name: "Mount Fuji", day: "Day 10", detail: "Kawaguchiko, Oishi Park, Oshino Hakkai and Chureito Pagoda" },
   ],
   transportes: [
-    { id: "t-narita", name: "Narita Airport", day: "Days 1 and 15", detail: "International flights Vuelo Ida 2 (arrival) / Vuelo Vuelta (departure)" },
+    { id: "t-narita", name: "Narita Airport", day: "Days 1 and 15", detail: "International flights Qatar Airways: QR 806 (arrival) / QR 809 (departure)" },
     { id: "t-kioto", name: "Kyoto Station", day: "Days 1–5", detail: "Shinkansen Nozomi and regional trains" },
     { id: "t-kanazawa", name: "Kanazawa Station", day: "Days 5–7", detail: "Thunderbird / Hokuriku Shinkansen" },
     { id: "t-takayama", name: "Takayama Nohi Bus Center", day: "Days 7–8", detail: "Buses to Shirakawa-go and Magome" },

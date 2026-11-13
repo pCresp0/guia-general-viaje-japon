@@ -72,7 +72,7 @@ export const tripMeta = {
 export const flights = {
   out: {
     label: "Outbound",
-    text: "Departure Sun Sep 6 from Madrid (T4S) at 09:05 (Qatar Airways Vuelo Ida). Layover in Doha of 3h 45m (16:50 → 20:35). Arrival at Narita (NRT), Terminal 2, on Mon Sep 7 at 12:55.",
+    text: "Departure Sun Sep 6 from Madrid (T4S) at 09:05 (Qatar Airways). Layover in Doha of 3h 45m (16:50 → 20:35). Arrival at Narita (NRT), Terminal 2, on Mon Sep 7 at 12:55.",
     leg1: { route: "Madrid → Doha" },
     leg2: { route: "Doha → Narita" },
     depart: { terminal: "T4S (Satellite)" },
@@ -83,7 +83,7 @@ export const flights = {
   },
   back: {
     label: "Inbound",
-    text: "Departure Mon Sep 21 from Narita (Terminal 2) at 17:25 (Qatar Airways Vuelo Vuelta). Layover in Doha of 2h 50m (22:20 → 01:10). Arrival at Madrid (T4S) on Tue Sep 22 at 07:35.",
+    text: "Departure Mon Sep 21 from Narita (Terminal 2) at 17:25 (Qatar Airways). Layover in Doha of 2h 50m (22:20 → 01:10). Arrival at Madrid (T4S) on Tue Sep 22 at 07:35.",
     leg1: { route: "Narita → Doha" },
     leg2: { route: "Doha → Madrid" },
     depart: { terminal: "T2" },
@@ -205,9 +205,8 @@ export const budget = {
       title: "International Flights",
       details: [
         "Qatar Airways Madrid ↔ Tokyo (via Doha). 5 people × 890€.",
-        "Outbound: Vuelo Ida MAD→DOH + Vuelo Ida 2 DOH→NRT (Sep 6, 09:05 → Sep 7, 12:55, 20h 50m).",
-        "Inbound: Vuelo Vuelta NRT→DOH + Vuelo Vuelta 2 DOH→MAD (Sep 21, 17:25 → Sep 22, 07:35, 21h 10m).",
-        "Booking: ref. OK · PIN 2534.",
+        "Outbound: QR 150 MAD→DOH + QR 806 DOH→NRT (Sep 6, 09:05 → Sep 7, 12:55, 20h 50m).",
+        "Inbound: QR 809 NRT→DOH + QR 147 DOH→MAD (Sep 21, 17:25 → Sep 22, 07:35, 21h 10m).",
       ],
     },
     {

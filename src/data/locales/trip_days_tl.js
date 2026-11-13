@@ -6,16 +6,16 @@ export const days = [
     "history": "Ang Qatar Airways ay ang pambansang eroplano ng Qatar at isa sa mga may pinakamataas na rating sa mundo. Ang Doha ay ang sentrong hub ng kumpanya sa Gitnang Silangan, isang koneksyon sa pagitan ng Europa at Asya.",
     "schedule": [
       {
-        "text": "Pag-alis mula sa Adolfo Suárez Madrid-Barajas Airport sa flight Vuelo Ida (Qatar Airways). Live flight tracking: https://www.google.com/search?q=flight+Vuelo Ida"
+        "text": "🛫 **MADRID (MAD) → DOHA (DOH) · FLIGHT QR 150 (Qatar Airways)**\n\nPag-alis mula sa Adolfo Suárez Madrid-Barajas Airport (Terminal T4 / T4S) sa long-haul regular flight.\n• **Eroplano:** Boeing 787-9 Dreamliner · Tagal: 6 h 45 min.\n• **Bagahe:** Naka-tag ang checked luggage diretso sa Tokyo Narita, hindi na kailangang kunin habang nagla-layover."
       },
       {
-        "text": "Pagdating sa Doha (Hamad International Airport, DOH). Layover sa iisang terminal, paglipat ng eroplano. Oras ng layover: 3 h 45 min (16:50 → 20:35)."
+        "text": "📍 **Pagdating sa Doha (Hamad International Airport, DOH)**.\n\nLayover ng koneksyon na **3 h 45 min** (16:50 → 20:35). Sa single-terminal airport na ito, mabilis ang transit: hindi na kailangang lumipat ng building o mag-customs ulit. Magandang pagkakataon para bisitahin ang indoor tropical garden (The Orchard), maglakad-lakad at kumain."
       },
       {
-        "text": "Pag-alis mula sa Doha papuntang Narita (NRT) sa flight Vuelo Ida 2 (Qatar Airways). Tagal ng flight: humigit-kumulang 10 h 20 min. Live flight tracking: https://www.google.com/search?q=flight+Vuelo Ida 2"
+        "text": "🛫 **DOHA (DOH) → TOKYO NARITA (NRT) · FLIGHT QR 806 (Qatar Airways)**\n\nPag-alis ng ikalawang internasyonal na biyahe papuntang Tokyo Narita Airport (NRT).\n• **Eroplano:** Boeing 777-300ER · Tagal: 10 h 20 min.\n• **Serbisyo sa biyahe:** Gabing flight na may hapunan, almusal bago dumating, at personal na entertainment sa upuan."
       },
       {
-        "text": "Pagdating sa Narita (Lunes, Set 7). Customs at pagkuha ng bagahe gamit ang QR code ng Visit Japan Web. Pagkatapos: paglipat via Narita Express + Shinkansen papuntang Kyoto."
+        "text": "🛬 **Pagdating sa Tokyo Narita (Terminal 2, Lunes Set 7)**.\n\nPassport control at customs gamit ang QR code na na-generate sa **Visit Japan Web** para sa mabilis na pagdaan sa mga biometric kiosk. Pagkuha ng bagahe at direktang koneksyon sa JR station ng airport para sumakay sa Narita Express + Shinkansen papuntang Kyoto."
       }
     ],
     "money": "Kasama ang flight sa budget ng grupo"
@@ -907,13 +907,13 @@ export const days = [
         "text": "🚆 PAG-ALIS SA HOTEL PATUNGONG NARITA AIRPORT — 2 OPSYON (Inirerekomenda: Keisei Skyliner)\n\n🟢 **INIREREKOMENDANG OPSYON: KEISEI SKYLINER (mula Keisei-Ueno)**\n- Papuntang tren: KOKO HOTEL Residence Asakusa Kappabashi → Keisei-Ueno Station. Para sa 5 tao na may malalaking maleta, direktang taxi mula sa pintuan ng hotel hanggang Keisei-Ueno (~10 min) -- ang aktwal na halaga ay ~€14.50 (taxímetro ang tinatakbuhan ng taxi, kaya huwag umasa sa tinatayang presyo ng Uber app, kadalasan mas mababa ito sa totoo). Sulit pa rin, malaking nagpapadali sa logistics.\n- Tren: Keisei Skyliner mula Keisei-Ueno diretso sa Narita Airport (~41 min). Express train na may reserved seat at maluwag na espasyo para sa bagahe.\n- Bentahe: Iniiwasan ang paghila ng malaking bagahe sa mga koridor at pagpapalit ng sasakyan papunta sa Tokyo Station.\n- Pangwakas na oras: Tingnan at mag-book kapag nailathala na ang pangwakas na iskedyul ng Setyembre 2026, siguraduhing may sapat na palugit para makarating sa Narita bago ang flight ng 17:25.\n\n🟡 **VALID NA ALTERNATIBO: JR NARITA EXPRESS (N'EX)**\n- Papuntang: Hotel → Tokyo Station (metro o taxi) → JR Narita Express (N'EX) diretso sa Narita (~1h na tren, kailangan ng reserved seat).\n- Ang N'EX ay isa pa ring perpektong valid na opsyon kung mas gusto umalis mula sa Tokyo Station.\n\n💡 Panatilihin ang sapat na palugit para makarating sa Narita terminal bago mag-14:30 para sa check-in at seguridad."
       },
       {
-        "text": "Check-in at mga pagsusuri sa seguridad sa Narita."
+        "text": "Check-in sa mga counter ng Qatar Airways at mga pagsusuri sa seguridad sa Narita (Terminal 2) nang may 3 oras na palugit bago ang flight."
       },
       {
-        "text": "✈️ Flight Vuelo Vuelta Narita → Doha (Qatar Airways, 10h 55m). Pagdating sa Doha ng 22:20."
+        "text": "🛫 **TOKYO NARITA (NRT) → DOHA (DOH) · FLIGHT QR 809 (Qatar Airways)**\n\nPag-alis ng unang biyahe pabalik sa Doha.\n• **Eroplano:** Boeing 777-300ER · Tagal: 10 h 55 min.\n• **Pagdating sa Doha:** 22:20 (lokal na oras sa Qatar).\n• Checked luggage naka-tag diretso sa Madrid-Barajas."
       },
       {
-        "text": "✈️ Layover sa Doha nang 2h 50m (22:20 → 01:10), tapos flight Vuelo Vuelta 2 Doha → Madrid (Qatar Airways, 7h 25m). Pagdating sa Madrid (T4S) sa Mar Set 22 nang 07:35."
+        "text": "🛫 **DOHA (DOH) → MADRID (MAD) · FLIGHT QR 147 (Qatar Airways)**\n\nPagkatapos ng 2h 50m na layover sa single terminal ng Hamad International (22:20 → 01:10), pag-alis ng huling flight pabalik sa Spain.\n• **Eroplano:** Boeing 787-9 Dreamliner · Tagal: 7 h 25 min.\n• **Pagdating sa Madrid-Barajas (T4S):** Martes, Setyembre 22 nang 07:35 AM. Pagtatapos ng biyahe."
       }
     ],
     "money": "Tinatayang €40 (pagkain)"

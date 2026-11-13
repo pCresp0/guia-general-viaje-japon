@@ -61,12 +61,21 @@ export default function FlightTicketCard({
             )}
           </div>
 
-          <div className="border rounded-xl p-3" style={{ borderColor: "var(--line)" }}>
-            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider m-0 mb-1 flex items-center gap-1">
-              <Ticket size={12} /> E-ticket
-            </p>
-            <p className="text-sm font-bold font-mono m-0" style={{ color: ACCENT }}>{eticket}</p>
-          </div>
+          {eticket ? (
+            <div className="border rounded-xl p-3" style={{ borderColor: "var(--line)" }}>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider m-0 mb-1 flex items-center gap-1">
+                <Ticket size={12} /> E-ticket
+              </p>
+              <p className="text-sm font-bold font-mono m-0" style={{ color: ACCENT }}>{eticket}</p>
+            </div>
+          ) : (
+            <div className="border rounded-xl p-3 text-xs" style={{ borderColor: "var(--line)", color: "var(--ink-soft)" }}>
+              <p className="font-semibold text-gray-700 m-0 mb-1">✈️ Información de ruta internacional</p>
+              <p className="m-0 leading-relaxed">
+                Vuelo regular con Qatar Airways con maletas facturadas directas a destino final. Tarjeta de embarque obtenible online o en los mostradores del aeropuerto.
+              </p>
+            </div>
+          )}
 
           {trackUrl && (
             <a

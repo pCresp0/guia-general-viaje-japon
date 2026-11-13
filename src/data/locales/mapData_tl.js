@@ -81,7 +81,7 @@ export const filterData = {
     { id: "e-fuji", name: "Mount Fuji", day: "Araw 10", detail: "Kawaguchiko, Oishi Park, Oshino Hakkai at Chureito Pagoda" },
   ],
   transportes: [
-    { id: "t-narita", name: "Narita Airport", day: "Araw 1 at 15", detail: "Internasyonal na flight Vuelo Ida 2 (dating) / Vuelo Vuelta (alis)" },
+    { id: "t-narita", name: "Narita Airport", day: "Araw 1 at 15", detail: "Internasyonal na flight Qatar Airways: QR 806 (dating) / QR 809 (alis)" },
     { id: "t-kioto", name: "Estasyon ng Kyoto", day: "Araw 1–5", detail: "Shinkansen Nozomi at mga panrehiyong tren" },
     { id: "t-kanazawa", name: "Estasyon ng Kanazawa", day: "Araw 5–7", detail: "Thunderbird / Hokuriku Shinkansen" },
     { id: "t-takayama", name: "Takayama Nohi Bus Center", day: "Araw 7–8", detail: "Mga bus papuntang Shirakawa-go at Magome" },

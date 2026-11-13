@@ -205,7 +205,6 @@ function FlightBlock({ flight }) {
           <br />
           <span style={{ color: "#5a6070" }}>
             Tramo 1: {flight.leg1.number} ({flight.leg1.route}, {flight.leg1.duration})
-            {flight.leg1.trackUrl && <> · <a href={flight.leg1.trackUrl} style={{ color: "#7a2c2e" }}>Seguir ↗</a></>}
           </span>
         </>
       )}
@@ -214,7 +213,6 @@ function FlightBlock({ flight }) {
           <br />
           <span style={{ color: "#5a6070" }}>
             Tramo 2: {flight.leg2.number} ({flight.leg2.route}, {flight.leg2.duration})
-            {flight.leg2.trackUrl && <> · <a href={flight.leg2.trackUrl} style={{ color: "#7a2c2e" }}>Seguir ↗</a></>}
           </span>
         </>
       )}

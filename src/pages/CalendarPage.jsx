@@ -11,7 +11,7 @@ import { QuickDayCard } from "../components/ItineraryQuickView";
 const blockEmoji = { kioto: "⛩️", alpes: "🏔️", tokio: "🗼" };
 
 const dayHighlights = {
-  0: { highlight: "✈️ Vuelo Vuelo Ida MAD", stay: "En vuelo" },
+  0: { highlight: "✈️ Vuelo Madrid → Tokio", stay: "En vuelo" },
   1: { highlight: "✈️ Aterrizaje NRT", stay: "🏨 Keihan Kioto" },
   2: { highlight: "🦌 Excursión Nara", stay: "🏨 Keihan Kioto" },
   3: { highlight: "🏯 Kinkaku & Kiyomizu", stay: "🏨 Keihan Kioto" },
@@ -26,7 +26,7 @@ const dayHighlights = {
   12: { highlight: "🏙️ Toyosu & Roppongi", stay: "🏨 KOKO Tokio" },
   13: { highlight: "🕹️ Ikebukuro & Nakano", stay: "🏨 KOKO Tokio" },
   14: { highlight: "🏯 Palacio Imperial & Ginza", stay: "🏨 KOKO Tokio" },
-  15: { highlight: "✈️ Vuelta NRT Vuelo Vuelta", stay: "Regreso" },
+  15: { highlight: "✈️ Vuelo Tokio → Madrid", stay: "Regreso" },
 };
 
 function buildGrid() {
