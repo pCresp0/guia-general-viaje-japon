@@ -81,21 +81,30 @@ export default function CalendarPage({ onGoToMapDay }) {
     t("calendar.weekdays.6"),
   ];
 
-  // Lock body scroll while the mobile modal is open
+  // Lock body scroll and listen for Escape while any modal is open
   useEffect(() => {
-    if ((selectedDay || showExportModal) && window.innerWidth < 1024) {
-      const prevOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => { document.body.style.overflow = prevOverflow; };
+    if (!selectedDay && !showExportModal) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        if (selectedDay) setSelectedDayNum(null);
+        if (showExportModal) setShowExportModal(false);
+      }
     }
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
   }, [selectedDay, showExportModal]);
 
   return (
-    <div className="w-full flex h-full gap-5 mx-auto lg:max-w-[75%]">
-      {/* Calendar grid — left side */}
-      <div className="flex-1 px-3 sm:px-4 pt-3 pb-12 overflow-y-auto" style={{ maxWidth: "none" }}>
-        {/* title + export button */}
-        <div className="mb-6">
+    <div className="w-full mx-auto lg:max-w-[75%] px-3 sm:px-4 pt-3 pb-12">
+      {/* title + export button */}
+      <div className="mb-6">
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("calendar.eyebrow")}</p>
@@ -240,53 +249,12 @@ export default function CalendarPage({ onGoToMapDay }) {
           ))}
           </div>
         </div>
-      </div>
 
-      {/* Day detail panel — right side (desktop only, fixed width) */}
-      {selectedDay && (
-        <div data-detail-panel style={{
-          display: "flex",
-          width: 360,
-          maxWidth: "36%",
-          flexDirection: "column",
-          background: "var(--paper-raised)",
-          overflowY: "auto",
-          height: "fit-content",
-          maxHeight: "calc(100vh - 40px)",
-          margin: "12px 0 16px",
-          borderRadius: 24,
-          border: "1px solid var(--line)",
-          boxShadow: "0 10px 40px -10px rgba(0,0,0,0.12)",
-          flexShrink: 0,
-          position: "sticky",
-          top: 12,
-        }}>
-          {!detailMode ? (
-            <QuickDayCard 
-              day={selectedDay} 
-              blockColor={blockMap[selectedDay.block]?.color || "#1d3557"} 
-              onShowFullDay={() => setDetailMode(true)} 
-              onClose={() => setSelectedDayNum(null)}
-              onViewMap={onGoToMapDay}
-              standalone={true}
-            />
-          ) : (
-            <DayCard 
-              day={selectedDay} 
-              defaultOpenHistory={true} 
-              onClose={() => setSelectedDayNum(null)} 
-              onShowQuickView={() => setDetailMode(false)} 
-              onViewMap={() => onGoToMapDay?.(selectedDay.num)}
-            />
-          )}
-        </div>
-      )}
-
-      {/* Mobile modal overlay for day detail */}
+      {/* Modal overlay for day detail (both mobile & desktop) */}
       {selectedDay && createPortal(
-        <div data-mobile-modal className="modal-overlay" onClick={() => setSelectedDayNum(null)}>
+        <div className="modal-overlay" onClick={() => setSelectedDayNum(null)}>
           <div
-            className="modal-sheet"
+            className={`modal-sheet ${!detailMode ? "calendar-quick-modal" : "calendar-detail-modal"}`}
             onClick={(e) => e.stopPropagation()}
             style={{
               position: "relative",
@@ -294,7 +262,7 @@ export default function CalendarPage({ onGoToMapDay }) {
               display: "flex",
               flexDirection: "column",
               maxHeight: "calc(100dvh - 84px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))",
-              margin: "0 auto",
+              margin: "auto",
               borderRadius: 20,
               boxShadow: "0 16px 48px rgba(0,0,0,0.35)",
             }}
