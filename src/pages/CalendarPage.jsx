@@ -284,9 +284,30 @@ export default function CalendarPage({ onGoToMapDay }) {
       {/* Mobile modal overlay for day detail */}
       {selectedDay && createPortal(
         <div data-mobile-modal className="modal-overlay" onClick={() => setSelectedDayNum(null)}>
-          <div className="modal-sheet" onClick={(e) => e.stopPropagation()} style={{ position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", maxHeight: "85vh" }}>
+          <div
+            className="modal-sheet"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: "relative",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              maxHeight: "calc(100dvh - 84px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))",
+              margin: "0 auto",
+              borderRadius: 20,
+              boxShadow: "0 16px 48px rgba(0,0,0,0.35)",
+            }}
+          >
             {!detailMode ? (
-              <div style={{ flex: 1, overflowY: "auto" }}>
+              <div
+                style={{
+                  flex: 1,
+                  minHeight: 0,
+                  overflowY: "auto",
+                  WebkitOverflowScrolling: "touch",
+                  overscrollBehavior: "contain",
+                }}
+              >
                 <QuickDayCard 
                   day={selectedDay} 
                   blockColor={blockMap[selectedDay.block]?.color || "#1d3557"} 
@@ -297,7 +318,16 @@ export default function CalendarPage({ onGoToMapDay }) {
                 />
               </div>
             ) : (
-              <div style={{ padding: "16px 16px 24px", overflowY: "auto", flex: 1 }}>
+              <div
+                style={{
+                  flex: 1,
+                  minHeight: 0,
+                  overflowY: "auto",
+                  WebkitOverflowScrolling: "touch",
+                  overscrollBehavior: "contain",
+                  padding: "16px 16px calc(40px + env(safe-area-inset-bottom, 16px))",
+                }}
+              >
                 <DayCard 
                   day={selectedDay} 
                   defaultOpenHistory={true} 

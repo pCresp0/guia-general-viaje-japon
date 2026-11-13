@@ -140,12 +140,12 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
   return (
     <div
       id={`quick-day-${day.num}`}
-      className={`itinerary-day-anchor ${standalone ? "flex flex-col h-full bg-paper" : "rounded-2xl overflow-hidden"}`}
-      style={{ border: standalone ? "none" : "1px solid var(--line)", background: standalone ? "var(--paper-raised)" : "var(--paper-raised)", ...(standalone ? { height: "100%", borderRadius: 0 } : {}) }}
+      className={`itinerary-day-anchor ${standalone ? "flex flex-col min-h-full bg-paper" : "rounded-2xl overflow-hidden"}`}
+      style={{ border: standalone ? "none" : "1px solid var(--line)", background: standalone ? "var(--paper-raised)" : "var(--paper-raised)", ...(standalone ? { minHeight: "100%", borderRadius: 0 } : {}) }}
     >
       {standalone ? (
         <div
-          className="px-4 py-3.5 flex flex-col gap-2.5"
+          className="px-4 py-3.5 flex flex-col gap-2.5 sticky top-0 z-20 shadow-xs"
           style={{ background: blockColor }}
         >
           {/* Fila superior: número de día, títulos y botón de cerrar */}
@@ -282,7 +282,7 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
       )}
 
       {isOpen && (
-        <div className="px-3 sm:px-4 py-3">
+        <div className={`px-3 sm:px-4 py-3 ${standalone ? "pb-12" : ""}`}>
           {keyEntries.length === 0 ? (
             <p className="text-xs" style={{ color: "var(--ink-soft)" }}>Día de traslado · ver detalle</p>
           ) : (

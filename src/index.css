@@ -241,6 +241,11 @@ main > div > * {
   }
 }
 
+[data-mobile-modal] {
+  padding: calc(56px + env(safe-area-inset-top, 0px)) 10px calc(16px + env(safe-area-inset-bottom, 0px));
+  overflow-y: hidden;
+}
+
 @media (min-width: 1024px) {
   [data-mobile-modal] {
     display: none !important;
