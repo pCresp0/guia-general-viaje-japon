@@ -389,7 +389,7 @@ export function DesktopTopBar({ active, onNavigate }) {
       {/* Bandera de Japón centrada arriba en PC */}
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto"
-        style={{ zIndex: 2 }}
+        style={{ zIndex: 20 }}
       >
         <BuildInfoButton />
       </div>

@@ -44,14 +44,12 @@ export default function BuildInfoButton({ size = "md" }) {
     }, LONG_PRESS_MS);
   };
 
-  const endPress = (e) => {
+  const endPress = () => {
     if (pressTimer.current) window.clearTimeout(pressTimer.current);
-    if (!longPressFired.current) {
-      if (!refreshing) {
-        setRefreshing(true);
-        hardRefresh();
-      }
-    }
+  };
+
+  const cancelPress = () => {
+    if (pressTimer.current) window.clearTimeout(pressTimer.current);
   };
 
   const hardRefresh = async () => {
@@ -65,8 +63,7 @@ export default function BuildInfoButton({ size = "md" }) {
         await Promise.all(keys.map((k) => caches.delete(k)));
       }
     } catch {
-      // Si algo falla (navegador sin soporte, etc.), seguimos con la
-      // recarga normal igualmente -- nunca debe quedarse sin hacer nada.
+      // Si algo falla, recargamos igualmente
     } finally {
       const base = import.meta.env.BASE_URL || "/";
       const cleanUrl = window.location.origin + base + "?_r=" + Date.now();
@@ -74,8 +71,15 @@ export default function BuildInfoButton({ size = "md" }) {
     }
   };
 
-  const cancelPress = () => {
-    if (pressTimer.current) window.clearTimeout(pressTimer.current);
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (longPressFired.current) {
+      return;
+    }
+    if (!refreshing) {
+      setRefreshing(true);
+      hardRefresh();
+    }
   };
 
   return (
@@ -87,15 +91,11 @@ export default function BuildInfoButton({ size = "md" }) {
         onTouchStart={startPress}
         onTouchEnd={endPress}
         onTouchCancel={cancelPress}
-        onClick={(e) => {
-          if (!longPressFired.current && !refreshing) {
-            setRefreshing(true);
-            hardRefresh();
-          }
-        }}
+        onClick={handleClick}
         disabled={refreshing}
-        aria-label="Actualizar web con hard refresh (toque) o ver registro de cambios (mantener pulsado)"
-        title="Actualizar web (hard refresh)"
+        className="transition-transform duration-150 hover:scale-115 active:scale-95 cursor-pointer"
+        aria-label="Actualizar web con hard refresh (clic) o ver registro de cambios (mantener pulsado)"
+        title="Actualizar web (hard refresh) · Mantener pulsado para ver cambios"
         style={{
           position: "relative",
           zIndex: 1,
@@ -104,7 +104,6 @@ export default function BuildInfoButton({ size = "md" }) {
           padding: isSmall ? "3px 4px" : 6,
           flexShrink: 0,
           background: "transparent", border: "none",
-          cursor: "pointer",
           WebkitTapHighlightColor: "transparent",
           display: "inline-flex",
           alignItems: "center",
