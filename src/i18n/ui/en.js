@@ -79,10 +79,13 @@ export default {
   "home.tripStarted": "The trip has begun!",
   "home.tripEnded": "The trip has ended",
   "home.guideTitle": "What's in each section",
+  "home.aboutGuide": "About this guide",
 
   // ── To do ─────────────────────────────────────────────────────────
   "pending.eyebrow": "Before we travel",
   "pending.title": "To do",
+  "pending.tabBefore": "Before traveling",
+  "pending.tabDuring": "During the trip",
   "pending.intro":
     "Comprehensive checklist covering all essential tasks, ticket bookings, documentation, and preparations for traveling to Japan. Organized chronologically by urgency (before departure and during the stay). Check off each item as you complete it; your progress is automatically saved locally on your device.",
   "pending.remaining": "things to sort",
@@ -97,6 +100,9 @@ export default {
   "calendar.title": "Calendar",
   "calendar.intro":
     "Monthly timeline showing all 16 days of the itinerary at a glance. Color-coded blocks represent each geographical leg of the trip (Kansai, Japanese Alps, and Tokyo/Fuji). Tap any day to see its highlights or export the entire calendar to Google or Apple Calendar.",
+  "calendar.export": "Export",
+  "calendar.exportTitle": "Export itinerary",
+  "calendar.exportDesc": "Automatically add all 16 trip days with titles, cities, and details to your mobile or desktop calendar app.",
 
   // ── Itinerary ─────────────────────────────────────────────────────
   "itinerary.eyebrow": "Day by day",
@@ -218,6 +224,7 @@ export default {
   "weather.rain": "Rain",
   "weather.max": "High",
   "weather.min": "Low",
+  "weather.refresh": "Update",
 
   // ── History ───────────────────────────────────────────────────────
   "history.eyebrow": "To understand what you'll see",

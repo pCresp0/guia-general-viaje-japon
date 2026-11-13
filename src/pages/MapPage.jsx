@@ -168,7 +168,7 @@ export default function MapPage({ onGoToDay, initialDay }) {
     11: { id: "hotel-d11", name: "KOKO HOTEL Residence Asakusa Kappabashi", city: "Tokio", lat: 35.7178, lng: 139.7917, emoji: "🏨", color: "#1d3557", day: "Día 11", detail: "Hotel base en Tokio · Punto de partida del día", isHotel: true },
     12: { id: "hotel-d12", name: "KOKO HOTEL Residence Asakusa Kappabashi", city: "Tokio", lat: 35.7178, lng: 139.7917, emoji: "🏨", color: "#1d3557", day: "Día 12", detail: "Hotel base en Tokio · Punto de partida del día", isHotel: true },
     13: { id: "hotel-d13", name: "KOKO HOTEL Residence Asakusa Kappabashi", city: "Tokio", lat: 35.7178, lng: 139.7917, emoji: "🏨", color: "#1d3557", day: "Día 13", detail: "Hotel base en Tokio · Punto de partida del día", isHotel: true },
-    14: { id: "hotel-d14", name: "KOKO HOTEL Residence Asakusa Kappabashi", city: "Tokio", lat: 35.7178, lng: 139.7917, emoji: "🏨", color: "#1d3557", day: "Día 14", detail: "Hotel base en Tokio · Salida excursión Monte Fuji", isHotel: true },
+    14: { id: "hotel-d14", name: "KOKO HOTEL Residence Asakusa Kappabashi", city: "Tokio", lat: 35.7178, lng: 139.7917, emoji: "🏨", color: "#1d3557", day: "Día 14", detail: "Hotel base en Tokio · Punto de partida hacia el Palacio Imperial y Ginza", isHotel: true },
     15: { id: "hotel-d15", name: "KOKO HOTEL Residence Asakusa Kappabashi", city: "Tokio", lat: 35.7178, lng: 139.7917, emoji: "🏨", color: "#1d3557", day: "Día 15", detail: "Hotel base en Tokio · Check-out y salida al aeropuerto", isHotel: true },
   };
 
