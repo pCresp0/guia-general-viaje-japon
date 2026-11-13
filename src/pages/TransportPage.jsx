@@ -215,7 +215,7 @@ export default function TransportPage({ onNavigate }) {
           {/* Estado general — al final */}
           <div className="rounded-2xl p-4 mt-2 mb-4 border" style={{ background: "var(--paper-raised)", borderColor: "var(--line)" }}>
             <p className="font-display text-sm font-bold flex items-center gap-2 mb-3" style={{ color: "var(--indigo)" }}>
-              <span>🚆</span> Estado general — adultos
+              <span>🚆</span> Resumen de reservas de transporte de la ruta
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
               <div className="p-3 rounded-xl border bg-green-50/50 border-green-200">
