@@ -227,7 +227,6 @@ function buildSearchIndex(lang) {
     terms: [
       "visit japan web", "visit japan", "qr", "qr aduana", "qr inmigracion",
       "inmigracion", "aduanas", "pasaporte", "entrada japon", "desembarco",
-      "pablo crespo bellido", "pablo crespo", "pablo",
     ],
   }));
   items.push(entry({

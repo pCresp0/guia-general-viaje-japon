@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Bus, Ticket, CheckCircle2, AlertTriangle, MapPin, Eye, X, FileDown, CalendarDays } from "lucide-react";
+import { Bus, Ticket, CheckCircle2, AlertTriangle, MapPin, CalendarDays } from "lucide-react";
 import { ticketAccentColor, ticketHeaderBackground, ticketSoftBackground } from "../utils/blockTheme";
-import { assetUrl } from "../utils/assets";
 import TicketCardHeader from "./TicketCardHeader";
 
 const FROM_BLOCK = "alpes";
@@ -14,7 +13,6 @@ const PRICE_PAX = "¥5.000/pax (~27,12€)";
 
 export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDay } = {}) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
-  const [showImageModal, setShowImageModal] = useState(false);
   const [checkedItems, setCheckedItems] = useState({
     booked: true,
     paid: true,
@@ -113,7 +111,7 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
             </div>
 
             <div className="mt-3 pt-3 border-t text-xs text-gray-600 flex flex-wrap items-center justify-between gap-2" style={{ borderColor: "var(--line)" }}>
-              <span>👤 Titular: <strong>Pablo Crespo Bellido</strong></span>
+              <span>👤 Titular: <strong>Viajero 1 (Titular)</strong></span>
               <span>💰 Revolut: <strong>{PRICE_GROUP_JPY} (~{PRICE_GROUP_EUR}) · {PRICE_PAX}</strong></span>
               <span>⏳ Cancelación: <strong>Hasta 14/09 07:50 JST</strong></span>
             </div>
@@ -126,51 +124,14 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
             </div>
           </div>
 
-          <div className="rounded-xl border p-4" style={{ borderColor: "var(--line)", background: "rgba(0,0,0,0.015)" }}>
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
-              <div className="flex items-center gap-2">
-                <Ticket size={16} className="text-amber-700" />
-                <span className="text-xs font-bold uppercase tracking-wider text-gray-700">E-Ticket & Documentación Oficial</span>
-              </div>
-              <div className="flex items-center gap-2 flex-wrap">
-                <a
-                  href={assetUrl("/images/tickets/nohi_bus_takayama_magome_eticket.pdf")}
-                  download="E-Ticket_NohiBus_Takayama_Magome_RESERVA-BUS.pdf"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border border-amber-600 bg-amber-600 text-white hover:bg-amber-700 shadow-xs cursor-pointer transition-colors no-underline"
-                >
-                  <FileDown size={14} /> Descargar PDF
-                </a>
-                <a
-                  href={assetUrl("/images/tickets/nohi_bus_takayama_magome_eticket.pdf")}
-                  target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors no-underline"
-                >
-                  Abrir PDF
-                </a>
-                <button
-                  type="button"
-                  onClick={() => setShowImageModal(true)}
-                  className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded-full border border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100 cursor-pointer transition-colors"
-                >
-                  <Eye size={13} /> Ver captura
-                </button>
-              </div>
+          <div className="rounded-xl border p-4 bg-amber-50/40" style={{ borderColor: "var(--line)" }}>
+            <div className="flex items-center gap-2 mb-1.5">
+              <Ticket size={16} className="text-amber-700" />
+              <span className="text-xs font-bold uppercase tracking-wider text-gray-700">Documentación de la Reserva</span>
             </div>
-
-            <div
-              onClick={() => setShowImageModal(true)}
-              className="rounded-lg overflow-hidden border border-gray-200 relative group cursor-pointer max-h-48 bg-white"
-            >
-              <img
-                src={assetUrl("/images/tickets/nohi_bus_takayama_magome.png")}
-                alt="Comprobante Nohi Bus Takayama Magome"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                className="w-full object-cover object-top h-48 transition-transform group-hover:scale-[1.02]"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold gap-1.5">
-                <Eye size={16} /> Click para ampliar
-              </div>
-            </div>
+            <p className="text-xs text-gray-600 m-0 leading-relaxed">
+              Es necesario canjear el e-ticket en taquilla antes de subir al autobús, o llevarlo impreso en papel según los requisitos oficiales de Nohi Bus.
+            </p>
           </div>
 
           <div>
@@ -186,38 +147,6 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
               <ChecklistItem id="earlyArrival" checked={checkedItems.earlyArrival} onClick={() => toggleCheck("earlyArrival")} text="Llegar al Nohi Bus Center sobre 07:30–07:35 (25 min antes)" />
               <ChecklistItem id="exchanged" checked={checkedItems.exchanged} onClick={() => toggleCheck("exchanged")} text="Canjear E-ticket en taquilla por el billete físico antes de 07:45" />
               <ChecklistItem id="boarded" checked={checkedItems.boarded} onClick={() => toggleCheck("boarded")} text="Subir al autobús Car 01 a las 08:00 y bajar en Magome a las 10:45" />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {showImageModal && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 backdrop-blur-xs animate-in fade-in duration-150"
-          onClick={() => setShowImageModal(false)}
-        >
-          <div
-            className="relative max-w-3xl w-full max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="p-3 px-4 border-b flex items-center justify-between bg-gray-50">
-              <p className="text-xs font-bold text-gray-700 m-0 flex items-center gap-1.5">
-                <Ticket size={14} className="text-amber-700" /> Comprobante Nohi Bus Takayama → Magome (RESERVA-BUS)
-              </p>
-              <button
-                onClick={() => setShowImageModal(false)}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors cursor-pointer border-none bg-transparent"
-              >
-                <X size={16} />
-              </button>
-            </div>
-            <div className="overflow-auto p-2 bg-gray-100 flex items-center justify-center">
-              <img
-                src={assetUrl("/images/tickets/nohi_bus_takayama_magome.png")}
-                alt="Comprobante Nohi Bus Takayama Magome Ampliado"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                className="w-full h-auto object-contain bg-white shadow-sm"
-              />
             </div>
           </div>
         </div>

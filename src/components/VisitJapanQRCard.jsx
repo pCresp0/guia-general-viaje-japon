@@ -6,7 +6,7 @@ import { assetUrl } from "../utils/assets";
 
 // passHash = sha256(contraseña en minúsculas) — valores en claro en /memories/repo/secrets.md (fuera del repo).
 export const groupMembers = [
-  { id: "pablo", name: "Pablo Crespo Bellido", hasQR: true, qrPath: "/images/visit-japan-qr.png", role: "Titular", passHash: "HASH_REMOVED" },
+  { id: "viajero1", name: "Viajero 1", hasQR: true, qrPath: "/images/visit-japan-qr.png", role: "Titular", passHash: "HASH_REMOVED" },
 ];
 
 export default function VisitJapanQRCard({ defaultExpanded = false, isPriorityToday = false } = {}) {
