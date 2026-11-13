@@ -342,17 +342,17 @@ function buildSearchIndex(lang) {
     { terms: ["toyosu", "ueno", "ameyoko", "odaiba", "teamlab", "teamlab planets", "yurikamome", "rainbow bridge"], day: 12, title: "Toyosu / Ueno / Odaiba", subtitle: "Día 12" },
     { terms: ["ikebukuro", "nakano", "nintendo", "pokemon", "sunshine", "animate", "mandarake", "broadway", "akihabara", "skytree"], day: 14, title: "Ikebukuro / Nakano / Akihabara / Skytree", subtitle: "Día 14" },
     { terms: ["fuji", "monte fuji", "fujiyama", "chureito", "oshino hakkai", "kawaguchiko", "getyourguide", "gyg", "gygx7m7nzbnl", "visionary", "saiko", "oishi", "mode gakuen", "isfujivisible", "mtfujitoday"], day: 10, title: "Monte Fuji", subtitle: "Día 10 · excursión confirmada GetYourGuide" },
-    // Transportes clave buscables por nombre y números de reserva/asiento
-    { terms: ["nozomi", "nozomi 53", "shinkansen", "shinagawa", "17:19", "smart ex", "smart ex 2000", "2000", "coche 13", "13c", "13d", "13e", "14d", "14e"], day: 1, title: "Shinkansen Nozomi 53", subtitle: "Día 1 · Shinagawa → Kyoto 17:19" },
+    // Transportes clave buscables por nombre y ruta
+    { terms: ["nozomi", "nozomi 53", "shinkansen", "shinagawa", "17:19", "smart ex", "tren bala", "kioto"], day: 1, title: "Shinkansen Nozomi 53", subtitle: "Día 1 · Shinagawa → Kyoto 17:19" },
     { terms: ["check-in", "check in", "keihan", "hotel keihan"], day: 1, title: "Check-in Hotel Keihan Kyoto Hachijoguchi", subtitle: "Día 1 · 19:30" },
     { terms: ["cena", "kaiten", "uogashi", "sushi giratorio", "aeon mall", "aeon"], day: 1, title: "Cena Kaiten-Sushi Uogashi", subtitle: "Día 1 · AEON Mall Kyoto" },
     { terms: ["thunderbird", "hokuriku", "tsuruga", "kyoto kanazawa"], day: 6, title: "Thunderbird → Hokuriku Shinkansen", subtitle: "Día 6 · Kioto → Kanazawa" },
     { terms: ["nohi bus", "kanazawa shirakawa", "12GO31991741", "12go", "08:40"], day: 7, title: "Nohi Bus Kanazawa → Shirakawa-go", subtitle: "Día 7 · 08:40" },
     { terms: ["nohi bus", "shirakawa takayama", "12GO31992254", "12go", "13:15"], day: 7, title: "Nohi Bus Shirakawa-go → Takayama", subtitle: "Día 7 · 13:15" },
     { terms: ["hida express", "hida", "gifu", "takayama kanazawa"], day: 7, title: "JR Hida Express", subtitle: "Día 7 · Kanazawa → Takayama" },
-    { terms: ["nohi bus", "nohi", "bus magome", "takayama magome", "08:00", "coche 1", "car 01", "2c", "2d", "3b", "3c", "3d"], day: 8, title: "Nohi Bus Takayama → Magome", subtitle: "Día 8 · 08:00" },
-    { terms: ["shinano", "express shinano", "nakatsugawa", "nagoya", "09:57", "car 4", "coche 4"], day: 9, title: "JR Shinano 4 → Nagoya", subtitle: "Día 9 · Nakatsugawa 09:57 → Nagoya 10:53" },
-    { terms: ["nozomi 358", "nozomi", "shinkansen nagoya", "11:29", "13:06", "coche 12", "car 12", "11-d", "11-e", "12-c", "12-d", "12-e"], day: 9, title: "Shinkansen Nozomi 358", subtitle: "Día 9 · Nagoya 11:29 → Tokyo 13:06" },
+    { terms: ["nohi bus", "nohi", "bus magome", "takayama magome", "08:00", "nakasendo"], day: 8, title: "Nohi Bus Takayama → Magome", subtitle: "Día 8 · 08:00" },
+    { terms: ["shinano", "express shinano", "nakatsugawa", "nagoya", "09:57"], day: 9, title: "JR Shinano 4 → Nagoya", subtitle: "Día 9 · Nakatsugawa 09:57 → Nagoya 10:53" },
+    { terms: ["nozomi 358", "nozomi", "shinkansen nagoya", "11:29", "13:06", "tokaido shinkansen"], day: 9, title: "Shinkansen Nozomi 358", subtitle: "Día 9 · Nagoya 11:29 → Tokyo 13:06" },
     { terms: ["tobu nikko", "nikko express", "tobu asakusa", "toshogu", "world heritage pass", "kegon", "cataratas kegon", "chuzenji", "lago chuzenji", "shinkyo", "puente shinkyo", "irohazaka"], day: 13, title: "Tobu Limited Express a Nikko", subtitle: "Día 13 · Tobu-Asakusa → Tobu-Nikko" },
   ];
   for (const c of cityDayHints) {
@@ -427,21 +427,21 @@ function buildSearchIndex(lang) {
     terms: ["nohi", "12go31991741", "12go31992254", "12go", "shirakawa bus"],
   }));
 
-  // ── Billetes Confirmados (Tarjetas interactivas con QR y asientos) ─
+  // ── Tarjetas Prácticas de Transporte ──────────────────────────────
   const confirmedTickets = [
     {
       id: "ticket-search-nozomi-53",
-      title: "Billete Shinkansen Nozomi 53 (Shinagawa → Kioto)",
-      subtitle: "7 sept · 17:19 → 19:23 · Smart EX 2000 · Coche 13",
+      title: "Guía Transporte: Shinkansen Nozomi 53 (Shinagawa → Kioto)",
+      subtitle: "7 sept · 17:19 → 19:23 · Tokaido Shinkansen · Guía práctica y tarifas",
       category: "Transportes",
       tab: "transportes",
       day: 1,
       targetId: "ticket-day-1",
-      terms: ["billete", "ticket", "nozomi", "nozomi 53", "shinkansen", "smart ex", "smart ex 2000", "2000", "coche 13", "13c", "13d", "13e", "14d", "14e", "asientos", "qr ticket", "tren bala", "shinagawa", "kioto"],
+      terms: ["billete", "ticket", "nozomi", "nozomi 53", "shinkansen", "smart ex", "qr ticket", "tren bala", "shinagawa", "kioto", "equipaje"],
     },
     {
       id: "ticket-search-thunderbird-5",
-      title: "Billete Thunderbird 5 + Kagayaki (Kioto → Kanazawa)",
+      title: "Guía Transporte: Thunderbird 5 + Kagayaki (Kioto → Kanazawa)",
       subtitle: "12 sept · 08:10 · Conexión en Tsuruga hacia Kanazawa",
       category: "Transportes",
       tab: "transportes",
@@ -451,33 +451,33 @@ function buildSearchIndex(lang) {
     },
     {
       id: "ticket-search-nohi-magome",
-      title: "Billete Nohi Bus (Takayama → Magome)",
-      subtitle: "14 sept · 08:00 · Reserva online · Coche 1 · Asientos 2C-3D",
+      title: "Guía Transporte: Nohi Bus (Takayama → Magome)",
+      subtitle: "14 sept · 08:00 · Bus directo al sendero Nakasendo",
       category: "Transportes",
       tab: "transportes",
       day: 8,
       targetId: "ticket-day-8",
-      terms: ["billete", "ticket", "nohi bus", "magome", "takayama", "asientos", "coche 1", "08:00", "bus magome", "nakasendo"],
+      terms: ["billete", "ticket", "nohi bus", "magome", "takayama", "08:00", "bus magome", "nakasendo"],
     },
     {
       id: "ticket-search-shinano-4",
-      title: "Billete JR Shinano 4 (Nakatsugawa → Nagoya)",
-      subtitle: "15 sept · 09:57 · Nakatsugawa → Nagoya · Coche 4",
+      title: "Guía Transporte: JR Shinano 4 (Nakatsugawa → Nagoya)",
+      subtitle: "15 sept · 09:57 · Nakatsugawa → Nagoya (Limited Express)",
       category: "Transportes",
       tab: "transportes",
       day: 9,
       targetId: "ticket-day-9",
-      terms: ["billete", "ticket", "shinano", "shinano 4", "coche 4", "nakatsugawa", "nagoya", "tren"],
+      terms: ["billete", "ticket", "shinano", "shinano 4", "nakatsugawa", "nagoya", "tren"],
     },
     {
       id: "ticket-search-nozomi-358",
-      title: "Billete Shinkansen Nozomi 358 (Nagoya → Tokio)",
-      subtitle: "15 sept · 11:29 → 13:06 · Tokaido Shinkansen · Coche 12",
+      title: "Guía Transporte: Shinkansen Nozomi 358 (Nagoya → Tokio)",
+      subtitle: "15 sept · 11:29 → 13:06 · Tokaido Shinkansen",
       category: "Transportes",
       tab: "transportes",
       day: 9,
       targetId: "ticket-day-9-nozomi",
-      terms: ["billete", "ticket", "nozomi 358", "coche 12", "nagoya", "tokio", "shinkansen", "tren bala", "11d", "11e", "12c", "12d", "12e", "asientos"],
+      terms: ["billete", "ticket", "nozomi 358", "nagoya", "tokio", "shinkansen", "tren bala", "smart ex", "equipaje"],
     },
   ];
   for (const ct of confirmedTickets) {
