@@ -95,31 +95,34 @@ export default function CalendarPage({ onGoToMapDay }) {
       {/* Calendar grid — left side */}
       <div className="flex-1 px-4 pt-3 pb-12 overflow-y-auto" style={{ maxWidth: "none" }}>
         {/* title + export button */}
-        <div className="flex items-start justify-between gap-3 mb-6">
-          <div>
-            <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("calendar.eyebrow")}</p>
-            <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>
-              {t("calendar.title")}
-            </h2>
-            <p style={{ fontSize: 13, color: "var(--ink-soft)", marginTop: 6, lineHeight: 1.6 }}>
-              {t("calendar.intro")}
-            </p>
+        <div className="mb-6">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("calendar.eyebrow")}</p>
+              <h2 className="font-display text-2xl" style={{ color: "var(--indigo)", margin: 0 }}>
+                {t("calendar.title")}
+              </h2>
+            </div>
+
+            <button
+              onClick={() => setShowExportModal(true)}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all hover:opacity-90 mt-1"
+              style={{
+                background: "var(--shu)",
+                color: "#ffffff",
+                border: "none",
+                cursor: "pointer",
+                boxShadow: "0 2px 8px rgba(188,71,73,0.3)"
+              }}
+            >
+              <CalendarPlus size={15} />
+              <span>Exportar</span>
+            </button>
           </div>
 
-          <button
-            onClick={() => setShowExportModal(true)}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all hover:opacity-90 mt-1"
-            style={{
-              background: "var(--shu)",
-              color: "#ffffff",
-              border: "none",
-              cursor: "pointer",
-              boxShadow: "0 2px 8px rgba(188,71,73,0.3)"
-            }}
-          >
-            <CalendarPlus size={15} />
-            <span>Exportar</span>
-          </button>
+          <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
+            {t("calendar.intro")}
+          </p>
         </div>
 
         {/* legend */}

@@ -237,33 +237,35 @@ export default function WeatherPage() {
 
   return (
     <div className="px-4 pt-3 pb-12">
-      <div className="mb-6 flex justify-between items-start gap-4">
-        <div>
-          <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{weatherLabels.previsiones}</p>
-          <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>{weatherLabels.climaCiudad}</h2>
-          <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
-            Previsión meteorológica en vivo y temperaturas estimadas para cada una de las ciudades de la ruta (Tokio, Kioto, Osaka, Kanazawa, Takayama y Valle de Kiso). Los datos se sincronizan con Open-Meteo y se guardan en caché local durante 12 horas para que puedas consultarlos sin gastar batería ni depender de conexión.
-          </p>
-        </div>
-        <div className="flex flex-col items-end gap-1 mt-1">
-          <button 
-            onClick={() => !loading && fetchWeather()}
-            disabled={loading}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border bg-green-50 border-green-200 text-green-700 shadow-sm transition-colors hover:bg-green-100 disabled:opacity-70"
-          >
-            {loading ? (
-              <Loader2 size={12} className="animate-spin" />
-            ) : (
-              <RefreshCw size={12} />
+      <div className="mb-6">
+        <div className="flex justify-between items-start gap-4">
+          <div>
+            <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{weatherLabels.previsiones}</p>
+            <h2 className="font-display text-2xl" style={{ color: "var(--indigo)", margin: 0 }}>{weatherLabels.climaCiudad}</h2>
+          </div>
+          <div className="flex flex-col items-end gap-1 mt-1">
+            <button 
+              onClick={() => !loading && fetchWeather()}
+              disabled={loading}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border bg-green-50 border-green-200 text-green-700 shadow-sm transition-colors hover:bg-green-100 disabled:opacity-70"
+            >
+              {loading ? (
+                <Loader2 size={12} className="animate-spin" />
+              ) : (
+                <RefreshCw size={12} />
+              )}
+              <span className="text-[10px] font-bold tracking-widest uppercase">{loading ? 'Cargando' : 'Actualizar'}</span>
+            </button>
+            {lastFetched && (
+              <span className="text-[9px] text-slate-400 font-medium mr-1">
+                {lastFetched.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              </span>
             )}
-            <span className="text-[10px] font-bold tracking-widest uppercase">{loading ? 'Cargando' : 'Actualizar'}</span>
-          </button>
-          {lastFetched && (
-            <span className="text-[9px] text-slate-400 font-medium mr-1">
-              {lastFetched.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-            </span>
-          )}
+          </div>
         </div>
+        <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
+          Previsión meteorológica en vivo y temperaturas estimadas para cada una de las ciudades de la ruta (Tokio, Kioto, Osaka, Kanazawa, Takayama y Valle de Kiso). Los datos se sincronizan con Open-Meteo y se guardan en caché local durante 12 horas para que puedas consultarlos sin gastar batería ni depender de conexión.
+        </p>
       </div>
 
       {/* Day-by-day forecast */}
