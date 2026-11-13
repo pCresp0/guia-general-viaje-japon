@@ -34,6 +34,13 @@ export default function InicioPage({ onNavigate }) {
               return;
             }
             const action = link.getAttribute("data-action");
+            if (action === "share-whatsapp") {
+              e.preventDefault();
+              const shareUrl = window.location.origin + (import.meta.env.BASE_URL || "/");
+              const shareText = `¡Echa un vistazo a esta guía de viaje a Japón (itinerario, transportes, hoteles y preparativos)! ${shareUrl}`;
+              window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`, "_blank", "noopener,noreferrer");
+              return;
+            }
             if (action === "search") {
               e.preventDefault();
               const searchBtn = document.querySelector('[data-search-trigger="true"]') || document.querySelector('button[aria-label="Buscar en la guía"]');
