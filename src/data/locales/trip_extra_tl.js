@@ -207,7 +207,7 @@ export const budget = {
     {
       title: "Mga International Flight",
       details: [
-        "Qatar Airways Madrid ↔ Tokyo (via Doha). 5 tao × 890€.",
+        "Qatar Airways Madrid ↔ Tokyo (via Doha). 890€ / bawat tao.",
         "Papunta: QR 150 MAD→DOH + QR 806 DOH→NRT (Set 6, 09:05 → Set 7, 12:55, 20h 50m).",
         "Pauwi: QR 809 NRT→DOH + QR 147 DOH→MAD (Set 21, 17:25 → Set 22, 07:35, 21h 10m).",
       ],
@@ -255,8 +255,8 @@ export const budget = {
     {
       title: "Insurance, eSIM at extras",
       details: [
-        "Heymondo Japan insurance: 273.60€ (4 tao · Revolut).",
-        "Holafly eSIM: 164.88€ (4 tao · Revolut).",
+        "Heymondo Japan insurance: ~68€/tao.",
+        "Holafly eSIM (unlimited data): ~41€/tao.",
         "Tickets (templo, TeamLab, viewpoints), Takkyubin Kyoto→Tokyo at iba pa ~150€/tao orientative.",
       ],
     },
@@ -268,5 +268,5 @@ export const budget = {
     },
   ],
   totalPerPerson: "~2,965€ – 3,110€ (lahat kasama)",
-  totalGroup: "~14,825€ – 15,550€ (5 tao)",
+  totalGroup: "~14,825€ – 15,550€ (tantiya para sa grupong 5 tao)",
 };

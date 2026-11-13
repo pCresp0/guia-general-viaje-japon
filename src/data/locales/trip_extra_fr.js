@@ -207,7 +207,7 @@ export const budget = {
     {
       title: "Vols Internationaux",
       details: [
-        "Qatar Airways Madrid ↔ Tokyo (via Doha). 5 personnes × 890€.",
+        "Qatar Airways Madrid ↔ Tokyo (via Doha). 890€ / personne.",
         "Aller : QR 150 MAD→DOH + QR 806 DOH→NRT (6 sept, 09:05 → 7 sept, 12:55, 20h 50m).",
         "Retour : QR 809 NRT→DOH + QR 147 DOH→MAD (21 sept, 17:25 → 22 sept, 07:35, 21h 10m).",
       ],
@@ -255,8 +255,8 @@ export const budget = {
     {
       title: "Assurance, eSIM et extras",
       details: [
-        "Assurance Heymondo Japon : 273,60€ (4 personnes · Revolut).",
-        "eSIM Holafly : 164,88€ (4 personnes · Revolut).",
+        "Assurance Heymondo Japon : ~68€/personne.",
+        "eSIM Holafly (données illimitées) : ~41€/personne.",
         "Entrées (temples, TeamLab, belvédères), Takkyubin Kyoto→Tokyo et divers ~150€/personne à titre indicatif.",
       ],
     },
@@ -268,5 +268,5 @@ export const budget = {
     },
   ],
   totalPerPerson: "~2 965€ – 3 110€ (tout inclus)",
-  totalGroup: "~14 825€ – 15 550€ (5 personnes)",
+  totalGroup: "~14 825€ – 15 550€ (estimation groupe de 5)",
 };

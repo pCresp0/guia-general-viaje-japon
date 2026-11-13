@@ -630,7 +630,7 @@ export default function ItineraryPrintView({ days }) {
           <br />
           Madrid (MAD) ⇄ Tokio Narita (NRT) · Escala en Hamad Intl (Doha)
           <br />
-          {flights.price.people} personas · <strong>{flights.price.total}</strong> ({flights.price.perPerson}/persona)
+          Tarifa de referencia: <strong>{flights.price.perPerson} / persona</strong> (Ida y Vuelta con equipaje facturado)
         </div>
 
         <FlightBlock flight={flights.out} />
@@ -796,7 +796,7 @@ export default function ItineraryPrintView({ days }) {
         </p>
         <p style={{ fontSize: 9.5, color: "#5a6070", marginBottom: 12 }}>{budget.note}</p>
         <div style={{ padding: "8px 10px", background: "#f7f0e3", borderRadius: 6, fontSize: 10, marginBottom: 12, lineHeight: 1.5 }}>
-          Vuelos · Qatar Airways · Madrid ⇄ Tokio Narita · {flights.price.total} ({flights.price.perPerson}/persona)
+          Vuelos · Qatar Airways · Madrid ⇄ Tokio Narita · {flights.price.perPerson}/persona (Ida y Vuelta)
         </div>
         {budget.categories.map((c) => (
           <div key={c.title} style={{ marginBottom: 12, pageBreakInside: "avoid" }}>

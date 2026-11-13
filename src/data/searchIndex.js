@@ -256,7 +256,7 @@ function buildSearchIndex(lang) {
   items.push(entry({
     id: "flight-booking",
     title: "Vuelos internacionales · Qatar Airways",
-    subtitle: `Madrid ⇄ Tokio · ${flights.price.perPerson}/persona (${flights.price.total})`,
+    subtitle: `Madrid ⇄ Tokio · ${flights.price.perPerson}/persona`,
     category: "Presupuesto",
     tab: "presupuesto",
     targetId: "budget-cat-0",

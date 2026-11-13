@@ -207,7 +207,7 @@ export const budget = {
     {
       title: "International Flights",
       details: [
-        "Qatar Airways Madrid ↔ Tokyo (via Doha). 5 people × 890€.",
+        "Qatar Airways Madrid ↔ Tokyo (via Doha). 890€ / person.",
         "Outbound: QR 150 MAD→DOH + QR 806 DOH→NRT (Sep 6, 09:05 → Sep 7, 12:55, 20h 50m).",
         "Inbound: QR 809 NRT→DOH + QR 147 DOH→MAD (Sep 21, 17:25 → Sep 22, 07:35, 21h 10m).",
       ],
@@ -255,8 +255,8 @@ export const budget = {
     {
       title: "Insurance, eSIM and extras",
       details: [
-        "Heymondo Japan insurance: 273.60€ (4 people · Revolut).",
-        "Holafly eSIM: 164.88€ (4 people · Revolut).",
+        "Heymondo Japan insurance: ~68€/person.",
+        "Holafly eSIM (unlimited data): ~41€/person.",
         "Tickets (temples, TeamLab, viewpoints), Takkyubin Kyoto→Tokyo and misc. extras ~150€/person orientative.",
       ],
     },
@@ -268,5 +268,5 @@ export const budget = {
     },
   ],
   totalPerPerson: "~2,965€ – 3,110€ (all included)",
-  totalGroup: "~14,825€ – 15,550€ (5 people)",
+  totalGroup: "~14,825€ – 15,550€ (reference estimate for group of 5)",
 };

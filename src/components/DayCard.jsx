@@ -10,10 +10,8 @@ import ShinkansenTicketCard from "./ShinkansenTicketCard";
 import ThunderbirdTicketCard from "./ThunderbirdTicketCard";
 import FlightTicketCard from "./FlightTicketCard";
 import NohiMagomeTicketCard from "./NohiMagomeTicketCard";
-import TicketDownloadButton from "./TicketDownloadButton";
 import ShinanoTicketCard from "./ShinanoTicketCard";
 import NozomiNagoyaTicketCard from "./NozomiNagoyaTicketCard";
-import TakkyubinQRCard from "./TakkyubinQRCard";
 import DayWeatherBar from "./DayWeatherBar";
 import ScheduleEntryBody from "./ScheduleEntryBody";
 import GuideCard from "./GuideCard";
@@ -424,33 +422,9 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
                     </div>
                   )}
 
-                  {day.num === 7 && s.time === "08:40" && (
-                    <div className="mt-3 relative z-10">
-                      <TicketDownloadButton
-                        pdfPath="/images/tickets/nohi_bus_kanazawa_shirakawago.pdf"
-                        label="billete Kanazawa → Shirakawa-go"
-                      />
-                    </div>
-                  )}
-
-                  {day.num === 7 && s.time === "13:15" && (
-                    <div className="mt-3 relative z-10">
-                      <TicketDownloadButton
-                        pdfPath="/images/tickets/nohi_bus_shirakawago_takayama.pdf"
-                        label="billete Shirakawa-go → Takayama"
-                      />
-                    </div>
-                  )}
-
                   {day.num === 8 && s.time === "07:35" && (
                     <div className="mt-3 relative z-10">
                       <NohiMagomeTicketCard />
-                    </div>
-                  )}
-
-                  {day.num === 9 && s.time === "~14:00–15:00" && (
-                    <div className="relative z-10">
-                      <TakkyubinQRCard />
                     </div>
                   )}
 

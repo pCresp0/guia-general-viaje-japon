@@ -353,7 +353,7 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                 <li>• <strong>Autobuses de montaña en los Alpes:</strong> Los traslados entre Kanazawa, Shirakawa-go, Takayama y Magome (Nohi Bus y bus local) sumaron ~71€/persona y el JR Pass NO los cubre en absoluto (habría habido que pagarlos íntegros de bolsillo igualmente).</li>
                 <li>• <strong>Movilidad urbana y Suica:</strong> El gasto total en Suica (~69€/persona verificado en Revolut) cubrió toda la red de metro de Kioto, buses urbanos, tranvía Randen, metro de Osaka, toda la red de Metro de Tokio (Tokyo Metro / Toei Subway) y cercanías. Casi ninguna de estas redes municipales/privadas está incluida en el JR Pass.</li>
                 <li>• <strong>Ventaja Shinkansen Nozomi:</strong> Comprando billetes individuales pudisteis viajar en el Shinkansen Nozomi (el más rápido de Japón, 2h Shinagawa→Kioto) con asientos reservados juntos, sin suplementos y sin las restricciones del tren lento Hikari.</li>
-                <li>• <strong>Ahorro total verificado:</strong> {formatEur(saveVs14Eur)} por persona, es decir, <strong>{formatEur(saveVs14Eur * PEOPLE)} ahorrados en total para el grupo de 5</strong>.</li>
+                <li>• <strong>Ahorro total verificado:</strong> {formatEur(saveVs14Eur)} por persona frente a la compra del pase (más de 1.000€ de ahorro para un grupo de 5 personas).</li>
               </ul>
             </div>
 
