@@ -26,6 +26,8 @@ import PendingPage from "./pages/PendingPage";
 import HistoryPage from "./pages/HistoryPage";
 import AboutPage from "./pages/AboutPage";
 import FrikadasPage from "./pages/FrikadasPage";
+import { guideImages } from "./data/guideImages";
+import { foods } from "./data/foods";
 import { useHighlight } from "./context/HighlightContext";
 import { slug } from "./utils/slug";
 import { getTripStatus, getDefaultTripDay } from "./utils/date";
@@ -123,10 +125,13 @@ export default function App() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  // Preload silencioso en segundo plano de las imágenes históricas para que al abrir la sección no haya saltos
+  // Preload silencioso en segundo plano de todas las imágenes clave
+  // (templos/lugares, comidas e historia) para que la navegación sea 100% fluida e instantánea
   useEffect(() => {
     const preload = () => {
-      const imgs = [
+      const placeImages = Array.from(new Set(Object.values(guideImages)));
+      const foodImages = Array.from(new Set(foods.map((f) => f.image).filter(Boolean)));
+      const historyImages = [
         "/images/history/jomon-dogu.jpg",
         "/images/history/nara-daibutsu.jpg",
         "/images/history/heian-genji.jpg",
@@ -138,15 +143,19 @@ export default function App() {
         "/images/history/showa-shinkansen.jpg",
         "/images/history/heisei-shibuya.jpg",
       ];
-      imgs.forEach((src) => {
+
+      const allImages = [...placeImages, ...foodImages, ...historyImages];
+      allImages.forEach((src) => {
         const img = new Image();
+        img.decoding = "async";
         img.src = assetUrl(src);
       });
     };
+
     if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(preload, { timeout: 2500 });
+      window.requestIdleCallback(preload, { timeout: 1500 });
     } else {
-      window.setTimeout(preload, 1200);
+      window.setTimeout(preload, 600);
     }
   }, []);
 
