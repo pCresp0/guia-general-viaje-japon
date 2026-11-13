@@ -91,27 +91,26 @@ export default function CalendarPage({ onGoToMapDay }) {
   }, [selectedDay, showExportModal]);
 
   return (
-    <div style={{ display: "flex", height: "100%", gap: 16 }}>
+    <div style={{ display: "flex", height: "100%", gap: 20 }}>
       {/* Calendar grid — left side */}
-      <div className="flex-1 px-4 pt-3 pb-12 overflow-y-auto" style={{ maxWidth: "none" }}>
+      <div className="flex-1 px-4 lg:px-6 pt-3 pb-12 overflow-y-auto" style={{ maxWidth: "none" }}>
         {/* title + export button */}
         <div className="mb-6">
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("calendar.eyebrow")}</p>
-              <h2 className="font-display text-2xl" style={{ color: "var(--indigo)", margin: 0 }}>
+              <h2 className="font-display text-2xl lg:text-3xl" style={{ color: "var(--indigo)", margin: 0 }}>
                 {t("calendar.title")}
               </h2>
             </div>
 
             <button
               onClick={() => setShowExportModal(true)}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all hover:opacity-90 mt-1"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all hover:opacity-90 mt-1 cursor-pointer"
               style={{
                 background: "var(--shu)",
                 color: "#ffffff",
                 border: "none",
-                cursor: "pointer",
                 boxShadow: "0 2px 8px rgba(188,71,73,0.3)"
               }}
             >
@@ -120,17 +119,17 @@ export default function CalendarPage({ onGoToMapDay }) {
             </button>
           </div>
 
-          <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6, maxWidth: 900 }}>
             {t("calendar.intro")}
           </p>
         </div>
 
         {/* legend */}
-        <div className="flex flex-wrap gap-3 mb-6">
+        <div className="flex flex-wrap gap-3.5 mb-6">
           {Array.isArray(blocks) && blocks.map((b) => (
-            <div key={b.id} className="flex items-center gap-1.5">
-              <span className="inline-block w-3 h-3 rounded-sm" style={{ background: b.color }} />
-              <span className="text-xs font-medium" style={{ color: "var(--ink)" }}>
+            <div key={b.id} className="flex items-center gap-2">
+              <span className="inline-block w-3.5 h-3.5 rounded-sm" style={{ background: b.color }} />
+              <span className="text-xs sm:text-sm font-medium" style={{ color: "var(--ink)" }}>
                 {blockEmoji[b.id] || b.emoji} {b.title}
               </span>
             </div>
@@ -143,8 +142,8 @@ export default function CalendarPage({ onGoToMapDay }) {
           {/* weekday headers */}
           <div className="grid grid-cols-7 border-b" style={{ borderColor: "var(--line)" }}>
             {WEEKDAYS.map((w) => (
-              <div key={w} className="text-center py-2.5"
-                style={{ fontSize: 11, fontWeight: 600, color: "var(--ink-soft)", letterSpacing: "0.06em" }}>
+              <div key={w} className="text-center py-2.5 sm:py-3"
+                style={{ fontSize: 12, fontWeight: 700, color: "var(--ink-soft)", letterSpacing: "0.06em" }}>
                 {w.toUpperCase()}
               </div>
             ))}
@@ -174,8 +173,8 @@ export default function CalendarPage({ onGoToMapDay }) {
                       background: isSelected ? `${color}35` : tripDay ? `${color}15` : "transparent",
                       boxShadow: !isToday && isSelected ? `inset 0 0 0 2px ${color}` : undefined,
                       cursor: tripDay ? "pointer" : "default",
-                      minHeight: 96,
-                      padding: 6,
+                      minHeight: 112,
+                      padding: "8px 8px 6px",
                       display: "flex",
                       flexDirection: "column",
                       transition: "all 0.15s",
@@ -191,41 +190,41 @@ export default function CalendarPage({ onGoToMapDay }) {
                   >
                     {dateNum && (
                       <>
-                        <div className="flex items-center justify-between mb-1">
+                        <div className="flex items-center justify-between mb-1.5">
                           <span style={{
-                            fontSize: 12.5, fontWeight: tripDay ? 700 : 400,
+                            fontSize: 13.5, fontWeight: tripDay ? 800 : 500,
                             color: tripDay ? color : isWeekend ? "var(--ink-soft)" : "var(--ink)",
                             fontFamily: tripDay ? "var(--font-display)" : "inherit",
                           }}>
                             {dateNum}
                           </span>
                           {tripDay && (
-                            <span style={{ fontSize: 12 }}>{blockEmoji[tripDay.block] || blockData?.emoji}</span>
+                            <span style={{ fontSize: 13 }}>{blockEmoji[tripDay.block] || blockData?.emoji}</span>
                           )}
                         </div>
                         {tripDay && (
                           <div className="text-left flex-1 flex flex-col justify-between min-w-0">
                             <div>
-                              <span className="inline-block px-1 py-0.5 rounded text-white mb-1"
-                                style={{ fontSize: 7.5, fontWeight: 700, background: color, letterSpacing: "0.05em" }}>
+                              <span className="inline-block px-1.5 py-0.5 rounded text-white mb-1"
+                                style={{ fontSize: 8.5, fontWeight: 700, background: color, letterSpacing: "0.04em" }}>
                                 DÍA {tripDay.num}
                               </span>
                               <p style={{
-                                fontSize: 10, lineHeight: 1.15, color: "var(--ink)",
+                                fontSize: 11, lineHeight: 1.25, color: "var(--ink)",
                                 fontWeight: 700, display: "-webkit-box",
-                                WebkitLineClamp: 1, WebkitBoxOrient: "vertical", overflow: "hidden",
-                                marginBottom: 2
+                                WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+                                marginBottom: 3
                               }}>
                                 {tripDay.title}
                               </p>
                             </div>
 
                             {meta && (
-                              <div className="space-y-0.5 mt-0.5">
-                                <div className="text-[8.5px] font-semibold px-1 py-0.5 rounded bg-black/5 truncate" style={{ color: "var(--ink)" }}>
+                              <div className="space-y-0.5 mt-auto pt-1">
+                                <div className="text-[9.5px] font-semibold px-1.5 py-0.5 rounded bg-black/5 truncate" style={{ color: "var(--ink)" }}>
                                   {meta.highlight}
                                 </div>
-                                <div className="text-[8px] font-medium opacity-80 truncate" style={{ color: "var(--ink-soft)" }}>
+                                <div className="text-[9px] font-medium opacity-80 truncate" style={{ color: "var(--ink-soft)" }}>
                                   {meta.stay}
                                 </div>
                               </div>
@@ -247,18 +246,20 @@ export default function CalendarPage({ onGoToMapDay }) {
       {selectedDay && (
         <div data-detail-panel style={{
           display: "flex",
-          width: 380,
+          width: 420,
+          maxWidth: "40%",
           flexDirection: "column",
           background: "var(--paper-raised)",
           overflowY: "auto",
           height: "fit-content",
-          maxHeight: "calc(100% - 32px)",
-          margin: "16px 16px 16px 0",
+          maxHeight: "calc(100vh - 40px)",
+          margin: "12px 16px 16px 0",
           borderRadius: 24,
           border: "1px solid var(--line)",
-          boxShadow: "0 10px 40px -10px rgba(0,0,0,0.1)",
+          boxShadow: "0 10px 40px -10px rgba(0,0,0,0.12)",
           flexShrink: 0,
-          position: "relative",
+          position: "sticky",
+          top: 12,
         }}>
           {!detailMode ? (
             <QuickDayCard 
