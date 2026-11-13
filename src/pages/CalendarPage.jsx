@@ -262,7 +262,7 @@ export default function CalendarPage({ onGoToMapDay }) {
               display: "flex",
               flexDirection: "column",
               maxHeight: "calc(100dvh - 84px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))",
-              margin: "auto",
+              margin: "0 auto",
               borderRadius: 20,
               boxShadow: "0 16px 48px rgba(0,0,0,0.35)",
             }}

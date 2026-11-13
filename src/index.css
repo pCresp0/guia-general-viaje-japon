@@ -286,7 +286,7 @@ main > div > * {
   background: var(--paper-raised);
   border-radius: 20px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-  margin: auto;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -320,7 +320,7 @@ main > div > * {
 @media (min-width: 768px) {
   .modal-guide-sheet {
     max-width: 820px;
-    max-height: calc(100dvh - 68px - 48px);
+    max-height: calc(100dvh - 124px);
   }
   .modal-guide-sheet .modal-sheet-header {
     padding: 16px 22px;
@@ -330,7 +330,7 @@ main > div > * {
   }
   .calendar-quick-modal,
   .calendar-detail-modal {
-    max-height: calc(100dvh - 68px - 48px) !important;
+    max-height: calc(100dvh - 124px) !important;
   }
 }
 
@@ -399,17 +399,17 @@ main > div > * {
 
 @media (min-width: 640px) {
   .modal-overlay {
-    align-items: center;
+    align-items: flex-start;
     padding: calc(56px + 20px) 16px 20px;
   }
 }
 
 @media (min-width: 768px) {
   .modal-overlay {
-    align-items: center;
-    /* Offset by the 68px DesktopTopBar on top and 230px desktop sidebar on left
-       so modals center symmetrically in the content workspace both horizontally and vertically */
-    padding: calc(68px + 24px) 24px 24px calc(230px + 24px);
+    align-items: flex-start;
+    /* Offset by the 68px DesktopTopBar on top (+ 28px margin) and 230px desktop sidebar on left
+       so modals are centered horizontally in the content workspace and anchored at a fixed top position */
+    padding: calc(68px + 28px) 24px 28px calc(230px + 24px);
   }
 }
 
