@@ -75,13 +75,10 @@ export default {
   "home.tripStarted": "¡El viaje ha empezado!",
   "home.tripEnded": "El viaje ha terminado",
   "home.guideTitle": "Qué hay en cada apartado",
-  "home.aboutGuide": "Sobre esta guía",
 
   // ── Cosas pendientes ──────────────────────────────────────────────
   "pending.eyebrow": "Antes de viajar",
   "pending.title": "Cosas pendientes",
-  "pending.tabBefore": "Antes de viajar",
-  "pending.tabDuring": "Durante el viaje",
   "pending.intro":
     "Lista de control exhaustiva con todos los trámites, reservas de entradas, documentación y gestiones indispensables para viajar a Japón. Está organizada por orden de urgencia y fases (antes de salir y durante la estancia). Puedes marcar cada tarea conforme la completes y tu progreso quedará guardado localmente en tu dispositivo.",
   "pending.remaining": "cosas pendientes",
@@ -96,9 +93,6 @@ export default {
   "calendar.title": "Calendario",
   "calendar.intro":
     "Vista mensual del viaje que sitúa cronológicamente cada una de las 16 jornadas. Los colores identifican las distintas etapas geográficas (Kansai, Alpes Japoneses y Tokio/Fuji). Pulsa sobre cualquier día para ver sus actividades clave o exporta el calendario completo a tu agenda de Google o Apple.",
-  "calendar.export": "Exportar",
-  "calendar.exportTitle": "Exportar itinerario",
-  "calendar.exportDesc": "Añade automáticamente los 16 días del viaje con sus títulos, ciudades y detalles a la aplicación de calendario de tu móvil u ordenador.",
 
   // ── Itinerario ────────────────────────────────────────────────────
   "itinerary.eyebrow": "Día a día",
@@ -219,7 +213,6 @@ export default {
   "weather.rain": "Lluvia",
   "weather.max": "Máx",
   "weather.min": "Mín",
-  "weather.refresh": "Actualizar",
 
   // ── Historia ──────────────────────────────────────────────────────
   "history.eyebrow": "Para entender lo que vais a ver",

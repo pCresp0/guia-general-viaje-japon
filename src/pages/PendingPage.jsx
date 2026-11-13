@@ -129,7 +129,7 @@ export default function PendingPage() {
           className="flex-1 relative z-10 flex items-center justify-center py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-300 cursor-pointer border-none bg-transparent m-0"
           style={{ color: activeTab === "antes" ? "#ffffff" : "var(--ink-soft)" }}
         >
-          {t("pending.tabBefore")}
+          Antes de viajar
         </button>
         <button
           type="button"
@@ -137,7 +137,7 @@ export default function PendingPage() {
           className="flex-1 relative z-10 flex items-center justify-center py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-300 cursor-pointer border-none bg-transparent m-0"
           style={{ color: activeTab === "durante" ? "#ffffff" : "var(--ink-soft)" }}
         >
-          {t("pending.tabDuring")}
+          Durante el viaje
         </button>
       </div>
 

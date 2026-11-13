@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Cloud, CloudRain, Sun, CloudSun, MapPin, Droplets, Loader2, Info, RefreshCw, ExternalLink } from "lucide-react";
 
-import { useContent, useT } from "../i18n/LanguageContext";
+import { useContent } from "../i18n/LanguageContext";
 import { Highlightable } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
 import { diffDays, todayISO } from "../utils/date";
@@ -160,7 +160,6 @@ function computeCityWeatherBadges(w, liveWeather, dailyWeather, weatherLabels) {
 
 export default function WeatherPage() {
   const { weatherData, dailyWeather, weatherLabels } = useContent();
-  const t = useT();
   const [liveWeather, setLiveWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastFetched, setLastFetched] = useState(null);
@@ -255,7 +254,7 @@ export default function WeatherPage() {
               ) : (
                 <RefreshCw size={12} />
               )}
-              <span className="text-[10px] font-bold tracking-widest uppercase">{loading ? t("common.loading") : t("weather.refresh")}</span>
+              <span className="text-[10px] font-bold tracking-widest uppercase">{loading ? 'Cargando' : 'Actualizar'}</span>
             </button>
             {lastFetched && (
               <span className="text-[9px] text-slate-400 font-medium mr-1">

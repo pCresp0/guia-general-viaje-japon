@@ -124,7 +124,7 @@ export default function CalendarPage({ onGoToMapDay }) {
               }}
             >
               <CalendarPlus size={15} />
-              <span>{t("calendar.export")}</span>
+              <span>Exportar</span>
             </button>
           </div>
 
@@ -323,7 +323,7 @@ export default function CalendarPage({ onGoToMapDay }) {
               <div className="flex items-center gap-2">
                 <CalendarPlus size={22} style={{ color: "var(--shu)" }} />
                 <h3 className="font-bold text-lg" style={{ color: "var(--ink)", margin: 0 }}>
-                  {t("calendar.exportTitle")}
+                  Exportar itinerario
                 </h3>
               </div>
               <button
@@ -336,7 +336,7 @@ export default function CalendarPage({ onGoToMapDay }) {
             </div>
 
             <p style={{ fontSize: 13, color: "var(--ink-soft)", marginBottom: 18, lineHeight: 1.5 }}>
-              {t("calendar.exportDesc")}
+              Añade automáticamente los 16 días del viaje con sus títulos, ciudades y detalles a la aplicación de calendario de tu móvil u ordenador.
             </p>
 
             <div className="space-y-3 mb-4">

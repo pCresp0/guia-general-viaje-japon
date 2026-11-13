@@ -79,13 +79,10 @@ export default {
   "home.tripStarted": "Le voyage a commencé !",
   "home.tripEnded": "Le voyage est terminé",
   "home.guideTitle": "Ce que contient chaque rubrique",
-  "home.aboutGuide": "À propos de ce guide",
 
   // ── À faire ───────────────────────────────────────────────────────
   "pending.eyebrow": "Avant de partir",
   "pending.title": "À faire",
-  "pending.tabBefore": "Avant de partir",
-  "pending.tabDuring": "Pendant le voyage",
   "pending.intro":
     "Décisions à prendre et réservations à faire à l'avance. Cochez chaque point une fois réglé.",
   "pending.remaining": "points à régler",
@@ -99,9 +96,6 @@ export default {
   "calendar.eyebrow": "Vue mensuelle",
   "calendar.title": "Calendrier",
   "calendar.intro": "Appuyez sur un jour pour voir le détail complet.",
-  "calendar.export": "Exporter",
-  "calendar.exportTitle": "Exporter l'itinéraire",
-  "calendar.exportDesc": "Ajoutez automatiquement les 16 jours de voyage avec titres, villes et détails à votre calendrier sur mobile ou ordinateur.",
 
   // ── Itinéraire ────────────────────────────────────────────────────
   "itinerary.eyebrow": "Jour par jour",
@@ -221,7 +215,6 @@ export default {
   "weather.rain": "Pluie",
   "weather.max": "Max",
   "weather.min": "Min",
-  "weather.refresh": "Actualiser",
 
   // ── Histoire ──────────────────────────────────────────────────────
   "history.eyebrow": "Pour comprendre ce que vous allez voir",

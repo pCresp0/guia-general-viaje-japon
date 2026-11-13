@@ -84,13 +84,10 @@ export default {
   "home.tripStarted": "Nagsimula na ang biyahe!",
   "home.tripEnded": "Tapos na ang biyahe",
   "home.guideTitle": "Ano ang laman ng bawat bahagi",
-  "home.aboutGuide": "Tungkol sa gabay na ito",
 
   // ── Mga dapat gawin ───────────────────────────────────────────────
   "pending.eyebrow": "Bago bumiyahe",
   "pending.title": "Mga dapat gawin",
-  "pending.tabBefore": "Bago bumiyahe",
-  "pending.tabDuring": "Habang naglalakbay",
   "pending.intro":
     "Mga desisyong kailangang gawin at mga booking na dapat maaga pang asikasuhin. Markahan ang bawat isa kapag tapos na.",
   "pending.remaining": "bagay na dapat asikasuhin",
@@ -104,9 +101,6 @@ export default {
   "calendar.eyebrow": "Buwanang tingin",
   "calendar.title": "Kalendaryo",
   "calendar.intro": "Pindutin ang kahit anong araw para makita ang buong detalye.",
-  "calendar.export": "I-export",
-  "calendar.exportTitle": "I-export ang itinerary",
-  "calendar.exportDesc": "Awtomatikong idagdag ang lahat ng 16 araw ng biyahe na may mga pamagat, lungsod, at detalye sa iyong kalendaryo sa mobile o computer.",
 
   // ── Itineraryo ────────────────────────────────────────────────────
   "itinerary.eyebrow": "Araw-araw",
@@ -226,7 +220,6 @@ export default {
   "weather.rain": "Ulan",
   "weather.max": "Pinakamataas",
   "weather.min": "Pinakamababa",
-  "weather.refresh": "I-update",
 
   // ── Kasaysayan ────────────────────────────────────────────────────
   "history.eyebrow": "Para maintindihan ang makikita ninyo",

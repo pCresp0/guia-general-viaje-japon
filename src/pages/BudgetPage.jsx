@@ -1,4 +1,4 @@
-import { useContent, useT } from "../i18n/LanguageContext";
+import { useContent } from "../i18n/LanguageContext";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Highlightable } from "../context/HighlightContext";
@@ -8,7 +8,6 @@ import JrPassAnalysis from "../components/JrPassAnalysis";
 
 export default function BudgetPage() {
   const { budget, transports } = useContent();
-  const t = useT();
   const [showTransports, setShowTransports] = useState(false);
   const [openCategory, setOpenCategory] = useState(null);
 
@@ -22,10 +21,10 @@ export default function BudgetPage() {
     <div className="px-4 pt-3 pb-8">
       <div className="mb-5">
         <p className="eyebrow" style={{ color: "var(--shu)" }}>
-          {t("budget.eyebrow")}
+          Economía y Costes del viaje
         </p>
         <h1 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>
-          {t("budget.title")}
+          Presupuesto estimado
         </h1>
         <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
           En este apartado se detalla el desglose completo de los costes de este viaje de 16 días a Japón. Incluye tanto los gastos fijos (vuelos internacionales, alojamientos y trenes Shinkansen) como los estimados diarios en comidas, transportes urbanos y compras. Te servirá como referencia real para calcular y adaptar el presupuesto de tu propia aventura.
@@ -33,7 +32,7 @@ export default function BudgetPage() {
       </div>
 
       <div className="rounded-2xl p-6 text-center mb-5" style={{ background: "var(--indigo)" }}>
-        <p className="eyebrow" style={{ color: "rgba(255,255,255,0.9)" }}>{t("budget.perPerson")}</p>
+        <p className="eyebrow" style={{ color: "rgba(255,255,255,0.9)" }}>Presupuesto total estimado por persona</p>
         <p className="font-display text-3xl text-white my-1">{budget.totalPerPerson}</p>
         <p className="text-white/80 text-xs mt-2">Cálculo orientativo con todo incluido (vuelos, 14 noches de hotel, trenes, comidas y visitas)</p>
       </div>
