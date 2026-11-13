@@ -59,12 +59,20 @@ function buildSearchIndex(lang) {
   // ── Apartados y Subapartados de Navegación ───────────────────────
   const navSections = [
     {
-      id: "nav-pendientes",
-      title: "Cosas pendientes",
-      subtitle: "Checklist de tareas antes y durante el viaje",
+      id: "nav-inicio",
+      title: "Inicio · Bienvenida",
+      subtitle: "Portada de la guía, mapa general y primeros pasos",
       category: "Apartados",
-      tab: "pendientes",
-      terms: ["pendientes", "cosas pendientes", "checklist", "tareas", "antes de viajar", "durante el viaje", "to do", "por hacer"],
+      tab: "inicio",
+      terms: ["inicio", "home", "bienvenida", "portada", "resumen", "viaje de un vistazo", "primeros pasos", "indice", "el viaje de un vistazo", "mapa de la ruta"],
+    },
+    {
+      id: "nav-itinerario",
+      title: "Itinerario",
+      subtitle: "Ruta detallada día a día con horarios y actividades",
+      category: "Apartados",
+      tab: "itinerario",
+      terms: ["itinerario", "planning", "ruta", "dias", "horarios", "cronograma", "visitas", "plan", "planificacion", "jornadas", "dia a dia"],
     },
     {
       id: "nav-itinerario-hoy",
@@ -80,15 +88,7 @@ function buildSearchIndex(lang) {
       subtitle: "Planificación global de septiembre 2026",
       category: "Apartados",
       tab: "calendario",
-      terms: ["calendario", "calendar", "fechas", "septiembre", "dias", "distribucion", "plan", "planificacion"],
-    },
-    {
-      id: "nav-itinerario",
-      title: "Itinerario",
-      subtitle: "Ruta detallada día a día con horarios y actividades",
-      category: "Apartados",
-      tab: "itinerario",
-      terms: ["itinerario", "planning", "ruta", "dias", "horarios", "cronograma", "visitas", "plan", "planificacion"],
+      terms: ["calendario", "calendar", "fechas", "septiembre", "dias", "distribucion", "plan", "planificacion", "exportar", "ics", "google calendar", "apple calendar"],
     },
     {
       id: "nav-mapa",
@@ -96,7 +96,7 @@ function buildSearchIndex(lang) {
       subtitle: "Mapa interactivo con todas las paradas y rutas",
       category: "Apartados",
       tab: "mapa",
-      terms: ["mapa", "map", "localizaciones", "ubicaciones", "pines", "gps", "puntos de interes", "plan", "planificacion"],
+      terms: ["mapa", "map", "localizaciones", "ubicaciones", "pines", "gps", "puntos de interes", "plan", "planificacion", "ciudades", "rutas"],
     },
     {
       id: "nav-vuelos",
@@ -104,7 +104,7 @@ function buildSearchIndex(lang) {
       subtitle: "Billetes de avión, horarios y escalas (Qatar / Madrid / Narita)",
       category: "Apartados",
       tab: "vuelos",
-      terms: ["vuelos", "vuelo", "avion", "billetes avion", "qatar", "escalas", "madrid", "narita", "doha", "viaje"],
+      terms: ["vuelos", "vuelo", "avion", "billetes avion", "qatar", "escalas", "madrid", "narita", "doha", "viaje", "qr148", "qr808", "qr809", "qr6952"],
     },
     {
       id: "nav-hoteles",
@@ -112,7 +112,7 @@ function buildSearchIndex(lang) {
       subtitle: "Alojamientos, confirmaciones, direcciones y check-in",
       category: "Apartados",
       tab: "hoteles",
-      terms: ["hoteles", "hotel", "alojamiento", "alojamientos", "ryokan", "minshuku", "reserva hotel", "booking", "check in", "check out", "viaje"],
+      terms: ["hoteles", "hotel", "alojamiento", "alojamientos", "ryokan", "minshuku", "reserva hotel", "booking", "check in", "check out", "viaje", "keihan", "koko hotel", "magome chaya", "torifito", "takayama ouan"],
     },
     {
       id: "nav-transportes",
@@ -120,7 +120,7 @@ function buildSearchIndex(lang) {
       subtitle: "Billetes, trayectos, Shinkansen, Suica y trenes",
       category: "Apartados",
       tab: "transportes",
-      terms: ["transportes", "transporte", "tren", "trenes", "shinkansen", "tren bala", "billetes", "trayectos", "jr pass", "suica", "metro", "bus", "viaje"],
+      terms: ["transportes", "transporte", "tren", "trenes", "shinkansen", "tren bala", "billetes", "trayectos", "jr pass", "suica", "metro", "bus", "viaje", "nozomi", "thunderbird", "shinano", "nohi bus"],
     },
     {
       id: "nav-lugares",
@@ -128,7 +128,7 @@ function buildSearchIndex(lang) {
       subtitle: "Guía de templos, barrios, miradores y atracciones",
       category: "Apartados",
       tab: "lugares",
-      terms: ["lugares", "que ver", "atracciones", "templos", "santuarios", "barrios", "visitas", "turismo", "monumentos", "guia"],
+      terms: ["lugares", "que ver", "atracciones", "templos", "santuarios", "barrios", "visitas", "turismo", "monumentos", "guia", "fushimi inari", "kinkaku-ji", "senso-ji"],
     },
     {
       id: "nav-comidas",
@@ -144,7 +144,7 @@ function buildSearchIndex(lang) {
       subtitle: "Previsión meteorológica en vivo y webcams del Monte Fuji",
       category: "Apartados",
       tab: "clima",
-      terms: ["clima", "tiempo", "temperatura", "temperaturas", "lluvia", "prevision", "meteorologia", "monte fuji", "webcam", "guia"],
+      terms: ["clima", "tiempo", "temperatura", "temperaturas", "lluvia", "prevision", "meteorologia", "monte fuji", "webcam", "guia", "camaras"],
     },
     {
       id: "nav-historia",
@@ -152,7 +152,7 @@ function buildSearchIndex(lang) {
       subtitle: "Periodos históricos, samuráis, templos y cultura",
       category: "Apartados",
       tab: "historia",
-      terms: ["historia", "cultura", "samurais", "periodos", "edo", "meiji", "shogun", "historia japon", "guia"],
+      terms: ["historia", "cultura", "samurais", "periodos", "edo", "meiji", "shogun", "historia japon", "guia", "libros", "podcasts", "documentales"],
     },
     {
       id: "nav-frases",
@@ -160,7 +160,15 @@ function buildSearchIndex(lang) {
       subtitle: "Diccionario de japonés básico y normas de etiqueta",
       category: "Apartados",
       tab: "frases",
-      terms: ["frases", "idioma", "japones", "vocabulario", "diccionario", "palabras", "etiqueta", "modales", "expresiones", "guia"],
+      terms: ["frases", "idioma", "japones", "vocabulario", "diccionario", "palabras", "etiqueta", "modales", "expresiones", "guia", "costumbres"],
+    },
+    {
+      id: "nav-pendientes",
+      title: "Cosas pendientes",
+      subtitle: "Checklist de tareas antes y durante el viaje",
+      category: "Apartados",
+      tab: "pendientes",
+      terms: ["pendientes", "cosas pendientes", "checklist", "tareas", "antes de viajar", "durante el viaje", "to do", "por hacer"],
     },
     {
       id: "nav-preparativos",
@@ -168,7 +176,7 @@ function buildSearchIndex(lang) {
       subtitle: "Maleta, enchufes, seguro de viaje, eSIM y tarjetas",
       category: "Apartados",
       tab: "preparativos",
-      terms: ["preparativos", "maleta", "equipaje", "esim", "internet", "seguro", "enchufes", "adaptador", "dinero", "tarjetas", "preparacion"],
+      terms: ["preparativos", "maleta", "equipaje", "esim", "internet", "seguro", "enchufes", "adaptador", "dinero", "tarjetas", "preparacion", "ropa"],
     },
     {
       id: "nav-presupuesto",
@@ -176,7 +184,7 @@ function buildSearchIndex(lang) {
       subtitle: "Desglose de gastos, conversor y control de costes",
       category: "Apartados",
       tab: "presupuesto",
-      terms: ["presupuesto", "gastos", "dinero", "costes", "precios", "euros", "yenes", "cuanto cuesta", "pagos", "preparacion"],
+      terms: ["presupuesto", "gastos", "dinero", "costes", "precios", "euros", "yenes", "cuanto cuesta", "pagos", "preparacion", "balance", "ahorro"],
     },
     {
       id: "nav-herramientas",
@@ -184,7 +192,7 @@ function buildSearchIndex(lang) {
       subtitle: "Conversor de divisas, propinas y calculadora horaria",
       category: "Apartados",
       tab: "herramientas",
-      terms: ["herramientas", "utilidades", "conversor", "calculadora", "divisas", "cambio divisa", "hora", "horaria", "util"],
+      terms: ["herramientas", "utilidades", "conversor", "calculadora", "divisas", "cambio divisa", "hora", "horaria", "reloj", "propinas", "util"],
     },
     {
       id: "nav-emergencias",
@@ -192,7 +200,7 @@ function buildSearchIndex(lang) {
       subtitle: "Teléfonos de urgencia, embajada, hospitales y policía",
       category: "Apartados",
       tab: "emergencias",
-      terms: ["emergencias", "urgencias", "embajada", "policia", "ambulancia", "medico", "hospital", "seguro emergencia", "110", "119", "util", "utilidades"],
+      terms: ["emergencias", "urgencias", "embajada", "policia", "ambulancia", "medico", "hospital", "seguro emergencia", "110", "119", "util", "utilidades", "heymondo"],
     },
     {
       id: "nav-frikadas",
@@ -200,7 +208,7 @@ function buildSearchIndex(lang) {
       subtitle: "Tiendas frikis, anime, Pokémon, Ghibli, Akihabara y Nintendo",
       category: "Apartados",
       tab: "frikadas",
-      terms: ["frikadas", "anime", "manga", "pokemon", "ghibli", "akihabara", "nintendo", "videojuegos", "compras", "otaku"],
+      terms: ["frikadas", "anime", "manga", "pokemon", "ghibli", "akihabara", "nintendo", "videojuegos", "compras", "otaku", "nakano broadway"],
     },
     {
       id: "nav-about",
@@ -208,7 +216,7 @@ function buildSearchIndex(lang) {
       subtitle: "Información técnica, créditos y soporte PWA",
       category: "Apartados",
       tab: "about",
-      terms: ["sobre la web", "about", "creditos", "info app", "version", "pwa"],
+      terms: ["sobre la web", "about", "creditos", "info app", "version", "pwa", "vibecoding", "antigravity", "cursor", "copilot"],
     },
   ];
 
@@ -325,23 +333,24 @@ function buildSearchIndex(lang) {
       if (placeToDay[gid] == null) placeToDay[gid] = n;
     }
   }
-  // Aliases extra ciudad → día (primera noche / visita)
+  // Aliases extra ciudad → día (primera noche / visita / paradas clave)
   const cityDayHints = [
-    { terms: ["kioto", "kyoto", "keihan", "hachijoguchi", "uogashi", "kaiten sushi", "pontocho", "gion", "inari"], day: 1, title: "Kioto", subtitle: "Base días 1–5" },
-    { terms: ["tokio", "tokyo", "koko hotel", "asakusa"], day: 9, title: "Tokio", subtitle: "Base días 9–15" },
-    { terms: ["nara", "todai", "todaiji", "ciervos", "daibutsuden", "gran buda", "gran buddha", "shika senbei"], day: 2, title: "Nara", subtitle: "Día 2 · Todai-ji y ciervos" },
-    { terms: ["arashiyama", "bambu", "bambú", "tenryu-ji", "kinkaku", "kinkakuji", "ginkaku", "ginkakuji", "nishiki", "mercado nishiki", "filo de la filosofia", "heian"], day: 4, title: "Arashiyama", subtitle: "Día 4 · bosque de bambú" },
-    { terms: ["osaka", "dotonbori", "shinsekai", "kuromon", "namba", "takoyaki"], day: 5, title: "Osaka", subtitle: "Día 5" },
-    { terms: ["kanazawa", "kenroku-en", "kenrokuен", "higashichaya"], day: 6, title: "Kanazawa", subtitle: "Día 6" },
-    { terms: ["shirakawa", "shirakawa-go", "gassho", "minka"], day: 7, title: "Shirakawa-go", subtitle: "Día 7" },
-    { terms: ["takayama", "hida", "hida beef", "wagyu", "sake", "sake brewery", "jinya", "sanmachi"], day: 7, title: "Takayama", subtitle: "Días 7–8" },
-    { terms: ["magome", "tsumago", "nakasendo", "magome chaya", "cena minshuku"], day: 8, title: "Magome / Tsumago", subtitle: "Día 8 · Nakasendo" },
-    { terms: ["asakusa", "senso", "senso-ji", "narita airport", "narita", "n'ex", "nex", "narita express"], day: 1, title: "Llegada · Narita", subtitle: "Día 1 · Aterrizaje y traslado a Kioto" },
-    { terms: ["odaiba", "gundam", "teamlab", "teamlab planets", "yurikamome"], day: 10, title: "Odaiba / teamLab", subtitle: "Día 10" },
-    { terms: ["shibuya", "harajuku", "shinjuku", "meiji", "takeshita", "omoide", "shibuya sky", "shibuya crossing", "cat street", "tocho", "gobierno metropolitano", "mirador gratuito", "kabukicho"], day: 11, title: "Shibuya / Harajuku / Shinjuku", subtitle: "Día 11" },
-    { terms: ["toyosu", "ueno", "ameyoko", "odaiba", "teamlab", "teamlab planets", "yurikamome", "rainbow bridge"], day: 12, title: "Toyosu / Ueno / Odaiba", subtitle: "Día 12" },
-    { terms: ["ikebukuro", "nakano", "nintendo", "pokemon", "sunshine", "animate", "mandarake", "broadway", "akihabara", "skytree"], day: 14, title: "Ikebukuro / Nakano / Akihabara / Skytree", subtitle: "Día 14" },
-    { terms: ["fuji", "monte fuji", "fujiyama", "chureito", "oshino hakkai", "kawaguchiko", "getyourguide", "gyg", "gygx7m7nzbnl", "visionary", "saiko", "oishi", "mode gakuen", "isfujivisible", "mtfujitoday"], day: 10, title: "Monte Fuji", subtitle: "Día 10 · excursión confirmada GetYourGuide" },
+    { terms: ["madrid", "barajas", "doha", "qatar airways", "vuelo ida", "salida madrid", "escala doha"], day: 0, title: "Salida de Madrid y vuelo de ida", subtitle: "Día 0 · Madrid → Doha → Tokio" },
+    { terms: ["narita", "shinagawa", "kioto", "kyoto", "keihan", "hachijoguchi", "uogashi", "kaiten sushi", "aeon mall", "nozomi 53", "shinkansen", "smart ex"], day: 1, title: "Llegada a Japón y traslado a Kioto", subtitle: "Día 1 · Narita → Shinagawa → Kioto" },
+    { terms: ["fushimi inari", "torii", "nara", "todai", "todaiji", "ciervos", "daibutsuden", "gran buda", "gran buddha", "shika senbei", "kasuga taisha", "kofuku-ji"], day: 2, title: "Fushimi Inari y Nara", subtitle: "Día 2 · Gran Buda, ciervos y santuarios" },
+    { terms: ["ginkaku", "ginkakuji", "pabellon de plata", "paseo de la filosofia", "filosofia", "eikando", "nanzen-ji", "nanzenji", "mercado nishiki", "nishiki", "pontocho", "gion", "hanamikoji", "geishas", "tatsumi jinja"], day: 3, title: "Kioto: Higashiyama Norte y Gion", subtitle: "Día 3 · Filosofía, templos, Nishiki y geishas" },
+    { terms: ["arashiyama", "bambu", "bambú", "bosque de bambu", "tenryu-ji", "tenryuji", "togetsukyo", "kinkaku", "kinkakuji", "pabellon dorado", "ryoan-ji", "ryoanji", "jardin zen", "daitoku-ji"], day: 4, title: "Kioto Noroeste: Arashiyama y Kinkaku-ji", subtitle: "Día 4 · Bosque de bambú, templos y jardín zen" },
+    { terms: ["kiyomizu", "kiyomizudera", "sannenzaka", "ninenzaka", "yasaka", "osaka", "castillo de osaka", "dotonbori", "shinsekai", "tsutenkaku", "namba", "takoyaki", "glico"], day: 5, title: "Kioto tradicional y Castillo de Osaka", subtitle: "Día 5 · Kiyomizu-dera, Castillo de Osaka y Dotonbori" },
+    { terms: ["kanazawa", "kenroku-en", "kenrokuen", "castillo kanazawa", "higashichaya", "higashi chaya", "nagamachi", "nomura", "samurais", "barrio samurai", "thunderbird", "tsuruga", "torifito"], day: 6, title: "Kanazawa: Kenroku-en y Barrio Samurai", subtitle: "Día 6 · Kenroku-en, Higashi Chaya y Nagamachi" },
+    { terms: ["shirakawa", "shirakawa-go", "gassho", "gassho-zukuri", "takayama", "hida", "hida beef", "wagyu", "sake", "sanmachi suji", "sanmachi", "jinya", "nohi bus", "takayama ouan"], day: 7, title: "Shirakawa-go y Takayama", subtitle: "Día 7 · Aldea tradicional gassho y casco histórico" },
+    { terms: ["magome", "tsumago", "nakasendo", "sendero nakasendo", "magome chaya", "minshuku", "caminata historica", "senderismo nakasendo", "nohi bus"], day: 8, title: "Ruta Nakasendo: Magome a Tsumago", subtitle: "Día 8 · Caminata histórica entre aldeas postales" },
+    { terms: ["nakatsugawa", "nagoya", "shinano", "nozomi 358", "tokio", "tokyo", "koko hotel", "asakusa", "senso-ji", "sensoji", "nakamise"], day: 9, title: "Tránsito a Tokio y Asakusa", subtitle: "Día 9 · Llegada a la capital y templo Senso-ji" },
+    { terms: ["fuji", "monte fuji", "fujiyama", "kawaguchiko", "chureito", "oshino hakkai", "parque oishi", "oishi", "getyourguide", "gyg", "5 lagos", "cinco lagos", "webcam fuji"], day: 10, title: "Excursión al Monte Fuji y 5 Lagos", subtitle: "Día 10 · Tour en bus, Kawaguchiko, Chureito y Oshino Hakkai" },
+    { terms: ["shibuya", "shibuya crossing", "cruce shibuya", "hachiko", "shibuya sky", "meiji jingu", "harajuku", "takeshita", "cat street", "shinjuku", "tocho", "gobierno metropolitano", "omoide yokocho", "kabukicho", "godzilla"], day: 11, title: "Shibuya, Harajuku y Shinjuku", subtitle: "Día 11 · Corazón moderno, miradores y neones" },
+    { terms: ["toyosu", "mercado toyosu", "ueno", "parque ueno", "ameyoko", "yurikamome", "odaiba", "divercity", "gundam", "torre de tokio", "tokyo tower", "zojoji", "rainbow bridge"], day: 12, title: "Toyosu, Ueno, Odaiba y Torre de Tokio", subtitle: "Día 12 · Mercados, bahía, Gundam y Torre de Tokio" },
+    { terms: ["ikebukuro", "sunshine city", "nakano", "nakano broadway", "mandarake", "animate", "otaku", "akihabara", "radio kaikan", "skytree", "tokyo skytree", "nintendo tokyo", "pokemon center"], day: 13, title: "Ruta Nintendo, Compras y Skytree", subtitle: "Día 13 · Ikebukuro, Nakano Broadway, Akihabara y Skytree" },
+    { terms: ["palacio imperial", "imperial palace", "east gardens", "castillo de edo", "tokyo station", "character street", "kitte", "intermediatheque", "ginza", "ginza six", "uniqlo ginza", "itoya", "hibiya", "yurakucho"], day: 14, title: "Palacio Imperial, Tokyo Station y Ginza", subtitle: "Día 14 · Jardines imperiales, arquitectura y compras elegantes" },
+    { terms: ["kappabashi", "kappabashi dougu", "cuchillos", "tiendas cocina", "narita", "skyliner", "vuelo vuelta", "qatar airways", "despedida tokio", "aeropuerto narita"], day: 15, title: "Últimas compras en Tokio y Vuelo de regreso", subtitle: "Día 15 · Kappabashi y traslado a Narita" },
     // Transportes clave buscables por nombre y ruta
     { terms: ["nozomi", "nozomi 53", "shinkansen", "shinagawa", "17:19", "smart ex", "tren bala", "kioto"], day: 1, title: "Shinkansen Nozomi 53", subtitle: "Día 1 · Shinagawa → Kyoto 17:19" },
     { terms: ["check-in", "check in", "keihan", "hotel keihan"], day: 1, title: "Check-in Hotel Keihan Kyoto Hachijoguchi", subtitle: "Día 1 · 19:30" },
@@ -349,11 +358,9 @@ function buildSearchIndex(lang) {
     { terms: ["thunderbird", "hokuriku", "tsuruga", "kyoto kanazawa"], day: 6, title: "Thunderbird → Hokuriku Shinkansen", subtitle: "Día 6 · Kioto → Kanazawa" },
     { terms: ["nohi bus", "kanazawa shirakawa", "shirakawa-go", "nohi", "08:40"], day: 7, title: "Nohi Bus Kanazawa → Shirakawa-go", subtitle: "Día 7 · 08:40" },
     { terms: ["nohi bus", "shirakawa takayama", "shirakawa-go", "takayama", "13:15"], day: 7, title: "Nohi Bus Shirakawa-go → Takayama", subtitle: "Día 7 · 13:15" },
-    { terms: ["hida express", "hida", "gifu", "takayama kanazawa"], day: 7, title: "JR Hida Express", subtitle: "Día 7 · Kanazawa → Takayama" },
     { terms: ["nohi bus", "nohi", "bus magome", "takayama magome", "08:00", "nakasendo"], day: 8, title: "Nohi Bus Takayama → Magome", subtitle: "Día 8 · 08:00" },
     { terms: ["shinano", "express shinano", "nakatsugawa", "nagoya", "09:57"], day: 9, title: "JR Shinano 4 → Nagoya", subtitle: "Día 9 · Nakatsugawa 09:57 → Nagoya 10:53" },
     { terms: ["nozomi 358", "nozomi", "shinkansen nagoya", "11:29", "13:06", "tokaido shinkansen"], day: 9, title: "Shinkansen Nozomi 358", subtitle: "Día 9 · Nagoya 11:29 → Tokyo 13:06" },
-    { terms: ["tobu nikko", "nikko express", "tobu asakusa", "toshogu", "world heritage pass", "kegon", "cataratas kegon", "chuzenji", "lago chuzenji", "shinkyo", "puente shinkyo", "irohazaka"], day: 13, title: "Tobu Limited Express a Nikko", subtitle: "Día 13 · Tobu-Asakusa → Tobu-Nikko" },
   ];
   for (const c of cityDayHints) {
     items.push(entry({
@@ -864,53 +871,6 @@ function buildSearchIndex(lang) {
     }));
   }
 
-  // ── Clima ─────────────────────────────────────────────────────────
-  items.push(entry({
-    id: "clima",
-    title: "Clima en septiembre",
-    subtitle: "Previsión y consejos de ropa",
-    category: "Clima",
-    tab: "clima",
-    terms: ["clima", "tiempo", "lluvia", "temperatura", "paraguas", "humedad", "septiembre"],
-  }));
-
-  // ── Emergencias ───────────────────────────────────────────────────
-  items.push(entry({
-    id: "emergencia-110",
-    title: "Policía · 110",
-    subtitle: "Emergencias en Japón",
-    category: "Emergencias",
-    tab: "emergencias",
-    terms: ["110", "policia", "policía", "emergencia"],
-  }));
-  items.push(entry({
-    id: "emergencia-119",
-    title: "Ambulancia / Bomberos · 119",
-    subtitle: "Emergencias médicas o incendios",
-    category: "Emergencias",
-    tab: "emergencias",
-    terms: ["119", "ambulancia", "bomberos", "medico", "médico", "hospital"],
-  }));
-  items.push(entry({
-    id: "embajada",
-    title: "Embajada de España en Tokio",
-    subtitle: "Contacto consular",
-    category: "Emergencias",
-    tab: "emergencias",
-    targetId: "emergency-embassy",
-    terms: ["embajada", "consulado", "españa", "roppongi"],
-  }));
-
-  // ── Preparativos ──────────────────────────────────────────────────
-  items.push(entry({
-    id: "prep",
-    title: "Preparativos / maleta",
-    subtitle: "Ropa, documentos, chubasquero…",
-    category: "Preparativos",
-    tab: "preparativos",
-    terms: ["maleta", "ropa", "chubasquero", "pasaporte", "checklist", "preparativos", "equipaje"],
-  }));
-
   return items;
 }
 
@@ -978,7 +938,7 @@ export const QUICK_SUGGESTIONS = [
   { label: "Seguro", query: "heymondo" },
   { label: "Visit Japan Web", query: "visit japan" },
   { label: "Pokémon", query: "pokemon" },
-  { label: "Nikko", query: "nikko" },
+  { label: "Akihabara", query: "akihabara" },
 ];
 
 export function searchGlobal(query, { limit = 15, minChars = 3, lang = "es" } = {}) {
