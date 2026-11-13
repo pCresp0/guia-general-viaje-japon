@@ -60,12 +60,28 @@ export default defineConfig(({ mode }) => {
           // (con sus fixes) toma el control en cuanto termina de instalarse.
           skipWaiting: true,
           clientsClaim: true,
-          globPatterns: ['**/*.{js,css,html,png,svg,ico,webp}'],
+          globPatterns: ['**/*.{js,css,html,png,svg,ico,webp,jpg,jpeg}'],
           navigateFallback: `${basePath}index.html`,
           // El contenido del sitio (itinerario, guías, mapa) ha crecido más
           // allá del límite por defecto de precaché de Workbox (2 MiB) --
           // sin esto el build falla en vez de simplemente avisar.
           maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+          runtimeCaching: [
+            {
+              urlPattern: /\.(?:png|jpg|jpeg|svg|webp)$/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'images-cache',
+                expiration: {
+                  maxEntries: 150,
+                  maxAgeSeconds: 60 * 60 * 24 * 30, // 30 días
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
+            },
+          ],
         },
       }),
     ],

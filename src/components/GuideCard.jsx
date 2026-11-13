@@ -27,7 +27,8 @@ function GuideBody({ guideId, guide, refs, localImage, accent }) {
           <img
             src={assetUrl(localImage)}
             alt={guide.name}
-            loading="lazy"
+            loading="eager"
+            decoding="async"
             onError={() => setImgError(true)}
             style={{
               width: "100%", aspectRatio: "16 / 10", objectFit: "cover",
