@@ -182,6 +182,7 @@ export default function GlobalSearch({ onNavigate, variant = "bar" }) {
       <button
         ref={btnRef}
         type="button"
+        data-search-trigger="true"
         onClick={() => (open ? closePanel() : openPanel())}
         aria-label={t("search.ariaLabel")}
         aria-expanded={open}

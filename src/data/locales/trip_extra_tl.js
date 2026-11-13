@@ -4,10 +4,10 @@ export const tripMeta = {
   welcomeParagraphs: [
     "Maligayang pagdating sa pangkalahatang gabay ng aking biyahe sa Japan noong Setyembre 2026! Ang website na ito ay ginawa upang makita ng sinumang nagpaplanong pumunta sa Japan ang eksaktong ruta, mga tren, kainan, hotel, at mga lugar na binisita.",
     "Tumagal ang biyahe ng <strong>16 na araw</strong> (mula Setyembre 6 hanggang 21). Nilibot namin ang Kansai (Kyoto at Osaka), Japanese Alps (Kanazawa, Takayama, Magome), at nagtapos sa Tokyo na may day trip sa Mount Fuji.",
-    "Tingnan ang seksyon ng <strong>Paghahanda</strong> at <strong>Mga Flight</strong> bago umalis para sa insurance, eSIM, at mga gamit. Maaari mo ring galugarin ang <strong>Itineraryo</strong> araw-araw o ang <strong>Mapa</strong>.",
-    "Lahat ng bahagi ay interaktibo. Huwag mag-atubiling mag-browse at gamitin ito bilang batayan para sa iyong sariling pakikipagsapalaran.",
-    "Sa bandang ibaba sa footer makikita ang aking <strong>social media at contact links</strong>. Maaari mo akong padalhan ng mensahe para sa anumang tanong!",
-    "At para sa mga tech enthusiast / freaks: sa seksyong <strong>'Tungkol sa web'</strong> at sa <strong>README ng repository</strong>, makikita kung paano i-clone ang website na ito at i-customize sa pamamagitan ng coding o <em>vibecoding</em> gamit ang AI."
+    "Tingnan ang seksyon ng <a href=\"#preparativos\" data-tab=\"preparativos\" class=\"inline-tab-link\">Paghahanda</a> at <a href=\"#vuelos\" data-tab=\"vuelos\" class=\"inline-tab-link\">Mga Flight</a> bago umalis para sa insurance, eSIM, at mga gamit. Maaari mo ring galugarin ang <a href=\"#itinerario\" data-tab=\"itinerario\" class=\"inline-tab-link\">Itineraryo</a> araw-araw o ang <a href=\"#mapa\" data-tab=\"mapa\" class=\"inline-tab-link\">Mapa</a>.",
+    "Lahat ng bahagi ay interaktibo. Huwag mag-atubiling mag-browse, gamitin ang <a href=\"#buscar\" data-action=\"search\" class=\"inline-tab-link\">paghahanap</a> at gamitin ito bilang batayan para sa iyong sariling pakikipagsapalaran.",
+    "Sa bandang ibaba sa footer makikita ang aking <a href=\"#main-footer\" data-scroll=\"main-footer\" class=\"inline-tab-link\">social media at contact links</a>. Maaari mo akong padalhan ng mensahe para sa anumang tanong!",
+    "At para sa mga tech enthusiast / freaks: sa seksyong <a href=\"#about\" data-tab=\"about\" class=\"inline-tab-link\">'Tungkol sa web'</a> at sa <strong>README ng <a href=\"https://github.com/pCresp0/guia-general-viaje-japon\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-tab-link\">repository sa GitHub</a></strong>, makikita kung paano i-clone ang website na ito at i-customize sa pamamagitan ng coding o <em>vibecoding</em> gamit ang AI."
   ],
   about: {
     title: "Tungkol sa web",

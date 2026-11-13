@@ -4,10 +4,10 @@ export const tripMeta = {
   welcomeParagraphs: [
     "Bienvenue sur le guide général de mon voyage au Japon en septembre 2026 ! Ce site est conçu pour permettre à quiconque souhaitant organiser un voyage similaire de découvrir mon itinéraire exact, les trains, les restaurants, les hôtels et les lieux visités.",
     "Le voyage a duré <strong>16 jours</strong> (du 6 au 21 septembre). Nous avons exploré le Kansai (Kyoto et Osaka), les Alpes japonaises (Kanazawa, Takayama, Magome) et conclu à Tokyo avec une excursion au Mont Fuji.",
-    "Consultez les rubriques <strong>Préparatifs</strong> et <strong>Vols</strong> pour les assurances, eSIM et bagages. Vous pouvez également explorer l'<strong>Itinéraire</strong> jour par jour ou la <strong>Carte</strong> interactive.",
-    "Toutes les sections sont interactives. N'hésitez pas à naviguer et à vous inspirer pour votre propre voyage.",
-    "Tout en bas dans le pied de page (footer), vous trouverez mes <strong>réseaux sociaux et contacts</strong>. N'hésitez pas à m'écrire pour toute question !",
-    "Et pour les passionnés de tech : dans la section <strong>'À propos du site'</strong> et dans le <strong>README du dépôt</strong>, découvrez comment cloner ce site pour l'adapter à vos envies via programmation ou <em>vibecoding</em> avec l'IA."
+    "Consultez les rubriques <a href=\"#preparativos\" data-tab=\"preparativos\" class=\"inline-tab-link\">Préparatifs</a> et <a href=\"#vuelos\" data-tab=\"vuelos\" class=\"inline-tab-link\">Vols</a> pour les assurances, eSIM et bagages. Vous pouvez également explorer l'<a href=\"#itinerario\" data-tab=\"itinerario\" class=\"inline-tab-link\">Itinéraire</a> jour par jour ou la <a href=\"#mapa\" data-tab=\"mapa\" class=\"inline-tab-link\">Carte</a> interactive.",
+    "Toutes les sections sont interactives. N'hésitez pas à naviguer, utiliser <a href=\"#buscar\" data-action=\"search\" class=\"inline-tab-link\">la recherche</a> et vous inspirer pour votre propre voyage.",
+    "Tout en bas dans le pied de page (footer), vous trouverez mes <a href=\"#main-footer\" data-scroll=\"main-footer\" class=\"inline-tab-link\">réseaux sociaux et contacts</a>. N'hésitez pas à m'écrire pour toute question !",
+    "Et pour les passionnés de tech : dans la section <a href=\"#about\" data-tab=\"about\" class=\"inline-tab-link\">'À propos du site'</a> et dans le <strong>README du <a href=\"https://github.com/pCresp0/guia-general-viaje-japon\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-tab-link\">dépôt GitHub</a></strong>, découvrez comment cloner ce site pour l'adapter à vos envies via programmation ou <em>vibecoding</em> avec l'IA."
   ],
   about: {
     title: "À propos du site",

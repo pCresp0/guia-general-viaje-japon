@@ -4,10 +4,10 @@ export const tripMeta = {
   welcomeParagraphs: [
     "Welcome to the general guide of my trip to Japan in September 2026! This site is designed so anyone planning a similar trip can see exactly the route I took, trains, places I ate, hotels, and sights visited.",
     "The trip lasted <strong>16 days</strong> (September 6–21). We explored Kansai (Kyoto and Osaka), the Japanese Alps (Kanazawa, Takayama, Magome), and wrapped up in Tokyo with a day trip to Mount Fuji.",
-    "Check out the <strong>Preparations</strong> and <strong>Flights</strong> sections before you go for insurance, eSIM, and packing tips. You can also explore the day-by-day <strong>Itinerary</strong> or the interactive <strong>Map</strong>.",
-    "All sections are fully interactive. Feel free to browse, search, and use this guide as a base for your own adventure.",
-    "At the bottom in the footer you will find my <strong>social and contact networks</strong>. Feel free to reach out with any questions or tips you need!",
-    "And for the tech-savvy / freaks: check out <strong>'About the web'</strong> and the <strong>repository README</strong> for instructions on how to clone this project and customize it via coding or <em>vibecoding</em> with AI."
+    "Check out the <a href=\"#preparativos\" data-tab=\"preparativos\" class=\"inline-tab-link\">Preparations</a> and <a href=\"#vuelos\" data-tab=\"vuelos\" class=\"inline-tab-link\">Flights</a> sections before you go for insurance, eSIM, and packing tips. You can also explore the day-by-day <a href=\"#itinerario\" data-tab=\"itinerario\" class=\"inline-tab-link\">Itinerary</a> or the interactive <a href=\"#mapa\" data-tab=\"mapa\" class=\"inline-tab-link\">Map</a>.",
+    "All sections are fully interactive. Feel free to browse, use <a href=\"#buscar\" data-action=\"search\" class=\"inline-tab-link\">the search bar</a>, and use this guide as a base for your own adventure.",
+    "At the bottom in the footer you will find my <a href=\"#main-footer\" data-scroll=\"main-footer\" class=\"inline-tab-link\">social and contact networks</a>. Feel free to reach out with any questions or tips you need!",
+    "And for the tech-savvy / freaks: check out <a href=\"#about\" data-tab=\"about\" class=\"inline-tab-link\">'About the web'</a> and the <strong>README in the <a href=\"https://github.com/pCresp0/guia-general-viaje-japon\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-tab-link\">GitHub repository</a></strong> for instructions on how to clone this project and customize it via coding or <em>vibecoding</em> with AI."
   ],
   about: {
     title: "About the web",

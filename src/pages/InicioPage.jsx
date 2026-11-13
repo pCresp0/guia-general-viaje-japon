@@ -23,7 +23,34 @@ export default function InicioPage({ onNavigate }) {
       {/* Qué es esto / Para qué sirve la web */}
       <section className="mb-8">
         <p className="eyebrow mb-3" style={{ color: "var(--ink-soft)" }}>Sobre esta guía</p>
-        <div className="rounded-2xl p-5 shadow-xs" style={{ background: "var(--paper-raised)", border: "1px solid var(--line)", display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div
+          onClick={(e) => {
+            const link = e.target.closest("a");
+            if (!link) return;
+            const tabId = link.getAttribute("data-tab");
+            if (tabId) {
+              e.preventDefault();
+              onNavigate?.(tabId);
+              return;
+            }
+            const action = link.getAttribute("data-action");
+            if (action === "search") {
+              e.preventDefault();
+              const searchBtn = document.querySelector('[data-search-trigger="true"]') || document.querySelector('button[aria-label="Buscar en la guía"]');
+              searchBtn?.click();
+              return;
+            }
+            const scrollTarget = link.getAttribute("data-scroll");
+            if (scrollTarget) {
+              e.preventDefault();
+              const el = document.getElementById(scrollTarget);
+              el?.scrollIntoView({ behavior: "smooth" });
+              return;
+            }
+          }}
+          className="rounded-2xl p-5 shadow-xs"
+          style={{ background: "var(--paper-raised)", border: "1px solid var(--line)", display: "flex", flexDirection: "column", gap: "16px" }}
+        >
           {tripMeta.welcomeParagraphs?.map((paragraph, idx) => (
             <p key={idx} style={{ fontSize: 14.5, color: "var(--ink)", lineHeight: 1.6, margin: 0 }} dangerouslySetInnerHTML={{ __html: paragraph }} />
           ))}

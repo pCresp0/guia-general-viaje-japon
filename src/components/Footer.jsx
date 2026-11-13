@@ -2,7 +2,7 @@ import wavesSidebarUrl from "../assets/waves-sidebar.webp";
 
 export default function Footer() {
   return (
-    <footer style={{
+    <footer id="main-footer" style={{
       position: "relative",
       flexShrink: 0,
       width: "100%",

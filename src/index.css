@@ -452,6 +452,22 @@ main > div > * {
    en <body>, ver ItineraryPrintView.jsx) pero oculto en pantalla; sólo
    se muestra dentro de @media print, momento en el que se oculta el
    resto de la app (menú, cabecera, footer...). */
+/* Hipervínculos interactivos a pestañas y secciones internas */
+.inline-tab-link {
+  color: var(--shu);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.inline-tab-link:hover {
+  opacity: 0.8;
+  color: var(--shu-deep);
+}
+
 .print-only {
   display: none;
 }
