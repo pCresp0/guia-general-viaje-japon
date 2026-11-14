@@ -256,7 +256,7 @@ function HotelCard({ stay, compact = false }) {
       {opt.url && (
         <a href={opt.url} style={{ color: "#7a2c2e", display: "inline-flex", alignItems: "center", gap: 4 }}>
           <img src={bookingIcon} alt="" width={11} height={11} style={{ borderRadius: 2 }} />
-          Ver reserva ↗
+          Ver hotel en Booking ↗
         </a>
       )}
       {stay.warning && (

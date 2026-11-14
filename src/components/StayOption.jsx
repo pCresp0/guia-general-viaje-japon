@@ -1,5 +1,6 @@
 import { MapPin, KeyRound, BedDouble, Phone, CalendarCheck, CalendarX } from "lucide-react";
 import { mapsUrl } from "../utils/maps";
+import { useT } from "../i18n/LanguageContext";
 import googleMapsIcon from "../assets/icons/google-maps.png";
 import bookingIcon from "../assets/icons/booking.png";
 
@@ -34,6 +35,7 @@ function Field({ label, icon: Icon, children, mono = false }) {
 }
 
 export default function StayOption({ option, city }) {
+  const t = useT();
   const mapQuery = option.address
     ? `${option.name}, ${option.address}`
     : `${option.name}, ${city}, Japan`;
@@ -116,7 +118,7 @@ export default function StayOption({ option, city }) {
             style={{ background: "var(--indigo)", color: "white", fontSize: 12, fontWeight: 700, textDecoration: "none" }}
           >
             <img src={bookingIcon} alt="" width={14} height={14} style={{ borderRadius: 3, flexShrink: 0 }} />
-            Ver reserva ↗
+            {t("hotels.viewBooking")} ↗
           </a>
         )}
         <a
