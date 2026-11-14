@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { Cloud, CloudRain, Sun, CloudSun, MapPin, Droplets, Loader2, Info, RefreshCw, ExternalLink, Calendar, RotateCcw } from "lucide-react";
 
-import { useContent, useT } from "../i18n/LanguageContext";
+import { useContent, useT, useLang } from "../i18n/LanguageContext";
 import { Highlightable } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
 import { diffDays, todayISO } from "../utils/date";
+import { getMonthlyData, MONTH_NAMES } from "../data/weatherMonthly";
 
 function getTomorrowISO() {
   const d = new Date();
@@ -182,6 +183,7 @@ function computeCityWeatherBadges(w, liveWeather, dailyWeather, weatherLabels) {
 export default function WeatherPage() {
   const { weatherData, dailyWeather, weatherLabels } = useContent();
   const t = useT();
+  const { lang } = useLang();
 
   const defaultStartDate = getTomorrowISO();
   const [userStartDate, setUserStartDate] = useState(() => {
@@ -194,8 +196,31 @@ export default function WeatherPage() {
 
   const effectiveStartDate = userStartDate.trim() ? userStartDate : defaultStartDate;
 
+  // El mes por defecto para las condiciones generales es Septiembre (9), mes del viaje original.
+  // Si el usuario introduce una fecha arriba, se actualiza automáticamente a ese mes.
+  const [selectedMonthOverride, setSelectedMonthOverride] = useState(null);
+
+  const dateDerivedMonth = useMemo(() => {
+    if (!userStartDate.trim()) return 9; // Por defecto septiembre
+    const parts = userStartDate.split("-").map(Number);
+    const m = parts[1];
+    return m >= 1 && m <= 12 ? m : 9;
+  }, [userStartDate]);
+
+  const dateDerivedYear = useMemo(() => {
+    if (!userStartDate.trim()) return 2026;
+    const parts = userStartDate.split("-").map(Number);
+    return parts[0] || 2026;
+  }, [userStartDate]);
+
+  const activeMonth = selectedMonthOverride ?? dateDerivedMonth;
+  const activeYear = dateDerivedYear;
+
+  const monthlyData = useMemo(() => getMonthlyData(activeMonth, lang), [activeMonth, lang]);
+
   const handleDateChange = (val) => {
     setUserStartDate(val);
+    setSelectedMonthOverride(null); // Re-sincronizar con el mes de la fecha elegida
     try {
       if (val) {
         localStorage.setItem("trip_weather_start_date", val);
@@ -208,7 +233,8 @@ export default function WeatherPage() {
   };
 
   const handleResetToTomorrow = () => {
-    handleDateChange(defaultStartDate);
+    handleDateChange("");
+    setSelectedMonthOverride(null);
   };
 
   const [rawWeatherMap, setRawWeatherMap] = useState(null);
@@ -340,7 +366,13 @@ export default function WeatherPage() {
               </p>
             </div>
             <p className="text-xs mt-1 m-0" style={{ color: "var(--ink-soft)", lineHeight: 1.5 }}>
-              Indica qué día empieza tu ruta para calcular la previsión meteorológica real y la cuenta atrás de cada etapa:
+              {lang === "en"
+                ? "Set your trip start date to calculate live forecasts and the countdown for each day. By default, the countdown starts tomorrow and general historical conditions show September (original trip month). Selecting any date updates the general conditions and packing advice to that month."
+                : lang === "fr"
+                ? "Indiquez la date de départ pour calculer les prévisions en direct et le compte à rebours de chaque étape. Par défaut, le compte à rebours démarre demain et les conditions historiques affichent septembre. Choisir une date adapte les conditions générales et conseils au mois sélectionné."
+                : lang === "tl"
+                ? "Piliin ang araw ng simula ng iyong biyahe para sa live forecast at countdown. Bilang default, magsisimula bukas ang countdown at ang pangkalahatang kondisyon ay Setyembre. Ang pagpili ng petsa ay mag-aakma ng pangkalahatang kondisyon at payo para sa buwang iyon."
+                : "Indica qué día empieza tu ruta para calcular la previsión meteorológica real y la cuenta atrás de cada etapa. Si no introduces fecha, por defecto la cuenta atrás empieza mañana y las condiciones históricas generales muestran septiembre (mes de la ruta original). Al elegir una fecha, las condiciones generales y los consejos se adaptan automáticamente a ese mes."}
             </p>
           </div>
           
@@ -356,7 +388,7 @@ export default function WeatherPage() {
                 color: "var(--ink)",
               }}
             />
-            {userStartDate && userStartDate !== defaultStartDate && (
+            {userStartDate && (
               <button
                 type="button"
                 onClick={handleResetToTomorrow}
@@ -366,10 +398,10 @@ export default function WeatherPage() {
                   borderColor: "rgba(2, 132, 199, 0.25)",
                   color: "#0284c7",
                 }}
-                title="Restablecer para empezar mañana por defecto"
+                title={lang === "en" ? "Reset to default (starts tomorrow / September baseline)" : "Restablecer por defecto (empieza mañana / clima en septiembre)"}
               >
                 <RotateCcw size={12} />
-                Empezar mañana
+                {lang === "en" ? "Reset" : lang === "fr" ? "Réinitialiser" : lang === "tl" ? "I-reset" : "Restablecer"}
               </button>
             )}
           </div>
@@ -377,13 +409,17 @@ export default function WeatherPage() {
 
         {/* Resumen del rango de fechas */}
         <div className="mt-3 pt-3 flex flex-wrap items-center justify-between gap-2 text-xs border-t" style={{ borderColor: "var(--line)", color: "var(--ink-soft)" }}>
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2 flex-wrap">
             <span className="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-              {effectiveStartDate === defaultStartDate ? "✨ Por defecto: empieza mañana" : "🗓️ Fecha personalizada"}
+              {effectiveStartDate === defaultStartDate ? (lang === "en" ? "✨ Default: starts tomorrow" : "✨ Por defecto: empieza mañana") : (lang === "en" ? "🗓️ Custom date" : "🗓️ Fecha personalizada")}
+            </span>
+            <span className="text-[11px] px-2 py-0.5 rounded font-medium" style={{ background: "rgba(30, 58, 138, 0.06)", color: "var(--indigo)" }}>
+              {lang === "en" ? `Climatic baseline: ${monthlyData.monthName} ${activeYear}` : `Clima general: ${monthlyData.monthName} ${activeYear}`}
             </span>
           </div>
           <span className="font-medium" style={{ color: "var(--ink)" }}>
-            Ruta (15 días): <strong>{formatRangeLabel(effectiveStartDate, displayWeather.length)}</strong>
+            {lang === "en" ? "Route (15 days): " : "Ruta (15 días): "}
+            <strong>{formatRangeLabel(effectiveStartDate, displayWeather.length)}</strong>
           </span>
         </div>
       </div>
@@ -491,11 +527,38 @@ export default function WeatherPage() {
       </div>
 
       {/* City weather overview */}
-      <p className="eyebrow mb-3 mt-8 flex items-center justify-between" style={{ color: "var(--ink-soft)" }}>
-        <span>{weatherLabels.condicionesGrales}</span>
-      </p>
+      <div className="mt-8 mb-3 flex flex-wrap items-center justify-between gap-2">
+        <p className="eyebrow m-0" style={{ color: "var(--ink-soft)" }}>
+          <span>
+            {monthlyData.monthName.toUpperCase()} {activeYear} — {weatherLabels.condicionesGrales?.includes("—") ? weatherLabels.condicionesGrales.split("—")[1].trim().toUpperCase() : "CONDICIONES GENERALES"}
+          </span>
+        </p>
+        <div className="flex items-center gap-1.5 text-xs">
+          <label htmlFor="month-select" className="text-xs font-semibold" style={{ color: "var(--ink-soft)" }}>
+            {lang === "en" ? "Month:" : lang === "fr" ? "Mois :" : lang === "tl" ? "Buwan:" : "Mes:"}
+          </label>
+          <select
+            id="month-select"
+            value={activeMonth}
+            onChange={(e) => setSelectedMonthOverride(Number(e.target.value))}
+            className="px-2.5 py-1 rounded-lg text-xs font-semibold border cursor-pointer focus:outline-none transition-colors"
+            style={{
+              background: "var(--paper-raised)",
+              borderColor: "var(--line)",
+              color: "var(--indigo)",
+            }}
+          >
+            {(MONTH_NAMES[lang && MONTH_NAMES[lang] ? lang : "es"] || MONTH_NAMES.es).map((mName, i) => (
+              <option key={i + 1} value={i + 1}>
+                {mName} {i + 1 === 9 ? `(${lang === "en" ? "trip default" : "defecto viaje"})` : ""}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
       <div className="grid gap-3 mb-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
-        {weatherData.map((w, idx) => {
+        {monthlyData.cities.map((w, idx) => {
           const cityDays = displayWeather ? displayWeather.filter(d => d.city === w.city) : [];
           const liveAvgHigh = cityDays.length > 0 ? Math.round(cityDays.reduce((acc, d) => acc + d.high, 0) / cityDays.length) : null;
           const liveAvgRain = cityDays.length > 0 ? Math.round(cityDays.reduce((acc, d) => acc + d.rain, 0) / cityDays.length) : null;
@@ -508,7 +571,7 @@ export default function WeatherPage() {
               target="_blank" rel="noopener noreferrer"
               className="rounded-xl p-4 border flex flex-col justify-between transition-all duration-200 hover:border-slate-400 hover:shadow-md active:scale-[0.99] no-underline text-inherit block group cursor-pointer"
               style={{ borderColor: "var(--line)", background: "var(--paper-raised)", textDecoration: "none" }}
-              title={`Ver previsión detallada de ${w.city} en Google Weather ↗`}
+              title={`Ver previsión detallada de ${t("city." + w.city) || w.city} en Google Weather ↗`}
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
@@ -524,7 +587,7 @@ export default function WeatherPage() {
                   </div>
                 </div>
                 <p style={{ fontSize: 13.5, fontWeight: 700, color: "var(--ink)", marginBottom: 2 }}>
-                  {w.city}
+                  {t("city." + w.city) || w.city}
                 </p>
                 <div className="flex items-baseline gap-1.5 mb-2">
                   <span style={{ fontSize: 18, color: "var(--shu)", fontWeight: 700, lineHeight: 1 }}>
@@ -535,14 +598,16 @@ export default function WeatherPage() {
                       {w.avg}°C
                     </span>
                   )}
-                  <span style={{ fontSize: 11, color: "var(--ink-soft)" }}>media</span>
+                  <span style={{ fontSize: 11, color: "var(--ink-soft)" }}>
+                    {lang === "en" ? "avg" : lang === "fr" ? "moy." : "media"}
+                  </span>
                 </div>
                 <p style={{ fontSize: 11, color: "var(--ink-soft)", lineHeight: 1.4 }}>
                   {w.condition}
                 </p>
                 <p style={{ fontSize: 10, color: "var(--ink-soft)", marginTop: 4, opacity: 0.8 }}>
                   {weatherLabels.lluvia} {liveAvgRain != null ? `${liveAvgRain}% prev.` : w.precip} 
-                  {liveAvgRain != null && <span className="opacity-60"> (habitual: {w.precip})</span>}
+                  {liveAvgRain != null && <span className="opacity-60"> ({lang === "en" ? "typical:" : "habitual:"} {w.precip})</span>}
                 </p>
               </div>
               {badges.length > 0 && (
@@ -576,7 +641,7 @@ export default function WeatherPage() {
       {/* Tips */}
       <div className="rounded-xl p-4 mt-6 shadow-xs" style={{ background: "var(--paper-raised)", border: "1px solid rgba(46,125,91,0.25)", borderLeft: "4px solid var(--forest)" }}>
         <p style={{ fontSize: 12.5, color: "var(--forest)", lineHeight: 1.6, margin: 0, fontWeight: 600 }}>
-          {weatherLabels.tipTexto}
+          {monthlyData.tip}
         </p>
       </div>
 
