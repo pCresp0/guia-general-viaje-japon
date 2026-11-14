@@ -71,7 +71,7 @@ export const sections = [
       { id: "chubasquero", text: "Chubasquero / paraguas plegable compacto" },
       { id: "ropa-interior", text: "Calzoncillos / Ropa interior" },
       { id: "calcetines", text: "Calcetines (llevar suficientes y sin agujeros: en Japón te descalzas constantemente en templos, ryokans y restaurantes tradicionales)" },
-      { id: "zapatillas-deporte", text: "Zapatillas de deporte para patear la ciudad (se caminan 15.000–25.000 pasos diarios)" },
+      { id: "zapatillas-deporte", text: "Zapatillas de deporte para patear la ciudad (se caminan de 20.000 a 35.000 pasos diarios)" },
       { id: "zapatillas-repuesto", text: "Zapatillas de repuesto para andar/paseo por la ciudad corto" },
       { id: "chanclas", text: "Chanclas" },
       { id: "banador", text: "Bañador (por si visitáis onsens mixtos, spa o zonas acuáticas)" },
