@@ -27,9 +27,11 @@ export default function InfoPage() {
         <h1 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>
           {t("flights.title")}
         </h1>
-        <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
-          {t("flights.intro")}
-        </p>
+        <div style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }} className="space-y-2">
+          {t("flights.intro").split("\n\n").map((p, idx) => (
+            <p key={idx} style={{ margin: 0 }}>{p}</p>
+          ))}
+        </div>
       </div>
 
       {/* QR Visit Japan Web para entrada a Japón */}

@@ -105,7 +105,7 @@ export default {
   // ── Vuelos ────────────────────────────────────────────────────────
   "flights.eyebrow": "Logística",
   "flights.title": "Vuelos",
-  "flights.intro": "Para nuestro viaje elegimos estos vuelos internacionales de ida y vuelta con Qatar Airways, conectando Madrid con Tokio (Narita) mediante una escala rápida y cómoda en Doha. Compartimos aquí la combinación de vuelos, tiempos de escala, política de equipaje y precio de referencia por persona, junto con el acceso directo a Visit Japan Web para el control de aduanas e inmigración, para que te sirvan de guía o comparación a la hora de buscar tus propios billetes a Japón.",
+  "flights.intro": "Para mi viaje a Japón elegí estos vuelos internacionales de ida y vuelta con Qatar Airways, conectando Madrid con Tokio (Narita) mediante una escala rápida y cómoda en Doha.\n\nTe comparto aquí la combinación exacta de vuelos, tiempos de escala, política de equipaje y precio de referencia por persona, junto con el acceso directo a Visit Japan Web para el control de aduanas e inmigración, para que te sirvan de guía o comparación a la hora de buscar tus propios billetes a Japón.",
   "flights.confirmed": "Vuelos confirmados",
   "flights.outbound": "Ida",
   "flights.return": "Vuelta",
@@ -128,7 +128,7 @@ export default {
   // ── Hoteles ───────────────────────────────────────────────────────
   "hotels.eyebrow": "Alojamiento",
   "hotels.title": "Hoteles",
-  "hotels.intro": "Para nuestro viaje de 16 días por Japón seleccionamos estos alojamientos como base estratégica por su cercanía inmediata a estaciones principales de tren y metro (en Kioto, Kanazawa, Takayama y Tokio), combinados con la experiencia auténtica de dormir en un minshuku tradicional en el pueblo postal de Magome. Te dejamos cada ficha con horarios de check-in/out, consejos prácticos, precios de referencia por persona, la dirección exacta en japonés para mapas o taxistas y el enlace directo para consultar o reservar cada hotel en Booking si te encaja para tu propio viaje.",
+  "hotels.intro": "Para mi viaje de 16 días por Japón seleccioné estos alojamientos como base estratégica por su cercanía inmediata a estaciones principales de tren y metro (en Kioto, Kanazawa, Takayama y Tokio), combinados con la experiencia auténtica de dormir en un minshuku tradicional en el pueblo postal de Magome.\n\nTe comparto la ficha de cada hotel con sus horarios de check-in/out, consejos prácticos, precios de referencia por persona, la dirección exacta en japonés para mapas o taxistas y el enlace directo para consultar o reservar cada hotel en Booking si te encaja para tu propio viaje.",
   "hotels.checkIn": "Check-in",
   "hotels.checkOut": "Check-out",
   "hotels.pin": "PIN",
@@ -140,9 +140,9 @@ export default {
   "hotels.groupTotal": "Total grupo",
 
   // ── Transportes ───────────────────────────────────────────────────
-  "transport.eyebrow": "Cómo nos movemos",
+  "transport.eyebrow": "Cómo moverse",
   "transport.title": "Transportes",
-  "transport.intro": "En esta sección recopilamos todos los transportes que utilizamos a lo largo de nuestro viaje de 16 días por Japón: trenes bala (Shinkansen), trenes exprés y locales de JR, autobuses alpinos de montaña por los Alpes (Nohi Bus) y líneas de metro urbano. Puedes consultar cada trayecto con sus horarios orientativos, precios de referencia por persona, recomendaciones de reserva anticipada y cómo moverte de forma fácil con tarjetas IC (Suica/Pasmo) para que te sirva como guía práctica en tu propia ruta.",
+  "transport.intro": "En esta sección recopilo todos los transportes que utilicé a lo largo de mi viaje de 16 días por Japón: trenes bala (Shinkansen), trenes exprés y locales de JR, autobuses alpinos de montaña por los Alpes (Nohi Bus) y líneas de metro urbano.\n\nTe dejo detallado cada trayecto con sus horarios orientativos, precios de referencia por persona, recomendaciones de reserva anticipada y cómo moverte de forma fácil con tarjetas IC (Suica/Pasmo) para que te sirva como guía práctica en tu propia ruta.",
   "transport.byDay": "Trayectos por día",
   "transport.totalCost": "Coste total",
   "transport.suicaTitle": "Tarjeta Suica",
@@ -218,15 +218,15 @@ export default {
   "weather.min": "Mín",
 
   // ── Historia ──────────────────────────────────────────────────────
-  "history.eyebrow": "Para entender lo que vais a ver",
+  "history.eyebrow": "Para entender lo que vas a ver",
   "history.title": "Historia de Japón",
   "history.intro":
-    "Un recorrido por más de 2.000 años de historia japonesa organizado cronológicamente, desde los orígenes antiguos hasta la era moderna. Cada periodo incluye una síntesis narrada con voz nativa (Text-to-Speech) y enlaces directos a los templos, castillos y ciudades que se visitan en este viaje.",
-  "history.seeOnTrip": "Lo veréis en el viaje",
+    "Un recorrido por más de 2.000 años de historia japonesa organizado cronológicamente, desde los orígenes antiguos hasta la era moderna.\n\nTe dejo una síntesis narrada con voz nativa en cada periodo y enlaces directos a los templos, castillos y ciudades que forman parte de la ruta.",
+  "history.seeOnTrip": "Lo verás en el viaje",
   "history.readingEyebrow": "Para profundizar",
   "history.readingTitle": "Libros y podcasts recomendados",
   "history.readingIntro":
-    "Si alguna de estas historias os ha dejado con ganas de más, aquí tenéis por dónde seguir tirando del hilo.",
+    "Si alguna de estas historias te ha dejado con ganas de más, aquí te dejo recomendaciones de lecturas y podcasts para seguir profundizando.",
   "history.books": "Libros",
   "history.readOnline": "Leer online",
   "history.podcasts": "Podcasts",

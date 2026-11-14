@@ -3,7 +3,7 @@ import { useContent, useT } from "../i18n/LanguageContext";
 import { mapsUrl } from "../utils/maps";
 import googleMapsIcon from "../assets/icons/google-maps.png";
 import bookingIcon from "../assets/icons/booking.png";
-import { MapPin, Phone, CalendarCheck, CalendarX, BedDouble, ChevronDown, ChevronUp } from "lucide-react";
+import { MapPin, Phone, CalendarCheck, CalendarX, ChevronDown, ChevronUp } from "lucide-react";
 import { useHighlight } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
 import { getDefaultTripDay, getHotelForDay } from "../utils/date";
@@ -163,14 +163,8 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
             </div>
           </div>
 
-          {/* Rooms + contact */}
+          {/* Contact and address */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 200px), 1fr))", gap: 14 }}>
-            {hotel.rooms && (
-              <div className="flex gap-2">
-                <BedDouble size={15} style={{ color: "var(--ink-soft)", flexShrink: 0, marginTop: 2 }} />
-                <Field label="Habitaciones">{hotel.rooms}</Field>
-              </div>
-            )}
             {hotel.onsen && (
               <div className="flex gap-2">
                 <span style={{ fontSize: 15, lineHeight: 1, marginTop: 2, opacity: hotel.onsen.has ? 1 : 0.45 }}>♨️</span>
@@ -215,7 +209,7 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
           <div className="flex flex-wrap items-center justify-between gap-3 pt-3" style={{ borderTop: "1px solid var(--line)" }}>
             {(hotel.url || hotel.name) && (
               <a
-                href={hotel.url || `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(hotel.name)}`}
+                href={hotel.url || `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(hotel.name + " " + stay.city)}`}
                 target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-3 py-2 transition-opacity hover:opacity-90"
                 style={{ background: headerBg, color: "white", textDecoration: "none" }}
@@ -254,9 +248,11 @@ export default function HotelsPage() {
       <div className="mb-6">
         <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("hotels.eyebrow")}</p>
         <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>{t("hotels.title")}</h2>
-        <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
-          {t("hotels.intro")}
-        </p>
+        <div style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }} className="space-y-2">
+          {t("hotels.intro").split("\n\n").map((p, idx) => (
+            <p key={idx} style={{ margin: 0 }}>{p}</p>
+          ))}
+        </div>
       </div>
 
       <div

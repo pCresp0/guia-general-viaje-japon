@@ -113,7 +113,7 @@ export default {
   // ── Mga flight ────────────────────────────────────────────────────
   "flights.eyebrow": "Logistics",
   "flights.title": "Mga flight",
-  "flights.intro": "Para sa aming biyahe, pinili namin ang mga international round-trip flight na ito sa Qatar Airways mula Madrid patungong Tokyo (Narita) via Doha. Ibinabahagi namin ang iskedyul, oras ng layover, patakaran sa bagahe, at presyo ng sanggunian bawat tao, kasama ang QR code ng Visit Japan Web para sa customs at immigration, bilang gabay sa paghahanap ng sarili mong mga flight sa Japan.",
+  "flights.intro": "Para sa aking biyahe sa Japan, pinili ko ang mga international round-trip flights na ito sa Qatar Airways mula Madrid patungong Tokyo (Narita) via Doha.\n\nIbinabahagi ko rito ang kombinasyon ng mga flight, oras ng layover, patakaran sa bagahe, at presyo ng sanggunian bawat tao, kasama ang mabilis na access sa Visit Japan Web para sa customs at immigration.",
   "flights.confirmed": "Mga kumpirmadong flight",
   "flights.outbound": "Papunta",
   "flights.return": "Pabalik",
@@ -136,7 +136,7 @@ export default {
   // ── Mga hotel ─────────────────────────────────────────────────────
   "hotels.eyebrow": "Matutuluyan",
   "hotels.title": "Mga hotel",
-  "hotels.intro": "Para sa aming 16-araw na biyahe sa Japan, pinili namin ang mga matutuluyang ito dahil sa lapit sa mga pangunahing istasyon ng tren at subway (sa Kyoto, Kanazawa, Takayama, at Tokyo), kasama ang karanasan ng pagtulog sa tradisyonal na minshuku sa Magome. Makikita mo rito ang mga oras ng check-in/out, praktikal na tips, presyo ng sanggunian bawat tao, eksaktong address sa Japanese, at direktang link para matingnan o ma-book ang bawat hotel sa Booking para sa iyong biyahe.",
+  "hotels.intro": "Para sa aking 16-araw na biyahe sa Japan, pinili ko ang mga matutuluyang ito dahil sa lapit sa mga pangunahing istasyon ng tren at subway (sa Kyoto, Kanazawa, Takayama, at Tokyo), kasama ang karanasan ng pagtulog sa tradisyonal na minshuku sa Magome.\n\nIbinabahagi ko rito ang mga oras ng check-in/out, praktikal na tips, presyo ng sanggunian bawat tao, eksaktong address sa Japanese, at direktang link para matingnan o ma-book ang bawat hotel sa Booking para sa iyong sariling biyahe.",
   "hotels.checkIn": "Check-in",
   "hotels.checkOut": "Check-out",
   "hotels.pin": "PIN",
@@ -147,9 +147,9 @@ export default {
   "hotels.nights": "Mga Gabi",
 
   // ── Transportasyon ────────────────────────────────────────────────
-  "transport.eyebrow": "Paano tayo maglalakbay",
+  "transport.eyebrow": "Paano maglakbay",
   "transport.title": "Transportasyon",
-  "transport.intro": "Sa seksyong ito, tinipon namin ang lahat ng transportasyong ginamit namin sa aming 16-araw na biyahe sa Japan: bullet trains (Shinkansen), mga tren ng JR, mga bus sa kabundukan (Nohi Bus), at subway sa lungsod. Maaari mong tingnan ang bawat biyahe na may mga iskedyul, presyo ng sanggunian bawat tao, payo sa maagang pag-book, at kung paano maglakbay nang madali gamit ang IC cards (Suica/Pasmo) para sa sarili mong ruta.",
+  "transport.intro": "Sa seksyong ito, tinitipon ko ang lahat ng transportasyong ginamit ko sa aking 16-araw na biyahe sa Japan: bullet trains (Shinkansen), mga tren ng JR, mga bus sa kabundukan (Nohi Bus), at subway sa lungsod.\n\nDetalyado kong inilalagay ang bawat biyahe na may mga oras, presyo ng sanggunian bawat tao, mga payo sa maagang pag-book, at tips sa madaling pagbiyahe gamit ang IC cards (Suica/Pasmo).",
   "transport.byDay": "Mga biyahe kada araw",
   "transport.totalCost": "Kabuuang gastos",
   "transport.suicaTitle": "Suica card",

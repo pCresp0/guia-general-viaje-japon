@@ -26,9 +26,14 @@ export default function BudgetPage() {
         <h1 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>
           Presupuesto estimado
         </h1>
-        <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
-          En este apartado se detalla el desglose completo de los costes de este viaje de 16 días a Japón. Incluye tanto los gastos fijos (vuelos internacionales, alojamientos y trenes Shinkansen) como los estimados diarios en comidas, transportes urbanos y compras. Te servirá como referencia real para calcular y adaptar el presupuesto de tu propia aventura.
-        </p>
+        <div style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }} className="space-y-2">
+          <p style={{ margin: 0 }}>
+            En este apartado detallo el desglose completo de los costes de mi viaje de 16 días por Japón, incluyendo tanto los gastos fijos (vuelos internacionales, alojamientos y trenes Shinkansen) como las estimaciones de gastos diarios en comidas, transportes locales y compras.
+          </p>
+          <p style={{ margin: 0 }}>
+            Te lo comparto como una referencia real y práctica para que puedas calcular, comparar y adaptar el presupuesto a tu propia aventura según tus preferencias.
+          </p>
+        </div>
       </div>
 
       <div className="rounded-2xl p-6 text-center mb-5" style={{ background: "var(--indigo)" }}>

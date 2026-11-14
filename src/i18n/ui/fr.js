@@ -108,7 +108,7 @@ export default {
   // ── Vols ──────────────────────────────────────────────────────────
   "flights.eyebrow": "Logistique",
   "flights.title": "Vols",
-  "flights.intro": "Pour notre voyage, nous avons choisi ces vols internationaux aller-retour avec Qatar Airways reliant Madrid à Tokyo (Narita) avec une escale fluide à Doha. Retrouvez ici tous les détails de nos vols, temps d'escale, franchise bagages et prix de référence par personne, ainsi que l'accès au QR code Visit Japan Web pour les formalités d'entrée, afin de vous servir de repère pour vos propres billets.",
+  "flights.intro": "Pour mon voyage au Japon, j'ai choisi ces vols internationaux aller-retour avec Qatar Airways reliant Madrid à Tokyo (Narita) avec une escale fluide à Doha.\n\nJe partage ici la combinaison de vols, les temps d'escale, la franchise bagages et le prix de référence par personne, ainsi que l'accès à Visit Japan Web pour faciliter l'immigration et la douane.",
   "flights.confirmed": "Vols confirmés",
   "flights.outbound": "Aller",
   "flights.return": "Retour",
@@ -131,7 +131,7 @@ export default {
   // ── Hôtels ────────────────────────────────────────────────────────
   "hotels.eyebrow": "Hébergement",
   "hotels.title": "Hôtels",
-  "hotels.intro": "Pour notre voyage de 16 jours au Japon, nous avons sélectionné ces hébergements comme bases stratégiques pour leur proximité immédiate avec les gares principales (à Kyoto, Kanazawa, Takayama et Tokyo), complétés par l'expérience authentique d'une nuit en minshuku traditionnel à Magome. Vous trouverez chaque fiche avec les horaires d'arrivée/départ, conseils pratiques, prix de référence par personne, l'adresse en japonais et le lien direct pour consulter ou réserver chaque hôtel sur Booking pour votre propre voyage.",
+  "hotels.intro": "Pour mon voyage de 16 jours au Japon, j'ai sélectionné ces hébergements comme bases stratégiques pour leur proximité immédiate avec les gares principales (à Kyoto, Kanazawa, Takayama et Tokyo), complétés par l'expérience authentique d'une nuit en minshuku traditionnel à Magome.\n\nJe partage ici chaque fiche avec les horaires d'arrivée/départ, conseils pratiques, prix de référence par personne, l'adresse en japonais et le lien direct pour consulter ou réserver chaque hôtel sur Booking pour votre propre voyage.",
   "hotels.checkIn": "Arrivée",
   "hotels.checkOut": "Départ",
   "hotels.pin": "Code",
@@ -144,7 +144,7 @@ export default {
   // ── Transports ────────────────────────────────────────────────────
   "transport.eyebrow": "Comment se déplacer",
   "transport.title": "Transports",
-  "transport.intro": "Dans cette section, nous avons rassemblé tous les transports que nous avons empruntés au cours de notre voyage de 16 jours au Japon : trains à grande vitesse (Shinkansen), lignes express et locales JR, bus alpins de montagne (Nohi Bus) et métros urbains. Retrouvez chaque trajet avec ses horaires indicatifs, prix de référence par personne, conseils de réservation anticipée et astuces pour vous déplacer simplement avec les cartes IC (Suica/Pasmo).",
+  "transport.intro": "Dans cette section, j'ai rassemblé tous les transports que j'ai empruntés au cours de mon voyage de 16 jours au Japon : trains à grande vitesse (Shinkansen), lignes express et locales JR, bus alpins de montagne (Nohi Bus) et métros urbains.\n\nRetrouvez chaque trajet avec ses horaires indicatifs, prix de référence par personne, conseils de réservation anticipée et astuces pour vous déplacer simplement avec les cartes IC (Suica/Pasmo).",
   "transport.byDay": "Trajets par jour",
   "transport.totalCost": "Coût total",
   "transport.suicaTitle": "Carte Suica",

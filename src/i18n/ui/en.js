@@ -109,7 +109,7 @@ export default {
   // ── Flights ───────────────────────────────────────────────────────
   "flights.eyebrow": "Logistics",
   "flights.title": "Flights",
-  "flights.intro": "For our journey, we chose these international round-trip flights with Qatar Airways connecting Madrid with Tokyo (Narita) via a smooth stopover in Doha. Here we share the flight schedule, layover times, baggage policy, and reference costs per person, along with direct access to the Visit Japan Web QR code for customs and immigration, serving as a practical guide when planning your own flights to Japan.",
+  "flights.intro": "For my trip to Japan, I chose these international round-trip flights with Qatar Airways connecting Madrid with Tokyo (Narita) via a smooth stopover in Doha.\n\nHere I share the flight combination, layover times, baggage policy, and reference price per person, along with quick access to Visit Japan Web for customs and immigration, serving as a practical guide or benchmark when searching for your own flights.",
   "flights.confirmed": "Confirmed flights",
   "flights.outbound": "Outbound",
   "flights.return": "Return",
@@ -132,7 +132,7 @@ export default {
   // ── Hotels ────────────────────────────────────────────────────────
   "hotels.eyebrow": "Accommodation",
   "hotels.title": "Hotels",
-  "hotels.intro": "For our 16-day trip to Japan, we chose these accommodations as strategic basecamps due to their immediate proximity to major train and subway stations (in Kyoto, Kanazawa, Takayama, and Tokyo), combined with the authentic experience of staying at a traditional minshuku in the postal village of Magome. Here you will find each listing with check-in/out hours, tips, reference prices per person, exact address in Japanese for maps or taxi drivers, and a direct link to check or book each hotel on Booking for your own trip.",
+  "hotels.intro": "For my 16-day trip to Japan, I chose these accommodations as strategic basecamps due to their immediate proximity to major train and subway stations (in Kyoto, Kanazawa, Takayama, and Tokyo), combined with the authentic experience of staying at a traditional minshuku in the postal village of Magome.\n\nHere I share each hotel's details with check-in/out hours, practical tips, reference prices per person, exact address in Japanese for maps or taxi drivers, and a direct link to check or book each hotel on Booking if it fits your own itinerary.",
   "hotels.checkIn": "Check-in",
   "hotels.checkOut": "Check-out",
   "hotels.pin": "PIN",
@@ -145,7 +145,7 @@ export default {
   // ── Transport ─────────────────────────────────────────────────────
   "transport.eyebrow": "Getting around",
   "transport.title": "Transport",
-  "transport.intro": "In this section we have compiled all the transport options we used during our 16-day journey across Japan: bullet trains (Shinkansen), JR express and local lines, alpine mountain buses (Nohi Bus), and city subways. You can check each journey with indicative timetables, reference prices per person, advance booking advice, and how to get around seamlessly using IC cards (Suica/Pasmo) as a practical guide for your own route.",
+  "transport.intro": "In this section I have compiled all the transport options I used during my 16-day journey across Japan: bullet trains (Shinkansen), JR express and local lines, alpine mountain buses (Nohi Bus), and city subways.\n\nI detail each journey with indicative timetables, reference prices per person, advance booking advice, and tips on getting around smoothly with IC cards (Suica/Pasmo) to help guide your own route.",
   "transport.byDay": "Journeys by day",
   "transport.totalCost": "Total cost",
   "transport.suicaTitle": "Suica card",

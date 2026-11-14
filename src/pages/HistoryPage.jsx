@@ -331,9 +331,11 @@ export default function HistoryPage() {
         </button>
       </div>
 
-      <p style={{ fontSize: 13, color: "var(--ink-soft)", marginTop: 4, marginBottom: 8, lineHeight: 1.6 }}>
-        {t("history.intro")}
-      </p>
+      <div style={{ fontSize: 13, color: "var(--ink-soft)", marginTop: 4, marginBottom: 8, lineHeight: 1.6 }} className="space-y-2">
+        {t("history.intro").split("\n\n").map((p, idx) => (
+          <p key={idx} style={{ margin: 0 }}>{p}</p>
+        ))}
+      </div>
 
       <p className="text-xs mb-5" style={{ color: "var(--ink-soft)" }}>
         {t("history.exportPdfSub") || "Descarga la guía histórica completa en PDF con todas las ilustraciones, resúmenes cronológicos, lugares del viaje y lecturas para el vuelo o tren."}
