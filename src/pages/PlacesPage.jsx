@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPin, Utensils, Coffee, Mountain, ChevronDown } from "lucide-react";
 import GuideCard from "../components/GuideCard";
 import { formatDateShort } from "../utils/date";
 import { useT, useContent } from "../i18n/LanguageContext";
+import { useHighlight } from "../context/HighlightContext";
+import { slug } from "../utils/slug";
 import googleMapsIcon from "../assets/icons/google-maps.png";
 
 // Lugares que tienen guía detallada disponible (id del lugar → id de la guía)
@@ -20,21 +22,8 @@ const guideFor = {
 /** Orden cronológico del viaje. `day` = nº de día del itinerario (null = flexible / opcional). */
 const places = [
   {
-    category: "Templos",
-    icon: MapPin,
-    color: "#bc4749",
-    items: [
-      { id: "fushimi", name: "Fushimi Inari", city: "Kioto", day: 2, desc: "Miles de torii rojos — uno de los lugares más fotografiados de Japón." },
-      { id: "kinkaku", name: "Kinkaku-ji (Templo Dorado)", city: "Kioto", day: 3, desc: "Pabellón cubierto de oro — espectacular reflejado en el agua." },
-      { id: "arashiyama", name: "Arashiyama Bamboo Grove", city: "Kioto", day: 3, desc: "Bosque de bambú — sereno y místico." },
-      { id: "ginkaku", name: "Ginkaku-ji (Templo Plateado)", city: "Kioto", day: 4, desc: "Complemento del Dorado — diferente pero igualmente hermoso." },
-      { id: "kiyomizu", name: "Kiyomizu-dera", city: "Kioto", day: 5, desc: "Templo de madera suspendido sobre acantilado — icónico." },
-      { id: "senso", name: "Senso-ji", city: "Tokio", day: 10, desc: "Templo budista más antiguo de Tokio, en Asakusa." },
-      { id: "meiji", name: "Meiji Jingu", city: "Tokio", day: 11, desc: "Santuario sintoísta rodeado de bosque — muy tranquilo." },
-      { id: "tsurugaoka", name: "Tsurugaoka Hachimangu", city: "Kamakura", day: null, desc: "Santuario histórico — si hay tiempo de parada." },
-    ],
-  },
-  {
+    id: "restaurantes",
+    titleKey: "places.restaurants",
     category: "Restaurantes",
     icon: Utensils,
     color: "#2e7d5b",
@@ -187,6 +176,8 @@ const places = [
     ],
   },
   {
+    id: "cafeterias",
+    titleKey: "places.cafes",
     category: "Cafeterías y Cafés",
     icon: Coffee,
     color: "#1d3557",
@@ -196,6 +187,23 @@ const places = [
       { id: "starbucks-asakusa", name: "Starbucks Asakusa", city: "Tokio", day: 10, desc: "Starbucks con vistas al Senso-ji — surreal." },
       { id: "blue-bottle", name: "Blue Bottle Coffee", city: "Tokio", day: 11, desc: "Café de especialidad, ambiente hipster." },
       { id: "komeda", name: "Komeda Coffee", city: "Múltiples", day: null, desc: "Cadena japonesa asequible con buen ambiente." },
+    ],
+  },
+  {
+    id: "templos",
+    titleKey: "places.temples",
+    category: "Templos",
+    icon: MapPin,
+    color: "#bc4749",
+    items: [
+      { id: "fushimi", name: "Fushimi Inari", city: "Kioto", day: 2, desc: "Miles de torii rojos — uno de los lugares más fotografiados de Japón." },
+      { id: "kinkaku", name: "Kinkaku-ji (Templo Dorado)", city: "Kioto", day: 3, desc: "Pabellón cubierto de oro — espectacular reflejado en el agua." },
+      { id: "arashiyama", name: "Arashiyama Bamboo Grove", city: "Kioto", day: 3, desc: "Bosque de bambú — sereno y místico." },
+      { id: "ginkaku", name: "Ginkaku-ji (Templo Plateado)", city: "Kioto", day: 4, desc: "Complemento del Dorado — diferente pero igualmente hermoso." },
+      { id: "kiyomizu", name: "Kiyomizu-dera", city: "Kioto", day: 5, desc: "Templo de madera suspendido sobre acantilado — icónico." },
+      { id: "senso", name: "Senso-ji", city: "Tokio", day: 10, desc: "Templo budista más antiguo de Tokio, en Asakusa." },
+      { id: "meiji", name: "Meiji Jingu", city: "Tokio", day: 11, desc: "Santuario sintoísta rodeado de bosque — muy tranquilo." },
+      { id: "tsurugaoka", name: "Tsurugaoka Hachimangu", city: "Kamakura", day: null, desc: "Santuario histórico — si hay tiempo de parada." },
     ],
   },
 ];
@@ -211,7 +219,48 @@ function sortByTripDay(items) {
 export default function PlacesPage() {
   const t = useT();
   const { days } = useContent();
-  const [gygOpen, setGygOpen] = useState(false);
+  const { highlightId } = useHighlight();
+
+  const [openSections, setOpenSections] = useState(() => {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    if (isMobile) {
+      return {
+        restaurantes: false,
+        cafeterias: false,
+        templos: false,
+        excursion: false,
+      };
+    }
+    return {
+      restaurantes: true,
+      cafeterias: true,
+      templos: true,
+      excursion: false,
+    };
+  });
+
+  const toggleSection = (id) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  useEffect(() => {
+    if (!highlightId) return;
+    for (const cat of places) {
+      const match = cat.items.some(
+        (item) => guideFor[item.id] && slug("guide", guideFor[item.id]) === highlightId
+      );
+      if (match) {
+        setOpenSections((prev) => ({ ...prev, [cat.id]: true }));
+        return;
+      }
+    }
+    if (highlightId === slug("guide", "fuji")) {
+      setOpenSections((prev) => ({ ...prev, excursion: true }));
+    }
+  }, [highlightId]);
 
   const dayByNum = Object.fromEntries(days.map((d) => [d.num, d]));
 
@@ -228,16 +277,124 @@ export default function PlacesPage() {
         <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("places.eyebrow")}</p>
         <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>{t("places.title")}</h2>
         <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6, marginBottom: 0 }}>
-          Catálogo detallado de los templos, santuarios, miradores, castillos y barrios visitados durante los 16 días de viaje por Japón. Están clasificados por categorías y ordenados cronológicamente según el día en que se recorren. Cada punto incluye su contexto cultural, lore histórico y consejos prácticos para aprovechar al máximo la visita.
+          Catálogo detallado de los restaurantes, cafeterías, templos, santuarios, miradores y excursiones durante los 16 días de viaje por Japón. Están clasificados por categorías y ordenados cronológicamente según el día en que se recorren. Cada punto incluye su contexto cultural, lore histórico y consejos prácticos para aprovechar al máximo la visita.
         </p>
       </div>
 
-      {/* 1. Excursión recomendada al Monte Fuji con GetYourGuide */}
-      <div className="rounded-2xl overflow-hidden border mb-6" style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}>
+      {/* Categorías principales: Restaurantes, Cafeterías y Templos */}
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 400px), 1fr))",
+        gap: 20,
+        alignItems: "start",
+      }}>
+        {places.map((category) => {
+          const Icon = category.icon;
+          const items = sortByTripDay(category.items);
+          const isOpen = Boolean(openSections[category.id]);
+
+          return (
+            <div key={category.id} className="rounded-2xl border overflow-hidden transition-shadow"
+              style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}>
+              <button
+                type="button"
+                onClick={() => toggleSection(category.id)}
+                className="w-full text-left flex items-center gap-3 px-5 py-4 border-none cursor-pointer transition-opacity hover:opacity-95"
+                style={{ background: category.color }}
+              >
+                <div style={{
+                  width: 36, height: 36, borderRadius: 10,
+                  background: "rgba(255,255,255,0.18)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  flexShrink: 0,
+                }}>
+                  <Icon size={18} style={{ color: "white" }} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p style={{ fontSize: 15, fontWeight: 700, color: "white", margin: 0 }}>
+                    {t(category.titleKey) || category.category}
+                  </p>
+                </div>
+                <span style={{
+                  fontSize: 11.5, color: "white", fontWeight: 700,
+                  background: "rgba(255,255,255,0.18)",
+                  padding: "3px 9px", borderRadius: 20,
+                  flexShrink: 0,
+                }}>
+                  {items.length}
+                </span>
+                <ChevronDown
+                  size={20}
+                  className={`shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                  style={{ color: "rgba(255,255,255,0.9)" }}
+                />
+              </button>
+
+              {isOpen && (
+                <div>
+                  {items.map((place, idx) => {
+                    const when = dayLabel(place.day);
+                    return (
+                      <div
+                        key={place.id}
+                        style={{ borderTop: idx > 0 ? "1px solid var(--line)" : "none" }}
+                      >
+                        <div className="px-5 py-4">
+                          <p style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)", margin: 0 }}>
+                            {place.name}
+                            <span style={{ fontWeight: 500, color: "var(--shu)", marginLeft: 4 }}>
+                              {when ? `(${when})` : "(flexible)"}
+                            </span>
+                          </p>
+                          <p style={{ fontSize: 12, color: "var(--ink-soft)", marginBottom: 2 }}>
+                            {place.city}
+                          </p>
+                          <p style={{ fontSize: 12.5, color: "var(--ink-soft)", lineHeight: 1.5, margin: 0 }}>
+                            {place.desc}
+                          </p>
+
+                          {place.mapsUrl && (
+                            <div style={{ marginTop: 8 }}>
+                              <a
+                                href={place.mapsUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-lg border transition-opacity hover:opacity-85"
+                                style={{
+                                  background: "var(--paper)",
+                                  borderColor: "var(--line)",
+                                  color: "var(--indigo)",
+                                  textDecoration: "none",
+                                }}
+                              >
+                                <img src={googleMapsIcon} alt="" width={12} height={12} />
+                                Ver en Google Maps ↗
+                              </a>
+                            </div>
+                          )}
+
+                          {guideFor[place.id] && (
+                            <div style={{ marginTop: 10 }}>
+                              <GuideCard id={guideFor[place.id]} accent={category.color} />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* 4. Excursión recomendada al Monte Fuji con GetYourGuide */}
+      <div className="rounded-2xl overflow-hidden border mt-6" style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}>
         <button
           type="button"
-          onClick={() => setGygOpen((v) => !v)}
-          className="w-full text-left flex items-center gap-3 px-5 py-4 border-none cursor-pointer"
+          onClick={() => toggleSection("excursion")}
+          className="w-full text-left flex items-center gap-3 px-5 py-4 border-none cursor-pointer transition-opacity hover:opacity-95"
           style={{ background: "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)" }}
         >
           <div style={{
@@ -263,165 +420,74 @@ export default function PlacesPage() {
           </div>
           <ChevronDown
             size={20}
-            className={`shrink-0 transition-transform ${gygOpen ? "rotate-180" : ""}`}
+            className={`shrink-0 transition-transform duration-200 ${Boolean(openSections.excursion) ? "rotate-180" : ""}`}
             style={{ color: "rgba(255,255,255,0.9)" }}
           />
         </button>
 
-        {gygOpen && (
-        <div className="px-5 py-4 space-y-4">
-          <div style={{ fontSize: 13.5, color: "var(--ink)", lineHeight: 1.6 }} className="space-y-2">
-            <p style={{ margin: 0 }}>
-              Para el día 10 del itinerario elegí esta excursión organizada en autobús de día completo a través de <strong>GetYourGuide</strong> (operada por Japan Visionary Tour). Visitar los miradores del Fuji y los lagos en transporte público por libre implica encadenar varios trenes locales y autobuses que se llenan con facilidad.
-            </p>
-            <p style={{ margin: 0 }}>
-              Con este tour se sale cómodamente desde Shinjuku y se visitan en un solo día cuatro paradas emblemáticas: el Lago Kawaguchiko con el Parque Oishi, la aldea tradicional Saiko Iyashi-no-Sato Nemba, los manantiales de Oshino Hakkai y la icónica Pagoda Chureito con el Monte Fuji de fondo.
-            </p>
-            <p style={{ margin: 0 }}>
-              Te dejo aquí todos los datos de la actividad, horarios habituales, punto de encuentro y recomendaciones prácticas (calzado para los escalones de Chureito, comida y efectivo) para que te sirva como referencia práctica si estás programando tu viaje y quieres hacer una ruta similar.
-            </p>
-          </div>
-
-          {/* Ficha de la excursión */}
-          <div className="p-3.5 rounded-xl border flex flex-col justify-between" style={{ background: "var(--paper)", borderColor: "var(--line)" }}>
-            <div className="flex items-center justify-between flex-wrap gap-2">
-              <div>
-                <p style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)", margin: 0 }}>Horario habitual: 08:30 – 18:30 (~10 horas)</p>
-                <p style={{ fontSize: 11.5, fontWeight: 600, color: "var(--forest)", marginTop: 3, marginBottom: 0 }}>
-                  ✨ Tour de día completo en autobús · Guía en inglés
-                </p>
-              </div>
-              <span className="text-xs px-2.5 py-1 rounded-full font-bold" style={{ background: "rgba(2, 132, 199, 0.1)", color: "#0284c7" }}>
-                Salida desde Shinjuku (Tokio)
-              </span>
+        {Boolean(openSections.excursion) && (
+          <div className="px-5 py-4 space-y-4">
+            <div style={{ fontSize: 13.5, color: "var(--ink)", lineHeight: 1.6 }} className="space-y-2">
+              <p style={{ margin: 0 }}>
+                Para el día 10 del itinerario elegí esta excursión organizada en autobús de día completo a través de <strong>GetYourGuide</strong> (operada por Japan Visionary Tour). Visitar los miradores del Fuji y los lagos en transporte público por libre implica encadenar varios trenes locales y autobuses que se llenan con facilidad.
+              </p>
+              <p style={{ margin: 0 }}>
+                Con este tour se sale cómodamente desde Shinjuku y se visitan en un solo día cuatro paradas emblemáticas: el Lago Kawaguchiko con el Parque Oishi, la aldea tradicional Saiko Iyashi-no-Sato Nemba, los manantiales de Oshino Hakkai y la icónica Pagoda Chureito con el Monte Fuji de fondo.
+              </p>
+              <p style={{ margin: 0 }}>
+                Te dejo aquí todos los datos de la actividad, horarios habituales, punto de encuentro y recomendaciones prácticas (calzado para los escalones de Chureito, comida y efectivo) para que te sirva como referencia práctica si estás programando tu viaje y quieres hacer una ruta similar.
+              </p>
             </div>
-          </div>
 
-          {/* Logística y aviso de comida */}
-          <div className="p-4 rounded-xl border space-y-2.5" style={{ background: "var(--paper)", borderColor: "rgba(2, 132, 199, 0.25)" }}>
-            <p className="flex items-center gap-1.5" style={{ fontSize: 13, fontWeight: 700, color: "var(--indigo)", margin: 0 }}>
-              <span>ℹ️</span> Puntos clave y consejos prácticos:
-            </p>
-            <ul className="space-y-1.5 pl-4 list-disc" style={{ fontSize: 12.5, color: "var(--ink)", lineHeight: 1.5, margin: 0 }}>
-              <li><strong>Punto de encuentro:</strong> Edificio Tokyo Mode Gakuen (1-7-3 Nishishinjuku, Shinjuku). Conviene llegar unos 15 minutos antes de la salida (sobre las 08:15 AM).</li>
-              <li><strong>🍱 Comida no incluida:</strong> La actividad no incluye almuerzo y no está permitido comer dentro del autobús. Conviene comprar desayuno o snacks en un konbini antes de salir y llevar <strong>efectivo (yenes ¥)</strong> para probar especialidades en los puestos locales de Oshino Hakkai y Saiko.</li>
-              <li><strong>👟 400 escalones en Chureito:</strong> Para llegar al mirador clásico de la Pagoda Chureito hay que subir unos 400 escalones por la colina. Lleva calzado deportivo cómodo.</li>
-              <li><strong>Paradas incluidas en el itinerario:</strong> Lago Kawaguchiko y Parque Oishi, Aldea Saiko Iyashi-no-Sato Nemba (entrada incluida en el tour), Manantiales Oshino Hakkai y Pagoda Chureito en el Parque Arakurayama Sengen.</li>
-            </ul>
-          </div>
-
-          <div className="flex flex-wrap gap-2 pt-1">
-            <a
-              href="https://www.getyourguide.com/es-es/tokio-l193/tokio-monte-fuji-pagoda-chureito-lago-kawaguchi-y-oshino-hakkai-t792363/"
-              target="_blank" rel="noopener noreferrer"
-              className="text-xs font-semibold px-3.5 py-2 rounded-xl border flex items-center gap-1.5 transition-opacity hover:opacity-85"
-              style={{ background: "var(--paper)", borderColor: "var(--line)", color: "var(--indigo)", textDecoration: "none" }}
-            >
-              🎟️ Ver excursión en GetYourGuide ↗
-            </a>
-            <a
-              href="https://www.google.com/maps/place/35.6916642,139.6969475/@35.6916642,139.6969475,16z"
-              target="_blank" rel="noopener noreferrer"
-              className="text-xs font-semibold px-3.5 py-2 rounded-xl border flex items-center gap-1.5 transition-opacity hover:opacity-85"
-              style={{ background: "var(--paper)", borderColor: "var(--line)", color: "var(--forest)", textDecoration: "none" }}
-            >
-              <img src={googleMapsIcon} alt="" width={14} height={14} style={{ display: "inline", verticalAlign: "-2px", marginRight: 2 }} />
-              Punto de Encuentro en Maps (Tokyo Mode Gakuen) ↗
-            </a>
-          </div>
-        </div>
-        )}
-      </div>
-
-
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 400px), 1fr))",
-        gap: 20,
-        alignItems: "start",
-      }}>
-        {places.map((category, catIdx) => {
-          const Icon = category.icon;
-          const items = sortByTripDay(category.items);
-
-          return (
-            <div key={catIdx} className="rounded-2xl border overflow-hidden"
-              style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}>
-              <div className="flex items-center gap-3 px-5 py-4"
-                style={{ background: category.color }}>
-                <div style={{
-                  width: 36, height: 36, borderRadius: 10,
-                  background: "rgba(255,255,255,0.18)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0,
-                }}>
-                  <Icon size={18} style={{ color: "white" }} />
+            {/* Ficha de la excursión */}
+            <div className="p-3.5 rounded-xl border flex flex-col justify-between" style={{ background: "var(--paper)", borderColor: "var(--line)" }}>
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <div>
+                  <p style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)", margin: 0 }}>Horario habitual: 08:30 – 18:30 (~10 horas)</p>
+                  <p style={{ fontSize: 11.5, fontWeight: 600, color: "var(--forest)", marginTop: 3, marginBottom: 0 }}>
+                    ✨ Tour de día completo en autobús · Guía en inglés
+                  </p>
                 </div>
-                <div className="flex-1">
-                  <p style={{ fontSize: 15, fontWeight: 700, color: "white", margin: 0 }}>{category.category}</p>
-                </div>
-                <span style={{
-                  fontSize: 11.5, color: "white", fontWeight: 700,
-                  background: "rgba(255,255,255,0.18)",
-                  padding: "3px 9px", borderRadius: 20,
-                }}>
-                  {items.length}
+                <span className="text-xs px-2.5 py-1 rounded-full font-bold" style={{ background: "rgba(2, 132, 199, 0.1)", color: "#0284c7" }}>
+                  Salida desde Shinjuku (Tokio)
                 </span>
               </div>
-
-              {items.map((place, idx) => {
-                const when = dayLabel(place.day);
-                return (
-                  <div
-                    key={place.id}
-                    style={{ borderTop: idx > 0 ? "1px solid var(--line)" : "none" }}
-                  >
-                    <div className="px-5 py-4">
-                      <p style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)", margin: 0 }}>
-                        {place.name}
-                        <span style={{ fontWeight: 500, color: "var(--shu)", marginLeft: 4 }}>
-                          {when ? `(${when})` : "(flexible)"}
-                        </span>
-                      </p>
-                      <p style={{ fontSize: 12, color: "var(--ink-soft)", marginBottom: 2 }}>
-                        {place.city}
-                      </p>
-                      <p style={{ fontSize: 12.5, color: "var(--ink-soft)", lineHeight: 1.5, margin: 0 }}>
-                        {place.desc}
-                      </p>
-
-                      {place.mapsUrl && (
-                        <div style={{ marginTop: 8 }}>
-                          <a
-                            href={place.mapsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-lg border transition-opacity hover:opacity-85"
-                            style={{
-                              background: "var(--paper)",
-                              borderColor: "var(--line)",
-                              color: "var(--indigo)",
-                              textDecoration: "none",
-                            }}
-                          >
-                            <img src={googleMapsIcon} alt="" width={12} height={12} />
-                            Ver en Google Maps ↗
-                          </a>
-                        </div>
-                      )}
-
-                      {guideFor[place.id] && (
-                        <div style={{ marginTop: 10 }}>
-                          <GuideCard id={guideFor[place.id]} accent={category.color} />
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
             </div>
-          );
-        })}
+
+            {/* Logística y aviso de comida */}
+            <div className="p-4 rounded-xl border space-y-2.5" style={{ background: "var(--paper)", borderColor: "rgba(2, 132, 199, 0.25)" }}>
+              <p className="flex items-center gap-1.5" style={{ fontSize: 13, fontWeight: 700, color: "var(--indigo)", margin: 0 }}>
+                <span>ℹ️</span> Puntos clave y consejos prácticos:
+              </p>
+              <ul className="space-y-1.5 pl-4 list-disc" style={{ fontSize: 12.5, color: "var(--ink)", lineHeight: 1.5, margin: 0 }}>
+                <li><strong>Punto de encuentro:</strong> Edificio Tokyo Mode Gakuen (1-7-3 Nishishinjuku, Shinjuku). Conviene llegar unos 15 minutos antes de la salida (sobre las 08:15 AM).</li>
+                <li><strong>🍱 Comida no incluida:</strong> La actividad no incluye almuerzo y no está permitido comer dentro del autobús. Conviene comprar desayuno o snacks en un konbini antes de salir y llevar <strong>efectivo (yenes ¥)</strong> para probar especialidades en los puestos locales de Oshino Hakkai y Saiko.</li>
+                <li><strong>👟 400 escalones en Chureito:</strong> Para llegar al mirador clásico de la Pagoda Chureito hay que subir unos 400 escalones por la colina. Lleva calzado deportivo cómodo.</li>
+                <li><strong>Paradas incluidas en el itinerario:</strong> Lago Kawaguchiko y Parque Oishi, Aldea Saiko Iyashi-no-Sato Nemba (entrada incluida en el tour), Manantiales Oshino Hakkai y Pagoda Chureito en el Parque Arakurayama Sengen.</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-wrap gap-2 pt-1">
+              <a
+                href="https://www.getyourguide.com/es-es/tokio-l193/tokio-monte-fuji-pagoda-chureito-lago-kawaguchi-y-oshino-hakkai-t792363/"
+                target="_blank" rel="noopener noreferrer"
+                className="text-xs font-semibold px-3.5 py-2 rounded-xl border flex items-center gap-1.5 transition-opacity hover:opacity-85"
+                style={{ background: "var(--paper)", borderColor: "var(--line)", color: "var(--indigo)", textDecoration: "none" }}
+              >
+                🎟️ Ver excursión en GetYourGuide ↗
+              </a>
+              <a
+                href="https://www.google.com/maps/place/35.6916642,139.6969475/@35.6916642,139.6969475,16z"
+                target="_blank" rel="noopener noreferrer"
+                className="text-xs font-semibold px-3.5 py-2 rounded-xl border flex items-center gap-1.5 transition-opacity hover:opacity-85"
+                style={{ background: "var(--paper)", borderColor: "var(--line)", color: "var(--forest)", textDecoration: "none" }}
+              >
+                <img src={googleMapsIcon} alt="" width={14} height={14} style={{ display: "inline", verticalAlign: "-2px", marginRight: 2 }} />
+                Punto de Encuentro en Maps (Tokyo Mode Gakuen) ↗
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
