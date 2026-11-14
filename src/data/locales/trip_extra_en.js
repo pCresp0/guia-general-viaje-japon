@@ -217,10 +217,11 @@ export const transports = [
 ];
 
 export const budget = {
-  note: "Detailed reference budget per person and group (flights, accommodation, bullet trains, Alpine buses, Suica card, and activities).",
+  note: "Detailed reference budget per person (flights, accommodation, bullet trains, Alpine buses, Suica card, and activities).",
   categories: [
     {
       title: "International Flights",
+      subtitle: "Round trip per person",
       details: [
         "Qatar Airways Madrid ↔ Tokyo (via Doha). 890€ / person.",
         "Outbound: QR 150 MAD→DOH + QR 806 DOH→NRT (Sep 6, 09:05 → Sep 7, 12:55, 20h 50m).",
@@ -229,18 +230,20 @@ export const budget = {
     },
     {
       title: "Accommodation (14 nights)",
+      subtitle: "14 nights of accommodation along the route",
       details: [
-        "<strong>🏨 Recommended route accommodation (~606.77€/person based on the itinerary)</strong>:",
-        "• Hotel Keihan Kyoto Hachijoguchi (Sep 7–12, 5 nights): 669.86€ group · 133.97€/person",
-        "• Hotel Resol Trinity Kanazawa (Sep 12–13, 1 night): 161.89€ group · 32.38€/person",
-        "• Hotel Wood Takayama (Sep 13–14, 1 night): 274.98€ group · 55.00€/person",
-        "• KOKO HOTEL Residence Asakusa Kappabashi (Sep 15–21, 6 nights): 1,927.13€ group · 385.43€/person",
+        "<strong>🏨 Recommended route accommodation (~642.57€/person based on the itinerary)</strong>:",
+        "• Hotel Keihan Kyoto Hachijoguchi (Sep 7–12, 5 nights): ~133.97€/person",
+        "• Hotel Resol Trinity Kanazawa (Sep 12–13, 1 night): ~32.38€/person",
+        "• Hotel Wood Takayama (Sep 13–14, 1 night): ~55.00€/person",
+        "• KOKO HOTEL Residence Asakusa Kappabashi (Sep 15–21, 6 nights): ~385.43€/person",
         "<strong>⚠️ Payment at accommodation in cash</strong>:",
-        "• Magome Chaya (Sep 14–15, 1 night, with dinner): ~178.98€ group (~32,000 ¥) · 35.80€/person. To be paid on site in cash (withdraw money beforehand).",
+        "• Magome Chaya (Sep 14–15, 1 night, with dinner): ~35.80€/person (~6,400 ¥). To be paid on site in cash (withdraw money beforehand).",
       ],
     },
     {
       title: "Domestic Transportation",
+      subtitle: "Shinkansen, alpine buses and Suica",
       details: [
         "<strong>Estimated total transport ≈ 365€ – 410€/person</strong> — Shinkansen & express trains (~210€) · Alpine Nohi buses (~71€) · IC card urban rides (~70€) · Airport trains (~33€).",
         "Advance booking recommended for bullet trains (Smart EX) and alpine buses; urban transport is paid on the go with Suica/Pasmo IC cards.",
@@ -250,25 +253,29 @@ export const budget = {
     },
     {
       title: "Mount Fuji and Nikko Excursions",
+      subtitle: "Organized day tour and local excursions",
       details: [
-        "<strong>GetYourGuide Mount Fuji (Day 10, Sep 16, confirmed):</strong> 42€/person · 210€ group (Kawaguchiko, Oishi Park, Oshino Hakkai, Chureito Pagoda). Full organized bus tour.",
+        "<strong>GetYourGuide Mount Fuji (Day 10, Sep 16, confirmed):</strong> 42€/person (Kawaguchiko, Oishi Park, Oshino Hakkai, Chureito Pagoda). Full organized bus tour.",
         "<strong>Nikko Excursion (Day 14, Sep 20):</strong> Tobu Limited Express round trip, approx. ¥2,800 (~17€) per person each way, plus admission to Toshogu (~¥1,600–2,100/person). Total approx. 45€/person.",
       ],
     },
     {
       title: "Food and Drinks (14 days)",
+      subtitle: "Estimate of ~35€–40€ per day",
       details: [
         "Breakfast ~5€, casual lunch/ramen ~10€, good dinner/sushi ~20€. Approx. 40€/day (not counting the 2 dinners included in accommodations: Magome Chaya and wagyu dinner in Takayama).",
       ],
     },
     {
       title: "Konbini and snacks",
+      subtitle: "Snacks, water, coffees and small purchases",
       details: [
         "On top of main meals: coffee, snacks, drinks and small purchases at Lawson/7-Eleven/FamilyMart between meals -- adds up more than it seems through lots of small tickets. Representative figure, calculated from actual recorded spending (~144€ on konbini and small cafés over the whole trip).",
       ],
     },
     {
       title: "Insurance, eSIM and extras",
+      subtitle: "Medical coverage, unlimited data and tickets",
       details: [
         "Heymondo Japan insurance: ~68€/person.",
         "Holafly eSIM (unlimited data): ~41€/person.",
@@ -277,11 +284,11 @@ export const budget = {
     },
     {
       title: "Personal shopping (clothes, souvenirs)",
+      subtitle: "Estimated budget for shopping",
       details: [
         "Category added after the fact with real trip spending (clothes, souvenirs, collectibles...) -- not part of the original estimate. Actual spending varies a lot by person; this figure is a representative average, not a required spend or a cap.",
       ],
     },
   ],
   totalPerPerson: "~2,965€ – 3,110€ (all included)",
-  totalGroup: "~14,825€ – 15,550€ (reference estimate for group of 5)",
 };

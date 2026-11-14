@@ -217,10 +217,11 @@ export const transports = [
 ];
 
 export const budget = {
-  note: "Budget de référence détaillé par personne et groupe (vols internationaux, hébergements, trains à grande vitesse, bus alpins, carte Suica et activités).",
+  note: "Budget de référence détaillé par personne (vols internationaux, hébergements, trains à grande vitesse, bus alpins, carte Suica et activités).",
   categories: [
     {
       title: "Vols Internationaux",
+      subtitle: "Aller-retour par personne",
       details: [
         "Qatar Airways Madrid ↔ Tokyo (via Doha). 890€ / personne.",
         "Aller : QR 150 MAD→DOH + QR 806 DOH→NRT (6 sept, 09:05 → 7 sept, 12:55, 20h 50m).",
@@ -229,18 +230,20 @@ export const budget = {
     },
     {
       title: "Hébergement (14 nuits)",
+      subtitle: "14 nuits d'hébergement sur l'itinéraire",
       details: [
-        "<strong>🏨 Hébergements recommandés sur l'itinéraire (~606,77€/personne)</strong> :",
-        "• Hotel Keihan Kyoto Hachijoguchi (7–12 sept, 5 nuits) : 669,86€ groupe · 133,97€/personne",
-        "• Hotel Resol Trinity Kanazawa (12–13 sept, 1 nuit) : 161,89€ groupe · 32,38€/personne",
-        "• Hotel Wood Takayama (13–14 sept, 1 nuit) : 274,98€ groupe · 55,00€/personne",
-        "• KOKO HOTEL Residence Asakusa Kappabashi (15–21 sept, 6 nuits) : 1 927,13€ groupe · 385,43€/personne",
+        "<strong>🏨 Hébergements recommandés sur l'itinéraire (~642,57€/personne)</strong> :",
+        "• Hotel Keihan Kyoto Hachijoguchi (7–12 sept, 5 nuits) : ~133,97€/personne",
+        "• Hotel Resol Trinity Kanazawa (12–13 sept, 1 nuit) : ~32,38€/personne",
+        "• Hotel Wood Takayama (13–14 sept, 1 nuit) : ~55,00€/personne",
+        "• KOKO HOTEL Residence Asakusa Kappabashi (15–21 sept, 6 nuits) : ~385,43€/personne",
         "<strong>⚠️ Paiement à l'hébergement en espèces</strong> :",
-        "• Magome Chaya (14–15 sept, 1 nuit, avec dîner) : ~178,98€ groupe (~32 000 ¥) · 35,80€/personne. À régler en liquide sur place au minshuku (retirer des espèces au préalable).",
+        "• Magome Chaya (14–15 sept, 1 nuit, avec dîner) : ~35,80€/personne (~6 400 ¥). À régler en liquide sur place au minshuku (retirer des espèces au préalable).",
       ],
     },
     {
       title: "Transports Intérieurs",
+      subtitle: "Shinkansen, bus alpins et Suica",
       details: [
         "<strong>Total estimé des transports ≈ 365€ – 410€/personne</strong> — Shinkansen et trains express (~210€) · Bus alpins Nohi (~71€) · Trajets urbains avec carte IC (~70€) · Trains aéroport (~33€).",
         "Réservation en ligne recommandée pour les trains à grande vitesse et les bus alpins ; les transports urbains se règlent au fur et à mesure avec la carte Suica/Pasmo.",
@@ -250,25 +253,29 @@ export const budget = {
     },
     {
       title: "Excursions Mont Fuji et Nikko",
+      subtitle: "Circuit à la journée et excursions locales",
       details: [
-        "<strong>GetYourGuide Mont Fuji (Jour 10, 16 sept., confirmé) :</strong> 42€/personne · 210€ groupe (Kawaguchiko, parc Oishi, Oshino Hakkai, pagode Chureito). Circuit complet organisé en bus.",
+        "<strong>GetYourGuide Mont Fuji (Jour 10, 16 sept., confirmé) :</strong> 42€/personne (Kawaguchiko, parc Oishi, Oshino Hakkai, pagode Chureito). Circuit complet organisé en bus.",
         "<strong>Excursion à Nikko (Jour 14, 20 sept.) :</strong> Tobu Limited Express aller-retour, env. 2 800 ¥ (~17€) par personne par trajet, plus entrées à Toshogu (~1 600–2 100 ¥/personne). Total env. 45€/personne.",
       ],
     },
     {
       title: "Repas et Boissons (14 jours)",
+      subtitle: "Estimation de ~35€–40€ par jour",
       details: [
         "Petit-déjeuner ~5€, déjeuner décontracté/ramen ~10€, bon dîner/sushi ~20€. Env. 40€/jour (sans compter les 2 dîners inclus dans les hébergements : Magome Chaya et dîner wagyu à Takayama).",
       ],
     },
     {
       title: "Konbini et en-cas",
+      subtitle: "En-cas, boissons et petits achats",
       details: [
         "En plus des repas principaux : cafés, en-cas, boissons et petits achats chez Lawson/7-Eleven/FamilyMart entre les repas -- ça finit par peser plus qu'il n'y paraît à coup de petits tickets. Chiffre représentatif, calculé à partir des dépenses réelles enregistrées (~144€ en konbini et petits cafés sur tout le voyage).",
       ],
     },
     {
       title: "Assurance, eSIM et extras",
+      subtitle: "Couverture médicale, données illimitées et visites",
       details: [
         "Assurance Heymondo Japon : ~68€/personne.",
         "eSIM Holafly (données illimitées) : ~41€/personne.",
@@ -277,11 +284,11 @@ export const budget = {
     },
     {
       title: "Achats personnels (vêtements, souvenirs)",
+      subtitle: "Budget estimé pour les achats",
       details: [
         "Catégorie ajoutée a posteriori avec les dépenses réelles du voyage (vêtements, souvenirs, objets de collection...) -- non prévue dans l'estimation initiale. La dépense réelle varie beaucoup selon la personne ; ce chiffre est une moyenne représentative, pas une dépense obligatoire ni un plafond.",
       ],
     },
   ],
   totalPerPerson: "~2 965€ – 3 110€ (tout inclus)",
-  totalGroup: "~14 825€ – 15 550€ (estimation groupe de 5)",
 };

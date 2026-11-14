@@ -96,7 +96,7 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
               >
                 <span style={{ fontSize: 16 }}>✅</span>
                 <p className="text-sm font-bold m-0" style={{ color: "var(--forest)" }}>
-                  BALANCE FINAL: NO COMPENSABA EN ABSOLUTO — Ahorro real de {formatEur(saveVs14Eur)}/pax ({formatEur(saveVs14Eur * PEOPLE)} grupo) vs Pass 14d y viajando en Nozomi.
+                  BALANCE FINAL: EL JR PASS NO COMPENSA — Ahorro estimado de {formatEur(saveVs14Eur)}/persona frente al pase de 14 días y viajando en trenes Nozomi rápidos.
                 </p>
               </div>
             </div>
@@ -111,9 +111,8 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
         {open && (
           <div className="px-5 sm:px-6 pb-6 space-y-6">
             <p className="text-xs leading-relaxed m-0" style={{ color: "var(--ink-soft)" }}>
-              Desglose económico exhaustivo de la ruta completa (incluyendo trenes de alta velocidad, buses interurbanos y tarjeta Suica para transporte local). Precios oficiales JR Pass Ordinary adulto:
-              {" "}7 días {formatEur(PASS_7_EUR)} · 14 días {formatEur(PASS_14_EUR)} · 21 días {formatEur(PASS_21_EUR)}
-              {" "}(grupo ×5: {formatEur(PASS_7_EUR * PEOPLE)} / {formatEur(PASS_14_EUR * PEOPLE)} / {formatEur(PASS_21_EUR * PEOPLE)}).
+              Desglose económico exhaustivo de la ruta completa por persona (incluyendo trenes de alta velocidad, buses interurbanos y tarjeta Suica para transporte local). Precios oficiales JR Pass Ordinary adulto:
+              {" "}7 días {formatEur(PASS_7_EUR)} · 14 días {formatEur(PASS_14_EUR)} · 21 días {formatEur(PASS_21_EUR)}.
               El Pass <strong>no incluye Nozomi</strong> ni autobuses de los Alpes ni el metro urbano.
             </p>
 
@@ -125,20 +124,20 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                 <div className="p-4 rounded-xl border" style={{ background: "rgba(46,125,91,0.06)", borderColor: "rgba(46,125,91,0.25)" }}>
                   <p className="text-[11px] font-bold uppercase tracking-wider m-0" style={{ color: "var(--forest)" }}>Billetes individuales</p>
                   <p className="font-display text-lg font-bold m-0 mt-1" style={{ color: "var(--ink)" }}>{formatJpyEur(individualTotalJpy, individualTotalEur)}</p>
-                  <p className="text-xs m-0 mt-1" style={{ color: "var(--ink-soft)" }}>/persona · grupo {formatGroupJpyEur(individualTotalJpy, individualTotalEur, PEOPLE)}</p>
+                  <p className="text-xs m-0 mt-1" style={{ color: "var(--ink-soft)" }}>por persona (ruta completa)</p>
                   <p className="text-[11px] m-0 mt-2" style={{ color: "var(--forest)", fontWeight: 600 }}>Todos los transportes de la ruta incluidos</p>
                 </div>
                 <div className="p-4 rounded-xl border" style={{ background: "rgba(46,125,91,0.06)", borderColor: "rgba(46,125,91,0.25)" }}>
                   <p className="text-[11px] font-bold uppercase tracking-wider m-0" style={{ color: "var(--forest)" }}>Ahorro vs JR Pass 14d</p>
                   <p className="font-display text-lg font-bold m-0 mt-1" style={{ color: "var(--forest)" }}>+{formatEur(saveVs14Eur)}</p>
-                  <p className="text-xs m-0 mt-1" style={{ color: "var(--ink-soft)" }}>/persona · grupo {formatEur(saveVs14Eur * PEOPLE)}</p>
+                  <p className="text-xs m-0 mt-1" style={{ color: "var(--ink-soft)" }}>por persona frente al pase oficial</p>
                   <p className="text-[11px] m-0 mt-2" style={{ color: "var(--forest)", fontWeight: 600 }}>✅ Dinero ahorrado por no comprar el pase</p>
                 </div>
                 <div className="p-4 rounded-xl border" style={{ background: "rgba(29,53,87,0.06)", borderColor: "rgba(29,53,87,0.2)" }}>
                   <p className="text-[11px] font-bold uppercase tracking-wider m-0" style={{ color: "var(--indigo)" }}>Coste total con JR Pass 14d</p>
                   <p className="font-display text-lg font-bold m-0 mt-1" style={{ color: "var(--shu)" }}>{formatJpyEur(withPass14Jpy, withPass14Eur)}</p>
-                  <p className="text-xs m-0 mt-1" style={{ color: "var(--ink-soft)" }}>/persona · grupo {formatGroupJpyEur(withPass14Jpy, withPass14Eur, PEOPLE)}</p>
-                  <p className="text-[11px] m-0 mt-2" style={{ color: "var(--ink-soft)" }}>Pass (455€) + extras no cubiertos (171€)</p>
+                  <p className="text-xs m-0 mt-1" style={{ color: "var(--ink-soft)" }}>por persona (Pass 455€ + extras 121€)</p>
+                  <p className="text-[11px] m-0 mt-2" style={{ color: "var(--ink-soft)" }}>Pass (455€) + extras no cubiertos (121€)</p>
                 </div>
               </div>
             </div>
@@ -205,8 +204,7 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                     <tr style={{ background: "rgba(29,53,87,0.04)" }}>
                       <th className="py-2.5 px-3 font-semibold text-xs" style={{ color: "var(--ink-soft)" }}>Duración</th>
                       <th className="py-2.5 px-3 font-semibold text-xs" style={{ color: "var(--ink-soft)" }}>¥ oficiales</th>
-                      <th className="py-2.5 px-3 font-semibold text-xs" style={{ color: "var(--ink-soft)" }}>€ agencia (jrpass.com)</th>
-                      <th className="py-2.5 px-3 font-semibold text-xs" style={{ color: "var(--ink-soft)" }}>Grupo ×5</th>
+                      <th className="py-2.5 px-3 font-semibold text-xs" style={{ color: "var(--ink-soft)" }}>€ oficial aprox. (/persona)</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -214,19 +212,16 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                       <td className="py-2.5 px-3 font-medium">7 días consecutivos</td>
                       <td className="py-2.5 px-3 font-bold">{formatJpy(PASS_7_JPY)}</td>
                       <td className="py-2.5 px-3 font-bold" style={{ color: "var(--shu)" }}>{formatEur(PASS_7_EUR)}</td>
-                      <td className="py-2.5 px-3 text-xs" style={{ color: "var(--ink-soft)" }}>{formatEur(PASS_7_EUR * PEOPLE)}</td>
                     </tr>
                     <tr className="border-t" style={{ borderColor: "var(--line)" }}>
                       <td className="py-2.5 px-3 font-medium">14 días consecutivos</td>
                       <td className="py-2.5 px-3 font-bold">{formatJpy(PASS_14_JPY)}</td>
                       <td className="py-2.5 px-3 font-bold" style={{ color: "var(--shu)" }}>{formatEur(PASS_14_EUR)}</td>
-                      <td className="py-2.5 px-3 text-xs" style={{ color: "var(--ink-soft)" }}>{formatEur(PASS_14_EUR * PEOPLE)}</td>
                     </tr>
                     <tr className="border-t" style={{ borderColor: "var(--line)" }}>
                       <td className="py-2.5 px-3 font-medium">21 días consecutivos</td>
                       <td className="py-2.5 px-3 font-bold">{formatJpy(PASS_21_JPY)}</td>
                       <td className="py-2.5 px-3 font-bold" style={{ color: "var(--shu)" }}>{formatEur(PASS_21_EUR)}</td>
-                      <td className="py-2.5 px-3 text-xs" style={{ color: "var(--ink-soft)" }}>{formatEur(PASS_21_EUR * PEOPLE)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -289,13 +284,11 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                 </p>
                 <p className="text-xs m-0 leading-relaxed" style={{ color: "var(--ink)" }}>
                   Solo mirando trayectos que el Pass cubriría: {formatJpyEur(coveredTotalJpy, coveredTotalEur)} vs Pass 7d {formatJpyEur(PASS_7_JPY, PASS_7_EUR)}
-                  → ahorramos <strong>{formatEur(saveCoveredOnlyEur)}</strong>/persona
-                  (≈ {formatEur(saveCoveredOnlyEur * PEOPLE)} el grupo).
+                  → ahorras <strong>{formatEur(saveCoveredOnlyEur)}</strong> por persona.
                 </p>
                 <p className="text-xs m-0 mt-2 leading-relaxed" style={{ color: "var(--ink)" }}>
-                  En el coste total del transporte del viaje: con Pass 7d pagaríamos <strong>{formatEur(saveVs7Eur)}</strong> más por persona
-                  (≈ {formatEur(saveVs7Eur * PEOPLE)} el grupo); con Pass 14d,
-                  {" "}<strong>{formatEur(saveVs14Eur)}</strong> más/persona.
+                  En el coste total del transporte del viaje: con Pass 7d pagarías <strong>{formatEur(saveVs7Eur)}</strong> más por persona; con Pass 14d,
+                  {" "}<strong>{formatEur(saveVs14Eur)}</strong> más por persona.
                 </p>
               </div>
             </div>

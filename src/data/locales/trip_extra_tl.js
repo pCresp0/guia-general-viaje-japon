@@ -217,10 +217,11 @@ export const transports = [
 ];
 
 export const budget = {
-  note: "Detalyadong gabay sa badyet bawat tao at grupo (mga flight, hotel, bullet train, mga bus sa Alps, Suica card, at mga aktibidad).",
+  note: "Detalyadong gabay sa badyet bawat tao (mga flight, hotel, bullet train, mga bus sa Alps, Suica card, at mga aktibidad).",
   categories: [
     {
       title: "Mga International Flight",
+      subtitle: "Balikan bawat tao",
       details: [
         "Qatar Airways Madrid ↔ Tokyo (via Doha). 890€ / bawat tao.",
         "Papunta: QR 150 MAD→DOH + QR 806 DOH→NRT (Set 6, 09:05 → Set 7, 12:55, 20h 50m).",
@@ -229,18 +230,20 @@ export const budget = {
     },
     {
       title: "Matutuluyan (14 gabi)",
+      subtitle: "14 gabi ng pananatili sa ruta",
       details: [
-        "<strong>🏨 Inirerekomendang mga hotel sa ruta (~606.77€/tao batay sa itinerary)</strong>:",
-        "• Hotel Keihan Kyoto Hachijoguchi (Set 7–12, 5 gabi): 669.86€ grupo · 133.97€/tao",
-        "• Hotel Resol Trinity Kanazawa (Set 12–13, 1 gabi): 161.89€ grupo · 32.38€/tao",
-        "• Hotel Wood Takayama (Set 13–14, 1 gabi): 274.98€ grupo · 55.00€/tao",
-        "• KOKO HOTEL Residence Asakusa Kappabashi (Set 15–21, 6 gabi): 1,927.13€ grupo · 385.43€/tao",
+        "<strong>🏨 Inirerekomendang mga hotel sa ruta (~642.57€/tao batay sa itinerary)</strong>:",
+        "• Hotel Keihan Kyoto Hachijoguchi (Set 7–12, 5 gabi): ~133.97€/tao",
+        "• Hotel Resol Trinity Kanazawa (Set 12–13, 1 gabi): ~32.38€/tao",
+        "• Hotel Wood Takayama (Set 13–14, 1 gabi): ~55.00€/tao",
+        "• KOKO HOTEL Residence Asakusa Kappabashi (Set 15–21, 6 gabi): ~385.43€/tao",
         "<strong>⚠️ Pagbabayad sa tuluyan gamit ang cash</strong>:",
-        "• Magome Chaya (Set 14–15, 1 gabi, kasama hapunan): ~178.98€ grupo (~32,000 ¥) · 35.80€/tao. Babayaran nang cash sa rural minshuku (mag-withdraw ng pera bago pumunta).",
+        "• Magome Chaya (Set 14–15, 1 gabi, kasama hapunan): ~35.80€/tao (~6,400 ¥). Babayaran nang cash sa rural minshuku (mag-withdraw ng pera bago pumunta).",
       ],
     },
     {
       title: "Domestic Transport",
+      subtitle: "Shinkansen, mga bus sa Alps at Suica",
       details: [
         "<strong>Tinatayang kabuuang transportasyon ≈ 365€ – 410€/tao</strong> — Shinkansen at express trains (~210€) · Alpine Nohi buses (~71€) · Pagsakay sa lungsod gamit ang IC card (~70€) · Mga tren sa paliparan (~33€).",
         "Inirerekomenda ang maagang online booking para sa bullet trains at alpine bus; ang transportasyon sa lungsod ay binabayaran gamit ang Suica/Pasmo IC card.",
@@ -250,25 +253,29 @@ export const budget = {
     },
     {
       title: "Mga Excursion sa Bundok Fuji at Nikko",
+      subtitle: "Organisadong day tour at lokal na pamamasyal",
       details: [
-        "<strong>GetYourGuide Bundok Fuji (Araw 10, Set 16, confirmed):</strong> 42€/tao · 210€ grupo (Kawaguchiko, Oishi Park, Oshino Hakkai, Chureito Pagoda). Kumpletong organisadong bus tour.",
+        "<strong>GetYourGuide Bundok Fuji (Araw 10, Set 16, confirmed):</strong> 42€/tao (Kawaguchiko, Oishi Park, Oshino Hakkai, Chureito Pagoda). Kumpletong organisadong bus tour.",
         "<strong>Excursion sa Nikko (Araw 14, Set 20):</strong> Tobu Limited Express balikan, tinatayang ¥2,800 (~17€) bawat tao bawat biyahe, dagdag ang bayad sa Toshogu (~¥1,600–2,100/tao). Kabuuang ~45€/tao.",
       ],
     },
     {
       title: "Pagkain at Inumin (14 araw)",
+      subtitle: "Tantiya na ~35€–40€ bawat araw",
       details: [
         "Almusal ~5€, kaswal na tanghalian/ramen ~10€, masarap na hapunan/sushi ~20€. Tinatayang 40€/araw (hindi kasama ang 2 hapunang kasama sa matutuluyan: Magome Chaya at wagyu dinner sa Takayama).",
       ],
     },
     {
       title: "Konbini at meryenda",
+      subtitle: "Meryenda, inumin at maliliit na bibilhin",
       details: [
         "Bukod sa pangunahing pagkain: kape, meryenda, inumin at maliliit na bilihan sa Lawson/7-Eleven/FamilyMart sa pagitan ng mga oras -- mas malaki pala kapag pinagsama-sama ang maliliit na resibo. Representative na figure, kinalkula mula sa aktwal na gastos (~144€ sa konbini at maliliit na cafe sa buong biyahe).",
       ],
     },
     {
       title: "Insurance, eSIM at extras",
+      subtitle: "Medical coverage, unli data at mga ticket",
       details: [
         "Heymondo Japan insurance: ~68€/tao.",
         "Holafly eSIM (unlimited data): ~41€/tao.",
@@ -277,11 +284,11 @@ export const budget = {
     },
     {
       title: "Personal na pamimili (damit, souvenirs)",
+      subtitle: "Tantiyang badyet para sa pamimili",
       details: [
         "Kategoryang idinagdag pagkatapos, gamit ang aktwal na gastos sa biyahe (damit, souvenirs, koleksyon...) -- hindi bahagi ng orihinal na estimate. Malaki ang pagkakaiba-iba ng aktwal na gastos depende sa tao; ang figure na ito ay representative na average, hindi obligadong gastusin o isang hangganan.",
       ],
     },
   ],
   totalPerPerson: "~2,965€ – 3,110€ (lahat kasama)",
-  totalGroup: "~14,825€ – 15,550€ (tantiya para sa grupong 5 tao)",
 };

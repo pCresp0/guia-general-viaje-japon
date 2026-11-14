@@ -790,9 +790,7 @@ export default function ItineraryPrintView({ days }) {
       {/* ── Anexo: Presupuesto ──────────────────────────────────── */}
       <Appendix title="Anexo · Presupuesto">
         <p style={{ fontSize: 12, marginBottom: 10 }}>
-          <strong>Total / persona:</strong> {budget.totalPerPerson}
-          {" · "}
-          <strong>Grupo:</strong> {budget.totalGroup}
+          <strong>Estimación total de referencia:</strong> {budget.totalPerPerson} por persona
         </p>
         <p style={{ fontSize: 9.5, color: "#5a6070", marginBottom: 12 }}>{budget.note}</p>
         <div style={{ padding: "8px 10px", background: "#f7f0e3", borderRadius: 6, fontSize: 10, marginBottom: 12, lineHeight: 1.5 }}>
@@ -801,7 +799,7 @@ export default function ItineraryPrintView({ days }) {
         {budget.categories.map((c) => (
           <div key={c.title} style={{ marginBottom: 12, pageBreakInside: "avoid" }}>
             <p style={{ fontSize: 11, fontWeight: 700, color: "#1d3557", margin: "0 0 4px" }}>
-              {c.title} — {c.perPerson}/pax · grupo {c.total}
+              {c.title} — {c.perPerson}
             </p>
             <ul style={{ margin: 0, paddingLeft: 16, fontSize: 10, lineHeight: 1.5, color: "#5a6070" }}>
               {c.details.map((d, i) => (

@@ -724,11 +724,11 @@ function buildSearchIndex(lang) {
     items.push(entry({
       id: `budget-${index}`,
       title: category.title,
-      subtitle: `Presupuesto · ${category.total}`,
+      subtitle: category.subtitle ? `Presupuesto · ${category.subtitle} (${category.perPerson})` : `Presupuesto · ${category.perPerson}`,
       category: "Presupuesto",
       tab: "presupuesto",
       targetId: slug("budget", index),
-      terms: [category.title, category.total, ...(category.details || []), "presupuesto", "coste", "precio", "euros"],
+      terms: [category.title, category.perPerson, category.subtitle || "", ...(category.details || []), "presupuesto", "coste", "precio", "euros"],
     }));
   }
 
