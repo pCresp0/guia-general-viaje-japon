@@ -39,13 +39,151 @@ const places = [
     icon: Utensils,
     color: "#2e7d5b",
     items: [
-      { id: "sushi-sakura", name: "Sushi Sakura", city: "Kioto", day: 1, desc: "Sushi fresco, ambiente tradicional." },
-      { id: "sukiyaki-yama", name: "Sukiyaki Yamamoto", city: "Kioto", day: 3, desc: "Sukiyaki de wagyu premium." },
-      { id: "okonomiyaki", name: "Okonomiyaki Kiji", city: "Kioto", day: 4, desc: "Okonomiyaki casero — lo mejor de lo mejor." },
-      { id: "kawakami", name: "Kawakami", city: "Takayama", day: 7, desc: "Hida beef — carne local premium de la región." },
-      { id: "tonkatsu-katsukura", name: "Tonkatsu Katsukura", city: "Tokio", day: 11, desc: "Milanesa de cerdo crujiente — adictivo." },
-      { id: "tsukiji-sushi", name: "Tsukiji Outer Market Sushi", city: "Tokio", day: 12, desc: "Sushi al lado del mercado — ultra fresco." },
-      { id: "ramen-ippudo", name: "Ippudo Ramen", city: "Múltiples", day: null, desc: "Cadena buena, confiable, en varias ciudades." },
+      {
+        id: "kaiten-sushi-uogashi",
+        name: "Kaiten-Sushi Uogashi (AEON Mall Kyoto)",
+        city: "Kioto",
+        day: 1,
+        desc: "Restaurante de sushi en cinta transportadora (kaiten-zushi) a 5 min de Kyoto Station. Excelente variedad de pescado fresco y nigiris a buen precio.",
+        mapsUrl: "https://maps.app.goo.gl/ByDBQB6zaVZ3dj2E6",
+      },
+      {
+        id: "gyumabushi-miyama",
+        name: "Gyumabushi Miyama (牛まぶし三山)",
+        city: "Nara",
+        day: 2,
+        desc: "Especialistas en gyumabushi: cuencos de arroz cubiertos de tierna ternera wagyu que se degustan en tres pasos con condimentos y caldo dashi.",
+        mapsUrl: "https://maps.app.goo.gl/NjR7MNt97GDZszJm6",
+      },
+      {
+        id: "engine-ramen",
+        name: "Kyoto Engine Ramen",
+        city: "Kioto",
+        day: 2,
+        desc: "Ramen artesanal de autor en el histórico callejón peatonal de Pontocho. Caldos intensos y sabrosos, con opciones locales y vegetarianas.",
+        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kyoto+Engine+Ramen+Kyoto",
+      },
+      {
+        id: "sukiyaki-yama",
+        name: "Sukiyaki Yamamoto",
+        city: "Kioto",
+        day: 3,
+        desc: "Sukiyaki tradicional de wagyu premium cocinado a fuego lento en la mesa con salsa dulce de soja y verduras frescas.",
+      },
+      {
+        id: "okonomiyaki",
+        name: "Okonomiyaki Kiji",
+        city: "Kioto",
+        day: 4,
+        desc: "Okonomiyaki casero al estilo tradicional de Kansai, cocinado en plancha de hierro teppan caliente.",
+      },
+      {
+        id: "chao-chao-gyoza",
+        name: "Chao Chao Gyoza (Sanjo Kiyamachi)",
+        city: "Kioto",
+        day: 5,
+        desc: "Famoso izakaya de gyozas crujientes en hilera con múltiples rellenos, ambiente desenfadado y gyozas dulces de chocolate con helado.",
+        mapsUrl: "https://maps.app.goo.gl/ScXREEXfRmmTKcj88",
+      },
+      {
+        id: "teishoku-sakaba-tomoya",
+        name: "Teishoku Sakaba Tomoya",
+        city: "Kanazawa",
+        day: 6,
+        desc: "Izakaya junto al mercado Omicho especializado en menús teishoku con pescado fresco del Mar de Japón y carne de Noto.",
+        mapsUrl: "https://maps.app.goo.gl/SzGJUTSXByhtAskt6",
+      },
+      {
+        id: "tanaka-ya",
+        name: "Tanaka-ya (Shirakawa-go)",
+        city: "Shirakawa-go",
+        day: 7,
+        desc: "Comida tradicional japonesa en mesas bajas sobre tatami dentro de la aldea gassho-zukuri. Especialidades locales y fideos soba.",
+        mapsUrl: "https://maps.app.goo.gl/GYV8d8g1gaTi3Emb7",
+      },
+      {
+        id: "kawakami",
+        name: "Hida Takayama Wagyu & Hoba Miso",
+        city: "Takayama",
+        day: 7,
+        desc: "Ternera de Hida (wagyu A5) a la brasa sobre hoja de magnolia con miso dulce regional (hoba miso) y nigiris de ternera flambeada.",
+      },
+      {
+        id: "magome-chaya-dinner",
+        name: "Cena tradicional en Magome Chaya",
+        city: "Magome",
+        day: 8,
+        desc: "Banquete kaiseki casero en minshuku rural: pescado de río asado a la sal, estofado caliente nabemono, tempura de verduras y arroz de montaña.",
+        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Magome+Chaya+Gifu",
+      },
+      {
+        id: "nikujiru-gyoza-dandadan",
+        name: "Nikujiru Gyoza Dandadan (Kappabashi)",
+        city: "Tokio",
+        day: 9,
+        desc: "Taberna en Kappabashi célebre por sus gyozas jugosas hechas a mano en plancha especial con masa gruesa y relleno caldoso.",
+        mapsUrl: "https://maps.app.goo.gl/6u6EkzqoowquijNY8",
+      },
+      {
+        id: "asakusa-monja-monro",
+        name: "Asakusa Monja Monro",
+        city: "Tokio",
+        day: 9,
+        desc: "Restaurante de monjayaki y teppanyaki tradicional tokiota cocinado en la propia mesa con marisco fresco del mercado y queso fundido.",
+      },
+      {
+        id: "roast-beef-ohno",
+        name: "Roast Beef Ohno (Harajuku)",
+        city: "Tokio",
+        day: 11,
+        desc: "El famoso donburi de ternera con una espectacular montaña de láminas de roast beef wagyu, yema de huevo y salsa de trufa con queso.",
+        mapsUrl: "https://maps.app.goo.gl/JTsdy13vc7tvtTcP9",
+      },
+      {
+        id: "himuro-hokkaido-ramen",
+        name: "Himuro Hokkaido Ramen (Asakusa)",
+        city: "Tokio",
+        day: 11,
+        desc: "Ramen de miso al auténtico estilo de Sapporo/Hokkaido: caldo denso, reconfortante, fideos ondulados elásticos y cerdo chashu tierno a precio genial.",
+        mapsUrl: "https://maps.google.com?q=Himuro%20Hokkaido%20Ramen%20Asakusa,%202%20Chome-1-11%20Nishiasakusa,%20Taito%20City,%20Tokyo%20111-0035,%20Jap%C3%B3n",
+      },
+      {
+        id: "tonkatsu-katsukura",
+        name: "Tonkatsu Katsukura",
+        city: "Tokio",
+        day: 11,
+        desc: "Milanesa de cerdo ibérico o japonés ultra crujiente con panko artesanal y sésamo recién molido.",
+      },
+      {
+        id: "katsuemon-divercity",
+        name: "Katsuemon (DiverCity Tokyo Plaza)",
+        city: "Tokio",
+        day: 12,
+        desc: "Tonkatsu crujiente y curry japonés en Odaiba, ideal para reponer fuerzas junto a la estatua gigante de Gundam Unicornio.",
+        mapsUrl: "https://maps.app.goo.gl/LFswXe7ofaSSnbKY8",
+      },
+      {
+        id: "tsukiji-sushi",
+        name: "Tsukiji Outer Market Sushi",
+        city: "Tokio",
+        day: 12,
+        desc: "Sushi fresco y puestos de comida marina en las calles exteriores del histórico mercado de Tsukiji.",
+      },
+      {
+        id: "gyukatsu-ichinisan",
+        name: "Gyukatsu Ichi Ni San (Akihabara)",
+        city: "Tokio",
+        day: 13,
+        desc: "Filete de ternera empanado ligeramente frito servido con un hornillo de piedra volcánica individual para terminar de sellar cada bocado a tu gusto.",
+        mapsUrl: "https://maps.app.goo.gl/VgfUPTrjPzz4dQpHA",
+      },
+      {
+        id: "ramen-ippudo",
+        name: "Ippudo Ramen",
+        city: "Múltiples",
+        day: null,
+        desc: "Cadena histórica de tonkotsu ramen cremosa y confiable, con locales por todo Japón ideales para una comida rápida sin fallar.",
+      },
     ],
   },
   {
@@ -251,6 +389,26 @@ export default function PlacesPage() {
                       <p style={{ fontSize: 12.5, color: "var(--ink-soft)", lineHeight: 1.5, margin: 0 }}>
                         {place.desc}
                       </p>
+
+                      {place.mapsUrl && (
+                        <div style={{ marginTop: 8 }}>
+                          <a
+                            href={place.mapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-lg border transition-opacity hover:opacity-85"
+                            style={{
+                              background: "var(--paper)",
+                              borderColor: "var(--line)",
+                              color: "var(--indigo)",
+                              textDecoration: "none",
+                            }}
+                          >
+                            <img src={googleMapsIcon} alt="" width={12} height={12} />
+                            Ver en Google Maps ↗
+                          </a>
+                        </div>
+                      )}
 
                       {guideFor[place.id] && (
                         <div style={{ marginTop: 10 }}>
