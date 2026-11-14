@@ -47,13 +47,6 @@ export const gygFujiActivity = {
     "Oshino Hakkai (1 hora - 8 manantiales sagrados de agua de deshielo UNESCO)",
     "Parque Arakurayama Sengen y Pagoda Chureito (subida de 400 escalones y vista clásica del Fuji)",
   ],
-  bookings: [
-    {
-      dayNum: 10,
-      date: "2026-09-16",
-      dateFormatted: "Miércoles, 16 de septiembre de 2026",
-    }
-  ]
 };
 
 export const visibilityTools = {
