@@ -113,6 +113,7 @@ export default {
   // ── Mga flight ────────────────────────────────────────────────────
   "flights.eyebrow": "Logistics",
   "flights.title": "Mga flight",
+  "flights.intro": "Para sa aming biyahe, pinili namin ang mga international round-trip flight na ito sa Qatar Airways mula Madrid patungong Tokyo (Narita) via Doha. Ibinabahagi namin ang iskedyul, oras ng layover, patakaran sa bagahe, at presyo ng sanggunian bawat tao, kasama ang QR code ng Visit Japan Web para sa customs at immigration, bilang gabay sa paghahanap ng sarili mong mga flight sa Japan.",
   "flights.confirmed": "Mga kumpirmadong flight",
   "flights.outbound": "Papunta",
   "flights.return": "Pabalik",
@@ -135,15 +136,15 @@ export default {
   // ── Mga hotel ─────────────────────────────────────────────────────
   "hotels.eyebrow": "Matutuluyan",
   "hotels.title": "Mga hotel",
+  "hotels.intro": "Para sa aming 16-araw na biyahe sa Japan, pinili namin ang mga matutuluyang ito dahil sa lapit sa mga pangunahing istasyon ng tren at subway (sa Kyoto, Kanazawa, Takayama, at Tokyo), kasama ang karanasan ng pagtulog sa tradisyonal na minshuku sa Magome. Makikita mo rito ang mga oras ng check-in/out, praktikal na tips, presyo ng sanggunian bawat tao, eksaktong address sa Japanese, at direktang link para matingnan o ma-book ang bawat hotel sa Booking para sa iyong biyahe.",
   "hotels.checkIn": "Check-in",
   "hotels.checkOut": "Check-out",
   "hotels.pin": "PIN",
   "hotels.address": "Address",
-  "hotels.price": "Presyo",
-  "hotels.viewBooking": "Tingnan sa Booking",
+  "hotels.price": "Presyo ref. / tao",
+  "hotels.viewBooking": "Tingnan ang hotel sa Booking",
   "hotels.stays": "Mga Tuluyan",
   "hotels.nights": "Mga Gabi",
-  "hotels.groupTotal": "Kabuuan ng grupo",
 
   // ── Transportasyon ────────────────────────────────────────────────
   "transport.eyebrow": "Paano tayo maglalakbay",

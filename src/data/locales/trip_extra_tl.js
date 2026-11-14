@@ -140,7 +140,6 @@ export const stays = [
     options: [
       {
         rooms: "2 kwarto · Triple Moderate + Standard Double (2 kama)",
-        guests: "5 matatanda",
         cancel: "Libreng cancellation hanggang 1 araw bago ang check-in",
         note: "Simula Marso 2026, nagpapatupad ang Kyoto ng bagong tourist tax. Para sa mga accommodation na mas mababa sa ¥ (~33€) bawat tao/gabi, EXEMPTED ang tax. Kung lalampas sa ¥ (~33€), ito ay ¥ (~2€) bawat tao/gabi. Babayaran sa hotel. Hindi kasama ang mga pagkain.",
       },
@@ -152,7 +151,6 @@ export const stays = [
     options: [
       {
         rooms: "2 kwarto · Double (2 kama + 1 extra) + Standard Double",
-        guests: "5 matatanda",
         cancel: "Libreng cancellation hanggang 2 araw bago ang check-in",
         note: "Hindi kasama ang mga pagkain.",
       },
@@ -164,7 +162,6 @@ export const stays = [
     options: [
       {
         rooms: "2 kwarto · Triple Superior + Standard Double (2 kama)",
-        guests: "5 matatanda",
         cancel: "Libreng cancellation hanggang 3 araw bago ang check-in",
         note: "Maagang check-out (10:00). Hindi kasama ang mga pagkain.",
       },
@@ -186,7 +183,6 @@ export const stays = [
     options: [
       {
         rooms: "Residence / apartment · 6 gabi",
-        guests: "5 matatanda",
       },
     ],
   },

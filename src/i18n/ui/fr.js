@@ -108,6 +108,7 @@ export default {
   // ── Vols ──────────────────────────────────────────────────────────
   "flights.eyebrow": "Logistique",
   "flights.title": "Vols",
+  "flights.intro": "Pour notre voyage, nous avons choisi ces vols internationaux aller-retour avec Qatar Airways reliant Madrid à Tokyo (Narita) avec une escale fluide à Doha. Retrouvez ici tous les détails de nos vols, temps d'escale, franchise bagages et prix de référence par personne, ainsi que l'accès au QR code Visit Japan Web pour les formalités d'entrée, afin de vous servir de repère pour vos propres billets.",
   "flights.confirmed": "Vols confirmés",
   "flights.outbound": "Aller",
   "flights.return": "Retour",
@@ -130,15 +131,15 @@ export default {
   // ── Hôtels ────────────────────────────────────────────────────────
   "hotels.eyebrow": "Hébergement",
   "hotels.title": "Hôtels",
+  "hotels.intro": "Pour notre voyage de 16 jours au Japon, nous avons sélectionné ces hébergements comme bases stratégiques pour leur proximité immédiate avec les gares principales (à Kyoto, Kanazawa, Takayama et Tokyo), complétés par l'expérience authentique d'une nuit en minshuku traditionnel à Magome. Vous trouverez chaque fiche avec les horaires d'arrivée/départ, conseils pratiques, prix de référence par personne, l'adresse en japonais et le lien direct pour consulter ou réserver chaque hôtel sur Booking pour votre propre voyage.",
   "hotels.checkIn": "Arrivée",
   "hotels.checkOut": "Départ",
   "hotels.pin": "Code",
   "hotels.address": "Adresse",
-  "hotels.price": "Prix",
-  "hotels.viewBooking": "Voir sur Booking",
+  "hotels.price": "Prix réf. / pers.",
+  "hotels.viewBooking": "Voir l'hôtel sur Booking",
   "hotels.stays": "Séjours",
   "hotels.nights": "Nuits",
-  "hotels.groupTotal": "Total du groupe",
 
   // ── Transports ────────────────────────────────────────────────────
   "transport.eyebrow": "Comment se déplacer",

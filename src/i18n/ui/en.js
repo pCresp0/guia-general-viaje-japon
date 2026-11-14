@@ -109,6 +109,7 @@ export default {
   // ── Flights ───────────────────────────────────────────────────────
   "flights.eyebrow": "Logistics",
   "flights.title": "Flights",
+  "flights.intro": "For our journey, we chose these international round-trip flights with Qatar Airways connecting Madrid with Tokyo (Narita) via a smooth stopover in Doha. Here we share the flight schedule, layover times, baggage policy, and reference costs per person, along with direct access to the Visit Japan Web QR code for customs and immigration, serving as a practical guide when planning your own flights to Japan.",
   "flights.confirmed": "Confirmed flights",
   "flights.outbound": "Outbound",
   "flights.return": "Return",
@@ -131,15 +132,15 @@ export default {
   // ── Hotels ────────────────────────────────────────────────────────
   "hotels.eyebrow": "Accommodation",
   "hotels.title": "Hotels",
+  "hotels.intro": "For our 16-day trip to Japan, we chose these accommodations as strategic basecamps due to their immediate proximity to major train and subway stations (in Kyoto, Kanazawa, Takayama, and Tokyo), combined with the authentic experience of staying at a traditional minshuku in the postal village of Magome. Here you will find each listing with check-in/out hours, tips, reference prices per person, exact address in Japanese for maps or taxi drivers, and a direct link to check or book each hotel on Booking for your own trip.",
   "hotels.checkIn": "Check-in",
   "hotels.checkOut": "Check-out",
   "hotels.pin": "PIN",
   "hotels.address": "Address",
-  "hotels.price": "Price",
-  "hotels.viewBooking": "View on Booking",
+  "hotels.price": "Ref. price / person",
+  "hotels.viewBooking": "View hotel on Booking",
   "hotels.stays": "Stays",
   "hotels.nights": "Nights",
-  "hotels.groupTotal": "Group total",
 
   // ── Transport ─────────────────────────────────────────────────────
   "transport.eyebrow": "Getting around",

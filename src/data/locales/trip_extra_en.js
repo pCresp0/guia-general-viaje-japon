@@ -140,7 +140,6 @@ export const stays = [
     options: [
       {
         rooms: "2 rooms · Triple Moderate + Standard Double (2 beds)",
-        guests: "5 adults",
         cancel: "Free cancellation up to 1 day before",
         note: "Starting March 2026, Kyoto applies a new tourist tax. For accommodations under ¥ (~33€) per person/night, the tax is EXEMPT. If it exceeds ¥ (~33€), it is ¥ (~2€) per person/night. To be paid at the hotel. Meals not included.",
       },
@@ -152,7 +151,6 @@ export const stays = [
     options: [
       {
         rooms: "2 rooms · Double (2 beds + 1 extra) + Standard Double",
-        guests: "5 adults",
         cancel: "Free cancellation up to 2 days before",
         note: "Meals not included.",
       },
@@ -164,7 +162,6 @@ export const stays = [
     options: [
       {
         rooms: "2 rooms · Triple Superior + Standard Double (2 beds)",
-        guests: "5 adults",
         cancel: "Free cancellation up to 3 days before",
         note: "Early check-out (10:00). Meals not included.",
       },
@@ -186,7 +183,6 @@ export const stays = [
     options: [
       {
         rooms: "Residence / apartment · 6 nights",
-        guests: "5 adults",
       },
     ],
   },

@@ -28,7 +28,7 @@ export default function InfoPage() {
           {t("flights.title")}
         </h1>
         <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
-          Aquí puedes consultar los detalles de los vuelos internacionales de ida y vuelta con Qatar Airways, conectando Madrid con Tokio (Narita) mediante escala en Doha. Incluye los horarios de salida y llegada, la política de equipaje y el acceso directo al código QR de Visit Japan Web necesario para agilizar el control de aduanas e inmigración.
+          {t("flights.intro")}
         </p>
       </div>
 

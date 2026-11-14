@@ -140,7 +140,6 @@ export const stays = [
     options: [
       {
         rooms: "2 chambres · Triple Modérée + Double Standard (2 lits)",
-        guests: "5 adultes",
         cancel: "Annulation gratuite jusqu'à 1 jour avant",
         note: "À partir de mars 2026, Kyoto applique une nouvelle taxe de séjour. Pour les hébergements de moins de 6 000 ¥ (~33€) par personne/nuit, la taxe est EXEMPTÉE. S'il dépasse 6 000 ¥ (~33€), c'est 400 ¥ (~2€) par personne/nuit. À payer à l'hôtel. Repas non inclus.",
       },
@@ -152,7 +151,6 @@ export const stays = [
     options: [
       {
         rooms: "2 chambres · Double (2 lits + 1 lit d'appoint) + Double Standard",
-        guests: "5 adultes",
         cancel: "Annulation gratuite jusqu'à 2 jours avant",
         note: "Repas non inclus.",
       },
@@ -164,7 +162,6 @@ export const stays = [
     options: [
       {
         rooms: "2 chambres · Triple Supérieure + Double Standard (2 lits)",
-        guests: "5 adultes",
         cancel: "Annulation gratuite jusqu'à 3 jours avant",
         note: "Départ anticipé (10:00). Repas non inclus.",
       },
@@ -186,7 +183,6 @@ export const stays = [
     options: [
       {
         rooms: "Résidence / appartement · 6 nuits",
-        guests: "5 adultes",
       },
     ],
   },

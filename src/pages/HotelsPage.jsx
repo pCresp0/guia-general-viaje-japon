@@ -213,29 +213,26 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
 
           {/* Actions & Price */}
           <div className="flex flex-wrap items-center justify-between gap-3 pt-3" style={{ borderTop: "1px solid var(--line)" }}>
-            {hotel.url && (
+            {(hotel.url || hotel.name) && (
               <a
-                href={hotel.url}
+                href={hotel.url || `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(hotel.name)}`}
                 target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-3 py-2"
+                className="inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-3 py-2 transition-opacity hover:opacity-90"
                 style={{ background: headerBg, color: "white", textDecoration: "none" }}
               >
-                <img src={bookingIcon} alt="" width={16} height={16} style={{ borderRadius: 3 }} /> Ver reserva Booking
+                <img src={bookingIcon} alt="" width={16} height={16} style={{ borderRadius: 3 }} /> {t("hotels.viewBooking")}
               </a>
             )}
-            {hotel.total && (
+            {(hotel.perPerson || hotel.total) && (
               <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "auto" }}>
-                <p style={{ fontSize: 10, opacity: 0.65, margin: 0, textTransform: "uppercase" }}>{t("common.total")}</p>
-                <p className="font-display" style={{ fontSize: 22, fontWeight: 700, margin: 0, color: "var(--ink)", lineHeight: 1 }}>
-                  {hotel.total}
+                <p style={{ fontSize: 10, opacity: 0.65, margin: 0, textTransform: "uppercase" }}>{t("hotels.price")}</p>
+                <p className="font-display" style={{ fontSize: 20, fontWeight: 700, margin: 0, color: "var(--ink)", lineHeight: 1 }}>
+                  {hotel.perPerson || hotel.total}
                 </p>
                 {!hotel.paid && (
                   <p style={{ fontSize: 11, fontWeight: 700, margin: "3px 0 0", color: "#b45309" }}>
                     ⚠️ En efectivo en hotel
                   </p>
-                )}
-                {hotel.guests && (
-                  <p style={{ fontSize: 10, opacity: 0.65, margin: "2px 0 0" }}>{hotel.guests}</p>
                 )}
               </div>
             )}
@@ -258,7 +255,7 @@ export default function HotelsPage() {
         <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("hotels.eyebrow")}</p>
         <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>{t("hotels.title")}</h2>
         <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
-          En este apartado se reúnen todos los alojamientos seleccionados a lo largo de la ruta por Japón: hoteles estratégicamente ubicados en Tokio, Kioto, Osaka y Kanazawa, y un ryokan tradicional en el pueblo postal de Magome. Cada ficha incluye horarios de check-in/out, consejos de llegada y la dirección exacta en japonés para enseñársela a taxistas o usar en mapas locales.
+          {t("hotels.intro")}
         </p>
       </div>
 

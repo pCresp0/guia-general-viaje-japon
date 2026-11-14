@@ -105,6 +105,7 @@ export default {
   // ── Vuelos ────────────────────────────────────────────────────────
   "flights.eyebrow": "Logística",
   "flights.title": "Vuelos",
+  "flights.intro": "Para nuestro viaje elegimos estos vuelos internacionales de ida y vuelta con Qatar Airways, conectando Madrid con Tokio (Narita) mediante una escala rápida y cómoda en Doha. Compartimos aquí la combinación de vuelos, tiempos de escala, política de equipaje y precio de referencia por persona, junto con el acceso directo a Visit Japan Web para el control de aduanas e inmigración, para que te sirvan de guía o comparación a la hora de buscar tus propios billetes a Japón.",
   "flights.confirmed": "Vuelos confirmados",
   "flights.outbound": "Ida",
   "flights.return": "Vuelta",
@@ -127,12 +128,13 @@ export default {
   // ── Hoteles ───────────────────────────────────────────────────────
   "hotels.eyebrow": "Alojamiento",
   "hotels.title": "Hoteles",
+  "hotels.intro": "Para nuestro viaje de 16 días por Japón seleccionamos estos alojamientos como base estratégica por su cercanía inmediata a estaciones principales de tren y metro (en Kioto, Kanazawa, Takayama y Tokio), combinados con la experiencia auténtica de dormir en un minshuku tradicional en el pueblo postal de Magome. Te dejamos cada ficha con horarios de check-in/out, consejos prácticos, precios de referencia por persona, la dirección exacta en japonés para mapas o taxistas y el enlace directo para consultar o reservar cada hotel en Booking si te encaja para tu propio viaje.",
   "hotels.checkIn": "Check-in",
   "hotels.checkOut": "Check-out",
   "hotels.pin": "PIN",
   "hotels.address": "Dirección",
-  "hotels.price": "Precio",
-  "hotels.viewBooking": "Ver en Booking",
+  "hotels.price": "Precio ref. / persona",
+  "hotels.viewBooking": "Ver hotel en Booking",
   "hotels.stays": "Estancias",
   "hotels.nights": "Noches",
   "hotels.groupTotal": "Total grupo",
