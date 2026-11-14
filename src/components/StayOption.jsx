@@ -49,10 +49,19 @@ export default function StayOption({ option, city }) {
         <span className="font-bold" style={{ color: "var(--ink)", fontSize: 14 }}>
           {option.name}
         </span>
-        {option.total && (
-          <span className="shrink-0" style={{ color: "var(--forest)", fontWeight: 700, fontSize: 12.5 }}>
-            {option.total}
-          </span>
+        {(option.total || option.perNight) && (
+          <div className="text-right shrink-0">
+            {option.total && (
+              <span className="block font-bold" style={{ color: "var(--forest)", fontSize: 12.5, lineHeight: 1.2 }}>
+                {option.total}
+              </span>
+            )}
+            {option.perNight && (
+              <span className="block text-[10.5px] font-semibold" style={{ color: "var(--ink-soft)", lineHeight: 1.2 }}>
+                {option.perNight}
+              </span>
+            )}
+          </div>
         )}
       </div>
 

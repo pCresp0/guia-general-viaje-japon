@@ -139,6 +139,7 @@ export const stays = [
     nights: "Mga Araw 1 hanggang 6 ng itineraryo (5 gabi)",
     options: [
       {
+        perNight: "~26.79€ / gabi",
         checkIn: "Araw 1 ng itineraryo · 15:00–00:00",
         checkOut: "Araw 6 ng itineraryo · hanggang 11:00",
         cancel: "Libreng cancellation hanggang 1 araw bago ang check-in",
@@ -151,6 +152,7 @@ export const stays = [
     nights: "Mga Araw 6 hanggang 7 ng itineraryo (1 gabi)",
     options: [
       {
+        perNight: "~32.38€ / gabi",
         checkIn: "Araw 6 ng itineraryo · simula 15:00",
         checkOut: "Araw 7 ng itineraryo · hanggang 11:00",
         cancel: "Libreng cancellation hanggang 2 araw bago ang check-in",
@@ -163,6 +165,7 @@ export const stays = [
     nights: "Mga Araw 7 hanggang 8 ng itineraryo (1 gabi)",
     options: [
       {
+        perNight: "~55.00€ / gabi",
         checkIn: "Araw 7 ng itineraryo · 15:00–22:00",
         checkOut: "Araw 8 ng itineraryo · hanggang 10:00",
         cancel: "Libreng cancellation hanggang 3 araw bago ang check-in",
@@ -175,6 +178,7 @@ export const stays = [
     nights: "Mga Araw 8 hanggang 9 ng itineraryo (1 gabi)",
     options: [
       {
+        perNight: "~35.80€ / gabi",
         checkIn: "Araw 8 ng itineraryo · simula 15:00",
         checkOut: "Araw 9 ng itineraryo · hanggang 10:00",
         note: "Lutong bahay na hapunan sa itinakdang oras (~18:00). Kumpirmahin bago ang biyahe.",
@@ -186,6 +190,7 @@ export const stays = [
     nights: "Mga Araw 9 hanggang 15 ng itineraryo (6 na gabi)",
     options: [
       {
+        perNight: "~64.24€ / gabi",
         checkIn: "Araw 9 ng itineraryo · simula 15:00",
         checkOut: "Araw 15 ng itineraryo · hanggang 11:00",
       },

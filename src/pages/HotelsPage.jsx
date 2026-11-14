@@ -219,10 +219,17 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
             )}
             {(hotel.perPerson || hotel.total) && (
               <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "auto" }}>
-                <p style={{ fontSize: 10, opacity: 0.65, margin: 0, textTransform: "uppercase" }}>{t("hotels.price")}</p>
-                <p className="font-display" style={{ fontSize: 20, fontWeight: 700, margin: 0, color: "var(--ink)", lineHeight: 1 }}>
+                <p style={{ fontSize: 10, opacity: 0.65, margin: 0, textTransform: "uppercase", letterSpacing: "0.03em" }}>
+                  {t("hotels.price")}
+                </p>
+                <p className="font-display" style={{ fontSize: 20, fontWeight: 700, margin: 0, color: "var(--ink)", lineHeight: 1.1 }}>
                   {hotel.perPerson || hotel.total}
                 </p>
+                {hotel.perNight && (
+                  <p style={{ fontSize: 11.5, fontWeight: 600, margin: "2px 0 0", color: "var(--forest)" }}>
+                    {hotel.perNight}
+                  </p>
+                )}
                 {!hotel.paid && (
                   <p style={{ fontSize: 11, fontWeight: 700, margin: "3px 0 0", color: "#b45309" }}>
                     ⚠️ En efectivo en hotel

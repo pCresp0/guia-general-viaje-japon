@@ -216,6 +216,7 @@ export const stays = [
       {
         name: "Hotel Keihan Kyoto Hachijoguchi",
         total: "~133,97€",
+        perNight: "~26,79€ / noche",
         paid: true,
         paidBy: "Pagado por adelantado",
         url: "https://www.booking.com/hotel/jp/keihan-kyoto-hachijoguchi.es.html",
@@ -238,6 +239,7 @@ export const stays = [
       {
         name: "Hotel Resol Trinity Kanazawa",
         total: "~32,38€",
+        perNight: "~32,38€ / noche",
         paid: true,
         paidBy: "Pagado por adelantado",
         url: "https://www.booking.com/hotel/jp/resol-trinity-kanazawa.es.html",
@@ -260,6 +262,7 @@ export const stays = [
       {
         name: "Hotel Wood Takayama",
         total: "~55,00€",
+        perNight: "~55,00€ / noche",
         paid: true,
         paidBy: "Pagado por adelantado",
         url: "https://www.booking.com/hotel/jp/jia-wood-gao-shan.es.html",
@@ -282,6 +285,7 @@ export const stays = [
       {
         name: "Magome Chaya",
         total: "~35,80€",
+        perNight: "~35,80€ / noche",
         paid: false,
         paymentMethod: "Efectivo en hotel",
         url: "https://www.booking.com/hotel/jp/magome-chaya.es.html",
@@ -301,6 +305,7 @@ export const stays = [
       {
         name: "KOKO HOTEL Residence Asakusa Kappabashi",
         total: "~385,43€",
+        perNight: "~64,24€ / noche",
         paid: true,
         paidBy: "Pagado por adelantado",
         url: "https://www.booking.com/hotel/jp/koko-residence-qian-cao-katupaqiao.es.html",

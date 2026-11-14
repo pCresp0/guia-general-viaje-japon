@@ -139,6 +139,7 @@ export const stays = [
     nights: "Jours 1 à 6 de l'itinéraire (5 nuits)",
     options: [
       {
+        perNight: "~26,79 € / nuit",
         checkIn: "Jour 1 de l'itinéraire · 15:00–00:00",
         checkOut: "Jour 6 de l'itinéraire · jusqu'à 11:00",
         cancel: "Annulation gratuite jusqu'à 1 jour avant",
@@ -151,6 +152,7 @@ export const stays = [
     nights: "Jours 6 à 7 de l'itinéraire (1 nuit)",
     options: [
       {
+        perNight: "~32,38 € / nuit",
         checkIn: "Jour 6 de l'itinéraire · à partir de 15:00",
         checkOut: "Jour 7 de l'itinéraire · jusqu'à 11:00",
         cancel: "Annulation gratuite jusqu'à 2 jours avant",
@@ -163,6 +165,7 @@ export const stays = [
     nights: "Jours 7 à 8 de l'itinéraire (1 nuit)",
     options: [
       {
+        perNight: "~55,00 € / nuit",
         checkIn: "Jour 7 de l'itinéraire · 15:00–22:00",
         checkOut: "Jour 8 de l'itinéraire · jusqu'à 10:00",
         cancel: "Annulation gratuite jusqu'à 3 jours avant",
@@ -175,6 +178,7 @@ export const stays = [
     nights: "Jours 8 à 9 de l'itinéraire (1 nuit)",
     options: [
       {
+        perNight: "~35,80 € / nuit",
         checkIn: "Jour 8 de l'itinéraire · à partir de 15:00",
         checkOut: "Jour 9 de l'itinéraire · jusqu'à 10:00",
         note: "Dîner fait maison à heure fixe (~18:00). Confirmer avant le voyage.",
@@ -186,6 +190,7 @@ export const stays = [
     nights: "Jours 9 à 15 de l'itinéraire (6 nuits)",
     options: [
       {
+        perNight: "~64,24 € / nuit",
         checkIn: "Jour 9 de l'itinéraire · à partir de 15:00",
         checkOut: "Jour 15 de l'itinéraire · jusqu'à 11:00",
       },

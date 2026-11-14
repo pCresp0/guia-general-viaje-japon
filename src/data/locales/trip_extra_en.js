@@ -139,6 +139,7 @@ export const stays = [
     nights: "Days 1 to 6 of the itinerary (5 nights)",
     options: [
       {
+        perNight: "~€26.79 / night",
         checkIn: "Day 1 of the itinerary · 15:00–00:00",
         checkOut: "Day 6 of the itinerary · until 11:00",
         cancel: "Free cancellation up to 1 day before",
@@ -151,6 +152,7 @@ export const stays = [
     nights: "Days 6 to 7 of the itinerary (1 night)",
     options: [
       {
+        perNight: "~€32.38 / night",
         checkIn: "Day 6 of the itinerary · from 15:00",
         checkOut: "Day 7 of the itinerary · until 11:00",
         cancel: "Free cancellation up to 2 days before",
@@ -163,6 +165,7 @@ export const stays = [
     nights: "Days 7 to 8 of the itinerary (1 night)",
     options: [
       {
+        perNight: "~€55.00 / night",
         checkIn: "Day 7 of the itinerary · 15:00–22:00",
         checkOut: "Day 8 of the itinerary · until 10:00",
         cancel: "Free cancellation up to 3 days before",
@@ -175,6 +178,7 @@ export const stays = [
     nights: "Days 8 to 9 of the itinerary (1 night)",
     options: [
       {
+        perNight: "~€35.80 / night",
         checkIn: "Day 8 of the itinerary · from 15:00",
         checkOut: "Day 9 of the itinerary · until 10:00",
         note: "Home-cooked dinner at a fixed time (~18:00). Confirm before the trip.",
@@ -186,6 +190,7 @@ export const stays = [
     nights: "Days 9 to 15 of the itinerary (6 nights)",
     options: [
       {
+        perNight: "~€64.24 / night",
         checkIn: "Day 9 of the itinerary · from 15:00",
         checkOut: "Day 15 of the itinerary · until 11:00",
       },
