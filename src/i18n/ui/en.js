@@ -84,7 +84,7 @@ export default {
   "pending.eyebrow": "Before we travel",
   "pending.title": "To do",
   "pending.intro":
-    "Comprehensive checklist covering all essential tasks, ticket bookings, documentation, and preparations for traveling to Japan. Organized chronologically by urgency (before departure and during the stay). Check off each item as you complete it; your progress is automatically saved locally on your device.",
+    "Comprehensive checklist covering all essential tasks, ticket bookings, documentation, and preparations for traveling to Japan. Organized chronologically by advance planning windows (months ahead, weeks prior, before flying, and during your stay). Check off each item as you complete it; your progress is automatically saved locally on your device.",
   "pending.remaining": "things to sort",
   "pending.remainingOne": "thing to sort",
   "pending.allDone": "All sorted!",

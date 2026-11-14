@@ -80,7 +80,7 @@ export default {
   "pending.eyebrow": "Antes de viajar",
   "pending.title": "Cosas pendientes",
   "pending.intro":
-    "Lista de control exhaustiva con todos los trámites, reservas de entradas, documentación y gestiones indispensables para viajar a Japón. Está organizada por orden de urgencia y fases (antes de salir y durante la estancia). Puedes marcar cada tarea conforme la completes y tu progreso quedará guardado localmente en tu dispositivo.",
+    "Lista de control exhaustiva con todos los trámites, reservas de entradas, documentación y gestiones indispensables para viajar a Japón. Está organizada cronológicamente por plazos recomendados (meses antes, semanas previas, antes de volar y durante la estancia). Puedes marcar cada tarea conforme la completes y tu progreso quedará guardado localmente en tu dispositivo.",
   "pending.remaining": "cosas pendientes",
   "pending.remainingOne": "cosa pendiente",
   "pending.allDone": "¡Todo resuelto!",

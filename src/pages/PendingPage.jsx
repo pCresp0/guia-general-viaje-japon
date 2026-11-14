@@ -157,14 +157,15 @@ export default function PendingPage() {
           <div className="space-y-3">
             {items.map((item) => {
               const isDone = !!done[item.id];
-              const urg = urgencyConfig[item.urgency];
+              const urg = urgencyConfig[item.urgency] || urgencyConfig.alta || {};
+              const timingText = item.timing || urg?.label || "";
 
               return (
                 <Highlightable key={item.id} id={slug("pending", item.id)}>
                 <div
                   className="rounded-2xl border overflow-hidden"
                   style={{
-                    borderColor: isDone ? "var(--line)" : urg.color + "44",
+                    borderColor: isDone ? "var(--line)" : (urg.border || "var(--line)"),
                     background: "var(--paper-raised)",
                     opacity: isDone ? 0.6 : 1,
                     transition: "opacity 0.2s",
@@ -186,20 +187,23 @@ export default function PendingPage() {
                     </button>
 
                     <div className="flex-1 min-w-0">
-                      <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 6 }}>
                         <p style={{
                           fontSize: 14.5, fontWeight: 700, color: "var(--ink)",
                           textDecoration: isDone ? "line-through" : "none",
                         }}>
                           {item.title}
                         </p>
-                        {!isDone && (
+                        {!isDone && timingText && (
                           <span style={{
-                            fontSize: 9.5, fontWeight: 700, letterSpacing: "0.06em",
-                            textTransform: "uppercase", padding: "2px 7px", borderRadius: 20,
-                            background: urg.color, color: "white", flexShrink: 0,
+                            fontSize: 10, fontWeight: 700, letterSpacing: "0.04em",
+                            textTransform: "uppercase", padding: "2.5px 8px", borderRadius: 20,
+                            background: urg.bg || "rgba(29,53,87,0.08)",
+                            color: urg.color || "var(--indigo)",
+                            border: `1px solid ${urg.border || "rgba(29,53,87,0.22)"}`,
+                            flexShrink: 0,
                           }}>
-                            {urg.label}
+                            {timingText}
                           </span>
                         )}
                       </div>
@@ -234,7 +238,7 @@ export default function PendingPage() {
 
                       {item.deadline && (
                         <p style={{
-                          fontSize: 11.5, color: urg.color, fontWeight: 600,
+                          fontSize: 12, color: urg.color || "var(--ink-soft)", fontWeight: 600,
                           marginTop: 10,
                         }}>
                           ⏳ {item.deadline}
