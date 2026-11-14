@@ -141,7 +141,6 @@ export const stays = [
       {
         checkIn: "Araw 1 ng itineraryo · 15:00–00:00",
         checkOut: "Araw 6 ng itineraryo · hanggang 11:00",
-        rooms: "2 kwarto · Triple Moderate + Standard Double (2 kama)",
         cancel: "Libreng cancellation hanggang 1 araw bago ang check-in",
         note: "Simula Marso 2026, nagpapatupad ang Kyoto ng bagong tourist tax. Para sa mga accommodation na mas mababa sa ¥ (~33€) bawat tao/gabi, EXEMPTED ang tax. Kung lalampas sa ¥ (~33€), ito ay ¥ (~2€) bawat tao/gabi. Babayaran sa hotel. Hindi kasama ang mga pagkain.",
       },
@@ -154,7 +153,6 @@ export const stays = [
       {
         checkIn: "Araw 6 ng itineraryo · simula 15:00",
         checkOut: "Araw 7 ng itineraryo · hanggang 11:00",
-        rooms: "2 kwarto · Double (2 kama + 1 extra) + Standard Double",
         cancel: "Libreng cancellation hanggang 2 araw bago ang check-in",
         note: "Hindi kasama ang mga pagkain.",
       },
@@ -167,7 +165,6 @@ export const stays = [
       {
         checkIn: "Araw 7 ng itineraryo · 15:00–22:00",
         checkOut: "Araw 8 ng itineraryo · hanggang 10:00",
-        rooms: "2 kwarto · Triple Superior + Standard Double (2 kama)",
         cancel: "Libreng cancellation hanggang 3 araw bago ang check-in",
         note: "Maagang check-out (10:00). Hindi kasama ang mga pagkain.",
       },
@@ -180,7 +177,6 @@ export const stays = [
       {
         checkIn: "Araw 8 ng itineraryo · simula 15:00",
         checkOut: "Araw 9 ng itineraryo · hanggang 10:00",
-        rooms: "Minshuku · may kasamang hapunan (walang almusal)",
         note: "Lutong bahay na hapunan sa itinakdang oras (~18:00). Kumpirmahin bago ang biyahe.",
       },
     ],
@@ -192,7 +188,6 @@ export const stays = [
       {
         checkIn: "Araw 9 ng itineraryo · simula 15:00",
         checkOut: "Araw 15 ng itineraryo · hanggang 11:00",
-        rooms: "Residence / apartment · 6 gabi",
       },
     ],
   },

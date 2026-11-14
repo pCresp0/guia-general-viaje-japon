@@ -250,7 +250,6 @@ function HotelCard({ stay, compact = false }) {
       {opt.address && <>{opt.address}{opt.phone ? ` · ${opt.phone}` : ""}<br /></>}
       {opt.confirmation && <>Confirmación: <strong>{opt.confirmation}</strong>{opt.pin ? <> · PIN: <strong>{opt.pin}</strong></> : ""}<br /></>}
       {opt.checkIn && <>Check-in: {opt.checkIn}{opt.checkOut ? ` · Check-out: ${opt.checkOut}` : ""}<br /></>}
-      {opt.rooms && <>Habitaciones: {opt.rooms}{opt.guests ? ` · ${opt.guests}` : ""}<br /></>}
       {opt.total && <>Total: <strong>{opt.total}</strong>{opt.cancel ? ` · ${opt.cancel}` : ""}<br /></>}
       {opt.note && <><span style={{ color: "#5a6070" }}>{opt.note}</span><br /></>}
       {opt.url && (

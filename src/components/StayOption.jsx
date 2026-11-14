@@ -1,4 +1,4 @@
-import { MapPin, KeyRound, BedDouble, Phone, CalendarCheck, CalendarX } from "lucide-react";
+import { MapPin, Phone, CalendarCheck, CalendarX } from "lucide-react";
 import { mapsUrl } from "../utils/maps";
 import { useT } from "../i18n/LanguageContext";
 import googleMapsIcon from "../assets/icons/google-maps.png";
@@ -56,21 +56,9 @@ export default function StayOption({ option, city }) {
         )}
       </div>
 
-      {option.guests && (
-        <p style={{ margin: "0 0 8px", color: "var(--ink-soft)", fontSize: 11.5 }}>{option.guests}</p>
-      )}
-
-      {(option.confirmation || option.pin) && (
-        <div className="flex gap-3 rounded-md px-2.5 py-2 mb-2.5" style={{ background: "var(--paper-raised)", border: "1px solid var(--line)" }}>
-          <Field label="Confirmación" icon={KeyRound} mono>{option.confirmation}</Field>
-          <Field label="PIN" mono>{option.pin}</Field>
-        </div>
-      )}
-
-      <div className="grid gap-2 mb-2" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))" }}>
+      <div className="grid gap-2 mb-2" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))" }}>
         <Field label="Entrada" icon={CalendarCheck}>{option.checkIn}</Field>
         <Field label="Salida" icon={CalendarX}>{option.checkOut}</Field>
-        <Field label="Habitaciones" icon={BedDouble}>{option.rooms}</Field>
         {option.phone && (
           <Field label="Teléfono" icon={Phone}>
             <a href={`tel:${option.phone.replace(/\s/g, "")}`} style={{ color: "var(--indigo)", textDecoration: "none" }}>
