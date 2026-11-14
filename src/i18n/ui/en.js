@@ -145,6 +145,7 @@ export default {
   // ── Transport ─────────────────────────────────────────────────────
   "transport.eyebrow": "Getting around",
   "transport.title": "Transport",
+  "transport.intro": "In this section we have compiled all the transport options we used during our 16-day journey across Japan: bullet trains (Shinkansen), JR express and local lines, alpine mountain buses (Nohi Bus), and city subways. You can check each journey with indicative timetables, reference prices per person, advance booking advice, and how to get around seamlessly using IC cards (Suica/Pasmo) as a practical guide for your own route.",
   "transport.byDay": "Journeys by day",
   "transport.totalCost": "Total cost",
   "transport.suicaTitle": "Suica card",

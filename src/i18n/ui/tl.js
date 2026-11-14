@@ -149,6 +149,7 @@ export default {
   // ── Transportasyon ────────────────────────────────────────────────
   "transport.eyebrow": "Paano tayo maglalakbay",
   "transport.title": "Transportasyon",
+  "transport.intro": "Sa seksyong ito, tinipon namin ang lahat ng transportasyong ginamit namin sa aming 16-araw na biyahe sa Japan: bullet trains (Shinkansen), mga tren ng JR, mga bus sa kabundukan (Nohi Bus), at subway sa lungsod. Maaari mong tingnan ang bawat biyahe na may mga iskedyul, presyo ng sanggunian bawat tao, payo sa maagang pag-book, at kung paano maglakbay nang madali gamit ang IC cards (Suica/Pasmo) para sa sarili mong ruta.",
   "transport.byDay": "Mga biyahe kada araw",
   "transport.totalCost": "Kabuuang gastos",
   "transport.suicaTitle": "Suica card",

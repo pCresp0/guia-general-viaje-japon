@@ -142,6 +142,7 @@ export default {
   // ── Transportes ───────────────────────────────────────────────────
   "transport.eyebrow": "Cómo nos movemos",
   "transport.title": "Transportes",
+  "transport.intro": "En esta sección recopilamos todos los transportes que utilizamos a lo largo de nuestro viaje de 16 días por Japón: trenes bala (Shinkansen), trenes exprés y locales de JR, autobuses alpinos de montaña por los Alpes (Nohi Bus) y líneas de metro urbano. Puedes consultar cada trayecto con sus horarios orientativos, precios de referencia por persona, recomendaciones de reserva anticipada y cómo moverte de forma fácil con tarjetas IC (Suica/Pasmo) para que te sirva como guía práctica en tu propia ruta.",
   "transport.byDay": "Trayectos por día",
   "transport.totalCost": "Coste total",
   "transport.suicaTitle": "Tarjeta Suica",

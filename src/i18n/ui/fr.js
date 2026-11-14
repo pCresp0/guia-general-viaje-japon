@@ -144,6 +144,7 @@ export default {
   // ── Transports ────────────────────────────────────────────────────
   "transport.eyebrow": "Comment se déplacer",
   "transport.title": "Transports",
+  "transport.intro": "Dans cette section, nous avons rassemblé tous les transports que nous avons empruntés au cours de notre voyage de 16 jours au Japon : trains à grande vitesse (Shinkansen), lignes express et locales JR, bus alpins de montagne (Nohi Bus) et métros urbains. Retrouvez chaque trajet avec ses horaires indicatifs, prix de référence par personne, conseils de réservation anticipée et astuces pour vous déplacer simplement avec les cartes IC (Suica/Pasmo).",
   "transport.byDay": "Trajets par jour",
   "transport.totalCost": "Coût total",
   "transport.suicaTitle": "Carte Suica",

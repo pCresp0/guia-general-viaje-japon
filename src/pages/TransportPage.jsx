@@ -120,7 +120,7 @@ export default function TransportPage({ onNavigate }) {
           <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{t("transport.eyebrow")}</p>
           <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>{t("transport.title")}</h2>
           <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
-            Esta sección centraliza todos los transportes del viaje: trenes bala (Shinkansen), líneas exprés, autobuses de montaña y metro urbano. Podrás consultar cada trayecto con sus horarios y andenes, las fichas digitales de billetes y las instrucciones para moverte con tarjetas de transporte IC (Suica/Pasmo).
+            {t("transport.intro")}
           </p>
         </div>
       </div>
