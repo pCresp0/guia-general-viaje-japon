@@ -1,7 +1,7 @@
 import { ChevronDown, LayoutList, X, Map } from "lucide-react";
 import { formatDateShort } from "../utils/date";
 import PlaceText from "./PlaceText";
-import { useContent } from "../i18n/LanguageContext";
+import { useContent, useT, useLang } from "../i18n/LanguageContext";
 import { parseDayNumbers } from "../utils/mapDay";
 
 // La vista rápida filtra automáticamente para dejar solo las paradas cronológicas (horas con dígitos)
@@ -128,6 +128,8 @@ function hasRealTime(entry) {
 }
 
 export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMap, standalone = false, isOpen = true, onToggle }) {
+  const t = useT();
+  const { lang } = useLang();
   const keyEntries = (day.schedule ?? []).filter(hasRealTime);
   const { mapStops, stays } = useContent();
   const hasMapStops = mapStops.some((s) => parseDayNumbers(s.day).includes(day.num));
@@ -159,7 +161,7 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
               </span>
               <div className="min-w-0 flex-1">
                 <p className="text-white font-semibold text-sm leading-snug break-words">{day.title}</p>
-                <p className="text-white/80 text-xs mt-0.5">{formatDateShort(day.date)} · {day.cities}</p>
+                <p className="text-white/80 text-xs mt-0.5">{formatDateShort(day.date, lang)} · {day.cities}</p>
               </div>
             </div>
             {onClose && (
@@ -168,8 +170,8 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
                 onClick={onClose}
                 className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
                 style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
-                title="Cerrar"
-                aria-label="Cerrar"
+                title={t("common.close")}
+                aria-label={t("common.close")}
               >
                 <X size={16} />
               </button>
@@ -185,11 +187,11 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
                   onClick={() => onShowFullDay(day.num)}
                   className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 cursor-pointer"
                   style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
-                  title="Ver detalle completo"
-                  aria-label="Ver detalle completo"
+                  title={t("itinerary.fullDetail")}
+                  aria-label={t("itinerary.fullDetail")}
                 >
                   <LayoutList size={14} />
-                  <span>Detalle completo</span>
+                  <span>{t("itinerary.fullDetail")}</span>
                 </button>
               )}
               {onViewMap && hasMapStops && (
@@ -198,11 +200,11 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
                   onClick={() => onViewMap(day.num)}
                   className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 cursor-pointer"
                   style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
-                  title="Ver mapa"
-                  aria-label="Ver mapa"
+                  title={t("common.viewOnMap")}
+                  aria-label={t("common.viewOnMap")}
                 >
                   <Map size={14} />
-                  <span>Ver mapa</span>
+                  <span>{t("common.viewOnMap")}</span>
                 </button>
               )}
             </div>
@@ -223,7 +225,7 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
             </span>
             <div className="min-w-0 flex-1">
               <p className="text-white font-semibold text-sm leading-snug truncate">{day.title}</p>
-              <p className="text-white/80 text-xs mt-0.5 truncate">{formatDateShort(day.date)} · {day.cities}</p>
+              <p className="text-white/80 text-xs mt-0.5 truncate">{formatDateShort(day.date, lang)} · {day.cities}</p>
             </div>
           </div>
 
@@ -234,11 +236,11 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
                 onClick={() => onShowFullDay(day.num)}
                 className="flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
                 style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
-                title="Ver detalle completo"
-                aria-label="Ver detalle completo"
+                title={t("itinerary.fullDetail")}
+                aria-label={t("itinerary.fullDetail")}
               >
                 <LayoutList size={14} />
-                <span className="hidden sm:inline">Detalle completo</span>
+                <span className="hidden sm:inline">{t("itinerary.fullDetail")}</span>
               </button>
             )}
             {onViewMap && hasMapStops && (
@@ -247,11 +249,11 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
                 onClick={() => onViewMap(day.num)}
                 className="flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
                 style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
-                title="Ver mapa"
-                aria-label="Ver mapa"
+                title={t("common.viewOnMap")}
+                aria-label={t("common.viewOnMap")}
               >
                 <Map size={14} />
-                <span className="hidden sm:inline">Ver mapa</span>
+                <span className="hidden sm:inline">{t("common.viewOnMap")}</span>
               </button>
             )}
             {onClose && (
@@ -260,8 +262,8 @@ export function QuickDayCard({ day, blockColor, onShowFullDay, onClose, onViewMa
                 onClick={onClose}
                 className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 active:scale-95 cursor-pointer"
                 style={{ background: "rgba(255,255,255,0.18)", border: "none", color: "white" }}
-                title="Cerrar"
-                aria-label="Cerrar"
+                title={t("common.close")}
+                aria-label={t("common.close")}
               >
                 <X size={16} />
               </button>

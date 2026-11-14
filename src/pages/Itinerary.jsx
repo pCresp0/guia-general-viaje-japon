@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useContent } from "../i18n/LanguageContext";
+import { useContent, useT, useLang } from "../i18n/LanguageContext";
 import { formatDateShort } from "../utils/date";
 import DayCard from "../components/DayCard";
 import ItineraryPrintView from "../components/ItineraryPrintView";
@@ -10,6 +10,8 @@ import { slug } from "../utils/slug";
 
 export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView, onGoToMapDay }) {
   const { days, blocks } = useContent();
+  const t = useT();
+  const { lang } = useLang();
   const blockById = Object.fromEntries(blocks.map((b) => [b.id, b]));
   const refs = useRef({});
   const { highlightId } = useHighlight();
@@ -51,10 +53,10 @@ export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView
       <div className="flex items-start justify-between gap-3 mb-2">
         <div>
           <p className="eyebrow" style={{ color: "var(--shu)" }}>
-            Ruta paso a paso
+            {t("itinerary.eyebrow")}
           </p>
           <h1 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>
-            Itinerario completo
+            {t("itinerary.titleFull")}
           </h1>
         </div>
         <button
@@ -64,12 +66,12 @@ export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView
           style={{ background: "var(--indigo)", color: "white", border: "none" }}
         >
           {exporting ? <Loader2 size={14} className="animate-spin" /> : <FileDown size={14} />}
-          Exportar guía PDF
+          {t("itinerary.exportPdf")}
         </button>
       </div>
 
       <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 4, marginBottom: 14, lineHeight: 1.6 }}>
-        El plan de ruta completo día a día a lo largo de 16 jornadas por Japón, combinando grandes metrópolis, los Alpes Japoneses y excursiones a la naturaleza. Puedes consultar cada jornada en Modo Detallado (con horarios, lore cultural y notas de transporte) o en Modo Vista Rápida estilo línea de metro para orientarte de un vistazo. También puedes exportar toda la guía a un documento PDF.
+        {t("itinerary.intro")}
       </p>
 
       {/* ── Toggle vista rápida / completa ────────────────────── */}
@@ -88,7 +90,7 @@ export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView
           }}
         >
           <LayoutList size={13} />
-          Detalle completo
+          {t("itinerary.fullDetail")}
         </button>
         <button
           onClick={() => setQuickView(true)}
@@ -101,13 +103,13 @@ export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView
           }}
         >
           <List size={13} />
-          Vista rápida
+          {t("itinerary.quickView")}
         </button>
       </div>
 
       {quickView && (
         <p className="text-xs mb-3 px-0.5" style={{ color: "var(--ink-soft)" }}>
-          Solo lo esencial: transportes, visitas y comidas. Pulsa "Detalle completo" para ver toda la info.
+          {t("itinerary.quickViewHint")}
         </p>
       )}
 
@@ -166,7 +168,7 @@ export default function Itinerary({ openDay, setOpenDay, quickView, setQuickView
                         {d.title}
                       </span>
                       <span className="block text-xs" style={{ color: "var(--ink-soft)" }}>
-                        {formatDateShort(d.date)} · {d.cities}
+                        {formatDateShort(d.date, lang)} · {d.cities}
                       </span>
                     </span>
                     <ChevronRight size={18} style={{ color: "var(--ink-soft)" }} />

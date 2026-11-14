@@ -1,6 +1,6 @@
 export const tripMeta = {
-  title: "Voyage Viaje a Japón au Japon",
-  subtitle: "Septembre 2026",
+  title: "Mon Voyage au Japon",
+  subtitle: "Guide Général",
   welcomeParagraphs: [
     "<h3 style=\"font-size: 1.25rem; font-weight: 800; color: var(--ink); margin: 0 0 8px 0;\">Je vous souhaite la bienvenue sur mon guide de voyage au Japon ! 🇯🇵</h3><p style=\"margin: 0; line-height: 1.6;\">Ce site est né à l'origine comme mon carnet de route et guide personnel pour préparer mon voyage de <strong>16 jours au Japon (du 6 au 21 septembre 2026)</strong>. Après l'expérience, je l'ai adapté et ouvert à tous afin que chacun puisse s'en servir comme d'une base concrète et pratique pour organiser sa propre aventure. Vous y trouverez mon itinéraire exact, les trains empruntés, les hébergements, les adresses gourmandes et les lieux incontournables.</p>",
     "<hr style=\"border: 0; border-top: 1px solid var(--line); margin: 4px 0;\" />",

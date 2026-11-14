@@ -1,6 +1,6 @@
 export const tripMeta = {
-  title: "Viaje a Japón Trip sa Japan",
-  subtitle: "Setyembre 2026",
+  title: "Aking Biyahe sa Japan",
+  subtitle: "Pangkalahatang Gabay",
   welcomeParagraphs: [
     "<h3 style=\"font-size: 1.25rem; font-weight: 800; color: var(--ink); margin: 0 0 8px 0;\">Maligayang pagdating sa aking gabay sa paglalakbay sa Japan! 🇯🇵</h3><p style=\"margin: 0; line-height: 1.6;\">Ang website na ito ay orihinal na binuo bilang sarili kong gabay at personal na talaarawan para ihanda ang aking <strong>16-araw na biyahe sa Japan (Setyembre 6–21, 2026)</strong>. Pagkatapos ng biyahe, iniakma at binuksan ko ito upang magsilbing tunay at praktikal na basehan para sa sinumang nagpaplano ng sariling pakikipagsapalaran. Dito mo makikita ang eksaktong ruta, mga sinakyang tren, tinuluyang hotel, kinainan, at mga lugar na talagang sulit bisitahin.</p>",
     "<hr style=\"border: 0; border-top: 1px solid var(--line); margin: 4px 0;\" />",

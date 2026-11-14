@@ -1,6 +1,6 @@
 export const tripMeta = {
-  title: "Viaje a Japón Trip to Japan",
-  subtitle: "September 2026",
+  title: "My Trip to Japan",
+  subtitle: "General Guide",
   welcomeParagraphs: [
     "<h3 style=\"font-size: 1.25rem; font-weight: 800; color: var(--ink); margin: 0 0 8px 0;\">Welcome to my travel guide to Japan! 🇯🇵</h3><p style=\"margin: 0; line-height: 1.6;\">This website originally started as my personal travel log and notebook to plan my <strong>16-day journey across Japan (September 6–21, 2026)</strong>. After the trip, I adapted and opened it up so anyone can use it as a genuine, practical base to plan their own adventure. Here you will find the exact itinerary I followed, trains taken, where I stayed, places I ate, and the highlights truly worth visiting.</p>",
     "<hr style=\"border: 0; border-top: 1px solid var(--line); margin: 4px 0;\" />",

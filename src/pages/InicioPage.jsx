@@ -18,7 +18,7 @@ export default function InicioPage({ onNavigate }) {
 
       {/* Qué es esto / Para qué sirve la web */}
       <section className="mb-8">
-        <p className="eyebrow mb-3" style={{ color: "var(--ink-soft)" }}>Sobre esta guía</p>
+        <p className="eyebrow mb-3" style={{ color: "var(--ink-soft)" }}>{t("home.aboutGuide")}</p>
         <div
           onClick={(e) => {
             const link = e.target.closest("a");

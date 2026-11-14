@@ -145,14 +145,30 @@ export function fmtDate(date) {
   return `${date.getDate()}-${MONTHS[date.getMonth()]}-${date.getFullYear()}`;
 }
 
-// "dom 7-sept-2026"
-export function formatDateLong(iso) {
+// "dom 7-sept-2026" o localizado según el idioma activo
+export function formatDateLong(iso, lang = "es") {
   const d = new Date(iso + "T00:00:00");
+  if (lang && lang !== "es") {
+    try {
+      const locale = lang === "tl" ? "fil-PH" : lang === "en" ? "en-US" : lang === "fr" ? "fr-FR" : lang;
+      return new Intl.DateTimeFormat(locale, { weekday: "short", day: "numeric", month: "short", year: "numeric" }).format(d);
+    } catch {
+      // fallback
+    }
+  }
   return `${WEEKDAYS[d.getDay()]} ${d.getDate()}-${MONTHS[d.getMonth()]}-${d.getFullYear()}`;
 }
 
-// "7-sept-2026"
-export function formatDateShort(iso) {
+// "7-sept-2026" o localizado según el idioma activo
+export function formatDateShort(iso, lang = "es") {
   const d = new Date(iso + "T00:00:00");
+  if (lang && lang !== "es") {
+    try {
+      const locale = lang === "tl" ? "fil-PH" : lang === "en" ? "en-US" : lang === "fr" ? "fr-FR" : lang;
+      return new Intl.DateTimeFormat(locale, { day: "numeric", month: "short", year: "numeric" }).format(d);
+    } catch {
+      // fallback
+    }
+  }
   return fmtDate(d);
 }

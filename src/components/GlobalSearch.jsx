@@ -333,7 +333,7 @@ export default function GlobalSearch({ onNavigate, variant = "bar" }) {
               {showChips && (
                 <div style={{ padding: isDesktop ? "14px 18px 12px" : "12px 13px 10px" }}>
                   <p style={{ margin: "0 0 8px", fontSize: 10.5, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--ink-soft)" }}>
-                    Búsquedas frecuentes
+                    {t("search.frequent")}
                   </p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>
                     {QUICK_SUGGESTIONS.map((s) => (
@@ -383,7 +383,7 @@ export default function GlobalSearch({ onNavigate, variant = "bar" }) {
                     {t("search.empty", { query: trimmed })}
                   </p>
                   <p style={{ margin: "6px 0 0", fontSize: 12, color: "var(--ink-soft)" }}>
-                    Prueba con otra palabra o un término más corto
+                    {t("search.emptyHint")}
                   </p>
                 </div>
               )}
@@ -400,7 +400,7 @@ export default function GlobalSearch({ onNavigate, variant = "bar" }) {
                     color: "var(--ink-soft)",
                     borderBottom: "1px solid var(--line)",
                   }}>
-                    {results.length} resultado{results.length !== 1 ? "s" : ""}
+                    {t("search.resultsCount", { count: results.length, s: results.length !== 1 ? (lang === "es" ? "s" : lang === "en" ? "s" : lang === "fr" ? "s" : "") : "" })}
                   </div>
                   {results.map((item, index) => {
                     const active = index === activeIndex;
@@ -456,7 +456,7 @@ export default function GlobalSearch({ onNavigate, variant = "bar" }) {
                             color: meta.color,
                             marginBottom: 2,
                           }}>
-                            {item.category}
+                            {t(`search.cat.${item.category}`) || item.category}
                             {item.day != null ? ` · ${t("search.day", { day: item.day })}` : ""}
                           </span>
                           {/* Título con match resaltado */}

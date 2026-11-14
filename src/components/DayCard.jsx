@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { ScrollText, ChevronDown, ChevronUp, Map, BookOpen, List, X } from "lucide-react";
-import { useContent, useT } from "../i18n/LanguageContext";
+import { useContent, useT, useLang } from "../i18n/LanguageContext";
 import { useHighlight } from "../context/HighlightContext";
 import { guidesByDay, guideMeta } from "../data/guides";
 import DayFujiOptionCard from "./DayFujiOptionCard";
@@ -178,6 +178,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
   const [selectedGuide, setSelectedGuide] = useState(null);
   const { blocks, stays, days, mapStops, guides, popCulture } = useContent();
   const { triggerHighlight } = useHighlight();
+  const { lang } = useLang();
   const blockById = Object.fromEntries(blocks.map((b) => [b.id, b]));
   const block = blockById[day.block];
   const stay = stays.find((s) => s.afterDay === day.num);
@@ -209,7 +210,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
             <p className="eyebrow" style={{ color: "rgba(255,255,255,0.95)" }}>
-              {block.emoji} Día {day.num} · {formatDateLong(day.date)}
+              {block.emoji} {t("common.day")} {day.num} · {formatDateLong(day.date, lang)}
             </p>
             <h2 className="font-display text-xl sm:text-2xl text-white mt-1 leading-tight break-words">
               {day.title}
@@ -222,7 +223,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
             <button
               type="button"
               onClick={onClose}
-              aria-label="Cerrar"
+              aria-label={t("common.close")}
               className="rounded-full p-1.5 flex items-center justify-center transition-all hover:bg-white/25 shrink-0 cursor-pointer"
               style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none" }}
             >
@@ -237,13 +238,13 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
               <button
                 type="button"
                 onClick={onShowQuickView}
-                title="Ver en vista rápida"
-                aria-label="Ver en vista rápida"
+                title={t("itinerary.quickView")}
+                aria-label={t("itinerary.quickView")}
                 className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all hover:bg-white/25 active:scale-95 shrink-0 cursor-pointer"
                 style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none" }}
               >
                 <List size={14} />
-                <span>Vista rápida</span>
+                <span>{t("itinerary.quickView")}</span>
               </button>
             )}
             {onViewMap && hasMapStops && (
@@ -254,7 +255,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
                 style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "none" }}
               >
                 <Map size={14} />
-                <span>Ver mapa</span>
+                <span>{t("common.viewOnMap")}</span>
               </button>
             )}
           </div>
@@ -494,7 +495,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
         {dayGuides.length > 0 && (
           <div>
             <p className="eyebrow mb-2" style={{ color: "var(--ink-soft)" }}>
-              📖 Qué vamos a ver
+              📖 {t("itinerary.whatWeSee")}
             </p>
             <div className="space-y-2">
               {dayGuides.map((gid) => (
@@ -514,7 +515,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
             >
               <div>
                 <p className="eyebrow" style={{ color: "var(--indigo)", margin: 0 }}>
-                  🏨 Dónde dormimos —{" "}
+                  🏨 {t("itinerary.whereWeSleep")} —{" "}
                   <PlaceText text={stay.city} linkStyle={{ color: "var(--shu)" }} />
                 </p>
                 <p className="text-xs mt-0.5" style={{ color: "var(--ink-soft)" }}>
@@ -544,7 +545,7 @@ export default function DayCard({ day, defaultOpenHistory = false, onClose, onVi
           style={{ color: "var(--indigo)" }}
         >
           <ScrollText size={16} />
-          Contexto histórico
+          {t("itinerary.history")}
           <ChevronDown size={16} className={`transition-transform ${showHistory ? "rotate-180" : ""}`} />
         </button>
         {showHistory && (

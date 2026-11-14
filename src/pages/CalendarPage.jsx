@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { useContent, useT } from "../i18n/LanguageContext";
+import { useContent, useT, useLang } from "../i18n/LanguageContext";
 import DayCard from "../components/DayCard";
 import { X, CalendarPlus, Download, ExternalLink } from "lucide-react";
 import { downloadIcsCalendar } from "../utils/exportCalendar";
@@ -11,22 +11,78 @@ import { QuickDayCard } from "../components/ItineraryQuickView";
 const blockEmoji = { kioto: "⛩️", alpes: "🏔️", tokio: "🗼" };
 
 const dayHighlights = {
-  0: { highlight: "✈️ Vuelo Madrid → Tokio", stay: "En vuelo" },
-  1: { highlight: "✈️ Aterrizaje NRT", stay: "🏨 Keihan Kioto" },
-  2: { highlight: "🦌 Excursión Nara", stay: "🏨 Keihan Kioto" },
-  3: { highlight: "🏯 Kinkaku & Kiyomizu", stay: "🏨 Keihan Kioto" },
-  4: { highlight: "🎋 Arashiyama & Gion", stay: "🏨 Keihan Kioto" },
-  5: { highlight: "🏯 Excursión Osaka", stay: "🏨 Keihan Kioto" },
-  6: { highlight: "🌸 Kenroku-en", stay: "🏨 Resol Kanazawa" },
-  7: { highlight: "🚌 Nohi Bus Shirakawa", stay: "🏨 Wood Takayama" },
-  8: { highlight: "⛰️ Nakasendo (8km)", stay: "🏨 Magome Chaya" },
-  9: { highlight: "🚄 Shinkansen Tokio", stay: "🏨 KOKO Tokio" },
-  10: { highlight: "🌉 teamLab Planets", stay: "🏨 KOKO Tokio" },
-  11: { highlight: "🚦 Shibuya & Meiji", stay: "🏨 KOKO Tokio" },
-  12: { highlight: "🏙️ Toyosu & Roppongi", stay: "🏨 KOKO Tokio" },
-  13: { highlight: "🕹️ Ikebukuro & Nakano", stay: "🏨 KOKO Tokio" },
-  14: { highlight: "🏯 Palacio Imperial & Ginza", stay: "🏨 KOKO Tokio" },
-  15: { highlight: "✈️ Vuelo Tokio → Madrid", stay: "Regreso" },
+  es: {
+    0: { highlight: "✈️ Vuelo Madrid → Tokio", stay: "En vuelo" },
+    1: { highlight: "✈️ Aterrizaje NRT", stay: "🏨 Keihan Kioto" },
+    2: { highlight: "🦌 Excursión Nara", stay: "🏨 Keihan Kioto" },
+    3: { highlight: "🏯 Kinkaku & Kiyomizu", stay: "🏨 Keihan Kioto" },
+    4: { highlight: "🎋 Arashiyama & Gion", stay: "🏨 Keihan Kioto" },
+    5: { highlight: "🏯 Excursión Osaka", stay: "🏨 Keihan Kioto" },
+    6: { highlight: "🌸 Kenroku-en", stay: "🏨 Resol Kanazawa" },
+    7: { highlight: "🚌 Nohi Bus Shirakawa", stay: "🏨 Wood Takayama" },
+    8: { highlight: "⛰️ Nakasendo (8km)", stay: "🏨 Magome Chaya" },
+    9: { highlight: "🚄 Shinkansen Tokio", stay: "🏨 KOKO Tokio" },
+    10: { highlight: "🌉 teamLab Planets", stay: "🏨 KOKO Tokio" },
+    11: { highlight: "🚦 Shibuya & Meiji", stay: "🏨 KOKO Tokio" },
+    12: { highlight: "🏙️ Toyosu & Roppongi", stay: "🏨 KOKO Tokio" },
+    13: { highlight: "🕹️ Ikebukuro & Nakano", stay: "🏨 KOKO Tokio" },
+    14: { highlight: "🏯 Palacio Imperial & Ginza", stay: "🏨 KOKO Tokio" },
+    15: { highlight: "✈️ Vuelo Tokio → Madrid", stay: "Regreso" },
+  },
+  en: {
+    0: { highlight: "✈️ Flight Madrid → Tokyo", stay: "In flight" },
+    1: { highlight: "✈️ NRT Landing", stay: "🏨 Keihan Kyoto" },
+    2: { highlight: "🦌 Nara Day Trip", stay: "🏨 Keihan Kyoto" },
+    3: { highlight: "🏯 Kinkaku & Kiyomizu", stay: "🏨 Keihan Kyoto" },
+    4: { highlight: "🎋 Arashiyama & Gion", stay: "🏨 Keihan Kyoto" },
+    5: { highlight: "🏯 Osaka Day Trip", stay: "🏨 Keihan Kyoto" },
+    6: { highlight: "🌸 Kenroku-en", stay: "🏨 Resol Kanazawa" },
+    7: { highlight: "🚌 Nohi Bus Shirakawa", stay: "🏨 Wood Takayama" },
+    8: { highlight: "⛰️ Nakasendo (8km)", stay: "🏨 Magome Chaya" },
+    9: { highlight: "🚄 Shinkansen to Tokyo", stay: "🏨 KOKO Tokyo" },
+    10: { highlight: "🌉 teamLab Planets", stay: "🏨 KOKO Tokyo" },
+    11: { highlight: "🚦 Shibuya & Meiji", stay: "🏨 KOKO Tokyo" },
+    12: { highlight: "🏙️ Toyosu & Roppongi", stay: "🏨 KOKO Tokyo" },
+    13: { highlight: "🕹️ Ikebukuro & Nakano", stay: "🏨 KOKO Tokyo" },
+    14: { highlight: "🏯 Imperial Palace & Ginza", stay: "🏨 KOKO Tokyo" },
+    15: { highlight: "✈️ Flight Tokyo → Madrid", stay: "Return" },
+  },
+  fr: {
+    0: { highlight: "✈️ Vol Madrid → Tokyo", stay: "En vol" },
+    1: { highlight: "✈️ Atterrissage NRT", stay: "🏨 Keihan Kyoto" },
+    2: { highlight: "🦌 Excursion à Nara", stay: "🏨 Keihan Kyoto" },
+    3: { highlight: "🏯 Kinkaku & Kiyomizu", stay: "🏨 Keihan Kyoto" },
+    4: { highlight: "🎋 Arashiyama & Gion", stay: "🏨 Keihan Kyoto" },
+    5: { highlight: "🏯 Excursion à Osaka", stay: "🏨 Keihan Kyoto" },
+    6: { highlight: "🌸 Kenroku-en", stay: "🏨 Resol Kanazawa" },
+    7: { highlight: "🚌 Nohi Bus Shirakawa", stay: "🏨 Wood Takayama" },
+    8: { highlight: "⛰️ Nakasendo (8km)", stay: "🏨 Magome Chaya" },
+    9: { highlight: "🚄 Shinkansen vers Tokyo", stay: "🏨 KOKO Tokyo" },
+    10: { highlight: "🌉 teamLab Planets", stay: "🏨 KOKO Tokyo" },
+    11: { highlight: "🚦 Shibuya & Meiji", stay: "🏨 KOKO Tokyo" },
+    12: { highlight: "🏙️ Toyosu & Roppongi", stay: "🏨 KOKO Tokyo" },
+    13: { highlight: "🕹️ Ikebukuro & Nakano", stay: "🏨 KOKO Tokyo" },
+    14: { highlight: "🏯 Palais Impérial & Ginza", stay: "🏨 KOKO Tokyo" },
+    15: { highlight: "✈️ Vol Tokyo → Madrid", stay: "Retour" },
+  },
+  tl: {
+    0: { highlight: "✈️ Flight Madrid → Tokyo", stay: "Nasa biyahe" },
+    1: { highlight: "✈️ Paglapag sa NRT", stay: "🏨 Keihan Kyoto" },
+    2: { highlight: "🦌 Nara Day Trip", stay: "🏨 Keihan Kyoto" },
+    3: { highlight: "🏯 Kinkaku & Kiyomizu", stay: "🏨 Keihan Kyoto" },
+    4: { highlight: "🎋 Arashiyama & Gion", stay: "🏨 Keihan Kyoto" },
+    5: { highlight: "🏯 Osaka Day Trip", stay: "🏨 Keihan Kyoto" },
+    6: { highlight: "🌸 Kenroku-en", stay: "🏨 Resol Kanazawa" },
+    7: { highlight: "🚌 Nohi Bus Shirakawa", stay: "🏨 Wood Takayama" },
+    8: { highlight: "⛰️ Nakasendo (8km)", stay: "🏨 Magome Chaya" },
+    9: { highlight: "🚄 Shinkansen pa-Tokyo", stay: "🏨 KOKO Tokyo" },
+    10: { highlight: "🌉 teamLab Planets", stay: "🏨 KOKO Tokyo" },
+    11: { highlight: "🚦 Shibuya & Meiji", stay: "🏨 KOKO Tokyo" },
+    12: { highlight: "🏙️ Toyosu & Roppongi", stay: "🏨 KOKO Tokyo" },
+    13: { highlight: "🕹️ Ikebukuro & Nakano", stay: "🏨 KOKO Tokyo" },
+    14: { highlight: "🏯 Imperial Palace & Ginza", stay: "🏨 KOKO Tokyo" },
+    15: { highlight: "✈️ Flight Tokyo → Madrid", stay: "Pabalik" },
+  },
 };
 
 function buildGrid() {
@@ -43,6 +99,7 @@ const grid = buildGrid();
 export default function CalendarPage({ onGoToMapDay }) {
   const { days, blocks } = useContent();
   const t = useT();
+  const { lang } = useLang();
   const [showExportModal, setShowExportModal] = useState(false);
   const [selectedDayNum, setSelectedDayNum] = useState(null);
   const [detailMode, setDetailMode] = useState(false);
@@ -124,7 +181,7 @@ export default function CalendarPage({ onGoToMapDay }) {
               }}
             >
               <CalendarPlus size={15} />
-              <span>Exportar</span>
+              <span>{t("calendar.export")}</span>
             </button>
           </div>
 
@@ -169,7 +226,7 @@ export default function CalendarPage({ onGoToMapDay }) {
                 const isWeekend = di >= 5;
                 const isSelected = tripDay && tripDay.num === selectedDayNum;
                 const isToday = tripDay && tripDay.num === todayDayNum;
-                const meta = tripDay ? dayHighlights[tripDay.num] : null;
+                const meta = tripDay ? (dayHighlights[lang]?.[tripDay.num] || dayHighlights.es[tripDay.num]) : null;
                 
                 return (
                   <button
@@ -216,7 +273,7 @@ export default function CalendarPage({ onGoToMapDay }) {
                             <div>
                               <span className="inline-block px-1.5 py-0.5 rounded text-white mb-1"
                                 style={{ fontSize: 8, fontWeight: 700, background: color, letterSpacing: "0.04em" }}>
-                                DÍA {tripDay.num}
+                                {t("common.day").toUpperCase()} {tripDay.num}
                               </span>
                               <p style={{
                                 fontSize: 10.5, lineHeight: 1.2, color: "var(--ink)",
@@ -323,7 +380,7 @@ export default function CalendarPage({ onGoToMapDay }) {
               <div className="flex items-center gap-2">
                 <CalendarPlus size={22} style={{ color: "var(--shu)" }} />
                 <h3 className="font-bold text-lg" style={{ color: "var(--ink)", margin: 0 }}>
-                  Exportar itinerario
+                  {t("calendar.exportTitle")}
                 </h3>
               </div>
               <button
@@ -336,7 +393,7 @@ export default function CalendarPage({ onGoToMapDay }) {
             </div>
 
             <p style={{ fontSize: 13, color: "var(--ink-soft)", marginBottom: 18, lineHeight: 1.5 }}>
-              Añade automáticamente los 16 días del viaje con sus títulos, ciudades y detalles a la aplicación de calendario de tu móvil u ordenador.
+              {t("calendar.exportDesc")}
             </p>
 
             <div className="space-y-3 mb-4">
@@ -352,10 +409,10 @@ export default function CalendarPage({ onGoToMapDay }) {
                 <span className="text-2xl shrink-0">🍏</span>
                 <div className="flex-1">
                   <p className="font-bold text-sm" style={{ color: "var(--ink)", margin: 0 }}>
-                    Apple Calendar (iPhone / Mac)
+                    {t("calendar.exportApple")}
                   </p>
                   <p className="text-xs mt-0.5" style={{ color: "var(--ink-soft)", margin: 0 }}>
-                    Descarga el archivo .ics y lo abre directamente en iCal.
+                    {t("calendar.exportAppleDesc")}
                   </p>
                 </div>
                 <Download size={18} style={{ color: "var(--indigo)" }} />
@@ -374,10 +431,10 @@ export default function CalendarPage({ onGoToMapDay }) {
                 <span className="text-2xl shrink-0">🌐</span>
                 <div className="flex-1">
                   <p className="font-bold text-sm" style={{ color: "var(--ink)", margin: 0 }}>
-                    Google Calendar
+                    {t("calendar.exportGoogle")}
                   </p>
                   <p className="text-xs mt-0.5" style={{ color: "var(--ink-soft)", margin: 0 }}>
-                    Descarga el .ics y abre la web de importación de Google.
+                    {t("calendar.exportGoogleDesc")}
                   </p>
                 </div>
                 <ExternalLink size={18} style={{ color: "var(--forest)" }} />
