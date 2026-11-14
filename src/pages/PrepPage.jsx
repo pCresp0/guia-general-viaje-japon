@@ -10,8 +10,6 @@ import {
   Backpack,
   AlertCircle,
   RotateCcw,
-  Maximize2,
-  Minimize2,
 } from "lucide-react";
 import { Highlightable } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
@@ -144,9 +142,7 @@ export const sections = [
 
 export default function PrepPage() {
   const [checked, setChecked] = useState(loadChecked);
-  const [openSections, setOpenSections] = useState(() =>
-    sections.reduce((acc, s) => ({ ...acc, [s.id]: true }), {})
-  );
+  const [openSections, setOpenSections] = useState({});
 
   function toggle(id) {
     const next = { ...checked, [id]: !checked[id] };
@@ -156,14 +152,6 @@ export default function PrepPage() {
 
   function toggleSection(id) {
     setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }));
-  }
-
-  function expandAll() {
-    setOpenSections(sections.reduce((acc, s) => ({ ...acc, [s.id]: true }), {}));
-  }
-
-  function collapseAll() {
-    setOpenSections(sections.reduce((acc, s) => ({ ...acc, [s.id]: false }), {}));
   }
 
   function resetChecklist() {
@@ -193,36 +181,8 @@ export default function PrepPage() {
           </div>
 
           {/* Action buttons */}
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={expandAll}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border cursor-pointer transition-colors"
-              style={{
-                borderColor: "var(--line)",
-                background: "var(--paper-raised)",
-                color: "var(--ink)",
-              }}
-              title="Desplegar todas las secciones"
-            >
-              <Maximize2 size={13} />
-              <span>Desplegar</span>
-            </button>
-            <button
-              type="button"
-              onClick={collapseAll}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border cursor-pointer transition-colors"
-              style={{
-                borderColor: "var(--line)",
-                background: "var(--paper-raised)",
-                color: "var(--ink)",
-              }}
-              title="Plegar todas las secciones"
-            >
-              <Minimize2 size={13} />
-              <span>Plegar</span>
-            </button>
-            {totalChecked > 0 && (
+          {totalChecked > 0 && (
+            <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={resetChecklist}
@@ -237,8 +197,8 @@ export default function PrepPage() {
                 <RotateCcw size={13} />
                 <span>Reiniciar</span>
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 10, marginBottom: 0, lineHeight: 1.6 }}>
