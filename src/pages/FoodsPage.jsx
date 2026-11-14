@@ -8,6 +8,7 @@ import googleMapsIcon from "../assets/icons/google-maps.png";
 
 function FoodCard({ food, accent }) {
   const [imgOk, setImgOk] = useState(true);
+  const [attempt, setAttempt] = useState(0);
   const t = useT();
   const { highlightId } = useHighlight();
   const anchorId = slug("food", food.id);
@@ -22,6 +23,22 @@ function FoodCard({ food, accent }) {
       return () => window.clearTimeout(timer);
     }
   }, [isHighlighted]);
+
+  const handleImgError = () => {
+    if (attempt === 0) {
+      setAttempt(1);
+    } else {
+      setImgOk(false);
+    }
+  };
+
+  const getFoodSrc = () => {
+    const resolved = assetUrl(food.image);
+    if (attempt === 1 && resolved.includes("/img/")) {
+      return resolved.replace("/img/", "/public/img/");
+    }
+    return resolved;
+  };
 
   return (
     <article
@@ -41,9 +58,10 @@ function FoodCard({ food, accent }) {
         >
           {imgOk ? (
             <img
-              src={assetUrl(food.image)}
+              key={`${food.id}-${attempt}`}
+              src={getFoodSrc()}
               alt={food.name}
-              onError={() => setImgOk(false)}
+              onError={handleImgError}
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
             />
           ) : (

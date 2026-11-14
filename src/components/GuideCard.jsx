@@ -15,33 +15,42 @@ const franchiseStyle = {
 
 function GuideBody({ guideId, guide, refs, localImage, accent }) {
   const [imgError, setImgError] = useState(false);
-  const [retryKey, setRetryKey] = useState(0);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     setImgError(false);
-    setRetryKey(0);
+    setAttempt(0);
   }, [guideId, localImage]);
 
   const handleImgError = () => {
-    // Si falla la primera vez (común en Safari por decodificación transitoria),
-    // reintentamos una vez con un query param para forzar refetch limpio.
-    if (retryKey < 1) {
-      setRetryKey((k) => k + 1);
+    // Si falla la primera vez (por ejemplo, si el hosting sirve desde raíz con /public/),
+    // probamos el path alternativo antes de desistir.
+    if (attempt < 2) {
+      setAttempt((a) => a + 1);
     } else {
       setImgError(true);
     }
   };
 
-  const imageSrc = localImage
-    ? (retryKey > 0 ? `${assetUrl(localImage)}?r=${retryKey}` : assetUrl(localImage))
-    : "";
+  const getImageSrc = () => {
+    if (!localImage) return "";
+    const resolved = assetUrl(localImage);
+    if (attempt === 0) return resolved;
+    if (attempt === 1) {
+      // Fallback a /public/img/... si /img/... da 404 en el servidor estático
+      return resolved.includes("/img/") ? resolved.replace("/img/", "/public/img/") : `${resolved}?retry=1`;
+    }
+    return `${resolved}?r=${attempt}`;
+  };
+
+  const imageSrc = getImageSrc();
 
   return (
     <>
       {localImage && !imgError && (
         <figure className="modal-guide-figure" style={{ margin: "0 0 16px" }}>
           <img
-            key={`${guideId}-${retryKey}`}
+            key={`${guideId}-${attempt}`}
             src={imageSrc}
             alt={guide.name}
             loading="eager"
