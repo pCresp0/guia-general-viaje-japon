@@ -216,7 +216,7 @@ export default {
   "weather.eyebrow": "What to expect",
   "weather.title": "Weather",
   "weather.intro":
-    "Live weather forecasts and average temperatures for each city on the route (Tokyo, Kyoto, Osaka, Kanazawa, Takayama, Kiso Valley). Data synchronizes with Open-Meteo and is cached locally for 12 hours so you can check conditions offline without draining your phone battery.",
+    "In this section I share live weather forecasts and estimated temperatures for each stop on the route in Japan (Tokyo, Kyoto, Osaka, Kanazawa, Takayama, and the Kiso Valley). Data synchronizes in real time with Open-Meteo.\n\nYou can enter below the exact date you plan to start your trip: the app will automatically calculate the expected forecast for every day from Day 1 to Day 15, as well as the countdown of days remaining for each stop.\n\nIf you don't enter any date, it defaults to Day 1 being tomorrow with each subsequent day adding 1 day, allowing you to simulate your route as if your journey starts tomorrow and see current conditions across Japan.",
   "weather.rain": "Rain",
   "weather.max": "High",
   "weather.min": "Low",

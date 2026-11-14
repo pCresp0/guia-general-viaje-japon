@@ -212,7 +212,7 @@ export default {
   "weather.eyebrow": "Qué tiempo hará",
   "weather.title": "Clima",
   "weather.intro":
-    "Temperaturas y probabilidad de lluvia previstas para septiembre en cada ciudad.",
+    "En esta sección te comparto la previsión meteorológica en vivo y las temperaturas estimadas para cada una de las paradas de la ruta en Japón (Tokio, Kioto, Osaka, Kanazawa, Takayama y Valle de Kiso). Los datos se sincronizan directamente con Open-Meteo.\n\nPuedes introducir en el selector de abajo la fecha en la que planeas comenzar tu viaje: la web calculará automáticamente el tiempo previsto para cada jornada desde el Día 1 hasta el Día 15, así como los días que faltan para cada etapa.\n\nSi no indicas ninguna fecha, por defecto se toma como Día 1 el día de mañana y cada etapa sumará un día consecutivo, permitiéndote simular la ruta como si empezara mañana mismo y ver qué tiempo hace ahora mismo en cada ciudad.",
   "weather.rain": "Lluvia",
   "weather.max": "Máx",
   "weather.min": "Mín",

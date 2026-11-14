@@ -218,7 +218,7 @@ export default {
   "weather.eyebrow": "Ano ang aasahan",
   "weather.title": "Panahon",
   "weather.intro":
-    "Inaasahang temperatura at tsansa ng ulan para sa Setyembre sa bawat lungsod.",
+    "Sa seksyong ito, ibinabahagi ko ang live na lagay ng panahon at mga tinatayang temperatura para sa bawat hintuan sa Japan (Tokyo, Kyoto, Osaka, Kanazawa, Takayama, at Kiso Valley). Naka-synchronize ang datos sa Open-Meteo.\n\nMaaari mong ilagay sa ibaba ang petsa kung kailan mo balak simulan ang iyong biyahe: awtomatikong kakalkulahin ang lagay ng panahon mula Araw 1 hanggang Araw 15, pati ang bilang ng mga araw na natitira bago ang bawat hintuan.\n\nKung walang ilalagay na petsa, awtomatikong magiging Araw 1 ang araw ng bukas at bawat araw ay magdadagdag ng 1 araw, na nagbibigay-daan sa iyo na subukan ang ruta na para bang bukas na magsisimula ang iyong biyahe.",
   "weather.rain": "Ulan",
   "weather.max": "Pinakamataas",
   "weather.min": "Pinakamababa",

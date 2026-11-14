@@ -1,31 +1,52 @@
-import { useState, useEffect, useCallback } from "react";
-import { Cloud, CloudRain, Sun, CloudSun, MapPin, Droplets, Loader2, Info, RefreshCw, ExternalLink } from "lucide-react";
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { Cloud, CloudRain, Sun, CloudSun, MapPin, Droplets, Loader2, Info, RefreshCw, ExternalLink, Calendar, RotateCcw } from "lucide-react";
 
-import { useContent } from "../i18n/LanguageContext";
+import { useContent, useT } from "../i18n/LanguageContext";
 import { Highlightable } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
 import { diffDays, todayISO } from "../utils/date";
 
-const dayDateMap = {
-  1: "7 Sept",
-  2: "8 Sept",
-  3: "9 Sept",
-  4: "10 Sept",
-  5: "11 Sept",
-  6: "12 Sept",
-  7: "13 Sept",
-  8: "14 Sept",
-  9: "15 Sept",
-  10: "16 Sept",
-  11: "17 Sept",
-  12: "18 Sept",
-  13: "19 Sept",
-  14: "20 Sept",
-  15: "21 Sept",
-};
+function getTomorrowISO() {
+  const d = new Date();
+  d.setDate(d.getDate() + 1);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
 
-function getDayDateLabel(dayNum) {
-  return dayDateMap[dayNum] || `Día ${dayNum}`;
+function addDaysISO(isoStr, numDays) {
+  if (!isoStr) return "";
+  const [y, m, d] = isoStr.split("-").map(Number);
+  const dateObj = new Date(y, m - 1, d);
+  dateObj.setDate(dateObj.getDate() + numDays);
+  const resY = dateObj.getFullYear();
+  const resM = String(dateObj.getMonth() + 1).padStart(2, "0");
+  const resD = String(dateObj.getDate()).padStart(2, "0");
+  return `${resY}-${resM}-${resD}`;
+}
+
+function getDayDateLabel(dayNum, dateStr) {
+  if (!dateStr) return `Día ${dayNum}`;
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const dateObj = new Date(y, m - 1, d);
+  const months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"];
+  const weekdays = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
+  const wDay = weekdays[dateObj.getDay()];
+  const mName = months[dateObj.getMonth()];
+  return `Día ${dayNum} · ${wDay} ${d} ${mName}`;
+}
+
+function formatRangeLabel(startIso, totalDays) {
+  if (!startIso) return "";
+  const endIso = addDaysISO(startIso, totalDays - 1);
+  const [sy, sm, sd] = startIso.split("-").map(Number);
+  const [ey, em, ed] = endIso.split("-").map(Number);
+  const sDate = new Date(sy, sm - 1, sd);
+  const eDate = new Date(ey, em - 1, ed);
+  const months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"];
+  const weekdays = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
+  return `${weekdays[sDate.getDay()]} ${sd} ${months[sDate.getMonth()]} ${sy} → ${weekdays[eDate.getDay()]} ${ed} ${months[eDate.getMonth()]} ${ey}`;
 }
 
 function getCityWeatherUrl(city) {
@@ -160,7 +181,37 @@ function computeCityWeatherBadges(w, liveWeather, dailyWeather, weatherLabels) {
 
 export default function WeatherPage() {
   const { weatherData, dailyWeather, weatherLabels } = useContent();
-  const [liveWeather, setLiveWeather] = useState(null);
+  const t = useT();
+
+  const defaultStartDate = getTomorrowISO();
+  const [userStartDate, setUserStartDate] = useState(() => {
+    try {
+      return localStorage.getItem("trip_weather_start_date") || "";
+    } catch {
+      return "";
+    }
+  });
+
+  const effectiveStartDate = userStartDate.trim() ? userStartDate : defaultStartDate;
+
+  const handleDateChange = (val) => {
+    setUserStartDate(val);
+    try {
+      if (val) {
+        localStorage.setItem("trip_weather_start_date", val);
+      } else {
+        localStorage.removeItem("trip_weather_start_date");
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const handleResetToTomorrow = () => {
+    handleDateChange(defaultStartDate);
+  };
+
+  const [rawWeatherMap, setRawWeatherMap] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastFetched, setLastFetched] = useState(null);
 
@@ -183,57 +234,58 @@ export default function WeatherPage() {
         weatherMap[city] = resultsArray[index].daily;
       });
 
-      const today = todayISO();
-      
-      const updatedDaily = dailyWeather.map(d => {
-        const dateStr = `2026-09-${String(6 + d.day).padStart(2, "0")}`;
-        const daysLeft = diffDays(today, dateStr);
-        
-        const cityData = weatherMap[d.city];
-        if (!cityData) return { ...d, daysLeft, dateStr };
-        
-        const dateIndex = cityData.time ? cityData.time.indexOf(dateStr) : -1;
-        let high, low, rain, sky, condition, isFallback = false;
-
-        const liveMax = dateIndex !== -1 ? cityData.temperature_2m_max?.[dateIndex] : null;
-        const liveMin = dateIndex !== -1 ? cityData.temperature_2m_min?.[dateIndex] : null;
-        const liveRain = dateIndex !== -1 ? cityData.precipitation_probability_max?.[dateIndex] : null;
-        const liveWmo = dateIndex !== -1 ? cityData.weathercode?.[dateIndex] : null;
-
-        if (dateIndex !== -1 && liveMax != null && liveMin != null) {
-          high = Math.round(liveMax);
-          low = Math.round(liveMin);
-          rain = liveRain != null ? liveRain : d.rain;
-          sky = liveWmo != null ? getSkyFromWMO(liveWmo) : d.sky;
-          condition = liveWmo != null ? getConditionFromWMO(liveWmo) : d.condition;
-          isFallback = false;
-        } else {
-          // Si el día está fuera del rango de predicción o la API aún no tiene temps calculadas (p.ej. null a 16 días)
-          high = d.high;
-          low = d.low;
-          rain = liveRain != null ? liveRain : d.rain;
-          sky = liveWmo != null ? getSkyFromWMO(liveWmo) : d.sky;
-          condition = liveWmo != null ? getConditionFromWMO(liveWmo) : d.condition;
-          isFallback = true;
-        }
-        
-        return { ...d, high, low, rain, sky, condition, isFallback, daysLeft, dateStr };
-      });
-      
-      setLiveWeather(updatedDaily);
+      setRawWeatherMap(weatherMap);
       setLastFetched(new Date());
     } catch (err) {
       console.error("Error fetching weather:", err);
     } finally {
       setLoading(false);
     }
-  }, [dailyWeather]);
+  }, []);
 
   useEffect(() => {
     fetchWeather();
   }, [fetchWeather]);
 
-  const displayWeather = liveWeather || dailyWeather;
+  const today = todayISO();
+
+  const displayWeather = useMemo(() => {
+    return dailyWeather.map(d => {
+      const dateStr = addDaysISO(effectiveStartDate, d.day - 1);
+      const daysLeft = diffDays(today, dateStr);
+
+      const cityData = rawWeatherMap ? rawWeatherMap[d.city] : null;
+      if (!cityData) {
+        return { ...d, daysLeft, dateStr, isFallback: true };
+      }
+
+      const dateIndex = cityData.time ? cityData.time.indexOf(dateStr) : -1;
+      let high, low, rain, sky, condition, isFallback = false;
+
+      const liveMax = dateIndex !== -1 ? cityData.temperature_2m_max?.[dateIndex] : null;
+      const liveMin = dateIndex !== -1 ? cityData.temperature_2m_min?.[dateIndex] : null;
+      const liveRain = dateIndex !== -1 ? cityData.precipitation_probability_max?.[dateIndex] : null;
+      const liveWmo = dateIndex !== -1 ? cityData.weathercode?.[dateIndex] : null;
+
+      if (dateIndex !== -1 && liveMax != null && liveMin != null) {
+        high = Math.round(liveMax);
+        low = Math.round(liveMin);
+        rain = liveRain != null ? liveRain : d.rain;
+        sky = liveWmo != null ? getSkyFromWMO(liveWmo) : d.sky;
+        condition = liveWmo != null ? getConditionFromWMO(liveWmo) : d.condition;
+        isFallback = false;
+      } else {
+        high = d.high;
+        low = d.low;
+        rain = liveRain != null ? liveRain : d.rain;
+        sky = liveWmo != null ? getSkyFromWMO(liveWmo) : d.sky;
+        condition = liveWmo != null ? getConditionFromWMO(liveWmo) : d.condition;
+        isFallback = true;
+      }
+
+      return { ...d, high, low, rain, sky, condition, isFallback, daysLeft, dateStr };
+    });
+  }, [rawWeatherMap, dailyWeather, effectiveStartDate, today]);
 
   return (
     <div className="px-4 pt-3 pb-12">
@@ -247,7 +299,7 @@ export default function WeatherPage() {
             <button 
               onClick={() => !loading && fetchWeather()}
               disabled={loading}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border bg-green-50 border-green-200 text-green-700 shadow-sm transition-colors hover:bg-green-100 disabled:opacity-70"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border bg-green-50 border-green-200 text-green-700 shadow-sm transition-colors hover:bg-green-100 disabled:opacity-70 cursor-pointer"
             >
               {loading ? (
                 <Loader2 size={12} className="animate-spin" />
@@ -263,9 +315,77 @@ export default function WeatherPage() {
             )}
           </div>
         </div>
-        <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }}>
-          Previsión meteorológica en vivo y temperaturas estimadas para cada una de las ciudades de la ruta (Tokio, Kioto, Osaka, Kanazawa, Takayama y Valle de Kiso). Los datos se sincronizan con Open-Meteo y se guardan en caché local durante 12 horas para que puedas consultarlos sin gastar batería ni depender de conexión.
-        </p>
+
+        <div style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 6, lineHeight: 1.6 }} className="space-y-2">
+          {t("weather.intro").split("\n\n").map((p, idx) => (
+            <p key={idx} style={{ margin: 0 }}>{p}</p>
+          ))}
+        </div>
+      </div>
+
+      {/* Selector interactivo de fecha de inicio del viaje */}
+      <div 
+        className="rounded-2xl p-4 sm:p-5 mb-6 border shadow-xs" 
+        style={{ 
+          background: "var(--paper-raised)", 
+          borderColor: "var(--line)" 
+        }}
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <div className="flex items-center gap-2">
+              <Calendar size={17} style={{ color: "var(--indigo)" }} />
+              <p className="font-bold text-sm sm:text-base m-0" style={{ color: "var(--indigo)" }}>
+                Fecha de inicio del viaje
+              </p>
+            </div>
+            <p className="text-xs mt-1 m-0" style={{ color: "var(--ink-soft)", lineHeight: 1.5 }}>
+              Indica qué día empieza tu ruta para calcular la previsión meteorológica real y la cuenta atrás de cada etapa:
+            </p>
+          </div>
+          
+          <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+            <input
+              type="date"
+              value={effectiveStartDate}
+              onChange={(e) => handleDateChange(e.target.value)}
+              className="px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold border focus:outline-none transition-colors cursor-pointer"
+              style={{
+                background: "var(--paper)",
+                borderColor: "var(--line)",
+                color: "var(--ink)",
+              }}
+            />
+            {userStartDate && userStartDate !== defaultStartDate && (
+              <button
+                type="button"
+                onClick={handleResetToTomorrow}
+                className="text-xs font-semibold px-3 py-2 rounded-xl border flex items-center gap-1.5 transition-colors hover:opacity-85 whitespace-nowrap cursor-pointer"
+                style={{
+                  background: "rgba(2, 132, 199, 0.08)",
+                  borderColor: "rgba(2, 132, 199, 0.25)",
+                  color: "#0284c7",
+                }}
+                title="Restablecer para empezar mañana por defecto"
+              >
+                <RotateCcw size={12} />
+                Empezar mañana
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Resumen del rango de fechas */}
+        <div className="mt-3 pt-3 flex flex-wrap items-center justify-between gap-2 text-xs border-t" style={{ borderColor: "var(--line)", color: "var(--ink-soft)" }}>
+          <div className="flex items-center gap-1.5">
+            <span className="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              {effectiveStartDate === defaultStartDate ? "✨ Por defecto: empieza mañana" : "🗓️ Fecha personalizada"}
+            </span>
+          </div>
+          <span className="font-medium" style={{ color: "var(--ink)" }}>
+            Ruta (15 días): <strong>{formatRangeLabel(effectiveStartDate, displayWeather.length)}</strong>
+          </span>
+        </div>
       </div>
 
       {/* Day-by-day forecast */}
@@ -313,25 +433,37 @@ export default function WeatherPage() {
 
               <div className="relative z-10 flex justify-between items-center mb-1">
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-1.5 flex-wrap">
                     <Icon size={14} strokeWidth={2.5} />
                     <span className="font-semibold" style={{ fontSize: 12, letterSpacing: "0.02em", textShadow: "0 1px 2px rgba(0,0,0,0.1)" }}>
                       {d.condition}
                     </span>
+                    {!d.isFallback ? (
+                      <span className="text-[9px] px-1.5 py-0.5 rounded font-bold bg-white/20 text-white">
+                        ⚡ En vivo
+                      </span>
+                    ) : (
+                      <span className="text-[9px] px-1.5 py-0.5 rounded font-medium bg-black/20 text-white/90">
+                        Histórico
+                      </span>
+                    )}
                   </div>
-                  {d.isFallback && (
-                    <div className="flex items-center gap-1 mt-1 text-white/90" style={{ fontSize: 9.5 }}>
-                      <Info size={10} />
-                      {d.daysLeft != null
-                        ? (d.daysLeft === 1
-                            ? "Falta 1 día. Mostrando tiempo de hoy."
-                            : `Faltan ${d.daysLeft} días. Mostrando tiempo de hoy.`)
-                        : "Mostrando tiempo de hoy."}
-                    </div>
-                  )}
+                  <div className="flex items-center gap-1 mt-1 text-white/95" style={{ fontSize: 10 }}>
+                    <Info size={11} className="shrink-0" />
+                    <span>
+                      {d.daysLeft === 0
+                        ? "¡Es hoy!"
+                        : d.daysLeft === 1
+                        ? "Falta 1 día (mañana)"
+                        : d.daysLeft > 1
+                        ? `Faltan ${d.daysLeft} días`
+                        : `Día ya transcurrido (hace ${Math.abs(d.daysLeft)} días)`}
+                      {d.isFallback && d.daysLeft > 16 && " · Estimación media"}
+                    </span>
+                  </div>
                 </div>
                 <div className="flex items-center gap-1 font-semibold opacity-95 group-hover:opacity-100 transition-opacity" style={{ fontSize: 11.5, textShadow: "0 1px 2px rgba(0,0,0,0.1)" }}>
-                  <span>{getDayDateLabel(d.day)}</span>
+                  <span>{getDayDateLabel(d.day, d.dateStr)}</span>
                   <ExternalLink size={10.5} className="opacity-70 group-hover:opacity-100 transition-opacity" />
                 </div>
               </div>
@@ -364,10 +496,10 @@ export default function WeatherPage() {
       </p>
       <div className="grid gap-3 mb-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
         {weatherData.map((w, idx) => {
-          const cityDays = liveWeather ? liveWeather.filter(d => d.city === w.city) : [];
+          const cityDays = displayWeather ? displayWeather.filter(d => d.city === w.city) : [];
           const liveAvgHigh = cityDays.length > 0 ? Math.round(cityDays.reduce((acc, d) => acc + d.high, 0) / cityDays.length) : null;
           const liveAvgRain = cityDays.length > 0 ? Math.round(cityDays.reduce((acc, d) => acc + d.rain, 0) / cityDays.length) : null;
-          const badges = computeCityWeatherBadges(w, liveWeather, dailyWeather, weatherLabels);
+          const badges = computeCityWeatherBadges(w, displayWeather, dailyWeather, weatherLabels);
 
           return (
             <Highlightable key={idx} id={slug("weather", w.city)}>
@@ -453,11 +585,11 @@ export default function WeatherPage() {
         <div className="flex items-center gap-2 mb-2">
           <span style={{ fontSize: 18 }}>🗻</span>
           <p style={{ fontSize: 14, fontWeight: 700, color: "var(--indigo)", margin: 0 }}>
-            Visibilidad en Directo del Monte Fuji (Días 10–14 · 16–20 sept)
+            Visibilidad en Directo del Monte Fuji (Día 10 · Excursión)
           </p>
         </div>
         <p style={{ fontSize: 12, color: "var(--ink-soft)", lineHeight: 1.5, marginBottom: 10 }}>
-          <strong>La regla de oro:</strong> Comprobad las webcams en directo a las <strong>06:30 AM</strong> desde el hotel. Si a las 07:00 AM no se ve, no suele despejarse más tarde (a partir de las 09:00 AM el calor forma nubes).
+          <strong>La regla de oro:</strong> Comprueba las webcams en directo a las <strong>06:30 AM</strong> desde el hotel. Si a las 07:00 AM no se ve, no suele despejarse más tarde (a partir de las 09:00 AM el calor forma nubes).
         </p>
         <div className="flex flex-wrap gap-2">
           <a

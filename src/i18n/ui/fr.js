@@ -213,7 +213,7 @@ export default {
   "weather.eyebrow": "Le temps qu'il fera",
   "weather.title": "Météo",
   "weather.intro":
-    "Températures et probabilité de pluie prévues en septembre dans chaque ville.",
+    "Dans cette section, je partage les prévisions météo en direct et les températures estimées pour chaque étape de l'itinéraire au Japon (Tokyo, Kyoto, Osaka, Kanazawa, Takayama et Vallée de Kiso). Les données sont synchronisées avec Open-Meteo.\n\nVous pouvez indiquer ci-dessous la date exacte à laquelle vous prévoyez de commencer votre voyage : le site calculera automatiquement la météo prévue pour chaque journée du Jour 1 au Jour 15, ainsi que le compte à rebours des jours restants.\n\nSi vous n'indiquez aucune date, le Jour 1 est fixé par défaut à demain et chaque étape ajoute un jour consécutif, vous permettant de simuler l'itinéraire comme si votre voyage débutait demain.",
   "weather.rain": "Pluie",
   "weather.max": "Max",
   "weather.min": "Min",
