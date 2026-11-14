@@ -5,7 +5,7 @@ import { useContent, useT, useLang } from "../i18n/LanguageContext";
 import { Highlightable } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
 import { diffDays, todayISO } from "../utils/date";
-import { getMonthlyData, MONTH_NAMES } from "../data/weatherMonthly";
+import { getMonthlyData, getHistoricalDayForecast, MONTH_NAMES } from "../data/weatherMonthly";
 
 function getTomorrowISO() {
   const d = new Date();
@@ -27,24 +27,42 @@ function addDaysISO(isoStr, numDays) {
   return `${resY}-${resM}-${resD}`;
 }
 
-function getDayDateLabel(dayNum, dateStr) {
-  if (!dateStr) return `Día ${dayNum}`;
+function getDayDateLabel(dayNum, dateStr, lang = "es", dayPrefix = "Día") {
+  if (!dateStr) return `${dayPrefix} ${dayNum}`;
   const [y, m, d] = dateStr.split("-").map(Number);
   const dateObj = new Date(y, m - 1, d);
+  if (lang && lang !== "es") {
+    try {
+      const locale = lang === "tl" ? "fil-PH" : lang === "en" ? "en-US" : lang === "fr" ? "fr-FR" : lang;
+      const formatted = new Intl.DateTimeFormat(locale, { weekday: "short", day: "numeric", month: "short" }).format(dateObj);
+      return `${dayPrefix} ${dayNum} · ${formatted}`;
+    } catch {
+      // fallback
+    }
+  }
   const months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"];
   const weekdays = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
   const wDay = weekdays[dateObj.getDay()];
   const mName = months[dateObj.getMonth()];
-  return `Día ${dayNum} · ${wDay} ${d} ${mName}`;
+  return `${dayPrefix} ${dayNum} · ${wDay} ${d} ${mName}`;
 }
 
-function formatRangeLabel(startIso, totalDays) {
+function formatRangeLabel(startIso, totalDays, lang = "es") {
   if (!startIso) return "";
   const endIso = addDaysISO(startIso, totalDays - 1);
   const [sy, sm, sd] = startIso.split("-").map(Number);
   const [ey, em, ed] = endIso.split("-").map(Number);
   const sDate = new Date(sy, sm - 1, sd);
   const eDate = new Date(ey, em - 1, ed);
+  if (lang && lang !== "es") {
+    try {
+      const locale = lang === "tl" ? "fil-PH" : lang === "en" ? "en-US" : lang === "fr" ? "fr-FR" : lang;
+      const fmt = new Intl.DateTimeFormat(locale, { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+      return `${fmt.format(sDate)} → ${fmt.format(eDate)}`;
+    } catch {
+      // fallback
+    }
+  }
   const months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"];
   const weekdays = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
   return `${weekdays[sDate.getDay()]} ${sd} ${months[sDate.getMonth()]} ${sy} → ${weekdays[eDate.getDay()]} ${ed} ${months[eDate.getMonth()]} ${ey}`;
@@ -280,9 +298,23 @@ export default function WeatherPage() {
       const dateStr = addDaysISO(effectiveStartDate, d.day - 1);
       const daysLeft = diffDays(today, dateStr);
 
+      // Estimación histórica coherente con el mes de la fecha calculada
+      const hist = getHistoricalDayForecast(d.day, d.city, dateStr, d, lang);
+
       const cityData = rawWeatherMap ? rawWeatherMap[d.city] : null;
       if (!cityData) {
-        return { ...d, daysLeft, dateStr, isFallback: true };
+        return { 
+          ...d, 
+          high: hist.high,
+          low: hist.low,
+          rain: hist.rain,
+          sky: hist.sky,
+          condition: hist.condition,
+          monthName: hist.monthName,
+          daysLeft, 
+          dateStr, 
+          isFallback: true 
+        };
       }
 
       const dateIndex = cityData.time ? cityData.time.indexOf(dateStr) : -1;
@@ -296,22 +328,22 @@ export default function WeatherPage() {
       if (dateIndex !== -1 && liveMax != null && liveMin != null) {
         high = Math.round(liveMax);
         low = Math.round(liveMin);
-        rain = liveRain != null ? liveRain : d.rain;
-        sky = liveWmo != null ? getSkyFromWMO(liveWmo) : d.sky;
-        condition = liveWmo != null ? getConditionFromWMO(liveWmo) : d.condition;
+        rain = liveRain != null ? liveRain : hist.rain;
+        sky = liveWmo != null ? getSkyFromWMO(liveWmo) : hist.sky;
+        condition = liveWmo != null ? getConditionFromWMO(liveWmo) : hist.condition;
         isFallback = false;
       } else {
-        high = d.high;
-        low = d.low;
-        rain = liveRain != null ? liveRain : d.rain;
-        sky = liveWmo != null ? getSkyFromWMO(liveWmo) : d.sky;
-        condition = liveWmo != null ? getConditionFromWMO(liveWmo) : d.condition;
+        high = hist.high;
+        low = hist.low;
+        rain = hist.rain;
+        sky = hist.sky;
+        condition = hist.condition;
         isFallback = true;
       }
 
-      return { ...d, high, low, rain, sky, condition, isFallback, daysLeft, dateStr };
+      return { ...d, high, low, rain, sky, condition, monthName: hist.monthName, isFallback, daysLeft, dateStr };
     });
-  }, [rawWeatherMap, dailyWeather, effectiveStartDate, today]);
+  }, [rawWeatherMap, dailyWeather, effectiveStartDate, today, lang]);
 
   return (
     <div className="px-4 pt-3 pb-12">
@@ -419,7 +451,7 @@ export default function WeatherPage() {
           </div>
           <span className="font-medium" style={{ color: "var(--ink)" }}>
             {lang === "en" ? "Route (15 days): " : "Ruta (15 días): "}
-            <strong>{formatRangeLabel(effectiveStartDate, displayWeather.length)}</strong>
+            <strong>{formatRangeLabel(effectiveStartDate, displayWeather.length, lang)}</strong>
           </span>
         </div>
       </div>
@@ -494,12 +526,12 @@ export default function WeatherPage() {
                         : d.daysLeft > 1
                         ? `Faltan ${d.daysLeft} días`
                         : `Día ya transcurrido (hace ${Math.abs(d.daysLeft)} días)`}
-                      {d.isFallback && d.daysLeft > 16 && " · Estimación media"}
+                      {d.isFallback && d.daysLeft > 16 && ` · ${lang === "en" ? "Average estimate" : lang === "fr" ? "Estimation moyenne" : lang === "tl" ? "Tantiyang average" : "Estimación media"} (${d.monthName ? d.monthName.toLowerCase() : ""})`}
                     </span>
                   </div>
                 </div>
                 <div className="flex items-center gap-1 font-semibold opacity-95 group-hover:opacity-100 transition-opacity" style={{ fontSize: 11.5, textShadow: "0 1px 2px rgba(0,0,0,0.1)" }}>
-                  <span>{getDayDateLabel(d.day, d.dateStr)}</span>
+                  <span>{getDayDateLabel(d.day, d.dateStr, lang, t("common.day") || "Día")}</span>
                   <ExternalLink size={10.5} className="opacity-70 group-hover:opacity-100 transition-opacity" />
                 </div>
               </div>

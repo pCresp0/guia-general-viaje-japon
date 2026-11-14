@@ -331,3 +331,63 @@ export function getMonthlyData(monthNum = 9, lang = "es") {
     }))
   };
 }
+
+export function getHistoricalDayForecast(dayNum, city, dateStr, baseDay = {}, lang = "es") {
+  const parts = (dateStr || "").split("-").map(Number);
+  const m = parts[1] >= 1 && parts[1] <= 12 ? parts[1] : 9;
+  const langKey = ["es", "en", "fr", "tl"].includes(lang) ? lang : "es";
+
+  // Si el mes es septiembre (9) y tenemos el día base curado de la ruta original de septiembre:
+  if (m === 9 && baseDay && baseDay.high != null) {
+    return {
+      high: baseDay.high,
+      low: baseDay.low,
+      rain: baseDay.rain ?? 15,
+      sky: baseDay.sky || "sun",
+      condition: baseDay.condition || "Soleado",
+      monthName: MONTH_NAMES[langKey][8],
+    };
+  }
+
+  const monthData = MONTHLY_WEATHER_DATA[m] || MONTHLY_WEATHER_DATA[9];
+  const cityInfo = monthData.cities.find((c) => c.city === city) || monthData.cities[0];
+
+  // Variación natural ligera día a día (+1° o -1°) para que no sea idéntico cada día
+  const variation = ((dayNum * 7) % 3) - 1; // -1, 0 o +1
+  const high = cityInfo.avg + variation;
+  const low = cityInfo.min + Math.min(0, variation);
+
+  // Probabilidad numérica de lluvia según precipitación habitual
+  let rain = 20;
+  const p = (cityInfo.precip.es || "").toLowerCase();
+  if (p.includes("muy baja")) rain = 10;
+  else if (p.includes("baja")) rain = 15;
+  else if (p.includes("moderada")) rain = 30;
+  else if (p.includes("posible")) rain = 35;
+  else if (p.includes("tormentas")) rain = 45;
+  else if (p.includes("muy frecuente")) rain = 75;
+  else if (p.includes("frecuente")) rain = 60;
+  else if (p.includes("chubascos") || p.includes("variable")) rain = 35;
+
+  // Icono de cielo
+  let sky = "partly";
+  const condText = (cityInfo.condition.es || "").toLowerCase();
+  if (condText.includes("soleado") || condText.includes("despejado")) {
+    sky = "sun";
+  } else if (condText.includes("nieve") || condText.includes("lluvia") || condText.includes("aguanieve") || condText.includes("tsuyu")) {
+    sky = "rain";
+  } else if (condText.includes("nublado")) {
+    sky = "cloud";
+  } else {
+    sky = "partly";
+  }
+
+  return {
+    high,
+    low,
+    rain,
+    sky,
+    condition: cityInfo.condition[langKey] || cityInfo.condition.es,
+    monthName: MONTH_NAMES[langKey][m - 1],
+  };
+}
