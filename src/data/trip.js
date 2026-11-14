@@ -210,7 +210,7 @@ export const stays = [
   {
     id: "kioto",
     city: "Kioto",
-    nights: "Del 7 al 12 sept (5 noches)",
+    nights: "Días 1 al 6 del itinerario (5 noches)",
     afterDay: 1,
     options: [
       {
@@ -221,8 +221,8 @@ export const stays = [
         url: "https://www.booking.com/hotel/jp/hotel-keihan-kyoto-hachijoguchi.es.html",
         address: "Minami ward Higashi Kujo Minami Sannou cho 5-1, Kioto, Japón",
         phone: "+81 75 662 0321",
-        checkIn: "7-sept-2026 · 15:00–00:00",
-        checkOut: "12-sept-2026 · hasta 11:00",
+        checkIn: "Día 1 del itinerario · 15:00–00:00",
+        checkOut: "Día 6 del itinerario · hasta 11:00",
         rooms: "2 habitaciones · Triple Moderate + Doble Estándar (2 camas)",
         cancel: "Cancelación gratis hasta 1 día antes",
         onsen: { has: true, hours: "15:00–01:00 y 6:00–10:00 (separado por sexos)" },
@@ -233,7 +233,7 @@ export const stays = [
   {
     id: "kanazawa",
     city: "Kanazawa",
-    nights: "Del 12 al 13 sept (1 noche)",
+    nights: "Días 6 al 7 del itinerario (1 noche)",
     afterDay: 6,
     options: [
       {
@@ -244,8 +244,8 @@ export const stays = [
         url: "https://www.booking.com/hotel/jp/resol-trinity-kanazawa.es.html",
         address: "Musashicho 1-18, Kanazawa, Ishikawa, Japón",
         phone: "+81 76 221 9269",
-        checkIn: "12-sept-2026 · desde 15:00",
-        checkOut: "13-sept-2026 · hasta 11:00",
+        checkIn: "Día 6 del itinerario · desde 15:00",
+        checkOut: "Día 7 del itinerario · hasta 11:00",
         rooms: "2 habitaciones · Doble (2 camas + 1 supletoria) + Doble Estándar",
         cancel: "Cancelación gratis hasta 2 días antes",
         onsen: { has: false },
@@ -256,7 +256,7 @@ export const stays = [
   {
     id: "takayama",
     city: "Takayama",
-    nights: "Del 13 al 14 sept (1 noche)",
+    nights: "Días 7 al 8 del itinerario (1 noche)",
     afterDay: 7,
     options: [
       {
@@ -267,8 +267,8 @@ export const stays = [
         url: "https://www.booking.com/hotel/jp/hotel-wood-takayama.es.html",
         address: "Kamininomachi 80-2, Takayama, Gifu, Japón",
         phone: "+81 577 32 0111",
-        checkIn: "13-sept-2026 · 15:00–22:00",
-        checkOut: "14-sept-2026 · hasta 10:00",
+        checkIn: "Día 7 del itinerario · 15:00–22:00",
+        checkOut: "Día 8 del itinerario · hasta 10:00",
         rooms: "2 habitaciones · Triple Superior + Doble Estándar (2 camas)",
         cancel: "Cancelación gratis hasta 3 días antes",
         onsen: { has: true, hours: "15:00–00:00 y 6:00–9:00 (separado por sexos), con helado gratis al salir" },
@@ -279,7 +279,7 @@ export const stays = [
   {
     id: "magome",
     city: "Magome",
-    nights: "Del 14 al 15 sept (1 noche)",
+    nights: "Días 8 al 9 del itinerario (1 noche)",
     afterDay: 8,
     options: [
       {
@@ -288,6 +288,8 @@ export const stays = [
         paid: false,
         paymentMethod: "Efectivo en hotel",
         url: "https://www.booking.com/hotel/jp/magome-chaya.es.html",
+        checkIn: "Día 8 del itinerario · desde 15:00",
+        checkOut: "Día 9 del itinerario · hasta 10:00",
         rooms: "Minshuku · con cena (sin desayuno)",
         onsen: { has: true, hours: "sin horario oficial — pequeño, separado por sexos; preguntar al hacer check-in (mejor ir sobre las 18:00-19:00, cuando el resto cena)" },
         note: "Alojamiento tradicional Minshuku en la ruta Nakasendo (~35,80€/persona). En Magome el pago suele ser en metálico al llegar; conviene llevar yenes en efectivo. Incluye cena tradicional casera a hora fija (~18:00). No incluye desayuno.",
@@ -297,7 +299,7 @@ export const stays = [
   {
     id: "tokio",
     city: "Tokio",
-    nights: "Del 15 al 21 sept (6 noches)",
+    nights: "Días 9 al 15 del itinerario (6 noches)",
     afterDay: 9,
     options: [
       {
@@ -306,6 +308,8 @@ export const stays = [
         paid: true,
         paidBy: "Pagado por adelantado",
         url: "https://www.booking.com/hotel/jp/koko-hotel-residence-asakusa-kappabashi.es.html",
+        checkIn: "Día 9 del itinerario · desde 15:00",
+        checkOut: "Día 15 del itinerario · hasta 11:00",
         rooms: "Residencia / apartamento · 6 noches",
         onsen: { has: false },
         note: "Alojamiento elegido en Tokio (~385,43€/persona las 6 noches). Apartamento amplio con cocina en Asakusa / Kappabashi, ideal como base para recorrer Tokio.",

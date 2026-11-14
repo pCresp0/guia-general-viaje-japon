@@ -136,9 +136,11 @@ export const blocks = [
 export const stays = [
   {
     city: "Kyoto",
-    nights: "From Sep 7 to 12 (5 nights)",
+    nights: "Days 1 to 6 of the itinerary (5 nights)",
     options: [
       {
+        checkIn: "Day 1 of the itinerary · 15:00–00:00",
+        checkOut: "Day 6 of the itinerary · until 11:00",
         rooms: "2 rooms · Triple Moderate + Standard Double (2 beds)",
         cancel: "Free cancellation up to 1 day before",
         note: "Starting March 2026, Kyoto applies a new tourist tax. For accommodations under ¥ (~33€) per person/night, the tax is EXEMPT. If it exceeds ¥ (~33€), it is ¥ (~2€) per person/night. To be paid at the hotel. Meals not included.",
@@ -147,9 +149,11 @@ export const stays = [
   },
   {
     city: "Kanazawa",
-    nights: "From Sep 12 to 13 (1 night)",
+    nights: "Days 6 to 7 of the itinerary (1 night)",
     options: [
       {
+        checkIn: "Day 6 of the itinerary · from 15:00",
+        checkOut: "Day 7 of the itinerary · until 11:00",
         rooms: "2 rooms · Double (2 beds + 1 extra) + Standard Double",
         cancel: "Free cancellation up to 2 days before",
         note: "Meals not included.",
@@ -158,9 +162,11 @@ export const stays = [
   },
   {
     city: "Takayama",
-    nights: "From Sep 13 to 14 (1 night)",
+    nights: "Days 7 to 8 of the itinerary (1 night)",
     options: [
       {
+        checkIn: "Day 7 of the itinerary · 15:00–22:00",
+        checkOut: "Day 8 of the itinerary · until 10:00",
         rooms: "2 rooms · Triple Superior + Standard Double (2 beds)",
         cancel: "Free cancellation up to 3 days before",
         note: "Early check-out (10:00). Meals not included.",
@@ -169,9 +175,11 @@ export const stays = [
   },
   {
     city: "Magome",
-    nights: "From Sep 14 to 15 (1 night)",
+    nights: "Days 8 to 9 of the itinerary (1 night)",
     options: [
       {
+        checkIn: "Day 8 of the itinerary · from 15:00",
+        checkOut: "Day 9 of the itinerary · until 10:00",
         rooms: "Minshuku · with dinner (no breakfast)",
         note: "Home-cooked dinner at a fixed time (~18:00). Confirm before the trip.",
       },
@@ -179,9 +187,11 @@ export const stays = [
   },
   {
     city: "Tokyo",
-    nights: "From Sep 15 to 21 (6 nights)",
+    nights: "Days 9 to 15 of the itinerary (6 nights)",
     options: [
       {
+        checkIn: "Day 9 of the itinerary · from 15:00",
+        checkOut: "Day 15 of the itinerary · until 11:00",
         rooms: "Residence / apartment · 6 nights",
       },
     ],
