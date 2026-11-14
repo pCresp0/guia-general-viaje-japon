@@ -1,36 +1,20 @@
 /**
- * Información de la reserva de la excursión al Monte Fuji (GetYourGuide,
- * confirmada para el 16 de septiembre).
+ * Información de la excursión al Monte Fuji (GetYourGuide,
+ * recomendada para el Día 10 del itinerario).
  */
 
 export const gygFujiActivity = {
   title: "Tokio: monte Fuji, parque Oishi, lago Kawaguchi y Oshino Hakkai",
   provider: "Japan Visionary Tour",
-  providerPhone: "+81 80 4177 7353",
-  providerEmail: "activity-provider-fs7zshgtsn6di2wj@reply.getyourguide.com",
   url: "https://www.getyourguide.com/es-es/tokio-l193/tokio-monte-fuji-pagoda-chureito-lago-kawaguchi-y-oshino-hakkai-t792363/",
   meetingPoint: "Tokyo Mode Gakuen (1 Chome-7-3 Nishishinjuku, Shinjuku City, Tokyo 160-0023)",
   meetingPointUrl: "https://maps.google.com/?q=35.691490,139.696457",
-  meetingTime: "Encuentro a las 08:10 AM (salida puntual en autobús a las 08:20 AM)",
-  duration: "Aprox. 10 horas",
-  language: "Guía oficial en inglés",
-  participants: "5 adultos",
-  totalPrice: "210,00 € (42 € / persona)",
-  paymentDate: "Programado para el 13 de septiembre de 2026",
-  foodNotice: "⚠️ Comida NO incluida. No se permite comer en el autobús. Comprar snacks/bebidas antes o probar especialidades locales en las paradas (llevar dinero en efectivo ya que muchas tiendas no aceptan tarjeta).",
-  guideMessage: {
-    receivedDate: "15 de septiembre de 2026, por WhatsApp",
-    guideName: "Omar",
-    flagColor: "Naranja",
-    flagNumber: "19",
-    meetingTimeUpdated: "08:10 AM",
-    departureTimeUpdated: "08:20 AM",
-    lateWarning: "El guía insiste en llegar puntual -- el autobús sale a las 08:20 en punto, sin margen de espera.",
-    stationWarning: "Si vais en tren, calculad tiempo extra para orientaros dentro de la Estación de Shinjuku: es enorme (más de 200 salidas) y encontrar el punto de encuentro puede llevar más de lo esperado.",
-    weatherNotice: "Se espera lluvia mañana. Llevar chubasquero o paraguas y calzado adecuado. El tiempo alrededor del Monte Fuji puede ser más frío y cambiar rápido -- vestir por capas.",
-    restroomNotice: "Ir al baño antes de llegar al punto de encuentro: el trayecto en autobús hasta la primera parada dura aprox. 2 horas.",
-  },
-  hotelDepartureAdvice: "Salir del hotel a las 07:00 -- desde el KOKO HOTEL Residence Asakusa Kappabashi el trayecto hasta Shinjuku ronda los 40-45 minutos en metro/JR, y con margen extra por si acaso al pasar por la Estación de Shinjuku (grande, más de 200 salidas).",
+  meetingTime: "Salida en autobús a las 08:20 AM (estar sobre las 08:10 AM)",
+  duration: "Aprox. 10 horas (regreso ~18:30)",
+  language: "Tour guiado en inglés",
+  priceRef: "~42 € / persona",
+  foodNotice: "⚠️ Comida no incluida. No se permite comer dentro del autobús. Conviene comprar snacks o desayuno antes en un konbini y llevar dinero en efectivo (¥) para comer en los puestos locales de Oshino Hakkai y Saiko.",
+  hotelDepartureAdvice: "Conviene salir con margen desde el hotel (unos 40-45 minutos en metro/JR hasta Shinjuku). La Estación de Shinjuku es inmensa (más de 200 salidas), por lo que es recomendable añadir 15-20 minutos extra para localizar sin prisas el edificio Tokyo Mode Gakuen en la salida oeste.",
   itineraryStopsDetailed: [
     {
       emoji: "🌸",
@@ -61,18 +45,13 @@ export const gygFujiActivity = {
     "Lago Kawaguchiko y Parque Oishi (40 min - campos florales y vistas)",
     "Saiko Iyashi-no-Sato Nenba (1 hora - pueblo tradicional de tejados de paja con entrada incluida)",
     "Oshino Hakkai (1 hora - 8 manantiales sagrados de agua de deshielo UNESCO)",
-    "Parque Arakurayama Sengen y Santuario Arakura Fuji (subida de 400 escalones)",
-    "Pagoda Chureito (la vista icónica de 5 pisos con el Monte Fuji)"
+    "Parque Arakurayama Sengen y Pagoda Chureito (subida de 400 escalones y vista clásica del Fuji)",
   ],
   bookings: [
     {
       dayNum: 10,
       date: "2026-09-16",
       dateFormatted: "Miércoles, 16 de septiembre de 2026",
-      code: "Japan Visionary Tour",
-      pin: "Guía en inglés",
-      cancelDeadline: "Antes de las 08:30 del 15 de septiembre",
-      status: "✅ Día seleccionado para la excursión organizada al Monte Fuji"
     }
   ]
 };

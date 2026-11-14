@@ -494,18 +494,15 @@ function DayTicketNote({ dayNum }) {
 }
 
 function DayFujiNote({ dayNum }) {
-  const booking = gygFujiActivity.bookings.find((b) => b.dayNum === dayNum);
-  if (!booking) return null;
+  if (dayNum !== 10) return null;
   return (
     <div style={{ marginTop: 8, padding: "8px 10px", background: "#e8f4fc", border: "1px solid #7dd3fc", borderRadius: 6, fontSize: 9.5, lineHeight: 1.5 }}>
-      <strong>🗻 Excursión Monte Fuji GYG (reserva {booking.code})</strong>
-      <br />
-      PIN: {booking.pin} · {booking.status}
+      <strong>🗻 Excursión organizada al Monte Fuji (GetYourGuide)</strong>
       <br />
       Punto de encuentro: {gygFujiActivity.meetingPoint} · {gygFujiActivity.meetingTime}
       <br />
       <span style={{ color: "#0369a1", fontStyle: "italic" }}>
-        Comprobar la visibilidad del Fuji la mañana de la excursión antes de salir.
+        Comprobar la visibilidad del Fuji en webcams en directo la mañana de la excursión antes de salir.
       </span>
     </div>
   );
@@ -689,7 +686,7 @@ export default function ItineraryPrintView({ days }) {
         <div style={{ fontSize: 10.5, lineHeight: 1.55, marginBottom: 10 }}>
           <strong>Excursión recomendada (Día 10)</strong> — {gygFujiActivity.title}
           <br />
-          {gygFujiActivity.participants} · {gygFujiActivity.totalPrice} · pago: {gygFujiActivity.paymentDate}
+          Tarifa de referencia: {gygFujiActivity.priceRef} · Proveedor: {gygFujiActivity.provider} (GetYourGuide)
           <br />
           Encuentro: {gygFujiActivity.meetingPoint}
           <br />
@@ -697,28 +694,8 @@ export default function ItineraryPrintView({ days }) {
           <br />
           {gygFujiActivity.foodNotice}
           <br />
-          Proveedor: {gygFujiActivity.provider} · {gygFujiActivity.providerPhone}
+          Web: {gygFujiActivity.url}
         </div>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 10, marginBottom: 10 }}>
-          <thead>
-            <tr style={{ background: "#f7f0e3" }}>
-              <th style={{ textAlign: "left", padding: 6 }}>Día</th>
-              <th style={{ textAlign: "left", padding: 6 }}>Código</th>
-              <th style={{ textAlign: "left", padding: 6 }}>PIN</th>
-              <th style={{ textAlign: "left", padding: 6 }}>Cancelar antes de</th>
-            </tr>
-          </thead>
-          <tbody>
-            {gygFujiActivity.bookings.map((b) => (
-              <tr key={b.code} style={{ borderBottom: "1px solid #e6dcc4" }}>
-                <td style={{ padding: 6 }}>{b.dateFormatted}</td>
-                <td style={{ padding: 6, fontFamily: "monospace" }}>{b.code}</td>
-                <td style={{ padding: 6, fontFamily: "monospace" }}>{b.pin}</td>
-                <td style={{ padding: 6 }}>{b.cancelDeadline}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
         <p style={{ fontSize: 10, color: "#5a6070", lineHeight: 1.5 }}>
           Visibilidad: {visibilityTools.isFujiVisible.name} ({visibilityTools.isFujiVisible.url}) · {visibilityTools.mtFujiToday.name} ({visibilityTools.mtFujiToday.url}).
           {" "}{visibilityTools.goldenRule}

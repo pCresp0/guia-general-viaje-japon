@@ -619,7 +619,7 @@ export const days = [
         "text": "🚇 **Leaving toward the meeting point.** From KOKO HOTEL Residence Asakusa Kappabashi the metro/JR ride takes around 40-45 min -- and with Shinjuku Station in between (one of the largest in Japan, with over 200 exits), we're leaving with plenty of buffer."
       },
       {
-        "text": "📍 **MEETING POINT: TOKYO MODE GAKUEN.**\n\nhttps://maps.google.com/?q=35.691490,139.696457\n\nLook for the orange flag with the number **19** (guide: Omar)."
+        "text": "📍 **MEETING POINT: TOKYO MODE GAKUEN.**\n\nhttps://maps.google.com/?q=35.691490,139.696457\n\nMeeting point for the Mount Fuji day tour in front of the Tokyo Mode Gakuen building (Shinjuku west exit)."
       },
       {
         "text": "🚌 **DEPARTURE OF THE MT. FUJI EXCURSION** (confirmed reservation). The first bus leg runs about 2 hours with no stop -- use the restroom before boarding.\n\n🗺️ **What we're seeing today:**\n- Lake Kawaguchiko and Oishi Park\n- Traditional village Saiko Iyashi-no-Sato Nenba\n- Oshino Hakkai springs\n- Arakurayama Sengen Park and Chureito Pagoda\n\nSee the card below for the full detail on each stop, tomorrow's rain notice and provider contact."

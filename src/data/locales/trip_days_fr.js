@@ -619,7 +619,7 @@ export const days = [
         "text": "🚇 **Départ vers le point de rendez-vous.** Depuis le KOKO HOTEL Residence Asakusa Kappabashi, le trajet en métro/JR prend environ 40-45 min -- et avec la gare de Shinjuku entre les deux (l'une des plus grandes du Japon, plus de 200 sorties), on part avec une bonne marge."
       },
       {
-        "text": "📍 **POINT DE RENDEZ-VOUS : TOKYO MODE GAKUEN.**\n\nhttps://maps.google.com/?q=35.691490,139.696457\n\nChercher le drapeau orange portant le numéro **19** (guide : Omar)."
+        "text": "📍 **POINT DE RENDEZ-VOUS : TOKYO MODE GAKUEN.**\n\nhttps://maps.google.com/?q=35.691490,139.696457\n\nPoint de rendez-vous pour l'excursion en bus au mont Fuji devant l'immeuble Tokyo Mode Gakuen (sortie ouest de Shinjuku)."
       },
       {
         "text": "🚌 **DÉPART DE L'EXCURSION AU MONT FUJI** (réservation confirmée). Le premier trajet en bus dure environ 2 heures sans arrêt -- passer aux toilettes avant de monter.\n\n🗺️ **Ce que nous allons voir aujourd'hui :**\n- Lac Kawaguchiko et Parc Oishi\n- Village traditionnel Saiko Iyashi-no-Sato Nenba\n- Sources d'Oshino Hakkai\n- Parc Arakurayama Sengen et Pagode Chureito\n\nVoir la carte ci-dessous pour le détail complet de chaque arrêt, l'alerte pluie pour demain et le contact du prestataire."
