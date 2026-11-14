@@ -253,7 +253,7 @@ export default function App() {
           <main style={{
             flex: 1,
             width: "100%",
-            maxWidth: tab === "calendario" || tab === "mapa" ? "100%" : 1200,
+            maxWidth: tab === "calendario" ? "100%" : 1100,
             margin: "0 auto",
             // Solo móvil: offset bajo la top bar fija
             paddingTop: "var(--mobile-topbar)",
