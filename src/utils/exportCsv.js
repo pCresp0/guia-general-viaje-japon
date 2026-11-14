@@ -12,7 +12,7 @@ export function exportTransportExcel(transports, title = "Itinerario_Transportes
       `"${(t.to || "").replace(/"/g, '""')}"`,
       `"${(t.type || "").replace(/"/g, '""')}"`,
       t.real,
-      t.purchased ? "Comprado" : "Pendiente"
+      t.advance ? "Reserva previa" : t.station ? "En estación" : "Suica / IC"
     ].join(";");
   });
 

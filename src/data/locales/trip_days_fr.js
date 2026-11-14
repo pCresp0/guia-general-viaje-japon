@@ -30,10 +30,10 @@ export const days = [
         "text": "**Conseils pratiques :**\n\n**Petit-déjeuner habituel :** environ 07h00–09h00.\n**Déjeuner :** environ 11h30–14h00.\n**Dîner :** environ 17h30–21h00.\n\nBeaucoup de petits restaurants ferment entre le déjeuner et le dîner.\n\nLes jours de départ très matinal, acheter le petit-déjeuner la veille dans un konbini. Pour les excursions aux horaires serrés, emporter un onigiri/sandwich de secours. Les konbini (7-Eleven, Lawson, FamilyMart) sont une option pratique et bon marché pour les onigiri, sandwichs, bento, fruits, yaourts, karaage et boissons. De plus, les konbini sont ouverts 24h/24 et 7j/7, donc on peut aller acheter le petit-déjeuner à n'importe quelle heure sans souci.\n\nUn repas simple de ramen/udon/donburi peut coûter environ **¥–1 500 (~3–9€)**.\n\nPas besoin de réserver normalement pour les ramen, udon, donburi, fast-food japonais, izakaya informel ou stands de rue. Ne réserver que les restaurants spéciaux/populaires quand on veut vraiment y dîner.\n\nDans les marchés et les zones de street food, respecter les règles locales sur où manger. Au Japon, il n'est pas courant de manger en marchant dans les rues commerçantes ; au marché de Nishiki, c'est explicitement déconseillé."
       },
       {
-        "text": "🛬 Atterrissage à Narita (NRT).\n\nIl faut passer l'immigration, récupérer les bagages enregistrés, la douane, puis sortir vers la zone publique de l'aéroport.\nPenser à avoir prêt le QR code de Visit Japan Web des 5 voyageurs pour accélérer les démarches.\n\n💡 Conseil : le temps réel pour sortir de l'aéroport peut beaucoup varier selon l'immigration, les bagages et la douane. C'est pourquoi nous n'avons pas acheté le Narita Express à l'avance."
+        "text": "🛬 Atterrissage à Narita (NRT).\n\nIl faut passer l'immigration, récupérer les bagages enregistrés, la douane, puis sortir vers la zone publique de l'aéroport.\nPenser à avoir prêt le QR code de Visit Japan Web pour accélérer les démarches.\n\n💡 Conseil : Le temps réel de sortie de l'aéroport peut varier selon l'immigration, les bagages et la douane. Il est donc recommandé d'acheter le billet du Narita Express directement à l'aéroport à l'arrivée."
       },
       {
-        "text": "🚂 NARITA EXPRESS (N'EX) — ⏳ EN ATTENTE / À ACHETER À NARITA\n\n🎫 **SUICA :** ❌ NON pour payer (billet express nécessaire)\n📅 **RÉSERVATION :** 🔴 NÉCESSAIRE\n🛒 **ACHAT :** ACHETER SUR PLACE. Aux distributeurs ou aux guichets JR de l'aéroport de Narita lui-même. NE PAS acheter à l'avance.\n\nTrajet : Aéroport de Narita → Shinagawa\n(L'horaire d'environ 14h45 n'est qu'un objectif indicatif).\n\nAprès la douane, suivre les indications JR / Narita Express. Acheter le billet aux distributeurs JR ou à un guichet JR de l'aéroport.\n\n⚠️ **IMPORTANT :**\n- Ce n'est PAS le métro. C'est un train JR longue distance.\n- On le prend à la gare JR de l'aéroport.\n- Le billet n'est PAS encore acheté.\n- On ne veut pas fixer obligatoirement un train précis avant de voler, car le vol peut être retardé.\n- On l'achètera SUR PLACE À L'AÉROPORT DE NARITA une fois qu'on aura une estimation réaliste du temps.\n- Pour ce trajet, il faut un billet N'EX. Ne pas utiliser Smart EX.\n- Si vous voyagez en groupe : acheter les billets ensemble au guichet ou distributeur pour obtenir des sièges côte à côte.\n\nNote : si le vol est retardé, on ne perd aucun billet N'EX puisqu'on ne l'a pas encore acheté. On achètera simplement le prochain N'EX qui nous permet d'arriver à temps à Shinagawa."
+        "text": "🚂 NARITA EXPRESS (N'EX) — 🚉 ACHAT À L'AÉROPORT DE NARITA\n\n🎫 **SUICA :** ❌ NON pour payer (billet express avec siège réservé nécessaire)\n📅 **RÉSERVATION :** 🔴 NÉCESSAIRE (incluse avec le billet)\n🛒 **ACHAT :** ACHETER SUR PLACE. Aux distributeurs ou aux guichets JR de l'aéroport de Narita lui-même après avoir récupéré les bagages.\n\nTrajet : Aéroport de Narita → Shinagawa\n(L'horaire d'environ 14h45 n'est qu'un objectif indicatif).\n\nAprès la douane, suivre les indications JR / Narita Express. Acheter le billet aux distributeurs JR ou à un guichet JR de l'aéroport.\n\n⚠️ **CONSEILS PRATIQUES :**\n- Il est déconseillé de réserver un train fixe avant le vol car le vol ou les formalités peuvent être retardés.\n- En l'achetant à l'aéroport en sortant, en cas de retard on ne perd aucun billet : il suffit d'embarquer dans le prochain N'EX disponible.\n- Si vous voyagez en groupe : acheter les billets ensemble au guichet ou distributeur pour obtenir des sièges côte à côte."
       },
       {
         "text": "🚄 **SHINKANSEN NOZOMI 53 (SHINAGAWA → KYOTO)**\n\nTrain à grande vitesse direct vers Kyoto Station (17h19 → 19h23 · 2h 04min). Déplier la carte ci-dessous pour consulter le guide pratique du trajet, les tarifs indicatifs, les modes d'accès (Smart EX / Suica) et les règles pour les bagages."
@@ -45,7 +45,7 @@ export const days = [
         "text": "🚅 Arrivée à Kyoto (JR Kyoto Station). On sort par la sortie Hachijo East Exit (八条東口). De là, il n'y a que 5 minutes à pied jusqu'à notre hôtel."
       },
       {
-        "text": "🏨 **CHECK-IN : HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\n✅ Hôtel déjà payé (669,86€ via Booking).\n\nArrivée à l'hôtel, formalités de check-in pour les chambres du groupe, dépose des bagages, se rafraîchir et s'installer tranquillement après le vol international et les trains de la journée.\n\n♨️ L'hôtel a un grand onsen (bain public), séparé par sexe, ouvert de 15h00 à 01h00 et de 6h00 à 10h00 — parfait pour se détendre après le voyage."
+        "text": "🏨 **CHECK-IN : HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\n🏨 Hôtel recommandé en face de Kyoto Station (sortie Hachijo), base stratégique pour le réseau de transport du Kansai.\n\nArrivée à l'hôtel, formalités de check-in pour les chambres du groupe, dépose des bagages, se rafraîchir et s'installer tranquillement après le vol international et les trains de la journée.\n\n♨️ L'hôtel a un grand onsen (bain public), séparé par sexe, ouvert de 15h00 à 01h00 et de 6h00 à 10h00 — parfait pour se détendre après le voyage."
       },
       {
         "text": "🍣 **DÎNER : KAITEN-SUSHI UOGASHI**\n\nRestaurant recommandé à **AEON MALL KYOTO** — Bâtiment Sakura, 4e étage (https://maps.app.goo.gl/ByDBQB6zaVZ3dj2E6). À environ 5–7 min à pied de l'hôtel et de la gare.\n\n**Kaiten-zushi** (sushi sur tapis roulant). Prix indicatif : **¥ 000–3 000/personne (~12–19€)**.\n\nHoraires : 11h00–22h00 (dernière commande vers 21h30). Pas besoin de réserver.\n\n**À essayer :** sushi variés ; morceaux de poisson frais ; nigiri ; plats spéciaux du jour ; un accompagnement chaud."
@@ -417,7 +417,7 @@ export const days = [
       },
       {
         "time": "14:05–15:00",
-        "text": "🏨 Arrivée à Takayama. Du terminal de bus de Takayama à l'Hotel Wood Takayama : environ 12 minutes à pied. L'hôtel est pratiquement à côté du centre historique, donc on n'a PAS besoin de taxi ni de transport urbain.\n\n🗺️ Itinéraire complet de Takayama : https://maps.app.goo.gl/VsKEtfcaxV6jcSmS9?g_st=ic\n\nDéposer les bagages, check-in (officiel à 15h00), et un moment de repos avant de ressortir.\n\n✅ Hôtel déjà payé (274,98€ via Booking)."
+        "text": "🏨 Arrivée à Takayama. Du terminal de bus de Takayama à l'Hotel Wood Takayama : environ 12 minutes à pied. L'hôtel est pratiquement à côté du centre historique, donc on n'a PAS besoin de taxi ni de transport urbain.\n\n🗺️ Itinéraire complet de Takayama : https://maps.app.goo.gl/VsKEtfcaxV6jcSmS9?g_st=ic\n\nDéposer les bagages, check-in (officiel à 15h00), et un moment de repos avant de ressortir.\n\n🏨 Hôtel de charme au cœur de Takayama avec onsen relaxant et glace offerte en sortie de bain."
       },
       {
         "time": "15:00–15:30",
@@ -449,7 +449,7 @@ export const days = [
       },
       {
         "time": "🎫 RÉSERVATIONS",
-        "text": "DÉJÀ RÉSERVÉ : Kanazawa → Shirakawa-go (08h40, 5 places) et Shirakawa-go → Takayama (13h15, 5 places). On n'a PAS besoin de Japan Rail Pass, de trains, ni de Suica pour ces bus."
+        "text": "RÉSERVATION RECOMMANDÉE : Kanazawa → Shirakawa-go (08h40) et Shirakawa-go → Takayama (13h15). Un billet spécifique de bus est nécessaire ; ces trajets ne sont pas couverts par le Japan Rail Pass ni la carte Suica."
       },
       {
         "time": "🚍 RÉSUMÉ DES TRANSPORTS",
@@ -571,7 +571,7 @@ export const days = [
         "text": "🥢 **PROMENADE DANS KAPPABASHI-DORI.** Puisque vous êtes juste là après le déjeuner : la rue entièrement dédiée à l'univers de la cuisine, avec des statues du kappa (l'esprit d'eau espiègle qui donne son nom au quartier) disséminées tout au long du parcours. C'est ici que sont nés les sampuru, les répliques de plats hyperréalistes vues dans les vitrines des restaurants japonais -- une seule pièce de sushi factice peut coûter environ ¥ 000. Il y a aussi des couteaux japonais forgés à la main avec aiguisage et gravure sur place, et à l'extrémité sud, une tête de cuisinier géante au sommet du bâtiment Niimi Cooker, impossible à manquer."
       },
       {
-        "text": "🚶 Marcher jusqu'à l'hôtel (6 min).\n\n🏨 **CHECK-IN : KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Appartement résidentiel réservé (1 927,13€ via Booking · 6 nuits).\n\nCheck-in (officiel à partir de 15h00), le temps de déposer les bagages, défaire un peu les affaires et se doucher après le trajet en train.\n\nAdresse : 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Réception des bagages (Takkyubin/Yamato) :**\nEn ayant envoyé les grandes valises depuis Kyoto, elles devraient déjà se trouver à la réception à votre arrivée. Se renseigner au comptoir de l'hôtel lors du check-in."
+        "text": "🚶 Marcher jusqu'à l'hôtel (6 min).\n\n🏨 **CHECK-IN : KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n🏢 Appartement résidentiel spacieux à Asakusa / Kappabashi avec cuisine et lave-linge, parfait pour explorer Tokyo.\n\nCheck-in (officiel à partir de 15h00), le temps de déposer les bagages, défaire un peu les affaires et se doucher après le trajet en train.\n\nAdresse : 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Réception des bagages (Takkyubin/Yamato) :**\nEn ayant envoyé les grandes valises depuis Kyoto, elles devraient déjà se trouver à la réception à votre arrivée. Se renseigner au comptoir de l'hôtel lors du check-in."
       },
       {
         "text": "🌉 **PROMENADE JUSQU'AU TOKYO SKYTREE, LE LONG DE LA RIVIÈRE SUMIDA.** Un itinéraire à pied très simple et agréable (~15-20 min) depuis l'hôtel : en traversant l'emblématique pont rouge Azumabashi près du bâtiment de la brasserie Asahi, puis en suivant la promenade de la rivière Sumida jusqu'au pied de la tour."
@@ -637,7 +637,7 @@ export const days = [
         "text": "🏮 **OPTIONNEL : SENSŌ-JI DE NUIT**\n\nL'hôtel est à ~10 min à pied de Sensō-ji / Kaminarimon. S'il reste de l'énergie après l'excursion, petite promenade jusqu'au temple illuminé (gratuit ; ambiance très différente de la journée)."
       }
     ],
-    "money": "Env. 40 € (repas) + 42 €/personne déjà payés pour l'excursion"
+    "money": "Env. 40 € (repas) + ~42 €/personne (excursion au mont Fuji)"
   },
   {
     "title": "Shibuya, Harajuku et Shinjuku",
@@ -756,7 +756,7 @@ export const days = [
   {
     "title": "Route Nintendo, Shopping et Skytree",
     "cities": "Ikebukuro, Nakano, Akihabara",
-    "summary": "Journée de collection et de jeux vidéo : Mega Pokémon Center d'Ikebukuro (avec ses statues grandeur nature de Mewtwo, Dracaufeu et Lucario) et Nintendo Store Tokyo. Ensuite, Nakano Broadway et Akihabara, avec largement le temps dans ce dernier. Clôture de l'après-midi avec l'entrée déjà achetée pour le belvédère du Tokyo Skytree.",
+    "summary": "Journée de collection et de jeux vidéo : Mega Pokémon Center d'Ikebukuro (avec ses statues grandeur nature de Mewtwo, Dracaufeu et Lucario) et Nintendo Store Tokyo. Ensuite, Nakano Broadway et Akihabara, avec largement le temps dans ce dernier. Clôture de l'après-midi au belvédère du Tokyo Skytree pour admirer le coucher de soleil et les lumières de la ville.",
     "history": "L'industrie japonaise du jeu vidéo, menée par Nintendo, a revitalisé l'économie culturelle du pays dans les années 80. Nakano Broadway est né dans les années 60 comme complexe résidentiel de luxe, aujourd'hui mecque du collectionnisme underground.",
     "schedule": [
       {
@@ -797,7 +797,7 @@ export const days = [
       },
       {
         "time": "🟢 16:30",
-        "text": "🗼 **ENTRÉE CONFIRMÉE : TOKYO SKYTREE -- TEMBO DECK & GALERIE (ADULTE).** Billet déjà acheté pour le 19/09/2026, créneau d'accès 16h30-16h59. Arriver quelques minutes avant 16h30 pour ne pas empiéter sur le créneau."
+        "text": "🗼 **TOKYO SKYTREE -- TEMBO DECK & GALERIE (350m + 450m).** Créneau idéal recommandé : 16h30–17h00 (permet d'admirer la ville de jour, au coucher de soleil et de nuit). Il est vivement conseillé de réserver le billet en ligne quelques semaines à l'avance pour garantir le créneau."
       },
       {
         "time": "16:30–18:15",
@@ -820,7 +820,7 @@ export const days = [
         "text": "🏨 **RETOUR À L'HÔTEL : KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nRetour à la résidence pour se reposer et se préparer pour demain : excursion à Nikko, si la météo le permet (5e nuit à Tokyo)."
       }
     ],
-    "money": "Env. 40 € (repas) + shopping + entrée Skytree (déjà payée)"
+    "money": "Env. 40 € (repas) + shopping + entrée Skytree (~16-21 €)"
   },
   {
     "title": "Palais Impérial, Gare de Tokyo et Ginza",

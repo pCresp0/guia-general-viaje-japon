@@ -213,50 +213,54 @@ export default function TransportPage({ onNavigate }) {
             </div>
           </Highlightable>
 
-          {/* Estado general — al final */}
+          {/* Cómo gestionar los transportes de la ruta */}
           <div className="rounded-2xl p-4 mt-2 mb-4 border" style={{ background: "var(--paper-raised)", borderColor: "var(--line)" }}>
             <p className="font-display text-sm font-bold flex items-center gap-2 mb-3" style={{ color: "var(--indigo)" }}>
-              <span>🚆</span> Resumen de reservas de transporte de la ruta
+              <span>🚆</span> Cómo gestionar los transportes de la ruta
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
-              <div className="p-3 rounded-xl border bg-green-50/50 border-green-200">
-                <p className="text-xs font-bold text-green-800 flex items-center gap-1 mb-1.5">
-                  <CheckCircle2 size={13} /> ✅ COMPRADOS
+              <div className="p-3 rounded-xl border bg-emerald-50/60 border-emerald-200">
+                <p className="text-xs font-bold text-emerald-800 flex items-center gap-1 mb-1.5">
+                  <CreditCard size={13} /> 🟢 TARJETA SUICA / IC
                 </p>
-                <ul className="text-xs text-green-900 space-y-1">
-                  <li>• <strong>Nozomi 53</strong> Shinagawa→Kioto (7 sep, 17:19)</li>
-                  <li>• <strong>Thunderbird+Kagayaki</strong> Kioto→Kanazawa (12 sep)</li>
-                  <li>• <strong>Nohi Bus ×3</strong> Alpes (13–14 sep)</li>
-                  <li>• <strong>Shinano 4</strong> Nakatsugawa→Nagoya (15 sep)</li>
-                  <li>• <strong>Nozomi 358</strong> Nagoya→Tokio (15 sep, 11:29)</li>
+                <ul className="text-xs text-emerald-900 space-y-1">
+                  <li>• Metro de Tokio, Kioto y Osaka</li>
+                  <li>• Líneas urbanas JR (Yamanote, Línea Nara)</li>
+                  <li>• Tranvía Randen y tren Yurikamome</li>
+                  <li>• Se abona al momento al pasar por los tornos</li>
                 </ul>
               </div>
 
-              <div className="p-3 rounded-xl border bg-red-50/50 border-red-200">
-                <p className="text-xs font-bold text-red-800 flex items-center gap-1 mb-1.5">
-                  <AlertCircle size={13} /> 🔴 RESERVAR AHORA
-                </p>
-                <ul className="text-xs text-red-900 space-y-1">
-                  <li>• <strong>Shinkansen Fuji</strong> (20 sep · Smart EX · salida ~06:30)</li>
-                </ul>
-              </div>
-
-              <div className="p-3 rounded-xl border bg-amber-50/50 border-amber-200">
+              <div className="p-3 rounded-xl border bg-amber-50/60 border-amber-200">
                 <p className="text-xs font-bold text-amber-800 flex items-center gap-1 mb-1.5">
-                  <Clock size={13} /> 🟠 MÁS ADELANTE
+                  <Clock size={13} /> 🟠 RESERVA PREVIA ONLINE
                 </p>
                 <ul className="text-xs text-amber-900 space-y-1">
-                  <li>• <strong>Skyliner/N'EX</strong> vuelta a Narita (21 sep)</li>
+                  <li>• <strong>Shinkansen Nozomi</strong> (Smart EX, 30 días antes)</li>
+                  <li>• <strong>Thunderbird + Hokuriku</strong> (web JR-West)</li>
+                  <li>• <strong>Nohi Bus</strong> (Shirakawa-go y Takayama, 1 mes antes)</li>
+                  <li>• <strong>Keisei Skyliner</strong> (vuelta rápida a Narita)</li>
                 </ul>
               </div>
 
-              <div className="p-3 rounded-xl border bg-slate-50/80 border-slate-200">
-                <p className="text-xs font-bold text-slate-700 flex items-center gap-1 mb-1.5">
-                  <CreditCard size={13} /> 🟢 EN JAPÓN
+              <div className="p-3 rounded-xl border bg-blue-50/60 border-blue-200">
+                <p className="text-xs font-bold text-blue-800 flex items-center gap-1 mb-1.5">
+                  <Ticket size={13} /> 🔵 COMPRA EN ESTACIÓN
                 </p>
-                <ul className="text-xs text-slate-800 space-y-1">
-                  <li>• <strong>N'EX</strong> llegada Narita→Shinagawa</li>
-                  <li>• Locales con Suica</li>
+                <ul className="text-xs text-blue-900 space-y-1">
+                  <li>• <strong>Narita Express (N'EX)</strong>: al salir con el equipaje</li>
+                  <li>• <strong>Shinano 4</strong> (Nakatsugawa → Nagoya)</li>
+                  <li>• Bus local Magome (efectivo al bajar o parada)</li>
+                </ul>
+              </div>
+
+              <div className="p-3 rounded-xl border bg-purple-50/60 border-purple-200">
+                <p className="text-xs font-bold text-purple-800 flex items-center gap-1 mb-1.5">
+                  <Zap size={13} /> 🟣 TOURS Y ACTIVIDADES
+                </p>
+                <ul className="text-xs text-purple-900 space-y-1">
+                  <li>• <strong>Excursión Monte Fuji</strong> (Klook / GetYourGuide)</li>
+                  <li>• Mirador Tokyo Skytree (franja atardecer)</li>
                 </ul>
               </div>
             </div>
@@ -341,17 +345,17 @@ export default function TransportPage({ onNavigate }) {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 flex-wrap mb-0.5">
                               <p style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink)" }}>{tItem.name}</p>
-                              {tItem.purchased ? (
-                                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 border border-green-200">
-                                  <CheckCircle2 size={10} /> COMPRADO
+                              {tItem.advance ? (
+                                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                                  <Clock size={10} /> RESERVA PREVIA
                                 </span>
-                              ) : tItem.advance ? (
-                                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-orange-100 text-orange-700 border border-orange-200">
-                                  <Clock size={10} /> COMPRAR ADELANTADO
+                              ) : tItem.station ? (
+                                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200">
+                                  <Ticket size={10} /> EN ESTACIÓN
                                 </span>
                               ) : (
-                                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-500 border border-slate-200">
-                                  <Clock size={10} /> COMPRAR ALLÍ
+                                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                                  <CreditCard size={10} /> CON SUICA
                                 </span>
                               )}
                             </div>

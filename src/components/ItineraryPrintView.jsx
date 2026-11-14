@@ -754,7 +754,7 @@ export default function ItineraryPrintView({ days }) {
                   <br />
                   <span style={{ color: "#5a6070" }}>{t.from} → {t.to}</span>
                 </td>
-                <td style={{ padding: 5, verticalAlign: "top" }}>{t.purchased ? "✅ Comprado" : t.advance ? "🟠 Adelantado" : "🟢 En Japón"}</td>
+                <td style={{ padding: 5, verticalAlign: "top" }}>{t.advance ? "🟠 Reserva previa" : t.station ? "🔵 En estación" : "🟢 Suica / IC"}</td>
                 <td style={{ padding: 5, verticalAlign: "top", textAlign: "right", whiteSpace: "nowrap" }}>
                   {t.jpy != null ? formatJpyEur(t.jpy, t.real) : formatEur(t.real)}
                 </td>

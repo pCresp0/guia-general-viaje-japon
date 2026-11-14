@@ -30,10 +30,10 @@ export const days = [
         "text": "**Praktikal na tips:**\n\n**Karaniwang almusal:** mga 07:00–09:00.\n**Tanghalian:** mga 11:30–14:00.\n**Hapunan:** mga 17:30–21:00.\n\nMaraming maliliit na restaurant ang nagsasara sa pagitan ng tanghalian at hapunan.\n\nSa mga araw na napakaagang alis, bumili ng almusal sa gabi bago sa konbini. Sa mga excursion na masikip ang oras, magdala ng emergency na onigiri/sandwich. Ang mga konbini (7-Eleven, Lawson, FamilyMart) ay praktikal at murang opsyon para sa onigiri, sandwich, bento, prutas, yogurt, karaage, at inumin. Bukod dito, bukas ang mga konbini 24 oras, 7 araw sa isang linggo, kaya puwede kang bumili ng almusal anumang oras nang walang alalahanin.\n\nAng simpleng pagkain ng ramen/udon/donburi ay maaaring magkahalaga ng mga **¥–1,500 (~3–9€)**.\n\nHindi na kailangang mag-book normally para sa ramen, udon, donburi, mabilisang Japanese food, casual na izakaya, o mga food stall. Mag-book lang ng special/sikat na restaurant kapag talagang gusto nating kumain doon.\n\nSa mga palengke at street food area, igalang ang lokal na patakaran tungkol sa kung saan kakain. Sa Japan, hindi karaniwan ang kumain habang naglalakad sa mga shopping street; sa Nishiki Market, hayagang hindi ito inirerekomenda."
       },
       {
-        "text": "🛬 Paglapag sa Narita (NRT).\n\nKailangang dumaan sa immigration, pagkuha ng naka-check-in na bagahe, customs, at paglabas papuntang public area ng airport.\nTandaang ihanda ang Visit Japan Web QR code para mapabilis ang proseso.\n\n💡 Tip: Ang tunay na oras ng paglabas sa airport ay maaaring magbago-bago nang malaki depende sa immigration, bagahe, at customs. Kaya hindi pa natin binili nang maaga ang Narita Express."
+        "text": "🛬 Paglapag sa Narita (NRT).\n\nKailangang dumaan sa immigration, pagkuha ng naka-check-in na bagahe, customs, at paglabas papuntang public area ng airport.\nTandaang ihanda ang Visit Japan Web QR code para mapabilis ang proseso.\n\n💡 Tip: Ang tunay na oras ng paglabas sa airport ay maaaring magbago depende sa immigration, bagahe, at customs. Kaya inirerekomenda na bilhin ang tiket ng Narita Express pagdating mismo sa paliparan."
       },
       {
-        "text": "🚂 NARITA EXPRESS (N'EX) — ⏳ NAKABINBIN / BIBILHIN SA NARITA\n\n🎫 **SUICA:** ❌ HINDI puwede ibayad (kailangan ng express ticket)\n📅 **RESERBASYON:** 🔴 KAILANGAN\n🛒 **PAMBILI:** BILHIN DOON. Sa mga makina o JR ticket counter mismo sa Narita Airport. HUWAG bumili nang maaga.\n\nRuta: Narita Airport → Shinagawa\n(Ang oras na ~14:45 ay tinatayang target lang).\n\nPagkatapos ng customs, sundin ang mga signage ng JR / Narita Express. Bilhin ang tiket sa mga makina ng JR o sa opisina/counter ng JR sa airport.\n\n⚠️ **MAHALAGA:**\n- HINDI ito metro. Long-distance na tren ito ng JR.\n- Sasakyan ito sa JR station ng airport.\n- HINDI pa binibili ang tiket.\n- Ayaw nating mag-fix ng partikular na tren bago lumipad, dahil baka ma-delay ang flight.\n- Bibilhin natin ito SA MISMONG NARITA AIRPORT kapag mayroon na tayong makatotohanang tantiya ng oras.\n- Para sa rutang ito kailangan ng N'EX ticket. Huwag gamitin ang Smart EX.\n- Kung bibiyahe bilang grupo: bilhin ang mga tiket nang sabay sa makina o ticket counter para magkatabi ang mga upuan.\n\nPaalala: Kung na-delay ang flight, hindi tayo mawawalan ng anumang N'EX ticket dahil hindi pa natin ito binibili. Bibilhin na lang natin ang susunod na N'EX na makakarating sa Shinagawa sa oras."
+        "text": "🚂 NARITA EXPRESS (N'EX) — 🚉 PAGBILI SA NARITA AIRPORT\n\n🎫 **SUICA:** ❌ HINDI puwede ibayad (kailangan ng express ticket may reserved seat)\n📅 **RESERBASYON:** 🔴 KAILANGAN (kasama sa tiket)\n🛒 **PAMBILI:** BILHIN DOON. Sa mga ticket machine o JR counter sa paliparan pagkalabas bitbit ang bagahe.\n\nRuta: Narita Airport → Shinagawa\n(Ang oras na ~14:45 ay tinatayang target lang).\n\nPagkatapos ng customs, sundin ang mga signage ng JR / Narita Express. Bilhin ang tiket sa mga makina ng JR o sa opisina/counter ng JR sa airport.\n\n⚠️ **PRAKTIKAL NA PAYO:**\n- Hindi inirerekomendang mag-book ng takdang tren bago lumipad dahil maaaring ma-delay ang flight o customs.\n- Sa pamamagitan ng pagbili nito sa paliparan paglabas, kung may anumang aberya ay walang masasayang na tiket: sumakay lang sa susunod na available na N'EX.\n- Kung bibiyahe bilang grupo: bilhin ang mga tiket nang sabay sa makina o ticket counter para magkatabi ang mga upuan."
       },
       {
         "text": "🚄 **SHINKANSEN NOZOMI 53 (SHINAGAWA → KYOTO)**\n\nDiretsong bullet train papuntang Kyoto Station (17:19 → 19:23 · 2h 04min). I-expand ang card sa ibaba para tingnan ang praktikal na gabay sa biyahe, mga tantiyang pasahe, paraan ng pag-access (Smart EX / Suica), at patakaran sa bagahe."
@@ -45,7 +45,7 @@ export const days = [
         "text": "🚅 Pagdating sa Kyoto (JR Kyoto Station). Lalabas tayo sa Hachijo East Exit (八条東口). Mula doon, 5 minutong lakad lang papunta sa ating hotel."
       },
       {
-        "text": "🏨 **CHECK-IN: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\n✅ Bayad na ang hotel (669.86€ sa pamamagitan ng Booking).\n\nPagdating sa hotel, proseso ng check-in para sa mga kwarto ng grupo, iwan ang bagahe, magfreshen up at mag-relax nang tahimik pagkatapos ng international flight at mga tren ngayong araw.\n\n♨️ May malaking onsen (public bath) ang hotel, hiwalay para sa lalaki't babae, bukas mula 15:00 hanggang 01:00 at 6:00 hanggang 10:00 — perpekto para magpahinga pagkatapos ng biyahe."
+        "text": "🏨 **CHECK-IN: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\n🏨 Inirerekomendang hotel sa harap ng Kyoto Station (Hachijo Exit), perpektong base para sa transportasyon sa Kansai.\n\nPagdating sa hotel, proseso ng check-in para sa mga kwarto ng grupo, iwan ang bagahe, magfreshen up at mag-relax nang tahimik pagkatapos ng international flight at mga tren ngayong araw.\n\n♨️ May malaking onsen (public bath) ang hotel, hiwalay para sa lalaki't babae, bukas mula 15:00 hanggang 01:00 at 6:00 hanggang 10:00 — perpekto para magpahinga pagkatapos ng biyahe."
       },
       {
         "text": "🍣 **HAPUNAN: KAITEN-SUSHI UOGASHI**\n\nInirerekomendang restaurant sa **AEON MALL KYOTO** — Sakura Building, 4F (https://maps.app.goo.gl/ByDBQB6zaVZ3dj2E6). Mga 5–7 minutong lakad mula sa hotel at istasyon.\n\n**Kaiten-zushi** (sushi sa conveyor belt). Tinatayang presyo: **¥–3,000/tao (~12–19€)**.\n\nOras: 11:00–22:00 (huling order mga 21:30). Hindi na kailangang mag-reserve.\n\n**Ano ang subukan:** iba't ibang sushi; sariwang isda; nigiri; special ng araw; isang mainit na side dish."
@@ -413,11 +413,11 @@ export const days = [
       },
       {
         "time": "13:15",
-        "text": "🚌 Nohi Bus Shirakawa-go → Takayama.\n\n📍 **SAAN SASAKAY:** Shirakawa-go Bus Terminal (Ogimachi) — ang parehong lugar kung saan kayo binaba ng bus pagdating, iisa lang ang terminal sa nayon, kaya walang mali dito.\n\n🎫 **SUICA:** ❌ HINDI\n📅 **RESERBASYON:** ✅ NABILI NA (hindi indibidwal na naka-reserve ang upuan, ito ay tiket na garantisadong may puwesto pero walang seat number)\n🛒 **PAMBILI:** Regular na serbisyo ng Nohi Bus (opisyal na web o awtorisadong aggregator).\n\nAlis: 13:15. Tinatayang tagal: 50 min. Inaasahang pagdating sa Takayama Nohi Bus Center: 14:05. Kailangan ng reserbasyon. Hindi JR. Hindi kailangan ng Japan Rail Pass. Huwag gumamit ng Suica: gamitin ang reserbasyon/tiket ng bus. ⚠️ **KAILANGAN dalhin ang NAKA-PRINT na voucher sa papel** -- kailangang tanggapin ng driver ang pisikal na papel, hindi tinatanggap ang pagpapakita sa cellphone o screenshot."
+        "text": "🚌 Nohi Bus Shirakawa-go → Takayama.\n\n📍 **SAAN SASAKAY:** Shirakawa-go Bus Terminal (Ogimachi) — ang parehong lugar kung saan kayo binaba ng bus pagdating, iisa lang ang terminal sa nayon, kaya walang mali dito.\n\n🎫 **SUICA:** ❌ HINDI\n📅 **RESERBASYON:** 🔴 KAILANGAN (inirerekomenda ang online booking nang maaga, garantisadong may upuan pero walang seat number)\n🛒 **PAMBILI:** Regular na serbisyo ng Nohi Bus (opisyal na web o awtorisadong aggregator).\n\nAlis: 13:15. Tinatayang tagal: 50 min. Inaasahang pagdating sa Takayama Nohi Bus Center: 14:05. Kailangan ng reserbasyon. Hindi JR. Hindi kailangan ng Japan Rail Pass. Huwag gumamit ng Suica: gamitin ang reserbasyon/tiket ng bus. ⚠️ **KAILANGAN dalhin ang NAKA-PRINT na voucher sa papel** -- kailangang tanggapin ng driver ang pisikal na papel, hindi tinatanggap ang pagpapakita sa cellphone o screenshot."
       },
       {
         "time": "14:05–15:00",
-        "text": "🏨 Pagdating sa Takayama. Mula Takayama Bus Terminal papuntang Hotel Wood Takayama: mga 12 minutong lakad. Halos katabi na ng makasaysayang sentro ang hotel, kaya HINDI na kailangan ng taxi o pampublikong transportasyon.\n\n🗺️ Kumpletong ruta ng Takayama: https://maps.app.goo.gl/VsKEtfcaxV6jcSmS9?g_st=ic\n\nIwan ang bagahe, mag-check-in (opisyal ng 15:00), at magpahinga sandali bago lumabas ulit.\n\n✅ Bayad na ang hotel (274.98€ sa pamamagitan ng Booking)."
+        "text": "🏨 Pagdating sa Takayama. Mula Takayama Bus Terminal papuntang Hotel Wood Takayama: mga 12 minutong lakad. Halos katabi na ng makasaysayang sentro ang hotel, kaya HINDI na kailangan ng taxi o pampublikong transportasyon.\n\n🗺️ Kumpletong ruta ng Takayama: https://maps.app.goo.gl/VsKEtfcaxV6jcSmS9?g_st=ic\n\nIwan ang bagahe, mag-check-in (opisyal ng 15:00), at magpahinga sandali bago lumabas ulit.\n\n🏨 Magandang hotel sa sentro ng Takayama, may libreng onsen at ice cream pagkatapos maligo."
       },
       {
         "time": "15:00–15:30",
@@ -449,7 +449,7 @@ export const days = [
       },
       {
         "time": "🎫 RESERBASYON",
-        "text": "NABILI NA: Kanazawa → Shirakawa-go (08:40, 5 upuan) at Shirakawa-go → Takayama (13:15, 5 upuan). HINDI natin kailangan ng Japan Rail Pass, tren, o Suica para sa mga bus na ito."
+        "text": "MAAGANG RESERBASYON: Kanazawa → Shirakawa-go (08:40) at Shirakawa-go → Takayama (13:15). HINDI sakop ng Japan Rail Pass o Suica: kailangan ng sariling tiket sa bus."
       },
       {
         "time": "🚍 BUOD NG TRANSPORTASYON",
@@ -510,7 +510,7 @@ export const days = [
       },
       {
         "time": "15:30–18:00",
-        "text": "🏨 Check-in sa Magome Chaya (https://www.google.com/maps/search/?api=1&query=Magome+Chaya+Gifu) -- nandoon na ang bagahe mula umaga, maligo at magpahinga bago ang hapunan.\n\n🚶 **Paano makarating sa Magome Chaya:** ang minshuku ay nasa mismong pangunahing kalye ng nayon (ang batong pababa ng Nakasendo), napakalapit sa hintuan ng local bus — mga dalawang minuto lang na paakyat na lakad. Sarado sa sasakyan ang makasaysayang kalye, kaya lahat ng huling bahagi ng biyahe ay lakad, walang kailangang taxi o ibang transportasyon.\n\n⚠️ **BAYAD SA TULUYAN:** Ang hotel na Magome Chaya ay HINDI pa bayad. **Kailangang bayaran ito doon sa hotel nang CASH (~178.98€ / ~¥ grupo · ~35.80€/tao)**, kaya kailangang **kumuha ng cash** bago pumunta (sa 7-Eleven / konbini ATM) kung hindi pa ito nagawa.\n\n♨️ May maliit na communal bath na parang onsen (hiwalay para sa lalaki't babae), walang fixed na opisyal na oras — mas mabuting magtanong sa check-in; karaniwang mas tahimik ito sa mga 18:00–19:00, kapag naghahapunan ang iba."
+        "text": "🏨 Check-in sa Magome Chaya (https://www.google.com/maps/search/?api=1&query=Magome+Chaya+Gifu) -- nandoon na ang bagahe mula umaga, maligo at magpahinga bago ang hapunan.\n\n🚶 **Paano makarating sa Magome Chaya:** ang minshuku ay nasa mismong pangunahing kalye ng nayon (ang batong pababa ng Nakasendo), napakalapit sa hintuan ng local bus — mga dalawang minuto lang na paakyat na lakad. Sarado sa sasakyan ang makasaysayang kalye, kaya lahat ng huling bahagi ng biyahe ay lakad, walang kailangang taxi o ibang transportasyon.\n\n⚠️ **BAYAD SA TULUYAN:** Sa mga tradisyunal na rural minshuku gaya ng Magome Chaya, ang pagbabayad ay karaniwang ginagawa sa mismong hotel nang **CASH (~¥32,000 gabi/grupo · ~35-40€/tao)**, kaya mahalagang **mag-withdraw ng cash nang maaga** sa isang konbini ATM.\n\n♨️ May maliit na communal bath na parang onsen (hiwalay para sa lalaki't babae), walang fixed na opisyal na oras — mas mabuting magtanong sa check-in; karaniwang mas tahimik ito sa mga 18:00–19:00, kapag naghahapunan ang iba."
       },
       {
         "time": "18:00",
@@ -571,7 +571,7 @@ export const days = [
         "text": "🥢 **PAGLALAKAD SA KAPPABASHI-DORI.** Dahil nandito na kayo pagkatapos ng tanghalian: ang kalyeng buong-buo na nakatuon sa mundo ng pagluluto, may mga estatwa ng kappa (ang malikot na espiritu ng tubig na pinagmulan ng pangalan ng kapitbahayan) nakakalat sa buong ruta. Dito isinilang ang sampuru, ang hyperrealistic na food replica na nakikita sa mga bintana ng restaurant sa Japan -- ang isang piraso ng imitasyong sushi ay puwedeng umabot sa ¥ May mga gawang-kamay na Japanese knife din na may agarang paghasa at engraving, at sa timog na pasukan, may higanteng ulo ng chef sa ibabaw ng gusaling Niimi Cooker, imposibleng hindi mapansin."
       },
       {
-        "text": "🚶 Maglakad papuntang hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Naka-book na residential apartment (1,927.13€ sa pamamagitan ng Booking · 6 gabi).\n\nCheck-in (opisyal simula 15:00), oras para iwan ang bagahe, mag-unpack nang kaunti at maligo pagkatapos ng biyahe sa tren.\n\nAddress: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Pagtanggap ng bagahe (Takkyubin/Yamato):**\nDahil ipinadala ang malalaking maleta mula Kyoto, dapat ay nasa reception na ito pagdating ninyo. Magtanong sa front desk sa check-in."
+        "text": "🚶 Maglakad papuntang hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n🏢 Malawak na residential apartment sa Asakusa / Kappabashi na may kusina at laundry, perpektong base para galugarin ang Tokyo.\n\nCheck-in (opisyal simula 15:00), oras para iwan ang bagahe, mag-unpack nang kaunti at maligo pagkatapos ng biyahe sa tren.\n\nAddress: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Pagtanggap ng bagahe (Takkyubin/Yamato):**\nDahil ipinadala ang malalaking maleta mula Kyoto, dapat ay nasa reception na ito pagdating ninyo. Magtanong sa front desk sa check-in."
       },
       {
         "text": "🌉 **PAGLALAKAD PAPUNTANG TOKYO SKYTREE, KASABAY NG ILOG SUMIDA.** Napakasimple at magandang ruta ng lakad (~15-20 min) mula sa hotel: tatawirin ang kilalang pulang Azumabashi Bridge katabi ng gusali ng Asahi Beer, pagkatapos ay susundin ang promenade ng Ilog Sumida hanggang sa paanan ng tore."
@@ -637,7 +637,7 @@ export const days = [
         "text": "🏮 **OPSYONAL: SENSŌ-JI SA GABI**\n\nMga 10 minutong lakad lang ang hotel mula sa Sensō-ji / Kaminarimon. Kung may sobrang lakas pa pagkatapos ng excursion, maikling lakad papuntang naiilawang templo (libre; ibang-iba ang atmosphere kaysa sa araw)."
       }
     ],
-    "money": "Tinatayang €40 (pagkain) + €42/tao nabayaran na para sa excursion"
+    "money": "Tinatayang €40 (pagkain) + ~€42/tao (excursion sa Bundok Fuji)"
   },
   {
     "title": "Shibuya, Harajuku at Shinjuku",
@@ -756,7 +756,7 @@ export const days = [
   {
     "title": "Ruta sa Nintendo, Pamimili at Skytree",
     "cities": "Ikebukuro, Nakano, Akihabara",
-    "summary": "Araw ng koleksyon at video games: Mega Pokémon Center sa Ikebukuro (may life-size na estatwa nina Mewtwo, Charizard at Lucario) at Nintendo Store Tokyo. Pagkatapos, Nakano Broadway at Akihabara, na may sapat na oras sa huli. Pagsara ng hapon gamit ang nabili nang ticket para sa observation deck ng Tokyo Skytree.",
+    "summary": "Araw ng koleksyon at video games: Mega Pokémon Center sa Ikebukuro (may life-size na estatwa nina Mewtwo, Charizard at Lucario) at Nintendo Store Tokyo. Pagkatapos, Nakano Broadway at Akihabara, na may sapat na oras sa huli. Pagsara ng hapon sa observation deck ng Tokyo Skytree para masilayan ang paglubog ng araw at mga ilaw ng lungsod.",
     "history": "Ang industriya ng video game sa Japan, na pinamunuan ng Nintendo, ay muling nagbigay-buhay sa kultural na ekonomiya ng bansa noong dekada '80. Ang Nakano Broadway ay isinilang noong dekada '60 bilang luxury residential complex, ngayon ay mecca ng underground collecting.",
     "schedule": [
       {
@@ -797,7 +797,7 @@ export const days = [
       },
       {
         "time": "🟢 16:30",
-        "text": "🗼 **KUMPIRMADONG ENTRY: TOKYO SKYTREE -- TEMBO DECK & GALLERY (ADULT).** Nabili na ang ticket para sa 09/19/2026, entry window na 16:30-16:59. Dumating ng ilang minuto bago mag-16:30 para hindi maubos ang window."
+        "text": "🗼 **TOKYO SKYTREE -- TEMBO DECK & GALLERY (350m + 450m).** Inirerekomendang oras: 16:30–17:00 (para makita ang lungsod sa liwanag ng araw, paglubog ng araw, at sa gabi). Lubos na inirerekomenda ang pagbili ng ticket online nang ilang linggo bago ang biyahe upang masiguro ang slot."
       },
       {
         "time": "16:30–18:15",
@@ -820,7 +820,7 @@ export const days = [
         "text": "🏨 **BALIK SA HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nPagbalik sa residence para magpahinga at maghanda para bukas: excursion sa Nikko, kung papayag ang panahon (5th gabi sa Tokyo)."
       }
     ],
-    "money": "Humigit-kumulang €40 (pagkain) + pamimili + entrance sa Skytree (bayad na)"
+    "money": "Humigit-kumulang €40 (pagkain) + pamimili + entrance sa Skytree (~€16-21)"
   },
   {
     "title": "Imperial Palace, Tokyo Station at Ginza",

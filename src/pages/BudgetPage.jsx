@@ -101,7 +101,7 @@ export default function BudgetPage() {
               🚄 Detalle de transportes día a día
             </span>
             <span className="text-xs block mt-0.5" style={{ color: "var(--ink-soft)" }}>
-              Estimado {formatJpyEur(transportTotalJpy, transportTotal)}/pax · ya comprado ≈ {formatEur(purchasedTotal)}/pax
+              Estimado {formatJpyEur(transportTotalJpy, transportTotal)} / persona en transportes
             </span>
           </div>
           <ChevronDown size={18} className={`transition-transform shrink-0 ${showTransports ? "rotate-180" : ""}`} style={{ color: "var(--ink-soft)" }} />
@@ -113,7 +113,6 @@ export default function BudgetPage() {
                 <div className="min-w-0 pr-2">
                   <p className="font-medium truncate" style={{ color: "var(--ink)" }}>
                     Día {item.day} · {item.name}
-                    {item.purchased ? " ✓" : ""}
                   </p>
                   <p style={{ color: "var(--ink-soft)" }}>{item.from} → {item.to}</p>
                 </div>
@@ -132,7 +131,7 @@ export default function BudgetPage() {
               </span>
             </div>
             <p className="text-[11px] m-0" style={{ color: "var(--ink-soft)" }}>
-              Ya comprado ≈ {formatEur(purchasedTotal)}/persona · {formatEur(purchasedTotal * 5)} el grupo (Revolut en billetes largos + Nohi).
+              Tarifas por persona. Se aconseja reservar online con antelación los Shinkansen y los autobuses alpinos (Nohi Bus); los trenes locales y metros se pagan al momento con tarjeta Suica / IC.
             </p>
           </div>
         )}

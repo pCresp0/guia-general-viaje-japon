@@ -59,8 +59,8 @@ export const tripMeta = {
       },
       {
         icon: "💰",
-        title: "Tunay na Badyet at Nakaimbak na Checklist",
-        text: "Tiyak na pagsubaybay sa mga bayad na gastusin (mga hotel sa Booking, Magome Chaya cash-only, insurance, eSIM) at checklist ng pag-iimpake na naka-save sa <code>localStorage</code>."
+        title: "Badyet at Nakaimbak na Checklist",
+        text: "Tinatayang breakdown ng badyet bawat tao (mga hotel, tiket sa tren, transfers, insurance, eSIM, at pagkain) at checklists na naka-save sa <code>localStorage</code>."
       },
       {
         icon: "📊",
@@ -209,15 +209,15 @@ export const transports = [
   { name: "Hida Express Panoramic Train", from: "Takayama", to: "Nagoya", type: "Express JR Line" },
   { name: "JR Shinano Train and Local Bus", from: "Nagoya", to: "Magome", type: "Mixed (JR + Private Bus)" },
   { name: "Local Bus Magome → Nakatsugawa", from: "Magome", to: "Nakatsugawa", type: "Private Operator (Bus)", note: "⚠️ Madalang — i-check ang schedule sa gabi bago ang biyahe (karaniwang aalis ~08:50 o 09:10)" },
-  { name: "JR Shinano Limited Express", from: "Nakatsugawa", to: "Nagoya", type: "Express JR Line", note: "✅ Naka-book · Shinano 4 · 09:57 → 10:53 · Car 4 · Res. OK" },
-  { name: "Shinkansen Nozomi 358", from: "Nagoya", to: "Tokyo", type: "JR Line (Bullet Train)", note: "✅ Nabili · Smart EX OK · 11:29 → 13:06 · Car 12 · QR-Ticket" },
+  { name: "JR Shinano Limited Express", from: "Nakatsugawa", to: "Nagoya", type: "Express JR Line", note: "Pagbili sa istasyon o online reservation sa JR-West · Shinano 4 (~50 min)" },
+  { name: "Shinkansen Nozomi 358", from: "Nagoya", to: "Tokyo", type: "JR Line (Bullet Train)", note: "Inirerekomenda ang maagang booking (Smart EX, 30 araw bago) · ~1h 37m" },
   { name: "Yurikamome Elevated Train", from: "Tokyo", to: "Odaiba Island", type: "Private Operator" },
   { name: "Subway at local trains (5 araw)", from: "Tokyo", to: "Tokyo (iba't iba)", type: "Private / Local Operator" },
   { name: "Narita Express (N'EX)", from: "Tokyo Station", to: "Narita Airport", type: "JR Line (labas sa JR Pass validity)" },
 ];
 
 export const budget = {
-  note: "Flights, hotels at long-distance tickets confirmed (Revolut). Fuji tours + urban estimates pending. JR Pass hindi sulit (see analysis below).",
+  note: "Detalyadong gabay sa badyet bawat tao at grupo (mga flight, hotel, bullet train, mga bus sa Alps, Suica card, at mga aktibidad).",
   categories: [
     {
       title: "Mga International Flight",
@@ -230,21 +230,21 @@ export const budget = {
     {
       title: "Matutuluyan (14 gabi)",
       details: [
-        "<strong>✅ 4 sa 5 matutuluyan naka-book na nang maaga sa Booking (3,033.86€ grupo · 606.77€/tao)</strong>:",
-        "• Hotel Keihan Kyoto Hachijoguchi (Set 7–12, 5 gabi): 669.86€ grupo · 133.97€/tao ✓",
-        "• Hotel Resol Trinity Kanazawa (Set 12–13, 1 gabi): 161.89€ grupo · 32.38€/tao ✓",
-        "• Hotel Wood Takayama (Set 13–14, 1 gabi): 274.98€ grupo · 55.00€/tao ✓",
-        "• KOKO HOTEL Residence Asakusa Kappabashi (Set 15–21, 6 gabi): 1,927.13€ grupo · 385.43€/tao ✓",
-        "<strong>⚠️ Babayaran pa sa hotel gamit ang cash</strong>:",
-        "• Magome Chaya (Set 14–15, 1 gabi, kasama hapunan): ~178.98€ grupo (~32,000 ¥) · 35.80€/tao. Babayaran nang cash doon mismo (mag-withdraw ng pera bago dumating).",
+        "<strong>🏨 Inirerekomendang mga hotel sa ruta (~606.77€/tao batay sa itinerary)</strong>:",
+        "• Hotel Keihan Kyoto Hachijoguchi (Set 7–12, 5 gabi): 669.86€ grupo · 133.97€/tao",
+        "• Hotel Resol Trinity Kanazawa (Set 12–13, 1 gabi): 161.89€ grupo · 32.38€/tao",
+        "• Hotel Wood Takayama (Set 13–14, 1 gabi): 274.98€ grupo · 55.00€/tao",
+        "• KOKO HOTEL Residence Asakusa Kappabashi (Set 15–21, 6 gabi): 1,927.13€ grupo · 385.43€/tao",
+        "<strong>⚠️ Pagbabayad sa tuluyan gamit ang cash</strong>:",
+        "• Magome Chaya (Set 14–15, 1 gabi, kasama hapunan): ~178.98€ grupo (~32,000 ¥) · 35.80€/tao. Babayaran nang cash sa rural minshuku (mag-withdraw ng pera bago pumunta).",
       ],
     },
     {
       title: "Domestic Transport",
       details: [
-        "<strong>Nabili na ≈ 1,287€ grupo (~257€/tao)</strong> — Nozomi 53 373.27€ · Thunderbird/Kagayaki 209.38€ · Nohi Magome 135.61€ · Shinano 4 77.84€ · Nozomi 358 295.62€ · Nohi araw 7 (Kanazawa↔Shirakawa↔Takayama) ≈ 196€.",
-        "Tinataya pa ≈ 156€/tao: N'EX dating, local JR, Tokyo metro, Fuji Shinkansen (Kodama), Skyliner/N'EX pauwi.",
-        "Total transport est. ≈ 414€/tao · ~2,068€ grupo. Revolut rate ~184 ¥/€.",
+        "<strong>Tinatayang kabuuang transportasyon ≈ 365€ – 410€/tao</strong> — Shinkansen at express trains (~210€) · Alpine Nohi buses (~71€) · Pagsakay sa lungsod gamit ang IC card (~70€) · Mga tren sa paliparan (~33€).",
+        "Inirerekomenda ang maagang online booking para sa bullet trains at alpine bus; ang transportasyon sa lungsod ay binabayaran gamit ang Suica/Pasmo IC card.",
+        "Total transport est. ≈ 365€–410€/tao · Palitan ng pera ~184 ¥/€.",
         "Japan Rail Pass Ordinary (jrpass.com): 284€ / 455€ / 568€ (7/14/21 araw) — <strong>hindi sulit</strong> (analysis below).",
       ],
     },

@@ -59,8 +59,8 @@ export const tripMeta = {
       },
       {
         icon: "💰",
-        title: "Budget Réel & Tâches Persistantes",
-        text: "Suivi rigoureux des dépenses estimées et déjà payées (hôtels Booking, hôtel Magome Chaya en espèces, assurances, eSIMs) et check-list de préparatifs sauvegardée dans le <code>localStorage</code>."
+        title: "Budget & Tâches Persistantes",
+        text: "Détail du budget estimé par personne (hôtels, billets de train, transferts, assurances, eSIMs et repas) et listes de contrôle sauvegardées dans <code>localStorage</code>."
       },
       {
         icon: "📊",
@@ -209,15 +209,15 @@ export const transports = [
   { name: "Train panoramique Hida Express", from: "Takayama", to: "Nagoya", type: "Ligne JR Express" },
   { name: "Train JR Shinano et Bus local", from: "Nagoya", to: "Magome", type: "Mixte (JR + Bus Privé)" },
   { name: "Bus local Magome → Nakatsugawa", from: "Magome", to: "Nakatsugawa", type: "Opérateur Privé (Bus)", note: "⚠️ Peu fréquent — vérifier les horaires la veille au soir (départ généralement vers ~08:50 ou 09:10)" },
-  { name: "JR Shinano Limited Express", from: "Nakatsugawa", to: "Nagoya", type: "Ligne JR Express", note: "✅ Réservé · Shinano 4 · 09:57 → 10:53 · Voiture 4 · Rés. OK" },
-  { name: "Shinkansen Nozomi 358", from: "Nagoya", to: "Tokyo", type: "Ligne JR (Train à grande vitesse)", note: "✅ Acheté · Smart EX OK · 11:29 → 13:06 · Voiture 12 · QR-Ticket" },
+  { name: "JR Shinano Limited Express", from: "Nakatsugawa", to: "Nagoya", type: "Ligne JR Express", note: "Achat en gare ou réservation JR-West · Shinano 4 (~50 min)" },
+  { name: "Shinkansen Nozomi 358", from: "Nagoya", to: "Tokyo", type: "Ligne JR (Train à grande vitesse)", note: "Réservation préalable recommandée (Smart EX, 30 jours avant) · ~1h 37m" },
   { name: "Train aérien Yurikamome", from: "Tokyo", to: "Île d'Odaiba", type: "Opérateur Privé" },
   { name: "Métro et trains locaux (5 jours)", from: "Tokyo", to: "Tokyo (divers)", type: "Opérateur Privé / Local" },
   { name: "Narita Express (N'EX)", from: "Gare de Tokyo", to: "Aéroport de Narita", type: "Ligne JR (hors validité JR Pass)" },
 ];
 
 export const budget = {
-  note: "Vols, hôtels et billets longue distance confirmés (Revolut). Excursions Fuji + estimations urbaines en attente. Le JR Pass ne vaut pas le coup (voir analyse ci-dessous).",
+  note: "Budget de référence détaillé par personne et groupe (vols internationaux, hébergements, trains à grande vitesse, bus alpins, carte Suica et activités).",
   categories: [
     {
       title: "Vols Internationaux",
@@ -230,21 +230,21 @@ export const budget = {
     {
       title: "Hébergement (14 nuits)",
       details: [
-        "<strong>✅ 4 hébergements sur 5 réservés à l'avance via Booking (3 033,86€ groupe · 606,77€/personne)</strong> :",
-        "• Hotel Keihan Kyoto Hachijoguchi (7–12 sept, 5 nuits) : 669,86€ groupe · 133,97€/personne ✓",
-        "• Hotel Resol Trinity Kanazawa (12–13 sept, 1 nuit) : 161,89€ groupe · 32,38€/personne ✓",
-        "• Hotel Wood Takayama (13–14 sept, 1 nuit) : 274,98€ groupe · 55,00€/personne ✓",
-        "• KOKO HOTEL Residence Asakusa Kappabashi (15–21 sept, 6 nuits) : 1 927,13€ groupe · 385,43€/personne ✓",
-        "<strong>⚠️ En attente de paiement sur place à l'hôtel en espèces</strong> :",
-        "• Magome Chaya (14–15 sept, 1 nuit, avec dîner) : ~178,98€ groupe (~32 000 ¥) · 35,80€/personne. À payer en liquide à l'auberge (retirer de l'argent avant).",
+        "<strong>🏨 Hébergements recommandés sur l'itinéraire (~606,77€/personne)</strong> :",
+        "• Hotel Keihan Kyoto Hachijoguchi (7–12 sept, 5 nuits) : 669,86€ groupe · 133,97€/personne",
+        "• Hotel Resol Trinity Kanazawa (12–13 sept, 1 nuit) : 161,89€ groupe · 32,38€/personne",
+        "• Hotel Wood Takayama (13–14 sept, 1 nuit) : 274,98€ groupe · 55,00€/personne",
+        "• KOKO HOTEL Residence Asakusa Kappabashi (15–21 sept, 6 nuits) : 1 927,13€ groupe · 385,43€/personne",
+        "<strong>⚠️ Paiement à l'hébergement en espèces</strong> :",
+        "• Magome Chaya (14–15 sept, 1 nuit, avec dîner) : ~178,98€ groupe (~32 000 ¥) · 35,80€/personne. À régler en liquide sur place au minshuku (retirer des espèces au préalable).",
       ],
     },
     {
       title: "Transports Intérieurs",
       details: [
-        "<strong>Déjà acheté ≈ 1 287€ groupe (~257€/personne)</strong> — Nozomi 53 373,27€ · Thunderbird/Kagayaki 209,38€ · Nohi Magome 135,61€ · Shinano 4 77,84€ · Nozomi 358 295,62€ · Nohi jour 7 (Kanazawa↔Shirakawa↔Takayama) ≈ 196€.",
-        "Encore estimé ≈ 156€/personne : N'EX arrivée, JR locaux, métro Tokyo, Shinkansen Fuji (Kodama), Skyliner/N'EX retour.",
-        "Total transport est. ≈ 414€/personne · ~2 068€ groupe. Taux Revolut ~184 ¥/€.",
+        "<strong>Total estimé des transports ≈ 365€ – 410€/personne</strong> — Shinkansen et trains express (~210€) · Bus alpins Nohi (~71€) · Trajets urbains avec carte IC (~70€) · Trains aéroport (~33€).",
+        "Réservation en ligne recommandée pour les trains à grande vitesse et les bus alpins ; les transports urbains se règlent au fur et à mesure avec la carte Suica/Pasmo.",
+        "Total transport estimé ≈ 365€–410€/personne · Taux de change indicatif ~184 ¥/€.",
         "Japan Rail Pass Ordinary (jrpass.com) : 284€ / 455€ / 568€ (7/14/21 jours) — <strong>ne vaut pas le coup</strong> (analyse ci-dessous).",
       ],
     },

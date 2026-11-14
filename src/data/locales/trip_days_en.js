@@ -30,10 +30,10 @@ export const days = [
         "text": "**Practical tips:**\n\n**Usual breakfast:** approx. 07:00–09:00.\n**Lunch:** approx. 11:30–14:00.\n**Dinner:** approx. 17:30–21:00.\n\nMany small restaurants close between lunch and dinner.\n\nOn days with a very early departure, buy breakfast the night before at a konbini. On excursions with tight schedules, carry an emergency onigiri/sandwich. Konbini (7-Eleven, Lawson, FamilyMart) are a practical, cheap option for onigiri, sandwiches, bentos, fruit, yogurt, karaage and drinks. They're also open 24/7, so you can go buy breakfast whenever you want without worry.\n\nA simple ramen/udon/donburi meal can cost approximately **¥–1,500 (~3–9€)**.\n\nNo need to book normally for ramen, udon, donburi, fast Japanese food, casual izakaya or food stalls. Only book special/popular restaurants when we really want to eat there.\n\nAt markets and street food areas, respect local rules about where to eat. In Japan it's not common to eat while walking through shopping streets; at Nishiki Market it's explicitly discouraged."
       },
       {
-        "text": "🛬 Landing at Narita (NRT).\n\nYou need to go through immigration, checked baggage claim, customs, and exit to the airport's public area.\nRemember to have your Visit Japan Web QR code ready to speed things up.\n\n💡 Tip: The real time it takes to leave the airport can vary a lot depending on immigration, baggage and customs. That's why we haven't bought the Narita Express in advance."
+        "text": "🛬 Landing at Narita (NRT).\n\nYou need to go through immigration, checked baggage claim, customs, and exit to the airport's public area.\nRemember to have your Visit Japan Web QR code ready to speed things up.\n\n💡 Tip: The real time it takes to leave the airport can vary a lot depending on immigration, baggage and customs. That's why it is advised NOT to buy the Narita Express in advance."
       },
       {
-        "text": "🚂 NARITA EXPRESS (N'EX) — ⏳ PENDING / BUY AT NARITA\n\n🎫 **SUICA:** ❌ NO for payment (requires an express ticket)\n📅 **RESERVATION:** 🔴 NEEDED\n🛒 **PURCHASE:** BUY THERE. At the machines or JR ticket counters at Narita Airport itself. Do NOT buy in advance.\n\nRoute: Narita Airport → Shinagawa\n(The ~14:45 time is just a rough target).\n\nAfter clearing customs, follow the JR / Narita Express signs. Buy the ticket at the JR machines or a JR office/counter at the airport.\n\n⚠️ **IMPORTANT:**\n- It is NOT the metro. It's a long-distance JR train.\n- You board it at the airport's JR station.\n- The ticket has NOT been bought yet.\n- We don't want to lock in a specific train before flying, since the flight could be delayed.\n- We'll buy it AT NARITA AIRPORT ITSELF once we have a realistic time estimate.\n- This route needs an N'EX ticket. Don't use Smart EX.\n- If traveling in a group: buy all tickets together at the machines or ticket counter to get seats together if possible.\n\nNote: If the flight is delayed, we don't lose any N'EX ticket since we haven't bought it yet. We'll simply buy the next N'EX that gets us to Shinagawa on time."
+        "text": "🚂 NARITA EXPRESS (N'EX) — 🚉 PURCHASE AT NARITA AIRPORT\n\n🎫 **SUICA:** ❌ Not for full fare (requires express train ticket with seat reservation)\n📅 **RESERVATION:** 🔴 MANDATORY (reserved seat included in ticket)\n🛒 **PURCHASE:** BUY THERE. At JR automated ticket machines or JR ticket counters in Narita Airport after collecting luggage.\n\nRoute: Narita Airport → Shinagawa\n(The ~14:45 time is an estimated target based on flight arrival).\n\nAfter clearing customs, follow the JR / Narita Express signs. Buy the ticket at the JR machines or ticket counter.\n\n⚠️ **PRACTICAL ADVICE:**\n- It is not recommended to book a specific train before flying, as flights or customs queues can be delayed.\n- Buying at the airport upon arrival ensures no tickets are lost if delayed: simply board the next available N'EX.\n- If traveling in a group: buy tickets together at the machine or counter to request adjacent seats."
       },
       {
         "text": "🚄 **SHINKANSEN NOZOMI 53 (SHINAGAWA → KYOTO)**\n\nDirect bullet train to Kyoto Station (17:19 → 19:23 · 2h 04min). Expand the card below to check the practical journey guide, estimated fares, access methods (Smart EX / Suica), and luggage policy."
@@ -45,7 +45,7 @@ export const days = [
         "text": "🚅 Arrival in Kyoto (JR Kyoto Station). We exit through the Hachijo East Exit (八条東口). From there it's just a 5-minute walk to our hotel."
       },
       {
-        "text": "🏨 **CHECK-IN: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\n✅ Hotel already paid (669.86€ via Booking).\n\nArrival at the hotel, check-in process for the group's rooms, drop off luggage, freshen up and settle in calmly after the international flight and the day's trains.\n\n♨️ The hotel has a large onsen (public bath), separated by gender, open from 15:00 to 01:00 and from 6:00 to 10:00 — perfect for relaxing after the trip."
+        "text": "🏨 **CHECK-IN: HOTEL KEIHAN KYOTO HACHIJOGUCHI** (https://www.google.com/maps/search/?api=1&query=Hotel+Keihan+Kyoto+Hachijoguchi)\n\n🏨 Recommended hotel right in front of Kyoto Station (Hachijo exit), strategic base for the Kansai transport network.\n\nArrival at the hotel, check-in process for the group's rooms, drop off luggage, freshen up and settle in calmly after the international flight and the day's trains.\n\n♨️ The hotel has a large onsen (public bath), separated by gender, open from 15:00 to 01:00 and from 6:00 to 10:00 — perfect for relaxing after the trip."
       },
       {
         "text": "🍣 **DINNER: KAITEN-SUSHI UOGASHI**\n\nRecommended restaurant at **AEON MALL KYOTO** — Sakura Building, 4F (https://maps.app.goo.gl/ByDBQB6zaVZ3dj2E6). About a 5–7 min walk from the hotel and station.\n\n**Kaiten-zushi** (conveyor belt sushi). Approx. price: **¥–3,000/person (~12–19€)**.\n\nHours: 11:00–22:00 (last order approx. 21:30). No reservation needed.\n\n**What to try:** assorted sushi; fresh fish pieces; nigiri; daily specials; a hot side dish."
@@ -417,7 +417,7 @@ export const days = [
       },
       {
         "time": "14:05–15:00",
-        "text": "🏨 Arrival in Takayama. From Takayama Bus Terminal to Hotel Wood Takayama: approximately 12 minutes on foot. The hotel is practically next to the historic center, so we do NOT need a taxi or public transport.\n\n🗺️ Full Takayama route: https://maps.app.goo.gl/VsKEtfcaxV6jcSmS9?g_st=ic\n\nDrop off luggage, check in (official at 15:00), and a moment to rest before heading out again.\n\n✅ Hotel already paid (274.98€ via Booking)."
+        "text": "🏨 Arrival in Takayama. From Takayama Bus Terminal to Hotel Wood Takayama: approximately 12 minutes on foot. The hotel is practically next to the historic center, so we do NOT need a taxi or public transport.\n\n🗺️ Full Takayama route: https://maps.app.goo.gl/VsKEtfcaxV6jcSmS9?g_st=ic\n\nDrop off luggage, check in (official at 15:00), and a moment to rest before heading out again.\n\n🏨 Highly rated hotel in the heart of Takayama with complimentary onsen and free ice cream after bath."
       },
       {
         "time": "15:00–15:30",
@@ -449,7 +449,7 @@ export const days = [
       },
       {
         "time": "🎫 BOOKINGS",
-        "text": "ALREADY BOOKED: Kanazawa → Shirakawa-go (08:40, 5 seats) and Shirakawa-go → Takayama (13:15, 5 seats). We do NOT need a Japan Rail Pass, trains, or Suica for these buses."
+        "text": "ADVANCE RESERVATION: Kanazawa → Shirakawa-go (08:40) and Shirakawa-go → Takayama (13:15). A dedicated bus ticket is required; not covered by Japan Rail Pass or IC Suica."
       },
       {
         "time": "🚍 TRANSPORT SUMMARY",
@@ -571,7 +571,7 @@ export const days = [
         "text": "🥢 **STROLL THROUGH KAPPABASHI-DORI.** Since you're right there after lunch: the street entirely dedicated to the world of cooking, with statues of the kappa (the mischievous water spirit the neighborhood is named after) scattered along the way. This is where sampuru were born, the hyperrealistic food replicas seen in Japanese restaurant windows -- a single piece of imitation sushi can cost around ¥ There are also handmade Japanese knives with on-the-spot sharpening and engraving, and at the south end, a giant chef's head on top of the Niimi Cooker building, impossible to miss."
       },
       {
-        "text": "🚶 Walk to the hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n✅ Residential apartment booked (€1,927.13 via Booking · 6 nights).\n\nCheck-in (official from 15:00), time to drop off luggage, unpack and shower after the day of train travel.\n\nAddress: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Luggage receipt (Takkyubin/Yamato):**\nHaving sent large suitcases from Kyoto, they should already be at reception upon your arrival. Ask at the front desk when checking in."
+        "text": "🚶 Walk to the hotel (6 min).\n\n🏨 **CHECK-IN: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\n🏢 Residential apartment in Asakusa / Kappabashi with kitchen and laundry facilities, ideal as a base for Tokyo.\n\nCheck-in (official from 15:00), time to drop off luggage, unpack and shower after the day of train travel.\n\nAddress: 3-24-2 Nishi-Asakusa, Taito-ku.\n\n🧳 **Luggage receipt (Takkyubin/Yamato):**\nHaving sent large suitcases from Kyoto, they should already be at reception upon your arrival. Ask at the front desk when checking in."
       },
       {
         "text": "🌉 **WALK TO TOKYO SKYTREE, ALONG THE SUMIDA RIVER.** A very simple and pretty walking route (~15-20 min) from the hotel: crossing the iconic red Azumabashi Bridge next to the Asahi Beer building, then following the Sumida River promenade to the base of the tower."
@@ -637,7 +637,7 @@ export const days = [
         "text": "🏮 **OPTIONAL: SENSŌ-JI AT NIGHT**\n\nThe hotel is ~10 min walk from Sensō-ji / Kaminarimon. If there's energy left after the excursion, a short walk to the illuminated temple (free; a very different atmosphere from daytime)."
       }
     ],
-    "money": "Approx. €40 (meals) + €42/person already paid for the excursion"
+    "money": "Approx. €40 (meals) + ~€42/person (Mount Fuji day tour)"
   },
   {
     "title": "Shibuya, Harajuku and Shinjuku",
@@ -756,7 +756,7 @@ export const days = [
   {
     "title": "Nintendo Route, Shopping and Skytree",
     "cities": "Ikebukuro, Nakano, Akihabara",
-    "summary": "Day of collecting and video games: Mega Pokémon Center in Ikebukuro (with its life-size Mewtwo, Charizard and Lucario statues) and Nintendo Store Tokyo. Afterward, Nakano Broadway and Akihabara, with plenty of time in the latter. Closing out the afternoon with the already-purchased entry to the Tokyo Skytree observation deck.",
+    "summary": "Day of collecting and video games: Mega Pokémon Center in Ikebukuro (with its life-size Mewtwo, Charizard and Lucario statues) and Nintendo Store Tokyo. Afterward, Nakano Broadway and Akihabara, with plenty of time in the latter. Closing out the afternoon with the Tokyo Skytree observation deck at sunset.",
     "history": "The Japanese video game industry, led by Nintendo, revitalized the country's cultural economy in the 80s. Nakano Broadway was born in the 60s as a luxury residential complex, today a mecca for underground collecting.",
     "schedule": [
       {
@@ -797,7 +797,7 @@ export const days = [
       },
       {
         "time": "🟢 16:30",
-        "text": "🗼 **CONFIRMED ENTRY: TOKYO SKYTREE -- TEMBO DECK & GALLERY (ADULT).** Ticket already purchased for 09/19/2026, entry window 16:30-16:59. Arrive a few minutes before 16:30 so as not to eat into the window."
+        "text": "🗼 **TOKYO SKYTREE OBSERVATION DECK -- TEMBO DECK & GALLERY.** Recommended time slot: 16:30–17:00 to catch the sunset over Mt. Fuji in the distance and the night lights of Tokyo. Advance online booking is strongly advised for this popular window."
       },
       {
         "time": "16:30–18:15",
@@ -820,7 +820,7 @@ export const days = [
         "text": "🏨 **BACK TO THE HOTEL: KOKO HOTEL RESIDENCE ASAKUSA KAPPABASHI** (https://maps.app.goo.gl/ccK7MTfGL6HJXFf76?g_st=ic)\n\nBack to the residence to rest and get ready for tomorrow: excursion to Nikko, weather permitting (5th night in Tokyo)."
       }
     ],
-    "money": "Approx. €40 (meals) + shopping + Skytree entry (already paid)"
+    "money": "Approx. €40 (meals) + shopping + Skytree entry (~€16-21)"
   },
   {
     "title": "Imperial Palace, Tokyo Station and Ginza",

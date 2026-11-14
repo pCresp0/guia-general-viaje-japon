@@ -60,7 +60,7 @@ export const tripMeta = {
       {
         icon: "💰",
         title: "Real Budget & Persistent Tasks",
-        text: "Accurate tracking of estimated and paid expenses (Booking hotels, Magome Chaya cash-only, insurance, eSIMs) and packing/prep checklists saved in <code>localStorage</code>."
+        text: "Estimated budget breakdown per person (hotels, train tickets, transfers, insurance, eSIMs, and meals) and checklists saved in <code>localStorage</code>."
       },
       {
         icon: "📊",
@@ -209,15 +209,15 @@ export const transports = [
   { name: "Hida Express Panoramic Train", from: "Takayama", to: "Nagoya", type: "Express JR Line" },
   { name: "JR Shinano Train and Local Bus", from: "Nagoya", to: "Magome", type: "Mixed (JR + Private Bus)" },
   { name: "Local Bus Magome → Nakatsugawa", from: "Magome", to: "Nakatsugawa", type: "Private Operator (Bus)", note: "⚠️ Infrequent — check schedule the night before (usually leaves ~08:50 or 09:10)" },
-  { name: "JR Shinano Limited Express", from: "Nakatsugawa", to: "Nagoya", type: "Express JR Line", note: "✅ Booked · Shinano 4 · 09:57 → 10:53 · Car 4 · Res. OK" },
-  { name: "Shinkansen Nozomi 358", from: "Nagoya", to: "Tokyo", type: "JR Line (Bullet Train)", note: "✅ Purchased · Smart EX OK · 11:29 → 13:06 · Car 12 · QR-Ticket" },
+  { name: "JR Shinano Limited Express", from: "Nakatsugawa", to: "Nagoya", type: "Express JR Line", note: "Station purchase or JR-West reservation · Shinano 4 (~50 min)" },
+  { name: "Shinkansen Nozomi 358", from: "Nagoya", to: "Tokyo", type: "JR Line (Bullet Train)", note: "Advance booking recommended (Smart EX, 30 days before) · ~1h 37m" },
   { name: "Yurikamome Elevated Train", from: "Tokyo", to: "Odaiba Island", type: "Private Operator" },
   { name: "Subway and local trains (5 days)", from: "Tokyo", to: "Tokyo (various)", type: "Private / Local Operator" },
   { name: "Narita Express (N'EX)", from: "Tokyo Station", to: "Narita Airport", type: "JR Line (outside JR Pass validity)" },
 ];
 
 export const budget = {
-  note: "Flights, hotels and long-distance tickets confirmed (Revolut). Fuji tours + urban estimates still pending. JR Pass not worth it (see analysis below).",
+  note: "Detailed reference budget per person and group (flights, accommodation, bullet trains, Alpine buses, Suica card, and activities).",
   categories: [
     {
       title: "International Flights",
@@ -230,21 +230,21 @@ export const budget = {
     {
       title: "Accommodation (14 nights)",
       details: [
-        "<strong>✅ 4 out of 5 accommodations booked in advance via Booking (3,033.86€ group · 606.77€/person)</strong>:",
-        "• Hotel Keihan Kyoto Hachijoguchi (Sep 7–12, 5 nights): 669.86€ group · 133.97€/person ✓",
-        "• Hotel Resol Trinity Kanazawa (Sep 12–13, 1 night): 161.89€ group · 32.38€/person ✓",
-        "• Hotel Wood Takayama (Sep 13–14, 1 night): 274.98€ group · 55.00€/person ✓",
-        "• KOKO HOTEL Residence Asakusa Kappabashi (Sep 15–21, 6 nights): 1,927.13€ group · 385.43€/person ✓",
-        "<strong>⚠️ Pending payment at the hotel in cash</strong>:",
+        "<strong>🏨 Recommended route accommodation (~606.77€/person based on the itinerary)</strong>:",
+        "• Hotel Keihan Kyoto Hachijoguchi (Sep 7–12, 5 nights): 669.86€ group · 133.97€/person",
+        "• Hotel Resol Trinity Kanazawa (Sep 12–13, 1 night): 161.89€ group · 32.38€/person",
+        "• Hotel Wood Takayama (Sep 13–14, 1 night): 274.98€ group · 55.00€/person",
+        "• KOKO HOTEL Residence Asakusa Kappabashi (Sep 15–21, 6 nights): 1,927.13€ group · 385.43€/person",
+        "<strong>⚠️ Payment at accommodation in cash</strong>:",
         "• Magome Chaya (Sep 14–15, 1 night, with dinner): ~178.98€ group (~32,000 ¥) · 35.80€/person. To be paid on site in cash (withdraw money beforehand).",
       ],
     },
     {
       title: "Domestic Transportation",
       details: [
-        "<strong>Already purchased ≈ 1,287€ group (~257€/person)</strong> — Nozomi 53 373.27€ · Thunderbird/Kagayaki 209.38€ · Nohi Magome 135.61€ · Shinano 4 77.84€ · Nozomi 358 295.62€ · Day 7 Nohi (Kanazawa↔Shirakawa↔Takayama) ≈ 196€.",
-        "Still estimated ≈ 156€/person: arrival N'EX, local JR, Tokyo metro, Fuji Shinkansen (Kodama), return Skyliner/N'EX.",
-        "Total transport est. ≈ 414€/person · ~2,068€ group. Revolut rate ~184 ¥/€.",
+        "<strong>Estimated total transport ≈ 365€ – 410€/person</strong> — Shinkansen & express trains (~210€) · Alpine Nohi buses (~71€) · IC card urban rides (~70€) · Airport trains (~33€).",
+        "Advance booking recommended for bullet trains (Smart EX) and alpine buses; urban transport is paid on the go with Suica/Pasmo IC cards.",
+        "Total transport est. ≈ 365€–410€/person · Indicative exchange rate ~184 ¥/€.",
         "Japan Rail Pass Ordinary (jrpass.com): 284€ / 455€ / 568€ (7/14/21 days) — <strong>not worth it</strong> (analysis below).",
       ],
     },
