@@ -31,14 +31,14 @@ export default function DayFujiOptionCard({ dayNum }) {
           <div className="min-w-0">
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className="text-[10px] bg-white text-sky-900 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                Excursión Monte Fuji · Confirmada
+                Excursión de 1 día · Monte Fuji
               </span>
               <span className="text-xs text-sky-100 font-semibold hidden sm:inline">
                 GetYourGuide · Japan Visionary Tour
               </span>
             </div>
             <p className="text-xs sm:text-sm font-bold text-white leading-tight mt-0.5 truncate">
-              {open ? "Guía asignado y horario actualizado -- toda la info aquí" : "Mañana: excursión al Monte Fuji (Pulsa para ver el mensaje del guía)"}
+              {open ? "Itinerario del tour, horarios y punto de encuentro" : "Excursión organizada al Monte Fuji y Pagoda Chureito"}
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function DayFujiOptionCard({ dayNum }) {
       {open && (
         <div className="p-4 space-y-3.5 text-xs animate-fadeIn" style={{ color: "var(--ink)" }}>
           <p style={{ color: "var(--ink)", lineHeight: 1.5, margin: 0 }}>
-            Excursión de día completo confirmada, con guía asignado para mañana. Toda la información: horario actualizado, punto de encuentro y aviso de lluvia.
+            Excursión organizada de día completo en autobús con guía para visitar los alrededores del Monte Fuji, los lagos y la Pagoda Chureito desde Tokio.
           </p>
 
           {/* Punto de encuentro y horario */}
@@ -164,7 +164,7 @@ export default function DayFujiOptionCard({ dayNum }) {
               className="font-bold px-3 py-1.5 rounded-lg border flex items-center gap-1 text-[11.5px]"
               style={{ background: "var(--paper-raised)", borderColor: "var(--line)", color: "var(--indigo)", textDecoration: "none" }}
             >
-              🎟️ Abrir Reserva en GetYourGuide ↗
+              🎟️ Ver excursión en GetYourGuide ↗
             </a>
             <a
               href={gygFujiActivity.meetingPointUrl}

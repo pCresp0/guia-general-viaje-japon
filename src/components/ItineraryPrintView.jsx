@@ -505,7 +505,7 @@ function DayFujiNote({ dayNum }) {
       Punto de encuentro: {gygFujiActivity.meetingPoint} · {gygFujiActivity.meetingTime}
       <br />
       <span style={{ color: "#0369a1", fontStyle: "italic" }}>
-        Comprobar la visibilidad del Fuji la mañana del día -- la reserva ya está confirmada, no hace falta cancelar nada.
+        Comprobar la visibilidad del Fuji la mañana de la excursión antes de salir.
       </span>
     </div>
   );
@@ -687,7 +687,7 @@ export default function ItineraryPrintView({ days }) {
       {/* ── Anexo: Fuji ─────────────────────────────────────────── */}
       <Appendix title="Anexo · Excursión Monte Fuji">
         <div style={{ fontSize: 10.5, lineHeight: 1.55, marginBottom: 10 }}>
-          <strong>Reserva confirmada (Día 10)</strong> — {gygFujiActivity.title}
+          <strong>Excursión recomendada (Día 10)</strong> — {gygFujiActivity.title}
           <br />
           {gygFujiActivity.participants} · {gygFujiActivity.totalPrice} · pago: {gygFujiActivity.paymentDate}
           <br />

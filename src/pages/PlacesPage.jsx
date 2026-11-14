@@ -94,7 +94,7 @@ export default function PlacesPage() {
         </p>
       </div>
 
-      {/* 1. Excursión confirmada al Monte Fuji con GetYourGuide */}
+      {/* 1. Excursión recomendada al Monte Fuji con GetYourGuide */}
       <div className="rounded-2xl overflow-hidden border mb-6" style={{ borderColor: "var(--line)", background: "var(--paper-raised)" }}>
         <button
           type="button"
@@ -113,14 +113,14 @@ export default function PlacesPage() {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <p style={{ fontSize: 15, fontWeight: 700, color: "white", margin: 0 }}>
-                Excursión GetYourGuide · Monte Fuji, Lago Kawaguchi y Chureito
+                Excursión de día completo · Monte Fuji, Lago Kawaguchi y Chureito
               </p>
               <span style={{ background: "rgba(255,255,255,0.25)", color: "white", fontSize: 10, fontWeight: 800, padding: "2px 8px", borderRadius: 9999, textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                Confirmado
+                Tour organizado
               </span>
             </div>
             <p style={{ fontSize: 11.5, color: "rgba(255,255,255,0.9)", margin: 0 }}>
-              Miércoles 16 de septiembre · Reserva ya confirmada, sin necesidad de cancelar nada
+              Día 10 de la ruta · Salida desde Shinjuku (Tokio) en autobús con guía
             </p>
           </div>
           <ChevronDown
@@ -132,21 +132,29 @@ export default function PlacesPage() {
 
         {gygOpen && (
         <div className="px-5 py-4 space-y-4">
-          <p style={{ fontSize: 13.5, color: "var(--ink)", lineHeight: 1.6, margin: 0 }}>
-            Excursión recomendada en GetYourGuide (Japan Visionary Tour) para el <strong>16 de septiembre</strong>. Es una de las formas más cómodas y completas de visitar los alrededores del Monte Fuji y la icónica Pagoda Chureito desde Tokio en un solo día.
-          </p>
+          <div style={{ fontSize: 13.5, color: "var(--ink)", lineHeight: 1.6 }} className="space-y-2">
+            <p style={{ margin: 0 }}>
+              Para el día 10 del itinerario elegí esta excursión organizada en autobús de día completo a través de <strong>GetYourGuide</strong> (operada por Japan Visionary Tour). Visitar los miradores del Fuji y los lagos en transporte público por libre implica encadenar varios trenes locales y autobuses que se llenan con facilidad.
+            </p>
+            <p style={{ margin: 0 }}>
+              Con este tour se sale cómodamente desde Shinjuku y se visitan en un solo día cuatro paradas emblemáticas: el Lago Kawaguchiko con el Parque Oishi, la aldea tradicional Saiko Iyashi-no-Sato Nemba, los manantiales de Oshino Hakkai y la icónica Pagoda Chureito con el Monte Fuji de fondo.
+            </p>
+            <p style={{ margin: 0 }}>
+              Te dejo aquí todos los datos de la actividad, horarios habituales, punto de encuentro y recomendaciones prácticas (calzado para los escalones de Chureito, comida y efectivo) para que te sirva como referencia práctica si estás programando tu viaje y quieres hacer una ruta similar.
+            </p>
+          </div>
 
           {/* Ficha de la excursión */}
           <div className="p-3.5 rounded-xl border flex flex-col justify-between" style={{ background: "var(--paper)", borderColor: "var(--line)" }}>
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div>
-                <p style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)", margin: 0 }}>Miércoles 16 Sept (08:30 – 18:30)</p>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)", margin: 0 }}>Horario habitual: 08:30 – 18:30 (~10 horas)</p>
                 <p style={{ fontSize: 11.5, fontWeight: 600, color: "var(--forest)", marginTop: 3, marginBottom: 0 }}>
-                  ✨ Tour de día completo · Guía en inglés
+                  ✨ Tour de día completo en autobús · Guía en inglés
                 </p>
               </div>
               <span className="text-xs px-2.5 py-1 rounded-full font-bold" style={{ background: "rgba(2, 132, 199, 0.1)", color: "#0284c7" }}>
-                Salida desde Shinjuku
+                Salida desde Shinjuku (Tokio)
               </span>
             </div>
           </div>
@@ -154,13 +162,13 @@ export default function PlacesPage() {
           {/* Logística y aviso de comida */}
           <div className="p-4 rounded-xl border space-y-2.5" style={{ background: "var(--paper)", borderColor: "rgba(2, 132, 199, 0.25)" }}>
             <p className="flex items-center gap-1.5" style={{ fontSize: 13, fontWeight: 700, color: "var(--indigo)", margin: 0 }}>
-              <span>ℹ️</span> Información Clave de la Excursión (GetYourGuide):
+              <span>ℹ️</span> Puntos clave y consejos prácticos:
             </p>
             <ul className="space-y-1.5 pl-4 list-disc" style={{ fontSize: 12.5, color: "var(--ink)", lineHeight: 1.5, margin: 0 }}>
-              <li><strong>Punto de encuentro:</strong> Tokyo Mode Gakuen (1-7-3 Nishishinjuku, Shinjuku). Llegar antes de las <strong>08:25 AM</strong> (salida a las 08:30 AM).</li>
-              <li><strong>🍱 Comida NO incluida:</strong> La actividad no incluye comida. No está permitido comer dentro del autobús. Conviene comprar snacks/desayuno antes de subir y llevar <strong>efectivo ¥</strong> para comprar en los puestos locales de Oshino Hakkai y Saiko.</li>
-              <li><strong>👟 400 escalones:</strong> Llevar calzado cómodo para subir al mirador de la Pagoda Chureito en el Parque Arakurayama Sengen.</li>
-              <li><strong>Paradas incluidas:</strong> Lago Kawaguchiko y Parque Oishi, Aldea Saiko Iyashi-no-Sato Nemba (entrada incluida), Manantiales Oshino Hakkai y Pagoda Chureito.</li>
+              <li><strong>Punto de encuentro:</strong> Edificio Tokyo Mode Gakuen (1-7-3 Nishishinjuku, Shinjuku). Conviene llegar unos 15 minutos antes de la salida (sobre las 08:15 AM).</li>
+              <li><strong>🍱 Comida no incluida:</strong> La actividad no incluye almuerzo y no está permitido comer dentro del autobús. Conviene comprar desayuno o snacks en un konbini antes de salir y llevar <strong>efectivo (yenes ¥)</strong> para probar especialidades en los puestos locales de Oshino Hakkai y Saiko.</li>
+              <li><strong>👟 400 escalones en Chureito:</strong> Para llegar al mirador clásico de la Pagoda Chureito hay que subir unos 400 escalones por la colina. Lleva calzado deportivo cómodo.</li>
+              <li><strong>Paradas incluidas en el itinerario:</strong> Lago Kawaguchiko y Parque Oishi, Aldea Saiko Iyashi-no-Sato Nemba (entrada incluida en el tour), Manantiales Oshino Hakkai y Pagoda Chureito en el Parque Arakurayama Sengen.</li>
             </ul>
           </div>
 
@@ -171,7 +179,7 @@ export default function PlacesPage() {
               className="text-xs font-semibold px-3.5 py-2 rounded-xl border flex items-center gap-1.5 transition-opacity hover:opacity-85"
               style={{ background: "var(--paper)", borderColor: "var(--line)", color: "var(--indigo)", textDecoration: "none" }}
             >
-              🎟️ Ver Reserva en GetYourGuide ↗
+              🎟️ Ver excursión en GetYourGuide ↗
             </a>
             <a
               href="https://www.google.com/maps/place/35.6916642,139.6969475/@35.6916642,139.6969475,16z"

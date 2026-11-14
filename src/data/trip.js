@@ -201,7 +201,7 @@ export const blocks = [
     bestArea:
       "Shinjuku o Shibuya (mucha vida nocturna y conexión directa al aeropuerto y Fuji) o Ueno/Akihabara (más barato, mejor para cultura pop).",
     fujiStrategy:
-      "No pernoctaremos en el Fuji para no arriesgarnos a que amanezca nublado. Excursión de día completo con GetYourGuide (Japan Visionary Tour), confirmada para el 16 de septiembre: Parque Oishi, lago Kawaguchiko, Oshino Hakkai y la Pagoda Chureito, con guía en inglés. Ya no hace falta reservar días alternativos ni cancelar nada -- solo comprobar la visibilidad esa mañana.",
+      "Para no arriesgarme a que amaneciera nublado pernoctando en la zona, opté por una excursión organizada de día completo desde Tokio con GetYourGuide (Japan Visionary Tour): Parque Oishi, lago Kawaguchiko, aldea Saiko, manantiales Oshino Hakkai y la Pagoda Chureito, con guía en inglés. Una opción muy cómoda que solo requiere comprobar la visibilidad la misma mañana antes de salir.",
   },
 ];
 
@@ -932,7 +932,7 @@ export const budget = {
       subtitle: "Tours y billetes de excursión",
       perPerson: "~45€ – 55€",
       details: [
-        "<strong>GetYourGuide Monte Fuji (Día 10, 16 sept., confirmado):</strong> ~42€/persona (Kawaguchiko, Parque Oishi, Oshino Hakkai, Pagoda Chureito). Tour completo organizado en autobús.",
+        "<strong>Excursión Monte Fuji con GetYourGuide (Día 10):</strong> ~42€/persona (Kawaguchiko, Parque Oishi, Saiko, Oshino Hakkai y Pagoda Chureito). Tour organizado de día completo en autobús con guía.",
         "<strong>Excursión a Nikko (Día 14, 20 sept.):</strong> Tobu Limited Express ida y vuelta, aprox. ¥2.800 (~17€) por persona cada trayecto, más entradas a Toshogu (~¥1.600–2.100/persona). Total aprox. 45€/persona.",
       ],
     },

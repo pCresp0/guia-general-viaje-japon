@@ -88,6 +88,6 @@ export const visibilityTools = {
     url: "https://mtfujitoday.com",
     desc: "Previsión a 7 días y acceso directo a webcams en directo en Kawaguchiko y alrededores."
   },
-  sideToCheck: "⚠️ IMPORTANTE — mirad SIEMPRE la vista NORTE (Kawaguchiko/Yamanashi), NO la vista Sur (Hakone/Mishima): estas webs muestran previsiones separadas para cada lado del Fuji, porque el tiempo puede estar despejado en un lado y nublado en el otro el mismo día. La excursión GYG confirmada del 16 de septiembre (Kawaguchiko, Parque Oishi, Oshino Hakkai, Pagoda Chureito) depende de que el Fuji se vea despejado desde el NORTE ese día -- comprobad esa vista la mañana del 16, no la de Hakone.",
-  goldenRule: "Abrid las webcams en directo desde el hotel a las 06:30 AM. Si a las 07:00 AM no es visible, es altamente improbable que aparezca más tarde (a partir de las 09:00 AM el calor evapora humedad y crea nubes sobre el cono)."
+  sideToCheck: "⚠️ IMPORTANTE — mira SIEMPRE la vista NORTE (Kawaguchiko/Yamanashi), NO la vista Sur (Hakone/Mishima): estas webs muestran previsiones separadas para cada lado del Fuji, porque el tiempo puede estar despejado en un lado y nublado en el otro el mismo día. La excursión de GetYourGuide (Kawaguchiko, Parque Oishi, Saiko, Oshino Hakkai, Pagoda Chureito) depende de que el Fuji se vea despejado desde el NORTE ese día -- comprueba esa vista la mañana de la excursión, no la de Hakone.",
+  goldenRule: "Abre las webcams en directo desde el hotel a las 06:30 AM. Si a las 07:00 AM no es visible, es altamente improbable que aparezca más tarde (a partir de las 09:00 AM el calor evapora humedad y crea nubes sobre el cono)."
 };
