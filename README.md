@@ -50,9 +50,10 @@ El proyecto sigue una filosofía extrema de **disponibilidad y resiliencia offli
 
 ## 📱 Secciones y Funcionalidades de la Web
 
-| 🧭 Menú lateral de navegación | ⛩️ Apartados principales de la web | 🌐 Selector multi-idioma |
+| 🧭 Menú lateral de navegación | ⛩️ Apartados principales de la web | 🌐 Selector multi-idioma y buscador |
 | :---: | :---: | :---: |
 | <img src="public/img/menu-lateral.jpg" alt="Menú lateral de navegación" width="170" /> | <img src="public/img/apartados-principales.jpg" alt="Apartados principales de la web" width="430" /> | <img src="public/img/selector-idiomas.jpg" alt="Selector de idiomas (Español, English, Français, Tagalog) y buscador" width="180" /> |
+| **Cajón lateral retráctil:** Deslizable por gestos táctiles o menú hamburguesa, estructurado en grupos temáticos. | **Dashboard central:** Pantalla de inicio con tarjetas de acceso rápido a las 19 secciones de la guía. | **Internacionalización:** Conmutación en caliente entre Español, Inglés, Francés y Tagalo con persistencia local. |
 
 La aplicación está organizada en **19 secciones temáticas**, diseñadas para acompañar cada fase de la planificación y el día a día en Japón:
 
@@ -67,10 +68,12 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 📅 Calendario mensual por etapas | 🗺️ Mapa interactivo con ruta completa |
 | :---: | :---: |
 | <img src="public/img/calendario-viaje.jpg" alt="Vista del calendario interactivo por etapas y días" width="420" /> | <img src="public/img/mapa-ruta.jpg" alt="Mapa interactivo con trazado y filtros de la ruta" width="420" /> |
+| **Planificación temporal:** Calendario con código de color por regiones (Kioto/Osaka, Alpes, Tokio), hitos diarios y pernoctaciones. | **Cartografía vectorial (Leaflet):** Trazado integral de transportes, filtros por días o categorías y capas Topo, OSM y Satélite. |
 
-<p align="center">
-  <img src="public/img/itinerario-dias.jpg" alt="Vista del itinerario detallado por días" width="580" />
-</p>
+| 🗓️ Vista interactiva del Itinerario día a día |
+| :---: |
+| <img src="public/img/itinerario-dias.jpg" alt="Vista del itinerario detallado por días" width="580" /> |
+| **Cronología de las 16 jornadas (Día 0 al 15):** Alternancia entre vista detallada (tiempos, lore, efectivo) y vista rápida tipo metro con exportación limpia a PDF/impresión. |
 
 ### 🚅 Viaje y Logística
 | Icono | Sección | Descripción |
@@ -83,6 +86,7 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 🏨 Ficha detallada de alojamiento | 🚄 Desglose técnico de trayectos y tarifas |
 | :---: | :---: |
 | <img src="public/img/ficha-hotel.jpg" alt="Ficha detallada de hotel con servicios, precios y enlaces a mapas" width="420" /> | <img src="public/img/trayectos-transporte.jpg" alt="Desglose de trayectos, métodos de pago y tarifas de transporte" width="420" /> |
+| **Ficha completa de hotel:** Horarios de check-in/out, onsen público, dirección en kanji para taxis, precios de referencia y enlace a Booking. | **Logística de traslados:** Billetes Shinkansen, trenes expresos y buses con método de acceso (Suica, reserva previa, ventanilla) y coste estimado. |
 
 ### 🏯 Guía y Cultura
 | Icono | Sección | Descripción |
@@ -92,9 +96,10 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 📜 | **Historia & Multimedia** (`#historia`) | Periodos históricos narrados con reproductor de voz Text-to-Speech nativo, podcasts de Apple, documentales de YouTube y libros con lectura online. |
 | 👾 | **Cultura Pop (Frikadas)** (`#frikadas`) | Puntos de interés cruzados con anime, videojuegos y cine (Ghibli, Pokémon, Nintendo, Akihabara). |
 
-<p align="center">
-  <img src="public/img/ficha-lugar.jpg" alt="Ficha detallada de monumento y lore cultural (Fushimi Inari Taisha)" width="540" />
-</p>
+| 🏛️ Ficha cultural de Lugares & Lore (Fushimi Inari Taisha) |
+| :---: |
+| <img src="public/img/ficha-lugar.jpg" alt="Ficha detallada de monumento y lore cultural (Fushimi Inari Taisha)" width="540" /> |
+| **Guía a fondo de templos y monumentos:** Ficha modal interactiva con fotografía real, año de fundación, trasfondo histórico y explicaciones sintoístas/budistas para entender lo que se visita. |
 
 ### 🎒 Preparación y Seguridad
 | Icono | Sección | Descripción |
@@ -111,9 +116,10 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 🧮 | **Herramientas de Viaje** (`#herramientas`) | Conversor bidireccional de divisas (EUR ↔ JPY) con botones rápidos, tablas de equivalencia de tallas internacionales y comprobador de caché offline. |
 | ℹ️ | **Sobre la web** (`#about`) | Explicación detallada de la arquitectura técnica (SSOT), comandos de clonación y guía práctica de vibecoding con IA. |
 
-<p align="center">
-  <img src="public/img/buscador-global.jpg" alt="Buscador global reactivo con búsquedas frecuentes y navegación directa" width="540" />
-</p>
+| 🔍 Buscador global reactivo y atajos inteligentes |
+| :---: |
+| <img src="public/img/buscador-global.jpg" alt="Buscador global reactivo con búsquedas frecuentes y navegación directa" width="540" /> |
+| **Búsqueda instantánea en cliente:** Indexa toda la app en memoria y ofrece píldoras de búsqueda rápida (Suica, Shinkansen, Fushimi Inari, etc.) navegando al apartado exacto con resalte luminoso. |
 
 ---
 
@@ -233,6 +239,7 @@ Al tratarse de una Progressive Web App (PWA), no necesitas buscarla en App Store
 | 1. Selecciona «Añadir a pantalla de inicio» | 2. Confirma y pulsa «Añadir» | 3. Acceso directo instalado |
 | :---: | :---: | :---: |
 | <img src="public/img/pwa/pwa-step1-share.jpg" alt="Paso 1: Menú compartir en Safari" width="170" /> | <img src="public/img/pwa/pwa-step2-confirm.jpg" alt="Paso 2: Confirmar añadir a pantalla de inicio" width="220" /> | <img src="public/img/pwa/pwa-step3-installed.png" alt="Paso 3: Icono instalado en la pantalla de inicio" width="110" /> |
+| Pulsa el botón compartir de Safari y selecciona «Añadir a pantalla de inicio». | Comprueba el nombre del acceso directo y pulsa «Añadir» en la esquina superior. | Icono nativo instalado: arranca a pantalla completa y funciona 100% offline. |
 
 ---
 
