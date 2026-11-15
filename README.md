@@ -76,9 +76,9 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 🚄 | **Transportes & Billetes** (`#transportes`) | Fichas técnicas y didácticas de Shinkansen Nozomi, Thunderbird, Shinano y Nohi Bus con horarios, tarifas de referencia por persona, métodos de acceso oficial (Smart EX / IC Card / máquinas JR), normativa de equipaje y guía de Visit Japan Web. |
 | 💰 | **Presupuesto & JR Pass** (`#presupuesto`) | Desglose transparente de costes y comparador matemático exhaustivo que analiza por qué no compensa el JR Pass tras la subida de precios de 2023. |
 
-<p align="center">
-  <img src="public/img/ficha-hotel.jpg" alt="Ficha detallada de hotel con servicios, precios y enlaces a mapas" width="520" />
-</p>
+| 🏨 Ficha detallada de alojamiento | 🚄 Desglose técnico de trayectos y tarifas |
+| :---: | :---: |
+| <img src="public/img/ficha-hotel.jpg" alt="Ficha detallada de hotel con servicios, precios y enlaces a mapas" width="370" /> | <img src="public/img/trayectos-transporte.jpg" alt="Desglose de trayectos, métodos de pago y tarifas de transporte" width="370" /> |
 
 ### 🏯 Guía y Cultura
 | Icono | Sección | Descripción |
