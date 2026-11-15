@@ -64,9 +64,9 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 📅 | **Calendario** (`#calendario`) | Desglose mensual y semanal de las 16 jornadas con hitos clave, pernoctaciones y traslados. |
 | 🗺️ | **Mapa Interactivo** (`#mapa`) | Cartografía vectorial offline basada en OpenStreetMap + Leaflet con filtros por categoría (Lugares, Hoteles, Transportes) y por días específicos. |
 
-| 📅 Calendario interactivo por etapas | 🗺️ Mapa interactivo con ruta completa |
-| :---: | :---: |
-| <img src="public/img/calendario-viaje.jpg" alt="Vista del calendario interactivo por etapas y días" width="370" /> | <img src="public/img/mapa-ruta.jpg" alt="Mapa interactivo con trazado y filtros de la ruta" width="370" /> |
+| 🗓️ Itinerario (Día a Día) | 📅 Calendario por etapas | 🗺️ Mapa interactivo |
+| :---: | :---: | :---: |
+| <img src="public/img/itinerario-dias.jpg" alt="Vista del itinerario detallado por días" width="245" /> | <img src="public/img/calendario-viaje.jpg" alt="Vista del calendario interactivo por etapas y días" width="245" /> | <img src="public/img/mapa-ruta.jpg" alt="Mapa interactivo con trazado y filtros de la ruta" width="245" /> |
 
 ### 🚅 Viaje y Logística
 | Icono | Sección | Descripción |
