@@ -37,9 +37,9 @@ export const navStructure = [
       { id: "herramientas", labelKey: "nav.herramientas", descKey: "nav.desc.herramientas", icon: Clock },
       { id: "emergencias", labelKey: "nav.emergencias", descKey: "nav.desc.emergencias", icon: ShieldAlert },
       { id: "frikadas", labelKey: "nav.frikadas", descKey: "nav.desc.frikadas", icon: Sparkles },
-      { id: "about", labelKey: "nav.about", descKey: "nav.desc.about", icon: Info },
     ]
   },
+  { type: "item", id: "about", labelKey: "nav.about", descKey: "nav.desc.about", icon: Info },
 ];
 
 export const tabs = navStructure.reduce((acc, curr) => {
@@ -116,6 +116,7 @@ function NavItems({ active, onChange, onClose, isMobile }) {
                 borderLeft: isActive ? "3px solid #e8b74a" : "3px solid transparent",
                 fontWeight: isActive || tab.alert ? 700 : 500,
                 marginBottom: tab.alert ? 10 : tab.id === "mapa" ? 12 : 3,
+                marginTop: tab.id === "about" ? 6 : 0,
               }}
             >
               <Icon size={17} strokeWidth={isActive || tab.alert ? 2.4 : 2} />
