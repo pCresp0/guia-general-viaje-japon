@@ -12,54 +12,14 @@ function formatEs(n, { maxDecimals = 0 } = {}) {
   });
 }
 
-/** Parsea "1.234,56", "1234.56" o "10.000" → number de forma inteligente */
-function parseNumberInput(str, { isInteger = false } = {}) {
+/** Parsea "1.234,56" o "1234.56" → number */
+function parseEs(str) {
   const raw = String(str ?? "").trim();
   if (!raw) return 0;
-
-  if (isInteger) {
-    // Para monedas enteras como el Yen (¥), cualquier punto, coma o espacio es separador de miles
-    const cleanDigits = raw.replace(/[^\d]/g, "");
-    const n = parseInt(cleanDigits, 10);
-    return Number.isFinite(n) ? n : 0;
-  }
-
-  // Si contiene tanto '.' como ','
-  if (raw.includes(".") && raw.includes(",")) {
-    if (raw.lastIndexOf(",") > raw.lastIndexOf(".")) {
-      // Estilo ES: 1.234,56
-      const cleaned = raw.replace(/\./g, "").replace(",", ".");
-      const n = parseFloat(cleaned);
-      return Number.isFinite(n) ? n : 0;
-    } else {
-      // Estilo EN: 1,234.56
-      const cleaned = raw.replace(/,/g, "");
-      const n = parseFloat(cleaned);
-      return Number.isFinite(n) ? n : 0;
-    }
-  }
-
-  // Si solo contiene ','
-  if (raw.includes(",")) {
-    if (/^\d{1,3}(,\d{3})+$/.test(raw)) {
-      const n = parseFloat(raw.replace(/,/g, ""));
-      return Number.isFinite(n) ? n : 0;
-    }
-    const n = parseFloat(raw.replace(",", "."));
-    return Number.isFinite(n) ? n : 0;
-  }
-
-  // Si solo contiene '.'
-  if (raw.includes(".")) {
-    if (/^\d{1,3}(\.\d{3})+$/.test(raw)) {
-      const n = parseFloat(raw.replace(/\./g, ""));
-      return Number.isFinite(n) ? n : 0;
-    }
-    const n = parseFloat(raw);
-    return Number.isFinite(n) ? n : 0;
-  }
-
-  const n = parseFloat(raw.replace(/[^\d.-]/g, ""));
+  const cleaned = raw.includes(",")
+    ? raw.replace(/\./g, "").replace(",", ".")
+    : raw.replace(/[^\d.-]/g, "");
+  const n = parseFloat(cleaned.replace(/[^\d.-]/g, ""));
   return Number.isFinite(n) ? n : 0;
 }
 
@@ -178,7 +138,7 @@ export default function UtilsPage() {
   }, []);
 
   const handleApplyCustomRate = () => {
-    const parsed = parseNumberInput(customRateText);
+    const parsed = parseEs(customRateText);
     if (parsed > 0) {
       setRate(parsed);
       setIsCustomRate(true);
@@ -211,7 +171,7 @@ export default function UtilsPage() {
 
   const handleEurChange = (raw) => {
     setEurText(raw);
-    const val = parseNumberInput(raw);
+    const val = parseEs(raw);
     setEurInput(val);
     const nextYen = Math.round(val * rate);
     setYenInput(nextYen);
@@ -220,7 +180,7 @@ export default function UtilsPage() {
 
   const handleYenChange = (raw) => {
     setYenText(raw);
-    const val = parseNumberInput(raw, { isInteger: true });
+    const val = parseEs(raw);
     setYenInput(val);
     const nextEur = Math.round((val / rate) * 100) / 100;
     setEurInput(nextEur);
