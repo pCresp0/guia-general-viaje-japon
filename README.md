@@ -130,10 +130,6 @@ guia-general-viaje-japon/
 ├── vite.config.js          # Configuración de Vite y plugin de PWA con Workbox
 └── README.md
 ```
-├── index.html              # Plantilla HTML base, etiquetas OpenGraph y favicons
-├── vite.config.js          # Configuración de Vite y plugin de PWA con Workbox
-└── README.md
-```
 
 ---
 
