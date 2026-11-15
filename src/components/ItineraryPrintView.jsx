@@ -1,13 +1,13 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import { useContent, useT } from "../i18n/LanguageContext";
+import { useContent, useT, useLang } from "../i18n/LanguageContext";
 import { guidesByDay } from "../data/guides";
 import { guideImages } from "../data/guideImages";
 import { pendingItems } from "../data/pending";
 import { heymondoInsurance } from "../data/insurance";
 import { gygFujiActivity, visibilityTools } from "../data/fujiBookings";
 import { foods } from "../data/foods";
-import { sections as prepSections } from "../pages/PrepPage";
+import { prepSectionsData } from "../data/prepChecklistData";
 import { categories as phraseCategories, etiquette } from "../pages/PhrasesPage";
 import { emergencyNumbers, embassy } from "../pages/EmergencyPage";
 import { Plane, Train, Hotel, Euro, AlertCircle, Sparkles, CheckSquare, Clock } from "lucide-react";
@@ -585,6 +585,10 @@ function Appendix({ title, children }) {
  */
 export default function ItineraryPrintView({ days }) {
   const { tripMeta, flights, stays, blocks, transports, budget, guides, historyPeriods, foods: cFoods, pendingItems: cPending } = useContent();
+  const { lang } = useLang();
+  const t = useT();
+  const getLocalized = (val) => (typeof val === "object" && val !== null ? val[lang] || val.es || "" : val);
+
   const allFoods = cFoods || foods;
   const allPending = cPending || pendingItems;
   const purchased = transports.filter((x) => x.purchased);
@@ -598,6 +602,8 @@ export default function ItineraryPrintView({ days }) {
   const paidEur = sumEur(purchased);
   const pendJpy = sumJpy(pending);
   const pendEur = sumEur(pending);
+
+  if (typeof document === "undefined" || !document.body) return null;
 
   return createPortal(
     <div className="print-only" style={{ fontFamily: "Georgia, serif", color: "#1b1f27", background: "#fff" }}>
@@ -796,14 +802,14 @@ export default function ItineraryPrintView({ days }) {
         </div>
         <p style={{ fontSize: 11, fontWeight: 700, margin: "0 0 6px", color: "#1d3557" }}>Coberturas principales</p>
         <ul style={{ fontSize: 10, lineHeight: 1.5, margin: "0 0 12px", paddingLeft: 16 }}>
-          {heymondoInsurance.topCoverages.filter((c) => c.highlight).map((c) => (
-            <li key={c.label}><strong>{c.label}:</strong> {c.amount}</li>
+          {heymondoInsurance.topCoverages.filter((c) => c.highlight).map((c, idx) => (
+            <li key={idx}><strong>{getLocalized(c.label)}:</strong> {getLocalized(c.amount)}</li>
           ))}
         </ul>
         <p style={{ fontSize: 11, fontWeight: 700, margin: "0 0 6px", color: "#1d3557" }}>Números en Japón</p>
         {emergencyNumbers.map((e) => (
           <p key={e.number} style={{ fontSize: 10.5, margin: "0 0 4px", lineHeight: 1.45 }}>
-            <strong>{e.label}: {e.number}</strong> — {e.note}
+            <strong>{getLocalized(e.label)}: {e.number}</strong> — {getLocalized(e.note)}
           </p>
         ))}
         <p style={{ fontSize: 11, fontWeight: 700, margin: "12px 0 6px", color: "#1d3557" }}>{embassy.name}</p>
@@ -812,7 +818,7 @@ export default function ItineraryPrintView({ days }) {
           <br />
           General: {embassy.phone} · Emergencia 24h: <strong>{embassy.emergencyPhone}</strong>
           <br />
-          {embassy.note}
+          {getLocalized(embassy.note)}
         </p>
       </Appendix>
 
@@ -833,12 +839,14 @@ export default function ItineraryPrintView({ days }) {
 
       {/* ── Anexo: Preparativos ─────────────────────────────────── */}
       <Appendix title="Anexo · Preparativos (checklist)">
-        {prepSections.map((section) => (
+        {prepSectionsData.map((section) => (
           <div key={section.id} style={{ marginBottom: 12, pageBreakInside: "avoid" }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: section.color, margin: "0 0 4px" }}>{section.title}</p>
+            <p style={{ fontSize: 11, fontWeight: 700, color: section.color, margin: "0 0 4px" }}>
+              {getLocalized(section.title)}
+            </p>
             <ul style={{ margin: 0, paddingLeft: 16, fontSize: 10, lineHeight: 1.55 }}>
               {section.items.map((item) => (
-                <li key={item.id}>☐ {item.text}</li>
+                <li key={item.id}>☐ {getLocalized(item.text)}</li>
               ))}
             </ul>
           </div>
@@ -876,14 +884,16 @@ export default function ItineraryPrintView({ days }) {
       <Appendix title="Anexo · Frases y etiqueta">
         {phraseCategories.map((cat) => (
           <div key={cat.id} style={{ marginBottom: 12 }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: cat.color, margin: "0 0 4px" }}>{cat.title}</p>
+            <p style={{ fontSize: 11, fontWeight: 700, color: cat.color, margin: "0 0 4px" }}>
+              {t(cat.titleKey) || cat.titleDefault || cat.title}
+            </p>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 9.5, marginBottom: 6 }}>
               <tbody>
                 {cat.phrases.map((p, i) => (
                   <tr key={i} style={{ borderBottom: "1px solid #e6dcc4" }}>
                     <td style={{ padding: "3px 5px", width: "32%" }}>{p.jp}</td>
                     <td style={{ padding: "3px 5px", width: "28%", color: "#5a6070" }}>{p.romaji}</td>
-                    <td style={{ padding: "3px 5px" }}>{p.es}</td>
+                    <td style={{ padding: "3px 5px" }}>{p[lang] || p.es}</td>
                   </tr>
                 ))}
               </tbody>
@@ -891,9 +901,9 @@ export default function ItineraryPrintView({ days }) {
           </div>
         ))}
         <p style={{ fontSize: 11, fontWeight: 700, color: "#1d3557", margin: "8px 0 6px" }}>Etiqueta</p>
-        {etiquette.map((e) => (
-          <p key={e.title} style={{ fontSize: 10, lineHeight: 1.5, margin: "0 0 6px" }}>
-            <strong>{e.title}:</strong> {e.text}
+        {etiquette.map((e, idx) => (
+          <p key={idx} style={{ fontSize: 10, lineHeight: 1.5, margin: "0 0 6px" }}>
+            <strong>{getLocalized(e.title)}:</strong> {getLocalized(e.text)}
           </p>
         ))}
       </Appendix>
