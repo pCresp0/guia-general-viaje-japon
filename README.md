@@ -159,6 +159,7 @@ guia-general-viaje-japon/
 │   ├── main.jsx            # Punto de entrada de React y registro del Service Worker PWA
 │   └── index.css           # Tokens de diseño y utilidades de Tailwind CSS v4
 ├── index.html              # Plantilla HTML base, etiquetas OpenGraph y favicons
+├── package.json            # Dependencias npm y scripts de compilación
 ├── vite.config.js          # Configuración de Vite y plugin de PWA con Workbox
 └── README.md
 ```
