@@ -8,6 +8,8 @@ export default function HistoryPrintView() {
   const { historyPeriods, furtherReading, guides } = useContent();
   const t = useT();
 
+  if (typeof document === "undefined" || !document.body) return null;
+
   return createPortal(
     <div
       className="print-only history-print-view"
