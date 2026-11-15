@@ -127,7 +127,9 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 
 ```text
 guia-general-viaje-japon/
+├── docs/                   # Documentación adicional, changelog y archivo histórico
 ├── public/                 # Favicons, iconos PWA, manifest y recursos estáticos
+├── scripts/                # Scripts auxiliares de traducción y mantenimiento
 ├── src/
 │   ├── components/         # Componentes reutilizables (fichas de tren, mapa, nav, footer, modales, print views...)
 │   ├── context/            # Contextos de React (HighlightContext para buscador y navegación interna)

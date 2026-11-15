@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { X, Clock, RefreshCw } from "lucide-react";
-import changelogRaw from "../../CHANGELOG_AUTO.md?raw";
+import changelogRaw from "../../docs/CHANGELOG_AUTO.md?raw";
 
 const LONG_PRESS_MS = 500;
 
