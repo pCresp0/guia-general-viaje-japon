@@ -227,8 +227,8 @@ function buildSearchIndex(lang) {
   // ── Vuelos y Visit Japan Web ──────────────────────────────────────
   items.push(entry({
     id: "visit-japan-web",
-    title: "Visit Japan Web · QR de Inmigración y Aduanas",
-    subtitle: "Códigos QR de entrada a Japón de los viajeros",
+    title: "Visit Japan Web · Trámites y QR oficial",
+    subtitle: "Guía oficial de inmigración, aduanas y registro online",
     category: "Vuelos",
     tab: "vuelos",
     targetId: "visit-japan-qr-card",

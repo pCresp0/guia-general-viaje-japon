@@ -932,12 +932,11 @@ export const budget = {
       ],
     },
     {
-      title: "Excursión Monte Fuji y Nikko",
-      subtitle: "Tours y billetes de excursión",
-      perPerson: "~45€ – 55€",
+      title: "Excursión organizada Monte Fuji",
+      subtitle: "Tour de día completo desde Tokio",
+      perPerson: "~42€",
       details: [
         "<strong>Excursión Monte Fuji con GetYourGuide (Día 10):</strong> ~42€/persona (Kawaguchiko, Parque Oishi, Saiko, Oshino Hakkai y Pagoda Chureito). Tour organizado de día completo en autobús con guía.",
-        "<strong>Excursión a Nikko (Día 14, 20 sept.):</strong> Tobu Limited Express ida y vuelta, aprox. ¥2.800 (~17€) por persona cada trayecto, más entradas a Toshogu (~¥1.600–2.100/persona). Total aprox. 45€/persona.",
       ],
     },
     {

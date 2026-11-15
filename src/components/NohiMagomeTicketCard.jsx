@@ -47,7 +47,7 @@ export default function NohiMagomeTicketCard({ defaultExpanded = false, onGoToDa
             style={{ background: accent, color: "white" }}
           >
             <CalendarDays size={13} />
-            Ver día 9 en itinerario
+            Ver día 8 en itinerario
           </button>
         </div>
       )}

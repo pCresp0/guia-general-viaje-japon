@@ -16,11 +16,39 @@ import {
 import { Highlightable } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
 import { heymondoInsurance } from "../data/insurance";
+import { useLang, useT } from "../i18n/LanguageContext";
 
 export const emergencyNumbers = [
-  { label: "Policía", number: "110", note: "Emergencias con la policía japonesa" },
-  { label: "Ambulancia / Bomberos", number: "119", note: "Emergencias médicas o incendios" },
-  { label: "Línea de ayuda turística (JNTO)", number: "050-3816-2787", note: "24h, en inglés — para cualquier problema como turista" },
+  {
+    label: { es: "Policía", en: "Police", fr: "Police", tl: "Pulis" },
+    number: "110",
+    note: {
+      es: "Emergencias con la policía japonesa",
+      en: "Japanese police emergency line",
+      fr: "Ligne d'urgence de la police japonaise",
+      tl: "Linya ng emerhensiya para sa pulisya ng Hapon"
+    }
+  },
+  {
+    label: { es: "Ambulancia / Bomberos", en: "Ambulance / Fire", fr: "Ambulance / Pompiers", tl: "Ambulansya / Bumbero" },
+    number: "119",
+    note: {
+      es: "Emergencias médicas o incendios",
+      en: "Medical emergencies and fires",
+      fr: "Urgences médicales ou incendies",
+      tl: "Mga medikal na emerhensiya o sunog"
+    }
+  },
+  {
+    label: { es: "Línea de ayuda turística (JNTO)", en: "Tourist Hotline (JNTO)", fr: "Assistance touristique (JNTO)", tl: "Tourist Hotline (JNTO)" },
+    number: "050-3816-2787",
+    note: {
+      es: "24h, en inglés — para cualquier problema como turista",
+      en: "24/7, in English — visitor assistance across Japan",
+      fr: "24h/24, en anglais — assistance touristique au Japon",
+      tl: "24 oras, sa Ingles — tulong para sa mga turista sa Hapon"
+    }
+  },
 ];
 
 export const embassy = {
@@ -28,10 +56,17 @@ export const embassy = {
   address: "1-3-29 Roppongi, Minato-ku, Tokio 106-0032",
   phone: "+81 3-3583-8531",
   emergencyPhone: "+81 90-6949-8659",
-  note: "Teléfono de emergencia consular las 24h para casos graves (accidente, detención, fallecimiento).",
+  note: {
+    es: "Teléfono de emergencia consular las 24h para casos graves (accidente, detención, fallecimiento).",
+    en: "24/7 consular emergency phone for critical situations (accidents, detention, death).",
+    fr: "Téléphone d'urgence consulaire 24h/24 pour les situations critiques.",
+    tl: "24/7 na teleponong pang-emerhensiya ng konsulado para sa malulubhang sitwasyon."
+  },
 };
 
 export default function EmergencyPage() {
+  const { lang } = useLang();
+  const t = useT();
   const [showAllCoverages, setShowAllCoverages] = useState(false);
   const [openSection, setOpenSection] = useState(null); // 'insurance' | 'numbers' | 'embassy'
 
@@ -39,15 +74,25 @@ export default function EmergencyPage() {
     setOpenSection((prev) => (prev === id ? null : id));
   }
 
+  const getLabel = (obj) => (typeof obj === "object" ? obj[lang] || obj.en || obj.es : obj);
+
   return (
     <div className="px-4 pt-3 pb-12">
       <div className="mb-6">
-        <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>Por si acaso</p>
+        <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>
+          {t("emergency.eyebrow") || "Por si acaso"}
+        </p>
         <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>
-          Emergencias y Seguro de Viaje
+          {t("emergency.title") || "Emergencias"} & Seguro de Viaje
         </h2>
         <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 8, lineHeight: 1.6 }}>
-          Protocolo de seguridad, asistencia médica y números de emergencia esenciales para viajar por Japón. Incluye el contacto directo con la policía (110) y ambulancias (119), los datos de la Embajada de España en Tokio y la guía de actuación para solicitar asistencia médica a través de un seguro internacional como Heymondo en caso de imprevisto o enfermedad.
+          {lang === "en"
+            ? "Essential emergency protocol, medical assistance, and contact numbers in Japan. Includes direct access to Police (110), Ambulance (119), Spanish Embassy in Tokyo, and international travel insurance guidance."
+            : lang === "fr"
+            ? "Protocole d'urgence, assistance médicale et numéros essentiels au Japon. Comprend Police (110), Ambulances (119), l'Ambassade d'Espagne à Tokyo et l'assistance d'assurance voyage."
+            : lang === "tl"
+            ? "Mahahalagang numero at gabay sa emerhensiya at tulong medikal sa Hapon. Kasama ang Pulis (110), Ambulansya (119), Embahada ng Espanya sa Tokyo, at travel insurance."
+            : "Protocolo de seguridad, asistencia médica y números de emergencia esenciales para viajar por Japón. Incluye el contacto directo con la policía (110) y ambulancias (119), los datos de la Embajada de España en Tokio y la guía de actuación para solicitar asistencia médica a través de un seguro internacional como Heymondo en caso de imprevisto o enfermedad."}
         </p>
       </div>
 
@@ -336,9 +381,9 @@ export default function EmergencyPage() {
                   <Phone size={18} style={{ color: "var(--shu)" }} />
                 </div>
                 <div>
-                  <p style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>{e.label}</p>
+                  <p style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>{getLabel(e.label)}</p>
                   <p style={{ fontSize: 18, fontWeight: 700, color: "var(--shu)", fontFamily: "var(--font-display)" }}>{e.number}</p>
-                  <p style={{ fontSize: 11, color: "var(--ink-soft)", marginTop: 2 }}>{e.note}</p>
+                  <p style={{ fontSize: 11, color: "var(--ink-soft)", marginTop: 2 }}>{getLabel(e.note)}</p>
                 </div>
               </a>
             </Highlightable>
@@ -388,7 +433,7 @@ export default function EmergencyPage() {
             </div>
 
             <p style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 12, lineHeight: 1.5 }}>
-              {embassy.note}
+              {getLabel(embassy.note)}
             </p>
           </div>
         </Highlightable>

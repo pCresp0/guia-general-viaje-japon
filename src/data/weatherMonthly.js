@@ -337,6 +337,13 @@ export function getHistoricalDayForecast(dayNum, city, dateStr, baseDay = {}, la
   const m = parts[1] >= 1 && parts[1] <= 12 ? parts[1] : 9;
   const langKey = ["es", "en", "fr", "tl"].includes(lang) ? lang : "es";
 
+  // Normalizar nombre de ciudad para mapear entre idiomas (ej. "Kyoto" -> "Kioto", "Tokyo" -> "Tokio")
+  const normCity = city && (city.toLowerCase().startsWith("kyo") || city.toLowerCase().startsWith("kio"))
+    ? "Kioto"
+    : city && city.toLowerCase().startsWith("tok")
+    ? "Tokio"
+    : city;
+
   // Si el mes es septiembre (9) y tenemos el día base curado de la ruta original de septiembre:
   if (m === 9 && baseDay && baseDay.high != null) {
     return {
@@ -350,7 +357,7 @@ export function getHistoricalDayForecast(dayNum, city, dateStr, baseDay = {}, la
   }
 
   const monthData = MONTHLY_WEATHER_DATA[m] || MONTHLY_WEATHER_DATA[9];
-  const cityInfo = monthData.cities.find((c) => c.city === city) || monthData.cities[0];
+  const cityInfo = monthData.cities.find((c) => c.city === normCity) || monthData.cities[0];
 
   // Variación natural ligera día a día (+1° o -1°) para que no sea idéntico cada día
   const variation = ((dayNum * 7) % 3) - 1; // -1, 0 o +1

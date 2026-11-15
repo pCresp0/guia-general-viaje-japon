@@ -7,8 +7,8 @@ export const pendingItems = [
     urgency: "6m",
     timing: "6 meses antes",
     title: "🛂 Revisar Pasaporte",
-    detail: "Asegúrate de que tu pasaporte tiene al menos 6 meses de vigencia desde la fecha de entrada prevista a Japón. Si caduca antes o está deteriorado, pide cita para renovarlo cuanto antes.",
-    deadline: "6 meses antes del viaje",
+    detail: "Asegúrate de que tu pasaporte esté en vigor durante toda la estancia en Japón. Aunque Japón no exige 6 meses de vigencia mínima para estancias turísticas cortas, las aerolíneas y posibles países de escala sí suelen recomendar contar con al menos 6 meses de margen. Si caduca pronto o está deteriorado, pide cita para renovarlo con antelación.",
+    deadline: "6 meses antes del viaje (recomendado)",
   },
   {
     id: "vuelos",

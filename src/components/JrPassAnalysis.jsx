@@ -136,8 +136,8 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                 <div className="p-4 rounded-xl border" style={{ background: "rgba(29,53,87,0.06)", borderColor: "rgba(29,53,87,0.2)" }}>
                   <p className="text-[11px] font-bold uppercase tracking-wider m-0" style={{ color: "var(--indigo)" }}>Coste total con JR Pass 14d</p>
                   <p className="font-display text-lg font-bold m-0 mt-1" style={{ color: "var(--shu)" }}>{formatJpyEur(withPass14Jpy, withPass14Eur)}</p>
-                  <p className="text-xs m-0 mt-1" style={{ color: "var(--ink-soft)" }}>por persona (Pass 455€ + extras 121€)</p>
-                  <p className="text-[11px] m-0 mt-2" style={{ color: "var(--ink-soft)" }}>Pass (455€) + extras no cubiertos (121€)</p>
+                  <p className="text-xs m-0 mt-1" style={{ color: "var(--ink-soft)" }}>por persona (Pass {formatEur(PASS_14_EUR)} + extras {formatEur(nozomiEur + nonJrEur)})</p>
+                  <p className="text-[11px] m-0 mt-2" style={{ color: "var(--ink-soft)" }}>Pass ({formatEur(PASS_14_EUR)}) + extras no cubiertos ({formatEur(nozomiEur + nonJrEur)})</p>
                 </div>
               </div>
             </div>

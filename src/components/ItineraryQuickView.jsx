@@ -87,9 +87,12 @@ function formatQuickText(text = "") {
     clean = clean.replace(/^[^\w\s•\-—:→]+/, "").trim();
   }
 
-  // Inteligencia semántica: Cortar en seco si empiezan consejos o avisos
-  clean = clean.split(/[💡⚠️🎫🛒📅]/)[0].trim();
-  clean = clean.split(/(?:Tip|Consejo|Alternativa|Nota|Opcional|Importante):/i)[0].trim();
+  // Inteligencia semántica: Cortar en seco si empiezan consejos o avisos secundarios
+  const strippedBeforeIcons = clean.split(/[💡⚠️🎫🛒📅]/)[0].trim();
+  if (strippedBeforeIcons) clean = strippedBeforeIcons;
+
+  const strippedBeforeAdvice = clean.split(/\s+(?:Tip|Consejo|Alternativa|Nota):/i)[0].trim();
+  if (strippedBeforeAdvice) clean = strippedBeforeAdvice;
 
   if (!clean) return "";
 

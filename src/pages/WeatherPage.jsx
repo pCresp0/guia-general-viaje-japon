@@ -81,6 +81,17 @@ const cityCoords = {
   "Tokio": { lat: 35.6895, lon: 139.6917 }
 };
 
+function getCanonicalCity(city) {
+  if (!city) return "";
+  const lower = city.toLowerCase();
+  if (lower.startsWith("kyo") || lower.startsWith("kio")) return "Kioto";
+  if (lower.startsWith("tok")) return "Tokio";
+  if (lower.startsWith("kana")) return "Kanazawa";
+  if (lower.startsWith("taka")) return "Takayama";
+  if (lower.startsWith("tsu")) return "Tsumago";
+  return city;
+}
+
 function getSkyFromWMO(code) {
   if (code === 0) return "sun";
   if (code === 1 || code === 2) return "partly";
@@ -88,20 +99,24 @@ function getSkyFromWMO(code) {
   return "rain";
 }
 
-function getConditionFromWMO(code) {
-  if (code === 0) return "Soleado";
-  if (code === 1 || code === 2) return "Parcialmente nublado";
-  if (code === 3 || code === 45 || code === 48) return "Nublado";
-  if (code >= 51 && code <= 67) return "Lluvia";
-  if (code >= 71 && code <= 86) return "Nieve/Lluvia";
-  if (code >= 95) return "Tormenta";
-  return "Variable";
+function getConditionFromWMO(code, lang = "es") {
+  const isEn = lang === "en";
+  const isFr = lang === "fr";
+  const isTl = lang === "tl";
+  if (code === 0) return isEn ? "Sunny" : isFr ? "Ensoleillé" : isTl ? "Maaraw" : "Soleado";
+  if (code === 1 || code === 2) return isEn ? "Partly cloudy" : isFr ? "Partiellement nuageux" : isTl ? "Bahagyang maulap" : "Parcialmente nublado";
+  if (code === 3 || code === 45 || code === 48) return isEn ? "Cloudy" : isFr ? "Nuageux" : isTl ? "Maulap" : "Nublado";
+  if (code >= 51 && code <= 67) return isEn ? "Rain" : isFr ? "Pluie" : isTl ? "Ulan" : "Lluvia";
+  if (code >= 71 && code <= 86) return isEn ? "Snow/Rain" : isFr ? "Neige/Pluie" : isTl ? "Niyebe/Ulan" : "Nieve/Lluvia";
+  if (code >= 95) return isEn ? "Thunderstorm" : isFr ? "Orage" : isTl ? "Bagyo" : "Tormenta";
+  return isEn ? "Variable" : isFr ? "Variable" : isTl ? "Pabago-bago" : "Variable";
 }
 
 function computeCityWeatherBadges(w, liveWeather, dailyWeather, weatherLabels) {
   if (!liveWeather) return [];
-  const cityDays = liveWeather.filter(d => d.city === w.city);
-  const baseDays = dailyWeather.filter(d => d.city === w.city);
+  const canonicalTarget = getCanonicalCity(w.city);
+  const cityDays = liveWeather.filter(d => getCanonicalCity(d.city) === canonicalTarget);
+  const baseDays = dailyWeather.filter(d => getCanonicalCity(d.city) === canonicalTarget);
   if (cityDays.length === 0) return [];
 
   const avgHighLive = cityDays.reduce((acc, d) => acc + d.high, 0) / cityDays.length;
@@ -301,7 +316,8 @@ export default function WeatherPage() {
       // Estimación histórica coherente con el mes de la fecha calculada
       const hist = getHistoricalDayForecast(d.day, d.city, dateStr, d, lang);
 
-      const cityData = rawWeatherMap ? rawWeatherMap[d.city] : null;
+      const canonicalCity = getCanonicalCity(d.city);
+      const cityData = rawWeatherMap ? rawWeatherMap[canonicalCity] : null;
       if (!cityData) {
         return { 
           ...d, 
@@ -330,7 +346,7 @@ export default function WeatherPage() {
         low = Math.round(liveMin);
         rain = liveRain != null ? liveRain : hist.rain;
         sky = liveWmo != null ? getSkyFromWMO(liveWmo) : hist.sky;
-        condition = liveWmo != null ? getConditionFromWMO(liveWmo) : hist.condition;
+        condition = liveWmo != null ? getConditionFromWMO(liveWmo, lang) : hist.condition;
         isFallback = false;
       } else {
         high = hist.high;
@@ -508,11 +524,11 @@ export default function WeatherPage() {
                     </span>
                     {!d.isFallback ? (
                       <span className="text-[9px] px-1.5 py-0.5 rounded font-bold bg-white/20 text-white">
-                        ⚡ En vivo
+                        {lang === "en" ? "⚡ Live" : lang === "fr" ? "⚡ En direct" : lang === "tl" ? "⚡ Live" : "⚡ En vivo"}
                       </span>
                     ) : (
                       <span className="text-[9px] px-1.5 py-0.5 rounded font-medium bg-black/20 text-white/90">
-                        Histórico
+                        {lang === "en" ? "Historical" : lang === "fr" ? "Historique" : lang === "tl" ? "Kasaysayan" : "Histórico"}
                       </span>
                     )}
                   </div>
@@ -591,7 +607,8 @@ export default function WeatherPage() {
 
       <div className="grid gap-3 mb-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
         {monthlyData.cities.map((w, idx) => {
-          const cityDays = displayWeather ? displayWeather.filter(d => d.city === w.city) : [];
+          const canonicalTarget = getCanonicalCity(w.city);
+          const cityDays = displayWeather ? displayWeather.filter(d => getCanonicalCity(d.city) === canonicalTarget) : [];
           const liveAvgHigh = cityDays.length > 0 ? Math.round(cityDays.reduce((acc, d) => acc + d.high, 0) / cityDays.length) : null;
           const liveAvgRain = cityDays.length > 0 ? Math.round(cityDays.reduce((acc, d) => acc + d.rain, 0) / cityDays.length) : null;
           const badges = computeCityWeatherBadges(w, displayWeather, dailyWeather, weatherLabels);
@@ -612,7 +629,7 @@ export default function WeatherPage() {
                     {liveAvgHigh != null && (
                       <span className="text-[9.5px] font-bold px-2 py-0.5 rounded-full" 
                         style={{ background: "rgba(29,53,87,0.08)", color: "var(--indigo)" }}>
-                        API en vivo
+                        {lang === "en" ? "Live API" : lang === "fr" ? "API en direct" : lang === "tl" ? "Live API" : "API en vivo"}
                       </span>
                     )}
                     <ExternalLink size={12} className="opacity-0 group-hover:opacity-60 transition-opacity text-slate-500" />
