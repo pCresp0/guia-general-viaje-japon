@@ -107,6 +107,10 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 🧮 | **Herramientas de Viaje** (`#herramientas`) | Conversor bidireccional de divisas (EUR ↔ JPY) con botones rápidos, tablas de equivalencia de tallas internacionales y comprobador de caché offline. |
 | ℹ️ | **Sobre la web** (`#about`) | Explicación detallada de la arquitectura técnica (SSOT), comandos de clonación y guía práctica de vibecoding con IA. |
 
+<p align="center">
+  <img src="public/img/buscador-global.jpg" alt="Buscador global reactivo con búsquedas frecuentes y navegación directa" width="480" />
+</p>
+
 ---
 
 ## 📂 Estructura del Proyecto
