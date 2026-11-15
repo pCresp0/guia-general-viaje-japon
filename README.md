@@ -50,6 +50,10 @@ El proyecto sigue una filosofía extrema de **disponibilidad y resiliencia offli
 
 ## 📱 Secciones y Funcionalidades de la Web
 
+<p align="center">
+  <img src="public/img/apartados-principales.jpg" alt="Apartados principales de la web" width="750" />
+</p>
+
 La aplicación está organizada en **19 secciones temáticas**, diseñadas para acompañar cada fase de la planificación y el día a día en Japón:
 
 ### ⛩️ Navegación Principal
