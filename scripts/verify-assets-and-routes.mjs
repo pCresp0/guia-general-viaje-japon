@@ -123,3 +123,4 @@ if (fs.existsSync('./dist')) {
 
 console.log(`=== RESULT: ${errors === 0 ? "ALL CHECKS PASSED PERFECTLY" : "ERRORS DETECTED"} ===`);
 if (errors > 0) process.exit(1);
+
