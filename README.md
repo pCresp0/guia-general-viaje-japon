@@ -52,7 +52,7 @@ El proyecto sigue una filosofía extrema de **disponibilidad y resiliencia offli
 
 | 🧭 Menú lateral de navegación | ⛩️ Apartados principales de la web |
 | :---: | :---: |
-| <img src="public/img/menu-lateral.jpg" alt="Menú lateral de navegación" width="220" /> | <img src="public/img/apartados-principales.jpg" alt="Apartados principales de la web" width="560" /> |
+| <img src="public/img/menu-lateral.jpg" alt="Menú lateral de navegación" width="170" /> | <img src="public/img/apartados-principales.jpg" alt="Apartados principales de la web" width="430" /> |
 
 La aplicación está organizada en **19 secciones temáticas**, diseñadas para acompañar cada fase de la planificación y el día a día en Japón:
 
@@ -212,7 +212,7 @@ Al tratarse de una Progressive Web App (PWA), no necesitas buscarla en App Store
 
 | 1. Selecciona «Añadir a pantalla de inicio» | 2. Confirma y pulsa «Añadir» | 3. Acceso directo instalado |
 | :---: | :---: | :---: |
-| <img src="public/img/pwa/pwa-step1-share.jpg" alt="Paso 1: Menú compartir en Safari" width="200" /> | <img src="public/img/pwa/pwa-step2-confirm.jpg" alt="Paso 2: Confirmar añadir a pantalla de inicio" width="250" /> | <img src="public/img/pwa/pwa-step3-installed.png" alt="Paso 3: Icono instalado en la pantalla de inicio" width="150" /> |
+| <img src="public/img/pwa/pwa-step1-share.jpg" alt="Paso 1: Menú compartir en Safari" width="170" /> | <img src="public/img/pwa/pwa-step2-confirm.jpg" alt="Paso 2: Confirmar añadir a pantalla de inicio" width="220" /> | <img src="public/img/pwa/pwa-step3-installed.png" alt="Paso 3: Icono instalado en la pantalla de inicio" width="110" /> |
 
 ---
 
