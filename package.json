@@ -12,6 +12,8 @@
     "dev": "vite",
     "build": "vite build && touch dist/.nojekyll && cp -r dist/assets . && cp -r dist/icons . 2>/dev/null && cp -r dist/img . 2>/dev/null && cp -r dist/images . 2>/dev/null || true",
     "lint": "oxlint",
+    "test:assets": "node scripts/verify-assets-and-routes.mjs",
+    "test:routes": "node scripts/verify-views-render.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
