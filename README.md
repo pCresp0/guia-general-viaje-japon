@@ -50,26 +50,46 @@ El proyecto sigue una filosofía extrema de **disponibilidad y resiliencia offli
 
 ## 📱 Secciones y Funcionalidades de la Web
 
+La aplicación está organizada en **19 secciones temáticas**, diseñadas para acompañar cada fase de la planificación y el día a día en Japón:
+
+### ⛩️ Navegación Principal
 | Icono | Sección | Descripción |
 | :--- | :--- | :--- |
-| ⛩️ | **Inicio** | Bienvenida modular, resumen de la ruta de 16 días, tips de navegación y canales de contacto. |
-| 🗓️ | **Itinerario** | Doble modo: **Vista Detallada** (horarios, avisos de efectivo, lore) y **Vista Rápida** (línea visual de paradas con enlaces al mapa). |
-| 📅 | **Calendario** | Desglose mensual y semanal visual de las 16 jornadas con hitos clave, pernoctaciones y traslados. |
-| 🗺️ | **Mapa Interactivo** | Mapa basado en OpenStreetMap con filtros por categorías (Lugares, Hoteles, Transportes) y por días específicos. |
-| ✈️ | **Vuelos** | Desglose de los vuelos internacionales (Madrid-Doha-Narita) con escalas, horarios y operadoras. |
-| 🏨 | **Hoteles** | Fichas de alojamientos con direcciones en japonés para taxis, horarios de check-in/out e indicaciones de llegada. |
-| 🚄 | **Transportes & Billetes** | Fichas técnicas y didácticas de Shinkansen Nozomi, Thunderbird, Shinano y Nohi Bus con horarios, tarifas de referencia por persona, métodos de acceso oficial (Smart EX / IC Card / máquinas JR), normativa de equipaje y guía oficial de Visit Japan Web. |
-| 🎒 | **Preparativos** | Gestión previa al viaje: seguros de viaje, internet (eSIM), equipaje y tarjetas IC físicas / monederos virtuales. |
-| 💰 | **Presupuesto & JR Pass** | Desglose de costes por persona y comparador matemático exhaustivo que analiza por qué no compensa el JR Pass tras la subida de precios de 2023. |
-| ✅ | **Cosas Pendientes** | Checklist interactiva con persistencia en `localStorage` dividida en tareas esenciales antes de viajar y durante el viaje. |
-| 🍜 | **Gastronomía** | Platos imprescindibles de Japón (ramen, wagyu, okonomiyaki, takoyaki, matcha) y guía práctica de conveniencia (*konbini* 7-Eleven, FamilyMart y Lawson). |
-| 📜 | **Historia & Multimedia** | Periodos históricos con Text-to-Speech nativo, podcasts de Apple, documentales de YouTube y libros con lectura online. |
-| 👾 | **Cultura Pop (Frikadas)** | Puntos de interés cruzados con anime, videojuegos y cine (Ghibli, Pokémon, Nintendo, Akihabara). |
-| 🗣️ | **Frases y Etiqueta** | Guía de modales japoneses y frases útiles con audio de pronunciación nativa. |
-| 🧮 | **Herramientas & Clima** | Calculadoras de cambio de divisa (EUR/JPY), conversión de tallas y comprobador de caché offline. |
-| 🚨 | **Emergencias** | Teléfonos de asistencia (110, 119), hospitales de habla inglesa/española y consejos sanitarios. |
-| 🖨️ | **Impresión / PDF** | Vista limpia optimizada para imprimir en papel o exportar la hoja de ruta a PDF para emergencias sin batería. |
-| ℹ️ | **Sobre la web** | Explicación detallada de la arquitectura técnica, comandos de clonación y guía de vibecoding. |
+| ⛩️ | **Inicio** (`#inicio`) | Bienvenida interactiva, resumen de la ruta de 16 días, tips de navegación y canales de contacto directo. |
+| 🗓️ | **Itinerario** (`#itinerario`) | Doble modo: **Vista Detallada** (horarios, avisos de efectivo, lore) y **Vista Rápida** (línea visual con paradas enlazadas al mapa). Incluye botón de exportación limpia a PDF/impresión. |
+| 📅 | **Calendario** (`#calendario`) | Desglose mensual y semanal de las 16 jornadas con hitos clave, pernoctaciones y traslados. |
+| 🗺️ | **Mapa Interactivo** (`#mapa`) | Cartografía vectorial offline basada en OpenStreetMap + Leaflet con filtros por categoría (Lugares, Hoteles, Transportes) y por días específicos. |
+
+### 🚅 Viaje y Logística
+| Icono | Sección | Descripción |
+| :--- | :--- | :--- |
+| ✈️ | **Vuelos** (`#vuelos`) | Desglose de los vuelos internacionales (Madrid–Doha–Narita) con escalas, horarios, aeronaves y operadoras. |
+| 🏨 | **Hoteles** (`#hoteles`) | Fichas de alojamientos con direcciones en japonés (kanji para taxis), horarios de check-in/out e indicaciones de llegada. |
+| 🚄 | **Transportes & Billetes** (`#transportes`) | Fichas técnicas y didácticas de Shinkansen Nozomi, Thunderbird, Shinano y Nohi Bus con horarios, tarifas de referencia por persona, métodos de acceso oficial (Smart EX / IC Card / máquinas JR), normativa de equipaje y guía de Visit Japan Web. |
+| 💰 | **Presupuesto & JR Pass** (`#presupuesto`) | Desglose transparente de costes y comparador matemático exhaustivo que analiza por qué no compensa el JR Pass tras la subida de precios de 2023. |
+
+### 🏯 Guía y Cultura
+| Icono | Sección | Descripción |
+| :--- | :--- | :--- |
+| 🏛️ | **Lugares & Lore** (`#lugares`) | 24 guías a fondo de templos, santuarios, castillos, miradores y distritos clave con datos históricos, horarios y consejos prácticos. |
+| 🍜 | **Gastronomía & Konbini** (`#comidas`) | Platos imprescindibles de la cocina japonesa (ramen, wagyu, okonomiyaki, takoyaki, matcha) y guía práctica de conveniencia (*konbini* 7-Eleven, FamilyMart y Lawson). |
+| 📜 | **Historia & Multimedia** (`#historia`) | Periodos históricos narrados con reproductor de voz Text-to-Speech nativo, podcasts de Apple, documentales de YouTube y libros con lectura online. |
+| 👾 | **Cultura Pop (Frikadas)** (`#frikadas`) | Puntos de interés cruzados con anime, videojuegos y cine (Ghibli, Pokémon, Nintendo, Akihabara). |
+
+### 🎒 Preparación y Seguridad
+| Icono | Sección | Descripción |
+| :--- | :--- | :--- |
+| ✅ | **Cosas Pendientes** (`#pendientes`) | Checklist interactiva con persistencia en `localStorage` dividida en tareas esenciales antes de viajar y durante el viaje con fechas límite. |
+| 🎒 | **Maleta & Preparativos** (`#preparativos`) | Checklist exhaustiva de equipaje por categorías (documentación, electrónica, ropa, botiquín e higiene) con guardado automático en `localStorage`. |
+| 🚨 | **Emergencias & Seguro** (`#emergencias`) | Cobertura médica internacional Heymondo (hasta 5.000.000 €), asistencia 24h, reclamación AirHelp Plus, teléfonos de emergencia (110, 119) y datos de la Embajada de España en Tokio. |
+
+### 🧮 Utilidades
+| Icono | Sección | Descripción |
+| :--- | :--- | :--- |
+| 🌦️ | **El Clima en Japón** (`#clima`) | Predicciones meteorológicas en vivo a 7 días vía Open-Meteo, condiciones generales del mes activo y medias históricas de temperatura y lluvia. |
+| 🗣️ | **Frases y Etiqueta** (`#frases`) | Guía fonética de frases útiles con pronunciación nativa y normas esenciales de protocolo y modales japoneses. |
+| 🧮 | **Herramientas de Viaje** (`#herramientas`) | Conversor bidireccional de divisas (EUR ↔ JPY) con botones rápidos, tablas de equivalencia de tallas internacionales y comprobador de caché offline. |
+| ℹ️ | **Sobre la web** (`#about`) | Explicación detallada de la arquitectura técnica (SSOT), comandos de clonación y guía práctica de vibecoding con IA. |
 
 ---
 
@@ -79,25 +99,37 @@ El proyecto sigue una filosofía extrema de **disponibilidad y resiliencia offli
 guia-general-viaje-japon/
 ├── public/                 # Favicons, iconos PWA, manifest y recursos estáticos
 ├── src/
-│   ├── components/         # Componentes reutilizables (fichas de tren, mapa, nav, footer, modales...)
+│   ├── components/         # Componentes reutilizables (fichas de tren, mapa, nav, footer, modales, print views...)
+│   ├── context/            # Contextos de React (HighlightContext para buscador y navegación interna)
 │   ├── data/               # Single Source of Truth (SSOT)
 │   │   ├── trip.js         # Datos base del viaje, días del itinerario, vuelos, hoteles, presupuestos y notas
+│   │   ├── content.js      # Capa de fusión e internacionalización de contenido estructurado
 │   │   ├── mapData.js      # Puntos de interés geolocalizados para el mapa
 │   │   ├── jrPass.js       # Comparativa de precios y análisis matemático del JR Pass
-│   │   ├── guides.js       # Guías de etiqueta, modales y tarjetas de transporte
-│   │   ├── insurance.js    # Coberturas de seguros de viaje y teléfonos de asistencia
-│   │   ├── pending.js      # Checklist interactiva de preparativos antes y durante el viaje
+│   │   ├── guides.js       # 24 guías exhaustivas de lugares, templos, santuarios y lore
+│   │   ├── guideImages.js  # Mapeo de fotografías e ilustraciones de guías
+│   │   ├── insurance.js    # Coberturas de seguros de viaje Heymondo y teléfonos de asistencia
+│   │   ├── prepChecklistData.js # Checklist completa de equipaje y maleta en 4 idiomas
+│   │   ├── pending.js      # Checklist interactiva de tareas previas y durante el viaje
 │   │   ├── history.js      # Datos históricos, podcasts, documentales y libros recomendados
 │   │   ├── foods.js        # Guía gastronómica, platos típicos y sitios clave
-│   │   ├── konbiniGuide.js # Guía de tiendas de conveniencia (7-Eleven, FamilyMart, Lawson)
-│   │   ├── frikadas.js     # Cultura pop: anime, videojuegos, Ghibli, Nintendo y Akihabara
+│   │   ├── konbiniGuide.js # Guía completa de tiendas de conveniencia (7-Eleven, FamilyMart, Lawson)
+│   │   ├── popCulture.js   # Cultura pop: anime, videojuegos, Ghibli, Nintendo y Akihabara
+│   │   ├── fujiBookings.js # Excursión y herramientas de visibilidad del Monte Fuji
 │   │   ├── weatherData.js  # Clima de referencia de cada ciudad de la ruta
+│   │   ├── weatherMonthly.js # Estadísticas meteorológicas mensuales e históricas
+│   │   ├── searchIndex.js  # Índice precomputado del buscador global
 │   │   └── locales/        # Traducciones completas a inglés, francés y tagalo
-│   ├── i18n/               # Contexto React de internacionalización (es, en, fr, tl)
-│   ├── pages/              # Vistas principales de la aplicación (Inicio, Itinerario, About...)
-│   ├── App.jsx             # Enrutador principal y layout general
-│   ├── main.jsx            # Punto de entrada de React y registro del Service Worker
+│   ├── i18n/               # Contexto React de internacionalización (es, en, fr, tl) y diccionarios UI
+│   ├── pages/              # 19 vistas principales de la aplicación (Inicio, Itinerario, About...)
+│   ├── utils/              # Utilidades auxiliares (fecha, moneda, TTS, slugs, etc.)
+│   ├── App.jsx             # Enrutador principal, layout general y Error Boundary
+│   ├── main.jsx            # Punto de entrada de React y registro del Service Worker PWA
 │   └── index.css           # Tokens de diseño y utilidades de Tailwind CSS v4
+├── index.html              # Plantilla HTML base, etiquetas OpenGraph y favicons
+├── vite.config.js          # Configuración de Vite y plugin de PWA con Workbox
+└── README.md
+```
 ├── index.html              # Plantilla HTML base, etiquetas OpenGraph y favicons
 ├── vite.config.js          # Configuración de Vite y plugin de PWA con Workbox
 └── README.md
