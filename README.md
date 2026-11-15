@@ -211,5 +211,6 @@ Al tratarse de una Progressive Web App (PWA), no necesitas buscarla en App Store
 
 Si tienes cualquier duda organizando tu viaje a Japón, quieres hacer una consulta sobre la ruta o necesitas consejos de viaje, abajo del todo en el **footer de la web** tienes disponibles mis canales y redes sociales de contacto directo.
 
+* **LinkedIn:** [linkedin.com/in/pablocrespobellido](https://www.linkedin.com/in/pablocrespobellido/)
 * **Repositorio oficial:** [github.com/pCresp0/guia-general-viaje-japon](https://github.com/pCresp0/guia-general-viaje-japon)
 * **Desarrollado por:** Pablo Crespo Bellido (2026)
