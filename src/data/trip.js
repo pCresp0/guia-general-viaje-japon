@@ -23,13 +23,13 @@ export const tripMeta = {
     features: [
       {
         icon: "📡",
-        title: "100% Offline by Design",
-        text: "Esta aplicación web ha sido diseñada para <strong>no depender de internet durante el viaje</strong>. En trenes bala, zonas rurales o ante fallos de eSIM, la app sigue funcionando al 100%. Sigue una arquitectura de <strong>Single Source of Truth (SSOT)</strong> en el cliente, empaquetada como PWA con Service Worker (Workbox)."
+        title: "Arquitectura Offline-First (PWA)",
+        text: "La aplicación ha sido diseñada con arquitectura Single Source of Truth (SSOT) y Service Worker (Workbox) para que puedas consultar el itinerario, transportes, hoteles, presupuestos y notas sin cobertura ni internet. Las funciones externas (como el tiempo en directo o el cambio de divisas actualizado) se sincronizan cuando hay red y guardan su última versión en caché local."
       },
       {
         icon: "🗓️",
         title: "Itinerario Doble (Detallado & Vista Rápida)",
-        text: "Cada uno de los 15 días del viaje cuenta con dos modos: <strong>Detalle completo</strong> (con horarios, consejos, advertencias y lore) y <strong>Vista rápida</strong> (una línea de metro visual con las horas y paradas clave), además de acceso directo al mapa de cada jornada."
+        text: "Cada uno de los 16 días del viaje (Día 0 al 15) cuenta con dos modos: <strong>Detalle completo</strong> (con horarios, consejos, advertencias y lore) y <strong>Vista rápida</strong> (una línea de metro visual con las horas y paradas clave), además de acceso directo al mapa de cada jornada."
       },
       {
         icon: "🎫",

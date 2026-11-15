@@ -59,7 +59,7 @@ export default {
     {
       timing: "6 months before",
       title: "🛂 Check Passport",
-      detail: "Make sure your passport is valid for at least 6 months from your scheduled entry into Japan. If expiring soon or damaged, schedule an appointment to renew it with plenty of time.",
+      detail: "Make sure your passport is valid for your entire stay in Japan. While Japan does not require 6 months of minimum remaining validity for short-term tourist stays, airlines and potential transit countries strongly recommend having at least 6 months validity. If expiring soon or damaged, schedule an appointment to renew it well in advance.",
       deadline: "6 months before departure",
     },
     {

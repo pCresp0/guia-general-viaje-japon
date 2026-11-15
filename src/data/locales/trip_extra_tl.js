@@ -19,18 +19,18 @@ export const tripMeta = {
     features: [
       {
         icon: "📡",
-        title: "100% Offline by Design",
-        text: "Ang web app na ito ay idinisenyo upang <strong>hindi umasa sa internet habang nagbibiyahe</strong>. Sa mga shinkansen, sa mga rural na bayan, o kapag nagkaproblema ang eSIM, patuloy na gagana ang app nang 100% gamit ang <strong>Single Source of Truth (SSOT)</strong> sa client, na naka-package bilang PWA kasama ang Service Worker."
+        title: "Disenyong Offline-First (PWA)",
+        text: "Ang web app na ito ay idinisenyo gamit ang Single Source of Truth (SSOT) at Service Worker (Workbox) upang ma-access ang buong itinerary, mga gabay sa transportasyon, hotel, badyet at mga tala nang walang internet. Ang mga external feature (panahon at live currency rates) ay nagsi-sync kapag online at nagtatago ng lokal na cache."
       },
       {
         icon: "🗓️",
         title: "Dalawahang Itinerary (Detalyado at Mabilis na Tingin)",
-        text: "Bawat isa sa 15 araw ng biyahe ay may dalawang mode: <strong>Buong Detalye</strong> (may mga oras, payo, babala at kasaysayan) at <strong>Mabilis na Tingin</strong> (isang visual na linya ng tren na may mahahalagang oras at hinto), kasama ang direktang mapa para sa bawat araw."
+        text: "Bawat isa sa 16 na araw ng biyahe (Araw 0 hanggang 15) ay may dalawang mode: <strong>Buong Detalye</strong> (may mga oras, payo, babala at kasaysayan) at <strong>Mabilis na Tingin</strong> (isang visual na linya ng tren na may mahahalagang oras at hinto), kasama ang direktang mapa para sa bawat araw."
       },
       {
         icon: "🎫",
-        title: "Mga Ticket sa Transportasyon at Interactive na QR",
-        text: "Tunay na digital pass para sa mga nakareserbang tren at bus (Shinkansen Hikari & Nozomi, Thunderbird, Shinano, Nohi Bus) na may mga bagon, upuan, opisyal na QR code, at ang pagdating na QR ng Visit Japan Web sa Araw 1."
+        title: "Mga Gabay sa Transportasyon at Opisyal na Tiket",
+        text: "Mga teknikal na gabay sa transportasyon (Nozomi Shinkansen, Thunderbird, Shinano, Nohi Bus) na may mga timetable, reference na presyo kada tao, opisyal na paraan ng pagbili (Smart EX / IC Card / JR ticket machines), at patakaran sa bagahe."
       },
       {
         icon: "📜",

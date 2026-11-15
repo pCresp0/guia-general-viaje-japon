@@ -340,7 +340,7 @@ export default {
   "home.viewFlights": "View flights ↗",
 
   "nav.desc.inicio": "Cover, completed route summary, and reference guide",
-  "nav.desc.itinerario": "Detailed 15-day route, hour by hour, and quick metro view",
+  "nav.desc.itinerario": "Detailed 16-day route (Day 0 to 15), hour by hour, and quick metro view",
   "nav.desc.calendario": "Monthly view of September with key milestones and stays",
   "nav.desc.vuelos": "Schedules, Qatar Airways layovers, and flight breakdown",
   "nav.desc.hoteles": "Check-in/out, Japanese taxi addresses, and Booking links",

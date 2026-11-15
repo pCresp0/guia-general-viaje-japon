@@ -36,6 +36,20 @@ export default function TransportPage({ onNavigate }) {
   const [suicaOpen, setSuicaOpen] = useState(false);
   const [smartExOpen, setSmartExOpen] = useState(false);
 
+  // Cálculo unificado de ahorro frente a JR Pass (SSOT con JrPassAnalysis)
+  const sumEur = (arr) => arr.reduce((s, x) => s + (x.real || 0), 0);
+  const isJrPassCovered = (t) => {
+    if (typeof t.jrPassCovered === "boolean") return t.jrPassCovered;
+    return t.coverage === "jr" && !/nozomi/i.test(t.name || "");
+  };
+  const isNozomi = (t) => /nozomi/i.test(t.name || "");
+  const nozomiEur = sumEur(transports.filter(isNozomi));
+  const nonJrEur = sumEur(transports.filter((x) => !isJrPassCovered(x) && !isNozomi(x)));
+  const individualTotalEur = sumEur(transports);
+  const withPass14Eur = PASS_14_EUR + nozomiEur + nonJrEur;
+  const saveVs14Eur = Math.round(withPass14Eur - individualTotalEur);
+  const saveGroup14Eur = saveVs14Eur * 5;
+
   // Auto-switch de pestaña si la búsqueda global aterriza en un elemento concreto
   useEffect(() => {
     if (!highlightId) return;
@@ -512,7 +526,7 @@ export default function TransportPage({ onNavigate }) {
                   Balance final post-viaje · Billetes individuales + Suica vs Pass 14d ({formatEur(PASS_14_EUR)}/persona).
                 </p>
                 <p className="text-sm font-bold m-0" style={{ color: "var(--forest)" }}>
-                  ✅ NO COMPENSABA — Ahorro confirmado de ~219€/pax (+1.095€ grupo) →
+                  ✅ NO COMPENSABA — Ahorro estimado de ~{saveVs14Eur}€/persona (+{formatEur(saveGroup14Eur)} grupo) frente al pase de 14 días →
                 </p>
               </div>
               <span className="shrink-0 text-sm font-semibold" style={{ color: "var(--indigo)", marginTop: 3 }}>Ver →</span>

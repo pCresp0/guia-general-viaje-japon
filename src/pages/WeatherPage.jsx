@@ -466,7 +466,7 @@ export default function WeatherPage() {
             </span>
           </div>
           <span className="font-medium" style={{ color: "var(--ink)" }}>
-            {lang === "en" ? "Route (15 days): " : "Ruta (15 días): "}
+            {lang === "en" ? "Route in Japan (15 days · Days 1–15): " : lang === "fr" ? "Séjour au Japon (15 jours · Jours 1–15) : " : lang === "tl" ? "Ruta sa Japan (15 araw · Araw 1–15): " : "Ruta en Japón (15 días · Días 1–15): "}
             <strong>{formatRangeLabel(effectiveStartDate, displayWeather.length, lang)}</strong>
           </span>
         </div>

@@ -59,7 +59,7 @@ export default {
     {
       timing: "6 mois avant",
       title: "🛂 Vérifier le passeport",
-      detail: "Assurez-vous que votre passeport est valide au moins 6 mois à compter de la date d'entrée prévue au Japon. S'il expire bientôt ou est abîmé, prenez rendez-vous pour le renouveler suffisamment tôt.",
+      detail: "Assurez-vous que votre passeport est valide pendant toute la durée de votre séjour au Japon. Bien que le Japon n'exige pas 6 mois de validité résiduelle pour les séjours touristiques courts, les compagnies aériennes et les pays d'escale recommandent vivement de disposer d'au moins 6 mois de marge. S'il expire bientôt ou est abîmé, prenez rendez-vous pour le renouveler suffisamment tôt.",
       deadline: "6 mois avant le départ",
     },
     {

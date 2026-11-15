@@ -232,7 +232,7 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                 {" "}(€ de compra) ·{" "}
                 <a href={JR_PASS_SOURCE_OFFICIAL} target="_blank" rel="noopener noreferrer" className="underline">japanrailpass.net</a>
                 {" "}(¥ oficiales). Desde octubre 2026 las agencias en el extranjero suben a ¥53.000 / ¥84.000 / ¥105.000.
-                Nuestro viaje es 7–21 sept (15 días en Japón): un Pass de 7 días <strong>no puede cubrir</strong> a la vez N'EX (día 1), Alpes (días 6–9) y Fuji (día 10).
+                Nuestro itinerario completo comprende 16 días de viaje con 15 días en Japón (del 7 al 21 sept, Día 0 al 15): un Pass de 7 días <strong>no puede cubrir</strong> a la vez N'EX (día 1), Alpes (días 6–9) y Fuji (día 10).
               </p>
             </div>
 
@@ -280,15 +280,13 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
               </div>
               <div className="mt-3 p-3.5 rounded-xl border" style={{ background: "rgba(46,125,91,0.06)", borderColor: "rgba(46,125,91,0.25)" }}>
                 <p className="text-sm font-bold m-0 mb-1" style={{ color: "var(--forest)" }}>
-                  Ahorro al NO comprar el Pass
+                  Ahorro comparado al NO comprar el JR Pass
                 </p>
                 <p className="text-xs m-0 leading-relaxed" style={{ color: "var(--ink)" }}>
-                  Solo mirando trayectos que el Pass cubriría: {formatJpyEur(coveredTotalJpy, coveredTotalEur)} vs Pass 7d {formatJpyEur(PASS_7_JPY, PASS_7_EUR)}
-                  → ahorras <strong>{formatEur(saveCoveredOnlyEur)}</strong> por persona.
+                  • <strong>Frente al JR Pass de 14 días (duración del viaje):</strong> ahorras <strong>+{formatEur(saveVs14Eur)}</strong> por persona (~{formatEur(saveVs14Eur * 5)} en total para el grupo de 5 viajeros).
                 </p>
                 <p className="text-xs m-0 mt-2 leading-relaxed" style={{ color: "var(--ink)" }}>
-                  En el coste total del transporte del viaje: con Pass 7d pagarías <strong>{formatEur(saveVs7Eur)}</strong> más por persona; con Pass 14d,
-                  {" "}<strong>{formatEur(saveVs14Eur)}</strong> más por persona.
+                  • <strong>Frente al JR Pass de 7 días:</strong> aun limitando el pase a 7 días para el tramo central, pagarías <strong>+{formatEur(saveVs7Eur)}</strong> más por persona (~{formatEur(saveVs7Eur * 5)} grupo) por los trayectos no cubiertos (Nozomi, autobuses de los Alpes y metro urbano).
                 </p>
               </div>
             </div>
@@ -323,7 +321,7 @@ export default function JrPassAnalysis({ defaultOpen = false }) {
                 <li>• <strong>Autobuses de montaña en los Alpes:</strong> Los traslados entre Kanazawa, Shirakawa-go, Takayama y Magome (Nohi Bus y bus local) suman ~71€/persona y el JR Pass NO los cubre en absoluto (habría que pagarlos íntegros por separado).</li>
                 <li>• <strong>Movilidad urbana y Suica:</strong> El saldo aproximado en Suica (~69€/persona a lo largo del viaje) cubre con creces toda la red de metro de Kioto, buses urbanos, tranvía Randen, metro de Osaka, toda la red de Metro de Tokio (Tokyo Metro / Toei Subway) y cercanías. Casi ninguna de estas redes municipales/privadas está incluida en el JR Pass.</li>
                 <li>• <strong>Ventaja Shinkansen Nozomi:</strong> Comprando billetes individuales se puede viajar en el Shinkansen Nozomi (el más rápido de Japón, 2h Shinagawa→Kioto) con asientos reservados, sin suplementos y sin las restricciones del tren más lento (Hikari).</li>
-                <li>• <strong>Ahorro total estimado:</strong> {formatEur(saveVs14Eur)} por persona frente a la compra del pase oficial (más de 1.000€ de ahorro para un grupo de 5 viajeros).</li>
+                <li>• <strong>Ahorro total estimado:</strong> {formatEur(saveVs14Eur)} por persona frente a la compra del pase oficial de 14 días (~{formatEur(saveVs14Eur * 5)} de ahorro para el grupo de 5 viajeros).</li>
               </ul>
             </div>
 

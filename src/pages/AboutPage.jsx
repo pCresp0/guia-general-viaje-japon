@@ -99,7 +99,7 @@ export default function AboutPage() {
             Esta web nació con una meta ambiciosa: <strong>eliminar por completo</strong> los PDFs pesados de decenas de páginas, los Excels ilegibles en el móvil y los grupos de mensajería con enlaces y billetes perdidos entre cientos de mensajes.
           </p>
           <p style={{ margin: 0 }}>
-            En su lugar, creamos una <strong>Progressive Web App (PWA) interactiva, rápida y 100% funcional sin conexión</strong> para vivir un viaje de 16 días por Japón (Tokio, Kioto, Osaka, Kanazawa, Takayama y Magome).
+            En su lugar, creamos una <strong>Progressive Web App (PWA) interactiva, rápida y con arquitectura offline-first</strong> (todo el itinerario, hoteles, transportes y presupuestos disponibles sin conexión) para vivir un viaje de 16 días por Japón (Tokio, Kioto, Osaka, Kanazawa, Takayama y Magome).
           </p>
           <p style={{ margin: 0 }}>
             Tras completar la aventura, he adaptado la plataforma como <strong>guía pública de referencia y plantilla de código abierto</strong> para que cualquier persona que planee viajar a Japón pueda inspirarse, consultar cada detalle o reutilizar la base técnica para su propio viaje.

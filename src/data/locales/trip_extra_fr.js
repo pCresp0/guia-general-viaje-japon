@@ -19,18 +19,18 @@ export const tripMeta = {
     features: [
       {
         icon: "📡",
-        title: "100% Hors ligne par conception",
-        text: "Cette application web a été conçue pour <strong>ne jamais dépendre d'Internet pendant le voyage</strong>. Dans les trains à grande vitesse, les zones rurales ou lors de pannes d'eSIM, l'application reste 100% opérationnelle grâce à son architecture <strong>Single Source of Truth (SSOT)</strong> côté client, packagée en PWA avec Service Worker."
+        title: "Architecture Offline-First (PWA)",
+        text: "Cette application web est conçue avec une architecture Single Source of Truth (SSOT) et un Service Worker (Workbox) pour consulter l'itinéraire complet, les guides de transport, hôtels, budgets et notes sans connexion Internet. Les données externes (météo en direct ou taux de change actualisés) se synchronisent en ligne et disposent d'un cache local."
       },
       {
         icon: "🗓️",
         title: "Double Itinéraire (Détaillé & Vue Rapide)",
-        text: "Chacun des 15 jours de voyage dispose de deux modes : <strong>Détail complet</strong> (avec horaires, conseils, alertes et explications) et <strong>Vue rapide</strong> (une ligne de métro visuelle avec les horaires et arrêts clés), ainsi que l'accès direct à la carte de chaque journée."
+        text: "Chacun des 16 jours de voyage (Jour 0 à 15) dispose de deux modes : <strong>Détail complet</strong> (avec horaires, conseils, alertes et explications) et <strong>Vue rapide</strong> (une ligne de métro visuelle avec les horaires et arrêts clés), ainsi que l'accès direct à la carte de chaque journée."
       },
       {
         icon: "🎫",
-        title: "Billets de Transport & QR Interactifs",
-        text: "Fiches numériques fidèles pour les trains et bus réservés (Shinkansen Hikari & Nozomi, Thunderbird, Shinano, Nohi Bus) avec voitures, sièges, codes QR officiels et le QR d'arrivée de Visit Japan Web intégré au Jour 1."
+        title: "Guides de Transport & Billetterie Officielle",
+        text: "Fiches techniques pratiques de transport (Shinkansen Nozomi, Thunderbird, Shinano, Nohi Bus) avec horaires, tarifs indicatifs par personne, modes d'accès officiels (Smart EX / Carte IC / bornes JR) et règles pour les bagages."
       },
       {
         icon: "📜",

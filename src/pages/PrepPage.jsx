@@ -2,17 +2,14 @@ import { useState } from "react";
 import {
   CheckCircle2,
   Circle,
-  Plug,
-  Droplets,
   ChevronDown,
-  Wallet,
-  Shirt,
-  Backpack,
   AlertCircle,
   RotateCcw,
 } from "lucide-react";
 import { Highlightable } from "../context/HighlightContext";
 import { slug } from "../utils/slug";
+import { prepSectionsData } from "../data/prepChecklistData";
+import { useLang } from "../i18n/LanguageContext";
 
 const STORAGE_KEY = "trip-checklist-v1";
 
@@ -30,119 +27,72 @@ function saveChecked(obj) {
   } catch {}
 }
 
-export const sections = [
-  {
-    id: "docs",
-    title: "1. 🛂 Documentación, Dinero y Tarjetas",
-    shortTitle: "Documentación y Dinero",
-    subtitle: "Llevar siempre en el equipaje de mano / riñonera",
-    icon: Wallet,
-    color: "#bc4749",
-    notice: "Llevar siempre en el equipaje de mano / riñonera accesible en todo momento.",
-    items: [
-      { id: "passport", text: "Pasaporte original en vigor durante toda la estancia (recomendable con más de 6 meses de vigencia por política de aerolíneas o escalas)" },
-      { id: "dni", text: "DNI original" },
-      { id: "card-jrwest", text: "Tarjeta física bancaria de compra (en caso de reservar billetes en webs oficiales japonesas como JR-West o SmartEX, se exige presentar la tarjeta física de compra para retirarlos en taquilla/máquina)" },
-      { id: "revolut", text: "Tarjetas de viaje sin comisiones (Revolut / tarjetas de respaldo)" },
-      { id: "cash", text: "Dinero en efectivo (Euros para cambiar o Yenes ya cambiados; en Japón sigue siendo necesario efectivo para buses locales como Magome-Nakatsugawa, templos, monedas de taquillas y konbinis pequeños)" },
-      { id: "suica", text: "Tarjeta Suica / Pasmo (en el Apple Wallet o lista para adquirir versión física Welcome Suica en Narita)" },
-      { id: "wallet", text: "Cartera" },
-      { id: "keys", text: "Llaves de casa" },
-      { id: "insurance", text: "Seguro de viaje contratado — llevar número de póliza y teléfono de asistencia médica 24h a mano" },
-      { id: "confirmations", text: "Billetes y confirmaciones de vuelos y alojamientos (guardadas offline en el móvil o impresas)" },
-    ],
+// Exportación para compatibilidad hacia atrás (ItineraryPrintView, searchIndex)
+export const sections = prepSectionsData.map((s) => ({
+  id: s.id,
+  title: s.title.es,
+  shortTitle: s.shortTitle.es,
+  subtitle: s.subtitle.es,
+  notice: s.notice.es,
+  icon: s.icon,
+  color: s.color,
+  items: s.items.map((i) => ({ id: i.id, text: i.text.es })),
+}));
+
+const uiPrep = {
+  es: {
+    eyebrow: "Antes del viaje · Checklist",
+    title: "Maleta Japón 🇯🇵",
+    progress: (c, t, p) => `${c} de ${t} completados (${p}%) — se guarda automáticamente en tu dispositivo.`,
+    reset: "Reiniciar",
+    resetConfirm: "¿Seguro que quieres desmarcar todos los elementos de la maleta?",
+    intro: "Guía de equipaje y preparación de la maleta para viajar a Japón sin olvidar nada imprescindible. Está organizada por categorías (documentación, electrónica, botiquín, ropa y artículos de confort para vuelos largos). Marca cada elemento según lo prepares: tu progreso se guardará localmente en tu dispositivo.",
   },
-  {
-    id: "clothes",
-    title: "2. 👕 Ropa y Calzado",
-    shortTitle: "Ropa y Calzado",
-    subtitle: "Calor/humedad (~26–30°C), fresco en los Alpes y aire acondicionado fuerte",
-    icon: Shirt,
-    color: "#2e7d5b",
-    notice: "En septiembre en Japón suele hacer calor y humedad (~26–30°C), pero refresca en los Alpes y hay aire acondicionado fuerte en trenes/interiores.",
-    items: [
-      { id: "camisetas", text: "8 Camisetas (transpirables y de secado rápido)" },
-      { id: "pantalones-cortos", text: "2 Pantalones cortos" },
-      { id: "pantalones-largos", text: "2 Pantalones largos (para templos, noches frescas o trenes)" },
-      { id: "sudaderas", text: "2 Sudaderas" },
-      { id: "pijama", text: "Pijama" },
-      { id: "chubasquero", text: "Chubasquero / paraguas plegable compacto" },
-      { id: "ropa-interior", text: "Calzoncillos / Ropa interior" },
-      { id: "calcetines", text: "Calcetines (llevar suficientes y sin agujeros: en Japón te descalzas constantemente en templos, ryokans y restaurantes tradicionales)" },
-      { id: "zapatillas-deporte", text: "Zapatillas de deporte para patear la ciudad (se caminan de 20.000 a 35.000 pasos diarios)" },
-      { id: "zapatillas-repuesto", text: "Zapatillas de repuesto para andar/paseo por la ciudad corto" },
-      { id: "chanclas", text: "Chanclas" },
-      { id: "banador", text: "Bañador (por si visitáis onsens mixtos, spa o zonas acuáticas)" },
-      { id: "toalla", text: "Toalla (ligera de microfibra, importante para los templos, que hay que lavarse antes de entrar)" },
-      { id: "cinturon", text: "Cinturón" },
-      { id: "bolsa-ropa-sucia", text: "Bolsa para la ropa sucia" },
-    ],
+  en: {
+    eyebrow: "Before the trip · Checklist",
+    title: "Japan Packing List 🇯🇵",
+    progress: (c, t, p) => `${c} of ${t} packed (${p}%) — automatically saved on your device.`,
+    reset: "Reset",
+    resetConfirm: "Are you sure you want to uncheck all packing items?",
+    intro: "Complete packing checklist and luggage guide for traveling to Japan without forgetting any essentials. Organized by categories (documents, electronics, first aid, clothing, and long-flight comfort gear). Check off each item as you pack: your progress is saved locally on your device.",
   },
-  {
-    id: "tech",
-    title: "3. 🔌 Electrónica y Tecnología",
-    shortTitle: "Electrónica y Tecnología",
-    subtitle: "Baterías externas siempre en cabina, prohibidas en bodega",
-    icon: Plug,
-    color: "#1d3557",
-    notice: "Atención: Las baterías externas (Power Banks) deben ir SIEMPRE en equipaje de mano; están prohibidas en bodega.",
-    items: [
-      { id: "movil", text: "Móvil" },
-      { id: "cargador-movil", text: "Cargador del móvil + cables de repuesto" },
-      { id: "baterias-externas", text: "Baterías externas (Power Banks) (capacidad recomendada 10.000–20.000 mAh; en cabina)" },
-      { id: "adaptador", text: "Adaptador de enchufe Tipo A (clavijas planas paralelas de 2 patillas, estándar Japón/EE.UU., 100V)" },
-      { id: "esim", text: "eSIM japonesa configurada / reservada (o Pocket WiFi)" },
-      { id: "regleta", text: "Regleta / ladrón de enchufes" },
-      { id: "reloj", text: "Reloj / Smartwatch" },
-      { id: "cargador-reloj", text: "Cargador del reloj" },
-      { id: "cascos", text: "Cascos / Auriculares (ideales con cancelación de ruido para los vuelos de 11h y 7h)" },
-      { id: "ebook", text: "eBook / Lector digital" },
-    ],
+  fr: {
+    eyebrow: "Avant le départ · Checklist",
+    title: "Valise pour le Japon 🇯🇵",
+    progress: (c, t, p) => `${c} sur ${t} cochés (${p}%) — enregistré automatiquement sur votre appareil.`,
+    reset: "Réinitialiser",
+    resetConfirm: "Voulez-vous vraiment décocher tous les éléments de la valise ?",
+    intro: "Guide de bagages et liste de préparation pour votre voyage au Japon sans rien oublier d'essentiel. Organisé par catégories (documents, électronique, pharmacie, vêtements et confort pour les longs vols). Cochez chaque élément au fur et à mesure : votre progression est conservée localement.",
   },
-  {
-    id: "accessories",
-    title: "4. 👓 Accesorios y Logística de Viaje",
-    shortTitle: "Accesorios y Logística",
-    subtitle: "Mochila pequeña para excursiones y tramo alpino",
-    icon: Backpack,
-    color: "#4a5568",
-    notice: "Mochila pequeña imprescindible para la caminata Magome-Tsumago y para los 3-4 días en los Alpes sin las maletas grandes.",
-    items: [
-      { id: "gafas-ver", text: "Gafas de ver / leer" },
-      { id: "gafas-sol", text: "Gafas de sol" },
-      { id: "mochila-pequena", text: "Mochila pequeña (20–30 L)" },
-      { id: "antifaz-tapones", text: "Antifaz y tapones para los oídos (para descansar en vuelos largos de 11h/7h y trenes)" },
-    ],
+  tl: {
+    eyebrow: "Bago ang biyahe · Checklist",
+    title: "Listahan ng Bagahe sa Japan 🇯🇵",
+    progress: (c, t, p) => `${c} sa ${t} ang tapos na (${p}%) — awtomatikong nai-save sa iyong device.`,
+    reset: "I-reset",
+    resetConfirm: "Sigurado ka bang gusto mong alisin ang check sa lahat ng gamit sa bagahe?",
+    intro: "Kumpletong gabay sa pag-iimpake ng bagahe papuntang Japan upang walang makalimutang mahalagang gamit. Nakaayos ayon sa mga kategorya (dokumento, elektronika, gamot, damit at komportableng gamit sa eroplano). I-check ang bawat gamit habang nag-iimpake: naka-save ang iyong progreso.",
   },
-  {
-    id: "hygiene",
-    title: "5. 🧴 Aseo e Higiene Personal",
-    shortTitle: "Aseo e Higiene",
-    subtitle: "Líquidos en envases ≤100ml en cabina y botiquín",
-    icon: Droplets,
-    color: "#c9a227",
-    notice: "Líquidos en equipaje de mano en recipientes de máx. 100 ml dentro de bolsa transparente con cierre.",
-    items: [
-      { id: "cepillo-dientes", text: "Cepillo de dientes" },
-      { id: "cargador-cepillo", text: "Cargador del cepillo de dientes" },
-      { id: "pasta-dientes", text: "Pasta de dientes" },
-      { id: "afeitadora", text: "Afeitadora" },
-      { id: "cargador-afeitadora", text: "Cargador de la afeitadora" },
-      { id: "aparato-dental", text: "Aparato dental" },
-      { id: "desodorante", text: "Desodorante" },
-      { id: "colonia", text: "Colonia / Perfume" },
-      { id: "crema-labios", text: "Crema o bálsamo labial (para el aire seco de los aviones)" },
-      { id: "pinzas", text: "Pinzas" },
-      { id: "cortaunas", text: "Cortauñas" },
-      { id: "botiquin-medicacion", text: "Mini botiquín y medicación personal (pastillas habituales / tensión, melatonina para jet lag, analgésicos y tiritas)" },
-      { id: "repelente-mosquitos", text: "Repelente de mosquitos (para senderos, valles y templos rodeados de bosque)" },
-    ],
-  },
-];
+};
 
 export default function PrepPage() {
+  const { lang } = useLang();
   const [checked, setChecked] = useState(loadChecked);
   const [openSections, setOpenSections] = useState({});
+
+  const l = uiPrep[lang] || uiPrep.es;
+  const currentSections = prepSectionsData.map((s) => ({
+    id: s.id,
+    title: s.title[lang] || s.title.en || s.title.es,
+    shortTitle: s.shortTitle[lang] || s.shortTitle.en || s.shortTitle.es,
+    subtitle: s.subtitle[lang] || s.subtitle.en || s.subtitle.es,
+    notice: s.notice[lang] || s.notice.en || s.notice.es,
+    icon: s.icon,
+    color: s.color,
+    items: s.items.map((i) => ({
+      id: i.id,
+      text: i.text[lang] || i.text.en || i.text.es,
+    })),
+  }));
 
   function toggle(id) {
     const next = { ...checked, [id]: !checked[id] };
@@ -155,28 +105,28 @@ export default function PrepPage() {
   }
 
   function resetChecklist() {
-    if (window.confirm("¿Seguro que quieres desmarcar todos los elementos de la maleta?")) {
+    if (window.confirm(l.resetConfirm)) {
       setChecked({});
       saveChecked({});
     }
   }
 
-  const totalItems = sections.reduce((acc, s) => acc + s.items.length, 0);
+  const totalItems = currentSections.reduce((acc, s) => acc + s.items.length, 0);
   const totalChecked = Object.values(checked).filter(Boolean).length;
-  const progressPercent = Math.round((totalChecked / totalItems) * 100);
+  const progressPercent = totalItems > 0 ? Math.round((totalChecked / totalItems) * 100) : 0;
 
   return (
     <div className="px-4 pt-3 pb-12 max-w-5xl mx-auto">
       {/* Header */}
       <div className="mb-4">
-        <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>Antes del viaje · Checklist</p>
+        <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>{l.eyebrow}</p>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h2 className="font-display text-2xl" style={{ color: "var(--indigo)", margin: 0 }}>
-              Maleta Japón 🇯🇵
+              {l.title}
             </h2>
             <p style={{ fontSize: 13.5, color: "var(--ink-soft)", margin: "4px 0 0" }}>
-              {totalChecked} de {totalItems} completados ({progressPercent}%) — se guarda automáticamente en tu dispositivo.
+              {l.progress(totalChecked, totalItems, progressPercent)}
             </p>
           </div>
 
@@ -192,17 +142,17 @@ export default function PrepPage() {
                   background: "rgba(188,71,73,0.06)",
                   color: "#bc4749",
                 }}
-                title="Desmarcar todos los elementos"
+                title={l.reset}
               >
                 <RotateCcw size={13} />
-                <span>Reiniciar</span>
+                <span>{l.reset}</span>
               </button>
             </div>
           )}
         </div>
 
         <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 10, marginBottom: 0, lineHeight: 1.6 }}>
-          Guía de equipaje y preparación de la maleta para viajar a Japón sin olvidar nada imprescindible. Está organizada por categorías (documentación, electrónica, botiquín, ropa y artículos de confort para vuelos largos). Marca cada elemento según lo prepares: tu progreso se guardará localmente en tu dispositivo.
+          {l.intro}
         </p>
       </div>
 
@@ -213,58 +163,55 @@ export default function PrepPage() {
           borderRadius: 4,
           background: "var(--line)",
           overflow: "hidden",
-          marginBottom: 28,
+          marginBottom: 20,
         }}
       >
         <div
           style={{
             height: "100%",
             width: `${progressPercent}%`,
-            background: progressPercent === 100 ? "#2e7d5b" : "var(--indigo)",
-            transition: "width 0.3s ease, background 0.3s ease",
+            background: progressPercent === 100 ? "var(--forest)" : "var(--shu)",
+            transition: "width 0.3s ease",
           }}
         />
       </div>
 
-      {/* Sections Grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 460px), 1fr))",
-          gap: 20,
-          alignItems: "start",
-        }}
-      >
-        {sections.map((section) => {
+      {/* Sections Accordion */}
+      <div className="space-y-3">
+        {currentSections.map((section) => {
+          const isOpen = openSections[section.id] !== false; // Default open
+          const sectionChecked = section.items.filter((item) => checked[item.id]).length;
+          const isComplete = sectionChecked === section.items.length && section.items.length > 0;
           const Icon = section.icon;
-          const sectionChecked = section.items.filter((i) => checked[i.id]).length;
-          const isOpen = Boolean(openSections[section.id]);
-          const isComplete = sectionChecked === section.items.length;
-          const headerBg = section.color === "#c9a227" ? "#8a6d1a" : section.color;
+
+          const headerBg = isComplete
+            ? "linear-gradient(135deg, #2e7d5b 0%, #1e5a40 100%)"
+            : section.color;
 
           return (
             <div
               key={section.id}
-              className="rounded-2xl border overflow-hidden transition-shadow"
+              className="rounded-2xl border overflow-hidden shadow-xs"
               style={{
-                borderColor: isComplete ? "rgba(46,125,91,0.3)" : "var(--line)",
+                borderColor: "var(--line)",
                 background: "var(--paper-raised)",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
               }}
             >
               {/* Section Header Button */}
               <button
                 type="button"
                 onClick={() => toggleSection(section.id)}
-                className="flex items-center gap-3 px-5 py-3.5 w-full text-left border-none cursor-pointer"
-                style={{ background: headerBg }}
+                className="w-full flex items-center gap-3 p-4 sm:p-5 text-left border-none cursor-pointer transition-opacity"
+                style={{
+                  background: headerBg,
+                }}
               >
                 <div
                   style={{
                     width: 36,
                     height: 36,
                     borderRadius: 10,
-                    background: "rgba(255,255,255,0.18)",
+                    background: "rgba(255,255,255,0.2)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",

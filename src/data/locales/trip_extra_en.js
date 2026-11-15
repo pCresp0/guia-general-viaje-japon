@@ -19,18 +19,18 @@ export const tripMeta = {
     features: [
       {
         icon: "📡",
-        title: "100% Offline by Design",
-        text: "This web application was designed to <strong>never rely on internet during the trip</strong>. On bullet trains, in rural areas, or during eSIM issues, the app keeps running 100%. It uses a client-side <strong>Single Source of Truth (SSOT)</strong> architecture, packaged as a PWA with Workbox Service Worker."
+        title: "Offline-First Architecture (PWA)",
+        text: "This web application was designed with Single Source of Truth (SSOT) architecture and a Workbox Service Worker so you can access the full itinerary, transit guides, hotels, budget, and notes completely offline. External features (such as live weather API or updated currency rates) sync automatically when online and keep a local cache."
       },
       {
         icon: "🗓️",
         title: "Dual Itinerary (Detailed & Quick View)",
-        text: "Each of the 15 trip days features two modes: <strong>Full Detail</strong> (with timetables, tips, alerts, and lore) and <strong>Quick View</strong> (a visual metro-style timeline with essential stops and times), plus direct map links for each day."
+        text: "Each of the 16 trip days (Day 0 to 15) features two modes: <strong>Full Detail</strong> (with timetables, tips, alerts, and lore) and <strong>Quick View</strong> (a visual metro-style timeline with essential stops and times), plus direct map links for each day."
       },
       {
         icon: "🎫",
-        title: "Transit Tickets & Interactive QRs",
-        text: "Faithful digital passes for booked trains and buses (Shinkansen Hikari & Nozomi, Thunderbird, Shinano, Nohi Bus) with cars, reserved seats, official QR codes, and the Visit Japan Web QR integrated on Day 1."
+        title: "Transit Guides & Official Ticketing",
+        text: "Practical transit sheets (Nozomi Shinkansen, Thunderbird, Shinano, Nohi Bus) with timetables, benchmark prices per person, official booking methods (Smart EX / IC Card / JR ticket machines), and luggage regulations."
       },
       {
         icon: "📜",

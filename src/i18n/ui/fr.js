@@ -337,7 +337,7 @@ export default {
   "home.viewFlights": "Voir les vols ↗",
 
   "nav.desc.inicio": "Accueil, résumé de l'itinéraire et guide de référence",
-  "nav.desc.itinerario": "Programme détaillé des 15 jours, heure par heure, et vue métro",
+  "nav.desc.itinerario": "Programme détaillé des 16 jours (Jour 0 à 15), heure par heure, et vue métro",
   "nav.desc.calendario": "Vue mensuelle de septembre avec étapes clés et hébergements",
   "nav.desc.vuelos": "Horaires, escales Qatar Airways et détails des vols aller-retour",
   "nav.desc.hoteles": "Check-in/out, adresses en japonais pour les taxis et liens Booking",

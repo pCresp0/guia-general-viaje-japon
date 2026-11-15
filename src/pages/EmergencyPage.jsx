@@ -64,6 +64,121 @@ export const embassy = {
   },
 };
 
+const emergencyLocales = {
+  es: {
+    eyebrow: "Por si acaso",
+    titleSuffix: "& Seguro de Viaje",
+    mustHave: "Imprescindible para viajar",
+    heymondoSubtitle: "Heymondo · Cobertura Médica Internacional",
+    insuranceTitle: "Seguro de Viaje Recomendado",
+    insuranceBannerSub: "Asistencia médica hasta 5.000.000 €, repatriación y atención en español 24/7",
+    assistancePhone: "Asistencia 24h",
+    officialWeb: "Web oficial Heymondo ↗",
+    whyTitle: "💡 ¿Por qué es imprescindible viajar con un buen seguro a Japón?",
+    whyBody: "El sistema sanitario japonés es excelente y de primer nivel, pero la atención para visitantes extranjeros es completamente privada y sus costes son extremadamente elevados. Una consulta de urgencia estándar puede costar cientos de euros, y un ingreso hospitalario o intervención quirúrgica supera con facilidad las decenas de miles de euros. Contratar una póliza internacional amplia (con al menos 1.000.000 € a 5.000.000 € en coberturas médicas) te garantiza atención directa sin adelantar dinero y soporte médico en español las 24 horas del día.",
+    coveragesTitle: "Coberturas de la Póliza",
+    viewMore: "Ver todas las coberturas",
+    viewLess: "Ver menos",
+    airhelpTitle: "Servicio AirHelp Plus Incluido",
+    airhelpBadge: "Hasta 600 € / pasajero",
+    airhelpDesc: "Reclamación de vuelos ante demoras >3h, cancelaciones o pérdidas de conexión en colaboración con Heymondo.",
+    airhelpAction: "Reclamar Vuelo AirHelp ↗",
+    appTitle: "App Heymondo (Asistencia 24h)",
+    appDesc: "Chat médico y videoconsulta 24h, llamada de asistencia gratuita por internet sin coste de roaming y gestión de incidencias.",
+    claimsTitle: "Gestión de Reembolsos",
+    claimsDesc: "Portal online para solicitar reembolsos de gastos médicos o incidencias autorizadas previamente.",
+    checkPolicies: "Consultar pólizas y coberturas en Heymondo.es ↗",
+    jpEmergencyTitle: "Números de emergencia en Japón",
+    embassyTitle: "Embajada de España en Tokio",
+    generalPhone: "Teléfono general",
+    emergency24h: "Emergencia 24h",
+  },
+  en: {
+    eyebrow: "Just in case",
+    titleSuffix: "& Travel Insurance",
+    mustHave: "Essential for travel",
+    heymondoSubtitle: "Heymondo · International Medical Coverage",
+    insuranceTitle: "Recommended Travel Insurance",
+    insuranceBannerSub: "Medical assistance up to €5,000,000, repatriation, and 24/7 support",
+    assistancePhone: "24/7 Assistance",
+    officialWeb: "Official Heymondo Site ↗",
+    whyTitle: "💡 Why is travel insurance essential in Japan?",
+    whyBody: "Japan's healthcare system is world-class, but medical care for foreign visitors is fully private and out-of-pocket costs are exceptionally high. A standard emergency consultation can cost hundreds of euros, while hospital admissions or surgery easily reach tens of thousands. Having comprehensive travel insurance (with €1,000,000 to €5,000,000 in medical coverage) ensures direct billing without paying out of pocket and 24/7 multilingual support.",
+    coveragesTitle: "Policy Coverages",
+    viewMore: "View all coverages",
+    viewLess: "View less",
+    airhelpTitle: "AirHelp Plus Included",
+    airhelpBadge: "Up to €600 / traveler",
+    airhelpDesc: "Automatic flight delay (>3h), cancellation, and missed connection compensation claims via Heymondo.",
+    airhelpAction: "Claim Flight on AirHelp ↗",
+    appTitle: "Heymondo App (24/7 Assistance)",
+    appDesc: "24/7 medical chat and video consultation, free VoIP assistance calls without roaming charges, and claim tracking.",
+    claimsTitle: "Claims & Reimbursements",
+    claimsDesc: "Online portal to request reimbursement for authorized emergency medical expenses.",
+    checkPolicies: "Check policies & coverage on Heymondo ↗",
+    jpEmergencyTitle: "Emergency Numbers in Japan",
+    embassyTitle: "Embassy of Spain in Tokyo",
+    generalPhone: "General phone",
+    emergency24h: "24/7 Emergency",
+  },
+  fr: {
+    eyebrow: "Au cas où",
+    titleSuffix: "& Assurance Voyage",
+    mustHave: "Indispensable en voyage",
+    heymondoSubtitle: "Heymondo · Couverture Médicale Internationale",
+    insuranceTitle: "Assurance Voyage Recommandée",
+    insuranceBannerSub: "Assistance médicale jusqu'à 5 000 000 €, rapatriement et support 24h/24",
+    assistancePhone: "Assistance 24h/24",
+    officialWeb: "Site officiel Heymondo ↗",
+    whyTitle: "💡 Pourquoi une assurance voyage est-elle indispensable au Japon ?",
+    whyBody: "Le système de santé japonais est remarquable, mais les soins pour les visiteurs étrangers sont privés et extrêmement onéreux. Une simple consultation d'urgence peut coûter des centaines d'euros, et une hospitalisation dépasse facilement les dizaines de milliers d'euros. Souscrire une assurance voyage étendue garantit une prise en charge directe sans avance de frais et une assistance médicale 24h/24.",
+    coveragesTitle: "Garanties du contrat",
+    viewMore: "Voir toutes les garanties",
+    viewLess: "Voir moins",
+    airhelpTitle: "Service AirHelp Plus Inclus",
+    airhelpBadge: "Jusqu'à 600 € / voyageur",
+    airhelpDesc: "Indemnisation pour retards de vol (>3h), annulations ou correspondances manquées en partenariat avec Heymondo.",
+    airhelpAction: "Réclamer un vol AirHelp ↗",
+    appTitle: "Application Heymondo (Assistance 24h/24)",
+    appDesc: "Chat médical et téléconsultation 24h/24, appels d'assistance gratuits via Internet sans frais d'itinérance.",
+    claimsTitle: "Gestion des remboursements",
+    claimsDesc: "Portail en ligne pour vos demandes de remboursement de frais médicaux autorisés.",
+    checkPolicies: "Consulter les garanties sur Heymondo ↗",
+    jpEmergencyTitle: "Numéros d'urgence au Japon",
+    embassyTitle: "Ambassade d'Espagne à Tokyo",
+    generalPhone: "Standard téléphonique",
+    emergency24h: "Urgences 24h/24",
+  },
+  tl: {
+    eyebrow: "Sakaling kailanganin",
+    titleSuffix: "& Travel Insurance",
+    mustHave: "Mahalaga sa paglalakbay",
+    heymondoSubtitle: "Heymondo · Internasyonal na Serbisyong Medikal",
+    insuranceTitle: "Inirerekomendang Travel Insurance",
+    insuranceBannerSub: "Tulong medikal hanggang 5,000,000 €, repatriation at 24/7 support",
+    assistancePhone: "Tulong 24/7",
+    officialWeb: "Opisyal na Website ng Heymondo ↗",
+    whyTitle: "💡 Bakit kailangan ang magandang insurance sa Japan?",
+    whyBody: "Napakaganda ng sistemang medikal ng Japan, ngunit ang serbisyo para sa mga banyagang turista ay pribado at napakamahal. Ang simpleng emergency checkup ay maaaring umabot sa daan-daang euro, at ang pagkakaospital ay mabilis na aabot sa libu-libong euro. Ang pagkakaroon ng malawak na travel insurance ay nagbibigay ng direktang bayad sa ospital nang hindi naglalabas ng sariling pera at may 24/7 na suporta.",
+    coveragesTitle: "Mga Saklaw ng Seguro",
+    viewMore: "Tingnan ang lahat ng saklaw",
+    viewLess: "Tingnan nang kaunti",
+    airhelpTitle: "Kasama ang AirHelp Plus",
+    airhelpBadge: "Hanggang 600 € / pasahero",
+    airhelpDesc: "Kompensasyon sa naantalang flight (>3h), kanselasyon, o na-miss na koneksyon.",
+    airhelpAction: "Mag-claim sa AirHelp ↗",
+    appTitle: "Heymondo App (24/7 Assistance)",
+    appDesc: "24/7 medical chat at video consultation, libreng tawag sa internet nang walang roaming charges.",
+    claimsTitle: "Reimbursement ng Gastos",
+    claimsDesc: "Online portal para sa pag-claim ng authorized medical reimbursements.",
+    checkPolicies: "Tingnan ang mga coverage sa Heymondo ↗",
+    jpEmergencyTitle: "Mga Emergency Number sa Japan",
+    embassyTitle: "Embahada ng Espanya sa Tokyo",
+    generalPhone: "Pangkalahatang telepono",
+    emergency24h: "Emergency 24 oras",
+  },
+};
+
 export default function EmergencyPage() {
   const { lang } = useLang();
   const t = useT();
@@ -75,15 +190,16 @@ export default function EmergencyPage() {
   }
 
   const getLabel = (obj) => (typeof obj === "object" ? obj[lang] || obj.en || obj.es : obj);
+  const L = emergencyLocales[lang] || emergencyLocales.es;
 
   return (
     <div className="px-4 pt-3 pb-12">
       <div className="mb-6">
         <p className="eyebrow mb-1" style={{ color: "var(--shu)" }}>
-          {t("emergency.eyebrow") || "Por si acaso"}
+          {t("emergency.eyebrow") || L.eyebrow}
         </p>
         <h2 className="font-display text-2xl" style={{ color: "var(--indigo)" }}>
-          {t("emergency.title") || "Emergencias"} & Seguro de Viaje
+          {t("emergency.title") || "Emergencias"} {L.titleSuffix}
         </h2>
         <p style={{ fontSize: 13.5, color: "var(--ink)", opacity: 0.85, marginTop: 8, lineHeight: 1.6 }}>
           {lang === "en"
@@ -121,17 +237,17 @@ export default function EmergencyPage() {
                 <div className="min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="bg-emerald-300 text-emerald-950 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                      Imprescindible para viajar
+                      {L.mustHave}
                     </span>
                     <span className="text-xs text-emerald-100 font-medium">
-                      Heymondo · Cobertura Médica Internacional
+                      {L.heymondoSubtitle}
                     </span>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold mt-1 tracking-tight text-white font-display m-0">
-                    Seguro de Viaje Recomendado
+                    {L.insuranceTitle}
                   </h3>
                   <p className="text-xs text-emerald-100 mt-0.5 mb-0">
-                    Asistencia médica hasta 5.000.000 €, repatriación y atención en español 24/7
+                    {L.insuranceBannerSub}
                   </p>
                 </div>
               </div>
@@ -152,7 +268,7 @@ export default function EmergencyPage() {
                 style={{ textDecoration: "none", background: "var(--forest)", color: "white" }}
               >
                 <Phone size={16} />
-                Asistencia 24h: {heymondoInsurance.assistancePhone}
+                {L.assistancePhone}: {heymondoInsurance.assistancePhone}
               </a>
               <a
                 href={heymondoInsurance.portalUrl}
@@ -161,7 +277,7 @@ export default function EmergencyPage() {
                 style={{ textDecoration: "none", background: "var(--indigo)", color: "white" }}
               >
                 <ExternalLink size={16} />
-                Web oficial Heymondo ↗
+                {L.officialWeb}
               </a>
             </div>
 
@@ -170,10 +286,10 @@ export default function EmergencyPage() {
               style={{ background: "rgba(45, 106, 79, 0.06)", borderColor: "rgba(45, 106, 79, 0.25)" }}
             >
               <p style={{ fontSize: 13, fontWeight: 700, color: "var(--forest)", margin: "0 0 6px" }}>
-                💡 ¿Por qué es imprescindible viajar con un buen seguro a Japón?
+                {L.whyTitle}
               </p>
               <p style={{ fontSize: 12.5, color: "var(--ink)", margin: 0, lineHeight: 1.6 }}>
-                El sistema sanitario japonés es excelente y de primer nivel, pero la atención para visitantes extranjeros es completamente privada y sus costes son extremadamente elevados. Una consulta de urgencia estándar puede costar cientos de euros, y un ingreso hospitalario o intervención quirúrgica supera con facilidad las decenas de miles de euros. Contratar una póliza internacional amplia (con al menos 1.000.000 € a 5.000.000 € en coberturas médicas) te garantiza atención directa sin adelantar dinero y soporte médico en español las 24 horas del día.
+                {L.whyBody}
               </p>
             </div>
 
@@ -183,16 +299,16 @@ export default function EmergencyPage() {
                 <div className="flex items-center gap-2">
                   <HeartHandshake size={16} style={{ color: "var(--forest)" }} />
                   <p className="eyebrow" style={{ margin: 0, color: "var(--ink-soft)" }}>
-                    Coberturas de la Póliza
+                    {L.coveragesTitle}
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={() => setShowAllCoverages(!showAllCoverages)}
-                  className="text-xs font-bold flex items-center gap-1 hover:underline"
+                  className="text-xs font-bold flex items-center gap-1 hover:underline cursor-pointer border-none bg-transparent"
                   style={{ color: "var(--forest)" }}
                 >
-                  {showAllCoverages ? "Ver menos" : "Ver todas las coberturas"}
+                  {showAllCoverages ? L.viewLess : L.viewMore}
                   {showAllCoverages ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                 </button>
               </div>
@@ -211,7 +327,7 @@ export default function EmergencyPage() {
                     }}
                   >
                     <p style={{ fontSize: 12.5, color: "var(--ink)", fontWeight: 500, lineHeight: 1.4, margin: 0 }}>
-                      {cov.label}
+                      {getLabel(cov.label)}
                     </p>
                     <p
                       className="font-display"
@@ -223,7 +339,7 @@ export default function EmergencyPage() {
                         marginBottom: 0,
                       }}
                     >
-                      {cov.amount}
+                      {getLabel(cov.amount)}
                     </p>
                   </div>
                 ))}
@@ -245,17 +361,17 @@ export default function EmergencyPage() {
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
                     <h4 style={{ fontSize: 13.5, fontWeight: 700, color: "var(--indigo)", margin: 0 }}>
-                      Servicio AirHelp Plus Incluido
+                      {L.airhelpTitle}
                     </h4>
                     <span
                       className="text-[10px] font-bold px-2 py-0.5 rounded-full"
                       style={{ background: "rgba(29, 53, 87, 0.12)", color: "var(--indigo)" }}
                     >
-                      Hasta 600 € / pasajero
+                      {L.airhelpBadge}
                     </span>
                   </div>
                   <p style={{ fontSize: 12, color: "var(--ink-soft)", marginTop: 2, marginBottom: 0, lineHeight: 1.5 }}>
-                    Reclamación de vuelos ante demoras &gt;3h, cancelaciones o pérdidas de conexión en colaboración con Heymondo.
+                    {L.airhelpDesc}
                   </p>
                 </div>
               </div>
@@ -266,7 +382,7 @@ export default function EmergencyPage() {
                 className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white shrink-0 shadow-sm"
                 style={{ background: "var(--indigo)", textDecoration: "none" }}
               >
-                Reclamar Vuelo AirHelp ↗
+                {L.airhelpAction}
               </a>
             </div>
 
@@ -278,10 +394,10 @@ export default function EmergencyPage() {
               >
                 <h5 style={{ fontSize: 12, fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }} className="flex items-center gap-1.5">
                   <Smartphone size={15} style={{ color: "var(--forest)" }} />
-                  App Heymondo (Asistencia 24h)
+                  {L.appTitle}
                 </h5>
                 <p style={{ fontSize: 12, color: "var(--ink-soft)", margin: 0, lineHeight: 1.5 }}>
-                  Chat médico y videoconsulta 24h, llamada de asistencia gratuita por internet sin coste de roaming y gestión de incidencias.
+                  {L.appDesc}
                 </p>
                 <div className="flex gap-2 pt-1">
                   <a
@@ -309,10 +425,10 @@ export default function EmergencyPage() {
               >
                 <h5 style={{ fontSize: 12, fontWeight: 700, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }} className="flex items-center gap-1.5">
                   <FileText size={15} style={{ color: "var(--forest)" }} />
-                  Gestión de Reembolsos
+                  {L.claimsTitle}
                 </h5>
                 <p style={{ fontSize: 12, color: "var(--ink-soft)", margin: 0, lineHeight: 1.5 }}>
-                  Portal online para solicitar reembolsos de gastos médicos o incidencias autorizadas previamente. Teléfono: <strong style={{ color: "var(--ink)" }}>+34 900 00 00 00</strong>.
+                  {L.claimsDesc} Teléfono: <strong style={{ color: "var(--ink)" }}>{heymondoInsurance.assistancePhone}</strong>.
                 </p>
                 <div className="pt-1">
                   <a
@@ -336,7 +452,7 @@ export default function EmergencyPage() {
                 style={{ background: "var(--forest)", textDecoration: "none" }}
               >
                 <ExternalLink size={14} />
-                Consultar pólizas y coberturas en Heymondo.es ↗
+                {L.checkPolicies}
               </a>
             </div>
 
@@ -353,7 +469,7 @@ export default function EmergencyPage() {
           className="w-full flex items-center gap-2 px-4 py-3.5 border-none cursor-pointer bg-transparent text-left"
         >
           <ShieldAlert size={16} style={{ color: "var(--shu)" }} />
-          <p className="eyebrow flex-1 m-0" style={{ color: "var(--ink-soft)" }}>Números de emergencia en Japón</p>
+          <p className="eyebrow flex-1 m-0" style={{ color: "var(--ink-soft)" }}>{L.jpEmergencyTitle}</p>
           <span className="text-xs font-bold mr-1" style={{ color: "var(--shu)" }}>110 · 119 · JNTO</span>
           <ChevronDown
             size={18}
@@ -400,7 +516,7 @@ export default function EmergencyPage() {
           className="w-full flex items-center gap-2 px-4 py-3.5 border-none cursor-pointer bg-transparent text-left"
         >
           <Building2 size={16} style={{ color: "var(--indigo)" }} />
-          <p className="eyebrow flex-1 m-0" style={{ color: "var(--ink-soft)" }}>Embajada de España en Tokio</p>
+          <p className="eyebrow flex-1 m-0" style={{ color: "var(--ink-soft)" }}>{L.embassyTitle}</p>
           <span className="text-xs font-bold mr-1 truncate" style={{ color: "var(--indigo)" }}>{embassy.emergencyPhone}</span>
           <ChevronDown
             size={18}
@@ -422,12 +538,12 @@ export default function EmergencyPage() {
             <div className="flex flex-col sm:flex-row gap-3 mt-4">
               <a href={`tel:${embassy.phone}`} className="flex-1 rounded-xl p-3"
                 style={{ background: "rgba(255,255,255,0.08)", textDecoration: "none" }}>
-                <p style={{ fontSize: 10, color: "rgba(255,255,255,0.5)", letterSpacing: "0.06em", textTransform: "uppercase" }}>Teléfono general</p>
+                <p style={{ fontSize: 10, color: "rgba(255,255,255,0.5)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{L.generalPhone}</p>
                 <p style={{ fontSize: 15, fontWeight: 700, color: "white", marginTop: 2 }}>{embassy.phone}</p>
               </a>
               <a href={`tel:${embassy.emergencyPhone}`} className="flex-1 rounded-xl p-3"
                 style={{ background: "rgba(188,71,73,0.25)", border: "1px solid rgba(188,71,73,0.5)", textDecoration: "none" }}>
-                <p style={{ fontSize: 10, color: "rgba(255,255,255,0.7)", letterSpacing: "0.06em", textTransform: "uppercase" }}>Emergencia 24h</p>
+                <p style={{ fontSize: 10, color: "rgba(255,255,255,0.7)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{L.emergency24h}</p>
                 <p style={{ fontSize: 15, fontWeight: 700, color: "white", marginTop: 2 }}>{embassy.emergencyPhone}</p>
               </a>
             </div>

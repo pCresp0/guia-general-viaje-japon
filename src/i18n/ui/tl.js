@@ -342,7 +342,7 @@ export default {
   "home.viewFlights": "Tingnan ang mga flight ↗",
 
   "nav.desc.inicio": "Cover, buod ng natapos na ruta at gabay na sanggunian",
-  "nav.desc.itinerario": "Detalyadong 15-araw na ruta, oras-oras, at visual metro view",
+  "nav.desc.itinerario": "Detalyadong 16-araw na ruta (Araw 0 hanggang 15), oras-oras, at visual metro view",
   "nav.desc.calendario": "Buwanang view ng Setyembre na may mahahalagang kaganapan at hotel",
   "nav.desc.vuelos": "Mga iskedyul, layover sa Qatar Airways at detalye ng flight",
   "nav.desc.hoteles": "Check-in/out, mga address sa wikang Hapon para sa taxi at Booking",

@@ -59,7 +59,7 @@ export default {
     {
       timing: "6 na buwan bago",
       title: "🛂 Suriin ang Pasaporte",
-      detail: "Siguraduhing may bisa pa ang iyong pasaporte nang hindi bababa sa 6 na buwan mula sa petsa ng pagpasok sa Japan. Kung malapit nang mag-expire o may sira, mag-schedule agad ng renewal nang may sapat na oras.",
+      detail: "Siguraduhing may bisa ang iyong pasaporte sa buong panahon ng pananatili sa Japan. Bagama't hindi mahigpit na humihingi ang Japan ng 6 na buwang natitirang bisa para sa maikling tourist stay, mahigpit itong inirerekomenda ng mga airline at transit countries. Kung malapit nang mag-expire o may sira, mag-schedule agad ng renewal nang may sapat na oras.",
       deadline: "6 na buwan bago ang biyahe",
     },
     {
