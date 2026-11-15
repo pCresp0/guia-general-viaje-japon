@@ -96,6 +96,9 @@ function formatQuickText(text = "") {
 
   if (!clean) return "";
 
+  // Proteger abreviaturas como "aprox." para que no sean cortadas por split(/\.\s+/)
+  clean = clean.replace(/\baprox\.\s*/gi, "aproximadamente ");
+
   let parts = clean.split(/\.\s+/);
   let title = parts[0];
   let detail = "";

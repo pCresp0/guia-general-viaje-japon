@@ -465,7 +465,7 @@ export const days = [
   {
     "title": "The Nakasendo Trail",
     "cities": "Takayama, Magome, Tsumago",
-    "summary": "We'll travel on a beautiful panoramic train and then by bus to Magome to start a gentle hiking trail through an ancient forest. We'll walk to Tsumago and come back by bus to Magome, where we'll spend the night in a rural inn.",
+    "summary": "Direct alpine bus (Nohi Bus) ride to Magome to start a gentle hiking trail along the historic Nakasendo route. Walk through cedar forests to Tsumago and return by bus to Magome for an overnight stay in a traditional rural inn.",
     "history": "The Nakasendo was one of the five great feudal routes of the Edo period connecting Kyoto with Edo (Tokyo). Magome and Tsumago operated as 'post towns' (juku) where samurai, daimyos, and merchants rested on their journeys on foot.",
     "schedule": [
       {

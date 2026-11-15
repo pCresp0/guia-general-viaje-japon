@@ -465,7 +465,7 @@ export const days = [
   {
     "title": "Ang Nakasendo Trail",
     "cities": "Takayama, Magome, Tsumago",
-    "summary": "Maglalakbay tayo sa magandang panoramic na tren at pagkatapos ay sa pamamagitan ng bus hanggang Magome para simulan ang banayad na hiking trail sa lumang gubat. Maglalakad tayo papuntang Tsumago at babalik gamit ang bus sa Magome, kung saan tayo matutulog sa isang rural na inn.",
+    "summary": "Diretsong biyahe sakay ng alpine bus (Nohi Bus) papuntang Magome para simulan ang banayad na lakad sa makasaysayang Nakasendo trail. Paglalakad sa kagubatan patungong Tsumago at pagbalik gamit ang bus sa Magome para manatili sa isang tradisyunal na inn.",
     "history": "Ang Nakasendo ay isa sa limang mahusay na ruta ng pyudal sa panahon ng Edo na kumokonekta sa Kyoto sa Edo (Tokyo). Ang Magome at Tsumago ay nagpapatakbo bilang mga 'post town' (juku) kung saan ang samurai, daimyo, at mangangalakal ay nagpapahinga sa kanilang mga paglalakbay sa paglalakad.",
     "schedule": [
       {

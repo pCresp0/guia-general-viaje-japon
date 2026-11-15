@@ -64,7 +64,7 @@ function buildSearchIndex(lang) {
       subtitle: "Portada de la guía, mapa general y primeros pasos",
       category: "Apartados",
       tab: "inicio",
-      terms: ["inicio", "home", "bienvenida", "portada", "resumen", "viaje de un vistazo", "primeros pasos", "indice", "el viaje de un vistazo", "mapa de la ruta"],
+      terms: ["inicio", "home", "start", "bienvenida", "portada", "resumen", "viaje de un vistazo", "primeros pasos", "indice", "el viaje de un vistazo", "mapa de la ruta"],
     },
     {
       id: "nav-itinerario",
@@ -72,7 +72,7 @@ function buildSearchIndex(lang) {
       subtitle: "Ruta detallada día a día con horarios y actividades",
       category: "Apartados",
       tab: "itinerario",
-      terms: ["itinerario", "planning", "ruta", "dias", "horarios", "cronograma", "visitas", "plan", "planificacion", "jornadas", "dia a dia"],
+      terms: ["itinerario", "itinerary", "planning", "schedule", "ruta", "dias", "horarios", "cronograma", "visitas", "plan", "planificacion", "jornadas", "dia a dia"],
     },
     {
       id: "nav-itinerario-hoy",
@@ -80,7 +80,7 @@ function buildSearchIndex(lang) {
       subtitle: "Plan del día en curso del viaje",
       category: "Apartados",
       tab: "itinerario",
-      terms: ["hoy", "dia actual", "dia de hoy", "today", "itinerario hoy"],
+      terms: ["hoy", "today", "dia actual", "dia de hoy", "itinerario hoy"],
     },
     {
       id: "nav-calendario",
@@ -88,7 +88,7 @@ function buildSearchIndex(lang) {
       subtitle: "Planificación global de septiembre 2026",
       category: "Apartados",
       tab: "calendario",
-      terms: ["calendario", "calendar", "fechas", "septiembre", "dias", "distribucion", "plan", "planificacion", "exportar", "ics", "google calendar", "apple calendar"],
+      terms: ["calendario", "calendar", "fechas", "dates", "septiembre", "dias", "distribucion", "plan", "planificacion", "exportar", "ics", "google calendar", "apple calendar"],
     },
     {
       id: "nav-mapa",
@@ -104,7 +104,7 @@ function buildSearchIndex(lang) {
       subtitle: "Billetes de avión, horarios y escalas (Qatar / Madrid / Narita)",
       category: "Apartados",
       tab: "vuelos",
-      terms: ["vuelos", "vuelo", "avion", "billetes avion", "qatar", "escalas", "madrid", "narita", "doha", "viaje", "qr148", "qr808", "qr809", "qr6952"],
+      terms: ["vuelos", "vuelo", "flights", "flight", "plane", "airplane", "avion", "billetes avion", "qatar", "qatar airways", "escalas", "madrid", "narita", "doha", "viaje", "qr148", "qr808", "qr809", "qr6952"],
     },
     {
       id: "nav-hoteles",
@@ -112,7 +112,7 @@ function buildSearchIndex(lang) {
       subtitle: "Alojamientos, confirmaciones, direcciones y check-in",
       category: "Apartados",
       tab: "hoteles",
-      terms: ["hoteles", "hotel", "alojamiento", "alojamientos", "ryokan", "minshuku", "reserva hotel", "booking", "check in", "check out", "viaje", "keihan", "koko hotel", "magome chaya", "torifito", "takayama ouan"],
+      terms: ["hoteles", "hotel", "hotels", "accommodation", "lodging", "alojamiento", "alojamientos", "ryokan", "minshuku", "reserva hotel", "booking", "check in", "check out", "viaje", "keihan", "koko hotel", "magome chaya", "torifito", "takayama ouan"],
     },
     {
       id: "nav-transportes",
@@ -120,7 +120,7 @@ function buildSearchIndex(lang) {
       subtitle: "Billetes, trayectos, Shinkansen, Suica y trenes",
       category: "Apartados",
       tab: "transportes",
-      terms: ["transportes", "transporte", "tren", "trenes", "shinkansen", "tren bala", "billetes", "trayectos", "jr pass", "suica", "metro", "bus", "viaje", "nozomi", "thunderbird", "shinano", "nohi bus"],
+      terms: ["transportes", "transporte", "transport", "transports", "transit", "train", "trains", "tren", "trenes", "shinkansen", "tren bala", "bullet train", "billetes", "trayectos", "jr pass", "suica", "metro", "bus", "viaje", "nozomi", "thunderbird", "shinano", "nohi bus"],
     },
     {
       id: "nav-lugares",
@@ -128,7 +128,7 @@ function buildSearchIndex(lang) {
       subtitle: "Guía de templos, barrios, miradores y atracciones",
       category: "Apartados",
       tab: "lugares",
-      terms: ["lugares", "que ver", "atracciones", "templos", "santuarios", "barrios", "visitas", "turismo", "monumentos", "guia", "fushimi inari", "kinkaku-ji", "senso-ji"],
+      terms: ["lugares", "places", "attractions", "sightseeing", "que ver", "atracciones", "templos", "santuarios", "barrios", "visitas", "turismo", "monumentos", "guia", "fushimi inari", "kinkaku-ji", "senso-ji"],
     },
     {
       id: "nav-comidas",
@@ -136,7 +136,7 @@ function buildSearchIndex(lang) {
       subtitle: "Guía gastronómica, restaurantes y qué comprar en cada konbini/market",
       category: "Apartados",
       tab: "comidas",
-      terms: ["comidas", "comida", "gastronomia", "platos", "restaurantes", "que comer", "ramen", "sushi", "dulces", "guia", "konbini", "konbinis", "supermercado", "supermercados", "market", "markets", "7-eleven", "familymart", "lawson", "ministop", "don quijote"],
+      terms: ["comidas", "comida", "food", "foods", "restaurants", "dining", "gastronomia", "platos", "restaurantes", "que comer", "ramen", "sushi", "dulces", "guia", "konbini", "konbinis", "supermercado", "supermercados", "market", "markets", "7-eleven", "familymart", "lawson", "ministop", "don quijote"],
     },
     {
       id: "nav-clima",
@@ -144,7 +144,7 @@ function buildSearchIndex(lang) {
       subtitle: "Previsión meteorológica en vivo y webcams del Monte Fuji",
       category: "Apartados",
       tab: "clima",
-      terms: ["clima", "tiempo", "temperatura", "temperaturas", "lluvia", "prevision", "meteorologia", "monte fuji", "webcam", "guia", "camaras"],
+      terms: ["clima", "weather", "forecast", "climate", "tiempo", "temperatura", "temperaturas", "lluvia", "prevision", "meteorologia", "monte fuji", "webcam", "guia", "camaras"],
     },
     {
       id: "nav-historia",
@@ -152,7 +152,7 @@ function buildSearchIndex(lang) {
       subtitle: "Periodos históricos, samuráis, templos y cultura",
       category: "Apartados",
       tab: "historia",
-      terms: ["historia", "cultura", "samurais", "periodos", "edo", "meiji", "shogun", "historia japon", "guia", "libros", "podcasts", "documentales"],
+      terms: ["historia", "history", "cultura", "culture", "samurais", "periodos", "edo", "meiji", "shogun", "historia japon", "guia", "libros", "podcasts", "documentales"],
     },
     {
       id: "nav-frases",
@@ -160,7 +160,7 @@ function buildSearchIndex(lang) {
       subtitle: "Diccionario de japonés básico y normas de etiqueta",
       category: "Apartados",
       tab: "frases",
-      terms: ["frases", "idioma", "japones", "vocabulario", "diccionario", "palabras", "etiqueta", "modales", "expresiones", "guia", "costumbres"],
+      terms: ["frases", "phrases", "language", "japanese", "etiquette", "idioma", "japones", "vocabulario", "diccionario", "palabras", "etiqueta", "modales", "expresiones", "guia", "costumbres"],
     },
     {
       id: "nav-pendientes",
@@ -168,7 +168,7 @@ function buildSearchIndex(lang) {
       subtitle: "Checklist de tareas antes y durante el viaje",
       category: "Apartados",
       tab: "pendientes",
-      terms: ["pendientes", "cosas pendientes", "checklist", "tareas", "antes de viajar", "durante el viaje", "to do", "por hacer"],
+      terms: ["pendientes", "cosas pendientes", "checklist", "tasks", "pending", "tareas", "antes de viajar", "durante el viaje", "to do", "por hacer"],
     },
     {
       id: "nav-preparativos",
@@ -176,7 +176,7 @@ function buildSearchIndex(lang) {
       subtitle: "Maleta, enchufes, seguro de viaje, eSIM y tarjetas",
       category: "Apartados",
       tab: "preparativos",
-      terms: ["preparativos", "maleta", "equipaje", "esim", "internet", "seguro", "enchufes", "adaptador", "dinero", "tarjetas", "preparacion", "ropa"],
+      terms: ["preparativos", "prep", "preparation", "packing", "maleta", "equipaje", "luggage", "esim", "internet", "seguro", "enchufes", "adaptador", "dinero", "tarjetas", "preparacion", "ropa"],
     },
     {
       id: "nav-presupuesto",
@@ -184,7 +184,7 @@ function buildSearchIndex(lang) {
       subtitle: "Desglose de gastos, conversor y control de costes",
       category: "Apartados",
       tab: "presupuesto",
-      terms: ["presupuesto", "gastos", "dinero", "costes", "precios", "euros", "yenes", "cuanto cuesta", "pagos", "preparacion", "balance", "ahorro"],
+      terms: ["presupuesto", "budget", "expenses", "cost", "costs", "price", "gastos", "dinero", "costes", "precios", "euros", "yenes", "cuanto cuesta", "pagos", "preparacion", "balance", "ahorro", "jr pass"],
     },
     {
       id: "nav-herramientas",
@@ -192,7 +192,7 @@ function buildSearchIndex(lang) {
       subtitle: "Conversor de divisas, propinas y calculadora horaria",
       category: "Apartados",
       tab: "herramientas",
-      terms: ["herramientas", "utilidades", "conversor", "calculadora", "divisas", "cambio divisa", "hora", "horaria", "reloj", "propinas", "util"],
+      terms: ["herramientas", "tools", "utilities", "conversor", "calculadora", "divisas", "currency", "cambio divisa", "exchange rate", "hora", "horaria", "reloj", "propinas", "tallas", "sizes", "util"],
     },
     {
       id: "nav-emergencias",
@@ -200,7 +200,7 @@ function buildSearchIndex(lang) {
       subtitle: "Teléfonos de urgencia, embajada, hospitales y policía",
       category: "Apartados",
       tab: "emergencias",
-      terms: ["emergencias", "urgencias", "embajada", "policia", "ambulancia", "medico", "hospital", "seguro emergencia", "110", "119", "util", "utilidades", "heymondo"],
+      terms: ["emergencias", "emergency", "emergencies", "urgencias", "embajada", "embassy", "policia", "police", "ambulancia", "ambulance", "medico", "hospital", "seguro emergencia", "110", "119", "util", "utilidades", "heymondo"],
     },
     {
       id: "nav-frikadas",
@@ -208,7 +208,7 @@ function buildSearchIndex(lang) {
       subtitle: "Tiendas frikis, anime, Pokémon, Ghibli, Akihabara y Nintendo",
       category: "Apartados",
       tab: "frikadas",
-      terms: ["frikadas", "anime", "manga", "pokemon", "ghibli", "akihabara", "nintendo", "videojuegos", "compras", "otaku", "nakano broadway"],
+      terms: ["frikadas", "pop culture", "geek", "anime", "manga", "pokemon", "ghibli", "akihabara", "nintendo", "videojuegos", "compras", "otaku", "nakano broadway"],
     },
     {
       id: "nav-about",
@@ -216,7 +216,7 @@ function buildSearchIndex(lang) {
       subtitle: "Información técnica, créditos y soporte PWA",
       category: "Apartados",
       tab: "about",
-      terms: ["sobre la web", "about", "creditos", "info app", "version", "pwa", "vibecoding", "antigravity", "cursor", "copilot"],
+      terms: ["sobre la web", "about", "creditos", "credits", "info app", "version", "pwa", "vibecoding", "antigravity", "cursor", "copilot"],
     },
   ];
 

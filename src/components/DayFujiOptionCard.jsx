@@ -4,8 +4,8 @@ import { gygFujiActivity, visibilityTools } from "../data/fujiBookings";
 import googleMapsIcon from "../assets/icons/google-maps.png";
 
 export default function DayFujiOptionCard({ dayNum }) {
-  if (dayNum !== 10) return null;
   const [open, setOpen] = useState(false);
+  if (dayNum !== 10) return null;
 
   return (
     <div
@@ -16,9 +16,10 @@ export default function DayFujiOptionCard({ dayNum }) {
       }}
     >
       {/* Header Bar */}
-      <div
+      <button
+        type="button"
         onClick={() => setOpen(!open)}
-        className="px-4 py-3 cursor-pointer flex items-center justify-between gap-3 text-white transition-opacity hover:opacity-95"
+        className="w-full text-left px-4 py-3 cursor-pointer flex items-center justify-between gap-3 text-white transition-opacity hover:opacity-95 border-none"
         style={{
           background: "linear-gradient(135deg, #0284c7 0%, #0369a1 60%, #075985 100%)",
         }}
@@ -51,7 +52,7 @@ export default function DayFujiOptionCard({ dayNum }) {
             {open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
           </button>
         </div>
-      </div>
+      </button>
 
       {/* Quick Summary Strip (Always Visible) */}
       <div

@@ -758,7 +758,7 @@ export default function ItineraryPrintView({ days }) {
           Trayectos cubiertos por el Pass: ~{formatJpyEur(coveredJpy, coveredEur)}/persona
           {" vs "}Pass 7d {formatJpyEur(PASS_7_JPY, PASS_7_EUR)}
           {" / "}Pass 14d {formatJpyEur(PASS_14_JPY, PASS_14_EUR)}.
-          Agencia jrpass.com: 284€ / 455€ / 568€. Tipo cambio ~{YEN_PER_EUR} ¥/€. Nozomi no incluido. Un Pass de 7 días no cubre a la vez N'EX (día 1), Alpes y Fuji (día 14).
+          Agencia jrpass.com: 284€ / 455€ / 568€. Tipo cambio ~{YEN_PER_EUR} ¥/€. Nozomi no incluido. Un Pass de 7 días no cubre a la vez N'EX (día 1), Alpes (días 6–9) y Fuji (día 10).
         </div>
       </Appendix>
 

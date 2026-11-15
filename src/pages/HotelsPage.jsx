@@ -85,53 +85,60 @@ function HotelCard({ stay, index, anchorId, defaultExpanded = false, isTodayHote
     >
       {/* Header */}
       <div 
-        className="px-5 py-4 cursor-pointer transition-colors hover:opacity-95" 
+        className="px-5 py-4 transition-colors flex items-start justify-between gap-3" 
         style={{ background: headerBg, color: "white" }}
-        onClick={() => setExpanded(!expanded)}
       >
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <div className="flex items-center gap-2 mb-0.5">
-              <p style={{ fontSize: 11, opacity: 0.8, margin: 0, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-                Hotel {index + 1} · {stay.city}
-              </p>
-              {isTodayHotel && (
-                <span 
-                  className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full" 
-                  style={{ background: "rgba(232, 183, 74, 0.35)", color: "#fef08a", border: "1px solid rgba(254, 240, 138, 0.5)" }}
-                >
-                  ⭐ Tu hotel de hoy
-                </span>
-              )}
-            </div>
-            <h3 className="font-display text-xl mt-0.5 leading-tight" style={{ margin: 0 }}>
-              {hotel.name}
-            </h3>
-            <div className="flex items-center gap-2 mt-1 flex-wrap">
-              <span style={{ fontSize: 12.5, opacity: 0.9 }}>
-                {stay.nights}
+        <button
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+          className="flex-1 text-left bg-transparent border-none p-0 m-0 text-white cursor-pointer focus:outline-none focus-visible:underline"
+          aria-expanded={expanded}
+        >
+          <div className="flex items-center gap-2 mb-0.5">
+            <p style={{ fontSize: 11, opacity: 0.8, margin: 0, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+              Hotel {index + 1} · {stay.city}
+            </p>
+            {isTodayHotel && (
+              <span 
+                className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full" 
+                style={{ background: "rgba(232, 183, 74, 0.35)", color: "#fef08a", border: "1px solid rgba(254, 240, 138, 0.5)" }}
+              >
+                ⭐ Tu hotel de hoy
               </span>
-              {!hotel.paid && (
-                <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(245,158,11,0.35)", color: "#fef3c7", border: "1px solid rgba(252,211,77,0.4)" }}>
-                  ⚠️ Pago en efectivo en hotel
-                </span>
-              )}
-            </div>
+            )}
           </div>
-          <div className="flex flex-col items-end gap-3 flex-shrink-0">
-            <a
-              href={mapsUrl(mapQuery)}
-              target="_blank" rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold rounded-full px-3 py-1.5 transition-colors"
-              style={{ background: "rgba(255,255,255,0.2)", color: "white", textDecoration: "none" }}
-            >
-              <img src={googleMapsIcon} alt="" width={13} height={13} /> Maps
-            </a>
-            <div className="p-1 rounded-full" style={{ background: "rgba(255,255,255,0.15)" }}>
-              {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-            </div>
+          <h3 className="font-display text-xl mt-0.5 leading-tight" style={{ margin: 0 }}>
+            {hotel.name}
+          </h3>
+          <div className="flex items-center gap-2 mt-1 flex-wrap">
+            <span style={{ fontSize: 12.5, opacity: 0.9 }}>
+              {stay.nights}
+            </span>
+            {!hotel.paid && (
+              <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(245,158,11,0.35)", color: "#fef3c7", border: "1px solid rgba(252,211,77,0.4)" }}>
+                ⚠️ Pago en efectivo en hotel
+              </span>
+            )}
           </div>
+        </button>
+        <div className="flex flex-col items-end gap-3 flex-shrink-0">
+          <a
+            href={mapsUrl(mapQuery)}
+            target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold rounded-full px-3 py-1.5 transition-colors hover:bg-white/30"
+            style={{ background: "rgba(255,255,255,0.2)", color: "white", textDecoration: "none" }}
+          >
+            <img src={googleMapsIcon} alt="" width={13} height={13} /> Maps
+          </a>
+          <button
+            type="button"
+            onClick={() => setExpanded(!expanded)}
+            aria-label={expanded ? "Plegar detalles de hotel" : "Desplegar detalles de hotel"}
+            className="p-1 rounded-full border-none cursor-pointer text-white transition-colors hover:bg-white/25"
+            style={{ background: "rgba(255,255,255,0.15)" }}
+          >
+            {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+          </button>
         </div>
       </div>
 
