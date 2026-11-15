@@ -52,7 +52,7 @@ El proyecto sigue una filosofía extrema de **disponibilidad y resiliencia offli
 
 | 🧭 Menú lateral de navegación | ⛩️ Apartados principales de la web | 🌐 Selector multi-idioma |
 | :---: | :---: | :---: |
-| <img src="public/img/menu-lateral.jpg" alt="Menú lateral de navegación" width="160" /> | <img src="public/img/apartados-principales.jpg" alt="Apartados principales de la web" width="390" /> | <img src="public/img/selector-idiomas.jpg" alt="Selector de idiomas (Español, English, Français, Tagalog) y buscador" width="170" /> |
+| <img src="public/img/menu-lateral.jpg" alt="Menú lateral de navegación" width="170" /> | <img src="public/img/apartados-principales.jpg" alt="Apartados principales de la web" width="430" /> | <img src="public/img/selector-idiomas.jpg" alt="Selector de idiomas (Español, English, Français, Tagalog) y buscador" width="180" /> |
 
 La aplicación está organizada en **19 secciones temáticas**, diseñadas para acompañar cada fase de la planificación y el día a día en Japón:
 
@@ -64,9 +64,13 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 📅 | **Calendario** (`#calendario`) | Desglose mensual y semanal de las 16 jornadas con hitos clave, pernoctaciones y traslados. |
 | 🗺️ | **Mapa Interactivo** (`#mapa`) | Cartografía vectorial offline basada en OpenStreetMap + Leaflet con filtros por categoría (Lugares, Hoteles, Transportes) y por días específicos. |
 
-| 🗓️ Itinerario (Día a Día) | 📅 Calendario por etapas | 🗺️ Mapa interactivo |
-| :---: | :---: | :---: |
-| <img src="public/img/itinerario-dias.jpg" alt="Vista del itinerario detallado por días" width="245" /> | <img src="public/img/calendario-viaje.jpg" alt="Vista del calendario interactivo por etapas y días" width="245" /> | <img src="public/img/mapa-ruta.jpg" alt="Mapa interactivo con trazado y filtros de la ruta" width="245" /> |
+| 📅 Calendario mensual por etapas | 🗺️ Mapa interactivo con ruta completa |
+| :---: | :---: |
+| <img src="public/img/calendario-viaje.jpg" alt="Vista del calendario interactivo por etapas y días" width="420" /> | <img src="public/img/mapa-ruta.jpg" alt="Mapa interactivo con trazado y filtros de la ruta" width="420" /> |
+
+<p align="center">
+  <img src="public/img/itinerario-dias.jpg" alt="Vista del itinerario detallado por días" width="580" />
+</p>
 
 ### 🚅 Viaje y Logística
 | Icono | Sección | Descripción |
@@ -78,7 +82,7 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 
 | 🏨 Ficha detallada de alojamiento | 🚄 Desglose técnico de trayectos y tarifas |
 | :---: | :---: |
-| <img src="public/img/ficha-hotel.jpg" alt="Ficha detallada de hotel con servicios, precios y enlaces a mapas" width="370" /> | <img src="public/img/trayectos-transporte.jpg" alt="Desglose de trayectos, métodos de pago y tarifas de transporte" width="370" /> |
+| <img src="public/img/ficha-hotel.jpg" alt="Ficha detallada de hotel con servicios, precios y enlaces a mapas" width="420" /> | <img src="public/img/trayectos-transporte.jpg" alt="Desglose de trayectos, métodos de pago y tarifas de transporte" width="420" /> |
 
 ### 🏯 Guía y Cultura
 | Icono | Sección | Descripción |
@@ -89,7 +93,7 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 👾 | **Cultura Pop (Frikadas)** (`#frikadas`) | Puntos de interés cruzados con anime, videojuegos y cine (Ghibli, Pokémon, Nintendo, Akihabara). |
 
 <p align="center">
-  <img src="public/img/ficha-lugar.jpg" alt="Ficha detallada de monumento y lore cultural (Fushimi Inari Taisha)" width="480" />
+  <img src="public/img/ficha-lugar.jpg" alt="Ficha detallada de monumento y lore cultural (Fushimi Inari Taisha)" width="540" />
 </p>
 
 ### 🎒 Preparación y Seguridad
@@ -108,7 +112,7 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | ℹ️ | **Sobre la web** (`#about`) | Explicación detallada de la arquitectura técnica (SSOT), comandos de clonación y guía práctica de vibecoding con IA. |
 
 <p align="center">
-  <img src="public/img/buscador-global.jpg" alt="Buscador global reactivo con búsquedas frecuentes y navegación directa" width="480" />
+  <img src="public/img/buscador-global.jpg" alt="Buscador global reactivo con búsquedas frecuentes y navegación directa" width="540" />
 </p>
 
 ---
