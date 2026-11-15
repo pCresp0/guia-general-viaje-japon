@@ -198,12 +198,17 @@ Al tratarse de una Progressive Web App (PWA), no necesitas buscarla en App Store
 * **En iPhone / iPad (Safari):**
   1. Abre la web en Safari.
   2. Pulsa el botón **Compartir** (icono del cuadrado con la flecha hacia arriba).
-  3. Selecciona **"Añadir a la pantalla de inicio"**.
+  3. Desliza y selecciona **"Añadir a pantalla de inicio"**.
+  4. Confirma el nombre y pulsa **"Añadir"** en la esquina superior derecha.
 
 * **En Android (Chrome / Brave / Edge):**
   1. Abre la web en el navegador.
   2. Pulsa el menú de tres puntos (⋮) en la esquina superior derecha.
   3. Selecciona **"Instalar aplicación"** o **"Añadir a la pantalla principal"**.
+
+| 1. Selecciona «Añadir a pantalla de inicio» | 2. Confirma y pulsa «Añadir» | 3. Acceso directo instalado |
+| :---: | :---: | :---: |
+| <img src="public/img/pwa/pwa-step1-share.jpg" alt="Paso 1: Menú compartir en Safari" width="200" /> | <img src="public/img/pwa/pwa-step2-confirm.jpg" alt="Paso 2: Confirmar añadir a pantalla de inicio" width="250" /> | <img src="public/img/pwa/pwa-step3-installed.png" alt="Paso 3: Icono instalado en la pantalla de inicio" width="150" /> |
 
 ---
 
