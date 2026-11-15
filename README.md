@@ -50,9 +50,9 @@ El proyecto sigue una filosofía extrema de **disponibilidad y resiliencia offli
 
 ## 📱 Secciones y Funcionalidades de la Web
 
-| 🧭 Menú lateral de navegación | ⛩️ Apartados principales de la web |
-| :---: | :---: |
-| <img src="public/img/menu-lateral.jpg" alt="Menú lateral de navegación" width="170" /> | <img src="public/img/apartados-principales.jpg" alt="Apartados principales de la web" width="430" /> |
+| 🧭 Menú lateral de navegación | ⛩️ Apartados principales de la web | 🌐 Selector multi-idioma |
+| :---: | :---: | :---: |
+| <img src="public/img/menu-lateral.jpg" alt="Menú lateral de navegación" width="160" /> | <img src="public/img/apartados-principales.jpg" alt="Apartados principales de la web" width="390" /> | <img src="public/img/selector-idiomas.jpg" alt="Selector de idiomas (Español, English, Français, Tagalog) y buscador" width="170" /> |
 
 La aplicación está organizada en **19 secciones temáticas**, diseñadas para acompañar cada fase de la planificación y el día a día en Japón:
 
