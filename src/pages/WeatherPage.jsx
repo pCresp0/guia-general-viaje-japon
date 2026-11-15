@@ -229,22 +229,21 @@ export default function WeatherPage() {
 
   const effectiveStartDate = userStartDate.trim() ? userStartDate : defaultStartDate;
 
-  // El mes por defecto para las condiciones generales es Septiembre (9), mes del viaje original.
-  // Si el usuario introduce una fecha arriba, se actualiza automáticamente a ese mes.
+  // El mes y año de referencia se derivan automáticamente de la fecha de inicio del viaje (effectiveStartDate)
+  // Por defecto, si empieza mañana (ej. noviembre), las condiciones generales y consejos se sincronizan con noviembre.
+  // El usuario puede además forzar manualmente cualquier mes en el desplegable de abajo (selectedMonthOverride).
   const [selectedMonthOverride, setSelectedMonthOverride] = useState(null);
 
   const dateDerivedMonth = useMemo(() => {
-    if (!userStartDate.trim()) return 9; // Por defecto septiembre
-    const parts = userStartDate.split("-").map(Number);
+    const parts = effectiveStartDate.split("-").map(Number);
     const m = parts[1];
-    return m >= 1 && m <= 12 ? m : 9;
-  }, [userStartDate]);
+    return m >= 1 && m <= 12 ? m : (new Date().getMonth() + 1);
+  }, [effectiveStartDate]);
 
   const dateDerivedYear = useMemo(() => {
-    if (!userStartDate.trim()) return 2026;
-    const parts = userStartDate.split("-").map(Number);
-    return parts[0] || 2026;
-  }, [userStartDate]);
+    const parts = effectiveStartDate.split("-").map(Number);
+    return parts[0] || (new Date().getFullYear());
+  }, [effectiveStartDate]);
 
   const activeMonth = selectedMonthOverride ?? dateDerivedMonth;
   const activeYear = dateDerivedYear;
@@ -415,12 +414,12 @@ export default function WeatherPage() {
             </div>
             <p className="text-xs mt-1 m-0" style={{ color: "var(--ink-soft)", lineHeight: 1.5 }}>
               {lang === "en"
-                ? "Set your trip start date to calculate live forecasts and the countdown for each day. By default, the countdown starts tomorrow and general historical conditions show September (original trip month). Selecting any date updates the general conditions and packing advice to that month."
+                ? "Set your trip start date to calculate live forecasts and the countdown for each day. By default, the trip starts tomorrow and the monthly general conditions automatically sync with that month. Days within 16 days display real-time live API forecasts, while further dates use historical climate averages for that city and month."
                 : lang === "fr"
-                ? "Indiquez la date de départ pour calculer les prévisions en direct et le compte à rebours de chaque étape. Par défaut, le compte à rebours démarre demain et les conditions historiques affichent septembre. Choisir une date adapte les conditions générales et conseils au mois sélectionné."
+                ? "Indiquez votre date de départ pour afficher les prévisions en direct et le compte à rebours de chaque étape. Par défaut, la route démarre demain et les conditions générales se synchronisent automatiquement avec ce mois. Les 16 prochains jours affichent les données réelles en direct, et les dates ultérieures s'appuient sur les moyennes historiques officielles."
                 : lang === "tl"
-                ? "Piliin ang araw ng simula ng iyong biyahe para sa live forecast at countdown. Bilang default, magsisimula bukas ang countdown at ang pangkalahatang kondisyon ay Setyembre. Ang pagpili ng petsa ay mag-aakma ng pangkalahatang kondisyon at payo para sa buwang iyon."
-                : "Indica qué día empieza tu ruta para calcular la previsión meteorológica real y la cuenta atrás de cada etapa. Si no introduces fecha, por defecto la cuenta atrás empieza mañana y las condiciones históricas generales muestran septiembre (mes de la ruta original). Al elegir una fecha, las condiciones generales y los consejos se adaptan automáticamente a ese mes."}
+                ? "Itakda ang petsa ng simula ng iyong biyahe para sa live forecast at countdown. Bilang default, magsisimula bukas ang biyahe at ang buwanang kondisyon sa ibaba ay awtomatikong magtutugma sa buwang iyon. Ang unang 16 na araw ay may live API forecast, habang ang mga susunod ay gumagamit ng opisyal na historical averages para sa lungsod at buwan."
+                : "Indica qué día empieza tu ruta para calcular la previsión meteorológica real y la cuenta atrás de cada etapa. Por defecto, la ruta empieza mañana y las condiciones generales del mes se sincronizan automáticamente con ese mismo mes. Los días dentro de la ventana de 16 días muestran datos en vivo de la API, y para fechas posteriores se calcula la estimación histórica oficial de Japón para esa ciudad y mes."}
             </p>
           </div>
           
@@ -446,7 +445,7 @@ export default function WeatherPage() {
                   borderColor: "rgba(2, 132, 199, 0.25)",
                   color: "#0284c7",
                 }}
-                title={lang === "en" ? "Reset to default (starts tomorrow / September baseline)" : "Restablecer por defecto (empieza mañana / clima en septiembre)"}
+                title={lang === "en" ? "Reset to default (starts tomorrow)" : lang === "fr" ? "Réinitialiser par défaut (démarre demain)" : lang === "tl" ? "I-reset sa default (magsimula bukas)" : "Restablecer por defecto (empieza mañana)"}
               >
                 <RotateCcw size={12} />
                 {lang === "en" ? "Reset" : lang === "fr" ? "Réinitialiser" : lang === "tl" ? "I-reset" : "Restablecer"}
@@ -596,11 +595,20 @@ export default function WeatherPage() {
               color: "var(--indigo)",
             }}
           >
-            {(MONTH_NAMES[lang && MONTH_NAMES[lang] ? lang : "es"] || MONTH_NAMES.es).map((mName, i) => (
-              <option key={i + 1} value={i + 1}>
-                {mName} {i + 1 === 9 ? `(${lang === "en" ? "trip default" : "defecto viaje"})` : ""}
-              </option>
-            ))}
+            {(MONTH_NAMES[lang && MONTH_NAMES[lang] ? lang : "es"] || MONTH_NAMES.es).map((mName, i) => {
+              const monthNum = i + 1;
+              let suffix = "";
+              if (monthNum === dateDerivedMonth) {
+                suffix = ` (${lang === "en" ? "your trip" : lang === "fr" ? "votre voyage" : lang === "tl" ? "iyong biyahe" : "tu viaje"})`;
+              } else if (monthNum === 9) {
+                suffix = ` (${lang === "en" ? "Sep route" : lang === "fr" ? "route originale" : lang === "tl" ? "orihinal na ruta" : "ruta original"})`;
+              }
+              return (
+                <option key={monthNum} value={monthNum}>
+                  {mName}{suffix}
+                </option>
+              );
+            })}
           </select>
         </div>
       </div>
