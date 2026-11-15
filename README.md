@@ -88,6 +88,10 @@ La aplicación está organizada en **19 secciones temáticas**, diseñadas para 
 | 📜 | **Historia & Multimedia** (`#historia`) | Periodos históricos narrados con reproductor de voz Text-to-Speech nativo, podcasts de Apple, documentales de YouTube y libros con lectura online. |
 | 👾 | **Cultura Pop (Frikadas)** (`#frikadas`) | Puntos de interés cruzados con anime, videojuegos y cine (Ghibli, Pokémon, Nintendo, Akihabara). |
 
+<p align="center">
+  <img src="public/img/ficha-lugar.jpg" alt="Ficha detallada de monumento y lore cultural (Fushimi Inari Taisha)" width="480" />
+</p>
+
 ### 🎒 Preparación y Seguridad
 | Icono | Sección | Descripción |
 | :--- | :--- | :--- |
