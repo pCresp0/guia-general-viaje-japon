@@ -32,23 +32,7 @@ import { useHighlight } from "./context/HighlightContext";
 import { slug } from "./utils/slug";
 import { getTripStatus, getDefaultTripDay } from "./utils/date";
 
-const VALID_TABS = new Set([
-  "inicio", "itinerario", "calendario", "vuelos", "hoteles", "transportes",
-  "lugares", "comidas", "mapa", "clima", "frases", "preparativos",
-  "presupuesto", "pendientes", "historia", "herramientas", "emergencias",
-  "frikadas", "about", "hoy"
-]);
-
-function getTabFromHash() {
-  if (typeof window === "undefined") return null;
-  const hash = window.location.hash.replace(/^#\/?/, "").toLowerCase();
-  if (VALID_TABS.has(hash)) return hash;
-  return null;
-}
-
 function defaultTab() {
-  const fromHash = getTabFromHash();
-  if (fromHash) return fromHash;
   const status = getTripStatus();
   if (status.phase === "during") {
     return "itinerario";
@@ -65,30 +49,10 @@ export default function App() {
   const scrollContainerRef = useRef(null);
   const { triggerHighlight } = useHighlight();
 
-  // Sincronizar cambios en el hash de la URL (botón atrás/adelante del navegador)
-  useEffect(() => {
-    const handleHashChange = () => {
-      const next = getTabFromHash();
-      if (next && next !== tab) {
-        setTab(next);
-      }
-    };
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, [tab]);
-
-  // Actualizar el hash en la URL al cambiar de pestaña
-  const updateTabUrl = (nextTab) => {
-    if (typeof window !== "undefined" && window.location.hash !== `#${nextTab}`) {
-      window.history.pushState(null, "", `#${nextTab}`);
-    }
-  };
-
   function goToDay(num) {
     setOpenDay(num);
     setQuickView(false); // Default to full view when searching/home
     setTab("itinerario");
-    updateTabUrl("itinerario");
     // Mismo pulso dorado que usa el buscador: confirma visualmente a qué
     // día concreto se ha saltado, venga la navegación de "Hoy" o del mapa.
     window.setTimeout(() => triggerHighlight(slug("itinerary-day", num)), 120);
@@ -98,13 +62,11 @@ export default function App() {
     setOpenDay(num);
     setQuickView(true);
     setTab("itinerario");
-    updateTabUrl("itinerario");
   }
 
   function goToMapDay(num) {
     setMapInitialDay(num);
     setTab("mapa");
-    updateTabUrl("mapa");
     // Se consume una sola vez al montar MapPage: si luego se vuelve al
     // Mapa desde el menú normal, que no arrastre el filtro de este día.
     window.setTimeout(() => setMapInitialDay(null), 300);
@@ -114,7 +76,6 @@ export default function App() {
     const { tab: nextTab, day, targetId, silent, scrollBlock, highlightDelay } = result;
     if (day != null) setOpenDay(day);
     setTab(nextTab);
-    updateTabUrl(nextTab);
     // Se dispara con un pequeño margen para dar tiempo a que la nueva
     // página (y, si hace falta, el día/acordeón correspondiente) se
     // monten antes de intentar el scrollIntoView.
@@ -136,7 +97,6 @@ export default function App() {
       setOpenDay(null);
     }
     setTab(nextTab);
-    updateTabUrl(nextTab);
   }
 
   // Soporte de navegación global desde cualquier enlace con data-tab o evento CustomEvent "app:navigate"
@@ -173,6 +133,25 @@ export default function App() {
       scrollContainerRef.current.scrollTo({ top: 0, behavior: "auto" });
     }
   }, [tab]);
+
+  // Prevenir que el botón "atrás" en móviles salga de la app accidentalmente
+  useEffect(() => {
+    window.history.pushState({ preventBack: true }, "");
+
+    const handlePopState = (e) => {
+      if (!e.state || !e.state.preventBack) {
+        const confirmExit = window.confirm("¿Seguro que quieres salir de la aplicación?");
+        if (confirmExit) {
+          window.history.back();
+        } else {
+          window.history.pushState({ preventBack: true }, "");
+        }
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   // Preload silencioso en segundo plano de todas las imágenes clave
   // (templos/lugares, comidas e historia) para que la navegación sea 100% fluida e instantánea
